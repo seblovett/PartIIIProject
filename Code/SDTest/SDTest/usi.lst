@@ -1,0 +1,108 @@
+   1               	# 1 "usi.S"
+   1               	;---------------------------------------------------------------------------;
+   0               	
+   0               	
+   2               	; USI control functions
+   3               	;---------------------------------------------------------------------------;
+   4               	
+   7               	.list
+   8               	
+   9               	
+  10               	;---------------------------------------------------------------------------;
+  11               	; Initialize USI
+  12               	;
+  13               	; void init_spi (void);
+  14               	
+  15               	.global init_spi
+  16               	.func init_spi
+  17               	init_spi:
+  18:usi.S         **** 	ldi	r24, 0b00011000
+  19:usi.S         **** 	out	_SFR_IO_ADDR(USICR), r24
+  20:usi.S         **** 	ret
+  21               	.endfunc
+  22               	
+  23               	
+  24               	;---------------------------------------------------------------------------;
+  25               	; Delay 100 microseconds
+  26               	;
+  27               	; void dly_us (UINT n);
+  28               	
+  29               	.global dly_100us
+  30               	.func dly_100us
+  31               	dly_100us:
+  32:usi.S         **** 	ldi	r24, lo8(F_CPU / 100000)	/* Loop counter */
+  33:usi.S         **** 1:	sbiw	r30, 1		/* 10 clocks per loop */
+  34:usi.S         **** 	sbiw	r30, 1
+  35:usi.S         **** 	sbiw	r30, 1
+  36:usi.S         **** 	nop
+  37:usi.S         **** 	dec	r24
+  38:usi.S         **** 	brne	1b
+  39:usi.S         **** 	ret
+  40               	.endfunc
+  41               	
+  42               	
+  43               	;---------------------------------------------------------------------------;
+  44               	; Receive a byte (28 clks)
+  45               	;
+  46               	; BYTE rcv_spi (void);
+  47               	
+  48               	.global rcv_spi
+  49               	.func rcv_spi
+  50               	rcv_spi:
+  51:usi.S         **** 	ldi	r24, 0xFF	; Send 0xFF to receive data
+  52               		; Goto next function
+  53               	.endfunc
+  54               	
+  55               	
+  56               	;---------------------------------------------------------------------------;
+  57               	; Transmit a byte (27 clks)
+  58               	;
+  59               	; void xmit_spi (BYTE);
+  60               	
+  61               	.global xmit_spi
+  62               	.func xmit_spi
+  63               	xmit_spi:
+  64:usi.S         **** 	out	_SFR_IO_ADDR(USIDR), r24	; Put a byte to be transmit
+  65               	
+  66:usi.S         **** 	ldi	r24, 0b000100			; PB2(SCK)
+  67               		.rept 16
+  68:usi.S         **** 	out	_SFR_IO_ADDR(PINB), r24		; Toggle SCK 16 times
+  69:usi.S         **** 	.endr
+  70:usi.S         **** 	nop
+  71:usi.S         **** 	in	r24, _SFR_IO_ADDR(USIDR)	; Get received byte
+  72:usi.S         **** 	ret
+  73               	.endfunc
+DEFINED SYMBOLS
+C:\DOCUME~1\STEVEG~1\LOCALS~1\Temp/ccU4nNtf.s:0      .text:00000000 L0F0
+               usi.S:17     .text:00000000 init_spi
+               usi.S:18     .text:00000000 L0F1
+               usi.S:18     .text:00000000 L0L0
+               usi.S:19     .text:00000000 L0L1
+               usi.S:20     .text:00000000 L0L2
+               usi.S:21     .text:00000000 L0endfunc0
+               usi.S:31     .text:00000000 dly_100us
+               usi.S:32     .text:00000000 L0L3
+               usi.S:33     .text:00000000 L11
+               usi.S:33     .text:00000000 L0L4
+               usi.S:34     .text:00000000 L0L5
+               usi.S:35     .text:00000000 L0L6
+               usi.S:36     .text:00000000 L0L7
+               usi.S:37     .text:00000000 L0L8
+               usi.S:38     .text:00000000 L0L9
+               usi.S:39     .text:00000000 L0L10
+               usi.S:40     .text:00000000 L0endfunc1
+               usi.S:50     .text:00000000 rcv_spi
+               usi.S:51     .text:00000000 L0L11
+               usi.S:53     .text:00000000 L0endfunc2
+               usi.S:63     .text:00000000 xmit_spi
+               usi.S:64     .text:00000000 L0L12
+               usi.S:66     .text:00000000 L0L13
+               usi.S:69     .text:00000000 L0L14
+               usi.S:70     .text:00000000 L0L15
+               usi.S:71     .text:00000000 L0L16
+               usi.S:72     .text:00000000 L0L17
+               usi.S:73     .text:00000000 L0endfunc3
+
+UNDEFINED SYMBOLS
+USICR
+USIDR
