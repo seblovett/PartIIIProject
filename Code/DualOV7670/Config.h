@@ -27,9 +27,9 @@ void IO_Init(void);
 #define TRUE 1
 #define FALSE 0
 
-FIL Files[2];
 
 
+char Buff[1024];
 
 //////////////////////////////////////////////////////////////////////////
 //	Port A

@@ -294,7 +294,7 @@ void FIFO_Reset()
 }
 
 //Reads all data from the buffer if an image has been written
-uint8_t GetImageIfAvailiable(int offset)
+uint8_t GetImageIfAvailiable(FIL *File, int offset)
 {
 	if (VSYNC_Count == 2)//if one full frame has elapsed.
 	{
@@ -305,7 +305,7 @@ uint8_t GetImageIfAvailiable(int offset)
 		FRESULT fr;
 		int i,j, ptr;
 		uint16_t Temp;
-		uint8_t Buff[320];
+		//uint8_t Buff[320];
 		FIFO_nRRST_CLR; //Reset Read Pointer
 		FIFO_RCLK_SET;
 		FIFO_RCLK_CLR;
@@ -333,14 +333,14 @@ uint8_t GetImageIfAvailiable(int offset)
 			
 			pointer = (uint32_t)j * (uint32_t)WIDTH * (uint32_t)2 + offset;
 			
-			f_lseek(&Files[0], pointer);
-			fr = f_write(&Files[0], Buff, WIDTH * 2, &p);
+			f_lseek(File, pointer);
+			fr = f_write(File, Buff, WIDTH * 2, &p);
 			if (fr != FR_OK)
 			{
 				printf("File Write Fail : %d", fr);
 				VSYNC_Count = 0; 
 				FIFO_Reset();
-				return 1;
+				return 0;
 			}
 			//xprintf(PSTR("%d:Write File Result %d, pointer location %u\n"), j, f_write(&File[0], Buff, WIDTH * 2, &p), pointer);
 		}
@@ -352,8 +352,8 @@ uint8_t GetImageIfAvailiable(int offset)
 		FIFO_nRRST_SET;
 		VSYNC_Count = 0; //No image present in buffer
 		printf("Success!\n");
-		printf("Closing File: %d\n", f_close(&Files[0]));
-		return 0; //Success!
+		printf("Closing File: %d\n", f_close(File));
+		return 1; //Success!
 	}
 	else
 	{

@@ -12,10 +12,10 @@ static FILE mystdout = FDEV_SETUP_STREAM(Usart_printf, NULL, _FDEV_SETUP_WRITE);
 //FatFS Variables
 FILINFO Finfo;
 FATFS Fatfs[_VOLUMES];		/* File system object for each logical drive */
-//FIL Files[2];				/* File object */
+FIL Files[2];				/* File object */
 
 // char Line[100];				/* Console input buffer */
-char Buff[100];			/* Working buffer */
+//char Buff[100];			/* Working buffer */
 
 ISR(TIMER0_COMPA_vect)
 {
@@ -26,7 +26,7 @@ int main(void)
 	unsigned long int a = 0;
 	uint8_t b = 0;
 	FRESULT fr;
-	
+	char c = 0;
 	USART0_Init();
 	sei();
 	stdout = &mystdout;
@@ -50,33 +50,38 @@ int main(void)
 	b = OV7670_init();
 	
 	printf( "OV7670_0 initialised with exit code %d\n", b);
-	//f_write(&Files[0], &Buff, sizeof(Buff), &a);
-	
-	
-	
-	printf("Image file opening.\n");
-	//f_write(&File[0], &Buff, sizeof(Buff), &a);
-	fr =f_open(&Files[0], "image1.bmp", FA_CREATE_ALWAYS | FA_WRITE);
-	printf("File Opened : %d\n", fr);
-	f_lseek(&Files[0], 155000);
-	printf("File Size exercised.\n");
-	f_lseek(&Files[0], 0);
-	printf("Closing File 1: %d\n", f_close(&Files[0]));
-	fr =f_open(&Files[0], "image1.bmp", FA_WRITE);
-	printf("File Opened : %d\n", fr);
-	printf("Write BMP Header.\n");
-	WriteBMPHeader(&Files[0]);
-	printf("Write DIB Header.\n");
-	WriteDIBHeader(&Files[0]);
-	LoadImageToBuffer();
-	while(0 != GetImageIfAvailiable(DIBHEADERSIZE + BMPHEADERSIZE)) 
-		;
-	printf("Photo Taken\n");
-// 	printf("Closing File 1: %d\n", f_close(&File[1]));
-// 	printf("Closing File 0: %d\n", f_close(&File[0]));
-	
+
     while(1)
     {
+		c = Usart_Receive();
+		
+		switch(c)
+		{
+			case 'a':
+				fr =f_open(&Files[0], "image1.bmp", FA_CREATE_ALWAYS | FA_WRITE);
+				printf("File Opened : %d\n", fr);
+				f_lseek(&Files[0], 155000);
+				printf("File Size exercised.\n");
+				f_lseek(&Files[0], 0);
+				printf("Closing File 1: %d\n", f_close(&Files[0]));
+				fr =f_open(&Files[0], "image1.bmp", FA_WRITE);
+				printf("File Opened : %d\n", fr);
+				printf("Write BMP Header.\n");
+				WriteBMPHeader(&Files[0]);
+				printf("Write DIB Header.\n");
+				WriteDIBHeader(&Files[0]);
+				printf("Loading Image to FIFO Buffer.\n");
+				LoadImageToBuffer();
+				printf("Getting Image.\n");
+				while(0 != GetImageIfAvailiable(&Files[0], DIBHEADERSIZE + BMPHEADERSIZE)) ;
+				printf("Photo Taken");
+				break;
+				
+				default:
+				
+				break;
+			
+		}					
 	 
     }
 }
