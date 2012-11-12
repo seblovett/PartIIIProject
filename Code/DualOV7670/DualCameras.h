@@ -32,7 +32,7 @@ unsigned char OV7670_init(void);							//Initialises Camera
 void FIFO_init(void);					//Initialises Buffer
 uint8_t GetImageIfAvailiable(FIL *File, uint8_t CameraID);
 void LoadImagesToBuffer(void);
-
+unsigned char rdOV7670Reg(unsigned char regID, unsigned char *regDat);
 unsigned char OV7670_SCCB_init(void);
 //////////////////////////////////////////////////////////////////////////
 //	Pins & Macros
