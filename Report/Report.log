@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  7 NOV 2012 10:17
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  10 NOV 2012 21:22
 entering extended mode
 **Report.tex
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Report.tex
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +13,7 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-(C:\Users\hslovett\Dropbox\IndivProject\Report\ecsreport.cls
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\ecsreport.cls
 Document Class: ecsreport 2003/25/04 v1.6 LaTeX document class
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\book.cls"
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
@@ -456,14 +456,14 @@ LaTeX Info: Redefining \cite on input line 694.
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 7.
 
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Definitions.tex
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Definitions.tex
 \c@address=\count138
 \c@alg=\count139
 )
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Report.aux
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Introduction.aux)
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Conclusions.aux)
-(C:\Users\hslovett\Dropbox\IndivProject\Report\AppendixA.aux))
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.aux
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Introduction.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
@@ -530,8 +530,8 @@ LaTeX Info: Redefining \ref on input line 10.
 LaTeX Info: Redefining \pageref on input line 10.
 LaTeX Info: Redefining \nameref on input line 10.
 
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Report.out)
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Report.out)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.out)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.out)
 \@outlinefile=\write3
 
 ------------------------------------------------------------------------------
@@ -561,7 +561,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Report.toc)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.toc)
 \tf@toc=\write4
  [5
 
@@ -571,7 +571,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ------------------------------------------------------------------------------
  List of Figures
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Report.lof)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.lof)
 \tf@lof=\write5
  [7
 
@@ -581,7 +581,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ------------------------------------------------------------------------------
  List of Tables
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Report.lot)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.lot)
 \tf@lot=\write6
  [9
 
@@ -591,7 +591,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Report.lol)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.lol)
 \tf@lol=\write7
  [11
 
@@ -617,7 +617,8 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ------------------------------------------------------------------------------
 [17] [18
 
-] (C:\Users\hslovett\Dropbox\IndivProject\Report\Introduction.tex
+]
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Introduction.tex
 Chapter 1.
 ------------------------------------------------------------------------------
  1 Introduction
@@ -626,7 +627,8 @@ Chapter 1.
 
 
 
-] (C:\Users\hslovett\Dropbox\IndivProject\Report\Conclusions.tex [2
+] (C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.tex
+[2
 
 
 
@@ -635,7 +637,8 @@ Chapter 2.
 ------------------------------------------------------------------------------
  2 Conclusions
 ------------------------------------------------------------------------------
-) [3] (C:\Users\hslovett\Dropbox\IndivProject\Report\AppendixA.tex [4
+) [3] (C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.tex
+[4
 
 
 
@@ -651,17 +654,17 @@ Appendix A.
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Report.bbl)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 42.
  [7
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 42.
 
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Report.aux
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Introduction.aux)
-(C:\Users\hslovett\Dropbox\IndivProject\Report\Conclusions.aux)
-(C:\Users\hslovett\Dropbox\IndivProject\Report\AppendixA.aux))
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.aux
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Introduction.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 42.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 42.
 Package rerunfilecheck Info: File `Report.out' has not changed.
@@ -670,8 +673,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 42.
  ) 
 Here is how much of TeX's memory you used:
  10669 strings out of 494045
- 151758 string characters out of 3145960
- 229080 words of memory out of 3000000
+ 152059 string characters out of 3145960
+ 230080 words of memory out of 3000000
  13740 multiletter control sequences out of 15000+200000
  11970 words of font info for 44 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
@@ -685,7 +688,7 @@ ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Report.pdf (25 pages, 134919 bytes).
+Output written on Report.pdf (25 pages, 134796 bytes).
 PDF statistics:
  210 PDF objects out of 1000 (max. 8388607)
  41 named destinations out of 1000 (max. 500000)

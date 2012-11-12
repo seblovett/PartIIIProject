@@ -8,11 +8,13 @@ Config.c
 
 diskio.c
 
+DualCameras.c
+
 main.c
 
 ff.c
 
-ov7670.c
+SCCB.c
 
 TWI_Master.c
 

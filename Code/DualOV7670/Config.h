@@ -13,11 +13,12 @@
 #include <string.h>
 #include <util/delay.h>
 #include "TWI_Master.h"
-#include "ov7670.h"
 #include "ff.h"
 #include "diskio.h"
 #include "Usart.h"
 #include "Bitmap.h"
+#include "DualCameras.h"
+#include "SCCB.h"
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
@@ -27,10 +28,18 @@ void IO_Init(void);
 #define TRUE 1
 #define FALSE 0
 
+<<<<<<< HEAD
 
 
 char Buff[1024];
 
+=======
+FIL Files[2];
+char Buff[1024];
+
+#define BMPFileSize		153738
+#define RGBFileSize		153600
+>>>>>>> Stereovision
 //////////////////////////////////////////////////////////////////////////
 //	Port A
 //////////////////////////////////////////////////////////////////////////
@@ -40,10 +49,10 @@ char Buff[1024];
 //////////////////////////////////////////////////////////////////////////
 //	Port B
 //////////////////////////////////////////////////////////////////////////
-#define FIFO_RCLK_1		PB0
-#define FIFO_nRRST_1	PB1
-#define FIFO_WEN_1		PB2
-#define FIFO_WRST_1		PB3
+#define SD_WP			PB0
+#define SD_CD			PB1
+//#define 				PB2
+//#define 				PB3
 #define SPI_nSS_SD		PB4
 #define SPI_MOSI		PB5
 #define SPI_MISO		PB6
@@ -53,10 +62,10 @@ char Buff[1024];
 //////////////////////////////////////////////////////////////////////////
 #define TWI_SCL			PC0
 #define TWI_SDA			PC1
-#define JTAG_TCK		PC2
-#define JTAG_TMS		PC3
-#define JTAG_TDO		PC4
-#define JTAG_TOI		PC5
+#define FIFO_RCLK_1		PC2
+#define FIFO_nRRST_1	PC3
+#define FIFO_WEN_1		PC4
+#define FIFO_WRST_1		PC5
 #define FIFO_nOE_0		PC6
 #define FIFO_nOE_1		PC7
 //////////////////////////////////////////////////////////////////////////

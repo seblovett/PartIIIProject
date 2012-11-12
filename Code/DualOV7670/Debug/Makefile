@@ -38,9 +38,10 @@ C_SRCS +=  \
 ../Bitmap.c \
 ../Config.c \
 ../diskio.c \
+../DualCameras.c \
 ../main.c \
 ../ff.c \
-../ov7670.c \
+../SCCB.c \
 ../TWI_Master.c \
 ../Usart.c
 
@@ -55,9 +56,10 @@ OBJS +=  \
 Bitmap.o \
 Config.o \
 diskio.o \
+DualCameras.o \
 main.o \
 ff.o \
-ov7670.o \
+SCCB.o \
 TWI_Master.o \
 Usart.o
 
@@ -66,9 +68,10 @@ OBJS_AS_ARGS +=  \
 Bitmap.o \
 Config.o \
 diskio.o \
+DualCameras.o \
 main.o \
 ff.o \
-ov7670.o \
+SCCB.o \
 TWI_Master.o \
 Usart.o
 
@@ -77,9 +80,10 @@ C_DEPS +=  \
 Bitmap.d \
 Config.d \
 diskio.d \
+DualCameras.d \
 main.d \
 ff.d \
-ov7670.d \
+SCCB.d \
 TWI_Master.d \
 Usart.d
 
@@ -88,9 +92,10 @@ C_DEPS_AS_ARGS +=  \
 Bitmap.d \
 Config.d \
 diskio.d \
+DualCameras.d \
 main.d \
 ff.d \
-ov7670.d \
+SCCB.d \
 TWI_Master.d \
 Usart.d
 
@@ -104,6 +109,8 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
 
 
 

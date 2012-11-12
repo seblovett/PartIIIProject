@@ -8,7 +8,7 @@
 
 #ifndef BITMAP_H_
 #define BITMAP_H_
-#include "ov7670.h"
+
 #define BMPHEADERSIZE	14
 #define DIBHEADERSIZE	124 //v5
 #define FILESIZE 153738
