@@ -21,9 +21,8 @@ Usart.d Usart.o: .././Usart.c .././Usart.h .././Config.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay_basic.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/math.h \
- .././TWI_Master.h .././ov7670.h .././ff.h .././integer.h .././ffconf.h \
- .././diskio.h .././Bitmap.h \
- c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/eeprom.h
+ .././TWI_Master.h .././ff.h .././integer.h .././ffconf.h .././diskio.h \
+ .././Bitmap.h .././DualCameras.h .././SCCB.h
 
 .././Usart.h:
 
@@ -75,8 +74,6 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.
 
 .././TWI_Master.h:
 
-.././ov7670.h:
-
 .././ff.h:
 
 .././integer.h:
@@ -87,4 +84,6 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.
 
 .././Bitmap.h:
 
-c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/eeprom.h:
+.././DualCameras.h:
+
+.././SCCB.h:

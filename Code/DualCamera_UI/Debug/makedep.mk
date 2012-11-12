@@ -2,21 +2,7 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-Bitmap.c
+DualCamera_UI.c
 
-Config.c
-
-diskio.c
-
-DualCameras.c
-
-main.c
-
-ff.c
-
-SCCB.c
-
-TWI_Master.c
-
-Usart.c
+TWI_slave.c
 

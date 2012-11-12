@@ -23,7 +23,7 @@
     <AsfVersion>3.4.1</AsfVersion>
     <preserveEEPROM>True</preserveEEPROM>
     <avrtool>com.atmel.avrdbg.tool.avrone</avrtool>
-    <avrtoolinterface>JTAG</avrtoolinterface>
+    <avrtoolinterface>ISP</avrtoolinterface>
     <com_atmel_avrdbg_tool_avrone>
       <ToolType>com.atmel.avrdbg.tool.avrone</ToolType>
       <ToolName>AVR ONE!</ToolName>
@@ -34,15 +34,15 @@
       </OverrideVtorValue>
       <Channel>
         <host>127.0.0.1</host>
-        <port>1806</port>
+        <port>2042</port>
         <ssl>False</ssl>
       </Channel>
       <ToolOptions>
-        <InterfaceName>JTAG</InterfaceName>
+        <InterfaceName>ISP</InterfaceName>
         <InterfaceProperties>
-          <JtagDbgClock>250000</JtagDbgClock>
+          <JtagDbgClock>0</JtagDbgClock>
           <JtagProgClock>1000000</JtagProgClock>
-          <IspClock>250000</IspClock>
+          <IspClock>2500000</IspClock>
           <JtagInChain>false</JtagInChain>
           <JtagEnableExtResetOnStartSession>false</JtagEnableExtResetOnStartSession>
           <JtagDevicesBefore>0</JtagDevicesBefore>
@@ -114,6 +114,12 @@
     <Compile Include="diskio.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="DualCameras.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DualCameras.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
@@ -129,10 +135,10 @@
     <Compile Include="integer.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ov7670.c">
+    <Compile Include="SCCB.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ov7670.h">
+    <Compile Include="SCCB.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="TWI_Master.c">

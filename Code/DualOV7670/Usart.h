@@ -20,6 +20,7 @@ void Usart_SendChar(char data);
 unsigned char Usart_Receive( void );
 int Usart_printf(char var, FILE *stream);
 void Usart_get_line (char *buff, int len);
+void USART0_Senduint16 (uint16_t Data);
 // void USART0_SendChar( unsigned char data );
 // unsigned char USART0_Receive( void );
 // void USART0_SendString(char str[]);

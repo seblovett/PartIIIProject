@@ -35,6 +35,7 @@ unsigned char Usart_Receive( void )
 	while ( !(UCSR0A & (1<<RXC0)) )
 	;
 	/* Get and return received data from buffer */
+	//Usart_SendChar(UDR0);
 	return UDR0;
 }
 
@@ -73,4 +74,9 @@ void Usart_get_line (char *buff, int len)
 	buff[i] = 0;
 	Usart_SendChar('\n');
 	sei();
+}
+void USART0_Senduint16 (uint16_t Data)
+{
+	Usart_SendChar(Data >> 8);
+	Usart_SendChar(Data & 0xFF);
 }

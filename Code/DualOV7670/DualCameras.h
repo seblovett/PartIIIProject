@@ -1,99 +1,82 @@
-/* ov7670.h
- * Written by Henry Lovett (hl13g10@ecs.soton.ac.uk) based on the code written by Jian Liu
- * 
- *	Known bugs and limitations:
- *		- Colours are not perfect
- *		- only RGB565 is supported in QVGA format
- *		- Only implemented and tested on ATmega644P
- *		- Config for camera to be put on the EEPROM instead of flash
- */
+/*
+ * DualCameras.h
+ *
+ * Created: 10/11/2012 15:19:52
+ *  Author: hslovett
+ */ 
 
-#ifndef _OV7670_H
-#define _OV7670_H
-//////////////////////////////////////////////////////////////////////////
-//	Include Files
-//////////////////////////////////////////////////////////////////////////
+
+#ifndef DUALCAMERAS_H_
+#define DUALCAMERAS_H_
+
 #include "Config.h"
-#include "TWI_Master.h"
-#include <avr/io.h>
-#include <avr/interrupt.h>
-#include <util/delay.h>
-#include <avr/eeprom.h>
 
-//////////////////////////////////////////////////////////////////////////
-//	Configuration
-//////////////////////////////////////////////////////////////////////////
-#define EEPROM		1	//Camera Config Settings are in EEPROM
-#define PGM_SPACE	2	//Camera Config Settings are in program space
-	#define SETTINGS	PGM_SPACE
-
-#define Settings_Addr_EEPROM	10 //Address at which the Settings are founds
-
-#if SETTINGS == EEPROM
-#pragma message("Ensure OV7670 Settings are at the Specified address in the EEPROM")
-#endif
 //////////////////////////////////////////////////////////////////////////
 //	Constants
 //////////////////////////////////////////////////////////////////////////
 #define HEIGHT				240
 #define WIDTH				320
 #define PIXELSIZE			2
-
 #define SETTINGS_LENGTH		167
-
 #define OV7670_ADDR			0x21
 //////////////////////////////////////////////////////////////////////////
-//	Pin Definitions
+//	Globals
 //////////////////////////////////////////////////////////////////////////
-#define OV7670_CTRL_PORT PORTD
-#define OV7670_CTRL_DDR DDRD
-#define OV7670_VSYNC	PD2	//MUST BE AN INTERRUPT PIN
-#define FIFO_WRST		FIFO_WRST_0
-#define FIFO_RCLK		FIFO_RCLK_0
-#define FIFO_WEN		FIFO_WEN_0
-#define FIFO_nRRST		FIFO_nRRST_0
-
-#define FIFO_nOE		FIFO_nOE_0	
-#define FIFO_AVR_DPRT		DDRA
-#define FIFO_AVR_PORT		PORTA
-#define FIFO_AVR_PINP		PINA
-
-//////////////////////////////////////////////////////////////////////////
-//	Macros
-//////////////////////////////////////////////////////////////////////////
-#define FIFO_RCLK_SET		{	OV7670_CTRL_PORT	|=	(1<<FIFO_RCLK);		}
-#define FIFO_RCLK_CLR		{	OV7670_CTRL_PORT	&=	~(1<<FIFO_RCLK);	}
-#define FIFO_WEN_SET		{	OV7670_CTRL_PORT	|=	(1<<FIFO_WEN);		}
-#define FIFO_WEN_CLR		{	OV7670_CTRL_PORT	&=	~(1<<FIFO_WEN);		}
-#define FIFO_nRRST_SET		{	OV7670_CTRL_PORT	|=	(1<<FIFO_nRRST);	}
-#define FIFO_nRRST_CLR		{	OV7670_CTRL_PORT	&=	~(1<<FIFO_nRRST);	}
-#define FIFO_WRST_SET		{	OV7670_CTRL_PORT	|=	(1<<FIFO_WRST);		}
-#define FIFO_WRST_CLR		{	OV7670_CTRL_PORT	&=	~(1<<FIFO_WRST);	}
-
-#define FIFO_nOE_SET		{	PORTC	|=	(1<<FIFO_nOE);		}
-#define FIFO_nOE_CLR		{	PORTC	&=	~(1<<FIFO_nOE);		}
-//////////////////////////////////////////////////////////////////////////
-//	Global Variables
-//////////////////////////////////////////////////////////////////////////
-volatile int VSYNC_Count;
-/*const char default_settings[CHANGE_REG_NUM][2];*/
-
+const char default_settings[SETTINGS_LENGTH][2];
+volatile uint8_t VSYNC_0_Count;
+volatile uint8_t VSYNC_1_Count;
 //////////////////////////////////////////////////////////////////////////
 //	Methods
 //////////////////////////////////////////////////////////////////////////
-unsigned char OV7670_init(void);						//Initialises Camera
-unsigned char FIFO_init(void);							//Initialises Buffer
-unsigned char wrOV7670Reg(unsigned char regID, unsigned char regDat);	//Writes to a register
-unsigned char rdOV7670Reg(unsigned char regID, unsigned char *regDat);	//Reads a register
-uint8_t GetImageIfAvailiable(int offset);				//Gets all pixel data if available
-void LoadImageToBuffer(void);					//Loads an image into the FIFO Buffer
-uint16_t FIFO_TO_AVR(void);						//Reads from the FIFO Buffer
-void StoreToEEPROM(void);
+unsigned char OV7670_init(void);							//Initialises Camera
+void FIFO_init(void);					//Initialises Buffer
+uint8_t GetImageIfAvailiable(FIL *File, uint8_t CameraID);
+void LoadImagesToBuffer(void);
+
+unsigned char OV7670_SCCB_init(void);
+//////////////////////////////////////////////////////////////////////////
+//	Pins & Macros
+//////////////////////////////////////////////////////////////////////////
+#define FIFO_RCLK_1		PC2
+#define FIFO_nRRST_1	PC3
+#define FIFO_WEN_1		PC4
+#define FIFO_WRST_1		PC5
+#define FIFO_nOE_0		PC6
+#define FIFO_nOE_1		PC7
+
+#define FIFO_RCLK_1_SET		{	PORTC |= (1	<<	FIFO_RCLK_1);	}
+#define FIFO_RCLK_1_CLR		{	PORTC &= ~(1 <<	FIFO_RCLK_1);	}
+#define FIFO_nRRST_1_SET	{	PORTC |= (1	<<	FIFO_nRRST_1);	}
+#define FIFO_nRRST_1_CLR	{	PORTC &= ~(1 <<	FIFO_nRRST_1);	}	
+#define FIFO_WEN_1_SET		{	PORTC |= (1	<<	FIFO_WEN_1);	}
+#define FIFO_WEN_1_CLR		{	PORTC &= ~(1 <<	FIFO_WEN_1);	}
+#define FIFO_WRST_1_SET		{	PORTC |= (1	<<	FIFO_WRST_1);	}
+#define FIFO_WRST_1_CLR		{	PORTC &= ~(1 <<	FIFO_WRST_1);	}
+#define FIFO_nOE_0_SET		{	PORTC |= (1 << FIFO_nOE_0);		}
+#define FIFO_nOE_0_CLR		{	PORTC &= ~(1 << FIFO_nOE_0);	}
+#define FIFO_nOE_1_SET		{	PORTC |= (1 << FIFO_nOE_1);		}
+#define FIFO_nOE_1_CLR		{	PORTC &= ~(1 << FIFO_nOE_1);	}
+
+
+#define FIFO_RCLK_0		PD4
+#define FIFO_nRRST_0	PD5
+#define FIFO_WEN_0		PD6
+#define FIFO_WRST_0		PD7
+
+#define FIFO_RCLK_0_SET		{	PORTD |= (1	<<	FIFO_RCLK_0);	}
+#define FIFO_RCLK_0_CLR		{	PORTD &= ~(1 <<	FIFO_RCLK_0);	}
+#define FIFO_nRRST_0_SET	{	PORTD |= (1	<<	FIFO_nRRST_0);	}
+#define FIFO_nRRST_0_CLR	{	PORTD &= ~(1 <<	FIFO_nRRST_0);	}	
+#define FIFO_WEN_0_SET		{	PORTD |= (1	<<	FIFO_WEN_0);	}
+#define FIFO_WEN_0_CLR		{	PORTD &= ~(1 <<	FIFO_WEN_0);	}
+#define FIFO_WRST_0_SET		{	PORTD |= (1	<<	FIFO_WRST_0);	}
+#define FIFO_WRST_0_CLR		{	PORTD &= ~(1 <<	FIFO_WRST_0);	}
+	
 //////////////////////////////////////////////////////////////////////////
 //Camera Register Address definitions
 //////////////////////////////////////////////////////////////////////////
 #define OV_GAIN			0x00	//Gain Control Setting - ACG[7:0]
-#define OV_BLUE			0x01	//Blue Channel Gain 
+#define OV_BLUE			0x01	//Blue Channel Gain
 #define OV_RED			0x02	//Red Channel Gain
 #define OV_VREF			0x03	//Vertical Frame Control & ACG[9:8]
 #define OV_COM1			0x04	//CCIR656 enable, AEC low bits (AECHH, AECH)
@@ -111,12 +94,12 @@ void StoreToEEPROM(void);
 #define OV_AECH			0x10	//Exposure value [9:2] (see AECHH, COM1)
 #define OV_CLKRC		0x11	//Internal Clock options
 #define OV_COM7			0x12	//RESET, Output format
-#define OV_COM8			0x13	//Common control 8 
+#define OV_COM8			0x13	//Common control 8
 #define	OV_COM9			0x14	//Automatic Gain Ceiling
 #define OV_COM10		0x15	//PCLK, HREF and VSYNC options
 #define	OV_RSVD			0x16	//RESERVED
 #define OV_HSTART		0x17	//Output format Horizontal Frame start
-#define OV_HSTOP		0x18	//Output format Horizontal Frame end 
+#define OV_HSTOP		0x18	//Output format Horizontal Frame end
 #define OV_VSTRT		0x19	//Output format Vertical Frame start
 #define OV_VSTOP		0x1A	//Output format Vertical Frame Stop
 #define OV_PSHFT		0x1B	//Pixel Delay Select
@@ -266,7 +249,7 @@ void StoreToEEPROM(void);
 #define OV_HIST11		0xAA
 #define OV_HIST12		0xAB
 #define OV_STR_OPT		0xAC
-#define OV_STR_R		0xAD 
+#define OV_STR_R		0xAD
 #define OV_STR_G		0xAE
 #define OV_STR_B		0xAF
 #define OV_RSVD28_1		0xB0
@@ -296,12 +279,4 @@ void StoreToEEPROM(void);
 #define OV_RSVD46		0xC8
 #define OV_SATCTR		0xC9
 
-
-#endif /* _OV7660_H */
-
-
-
-
-
-
-
+#endif /* DUALCAMERAS_H_ */
