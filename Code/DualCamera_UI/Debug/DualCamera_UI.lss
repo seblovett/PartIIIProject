@@ -3,31 +3,6 @@ DualCamera_UI.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-<<<<<<< HEAD
-  0 .data         00000002  00800100  0000035c  000003f0  2**0
-                  CONTENTS, ALLOC, LOAD, DATA
-  1 .text         0000035c  00000000  00000000  00000094  2**1
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000008  00800102  00800102  000003f2  2**0
-                  ALLOC
-  3 .stab         000006cc  00000000  00000000  000003f4  2**2
-                  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00000085  00000000  00000000  00000ac0  2**0
-                  CONTENTS, READONLY, DEBUGGING
-  5 .debug_aranges 000000a0  00000000  00000000  00000b48  2**3
-                  CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00000643  00000000  00000000  00000be8  2**0
-                  CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000289  00000000  00000000  0000122b  2**0
-                  CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000003f1  00000000  00000000  000014b4  2**0
-                  CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  000000f8  00000000  00000000  000018a8  2**2
-                  CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000209  00000000  00000000  000019a0  2**0
-                  CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000001fb  00000000  00000000  00001ba9  2**0
-=======
   0 .data         00000002  00800100  0000036c  00000400  2**0
                   CONTENTS, ALLOC, LOAD, DATA
   1 .text         0000036c  00000000  00000000  00000094  2**1
@@ -51,7 +26,6 @@ Idx Name          Size      VMA       LMA       File off  Algn
  10 .debug_str    00000216  00000000  00000000  000019dc  2**0
                   CONTENTS, READONLY, DEBUGGING
  11 .debug_loc    00000232  00000000  00000000  00001bf2  2**0
->>>>>>> Stereovision
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -81,11 +55,7 @@ Disassembly of section .text:
   54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
   58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
   5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
-<<<<<<< HEAD
-  60:	0c 94 ff 00 	jmp	0x1fe	; 0x1fe <__vector_24>
-=======
   60:	0c 94 07 01 	jmp	0x20e	; 0x20e <__vector_24>
->>>>>>> Stereovision
   64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
 
 00000068 <__ctors_end>:
@@ -100,11 +70,7 @@ Disassembly of section .text:
   74:	11 e0       	ldi	r17, 0x01	; 1
   76:	a0 e0       	ldi	r26, 0x00	; 0
   78:	b1 e0       	ldi	r27, 0x01	; 1
-<<<<<<< HEAD
-  7a:	ec e5       	ldi	r30, 0x5C	; 92
-=======
   7a:	ec e6       	ldi	r30, 0x6C	; 108
->>>>>>> Stereovision
   7c:	f3 e0       	ldi	r31, 0x03	; 3
   7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
   80:	05 90       	lpm	r0, Z+
@@ -127,11 +93,7 @@ Disassembly of section .text:
   96:	b1 07       	cpc	r27, r17
   98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
   9a:	0e 94 53 00 	call	0xa6	; 0xa6 <main>
-<<<<<<< HEAD
-  9e:	0c 94 ac 01 	jmp	0x358	; 0x358 <_exit>
-=======
   9e:	0c 94 b4 01 	jmp	0x368	; 0x368 <_exit>
->>>>>>> Stereovision
 
 000000a2 <__bad_interrupt>:
   a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -149,11 +111,8 @@ int main(void)
   ac:	00 d0       	rcall	.+0      	; 0xae <main+0x8>
   ae:	cd b7       	in	r28, 0x3d	; 61
   b0:	de b7       	in	r29, 0x3e	; 62
-<<<<<<< HEAD
-=======
 	
 	char ButtonStatus = 0xFF;
->>>>>>> Stereovision
 	unsigned char TWI_slaveAddress;
 	unsigned char messageBuff[TWI_BUFFER_SIZE];
 	DDRD = 0xFF;// Port D is the LED output
@@ -161,45 +120,6 @@ int main(void)
   b4:	8a b9       	out	0x0a, r24	; 10
 	DDRC = 0x00; //PortC is the switch input
   b6:	17 b8       	out	0x07, r1	; 7
-<<<<<<< HEAD
-	TWI_slaveAddress = 0x15;
-	TWI_Slave_Initialise( (unsigned char)((TWI_slaveAddress<<TWI_ADR_BITS) | (TRUE<<TWI_GEN_BIT) )); 
-  b8:	8b e2       	ldi	r24, 0x2B	; 43
-  ba:	0e 94 8b 00 	call	0x116	; 0x116 <TWI_Slave_Initialise>
-	sei();
-  be:	78 94       	sei
-	TWI_Start_Transceiver();
-  c0:	0e 94 c7 00 	call	0x18e	; 0x18e <TWI_Start_Transceiver>
-    while(1)
-    {
-        // Check if the TWI Transceiver has completed an operation.
-        if ( ! TWI_Transceiver_Busy() )
-  c4:	0e 94 93 00 	call	0x126	; 0x126 <TWI_Transceiver_Busy>
-  c8:	88 23       	and	r24, r24
-  ca:	e1 f7       	brne	.-8      	; 0xc4 <main+0x1e>
-        {
-	        // Check if the last operation was successful
-	        if ( TWI_statusReg.lastTransOK )
-  cc:	80 91 02 01 	lds	r24, 0x0102
-  d0:	80 ff       	sbrs	r24, 0
-  d2:	f8 cf       	rjmp	.-16     	; 0xc4 <main+0x1e>
-	        {
-		        // Check if the last operation was a reception
-		        if ( TWI_statusReg.RxDataInBuf )
-  d4:	81 ff       	sbrs	r24, 1
-  d6:	18 c0       	rjmp	.+48     	; 0x108 <main+0x62>
-		        {
-			        TWI_Get_Data_From_Transceiver(messageBuff, 2);
-  d8:	ce 01       	movw	r24, r28
-  da:	01 96       	adiw	r24, 0x01	; 1
-  dc:	62 e0       	ldi	r22, 0x02	; 2
-  de:	0e 94 d7 00 	call	0x1ae	; 0x1ae <TWI_Get_Data_From_Transceiver>
-			        // Check if the last operation was a reception as General Call
-			        if ( TWI_statusReg.genAddressCall )
-  e2:	80 91 02 01 	lds	r24, 0x0102
-  e6:	82 fd       	sbrc	r24, 2
-  e8:	0f c0       	rjmp	.+30     	; 0x108 <main+0x62>
-=======
 	//PORTC = 0xFF;
 	TWI_slaveAddress = 0x15;
 	TWI_Slave_Initialise( (unsigned char)((TWI_slaveAddress<<TWI_ADR_BITS) | (TRUE<<TWI_GEN_BIT) )); 
@@ -266,39 +186,12 @@ int main(void)
   f4:	89 81       	ldd	r24, Y+1	; 0x01
   f6:	85 b9       	out	0x05, r24	; 5
   f8:	0f c0       	rjmp	.+30     	; 0x118 <main+0x72>
->>>>>>> Stereovision
 			        else // Ends up here if the last operation was a reception as Slave Address Match
 			        {
 				        // Example of how to interpret a command and respond.
 				        
 				        // TWI_CMD_MASTER_WRITE stores the data to PORTB
 				        if (messageBuff[0] == TWI_CMD_MASTER_WRITE)
-<<<<<<< HEAD
-  ea:	89 81       	ldd	r24, Y+1	; 0x01
-  ec:	80 31       	cpi	r24, 0x10	; 16
-  ee:	11 f4       	brne	.+4      	; 0xf4 <main+0x4e>
-				        {
-					        PORTD = messageBuff[1];
-  f0:	8a 81       	ldd	r24, Y+2	; 0x02
-  f2:	8b b9       	out	0x0b, r24	; 11
-				        }
-				        // TWI_CMD_MASTER_READ prepares the data from PINB in the transceiver buffer for the TWI master to fetch.
-				        if (messageBuff[0] == TWI_CMD_MASTER_READ)
-  f4:	89 81       	ldd	r24, Y+1	; 0x01
-  f6:	80 32       	cpi	r24, 0x20	; 32
-  f8:	39 f4       	brne	.+14     	; 0x108 <main+0x62>
-				        {
-					        messageBuff[0] = PINC;
-  fa:	86 b1       	in	r24, 0x06	; 6
-  fc:	89 83       	std	Y+1, r24	; 0x01
-					        TWI_Start_Transceiver_With_Data( messageBuff, 1 );
-  fe:	ce 01       	movw	r24, r28
- 100:	01 96       	adiw	r24, 0x01	; 1
- 102:	61 e0       	ldi	r22, 0x01	; 1
- 104:	0e 94 9e 00 	call	0x13c	; 0x13c <TWI_Start_Transceiver_With_Data>
-		        {
-			        
-=======
   fa:	89 81       	ldd	r24, Y+1	; 0x01
   fc:	80 31       	cpi	r24, 0x10	; 16
   fe:	11 f4       	brne	.+4      	; 0x104 <main+0x5e>
@@ -324,22 +217,10 @@ int main(void)
  116:	10 2f       	mov	r17, r16
 		        {
 			        //__no_operation(); // Put own code here.
->>>>>>> Stereovision
 		        }
 		        // Check if the TWI Transceiver has already been started.
 		        // If not then restart it to prepare it for new receptions.
 		        if ( ! TWI_Transceiver_Busy() )
-<<<<<<< HEAD
- 108:	0e 94 93 00 	call	0x126	; 0x126 <TWI_Transceiver_Busy>
- 10c:	88 23       	and	r24, r24
- 10e:	d1 f6       	brne	.-76     	; 0xc4 <main+0x1e>
-		        {
-			        TWI_Start_Transceiver();
- 110:	0e 94 c7 00 	call	0x18e	; 0x18e <TWI_Start_Transceiver>
- 114:	d7 cf       	rjmp	.-82     	; 0xc4 <main+0x1e>
-
-00000116 <TWI_Slave_Initialise>:
-=======
  118:	0e 94 9b 00 	call	0x136	; 0x136 <TWI_Transceiver_Busy>
  11c:	88 23       	and	r24, r24
  11e:	a1 f6       	brne	.-88     	; 0xc8 <main+0x22>
@@ -349,76 +230,41 @@ int main(void)
  124:	d1 cf       	rjmp	.-94     	; 0xc8 <main+0x22>
 
 00000126 <TWI_Slave_Initialise>:
->>>>>>> Stereovision
 The TWI module is configured to NACK on any requests. Use a TWI_Start_Transceiver function to 
 start the TWI.
 ****************************************************************************/
 void TWI_Slave_Initialise( unsigned char TWI_ownAddress )
 {
   TWAR = TWI_ownAddress;                            // Set own TWI slave address. Accept TWI General Calls.
-<<<<<<< HEAD
- 116:	80 93 ba 00 	sts	0x00BA, r24
-  TWCR = (1<<TWEN)|                                 // Enable TWI-interface and release TWI pins.
- 11a:	84 e0       	ldi	r24, 0x04	; 4
- 11c:	80 93 bc 00 	sts	0x00BC, r24
-=======
  126:	80 93 ba 00 	sts	0x00BA, r24
   TWCR = (1<<TWEN)|                                 // Enable TWI-interface and release TWI pins.
  12a:	84 e0       	ldi	r24, 0x04	; 4
  12c:	80 93 bc 00 	sts	0x00BC, r24
->>>>>>> Stereovision
          (0<<TWIE)|(0<<TWINT)|                      // Disable TWI Interupt.
          (0<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Do not ACK on any requests, yet.
          (0<<TWWC);                                 //
   TWI_busy = 0;
-<<<<<<< HEAD
- 120:	10 92 03 01 	sts	0x0103, r1
-}    
- 124:	08 95       	ret
-
-00000126 <TWI_Transceiver_Busy>:
-=======
  130:	10 92 03 01 	sts	0x0103, r1
 }    
  134:	08 95       	ret
 
 00000136 <TWI_Transceiver_Busy>:
->>>>>>> Stereovision
 Call this function to test if the TWI_ISR is busy transmitting.
 ****************************************************************************/
 unsigned char TWI_Transceiver_Busy( void )
 {
   return TWI_busy;
 }
-<<<<<<< HEAD
- 126:	80 91 03 01 	lds	r24, 0x0103
- 12a:	08 95       	ret
-
-0000012c <TWI_Get_State_Info>:
-=======
  136:	80 91 03 01 	lds	r24, 0x0103
  13a:	08 95       	ret
 
 0000013c <TWI_Get_State_Info>:
->>>>>>> Stereovision
 until the TWI_ISR has completed with the previous operation. If there was an error, then the function 
 will return the TWI State code. 
 ****************************************************************************/
 unsigned char TWI_Get_State_Info( void )
 {
   while ( TWI_Transceiver_Busy() ) {}             // Wait until TWI has completed the transmission.
-<<<<<<< HEAD
- 12c:	0e 94 93 00 	call	0x126	; 0x126 <TWI_Transceiver_Busy>
- 130:	88 23       	and	r24, r24
- 132:	19 f4       	brne	.+6      	; 0x13a <TWI_Get_State_Info+0xe>
-  return ( TWI_state );                         // Return error state. 
-}
- 134:	80 91 00 01 	lds	r24, 0x0100
- 138:	08 95       	ret
- 13a:	ff cf       	rjmp	.-2      	; 0x13a <TWI_Get_State_Info+0xe>
-
-0000013c <TWI_Start_Transceiver_With_Data>:
-=======
  13c:	0e 94 9b 00 	call	0x136	; 0x136 <TWI_Transceiver_Busy>
  140:	88 23       	and	r24, r24
  142:	19 f4       	brne	.+6      	; 0x14a <TWI_Get_State_Info+0xe>
@@ -429,42 +275,12 @@ unsigned char TWI_Get_State_Info( void )
  14a:	ff cf       	rjmp	.-2      	; 0x14a <TWI_Get_State_Info+0xe>
 
 0000014c <TWI_Start_Transceiver_With_Data>:
->>>>>>> Stereovision
 Address byte is not included in the message buffers.
 The function will hold execution (loop) until the TWI_ISR has completed with the previous operation,
 then initialize the next operation and return.
 ****************************************************************************/
 void TWI_Start_Transceiver_With_Data( unsigned char *msg, unsigned char msgSize )
 {
-<<<<<<< HEAD
- 13c:	1f 93       	push	r17
- 13e:	cf 93       	push	r28
- 140:	df 93       	push	r29
- 142:	d8 2f       	mov	r29, r24
- 144:	19 2f       	mov	r17, r25
- 146:	c6 2f       	mov	r28, r22
-  unsigned char temp;
-
-  while ( TWI_Transceiver_Busy() ) {}             // Wait until TWI is ready for next transmission.
- 148:	0e 94 93 00 	call	0x126	; 0x126 <TWI_Transceiver_Busy>
- 14c:	88 23       	and	r24, r24
- 14e:	f1 f4       	brne	.+60     	; 0x18c <TWI_Start_Transceiver_With_Data+0x50>
-
-  TWI_msgSize = msgSize;                        // Number of data to transmit.
- 150:	c0 93 04 01 	sts	0x0104, r28
-  for ( temp = 0; temp < msgSize; temp++ )      // Copy data that may be transmitted if the TWI Master requests data.
- 154:	cc 23       	and	r28, r28
- 156:	59 f0       	breq	.+22     	; 0x16e <TWI_Start_Transceiver_With_Data+0x32>
- 158:	9d 2f       	mov	r25, r29
- 15a:	a5 e0       	ldi	r26, 0x05	; 5
- 15c:	b1 e0       	ldi	r27, 0x01	; 1
- 15e:	ed 2f       	mov	r30, r29
- 160:	f1 2f       	mov	r31, r17
-  {
-    TWI_buf[ temp ] = msg[ temp ];
- 162:	81 91       	ld	r24, Z+
- 164:	8d 93       	st	X+, r24
-=======
  14c:	1f 93       	push	r17
  14e:	cf 93       	push	r28
  150:	df 93       	push	r29
@@ -492,37 +308,20 @@ void TWI_Start_Transceiver_With_Data( unsigned char *msg, unsigned char msgSize 
     TWI_buf[ temp ] = msg[ temp ];
  172:	81 91       	ld	r24, Z+
  174:	8d 93       	st	X+, r24
->>>>>>> Stereovision
   unsigned char temp;
 
   while ( TWI_Transceiver_Busy() ) {}             // Wait until TWI is ready for next transmission.
 
   TWI_msgSize = msgSize;                        // Number of data to transmit.
   for ( temp = 0; temp < msgSize; temp++ )      // Copy data that may be transmitted if the TWI Master requests data.
-<<<<<<< HEAD
- 166:	8e 2f       	mov	r24, r30
- 168:	89 1b       	sub	r24, r25
- 16a:	8c 17       	cp	r24, r28
- 16c:	d0 f3       	brcs	.-12     	; 0x162 <TWI_Start_Transceiver_With_Data+0x26>
-=======
  176:	8e 2f       	mov	r24, r30
  178:	89 1b       	sub	r24, r25
  17a:	8c 17       	cp	r24, r28
  17c:	d0 f3       	brcs	.-12     	; 0x172 <TWI_Start_Transceiver_With_Data+0x26>
->>>>>>> Stereovision
   {
     TWI_buf[ temp ] = msg[ temp ];
   }
   TWI_statusReg.all = 0;      
-<<<<<<< HEAD
- 16e:	10 92 02 01 	sts	0x0102, r1
-  TWI_state         = TWI_NO_STATE ;
- 172:	88 ef       	ldi	r24, 0xF8	; 248
- 174:	80 93 00 01 	sts	0x0100, r24
-  TWCR = (1<<TWEN)|                             // TWI Interface enabled.
- 178:	85 ec       	ldi	r24, 0xC5	; 197
- 17a:	80 93 bc 00 	sts	0x00BC, r24
-=======
  17e:	10 92 02 01 	sts	0x0102, r1
   TWI_state         = TWI_NO_STATE ;
  182:	88 ef       	ldi	r24, 0xF8	; 248
@@ -530,23 +329,10 @@ void TWI_Start_Transceiver_With_Data( unsigned char *msg, unsigned char msgSize 
   TWCR = (1<<TWEN)|                             // TWI Interface enabled.
  188:	85 ec       	ldi	r24, 0xC5	; 197
  18a:	80 93 bc 00 	sts	0x00BC, r24
->>>>>>> Stereovision
          (1<<TWIE)|(1<<TWINT)|                  // Enable TWI Interupt and clear the flag.
          (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|       // Prepare to ACK next time the Slave is addressed.
          (0<<TWWC);                             //
   TWI_busy = 1;
-<<<<<<< HEAD
- 17e:	81 e0       	ldi	r24, 0x01	; 1
- 180:	80 93 03 01 	sts	0x0103, r24
-}
- 184:	df 91       	pop	r29
- 186:	cf 91       	pop	r28
- 188:	1f 91       	pop	r17
- 18a:	08 95       	ret
- 18c:	ff cf       	rjmp	.-2      	; 0x18c <TWI_Start_Transceiver_With_Data+0x50>
-
-0000018e <TWI_Start_Transceiver>:
-=======
  18e:	81 e0       	ldi	r24, 0x01	; 1
  190:	80 93 03 01 	sts	0x0103, r24
 }
@@ -557,26 +343,12 @@ void TWI_Start_Transceiver_With_Data( unsigned char *msg, unsigned char msgSize 
  19c:	ff cf       	rjmp	.-2      	; 0x19c <TWI_Start_Transceiver_With_Data+0x50>
 
 0000019e <TWI_Start_Transceiver>:
->>>>>>> Stereovision
 in the transceiver buffers. The function will hold execution (loop) until the TWI_ISR has completed with the 
 previous operation, then initialize the next operation and return.
 ****************************************************************************/
 void TWI_Start_Transceiver( void )
 {
   while ( TWI_Transceiver_Busy() ) {}             // Wait until TWI is ready for next transmission.
-<<<<<<< HEAD
- 18e:	0e 94 93 00 	call	0x126	; 0x126 <TWI_Transceiver_Busy>
- 192:	88 23       	and	r24, r24
- 194:	59 f4       	brne	.+22     	; 0x1ac <TWI_Start_Transceiver+0x1e>
-  TWI_statusReg.all = 0;      
- 196:	10 92 02 01 	sts	0x0102, r1
-  TWI_state         = TWI_NO_STATE ;
- 19a:	88 ef       	ldi	r24, 0xF8	; 248
- 19c:	80 93 00 01 	sts	0x0100, r24
-  TWCR = (1<<TWEN)|                             // TWI Interface enabled.
- 1a0:	85 ec       	ldi	r24, 0xC5	; 197
- 1a2:	80 93 bc 00 	sts	0x00BC, r24
-=======
  19e:	0e 94 9b 00 	call	0x136	; 0x136 <TWI_Transceiver_Busy>
  1a2:	88 23       	and	r24, r24
  1a4:	59 f4       	brne	.+22     	; 0x1bc <TWI_Start_Transceiver+0x1e>
@@ -588,64 +360,22 @@ void TWI_Start_Transceiver( void )
   TWCR = (1<<TWEN)|                             // TWI Interface enabled.
  1b0:	85 ec       	ldi	r24, 0xC5	; 197
  1b2:	80 93 bc 00 	sts	0x00BC, r24
->>>>>>> Stereovision
          (1<<TWIE)|(1<<TWINT)|                  // Enable TWI Interupt and clear the flag.
          (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|       // Prepare to ACK next time the Slave is addressed.
          (0<<TWWC);                             //
   TWI_busy = 0;
-<<<<<<< HEAD
- 1a6:	10 92 03 01 	sts	0x0103, r1
-}
- 1aa:	08 95       	ret
- 1ac:	ff cf       	rjmp	.-2      	; 0x1ac <TWI_Start_Transceiver+0x1e>
-
-000001ae <TWI_Get_Data_From_Transceiver>:
-=======
  1b6:	10 92 03 01 	sts	0x0103, r1
 }
  1ba:	08 95       	ret
  1bc:	ff cf       	rjmp	.-2      	; 0x1bc <TWI_Start_Transceiver+0x1e>
 
 000001be <TWI_Get_Data_From_Transceiver>:
->>>>>>> Stereovision
 to fetch in the function call. The function will hold execution (loop) until the TWI_ISR has completed 
 with the previous operation, before reading out the data and returning.
 If there was an error in the previous transmission the function will return the TWI State code.
 ****************************************************************************/
 unsigned char TWI_Get_Data_From_Transceiver( unsigned char *msg, unsigned char msgSize )
 {
-<<<<<<< HEAD
- 1ae:	1f 93       	push	r17
- 1b0:	cf 93       	push	r28
- 1b2:	df 93       	push	r29
- 1b4:	d8 2f       	mov	r29, r24
- 1b6:	19 2f       	mov	r17, r25
- 1b8:	c6 2f       	mov	r28, r22
-  unsigned char i;
-
-  while ( TWI_Transceiver_Busy() ) {}             // Wait until TWI is ready for next transmission.
- 1ba:	0e 94 93 00 	call	0x126	; 0x126 <TWI_Transceiver_Busy>
- 1be:	88 23       	and	r24, r24
- 1c0:	e9 f4       	brne	.+58     	; 0x1fc <TWI_Get_Data_From_Transceiver+0x4e>
-
-  if( TWI_statusReg.lastTransOK )               // Last transmission completed successfully.              
- 1c2:	80 91 02 01 	lds	r24, 0x0102
- 1c6:	80 ff       	sbrs	r24, 0
- 1c8:	12 c0       	rjmp	.+36     	; 0x1ee <TWI_Get_Data_From_Transceiver+0x40>
-  {                                             
-    for ( i=0; i<msgSize; i++ )                 // Copy data from Transceiver buffer.
- 1ca:	cc 23       	and	r28, r28
- 1cc:	59 f0       	breq	.+22     	; 0x1e4 <TWI_Get_Data_From_Transceiver+0x36>
- 1ce:	a5 e0       	ldi	r26, 0x05	; 5
- 1d0:	b1 e0       	ldi	r27, 0x01	; 1
- 1d2:	9d 2f       	mov	r25, r29
- 1d4:	ed 2f       	mov	r30, r29
- 1d6:	f1 2f       	mov	r31, r17
-    {
-      msg[ i ] = TWI_buf[ i ];
- 1d8:	8d 91       	ld	r24, X+
- 1da:	81 93       	st	Z+, r24
-=======
  1be:	1f 93       	push	r17
  1c0:	cf 93       	push	r28
  1c2:	df 93       	push	r29
@@ -676,45 +406,20 @@ unsigned char TWI_Get_Data_From_Transceiver( unsigned char *msg, unsigned char m
       msg[ i ] = TWI_buf[ i ];
  1e8:	8d 91       	ld	r24, X+
  1ea:	81 93       	st	Z+, r24
->>>>>>> Stereovision
 
   while ( TWI_Transceiver_Busy() ) {}             // Wait until TWI is ready for next transmission.
 
   if( TWI_statusReg.lastTransOK )               // Last transmission completed successfully.              
   {                                             
     for ( i=0; i<msgSize; i++ )                 // Copy data from Transceiver buffer.
-<<<<<<< HEAD
- 1dc:	8e 2f       	mov	r24, r30
- 1de:	89 1b       	sub	r24, r25
- 1e0:	8c 17       	cp	r24, r28
- 1e2:	d0 f3       	brcs	.-12     	; 0x1d8 <TWI_Get_Data_From_Transceiver+0x2a>
-=======
  1ec:	8e 2f       	mov	r24, r30
  1ee:	89 1b       	sub	r24, r25
  1f0:	8c 17       	cp	r24, r28
  1f2:	d0 f3       	brcs	.-12     	; 0x1e8 <TWI_Get_Data_From_Transceiver+0x2a>
->>>>>>> Stereovision
     {
       msg[ i ] = TWI_buf[ i ];
     }
     TWI_statusReg.RxDataInBuf = FALSE;          // Slave Receive data has been read from buffer.
-<<<<<<< HEAD
- 1e4:	80 91 02 01 	lds	r24, 0x0102
- 1e8:	8d 7f       	andi	r24, 0xFD	; 253
- 1ea:	80 93 02 01 	sts	0x0102, r24
-  }
-  return( TWI_statusReg.lastTransOK );                                   
- 1ee:	80 91 02 01 	lds	r24, 0x0102
-}
- 1f2:	81 70       	andi	r24, 0x01	; 1
- 1f4:	df 91       	pop	r29
- 1f6:	cf 91       	pop	r28
- 1f8:	1f 91       	pop	r17
- 1fa:	08 95       	ret
- 1fc:	ff cf       	rjmp	.-2      	; 0x1fc <TWI_Get_Data_From_Transceiver+0x4e>
-
-000001fe <__vector_24>:
-=======
  1f4:	80 91 02 01 	lds	r24, 0x0102
  1f8:	8d 7f       	andi	r24, 0xFD	; 253
  1fa:	80 93 02 01 	sts	0x0102, r24
@@ -730,72 +435,12 @@ unsigned char TWI_Get_Data_From_Transceiver( unsigned char *msg, unsigned char m
  20c:	ff cf       	rjmp	.-2      	; 0x20c <TWI_Get_Data_From_Transceiver+0x4e>
 
 0000020e <__vector_24>:
->>>>>>> Stereovision
 This function is the Interrupt Service Routine (ISR), and called when the TWI interrupt is triggered;
 that is whenever a TWI event has occurred. This function should not be called directly from the main
 application.
 ****************************************************************************/
 ISR(TWI_vect)
 {
-<<<<<<< HEAD
- 1fe:	1f 92       	push	r1
- 200:	0f 92       	push	r0
- 202:	0f b6       	in	r0, 0x3f	; 63
- 204:	0f 92       	push	r0
- 206:	11 24       	eor	r1, r1
- 208:	8f 93       	push	r24
- 20a:	9f 93       	push	r25
- 20c:	ef 93       	push	r30
- 20e:	ff 93       	push	r31
-  static unsigned char TWI_bufPtr;
-  
-  switch (TWSR)
- 210:	80 91 b9 00 	lds	r24, 0x00B9
- 214:	80 39       	cpi	r24, 0x90	; 144
- 216:	09 f4       	brne	.+2      	; 0x21a <__vector_24+0x1c>
- 218:	67 c0       	rjmp	.+206    	; 0x2e8 <__vector_24+0xea>
- 21a:	81 39       	cpi	r24, 0x91	; 145
- 21c:	98 f4       	brcc	.+38     	; 0x244 <__vector_24+0x46>
- 21e:	80 37       	cpi	r24, 0x70	; 112
- 220:	09 f4       	brne	.+2      	; 0x224 <__vector_24+0x26>
- 222:	4f c0       	rjmp	.+158    	; 0x2c2 <__vector_24+0xc4>
- 224:	81 37       	cpi	r24, 0x71	; 113
- 226:	38 f4       	brcc	.+14     	; 0x236 <__vector_24+0x38>
- 228:	88 23       	and	r24, r24
- 22a:	09 f4       	brne	.+2      	; 0x22e <__vector_24+0x30>
- 22c:	7b c0       	rjmp	.+246    	; 0x324 <__vector_24+0x126>
- 22e:	80 36       	cpi	r24, 0x60	; 96
- 230:	09 f0       	breq	.+2      	; 0x234 <__vector_24+0x36>
- 232:	80 c0       	rjmp	.+256    	; 0x334 <__vector_24+0x136>
- 234:	4b c0       	rjmp	.+150    	; 0x2cc <__vector_24+0xce>
- 236:	80 38       	cpi	r24, 0x80	; 128
- 238:	09 f4       	brne	.+2      	; 0x23c <__vector_24+0x3e>
- 23a:	56 c0       	rjmp	.+172    	; 0x2e8 <__vector_24+0xea>
- 23c:	88 38       	cpi	r24, 0x88	; 136
- 23e:	09 f0       	breq	.+2      	; 0x242 <__vector_24+0x44>
- 240:	79 c0       	rjmp	.+242    	; 0x334 <__vector_24+0x136>
- 242:	70 c0       	rjmp	.+224    	; 0x324 <__vector_24+0x126>
- 244:	88 3a       	cpi	r24, 0xA8	; 168
- 246:	91 f0       	breq	.+36     	; 0x26c <__vector_24+0x6e>
- 248:	89 3a       	cpi	r24, 0xA9	; 169
- 24a:	38 f4       	brcc	.+14     	; 0x25a <__vector_24+0x5c>
- 24c:	88 39       	cpi	r24, 0x98	; 152
- 24e:	09 f4       	brne	.+2      	; 0x252 <__vector_24+0x54>
- 250:	69 c0       	rjmp	.+210    	; 0x324 <__vector_24+0x126>
- 252:	80 3a       	cpi	r24, 0xA0	; 160
- 254:	09 f0       	breq	.+2      	; 0x258 <__vector_24+0x5a>
- 256:	6e c0       	rjmp	.+220    	; 0x334 <__vector_24+0x136>
- 258:	5f c0       	rjmp	.+190    	; 0x318 <__vector_24+0x11a>
- 25a:	80 3c       	cpi	r24, 0xC0	; 192
- 25c:	e1 f0       	breq	.+56     	; 0x296 <__vector_24+0x98>
- 25e:	88 3c       	cpi	r24, 0xC8	; 200
- 260:	09 f4       	brne	.+2      	; 0x264 <__vector_24+0x66>
- 262:	60 c0       	rjmp	.+192    	; 0x324 <__vector_24+0x126>
- 264:	88 3b       	cpi	r24, 0xB8	; 184
- 266:	09 f0       	breq	.+2      	; 0x26a <__vector_24+0x6c>
- 268:	65 c0       	rjmp	.+202    	; 0x334 <__vector_24+0x136>
- 26a:	02 c0       	rjmp	.+4      	; 0x270 <__vector_24+0x72>
-=======
  20e:	1f 92       	push	r1
  210:	0f 92       	push	r0
  212:	0f b6       	in	r0, 0x3f	; 63
@@ -853,28 +498,10 @@ ISR(TWI_vect)
  276:	09 f0       	breq	.+2      	; 0x27a <__vector_24+0x6c>
  278:	65 c0       	rjmp	.+202    	; 0x344 <__vector_24+0x136>
  27a:	02 c0       	rjmp	.+4      	; 0x280 <__vector_24+0x72>
->>>>>>> Stereovision
   {
     case TWI_STX_ADR_ACK:            // Own SLA+R has been received; ACK has been returned
 //    case TWI_STX_ADR_ACK_M_ARB_LOST: // Arbitration lost in SLA+R/W as Master; own SLA+R has been received; ACK has been returned
       TWI_bufPtr   = 0;                                 // Set buffer pointer to first data location
-<<<<<<< HEAD
- 26c:	10 92 09 01 	sts	0x0109, r1
-    case TWI_STX_DATA_ACK:           // Data byte in TWDR has been transmitted; ACK has been received
-      TWDR = TWI_buf[TWI_bufPtr++];
- 270:	80 91 09 01 	lds	r24, 0x0109
- 274:	e8 2f       	mov	r30, r24
- 276:	f0 e0       	ldi	r31, 0x00	; 0
- 278:	eb 5f       	subi	r30, 0xFB	; 251
- 27a:	fe 4f       	sbci	r31, 0xFE	; 254
- 27c:	90 81       	ld	r25, Z
- 27e:	90 93 bb 00 	sts	0x00BB, r25
- 282:	8f 5f       	subi	r24, 0xFF	; 255
- 284:	80 93 09 01 	sts	0x0109, r24
-      TWCR = (1<<TWEN)|                                 // TWI Interface enabled
- 288:	85 ec       	ldi	r24, 0xC5	; 197
- 28a:	80 93 bc 00 	sts	0x00BC, r24
-=======
  27c:	10 92 09 01 	sts	0x0109, r1
     case TWI_STX_DATA_ACK:           // Data byte in TWDR has been transmitted; ACK has been received
       TWDR = TWI_buf[TWI_bufPtr++];
@@ -890,30 +517,10 @@ ISR(TWI_vect)
       TWCR = (1<<TWEN)|                                 // TWI Interface enabled
  298:	85 ec       	ldi	r24, 0xC5	; 197
  29a:	80 93 bc 00 	sts	0x00BC, r24
->>>>>>> Stereovision
              (1<<TWIE)|(1<<TWINT)|                      // Enable TWI Interupt and clear the flag to send byte
              (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // 
              (0<<TWWC);                                 //
       TWI_busy = 1;
-<<<<<<< HEAD
- 28e:	81 e0       	ldi	r24, 0x01	; 1
- 290:	80 93 03 01 	sts	0x0103, r24
-      break;
- 294:	58 c0       	rjmp	.+176    	; 0x346 <__vector_24+0x148>
-    case TWI_STX_DATA_NACK:          // Data byte in TWDR has been transmitted; NACK has been received. 
-                                     // I.e. this could be the end of the transmission.
-      if (TWI_bufPtr == TWI_msgSize) // Have we transceived all expected data?
- 296:	90 91 09 01 	lds	r25, 0x0109
- 29a:	80 91 04 01 	lds	r24, 0x0104
- 29e:	98 17       	cp	r25, r24
- 2a0:	31 f4       	brne	.+12     	; 0x2ae <__vector_24+0xb0>
-      {
-        TWI_statusReg.lastTransOK = TRUE;               // Set status bits to completed successfully. 
- 2a2:	80 91 02 01 	lds	r24, 0x0102
- 2a6:	81 60       	ori	r24, 0x01	; 1
- 2a8:	80 93 02 01 	sts	0x0102, r24
- 2ac:	04 c0       	rjmp	.+8      	; 0x2b6 <__vector_24+0xb8>
-=======
  29e:	81 e0       	ldi	r24, 0x01	; 1
  2a0:	80 93 03 01 	sts	0x0103, r24
       break;
@@ -931,20 +538,10 @@ ISR(TWI_vect)
  2b6:	81 60       	ori	r24, 0x01	; 1
  2b8:	80 93 02 01 	sts	0x0102, r24
  2bc:	04 c0       	rjmp	.+8      	; 0x2c6 <__vector_24+0xb8>
->>>>>>> Stereovision
       } 
       else                          // Master has sent a NACK before all data where sent.
       {
         TWI_state = TWSR;                               // Store TWI State as errormessage.      
-<<<<<<< HEAD
- 2ae:	80 91 b9 00 	lds	r24, 0x00B9
- 2b2:	80 93 00 01 	sts	0x0100, r24
-      }        
-                                                        
-      TWCR = (1<<TWEN)|                                 // Enable TWI-interface and release TWI pins
- 2b6:	85 ec       	ldi	r24, 0xC5	; 197
- 2b8:	80 93 bc 00 	sts	0x00BC, r24
-=======
  2be:	80 91 b9 00 	lds	r24, 0x00B9
  2c2:	80 93 00 01 	sts	0x0100, r24
       }        
@@ -952,23 +549,11 @@ ISR(TWI_vect)
       TWCR = (1<<TWEN)|                                 // Enable TWI-interface and release TWI pins
  2c6:	85 ec       	ldi	r24, 0xC5	; 197
  2c8:	80 93 bc 00 	sts	0x00BC, r24
->>>>>>> Stereovision
              (1<<TWIE)|(1<<TWINT)|                      // Keep interrupt enabled and clear the flag
              (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Answer on next address match
              (0<<TWWC);                                 //
       
       TWI_busy = 0;   // Transmit is finished, we are not busy anymore
-<<<<<<< HEAD
- 2bc:	10 92 03 01 	sts	0x0103, r1
-      break;     
- 2c0:	42 c0       	rjmp	.+132    	; 0x346 <__vector_24+0x148>
-    case TWI_SRX_GEN_ACK:            // General call address has been received; ACK has been returned
-//    case TWI_SRX_GEN_ACK_M_ARB_LOST: // Arbitration lost in SLA+R/W as Master; General call address has been received; ACK has been returned
-      TWI_statusReg.genAddressCall = TRUE;
- 2c2:	80 91 02 01 	lds	r24, 0x0102
- 2c6:	84 60       	ori	r24, 0x04	; 4
- 2c8:	80 93 02 01 	sts	0x0102, r24
-=======
  2cc:	10 92 03 01 	sts	0x0103, r1
       break;     
  2d0:	42 c0       	rjmp	.+132    	; 0x356 <__vector_24+0x148>
@@ -978,23 +563,10 @@ ISR(TWI_vect)
  2d2:	80 91 02 01 	lds	r24, 0x0102
  2d6:	84 60       	ori	r24, 0x04	; 4
  2d8:	80 93 02 01 	sts	0x0102, r24
->>>>>>> Stereovision
     case TWI_SRX_ADR_ACK:            // Own SLA+W has been received ACK has been returned
 //    case TWI_SRX_ADR_ACK_M_ARB_LOST: // Arbitration lost in SLA+R/W as Master; own SLA+W has been received; ACK has been returned    
                                                         // Dont need to clear TWI_S_statusRegister.generalAddressCall due to that it is the default state.
       TWI_statusReg.RxDataInBuf = TRUE;      
-<<<<<<< HEAD
- 2cc:	80 91 02 01 	lds	r24, 0x0102
- 2d0:	82 60       	ori	r24, 0x02	; 2
- 2d2:	80 93 02 01 	sts	0x0102, r24
-      TWI_bufPtr   = 0;                                 // Set buffer pointer to first data location
- 2d6:	10 92 09 01 	sts	0x0109, r1
-      
-                                                        // Reset the TWI Interupt to wait for a new event.
-      TWCR = (1<<TWEN)|                                 // TWI Interface enabled
- 2da:	85 ec       	ldi	r24, 0xC5	; 197
- 2dc:	80 93 bc 00 	sts	0x00BC, r24
-=======
  2dc:	80 91 02 01 	lds	r24, 0x0102
  2e0:	82 60       	ori	r24, 0x02	; 2
  2e2:	80 93 02 01 	sts	0x0102, r24
@@ -1005,38 +577,10 @@ ISR(TWI_vect)
       TWCR = (1<<TWEN)|                                 // TWI Interface enabled
  2ea:	85 ec       	ldi	r24, 0xC5	; 197
  2ec:	80 93 bc 00 	sts	0x00BC, r24
->>>>>>> Stereovision
              (1<<TWIE)|(1<<TWINT)|                      // Enable TWI Interupt and clear the flag to send byte
              (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Expect ACK on this transmission
              (0<<TWWC);  
       TWI_busy = 1;
-<<<<<<< HEAD
- 2e0:	81 e0       	ldi	r24, 0x01	; 1
- 2e2:	80 93 03 01 	sts	0x0103, r24
-      
-      break;
- 2e6:	2f c0       	rjmp	.+94     	; 0x346 <__vector_24+0x148>
-    case TWI_SRX_ADR_DATA_ACK:       // Previously addressed with own SLA+W; data has been received; ACK has been returned
-    case TWI_SRX_GEN_DATA_ACK:       // Previously addressed with general call; data has been received; ACK has been returned
-      TWI_buf[TWI_bufPtr++]     = TWDR;
- 2e8:	80 91 09 01 	lds	r24, 0x0109
- 2ec:	90 91 bb 00 	lds	r25, 0x00BB
- 2f0:	e8 2f       	mov	r30, r24
- 2f2:	f0 e0       	ldi	r31, 0x00	; 0
- 2f4:	eb 5f       	subi	r30, 0xFB	; 251
- 2f6:	fe 4f       	sbci	r31, 0xFE	; 254
- 2f8:	90 83       	st	Z, r25
- 2fa:	8f 5f       	subi	r24, 0xFF	; 255
- 2fc:	80 93 09 01 	sts	0x0109, r24
-      TWI_statusReg.lastTransOK = TRUE;                 // Set flag transmission successfull.       
- 300:	80 91 02 01 	lds	r24, 0x0102
- 304:	81 60       	ori	r24, 0x01	; 1
- 306:	80 93 02 01 	sts	0x0102, r24
-                                                        // Reset the TWI Interupt to wait for a new event.
-      TWCR = (1<<TWEN)|                                 // TWI Interface enabled
- 30a:	85 ec       	ldi	r24, 0xC5	; 197
- 30c:	80 93 bc 00 	sts	0x00BC, r24
-=======
  2f0:	81 e0       	ldi	r24, 0x01	; 1
  2f2:	80 93 03 01 	sts	0x0103, r24
       
@@ -1062,22 +606,10 @@ ISR(TWI_vect)
       TWCR = (1<<TWEN)|                                 // TWI Interface enabled
  31a:	85 ec       	ldi	r24, 0xC5	; 197
  31c:	80 93 bc 00 	sts	0x00BC, r24
->>>>>>> Stereovision
              (1<<TWIE)|(1<<TWINT)|                      // Enable TWI Interupt and clear the flag to send byte
              (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Send ACK after next reception
              (0<<TWWC);                                 // 
       TWI_busy = 1;
-<<<<<<< HEAD
- 310:	81 e0       	ldi	r24, 0x01	; 1
- 312:	80 93 03 01 	sts	0x0103, r24
-      break;
- 316:	17 c0       	rjmp	.+46     	; 0x346 <__vector_24+0x148>
-    case TWI_SRX_STOP_RESTART:       // A STOP condition or repeated START condition has been received while still addressed as Slave    
-                                                        // Enter not addressed mode and listen to address match
-      TWCR = (1<<TWEN)|                                 // Enable TWI-interface and release TWI pins
- 318:	85 ec       	ldi	r24, 0xC5	; 197
- 31a:	80 93 bc 00 	sts	0x00BC, r24
-=======
  320:	81 e0       	ldi	r24, 0x01	; 1
  322:	80 93 03 01 	sts	0x0103, r24
       break;
@@ -1087,45 +619,21 @@ ISR(TWI_vect)
       TWCR = (1<<TWEN)|                                 // Enable TWI-interface and release TWI pins
  328:	85 ec       	ldi	r24, 0xC5	; 197
  32a:	80 93 bc 00 	sts	0x00BC, r24
->>>>>>> Stereovision
              (1<<TWIE)|(1<<TWINT)|                      // Enable interrupt and clear the flag
              (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Wait for new address match
              (0<<TWWC);                                 //
       
       TWI_busy = 0;  // We are waiting for a new address match, so we are not busy
-<<<<<<< HEAD
- 31e:	10 92 03 01 	sts	0x0103, r1
-      
-      break;           
- 322:	11 c0       	rjmp	.+34     	; 0x346 <__vector_24+0x148>
-=======
  32e:	10 92 03 01 	sts	0x0103, r1
       
       break;           
  332:	11 c0       	rjmp	.+34     	; 0x356 <__vector_24+0x148>
->>>>>>> Stereovision
     case TWI_SRX_ADR_DATA_NACK:      // Previously addressed with own SLA+W; data has been received; NOT ACK has been returned
     case TWI_SRX_GEN_DATA_NACK:      // Previously addressed with general call; data has been received; NOT ACK has been returned
     case TWI_STX_DATA_ACK_LAST_BYTE: // Last data byte in TWDR has been transmitted (TWEA = “0”); ACK has been received
 //    case TWI_NO_STATE              // No relevant state information available; TWINT = “0”
     case TWI_BUS_ERROR:         // Bus error due to an illegal START or STOP condition
       TWI_state = TWSR;                 //Store TWI State as errormessage, operation also clears noErrors bit
-<<<<<<< HEAD
- 324:	80 91 b9 00 	lds	r24, 0x00B9
- 328:	80 93 00 01 	sts	0x0100, r24
-      TWCR =   (1<<TWSTO)|(1<<TWINT);   //Recover from TWI_BUS_ERROR, this will release the SDA and SCL pins thus enabling other devices to use the bus
- 32c:	80 e9       	ldi	r24, 0x90	; 144
- 32e:	80 93 bc 00 	sts	0x00BC, r24
-      break;
- 332:	09 c0       	rjmp	.+18     	; 0x346 <__vector_24+0x148>
-    default:     
-      TWI_state = TWSR;                                 // Store TWI State as errormessage, operation also clears the Success bit.      
- 334:	80 91 b9 00 	lds	r24, 0x00B9
- 338:	80 93 00 01 	sts	0x0100, r24
-      TWCR = (1<<TWEN)|                                 // Enable TWI-interface and release TWI pins
- 33c:	85 ec       	ldi	r24, 0xC5	; 197
- 33e:	80 93 bc 00 	sts	0x00BC, r24
-=======
  334:	80 91 b9 00 	lds	r24, 0x00B9
  338:	80 93 00 01 	sts	0x0100, r24
       TWCR =   (1<<TWSTO)|(1<<TWINT);   //Recover from TWI_BUS_ERROR, this will release the SDA and SCL pins thus enabling other devices to use the bus
@@ -1140,32 +648,11 @@ ISR(TWI_vect)
       TWCR = (1<<TWEN)|                                 // Enable TWI-interface and release TWI pins
  34c:	85 ec       	ldi	r24, 0xC5	; 197
  34e:	80 93 bc 00 	sts	0x00BC, r24
->>>>>>> Stereovision
              (1<<TWIE)|(1<<TWINT)|                      // Keep interrupt enabled and clear the flag
              (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Acknowledge on any new requests.
              (0<<TWWC);                                 //
       
       TWI_busy = 0; // Unknown status, so we wait for a new address match that might be something we can handle
-<<<<<<< HEAD
- 342:	10 92 03 01 	sts	0x0103, r1
-  }
-}
- 346:	ff 91       	pop	r31
- 348:	ef 91       	pop	r30
- 34a:	9f 91       	pop	r25
- 34c:	8f 91       	pop	r24
- 34e:	0f 90       	pop	r0
- 350:	0f be       	out	0x3f, r0	; 63
- 352:	0f 90       	pop	r0
- 354:	1f 90       	pop	r1
- 356:	18 95       	reti
-
-00000358 <_exit>:
- 358:	f8 94       	cli
-
-0000035a <__stop_program>:
- 35a:	ff cf       	rjmp	.-2      	; 0x35a <__stop_program>
-=======
  352:	10 92 03 01 	sts	0x0103, r1
   }
 }
@@ -1184,4 +671,3 @@ ISR(TWI_vect)
 
 0000036a <__stop_program>:
  36a:	ff cf       	rjmp	.-2      	; 0x36a <__stop_program>
->>>>>>> Stereovision
