@@ -46,7 +46,7 @@
             // serialPort_Uart
             // 
             this.serialPort_Uart.BaudRate = 57600;
-            this.serialPort_Uart.PortName = "COM10";
+            this.serialPort_Uart.PortName = "COM13";
             // 
             // textBox1
             // 
@@ -120,7 +120,6 @@
             this.label_Colour.Size = new System.Drawing.Size(35, 13);
             this.label_Colour.TabIndex = 9;
             this.label_Colour.Text = "label1";
-
             // 
             // Form1
             // 

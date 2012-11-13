@@ -315,7 +315,7 @@ uint8_t GetImageIfAvailiable( int offset )
 				
 				Temp=FIFO_TO_AVR();
  				
- 				Buff[ptr++] = (uint8_t)Temp >> 8;
+ 				Buff[ptr++] = (uint8_t)(Temp >> 8);
 				Buff[ptr++] = (uint8_t)Temp;
 				//Testing images
 // 				Buff[ptr++] = 0xFF;//LSB - Blue 1F; Green E0; Red 00

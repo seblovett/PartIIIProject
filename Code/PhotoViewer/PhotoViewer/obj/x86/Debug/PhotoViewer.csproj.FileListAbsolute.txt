@@ -25,3 +25,12 @@ C:\Users\hslovett\Dropbox\IndivProject\PhotoViewer\PhotoViewer\obj\x86\Debug\Pho
 C:\Users\hslovett\Dropbox\IndivProject\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.Properties.Resources.resources
 C:\Users\hslovett\Dropbox\IndivProject\PhotoViewer\PhotoViewer\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\hslovett\Dropbox\IndivProject\PhotoViewer\PhotoViewer\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.exe
+C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.pdb
+C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\bin\Debug\PhotoViewer.exe
+C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\bin\Debug\PhotoViewer.pdb
+C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.Form1.resources
+C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.Properties.Resources.resources
+C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\GenerateResource.write.1.tlog

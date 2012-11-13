@@ -15,7 +15,6 @@
 #include "TWI_Master.h"
 #include "ff.h"
 #include "diskio.h"
-#include "Usart.h"
 #include "Bitmap.h"
 #include "DualCameras.h"
 #include "SCCB.h"
