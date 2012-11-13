@@ -34,13 +34,21 @@
       </OverrideVtorValue>
       <Channel>
         <host>127.0.0.1</host>
+<<<<<<< HEAD
         <port>2042</port>
+=======
+        <port>3778</port>
+>>>>>>> Stereovision
         <ssl>False</ssl>
       </Channel>
       <ToolOptions>
         <InterfaceName>ISP</InterfaceName>
         <InterfaceProperties>
+<<<<<<< HEAD
           <JtagDbgClock>0</JtagDbgClock>
+=======
+          <JtagDbgClock>12000000</JtagDbgClock>
+>>>>>>> Stereovision
           <JtagProgClock>1000000</JtagProgClock>
           <IspClock>2500000</IspClock>
           <JtagInChain>false</JtagInChain>

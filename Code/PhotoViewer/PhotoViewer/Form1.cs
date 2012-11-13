@@ -114,8 +114,7 @@ namespace PhotoViewer
                 pictureBox1.Image = Image;
                 Image.Save(@"./Image_" + DateTime.Now.ToString("_ddMMyy_HHmmss") + ".bmp");
                 //Get ready for another image
-                ptr = 0;
-                imageData = new byte[PhotoHeight * PhotoWidth * 2];
+                
                 
             }
             catch (Exception ex)
@@ -153,7 +152,8 @@ namespace PhotoViewer
             {
                 
                 ptr = 0;
-                serialPort_Uart.Write("P\r");
+                imageData = new byte[PhotoHeight * PhotoWidth * 2];
+                //serialPort_Uart.Write("P\r");
                 Photo = true;
             }
             catch (Exception ex)

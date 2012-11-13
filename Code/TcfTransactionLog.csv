@@ -1,5 +1,6 @@
 Service , Message , Max , Min , Average , Count , frequency , TimedOut
 
+<<<<<<< HEAD
 Stream,setLogBits,4.0002,1,2.5001,2,0
 Tool,setupTool,178.0102,112.0064,52.0863166666667,4,0
 Tool,getContext,5.0003,1,0.275533727678571,8,0
@@ -23,3 +24,14 @@ Breakpoints,add,32.0019,8.0004,2.69599555555556,6,0
 Breakpoints,getProperties,5.0002,1,0.219448055555556,6,0
 LineNumbers,mapToSource,9.0005,1,0.0720429733198207,15,0
 Processes,terminate,100212.7318,1432.0819,17424.6632833333,3,1
+=======
+Stream,setLogBits,9.0005,5.0002,7.00035,2,0
+Tool,setupTool,54.0031,4.0002,0.087003409901406,47,0
+Tool,getContext,4.0002,1,0.021393318654853,94,0
+Tool,connect,13.0008,11.0006,0.261008874789466,47,0
+Tool,setProperties,49.0028,13.0007,0.304513185676301,47,0
+Device,getContext,4.0003,0,0.0217515436280425,47,0
+Processes,launch,4464.2554,730.0418,90.6800175978452,47,0
+Tool,tearDownTool,151.0087,72.0042,2.08812696747557,47,0
+Tool,getTargetVoltage,726.0415,724.0414,483.360983333333,3,0
+>>>>>>> Stereovision

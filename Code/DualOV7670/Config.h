@@ -15,7 +15,6 @@
 #include "TWI_Master.h"
 #include "ff.h"
 #include "diskio.h"
-#include "Usart.h"
 #include "Bitmap.h"
 #include "DualCameras.h"
 #include "SCCB.h"
@@ -28,18 +27,14 @@ void IO_Init(void);
 #define TRUE 1
 #define FALSE 0
 
-<<<<<<< HEAD
 
 
-char Buff[1024];
-
-=======
 FIL Files[2];
 char Buff[1024];
 
 #define BMPFileSize		153738
 #define RGBFileSize		153600
->>>>>>> Stereovision
+
 //////////////////////////////////////////////////////////////////////////
 //	Port A
 //////////////////////////////////////////////////////////////////////////
