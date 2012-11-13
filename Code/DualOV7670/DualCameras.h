@@ -32,14 +32,9 @@ unsigned char OV7670_init(void);							//Initialises Camera
 void FIFO_init(void);					//Initialises Buffer
 uint8_t GetImageIfAvailiable(FIL *File, uint8_t CameraID);
 void LoadImagesToBuffer(void);
-<<<<<<< HEAD:Code/DualOV7670/DualCameras.h
-
-unsigned char OV7670_SCCB_init(void);
-=======
 unsigned char rdOV7670Reg(unsigned char regID, unsigned char *regDat);
 unsigned char OV7670_SCCB_init(void);
 void FIFO_Reset(uint8_t CameraID);
->>>>>>> Stereovision:Code/DualOV7670/DualCameras.h
 //////////////////////////////////////////////////////////////////////////
 //	Pins & Macros
 //////////////////////////////////////////////////////////////////////////
@@ -50,21 +45,6 @@ void FIFO_Reset(uint8_t CameraID);
 #define FIFO_nOE_0		PC6
 #define FIFO_nOE_1		PC7
 
-<<<<<<< HEAD:Code/DualOV7670/DualCameras.h
-//////////////////////////////////////////////////////////////////////////
-//	Methods
-//////////////////////////////////////////////////////////////////////////
-// unsigned char OV7670_init(void);						//Initialises Camera
-// unsigned char FIFO_init(void);							//Initialises Buffer
-// unsigned char wrOV7670Reg(unsigned char regID, unsigned char regDat);	//Writes to a register
-// unsigned char rdOV7670Reg(unsigned char regID, unsigned char *regDat);	//Reads a register
-// uint8_t GetImageIfAvailiable(FIL *File, int offset);				//Gets all pixel data if available
-// void LoadImageToBuffer(void);					//Loads an image into the FIFO Buffer
-// uint16_t FIFO_TO_AVR(void);						//Reads from the FIFO Buffer
-// void StoreToEEPROM(void);
-
-=======
->>>>>>> Stereovision:Code/DualOV7670/DualCameras.h
 #define FIFO_RCLK_1_SET		{	PORTC |= (1	<<	FIFO_RCLK_1);	}
 #define FIFO_RCLK_1_CLR		{	PORTC &= ~(1 <<	FIFO_RCLK_1);	}
 #define FIFO_nRRST_1_SET	{	PORTC |= (1	<<	FIFO_nRRST_1);	}
@@ -93,10 +73,6 @@ void FIFO_Reset(uint8_t CameraID);
 #define FIFO_WRST_0_SET		{	PORTD |= (1	<<	FIFO_WRST_0);	}
 #define FIFO_WRST_0_CLR		{	PORTD &= ~(1 <<	FIFO_WRST_0);	}
 	
-<<<<<<< HEAD:Code/DualOV7670/DualCameras.h
-
-=======
->>>>>>> Stereovision:Code/DualOV7670/DualCameras.h
 //////////////////////////////////////////////////////////////////////////
 //Camera Register Address definitions
 //////////////////////////////////////////////////////////////////////////
@@ -304,8 +280,4 @@ void FIFO_Reset(uint8_t CameraID);
 #define OV_RSVD46		0xC8
 #define OV_SATCTR		0xC9
 
-<<<<<<< HEAD:Code/DualOV7670/DualCameras.h
 #endif /* DUALCAMERAS_H_ */
-=======
-#endif /* DUALCAMERAS_H_ */
->>>>>>> Stereovision:Code/DualOV7670/DualCameras.h

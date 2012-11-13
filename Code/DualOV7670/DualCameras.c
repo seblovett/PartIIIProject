@@ -294,7 +294,6 @@ unsigned char OV7670_init()
 
 void FIFO_init( void )
 {
-
 	//disable both outputs
 	FIFO_nOE_0_SET;
 	FIFO_nOE_1_SET;
@@ -302,7 +301,6 @@ void FIFO_init( void )
 	FIFO_WRST_0_CLR;
 	FIFO_RCLK_0_CLR;
 	//FIFO_nOE_0_CLR;
-
 	FIFO_nRRST_0_SET;
 	FIFO_WEN_0_CLR;
 	_delay_us(10);
@@ -321,9 +319,7 @@ void FIFO_init( void )
 	//Reset Buffer 1
 	FIFO_WRST_1_CLR;
 	FIFO_RCLK_1_CLR;
-
 	//FIFO_nOE_1_CLR;
-
 	FIFO_nRRST_1_SET;
 	FIFO_WEN_1_CLR;
 	_delay_us(10);
@@ -374,10 +370,8 @@ uint16_t FIFO_TO_AVR(uint8_t ID)
 //Resets both pointers
 void FIFO_Reset(uint8_t CameraID)
 {
-
 	FIFO_nOE_0_SET;	
 	FIFO_nOE_1_SET;
-
 	if(CameraID == 0)
 	{
 		FIFO_WRST_0_CLR;
@@ -451,10 +445,8 @@ uint8_t GetImageIfAvailiable(FIL *File, uint8_t CameraID)
 			{
 				Temp = FIFO_TO_AVR(CameraID);
 				//USART0_Senduint16(Temp);
-
 				
 				Buff[pointer++] = (uint8_t)(Temp >> 8);
-
 				Buff[pointer++] = (uint8_t)Temp;
 			}
 			pointer = (uint32_t)j * (uint32_t)WIDTH * 2 + BMPHEADERSIZE + DIBHEADERSIZE;
@@ -462,9 +454,7 @@ uint8_t GetImageIfAvailiable(FIL *File, uint8_t CameraID)
 			fr = f_write(File, Buff, WIDTH * 2, &p);
 			if(fr != FR_OK)
 			{
-
 				//printf("Write Fail.\n");
-
 				VSYNC_0_Count = 0;
 				VSYNC_1_Count = 0;
 				FIFO_Reset(CameraID);
@@ -474,9 +464,7 @@ uint8_t GetImageIfAvailiable(FIL *File, uint8_t CameraID)
 			}
 		}
 		FIFO_Reset(CameraID);
-
 		//fr = f_close(File);
-
 		FIFO_nOE_0_SET;
 		FIFO_nOE_1_SET;
 		return 0;
