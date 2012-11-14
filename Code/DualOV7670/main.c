@@ -69,6 +69,7 @@ int main(void)
 	TWI_Master_Initialise();
 	IO_Init();
 	sei();
+	PCA9542A_Init();
 
 	StatusReg = STATUS_OKAY;
 	UI_LEDs(StatusReg);
@@ -106,21 +107,21 @@ int main(void)
 
 	/*f_write(&Files[0], "System Startup Complete.\n", 26, &a);*/
 	
-
+	PCA9542A_SetChannel(CH1);
 	b = OV7670_init();
 	if(b == 0)
 		StatusReg |= STATUS_CAM1Okay;
-		
+	PCA9542A_SetChannel(NO_SELECT);
 	UI_LEDs(StatusReg);
 	sprintf(Buff, "OV7670_1 Initialise result : %d\n", b);
 	f_write(&Files[0], &Buff, 33, &a);
 	
-	InitSCCB();
-	b = OV7670_SCCB_init();
+	PCA9542A_SetChannel(CH0);
+	b = OV7670_init();
 	if(b == 0)
 		StatusReg |= STATUS_CAM0Okay;
 	UI_LEDs(StatusReg);
-	
+	PCA9542A_SetChannel(NO_SELECT);
 	sprintf(Buff, "OV7670_0 Initialise result : %d\n", b);
 	f_write(&Files[0], &Buff, 33, &a);
 	FIFO_init();

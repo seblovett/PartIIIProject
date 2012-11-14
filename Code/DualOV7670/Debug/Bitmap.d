@@ -22,7 +22,7 @@ Bitmap.d Bitmap.o: .././Bitmap.c .././Bitmap.h .././ff.h .././integer.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay_basic.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/math.h \
- .././TWI_Master.h .././diskio.h .././DualCameras.h .././SCCB.h
+ .././TWI_Master.h .././diskio.h .././DualCameras.h .././PCA9542A.h
 
 .././Bitmap.h:
 
@@ -84,4 +84,4 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.
 
 .././DualCameras.h:
 
-.././SCCB.h:
+.././PCA9542A.h:

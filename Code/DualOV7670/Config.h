@@ -17,7 +17,7 @@
 #include "diskio.h"
 #include "Bitmap.h"
 #include "DualCameras.h"
-#include "SCCB.h"
+#include "PCA9542A.h"
 #ifndef CONFIG_H_
 #define CONFIG_H_
 

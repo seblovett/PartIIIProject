@@ -14,7 +14,7 @@ main.c
 
 ff.c
 
-SCCB.c
+PCA9542A.c
 
 TWI_Master.c
 

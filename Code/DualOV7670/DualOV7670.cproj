@@ -34,15 +34,15 @@
       </OverrideVtorValue>
       <Channel>
         <host>127.0.0.1</host>
-        <port>3778</port>
+        <port>3240</port>
         <ssl>False</ssl>
       </Channel>
       <ToolOptions>
         <InterfaceName>ISP</InterfaceName>
         <InterfaceProperties>
-          <JtagDbgClock>12000000</JtagDbgClock>
+          <JtagDbgClock>0</JtagDbgClock>
           <JtagProgClock>1000000</JtagProgClock>
-          <IspClock>250000</IspClock>
+          <IspClock>2360000</IspClock>
           <JtagInChain>false</JtagInChain>
           <JtagEnableExtResetOnStartSession>false</JtagEnableExtResetOnStartSession>
           <JtagDevicesBefore>0</JtagDevicesBefore>
@@ -135,10 +135,10 @@
     <Compile Include="integer.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SCCB.c">
+    <Compile Include="PCA9542A.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SCCB.h">
+    <Compile Include="PCA9542A.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="TWI_Master.c">

@@ -6,7 +6,7 @@
  */ 
 
 #include "DualCameras.h"
-#include "SCCB.h"
+
 const char default_settings[SETTINGS_LENGTH][2]=
 {
 {OV_TSLB, 0x04},
@@ -473,97 +473,4 @@ uint8_t GetImageIfAvailiable(FIL *File, uint8_t CameraID)
 	{
 		return 2;
 	}
-}
-
-unsigned char SCCB_wrOV7670Reg(unsigned char regID, unsigned char regDat)
-{
-	startSCCB();
-	if(0==SCCBwriteByte(0x42))
-	{
-		stopSCCB();
-		return(0);
-	}
-	_delay_us(100);
-	if(0==SCCBwriteByte(regID))
-	{
-		stopSCCB();
-		return(0);
-	}
-	_delay_us(100);
-	if(0==SCCBwriteByte(regDat))
-	{
-		stopSCCB();
-		return(0);
-	}
-	stopSCCB();
-	
-	return(1);
-}
-
-//Read the OV7670 Registers
-
-unsigned char SCCB_rdOV7670Reg(unsigned regID, unsigned char *regDat)
-{
-	//Using write operate to set the Register Address
-	startSCCB();
-	if(0==SCCBwriteByte(0x42))
-	{
-		stopSCCB();
-		return(0);
-	}
-	_delay_us(100);
-	if(0==SCCBwriteByte(regID))
-	{
-		stopSCCB();
-		return(0);
-	}
-	stopSCCB();
-	
-	_delay_us(100);
-	
-	//Begin to read
-	startSCCB();
-	if(0==SCCBwriteByte(0x43))
-	{
-		stopSCCB();
-		return(0);
-	}
-	_delay_us(100);
-	*regDat=SCCBreadByte();
-	noAck();
-	stopSCCB();
-	return(1);
-}
-
-
-
-
-// Initial OV7670
-unsigned char OV7670_SCCB_init(void)
-{
-	unsigned char temp;
-	
-	unsigned int i=0;
-
-	
-	InitSCCB();
-
-	temp=0x80;
-	if(0==SCCB_wrOV7670Reg(0x12, temp)) //Reset SCCB
-	{
-		return 1 ;
-	}
-	_delay_ms(10);
-
-	for(i=0;i<SETTINGS_LENGTH;i++)
-	{
-		if( 0==SCCB_wrOV7670Reg(default_settings[i][0],default_settings[i][1] ))
-		{
-			return 2;
-		}
-	}
-
-	return 0; //ok
-
-	
 }

@@ -41,7 +41,7 @@ C_SRCS +=  \
 ../DualCameras.c \
 ../main.c \
 ../ff.c \
-../SCCB.c \
+../PCA9542A.c \
 ../TWI_Master.c \
 ../Usart.c
 
@@ -59,7 +59,7 @@ diskio.o \
 DualCameras.o \
 main.o \
 ff.o \
-SCCB.o \
+PCA9542A.o \
 TWI_Master.o \
 Usart.o
 
@@ -71,7 +71,7 @@ diskio.o \
 DualCameras.o \
 main.o \
 ff.o \
-SCCB.o \
+PCA9542A.o \
 TWI_Master.o \
 Usart.o
 
@@ -83,7 +83,7 @@ diskio.d \
 DualCameras.d \
 main.d \
 ff.d \
-SCCB.d \
+PCA9542A.d \
 TWI_Master.d \
 Usart.d
 
@@ -95,7 +95,7 @@ diskio.d \
 DualCameras.d \
 main.d \
 ff.d \
-SCCB.d \
+PCA9542A.d \
 TWI_Master.d \
 Usart.d
 
