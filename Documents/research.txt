@@ -10,3 +10,7 @@ http://en.wikipedia.org/wiki/BMP_file_format
 http://ics.nxp.com/products/i2cmuxes/
 http://www.datasheetcatalog.org/datasheet/philips/PCA9548_1.pdf
 http://amath.colorado.edu/courses/5720/2000Spr/Labs/Worksheets/Matlab_tutorial/matlabimpr.html
+http://www.alexandria.nu/ai/blog/entry.asp?E=32
+http://disparity.wikidot.com/
+http://www.mathworks.co.uk/products/computer-vision/examples.html?file=/products/demos/shipping/vision/videostereo.html
+****http://ampublisher.com/April%202010/EEE-1004-015.pdf
