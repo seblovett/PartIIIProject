@@ -15,6 +15,9 @@
 #define TWI_CMD_MASTER_WRITE 0x10
 #define TWI_CMD_MASTER_READ  0x20
 
+// When there has been an error, this function is run and takes care of it
+unsigned char TWI_Act_On_Failure_In_Last_Transmission ( unsigned char TWIerrorMsg );
+
 int main(void)
 {
 	
@@ -84,4 +87,18 @@ int main(void)
 	        }
 		}			
     }
+}
+
+unsigned char TWI_Act_On_Failure_In_Last_Transmission ( unsigned char TWIerrorMsg )
+{
+	// A failure has occurred, use TWIerrorMsg to determine the nature of the failure
+	// and take appropriate actions.
+	// Se header file for a list of possible failures messages.
+	
+	// This very simple example puts the error code on PORTB and restarts the transceiver with
+	// all the same data in the transmission buffers.
+	//PORTB = TWIerrorMsg;
+	TWI_Start_Transceiver();
+	
+	return TWIerrorMsg;
 }

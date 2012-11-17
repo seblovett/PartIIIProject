@@ -16,7 +16,8 @@ FATFS Fatfs[_VOLUMES];		/* File system object for each logical drive */
 uint8_t StatusReg;
 // char Line[100];				/* Console input buffer */
 //char Buff[100];			/* Working buffer */
-
+char ImageRName[20];
+char ImageLName[20];
 #define STATUS_OKAY			0x01
 #define STATUS_SDOkay		0x02
 #define STATUS_CAM0Okay		0x04
@@ -65,7 +66,7 @@ int main(void)
 	unsigned long int a = 0;
 	uint8_t b = 0;
 	FRESULT fr;
-	
+	uint8_t PhotoCount = 0;
 	TWI_Master_Initialise();
 	IO_Init();
 	sei();
@@ -73,8 +74,7 @@ int main(void)
 
 	StatusReg = STATUS_OKAY;
 	UI_LEDs(StatusReg);
-	_delay_ms(10);
-	UI_Buttons();
+	
 
 	fr = f_mount(0, &Fatfs[0]);
 	if(fr != FR_OK)
@@ -131,7 +131,7 @@ int main(void)
 	UI_LEDs(StatusReg);
 	_delay_ms(250);
 	uint8_t Input;
-	
+
     while(1)
     {
 		Input = (~UI_Buttons() & 0x0F);//Data is received negative
@@ -155,7 +155,9 @@ int main(void)
 					LoadImagesToBuffer();//Load both images
 					
 					//Create Bitmap for image 0
-					f_open(&Files[1], "/image0.bmp", FA_CREATE_ALWAYS | FA_WRITE);
+					//PSTR("Image_r.bmp");
+					
+					f_open(&Files[1], "Image_r.bmp", FA_CREATE_ALWAYS | FA_WRITE);
 					f_write(&Files[0], "Created image0 file.\n", 22, &a);
 					f_lseek(&Files[1], BMPFileSize);
 					f_lseek(&Files[1], 0);
@@ -163,19 +165,19 @@ int main(void)
 					f_write(&Files[0], "Extended image0 file.\n", 22, &a);
 					
 					//Create Bitmap for image 1
-					f_open(&Files[1], "/image1.bmp", FA_CREATE_ALWAYS | FA_WRITE);
+					f_open(&Files[1],"image_l.bmp", FA_CREATE_ALWAYS | FA_WRITE);
 					f_write(&Files[0], "Created image1 file.\n", 22, &a);
 					f_lseek(&Files[1], BMPFileSize);
 					f_lseek(&Files[1], 0);
 					f_close(&Files[1]);
 					f_write(&Files[0], "Extended image1 file.\n", 22, &a);
 					//Get image 0
-					f_open(&Files[1], "/image0.bmp", FA_WRITE);
+					f_open(&Files[1], "Image_r.bmp", FA_WRITE);
 					while (2 == GetImageIfAvailiable(&Files[1], 0))	;
 					f_close(&Files[1]);
 					f_write(&Files[0], "Captured image0.\n", 17, &a);
 					//get image 1
-					f_open(&Files[1], "/image1.bmp", FA_WRITE);
+					f_open(&Files[1], "image_l.bmp", FA_WRITE);
 					while (2 == GetImageIfAvailiable(&Files[1], 1))	;
 					f_close(&Files[1]);
 					f_write(&Files[0], "Captured image1.\n", 17, &a);

@@ -121,7 +121,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x36c
+.text           0x00000000      0x37a
  *(.vectors)
  .vectors       0x00000000       0x68 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm168.o
                 0x00000000                __vector_default
@@ -202,29 +202,30 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0
                 0x000000a2                __vector_16
                 0x000000a2                __vector_18
                 0x000000a2                __vector_20
- .text          0x000000a6       0x80 DualCamera_UI.o
+ .text          0x000000a6       0x8e DualCamera_UI.o
                 0x000000a6                main
- .text          0x00000126      0x242 TWI_slave.o
-                0x00000126                TWI_Slave_Initialise
-                0x00000136                TWI_Transceiver_Busy
-                0x0000013c                TWI_Get_State_Info
-                0x0000014c                TWI_Start_Transceiver_With_Data
-                0x0000019e                TWI_Start_Transceiver
-                0x000001be                TWI_Get_Data_From_Transceiver
-                0x0000020e                __vector_24
- .text          0x00000368        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .text          0x00000368        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .text          0x00000368        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
-                0x00000368                . = ALIGN (0x2)
+                0x00000126                TWI_Act_On_Failure_In_Last_Transmission
+ .text          0x00000134      0x242 TWI_slave.o
+                0x00000134                TWI_Slave_Initialise
+                0x00000144                TWI_Transceiver_Busy
+                0x0000014a                TWI_Get_State_Info
+                0x0000015a                TWI_Start_Transceiver_With_Data
+                0x000001ac                TWI_Start_Transceiver
+                0x000001cc                TWI_Get_Data_From_Transceiver
+                0x0000021c                __vector_24
+ .text          0x00000376        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .text          0x00000376        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000376        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+                0x00000376                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00000368        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00000368        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00000368        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
-                0x00000368                . = ALIGN (0x2)
+ .text.libgcc   0x00000376        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000376        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000376        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+                0x00000376                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000368        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
-                0x00000368                _exit
-                0x00000368                exit
+ .fini9         0x00000376        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+                0x00000376                _exit
+                0x00000376                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -243,11 +244,11 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000368        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000376        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000036c                _etext = .
+                0x0000037a                _etext = .
 
-.data           0x00800100        0x2 load address 0x0000036c
+.data           0x00800100        0x2 load address 0x0000037a
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm168.o
@@ -278,8 +279,8 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0
  *(.bss*)
  *(COMMON)
                 0x0080010a                PROVIDE (__bss_end, .)
-                0x0000036c                __data_load_start = LOADADDR (.data)
-                0x0000036e                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000037a                __data_load_start = LOADADDR (.data)
+                0x0000037c                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080010a        0x0
                 0x0080010a                PROVIDE (__noinit_start, .)
@@ -355,47 +356,47 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x659
+.debug_info     0x00000000      0x686
  *(.debug_info)
- .debug_info    0x00000000      0x14b DualCamera_UI.o
- .debug_info    0x0000014b      0x277 TWI_slave.o
- .debug_info    0x000003c2       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_info    0x0000049f       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_info    0x0000057c       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_info    0x00000000      0x178 DualCamera_UI.o
+ .debug_info    0x00000178      0x277 TWI_slave.o
+ .debug_info    0x000003ef       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_info    0x000004cc       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_info    0x000005a9       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x298
+.debug_abbrev   0x00000000      0x2a7
  *(.debug_abbrev)
- .debug_abbrev  0x00000000       0xe5 DualCamera_UI.o
- .debug_abbrev  0x000000e5      0x177 TWI_slave.o
- .debug_abbrev  0x0000025c       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_abbrev  0x00000270       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_abbrev  0x00000284       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_abbrev  0x00000000       0xf4 DualCamera_UI.o
+ .debug_abbrev  0x000000f4      0x177 TWI_slave.o
+ .debug_abbrev  0x0000026b       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_abbrev  0x0000027f       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_abbrev  0x00000293       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
 
-.debug_line     0x00000000      0x3fa
+.debug_line     0x00000000      0x3ff
  *(.debug_line)
- .debug_line    0x00000000      0x107 DualCamera_UI.o
- .debug_line    0x00000107      0x14c TWI_slave.o
- .debug_line    0x00000253       0x88 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_line    0x000002db       0x91 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_line    0x0000036c       0x8e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_line    0x00000000      0x10c DualCamera_UI.o
+ .debug_line    0x0000010c      0x14c TWI_slave.o
+ .debug_line    0x00000258       0x88 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_line    0x000002e0       0x91 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_line    0x00000371       0x8e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
 
-.debug_frame    0x00000000       0xf8
+.debug_frame    0x00000000      0x110
  *(.debug_frame)
- .debug_frame   0x00000000       0x34 DualCamera_UI.o
- .debug_frame   0x00000034       0xc4 TWI_slave.o
+ .debug_frame   0x00000000       0x4c DualCamera_UI.o
+ .debug_frame   0x0000004c       0xc4 TWI_slave.o
 
-.debug_str      0x00000000      0x216
+.debug_str      0x00000000      0x294
  *(.debug_str)
- .debug_str     0x00000000      0x122 DualCamera_UI.o
-                                0x15b (size before relaxing)
- .debug_str     0x00000122       0xf4 TWI_slave.o
+ .debug_str     0x00000000      0x159 DualCamera_UI.o
+                                0x192 (size before relaxing)
+ .debug_str     0x00000159      0x13b TWI_slave.o
                                 0x20e (size before relaxing)
 
-.debug_loc      0x00000000      0x232
+.debug_loc      0x00000000      0x27d
  *(.debug_loc)
- .debug_loc     0x00000000       0x7f DualCamera_UI.o
- .debug_loc     0x0000007f      0x1b3 TWI_slave.o
+ .debug_loc     0x00000000       0xca DualCamera_UI.o
+ .debug_loc     0x000000ca      0x1b3 TWI_slave.o
 
 .debug_macinfo
  *(.debug_macinfo)
