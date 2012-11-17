@@ -1,0 +1,48 @@
+%Attempts to match the centre line of 50 pixels up
+
+%take a letter box out of both images
+for i = 100:140
+    for j = 1:320
+        LEFT_Sub(i-99,j) = LEFT(i-5,j);
+        RIGHT_Sub(i-99,j) = RIGHT(i,j);
+    end
+end
+
+figure(1)
+subplot(2,2,1);
+imshow(LEFT_Sub);
+subplot(2,2,2);
+imshow(RIGHT_Sub);
+
+for i = 1:40
+    for j = 1:40
+        LEFT_Sub_sub(i,j) = LEFT_Sub(i,j);
+    end
+end 
+
+subplot(2,2,3);
+imshow(LEFT_Sub_sub);
+Results = zeros(1,280);
+for x = 1:280
+   %Extract Right Sub Sub
+   for i = 1:40
+        for j = 1:40
+            RIGHT_Sub_sub(i,j) = RIGHT_Sub(i,j+x-1);
+        end
+   end
+    
+    %subtract left from right
+    RES = RIGHT_Sub_sub - LEFT_Sub_sub;
+    
+    %take mean
+    Results(x) = mean2(RES);
+    
+    
+end
+
+LEFT_Sub_sub = im2double(LEFT_Sub_sub);
+RIGHT_Sub = im2double(RIGHT_Sub);
+crs = xcorr2(LEFT_Sub_sub, RIGHT_Sub);
+%subplot(2,2,4);
+figure(2);
+plot(crs);
