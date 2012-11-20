@@ -1,4 +1,4 @@
-figure;
+figure(1);
 subplot(1,2,1);
 title('Images');
 imshow(LEFT);
