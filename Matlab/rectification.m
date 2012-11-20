@@ -1,0 +1,3 @@
+loadimages;
+show;
+CornerDetect;

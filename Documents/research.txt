@@ -14,3 +14,6 @@ http://www.alexandria.nu/ai/blog/entry.asp?E=32
 http://disparity.wikidot.com/
 http://www.mathworks.co.uk/products/computer-vision/examples.html?file=/products/demos/shipping/vision/videostereo.html
 ****http://ampublisher.com/April%202010/EEE-1004-015.pdf
+http://xanthippi.ceid.upatras.gr/people/evangelidis/encc/
+http://www.sci.utah.edu/~gerig/CS6320-S2012/Materials/CS6320-CV-F2012-Rectification.pdf
+http://research.microsoft.com/en-us/um/people/zhang/Papers/TR99-21.pdf

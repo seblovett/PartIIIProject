@@ -17,9 +17,9 @@
 
 hIdtc = video.ImageDataTypeConverter();
 hCsc = video.ColorSpaceConverter('Conversion','RGB to intensity');
-leftI3chan = step(hIdtc,imread('photo_right.bmp'));%'viprectification_deskLeft.png'));
+leftI3chan = step(hIdtc,imread('viprectification_deskLeft.png'));
 leftI = step(hCsc,leftI3chan);
-rightI3chan = step(hIdtc,imread('photo_left.bmp'));%'viprectification_deskRight.png'));
+rightI3chan = step(hIdtc,imread('viprectification_deskRight.png'));
 rightI = step(hCsc,rightI3chan);
 
 % Display

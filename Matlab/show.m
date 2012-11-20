@@ -1,6 +1,6 @@
 figure(1);
 subplot(1,2,1);
 title('Images');
-imshow(LEFT);
+imshow(left);
 subplot(1,2,2);
-imshow(RIGHT);
+imshow(right);
