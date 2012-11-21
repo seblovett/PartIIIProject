@@ -10,9 +10,10 @@ leftI3chan = step(hIdtc,left);
 rightI3chan = step(hIdtc, right);
 
 %Convert to grey scale
-leftI = step(hCsc,leftI3chan);
-rightI = step(hCsc,rightI3chan);
-
+%leftI = step(hCsc,leftI3chan);
+%rightI = step(hCsc,rightI3chan);
+leftI = leftI3chan;
+rightI = rightI3chan;
 %Do edge detection
 pointsLeft = flipud(step(harris, leftI))+1;
 pointsRight = flipud(step(harris, rightI))+1;

@@ -1,4 +1,4 @@
-loadimages;
+%loadimages;
 show;
 CornerDetect;
 correlatepoints;
