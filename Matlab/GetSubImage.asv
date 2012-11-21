@@ -1,0 +1,14 @@
+function [ output_args ] = GetSubImage( Image, BoxSize, StartCoordinates, Dimensions )
+%GETSUBIMAGE Returns a sub section of the image according to the other
+%inputs
+%   Image - The image of which a subimage is to be taken from
+%   BoxSize - A 2x1 matrix containing the size of the subImage
+%   StartCoordinates - A 2x1 matrix with the start point of the image
+%   Dimensions - How many planes - 3 for colour, 1 for grey scale
+
+for i = (StartCoordinates(1) - (BoxSize(1)/2)): (StartCoordinates(1) + (BoxSize(1)/2))
+    for j = (StartCoordinates(2) - (BoxSize(2)/2)): (StartCoordinates(2) + (BoxSize(2)/2))
+        for z = 1:Dimensions
+            SubImage(i-StartCoordinates(1), j - StartCoordinates(2), z) = Image(i,j,z)
+end
+
