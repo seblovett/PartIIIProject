@@ -17,7 +17,16 @@ imshow(RBox);
 %LYLow = RYLow; %Assume that the image are rectified making this a 1D Problem
 
 %LXLow = 1;
+SizeLeft = size(left);
+LeftSquareLocation = RightSquareLocation;
+LeftSquareLocation(2) = 0;
 
+for a = 1:SizeLeft(2)
+    LeftSquareLocation(2) = a;
+    LBox = GetSubImage(left, BoxSize, LeftSquareLocation);
+    Differences = LBox - RBox;
+    Differences =
+end
 
 end
 

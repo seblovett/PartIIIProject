@@ -1,4 +1,4 @@
-function [ SubImage ] = GetSubImage( Image, BoxSize, StartCoordinates)
+function [ SubImage ] = GetSubImage( Image, BoxSize, StartCoordinates, Dimensions)
 %GETSUBIMAGE Returns a sub section of the image according to the other
 %inputs
 %   Image - The image of which a subimage is to be taken from
@@ -8,13 +8,26 @@ function [ SubImage ] = GetSubImage( Image, BoxSize, StartCoordinates)
 
 XLow = StartCoordinates(1)-(BoxSize(1)/2);
 YLow = StartCoordinates(2)-(BoxSize(2)/2);
+if(XLow<1)
+    XLow = 1; 
+end
+
+if(YLow < 1)
+    YLow = 1;
+end
+
 XHigh = XLow + BoxSize(1);
 YHigh = YLow + BoxSize(2);
+
 %SubImage = zeros(BoxSize);
 for i = XLow:XHigh
     for j = YLow:YHigh
-        for z = 1:3
-            SubImage(i-XLow+1,j-YLow+1,z) = Image(i,j,z);
+        if Dimensions == 3
+            for z = 1:3
+                SubImage(i-XLow+1,j-YLow+1,z) = Image(i,j,z);
+            end
+        elseif Dimensions == 1
+            SubImage(i-XLow+1,j-YLow+1) = Image(i,j);
         end
     end
 end
