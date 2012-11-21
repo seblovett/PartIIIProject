@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  10 NOV 2012 21:22
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  21 NOV 2012 22:30
 entering extended mode
 **Report.tex
 (C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.tex
@@ -462,6 +462,10 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 7.
 )
 (C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.aux
 (C:\Users\hslovett\Documents\Uni\part3_project\Report\Introduction.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Research.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\HardwareDevelopment.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\InvestigationVision.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Results.aux)
 (C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.aux)
 (C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -627,7 +631,7 @@ Chapter 1.
 
 
 
-] (C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.tex
+] (C:\Users\hslovett\Documents\Uni\part3_project\Report\Research.tex
 [2
 
 
@@ -635,10 +639,45 @@ Chapter 1.
 ]
 Chapter 2.
 ------------------------------------------------------------------------------
- 2 Conclusions
+ 2 Research
 ------------------------------------------------------------------------------
-) [3] (C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.tex
+) [3]
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\HardwareDevelopment.tex
 [4
+
+
+
+]
+Chapter 3.
+------------------------------------------------------------------------------
+ 3 Initial Hardware Development
+------------------------------------------------------------------------------
+) [5]
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\InvestigationVision.tex
+[6
+
+
+
+]
+Chapter 4.
+------------------------------------------------------------------------------
+ 4 Investigation into Vision Algorithms
+------------------------------------------------------------------------------
+) [7]
+No file Results.tex.
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.tex [8
+
+
+
+
+
+]
+Chapter 5.
+------------------------------------------------------------------------------
+ 5 Conclusions
+------------------------------------------------------------------------------
+) [9] (C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.tex
+[10
 
 
 
@@ -647,7 +686,7 @@ Appendix A.
 ------------------------------------------------------------------------------
  A Stuff
 ------------------------------------------------------------------------------
-) [5] [6
+) [11] [12
 
 
 ]
@@ -655,42 +694,44 @@ Appendix A.
  Bibliography
 ------------------------------------------------------------------------------
 (C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 42.
- [7
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 45.
+ [13
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 42.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 45.
 
 (C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.aux
 (C:\Users\hslovett\Documents\Uni\part3_project\Report\Introduction.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Research.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\HardwareDevelopment.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\InvestigationVision.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Results.aux)
 (C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.aux)
 (C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 42.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 42.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 45.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 663B23DC66BD11532D5ADAF527F8B318;641.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 42.
+(rerunfilecheck)             Checksum: 263FB272F67D7AFC9DFB8227FBFF6DC7;1428.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
  ) 
 Here is how much of TeX's memory you used:
- 10669 strings out of 494045
- 152059 string characters out of 3145960
- 230080 words of memory out of 3000000
- 13740 multiletter control sequences out of 15000+200000
- 11970 words of font info for 44 fonts, out of 3000000 for 9000
+ 10716 strings out of 494045
+ 153859 string characters out of 3145960
+ 233516 words of memory out of 3000000
+ 13748 multiletter control sequences out of 15000+200000
+ 11669 words of font info for 43 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 49i,10n,45p,399b,397s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,5n,45p,399b,397s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Report.pdf (25 pages, 134796 bytes).
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb>
+Output written on Report.pdf (31 pages, 127967 bytes).
 PDF statistics:
- 210 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 257 PDF objects out of 1000 (max. 8388607)
+ 55 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

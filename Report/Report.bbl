@@ -3,10 +3,9 @@
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 
-\bibitem[Gunn(2001)]{Gunn:2001:pdflatex}
-S.R. Gunn.
-\newblock
-  \href{http://www.ecs.soton.ac.uk/~srg/softwaretools/document/}{Pdflatex
-  instructions}, 2001.
+\bibitem[Goebel(2012)]{Pirobot}
+Patrick Goebel.
+\newblock \href{http://www.pirobot.org/blog/0015/}{Robot cartography: Ros +
+  slam}, 2012.
 
 \end{thebibliography}

@@ -1,6 +1,11 @@
 \contentsline {chapter}{Nomenclature}{xiii}{dummy.5}
 \contentsline {chapter}{Acknowledgements}{xv}{dummy.8}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.9}
-\contentsline {chapter}{\numberline {2}Conclusions}{3}{chapter.11}
-\contentsline {chapter}{\numberline {A}Stuff}{5}{appendix.12}
-\contentsline {chapter}{Bibliography}{7}{dummy.13}
+\contentsline {chapter}{\numberline {2}Research}{3}{chapter.10}
+\contentsline {section}{\numberline {2.1}Hardware}{3}{section.15}
+\contentsline {section}{\numberline {2.2}Firmware}{3}{section.16}
+\contentsline {chapter}{\numberline {3}Initial Hardware Development}{5}{chapter.17}
+\contentsline {chapter}{\numberline {4}Investigation into Vision Algorithms}{7}{chapter.18}
+\contentsline {chapter}{\numberline {5}Conclusions}{9}{chapter.19}
+\contentsline {chapter}{\numberline {A}Stuff}{11}{appendix.20}
+\contentsline {chapter}{Bibliography}{13}{dummy.21}

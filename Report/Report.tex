@@ -9,7 +9,7 @@
 %% ----------------------------------------------------------------
 \begin{document}
 \frontmatter
-\title      {An Investigation into \dots}
+\title      {Two Dimensional Stereoscopic Mapping Robot}
 \authors    {\texorpdfstring
              {\href{mailto:hl13g10@ecs.soton.ac.uk}{Henry S. Lovett}}
              {Henry S. Lovett}
@@ -20,7 +20,7 @@
 \keywords   {}
 \maketitle
 \begin{abstract}
-This work is all about \dots
+This paper describes the research, designing and building of a stereoscopic mapping robot. Mapping robots usually utilise Infra-red or laser range finders to do the distance calculations. By using two cameras, distances to objects can be calculated. The end goal is to build up an occupancy map which shows the state of an explored area as either unknown, free or occupied. 
 \end{abstract}
 \tableofcontents
 \listoffigures
@@ -32,12 +32,15 @@ This work is all about \dots
 \mainmatter
 %% ----------------------------------------------------------------
 \include{Introduction}
+\include{Research}
+\include{HardwareDevelopment}
+\include{InvestigationVision}
+\include{Results}
 \include{Conclusions}
 \appendix
 \include{AppendixA}
 \backmatter
 \bibliographystyle{ecs}
-%\bibliographystyle{unsrt}
 \bibliography{ECS}
 \end{document}
 %% ----------------------------------------------------------------

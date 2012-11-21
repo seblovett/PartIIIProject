@@ -1,6 +1,13 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Report.aux
 A level-1 auxiliary file: Introduction.aux
+A level-1 auxiliary file: Research.aux
+A level-1 auxiliary file: HardwareDevelopment.aux
+A level-1 auxiliary file: InvestigationVision.aux
+A level-1 auxiliary file: Results.aux
 A level-1 auxiliary file: Conclusions.aux
 A level-1 auxiliary file: AppendixA.aux
 The style file: ecs.bst
 Database file #1: ECS.bib
+Warning--entry type for "Pirobot" isn't style-file defined
+--line 12 of file ECS.bib
+(There was 1 warning)
