@@ -17,3 +17,6 @@ http://www.mathworks.co.uk/products/computer-vision/examples.html?file=/products
 http://xanthippi.ceid.upatras.gr/people/evangelidis/encc/
 http://www.sci.utah.edu/~gerig/CS6320-S2012/Materials/CS6320-CV-F2012-Rectification.pdf
 http://research.microsoft.com/en-us/um/people/zhang/Papers/TR99-21.pdf
+http://library.utia.cas.cz/prace/20030125.pdf
+L.G. Brown, A survey of image registration techniques, ACM Computing Surveys 24
+http://tango.andrew.cmu.edu/~gustavor/42431-intro-bioimaging/readings/ch8.pdf
