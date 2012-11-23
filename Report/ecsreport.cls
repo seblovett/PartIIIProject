@@ -12,7 +12,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \ProvidesClass{ecsreport}
-              [2003/25/04 v1.6
+              [2011/11/10 v2.0
    LaTeX document class]
 \def\baseclass{book}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{\baseclass}}
@@ -76,8 +76,8 @@
 \newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
-%\usepackage[centerlast,small,sc]{caption2}
-\usepackage[centerlast,small,sc]{caption}
+%%\usepackage[centerlast,small,sc]{caption2}
+\usepackage{caption}
 \setlength{\captionmargin}{20pt}
 \newcommand{\fref}[1]{Figure~\ref{#1}}
 \newcommand{\tref}[1]{Table~\ref{#1}}
@@ -101,7 +101,8 @@
 \usepackage{booktabs}
 \usepackage{rotating}
 \usepackage{listings}
-%\usepackage{lstpatch}
+%%\usepackage{lstpatch}
+\usepackage{xifthen}
 \lstset{captionpos=b,
         frame=tb,
         basicstyle=\scriptsize\ttfamily,
@@ -124,44 +125,21 @@
 \newcommand*{\degree}[1]{\def\degreename{#1}}
 \newcommand*{\authors}[1]{\def\authornames{#1}}
 \newcommand*{\addresses}[1]{\def\addressnames{#1}}
-\newcommand*{\university}[1]{\def\univname{#1}}
-\newcommand*{\UNIVERSITY}[1]{\def\UNIVNAME{#1}}
-\newcommand*{\department}[1]{\def\deptname{#1}}
-\newcommand*{\DEPARTMENT}[1]{\def\DEPTNAME{#1}}
-\newcommand*{\group}[1]{\def\groupname{#1}}
-\newcommand*{\GROUP}[1]{\def\GROUPNAME{#1}}
-\newcommand*{\faculty}[1]{\def\facname{#1}}
-\newcommand*{\FACULTY}[1]{\def\FACNAME{#1}}
+\newcommand*{\university}[1]{\def\univname{#1} \def\UNIVNAME{\uppercase{#1}}}
+\newcommand*{\department}[1]{\def\deptname{#1} \def\DEPTNAME{\uppercase{#1}}}
+\newcommand*{\group}[1]{\def\groupname{#1} \def\GROUPNAME{\uppercase{#1}}}
+\newcommand*{\faculty}[1]{\def\facname{#1} \def\FACNAME{\uppercase{#1}}}
 \newcommand*{\subject}[1]{\def\subjectname{#1}}
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
+\newcommand*{\removecolourlinks}{\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black,filecolor=black}}
 \supervisor  {}
 \examiner    {}
 \degree      {}
 \authors     {}
-\university  {\texorpdfstring{\href{http://www.soton.ac.uk}
-                {University of Southampton}}
-                {University of Southampton}}
-\UNIVERSITY  {\texorpdfstring{\href{http://www.soton.ac.uk}
-                {UNIVERSITY OF SOUTHAMPTON}}
-                {UNIVERSITY OF SOUTHAMPTON}}
-\department  {\texorpdfstring{\href{http://www.ecs.soton.ac.uk}
-                {School of Electronics and Computer Science}}
-                {School of Electronics and Computer Science}}
-\DEPARTMENT  {\texorpdfstring{\href{http://www.ecs.soton.ac.uk}
-                {SCHOOL OF ELECTRONICS AND COMPUTER SCIENCE}}
-                {SCHOOL OF ELECTRONICS AND COMPUTER SCIENCE}}
-\group       {\texorpdfstring{\href{http://www.isis.ecs.soton.ac.uk}
-                {Image, Speech and Intelligent Systems Group}}
-                {Image, Speech and Intelligent Systems Group}}
-\GROUP       {\texorpdfstring{\href{http://www.isis.ecs.soton.ac.uk}
-                {IMAGE, SPEECH AND INTELLIGENT SYSTEMS GROUP}}
-                {IMAGE, SPEECH AND INTELLIGENT SYSTEMS GROUP}}
-\faculty     {\texorpdfstring{\href{http://www.engineering.soton.ac.uk}
-                {Faculty of Engineering, Science and Mathematics}}
-                {Faculty of Engineering, Science and Mathematics}}
-\FACULTY     {\texorpdfstring{\href{http://www.engineering.soton.ac.uk}
-                {FACULTY OF ENGINEERING, SCIENCE AND MATHEMATICS}}
-                {FACULTY OF ENGINEERING, SCIENCE AND MATHEMATICS}}
+\university  {University of Southampton}
+\department  {Electronics and Computer Science}
+\group       {Electronic and Software Systems}
+\faculty     {Faculty of Physical and Applied Sciences}
 \addresses   {}
 \subject     {}
 \keywords    {}
@@ -182,22 +160,27 @@
     \begin{center}
       \setlength{\parskip}{0pt}
       {\large\textbf{\UNIVNAME}\par}
-      \vfill
-      {\huge \bf \@title \par}
-      \vfill
-      {\LARGE by \par}
+      \bigskip
+      {\normalsize \FACNAME \par}
       \smallskip
-      {\LARGE \authornames \par}
+      {\normalsize \deptname \par}
+      \vfill
+  \bigskip
+      \bigskip
+      \bigskip
+      \bigskip
+  {\large \bf \@title \par}
+      \bigskip
+      {\Large by \par}
+      \bigskip
+      \bigskip
+      {\large \textbf{\authornames} \par}
       \vfill
       {\large Technical Report \par}
       \bigskip
       \bigskip
-      {\large \facname \par}
-      {\large \deptname \par}
       \bigskip
-      \bigskip
-      \bigskip
-      {\Large \@date \par}
+      {\large \@date \par}
       \bigskip
     \end{center}
     \par
@@ -210,7 +193,6 @@
   \global\let\@thanks\@empty
   \global\let\@author\@empty
   \global\let\@date\@empty
-  \global\let\@title\@empty
   \global\let\title\relax
   \global\let\author\relax
   \global\let\date\relax
@@ -229,10 +211,11 @@
     {\underline{ABSTRACT} \par}
     \bigskip
     {\normalsize \FACNAME \par}
-    {\normalsize \DEPTNAME \par}
+    {\normalsize \deptname \par}
     \bigskip
     \bigskip
-    {\normalsize\bf \@title \par}
+    {\normalsize
+    {\MakeUppercase\@title} \par}
     \medskip
     {\normalsize by \authornames \par}
     \bigskip
@@ -310,6 +293,43 @@
 \begin{longtable}[c]{#1}#2\end{longtable}\par
     \cleardoublepage
 }
+
+\newcommand\authorshipdeclaration[1]{
+\btypeout{Declaration of Authorship}
+\addtotoc{Declaration of Authorship}
+\thispagestyle{plain}
+\null\vfil
+\vskip 60\p@
+\begin{center}{\Large\bf Declaration of Authorship \par}\end{center}
+{\normalsize I, \authornames, declare that the thesis entitled \emph{\@title} and the work presented in the thesis are both my own, and have been generated by me as the result of my own original research. I confirm that:
+
+\begin{itemize}
+\item this work was done wholly or mainly while in candidature for a research degree
+at this University;
+\item where any part of this thesis has previously been submitted for a degree or any
+other qualification at this University or any other institution, this has been clearly
+stated;
+\item where I have consulted the published work of others, this is always clearly
+attributed;
+\item where I have quoted from the work of others, the source is always given. With
+the exception of such quotations, this thesis is entirely my own work;
+\item I have acknowledged all main sources of help;
+\item where the thesis is based on work done by myself jointly with others, I have
+made clear exactly what was done by others and what I have contributed myself;
+\ifthenelse{\isempty{#1}}
+{\item none of this work has been published before submission}
+{\item parts of this work have been published as: #1}
+\end{itemize}
+
+\vspace{15.0mm}
+Signed:.......................................................................................................................
+
+\vspace{3.0mm}
+Date:..........................................................................................................................
+}
+\vfil\vfil\null
+\cleardoublepage
+}
 \newcommand\acknowledgements[1]{
 \btypeout{Acknowledgements}
 \addtotoc{Acknowledgements}
@@ -330,6 +350,7 @@
 \vfil\null
 \cleardoublepage
 }
+\renewcommand{\bibname}{References}
 \renewcommand\backmatter{
   \if@openright
     \cleardoublepage
@@ -339,6 +360,8 @@
   \addtotoc{\bibname}
   \btypeout{\bibname}
   \@mainmatterfalse}
+
+
 \endinput
 %%
 %% End of file `ecsreport.cls'.
