@@ -20,3 +20,6 @@ http://research.microsoft.com/en-us/um/people/zhang/Papers/TR99-21.pdf
 http://library.utia.cas.cz/prace/20030125.pdf
 L.G. Brown, A survey of image registration techniques, ACM Computing Surveys 24
 http://tango.andrew.cmu.edu/~gustavor/42431-intro-bioimaging/readings/ch8.pdf
+http://www.sersc.org/journals/IJSIP/vol2_no3/2.pdf
+http://users.ecs.soton.ac.uk/msn/book/new_demo/
+http://www.mathworks.co.uk/matlabcentral/fileexchange/9272-harris-corner-detector
