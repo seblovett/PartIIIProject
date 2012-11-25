@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{3}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -7,5 +7,15 @@
 Patrick Goebel.
 \newblock \href{http://www.pirobot.org/blog/0015/}{Robot cartography: Ros +
   slam}, 2012.
+
+\bibitem[OmniVision(2007)]{SCCB_Interface}
+OmniVision.
+\newblock {\em OmniVision Serial Camera Control Bus (SCCB) Functional
+  Specification}, 2007.
+
+\bibitem[Phillips(2009)]{I2C_Mux}
+Phillips.
+\newblock {\em PCA9542A : 2-channel I2C-bus multiplexer and interrupt logic},
+  2009.
 
 \end{thebibliography}
