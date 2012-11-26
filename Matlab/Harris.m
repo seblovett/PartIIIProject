@@ -16,24 +16,26 @@ function [PIP] = Harris (Image)
 I =double(Image);
 %****************************
 imshow(Image);
-k = waitforbuttonpress;
-point1 = get(gca,'CurrentPoint');  %button down detected
-rectregion = rbbox;  %%%return figure units
-point2 = get(gca,'CurrentPoint');%%%%button up detected
-point1 = point1(1,1:2); %%% extract col/row min and maxs
-point2 = point2(1,1:2);
-lowerleft = min(point1, point2);
-upperright = max(point1, point2); 
-ymin = round(lowerleft(1)); %%% arrondissement aux nombrs les plus proches
-ymax = round(upperright(1));
-xmin = round(lowerleft(2));
-xmax = round(upperright(2));
+% k = waitforbuttonpress;
+% point1 = get(gca,'CurrentPoint');  %button down detected
+% rectregion = rbbox;  %%%return figure units
+% point2 = get(gca,'CurrentPoint');%%%%button up detected
+% point1 = point1(1,1:2); %%% extract col/row min and maxs
+% point2 = point2(1,1:2);
+% lowerleft = min(point1, point2);
+% upperright = max(point1, point2); 
+% ymin = round(lowerleft(1)); %%% arrondissement aux nombrs les plus proches
+% ymax = round(upperright(1));
+% xmin = round(lowerleft(2));
+% xmax = round(upperright(2));
 %***********************************
+imsize = size(Image);
 Aj=6;
-cmin=xmin-Aj; cmax=xmax+Aj; rmin=ymin-Aj; rmax=ymax+Aj;
-min_N=12;max_N=50;
+%cmin=xmin-Aj; cmax=xmax+Aj; rmin=ymin-Aj; rmax=ymax+Aj;
+cmin=1; cmax=imsize(1); rmin=1; rmax=imsize(2);
+min_N=12;max_N=100;
 %%%%%%%%%%%%%%Intrest Points %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-sigma=2; Thrshold=20; r=6; disp=1;
+sigma=2; Thrshold=20; r=6; %disp=1;
 dx = [-1 0 1; -1 0 1; -1 0 1]; % The Mask 
     dy = dx';
     %%%%%% 
@@ -50,7 +52,7 @@ dx = [-1 0 1; -1 0 1; -1 0 1]; % The Mask
     R11 = (Ix2.*Iy2 - Ixy.^2) - k*(Ix2 + Iy2).^2;
     R11=(1000/max(max(R11)))*R11;
     R=R11;
-    ma=max(max(R));
+    %ma=max(max(R));
     sze = 2*r+1; 
     MX = ordfilt2(R,sze^2,ones(sze));
     R11 = (R==MX)&(R>Thrshold); 
