@@ -32,8 +32,43 @@ for a = 1:(SizeLeft(2) - BoxSize/2)
 end
 
 
-%figure; plot(Disparity);
-[value, index] = min(Disparity);
-MatchIndex = [index, RightSquareLocation(1)];
+
+[~, index] = min(Disparity);
+MatchIndex = [RightSquareLocation(1), index];
+
+right(RightSquareLocation(1) - 25 : RightSquareLocation(1) + 25,...
+    RightSquareLocation(2) + 25) = 255;
+right(RightSquareLocation(1) - 25 : RightSquareLocation(1) + 25,...
+    (RightSquareLocation(2) - 25)) = 255;
+
+right(RightSquareLocation(1) - 25,...
+    RightSquareLocation(2) - 25 : RightSquareLocation(2) + 25) = 255;
+right(RightSquareLocation(1) + 25,...
+    RightSquareLocation(2) - 25 : RightSquareLocation(2) + 25) = 255;
+
+left(MatchIndex(1) - 25 : MatchIndex(1) + 25,...
+    MatchIndex(2) + 25) = 255;
+left(MatchIndex(1) - 25 : MatchIndex(1) + 25,...
+    (MatchIndex(2) - 25)) = 255;
+
+left(MatchIndex(1) - 25,...
+    MatchIndex(2) - 25 : MatchIndex(2) + 25) = 255;
+left(MatchIndex(1) + 25,...
+    MatchIndex(2) - 25 : MatchIndex(2) + 25) = 255;
+
+
+figure;
+subplot(1,2,1); 
+imshow(left); 
+title('Left Image and block matched');
+
+subplot(1, 2,2);
+imshow(right);
+title('Right Image and Block to match to shown');
+
+figure;
+plot(Disparity);
+title('Pixel Number against Disparity Values');
+
 end
 

@@ -33,7 +33,7 @@ imsize = size(Image);
 Aj=6;
 %cmin=xmin-Aj; cmax=xmax+Aj; rmin=ymin-Aj; rmax=ymax+Aj;
 cmin=1; cmax=imsize(1); rmin=1; rmax=imsize(2);
-min_N=12;max_N=100;
+min_N=2;max_N=100;
 %%%%%%%%%%%%%%Intrest Points %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 sigma=2; Thrshold=20; r=6; %disp=1;
 dx = [-1 0 1; -1 0 1; -1 0 1]; % The Mask 
