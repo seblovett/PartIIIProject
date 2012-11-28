@@ -89,6 +89,6 @@ dx = [-1 0 1; -1 0 1; -1 0 1]; % The Mask
    I(PIP(r,1)+2,PIP(r,2)-2:PIP(r,2)+2)=255;
    
    end
-   
-   imshow(uint8(I))
+   imshow(I);
+   %imshow(uint8(I))
 end
