@@ -24,3 +24,4 @@ http://www.sersc.org/journals/IJSIP/vol2_no3/2.pdf
 http://users.ecs.soton.ac.uk/msn/book/new_demo/
 http://www.mathworks.co.uk/matlabcentral/fileexchange/9272-harris-corner-detector
 http://www.bmva.org/bmvc/1998/pdf/p125.pdf
+http://www.mathworks.co.uk/products/demos/image/cross_correlation/imreg.html

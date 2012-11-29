@@ -1,4 +1,4 @@
-function [ SubImage ] = GetSubImage( Image, BoxSize, StartCoordinates, ~)
+function [ SubImage ] = GetSubImage( Image, BoxSize, StartCoordinates)
 %GETSUBIMAGE Returns a sub section of the image according to the other
 %inputs
 %   Image - The image of which a subimage is to be taken from
