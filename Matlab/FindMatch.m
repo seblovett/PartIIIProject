@@ -1,6 +1,7 @@
 loadimages;
 show;
 
+MaxConfMatches = 20;
 %SubCoord = [145, 300];
 figure(1);
 %[rightSub, rect_Sub] = imcrop(right);
@@ -35,32 +36,46 @@ title('Normalised Cross Correlation of Right Sub and Left Image');
 %Find coordintes of best match. 
 [Y,X] = size(cL);
 maxValue = 0;
-index = [0,0];
+LeftMatchCoord = [0,0];
+NumConfidentMatches = 0;
 
 for i = 1:X
    for j = 1:Y
        Val = cL(j,i);
+       if Val > 0.9
+           NumConfidentMatches = NumConfidentMatches + 1; 
+       end
        if Val > maxValue
           maxValue = Val;
-          index = [j-10, i-10];
+          LeftMatchCoord = [j-10, i-10];
        end
    end
 end
 
-Result = [maxValue, index];
+Result = [maxValue, LeftMatchCoord];
 
-left(index(1)-20:index(1)+20,index(2)-20)=255;
-left(index(1)-20:index(1)+20,index(2)+20)=255;
-left(index(1)-20,index(2)-20:index(2)+20)=255;
-left(index(1)+20,index(2)-20:index(2)+20)=255;
-
-right(rSubCoord(1)-20:rSubCoord(1)+20,rSubCoord(2)-20)=255;
-right(rSubCoord(1)-20:rSubCoord(1)+20,rSubCoord(2)+20)=255;
-right(rSubCoord(1)-20,rSubCoord(2)-20:rSubCoord(2)+20)=255;
-right(rSubCoord(1)+20,rSubCoord(2)-20:rSubCoord(2)+20)=255;
-
-figure(3); 
-subplot(1,2,1); 
-imshow(left);
-subplot(1,2,2); 
-imshow(right);
+if NumConfidentMatches >= 1 && NumConfidentMatches < MaxConfMatches
+    left(LeftMatchCoord(1)-20:LeftMatchCoord(1)+20,LeftMatchCoord(2)-20)=255;
+    left(LeftMatchCoord(1)-20:LeftMatchCoord(1)+20,LeftMatchCoord(2)+20)=255;
+    left(LeftMatchCoord(1)-20,LeftMatchCoord(2)-20:LeftMatchCoord(2)+20)=255;
+    left(LeftMatchCoord(1)+20,LeftMatchCoord(2)-20:LeftMatchCoord(2)+20)=255;
+    
+    right(rSubCoord(1)-20:rSubCoord(1)+20,rSubCoord(2)-20)=255;
+    right(rSubCoord(1)-20:rSubCoord(1)+20,rSubCoord(2)+20)=255;
+    right(rSubCoord(1)-20,rSubCoord(2)-20:rSubCoord(2)+20)=255;
+    right(rSubCoord(1)+20,rSubCoord(2)-20:rSubCoord(2)+20)=255;
+    
+    figure(3);
+    subplot(1,2,1);
+    imshow(left);
+    subplot(1,2,2);
+    imshow(right);
+    LeftMatchCoord
+    rSubCoord
+    NumConfidentMatches
+elseif NumConfidentMatches >= MaxConfMatches
+    error('Too many matches found : %d', NumConfidentMatches);
+else
+    error('No Reliable Match Found');
+    
+end
