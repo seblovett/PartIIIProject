@@ -54,6 +54,26 @@ Operation to read an image is identical to using one camera. An ID number is pas
 
 \section{SD Card} 
 
-\section{Motor Control}
+To use the SD card, the FATFS library\cite{FATFS:Homepage} was used. The library supplies all the functions for writing a FAT File System in the files \textit{ff.c}, \textit{ff.h}, \textit{ffconf.h}, \textit{diskio.c}, \textit{diskio.h} and \textit{integer.h}. The \textit{diskio.h} functions control what device is being used - SD/MMC Card, USB drive etc. The \textit{ff.h} header contains all the functions to write to in a FAT File system. 
+\\
+An SD card was chosen to be used due to it's small size, low cost and a large data storage. The cards work using an SPI bus which can be used for other devices within the system so the card only uses one extra enable pin in hardware to function. 
 
+\subsection{Storing Images}
+
+Many image formats are common such as Joint Photographic Expert Group (JPEG), Portable Network Graphics (PNG), Bitmap (BMP) and Graphics Interchange Format (GIF). Table \ref{ImageFormats} shows a summary of some common image formats.
+
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+&	Bitmap 	& JPEG & PNG & 	GIF \\ \hline
+Extension & 	*.bmp &  	*.jpg /*.jpeg & *.png & *.gif \\
+
+\hline
+\end{tabular}
+\caption{A table comparing different image formats available}
+\label{ImageFormats}
+\end{table}
+\section{Motor Control}
+\inote{do something of this SOON}
 \section{PCB Development}
