@@ -1,6 +1,6 @@
 loadimages;
 show;
-
+BoxSize = [30,30];
 MaxConfMatches = 20;
 %SubCoord = [145, 300];
 figure(1);
@@ -11,7 +11,7 @@ rSubCoord = ginput(1);
 rSubCoord = [rSubCoord(2), rSubCoord(1)];
 rSubCoord = round(rSubCoord);
 close;
-rightSub = GetSubImage(right, [20,20], rSubCoord);
+rightSub = GetSubImage(right, BoxSize, rSubCoord);
 %imshow(rightSub);
 rightSubGray = rgb2gray(rightSub);
 leftGray = rgb2gray(left);
@@ -47,35 +47,36 @@ for i = 1:X
        end
        if Val > maxValue
           maxValue = Val;
-          LeftMatchCoord = [j-10, i-10];
+          LeftMatchCoord = [j-(BoxSize(1) / 2 ), i-(BoxSize(2) / 2 )];
        end
    end
 end
 
 Result = [maxValue, LeftMatchCoord];
-
+figure(1);
 if NumConfidentMatches >= 1 && NumConfidentMatches < MaxConfMatches
-    left(LeftMatchCoord(1)-20:LeftMatchCoord(1)+20,LeftMatchCoord(2)-20)=255;
-    left(LeftMatchCoord(1)-20:LeftMatchCoord(1)+20,LeftMatchCoord(2)+20)=255;
-    left(LeftMatchCoord(1)-20,LeftMatchCoord(2)-20:LeftMatchCoord(2)+20)=255;
-    left(LeftMatchCoord(1)+20,LeftMatchCoord(2)-20:LeftMatchCoord(2)+20)=255;
+    left(LeftMatchCoord(1)-(BoxSize(1)/2):LeftMatchCoord(1)+(BoxSize(1)/2),LeftMatchCoord(2)-(BoxSize(2))/2)=255;
+    left(LeftMatchCoord(1)-(BoxSize(1)/2):LeftMatchCoord(1)+(BoxSize(1)/2),LeftMatchCoord(2)+(BoxSize(2))/2)=255;
+    left(LeftMatchCoord(1)-(BoxSize(1)/2),LeftMatchCoord(2)-(BoxSize(2)/2):LeftMatchCoord(2)+(BoxSize(2))/2)=255;
+    left(LeftMatchCoord(1)+(BoxSize(1)/2),LeftMatchCoord(2)-(BoxSize(2)/2):LeftMatchCoord(2)+(BoxSize(2)/2))=255;
     
-    right(rSubCoord(1)-20:rSubCoord(1)+20,rSubCoord(2)-20)=255;
-    right(rSubCoord(1)-20:rSubCoord(1)+20,rSubCoord(2)+20)=255;
-    right(rSubCoord(1)-20,rSubCoord(2)-20:rSubCoord(2)+20)=255;
-    right(rSubCoord(1)+20,rSubCoord(2)-20:rSubCoord(2)+20)=255;
+    right(rSubCoord(1)-(BoxSize(1)/2):rSubCoord(1)+(BoxSize(1)/2),rSubCoord(2)-(BoxSize(2)/2))=255;
+    right(rSubCoord(1)-(BoxSize(1)/2):rSubCoord(1)+(BoxSize(1)/2),rSubCoord(2)+(BoxSize(2)/2))=255;
+    right(rSubCoord(1)-(BoxSize(1)/2),rSubCoord(2)-(BoxSize(2)/2):rSubCoord(2)+(BoxSize(2)/2))=255;
+    right(rSubCoord(1)+(BoxSize(1)/2),rSubCoord(2)-(BoxSize(2)/2):rSubCoord(2)+(BoxSize(2)/2))=255;
     
-    figure(3);
     subplot(1,2,1);
     imshow(left);
     subplot(1,2,2);
     imshow(right);
-    LeftMatchCoord
-    rSubCoord
-    NumConfidentMatches
+%     LeftMatchCoord
+%     rSubCoord
+%     NumConfidentMatches
+    Distance = Range(rSubCoord(2), LeftMatchCoord(2));
+    sprintf('Distance to Object = %d metres', Distance)
 elseif NumConfidentMatches >= MaxConfMatches
-    error('Too many matches found : %d', NumConfidentMatches);
+    title(sprintf('Too many matches found : %d', NumConfidentMatches));
 else
-    error('No Reliable Match Found');
+    title(sprintf('No Reliable Match Found'));
     
 end

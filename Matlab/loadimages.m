@@ -4,5 +4,11 @@
 % left = imread('battery_left.bmp');
 % right = imread('battery_right.bmp');
 
-left = imread('square_left.bmp');
-right = imread('square_right.bmp');
+% left = imread('square_left.bmp');
+% right = imread('square_right.bmp');
+
+left = imread('fiftycm_left.bmp');
+right = imread('fiftycm_right.bmp');
+
+% left = imread('2objs_left.bmp');
+% right = imread('2objs_right.bmp');
