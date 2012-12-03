@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.3)  3 DEC 2012 13:37
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.3)  3 DEC 2012 14:46
 entering extended mode
 **H:/part3_project/Report/Report.tex
 (H:/part3_project/Report/Report.tex
@@ -789,8 +789,12 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 12.
 (H:\part3_project\Report\Report.aux (H:\part3_project\Report\Introduction.aux)
 (H:\part3_project\Report\Research.aux)
 (H:\part3_project\Report\HardwareDevelopment.aux)
-(H:\part3_project\Report\InvestigationVision.aux)
-(H:\part3_project\Report\Results.aux) (H:\part3_project\Report\Conclusions.aux)
+(H:\part3_project\Report\InvestigationVision.aux
+
+LaTeX Warning: Label `problem_between' multiply defined.
+
+) (H:\part3_project\Report\Results.aux)
+(H:\part3_project\Report\Conclusions.aux)
 (H:\part3_project\Report\AppendixA.aux) (H:\part3_project\Report\AppendixB.aux)
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -885,19 +889,18 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
-(H:\part3_project\Report\Report.toc)
+(H:\part3_project\Report\Report.toc [5
+
+])
 \tf@toc=\write5
- [5
-
-] [6
-
-]
+ [6]
 ------------------------------------------------------------------------------
  List of Figures
 ------------------------------------------------------------------------------
 (H:\part3_project\Report\Report.lof)
 \tf@lof=\write6
  [7
+
 
 ] [8
 
@@ -984,7 +987,7 @@ t line 79.
 Package natbib Warning: Citation `ImageComparison)' on page 8 undefined on inpu
 t line 79.
 
-<Figures/ExampleImageFromCamera.jpg, id=279, 321.2pt x 240.9pt>
+<Figures/ExampleImageFromCamera.jpg, id=316, 321.2pt x 240.9pt>
 File: Figures/ExampleImageFromCamera.jpg Graphic file (type jpg)
 
 <use Figures/ExampleImageFromCamera.jpg>) [8] [9 <H:/part3_project/Report/Figur
@@ -998,20 +1001,20 @@ Chapter 4.
 ------------------------------------------------------------------------------
  4 Investigation into Vision Algorithms
 ------------------------------------------------------------------------------
-[11]) [12]
+[11] [12]) [13]
 No file Results.tex.
-(H:\part3_project\Report\Conclusions.tex
+(H:\part3_project\Report\Conclusions.tex [14
+
+
+
+
+
+]
 Chapter 5.
 ------------------------------------------------------------------------------
  5 Conclusions
 ------------------------------------------------------------------------------
-) [13
-
-
-
-
-
-] (H:\part3_project\Report\AppendixA.tex [14
+) [15] (H:\part3_project\Report\AppendixA.tex [16
 
 
 
@@ -1020,11 +1023,11 @@ Appendix A.
 ------------------------------------------------------------------------------
  A Circuit Diagrams
 ------------------------------------------------------------------------------
-<Figures/OV7670_Schematic.jpg, id=336, 844.5954pt x 597.432pt>
+<Figures/OV7670_Schematic.jpg, id=392, 844.5954pt x 597.432pt>
 File: Figures/OV7670_Schematic.jpg Graphic file (type jpg)
 
-<use Figures/OV7670_Schematic.jpg>) [15 <H:/part3_project/Report/Figures/OV7670
-_Schematic.jpg>] (H:\part3_project\Report\AppendixB.tex [16
+<use Figures/OV7670_Schematic.jpg>) [17 <H:/part3_project/Report/Figures/OV7670
+_Schematic.jpg>] (H:\part3_project\Report\AppendixB.tex [18
 
 
 
@@ -1183,7 +1186,7 @@ Overfull \hbox (12.41272pt too wide) in alignment at lines 46--60
  [] [] [] [] [] 
  []
 
-[17] [18]) [19] [20
+[19] [20]) [21] [22
 
 
 ]
@@ -1195,7 +1198,7 @@ Overfull \hbox (12.41272pt too wide) in alignment at lines 46--60
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
-[21
+[23
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
@@ -1209,35 +1212,40 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 9E0A2771B328966E81390FB70A59BB3A;4090.
+(rerunfilecheck)             Checksum: F8814AFF27F902612964A81512F6731F;5518.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 19396 strings out of 494053
- 327405 string characters out of 3146179
- 425960 words of memory out of 3000000
- 22106 multiletter control sequences out of 15000+200000
+ 19428 strings out of 494053
+ 328022 string characters out of 3146179
+ 426169 words of memory out of 3000000
+ 22122 multiletter control sequences out of 15000+200000
  13907 words of font info for 52 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  63i,12n,85p,762b,806s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.67} has been referenced but does not ex
+pdfTeX warning (dest): name{Hfootnote.79} has been referenced but does not ex
 ist, replaced by a fixed one
 
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Report.pdf (35 pages, 544472 bytes).
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Report.pdf (37 pages, 566945 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 109 named destinations out of 1000 (max. 500000)
- 223 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 503 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
+ 279 words of extra memory for PDF output out of 10000 (max. 10000000)
 

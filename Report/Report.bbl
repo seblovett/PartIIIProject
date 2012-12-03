@@ -1,4 +1,4 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{6}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -8,10 +8,22 @@ Patrick Goebel.
 \newblock \href{http://www.pirobot.org/blog/0015/}{Robot cartography: Ros +
   slam}, 2012.
 
+\bibitem[Hamzah et~al.(2010)Hamzah, Salim, and Rosly]{Hamzah:DistanceDetection}
+Rostam~Affendi Hamzah, Sani Irwan~Md Salim, and Hasrul~Nisham Rosly.
+\newblock An effective distance detection of obstacles in stereo vision
+  application.
+\newblock {\em Canadian Journal on Electrical and Electronics Engineering},
+  1\penalty0 (3):\penalty0 49--53, 2010.
+
 \bibitem[Manufacturing(2012)]{FATFS}
 Electronic~Lives Manufacturing.
 \newblock \href{http://elm-chan.org/fsw/ff/00index_e.html}{Fatfs - generic fat
   file system module}, 2012.
+
+\bibitem[Mrovlje and Vran\v{c}i\'{c}(2008)]{Mrovlje:Distance_Stereoscopic}
+Jernej Mrovlje and Damir Vran\v{c}i\'{c}.
+\newblock Distance measuring based on stereoscopic pictures.
+\newblock Technical report, University of Ljubljana, 2008.
 
 \bibitem[OmniVision(2007)]{SCCB_Interface}
 OmniVision.

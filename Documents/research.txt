@@ -4,7 +4,6 @@ http://photon07.pd.infn.it:5210/users/dazzi/Thesis_doctorate/Info/Chapter_6/Ster
 http://wenku.baidu.com/view/8fc93a72f46527d3240ce028
 http://www.basementcode.com/avr/sd_fatfs/fatfs.php
 http://homepage.hispeed.ch/peterfleury/group__pfleury__ic2master.html
-http://homepage.hispeed.ch/peterfleury/group__pfleury__ic2master.html
 http://www.atmel.com/Images/doc2564.pdf
 http://en.wikipedia.org/wiki/BMP_file_format
 http://ics.nxp.com/products/i2cmuxes/

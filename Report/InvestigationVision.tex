@@ -4,7 +4,31 @@
 \chapter{Investigation into Vision Algorithms} \label{Chapter:InvestigationVision}
 
 \section{Comparison}
-\inote{Talk about how to compare images and test them all. Make a final comparison to decide on which will be used}
+\inote{find some references to back these claims up}
+\inote{Talk about how to compare images and TEST them all. Make a final comparison to decide on which will be used}
+In computer vision, there are many different ways of comparing two similar images. These include the sum of absolute differences (S.A.D.) (\cite{Hamzah:DistanceDetection}), the sum of squared differences (S.S.D.), normalised cross correlation (N.C.C.) and enhanced normalised cross correlation (E.N.C.C.)
+
+%Explanation of how they work
+\subsection{Sum of Absolue Differences}
+
+Given two indentically sized matricies, $A, B$ of dimensions $i,j$, SAD is defined as
+\begin{equation}
+SAD = \sum\limits_{I=0}^i \sum\limits_{J=0}^j A[I,J] - B[I,J] 
+\end{equation}
+
+\subsection{Sum of Squared Differences}
+\begin{equation}
+SSD = \sum\limits_{I=0}^i \sum\limits_{J=0}^j (A[I,J] - B[I,J] )^2
+\end{equation}
+
+\subsection{NCC}
+%http://www.bmva.org/bmvc/1998/pdf/p125.pdf
+\subsection{ENCC}
+%http://xanthippi.ceid.upatras.gr/people/evangelidis/encc/
+%test and compare
+\subsection{Comparison}
+
+
 
 \section{Range Finding}
 \inote{Derive the range finding eauations and test the fuck out of it}
@@ -27,7 +51,7 @@ The problem is broken down into 3
 \end{figure}
 
 \subsubsection{Object is between the Cameras}
-
+Derivation from \cite{Mrovlje:Distance_Stereoscopic}.
 \begin{equation} \label{eq:B}
 B = B_{1} + B_{2} = D\tan(\varphi_{1}) + D\tan(\varphi_{2})
 \end{equation}
@@ -54,17 +78,17 @@ D\tan(\varphi_1) = x_1
 Dividing \eqref{eq:phi1} by \eqref{eq:phi}
 
 \begin{equation} \label{eq:tanovertan}
-frac{\tan(\varphi_1)}{\tan(fract{\varphi_0}{2})} = frac{2x_1}{x_0}
+\frac{\tan(\varphi_1)}{\tan(\frac{\varphi_0}{2})} = \frac{2x_1}{x_0}
 \end{equation}
 
 \begin{equation} \label{eq:phionesolved}
-\tan(\varphi_1) = \frac{2x_1\tan(frac{\varphi}{2})}{x_0}
+\tan(\varphi_1) = \frac{2x_1\tan(\frac{\varphi_0}{2})}{x_0}
 \end{equation}
 
 It can also be shown that for the right camera:
 
 \begin{equation} \label{eq:phitwosolved}
-\tan(\varphi_2) = \frac{-2x_2\tan(frac{\varphi}{2})}{x_0}
+\tan(\varphi_2) = \frac{-2x_2\tan(\frac{\varphi_0}{2})}{x_0}
 \end{equation}
 
 Substitution equations \eqref{eq:phionesolved} and \eqref{eq:phitwosolved} into \eqref{eq:D} gives
