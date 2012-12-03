@@ -4676,682 +4676,91 @@ FRESULT pf_readdir (
     196e:	8d a1       	lds	r24, 0x4d
     1970:	9e a1       	lds	r25, 0x4e
     1972:	95 83       	std	Z+5, r25	; 0x05
-    1974:	84 83       	std	Z+4, r24	; 0x04
-		fno->ftime = LD_WORD(dir+DIR_WrtTime);		/* Time */
-    1976:	8b a1       	lds	r24, 0x4b
-    1978:	9c a1       	lds	r25, 0x4c
-    197a:	97 83       	std	Z+7, r25	; 0x07
-    197c:	86 83       	std	Z+6, r24	; 0x06
-	}
-	*p = 0;
-    197e:	f9 01       	movw	r30, r18
-    1980:	10 82       	st	Z, r1
-				dj->sect = 0;
-				res = FR_OK;
-			}
-			if (res == FR_OK) {				/* A valid entry is found */
-				get_fileinfo(dj, dir, fno);	/* Get the object information */
-				res = dir_next(dj);			/* Increment index for next */
-    1982:	c7 01       	movw	r24, r14
-    1984:	0e 94 13 05 	call	0xa26	; 0xa26 <dir_next>
-    1988:	98 2f       	mov	r25, r24
-				if (res == FR_NO_FILE) {
-    198a:	83 30       	cpi	r24, 0x03	; 3
-    198c:	41 f4       	brne	.+16     	; 0x199e <pf_readdir+0x18c>
-					dj->sect = 0;
-    198e:	f7 01       	movw	r30, r14
-    1990:	14 86       	std	Z+12, r1	; 0x0c
-    1992:	15 86       	std	Z+13, r1	; 0x0d
-    1994:	16 86       	std	Z+14, r1	; 0x0e
-    1996:	17 86       	std	Z+15, r1	; 0x0f
-					res = FR_OK;
-    1998:	90 e0       	ldi	r25, 0x00	; 0
-    199a:	01 c0       	rjmp	.+2      	; 0x199e <pf_readdir+0x18c>
-	BYTE sp[12], dir[32];
-	FATFS *fs = FatFs;
-
-
-	if (!fs) {				/* Check file system */
-		res = FR_NOT_ENABLED;
-    199c:	96 e0       	ldi	r25, 0x06	; 6
-			}
-		}
-	}
-
-	return res;
-}
-    199e:	89 2f       	mov	r24, r25
-    19a0:	ac 96       	adiw	r28, 0x2c	; 44
-    19a2:	0f b6       	in	r0, 0x3f	; 63
-    19a4:	f8 94       	cli
-    19a6:	de bf       	out	0x3e, r29	; 62
-    19a8:	0f be       	out	0x3f, r0	; 63
-    19aa:	cd bf       	out	0x3d, r28	; 61
-    19ac:	df 91       	pop	r29
-    19ae:	cf 91       	pop	r28
-    19b0:	1f 91       	pop	r17
-    19b2:	0f 91       	pop	r16
-    19b4:	ff 90       	pop	r15
-    19b6:	ef 90       	pop	r14
-    19b8:	df 90       	pop	r13
-    19ba:	cf 90       	pop	r12
-    19bc:	bf 90       	pop	r11
-    19be:	af 90       	pop	r10
-    19c0:	08 95       	ret
-	while (dj->sect) {
-		res = disk_readp(dir, dj->sect, (WORD)((dj->index % 16) * 32), 32)	/* Read an entry */
-			? FR_DISK_ERR : FR_OK;
-		if (res != FR_OK) break;
-		c = dir[DIR_Name];
-		if (c == 0) { res = FR_NO_FILE; break; }	/* Reached to end of table */
-    19c2:	93 e0       	ldi	r25, 0x03	; 3
-    19c4:	8a cf       	rjmp	.-236    	; 0x18da <pf_readdir+0xc8>
-		if (dir[8] != ' ') {		/* Copy file name extension */
-			*p++ = '.';
-			for (i = 8; i < 11; i++) {
-				c = dir[i];
-				if (c == ' ') break;
-				*p++ = c;
-    19c6:	f9 01       	movw	r30, r18
-    19c8:	81 83       	std	Z+1, r24	; 0x01
-    19ca:	c9 01       	movw	r24, r18
-    19cc:	02 96       	adiw	r24, 0x02	; 2
-			*p++ = c;
-		}
-		if (dir[8] != ' ') {		/* Copy file name extension */
-			*p++ = '.';
-			for (i = 8; i < 11; i++) {
-				c = dir[i];
-    19ce:	4e 89       	ldd	r20, Y+22	; 0x16
-				if (c == ' ') break;
-    19d0:	40 32       	cpi	r20, 0x20	; 32
-    19d2:	09 f4       	brne	.+2      	; 0x19d6 <pf_readdir+0x1c4>
-    19d4:	bb cf       	rjmp	.-138    	; 0x194c <pf_readdir+0x13a>
-				*p++ = c;
-    19d6:	42 83       	std	Z+2, r20	; 0x02
-    19d8:	c9 01       	movw	r24, r18
-    19da:	03 96       	adiw	r24, 0x03	; 3
-			*p++ = c;
-		}
-		if (dir[8] != ' ') {		/* Copy file name extension */
-			*p++ = '.';
-			for (i = 8; i < 11; i++) {
-				c = dir[i];
-    19dc:	4f 89       	ldd	r20, Y+23	; 0x17
-				if (c == ' ') break;
-    19de:	40 32       	cpi	r20, 0x20	; 32
-    19e0:	09 f0       	breq	.+2      	; 0x19e4 <pf_readdir+0x1d2>
-    19e2:	b6 cf       	rjmp	.-148    	; 0x1950 <pf_readdir+0x13e>
-    19e4:	b3 cf       	rjmp	.-154    	; 0x194c <pf_readdir+0x13a>
-{
-	BYTE i, c;
-	char *p;
-
-
-	p = fno->fname;
-    19e6:	95 01       	movw	r18, r10
-    19e8:	27 5f       	subi	r18, 0xF7	; 247
-    19ea:	3f 4f       	sbci	r19, 0xFF	; 255
-    19ec:	c8 cf       	rjmp	.-112    	; 0x197e <pf_readdir+0x16c>
-
-000019ee <dly_100us>:
-	#else
-		//round up by default
-		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
-	#endif
-
-	__builtin_avr_delay_cycles(__ticks_dc);
-    19ee:	81 e2       	ldi	r24, 0x21	; 33
-    19f0:	8a 95       	dec	r24
-    19f2:	f1 f7       	brne	.-4      	; 0x19f0 <dly_100us+0x2>
-    19f4:	00 00       	nop
-#include "integer.h"
-
-void dly_100us(void)
-{
-	_delay_us(100.0);
-}
-    19f6:	08 95       	ret
-
-000019f8 <init_spi>:
-   // Configure for: PB4 - /SS
-   //                PB5 - MOSI
-   //                PB6 - MISO
-   //                PB7 - SCK
-
-   PORTB = 0b00010000;      // SS high 
-    19f8:	80 e1       	ldi	r24, 0x10	; 16
-    19fa:	85 b9       	out	0x05, r24	; 5
-   DDRB =  0b10110000;      // !SS,SCK and MOSI outputs 
-    19fc:	80 eb       	ldi	r24, 0xB0	; 176
-    19fe:	84 b9       	out	0x04, r24	; 4
-
-   /* Set MOSI and SCK output, all others input */ 
-   //DDR_SPI = (1<<DD_MOSI)|(1<<DD_SCK); 
-   /* Enable SPI, Master, set clock rate fck/16 */ 
-   SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR0);
-    1a00:	81 e5       	ldi	r24, 0x51	; 81
-    1a02:	8c bd       	out	0x2c, r24	; 44
-
-}
-    1a04:	08 95       	ret
-
-00001a06 <xmit_spi>:
-//----------------------------------------------------------------------- 
-// Transmit a byte to MMC via SPI  (Platform dependent)                   
-//----------------------------------------------------------------------- 
-
-BYTE xmit_spi(BYTE c) { 
-   SPDR = c; 
-    1a06:	8e bd       	out	0x2e, r24	; 46
-   while (!(SPSR & (1<<SPIF))); 
-    1a08:	0d b4       	in	r0, 0x2d	; 45
-    1a0a:	07 fe       	sbrs	r0, 7
-    1a0c:	fd cf       	rjmp	.-6      	; 0x1a08 <xmit_spi+0x2>
-   return SPDR; 
-    1a0e:	8e b5       	in	r24, 0x2e	; 46
-} 
-    1a10:	08 95       	ret
-
-00001a12 <rcv_spi>:
-//----------------------------------------------------------------------- 
-// Receive a byte from MMC via SPI  (Platform dependent)                  
-//----------------------------------------------------------------------- 
-
-BYTE rcv_spi(void) { 
-   return xmit_spi(0xFF); 
-    1a12:	8f ef       	ldi	r24, 0xFF	; 255
-    1a14:	0e 94 03 0d 	call	0x1a06	; 0x1a06 <xmit_spi>
-} 
-    1a18:	08 95       	ret
-
-00001a1a <USART0_Init>:
-#include <stdlib.h>
-
-void USART0_Init (unsigned int ubrr)
-{
-	//Set baud rate
-	UBRR0H = (unsigned char)(ubrr>>8);
-    1a1a:	90 93 c5 00 	sts	0x00C5, r25
-	UBRR0L = (unsigned char)ubrr;
-    1a1e:	80 93 c4 00 	sts	0x00C4, r24
-	//Enable receiver and transmitter
-	UCSR0B = (1<<RXEN0)|(1<<TXEN0);
-    1a22:	e1 ec       	ldi	r30, 0xC1	; 193
-    1a24:	f0 e0       	ldi	r31, 0x00	; 0
-    1a26:	88 e1       	ldi	r24, 0x18	; 24
-    1a28:	80 83       	st	Z, r24
-	
-	UCSR0C = 0x06; //set asynchronous, no parity, one stop bit, 8 bit transfer.
-    1a2a:	86 e0       	ldi	r24, 0x06	; 6
-    1a2c:	80 93 c2 00 	sts	0x00C2, r24
-	
-	UCSR0B |= (1 << RXCIE0); //set RX interrupt on
-    1a30:	80 81       	ld	r24, Z
-    1a32:	80 68       	ori	r24, 0x80	; 128
-    1a34:	80 83       	st	Z, r24
-
-}
-    1a36:	08 95       	ret
-
-00001a38 <USART0_SendChar>:
-void USART0_SendChar(char data )
-{
-	/* Wait for empty transmit buffer */
-	while ( !( UCSR0A & (1<<UDRE0)) )
-    1a38:	e0 ec       	ldi	r30, 0xC0	; 192
-    1a3a:	f0 e0       	ldi	r31, 0x00	; 0
-    1a3c:	90 81       	ld	r25, Z
-    1a3e:	95 ff       	sbrs	r25, 5
-    1a40:	fd cf       	rjmp	.-6      	; 0x1a3c <USART0_SendChar+0x4>
-	;
-	/* Put data into buffer, sends the data */
-	UDR0 = data;
-    1a42:	80 93 c6 00 	sts	0x00C6, r24
-}
-    1a46:	08 95       	ret
-
-00001a48 <USART0_Receive>:
-	USART0_SendString(buff);
-}
-unsigned char USART0_Receive( void )
-{
-	/* Wait for data to be received */
-	while ( !(UCSR0A & (1<<RXC0)) )
-    1a48:	e0 ec       	ldi	r30, 0xC0	; 192
-    1a4a:	f0 e0       	ldi	r31, 0x00	; 0
-    1a4c:	80 81       	ld	r24, Z
-    1a4e:	88 23       	and	r24, r24
-    1a50:	ec f7       	brge	.-6      	; 0x1a4c <USART0_Receive+0x4>
-	;
-	/* Get and return received data from buffer */
-	return UDR0;
-    1a52:	80 91 c6 00 	lds	r24, 0x00C6
-}
-    1a56:	08 95       	ret
-
-00001a58 <USART0_Senduint16>:
-void USART0_Senduint16 (uint16_t Data)
-{	
-    1a58:	cf 93       	push	r28
-    1a5a:	c8 2f       	mov	r28, r24
-	USART0_SendChar(Data >> 8);
-    1a5c:	89 2f       	mov	r24, r25
-    1a5e:	0e 94 1c 0d 	call	0x1a38	; 0x1a38 <USART0_SendChar>
-	USART0_SendChar(Data & 0xFF);
-    1a62:	8c 2f       	mov	r24, r28
-    1a64:	0e 94 1c 0d 	call	0x1a38	; 0x1a38 <USART0_SendChar>
-}
-    1a68:	cf 91       	pop	r28
-    1a6a:	08 95       	ret
-
-00001a6c <__vector_20>:
-ISR(USART0_RX_vect) //trigger interrupt when uart1 receives data   USART_RXC1_vect
-{
-    1a6c:	1f 92       	push	r1
-    1a6e:	0f 92       	push	r0
-    1a70:	0f b6       	in	r0, 0x3f	; 63
-    1a72:	0f 92       	push	r0
-    1a74:	11 24       	eor	r1, r1
-    1a76:	2f 93       	push	r18
-    1a78:	3f 93       	push	r19
-    1a7a:	4f 93       	push	r20
-    1a7c:	5f 93       	push	r21
-    1a7e:	6f 93       	push	r22
-    1a80:	7f 93       	push	r23
-    1a82:	8f 93       	push	r24
-    1a84:	9f 93       	push	r25
-    1a86:	af 93       	push	r26
-    1a88:	bf 93       	push	r27
-    1a8a:	ef 93       	push	r30
-    1a8c:	ff 93       	push	r31
-	// Code to be executed when the USART receives a byte here
-	Received0 = UDR0; // Fetch the received byte value into the variable "Received0"
-    1a8e:	80 91 c6 00 	lds	r24, 0x00C6
-    1a92:	80 93 5d 01 	sts	0x015D, r24
-	USART0_SendChar(Received0);
-    1a96:	80 91 5d 01 	lds	r24, 0x015D
-    1a9a:	0e 94 1c 0d 	call	0x1a38	; 0x1a38 <USART0_SendChar>
-}
-    1a9e:	ff 91       	pop	r31
-    1aa0:	ef 91       	pop	r30
-    1aa2:	bf 91       	pop	r27
-    1aa4:	af 91       	pop	r26
-    1aa6:	9f 91       	pop	r25
-    1aa8:	8f 91       	pop	r24
-    1aaa:	7f 91       	pop	r23
-    1aac:	6f 91       	pop	r22
-    1aae:	5f 91       	pop	r21
-    1ab0:	4f 91       	pop	r20
-    1ab2:	3f 91       	pop	r19
-    1ab4:	2f 91       	pop	r18
-    1ab6:	0f 90       	pop	r0
-    1ab8:	0f be       	out	0x3f, r0	; 63
-    1aba:	0f 90       	pop	r0
-    1abc:	1f 90       	pop	r1
-    1abe:	18 95       	reti
-
-00001ac0 <USART0_SendString>:
-
-void USART0_SendString( char str[] )
-{
-    1ac0:	0f 93       	push	r16
-    1ac2:	1f 93       	push	r17
-    1ac4:	cf 93       	push	r28
-    1ac6:	8c 01       	movw	r16, r24
-	uint8_t ptr = 0;
-	while(str[ptr])
-    1ac8:	fc 01       	movw	r30, r24
-    1aca:	80 81       	ld	r24, Z
-    1acc:	88 23       	and	r24, r24
-    1ace:	51 f0       	breq	.+20     	; 0x1ae4 <USART0_SendString+0x24>
-	USART0_SendChar(Received0);
-}
-
-void USART0_SendString( char str[] )
-{
-	uint8_t ptr = 0;
-    1ad0:	c0 e0       	ldi	r28, 0x00	; 0
-	while(str[ptr])
-	{
-		USART0_SendChar(str[ptr++]);
-    1ad2:	cf 5f       	subi	r28, 0xFF	; 255
-    1ad4:	0e 94 1c 0d 	call	0x1a38	; 0x1a38 <USART0_SendChar>
-}
-
-void USART0_SendString( char str[] )
-{
-	uint8_t ptr = 0;
-	while(str[ptr])
-    1ad8:	f8 01       	movw	r30, r16
-    1ada:	ec 0f       	add	r30, r28
-    1adc:	f1 1d       	adc	r31, r1
-    1ade:	80 81       	ld	r24, Z
-    1ae0:	88 23       	and	r24, r24
-    1ae2:	b9 f7       	brne	.-18     	; 0x1ad2 <USART0_SendString+0x12>
-	{
-		USART0_SendChar(str[ptr++]);
-	}
-	
-}
-    1ae4:	cf 91       	pop	r28
-    1ae6:	1f 91       	pop	r17
-    1ae8:	0f 91       	pop	r16
-    1aea:	08 95       	ret
-
-00001aec <USART0_SendHex>:
-	char buff[5];
-	itoa(Data, buff, 10);
-	USART0_SendString(buff);
-}
-void USART0_SendHex( uint8_t Data)
-{
-    1aec:	cf 93       	push	r28
-    1aee:	df 93       	push	r29
-    1af0:	00 d0       	rcall	.+0      	; 0x1af2 <USART0_SendHex+0x6>
-    1af2:	00 d0       	rcall	.+0      	; 0x1af4 <USART0_SendHex+0x8>
-    1af4:	0f 92       	push	r0
-    1af6:	cd b7       	in	r28, 0x3d	; 61
-    1af8:	de b7       	in	r29, 0x3e	; 62
-	char buff[5];
-	itoa(Data, buff, 16);
-    1afa:	90 e0       	ldi	r25, 0x00	; 0
-    1afc:	be 01       	movw	r22, r28
-    1afe:	6f 5f       	subi	r22, 0xFF	; 255
-    1b00:	7f 4f       	sbci	r23, 0xFF	; 255
-    1b02:	40 e1       	ldi	r20, 0x10	; 16
-    1b04:	50 e0       	ldi	r21, 0x00	; 0
-    1b06:	0e 94 24 0e 	call	0x1c48	; 0x1c48 <itoa>
-	USART0_SendString("0x");
-    1b0a:	84 e5       	ldi	r24, 0x54	; 84
-    1b0c:	91 e0       	ldi	r25, 0x01	; 1
-    1b0e:	0e 94 60 0d 	call	0x1ac0	; 0x1ac0 <USART0_SendString>
-	USART0_SendString(buff);
-    1b12:	ce 01       	movw	r24, r28
-    1b14:	01 96       	adiw	r24, 0x01	; 1
-    1b16:	0e 94 60 0d 	call	0x1ac0	; 0x1ac0 <USART0_SendString>
-}
-    1b1a:	0f 90       	pop	r0
-    1b1c:	0f 90       	pop	r0
-    1b1e:	0f 90       	pop	r0
-    1b20:	0f 90       	pop	r0
-    1b22:	0f 90       	pop	r0
-    1b24:	df 91       	pop	r29
-    1b26:	cf 91       	pop	r28
-    1b28:	08 95       	ret
-
-00001b2a <USART0_SendInt>:
-	;
-	/* Put data into buffer, sends the data */
-	UDR0 = data;
-}
-void USART0_SendInt( int Data)
-{
-    1b2a:	cf 93       	push	r28
-    1b2c:	df 93       	push	r29
-    1b2e:	00 d0       	rcall	.+0      	; 0x1b30 <USART0_SendInt+0x6>
-    1b30:	00 d0       	rcall	.+0      	; 0x1b32 <USART0_SendInt+0x8>
-    1b32:	0f 92       	push	r0
-    1b34:	cd b7       	in	r28, 0x3d	; 61
-    1b36:	de b7       	in	r29, 0x3e	; 62
-	char buff[5];
-	itoa(Data, buff, 10);
-    1b38:	be 01       	movw	r22, r28
-    1b3a:	6f 5f       	subi	r22, 0xFF	; 255
-    1b3c:	7f 4f       	sbci	r23, 0xFF	; 255
-    1b3e:	4a e0       	ldi	r20, 0x0A	; 10
-    1b40:	50 e0       	ldi	r21, 0x00	; 0
-    1b42:	0e 94 24 0e 	call	0x1c48	; 0x1c48 <itoa>
-	USART0_SendString(buff);
-    1b46:	ce 01       	movw	r24, r28
-    1b48:	01 96       	adiw	r24, 0x01	; 1
-    1b4a:	0e 94 60 0d 	call	0x1ac0	; 0x1ac0 <USART0_SendString>
-}
-    1b4e:	0f 90       	pop	r0
-    1b50:	0f 90       	pop	r0
-    1b52:	0f 90       	pop	r0
-    1b54:	0f 90       	pop	r0
-    1b56:	0f 90       	pop	r0
-    1b58:	df 91       	pop	r29
-    1b5a:	cf 91       	pop	r28
-    1b5c:	08 95       	ret
-
-00001b5e <USART0_GetLine>:
-	}
-	
-}
-
-void USART0_GetLine(char *buff, uint8_t len)
-{
-    1b5e:	ef 92       	push	r14
-    1b60:	ff 92       	push	r15
-    1b62:	0f 93       	push	r16
-    1b64:	1f 93       	push	r17
-    1b66:	cf 93       	push	r28
-    1b68:	df 93       	push	r29
-    1b6a:	7c 01       	movw	r14, r24
-	uint8_t i;
-	char c;
-
-	i = 0;
-    1b6c:	d0 e0       	ldi	r29, 0x00	; 0
-		USART0_SendChar(c);
-		if (c == '\r') //Return Char
-			break;
-		if ((c == '\b') && i) //backspace
-			i--;
-		if ((c >= ' ') && (i < len - 1))//character, so long as within the bounds of the buffer
-    1b6e:	06 2f       	mov	r16, r22
-    1b70:	10 e0       	ldi	r17, 0x00	; 0
-    1b72:	01 50       	subi	r16, 0x01	; 1
-    1b74:	10 40       	sbci	r17, 0x00	; 0
-	char c;
-
-	i = 0;
-	for (;;) 
-	{
-		c = USART0_Receive();
-    1b76:	0e 94 24 0d 	call	0x1a48	; 0x1a48 <USART0_Receive>
-    1b7a:	c8 2f       	mov	r28, r24
-		USART0_SendChar(c);
-    1b7c:	0e 94 1c 0d 	call	0x1a38	; 0x1a38 <USART0_SendChar>
-		if (c == '\r') //Return Char
-    1b80:	cd 30       	cpi	r28, 0x0D	; 13
-    1b82:	99 f0       	breq	.+38     	; 0x1baa <USART0_GetLine+0x4c>
-			break;
-		if ((c == '\b') && i) //backspace
-    1b84:	c8 30       	cpi	r28, 0x08	; 8
-    1b86:	21 f4       	brne	.+8      	; 0x1b90 <USART0_GetLine+0x32>
-    1b88:	dd 23       	and	r29, r29
-    1b8a:	a9 f3       	breq	.-22     	; 0x1b76 <USART0_GetLine+0x18>
-			i--;
-    1b8c:	d1 50       	subi	r29, 0x01	; 1
-    1b8e:	f3 cf       	rjmp	.-26     	; 0x1b76 <USART0_GetLine+0x18>
-		if ((c >= ' ') && (i < len - 1))//character, so long as within the bounds of the buffer
-    1b90:	c0 32       	cpi	r28, 0x20	; 32
-    1b92:	88 f3       	brcs	.-30     	; 0x1b76 <USART0_GetLine+0x18>
-    1b94:	8d 2f       	mov	r24, r29
-    1b96:	90 e0       	ldi	r25, 0x00	; 0
-    1b98:	80 17       	cp	r24, r16
-    1b9a:	91 07       	cpc	r25, r17
-    1b9c:	64 f7       	brge	.-40     	; 0x1b76 <USART0_GetLine+0x18>
-			buff[i++] = c;
-    1b9e:	f7 01       	movw	r30, r14
-    1ba0:	ed 0f       	add	r30, r29
-    1ba2:	f1 1d       	adc	r31, r1
-    1ba4:	c0 83       	st	Z, r28
-    1ba6:	df 5f       	subi	r29, 0xFF	; 255
-    1ba8:	e6 cf       	rjmp	.-52     	; 0x1b76 <USART0_GetLine+0x18>
-	}
-	buff[i] = 0;
-    1baa:	f7 01       	movw	r30, r14
-    1bac:	ed 0f       	add	r30, r29
-    1bae:	f1 1d       	adc	r31, r1
-    1bb0:	10 82       	st	Z, r1
-	USART0_SendChar('\n');
-    1bb2:	8a e0       	ldi	r24, 0x0A	; 10
-    1bb4:	0e 94 1c 0d 	call	0x1a38	; 0x1a38 <USART0_SendChar>
-}
-    1bb8:	df 91       	pop	r29
-    1bba:	cf 91       	pop	r28
-    1bbc:	1f 91       	pop	r17
-    1bbe:	0f 91       	pop	r16
-    1bc0:	ff 90       	pop	r15
-    1bc2:	ef 90       	pop	r14
-    1bc4:	08 95       	ret
-
-00001bc6 <__mulsi3>:
-    1bc6:	62 9f       	mul	r22, r18
-    1bc8:	d0 01       	movw	r26, r0
-    1bca:	73 9f       	mul	r23, r19
-    1bcc:	f0 01       	movw	r30, r0
-    1bce:	82 9f       	mul	r24, r18
-    1bd0:	e0 0d       	add	r30, r0
-    1bd2:	f1 1d       	adc	r31, r1
-    1bd4:	64 9f       	mul	r22, r20
-    1bd6:	e0 0d       	add	r30, r0
-    1bd8:	f1 1d       	adc	r31, r1
-    1bda:	92 9f       	mul	r25, r18
-    1bdc:	f0 0d       	add	r31, r0
-    1bde:	83 9f       	mul	r24, r19
-    1be0:	f0 0d       	add	r31, r0
-    1be2:	74 9f       	mul	r23, r20
-    1be4:	f0 0d       	add	r31, r0
-    1be6:	65 9f       	mul	r22, r21
-    1be8:	f0 0d       	add	r31, r0
-    1bea:	99 27       	eor	r25, r25
-    1bec:	72 9f       	mul	r23, r18
-    1bee:	b0 0d       	add	r27, r0
-    1bf0:	e1 1d       	adc	r30, r1
-    1bf2:	f9 1f       	adc	r31, r25
-    1bf4:	63 9f       	mul	r22, r19
-    1bf6:	b0 0d       	add	r27, r0
-    1bf8:	e1 1d       	adc	r30, r1
-    1bfa:	f9 1f       	adc	r31, r25
-    1bfc:	bd 01       	movw	r22, r26
-    1bfe:	cf 01       	movw	r24, r30
-    1c00:	11 24       	eor	r1, r1
-    1c02:	08 95       	ret
-
-00001c04 <__udivmodsi4>:
-    1c04:	a1 e2       	ldi	r26, 0x21	; 33
-    1c06:	1a 2e       	mov	r1, r26
-    1c08:	aa 1b       	sub	r26, r26
-    1c0a:	bb 1b       	sub	r27, r27
-    1c0c:	fd 01       	movw	r30, r26
-    1c0e:	0d c0       	rjmp	.+26     	; 0x1c2a <__udivmodsi4_ep>
-
-00001c10 <__udivmodsi4_loop>:
-    1c10:	aa 1f       	adc	r26, r26
-    1c12:	bb 1f       	adc	r27, r27
-    1c14:	ee 1f       	adc	r30, r30
-    1c16:	ff 1f       	adc	r31, r31
-    1c18:	a2 17       	cp	r26, r18
-    1c1a:	b3 07       	cpc	r27, r19
-    1c1c:	e4 07       	cpc	r30, r20
-    1c1e:	f5 07       	cpc	r31, r21
-    1c20:	20 f0       	brcs	.+8      	; 0x1c2a <__udivmodsi4_ep>
-    1c22:	a2 1b       	sub	r26, r18
-    1c24:	b3 0b       	sbc	r27, r19
-    1c26:	e4 0b       	sbc	r30, r20
-    1c28:	f5 0b       	sbc	r31, r21
-
-00001c2a <__udivmodsi4_ep>:
-    1c2a:	66 1f       	adc	r22, r22
-    1c2c:	77 1f       	adc	r23, r23
-    1c2e:	88 1f       	adc	r24, r24
-    1c30:	99 1f       	adc	r25, r25
-    1c32:	1a 94       	dec	r1
-    1c34:	69 f7       	brne	.-38     	; 0x1c10 <__udivmodsi4_loop>
-    1c36:	60 95       	com	r22
-    1c38:	70 95       	com	r23
-    1c3a:	80 95       	com	r24
-    1c3c:	90 95       	com	r25
-    1c3e:	9b 01       	movw	r18, r22
-    1c40:	ac 01       	movw	r20, r24
-    1c42:	bd 01       	movw	r22, r26
-    1c44:	cf 01       	movw	r24, r30
-    1c46:	08 95       	ret
-
-00001c48 <itoa>:
-    1c48:	fb 01       	movw	r30, r22
-    1c4a:	9f 01       	movw	r18, r30
-    1c4c:	e8 94       	clt
-    1c4e:	42 30       	cpi	r20, 0x02	; 2
-    1c50:	c4 f0       	brlt	.+48     	; 0x1c82 <itoa+0x3a>
-    1c52:	45 32       	cpi	r20, 0x25	; 37
-    1c54:	b4 f4       	brge	.+44     	; 0x1c82 <itoa+0x3a>
-    1c56:	4a 30       	cpi	r20, 0x0A	; 10
-    1c58:	29 f4       	brne	.+10     	; 0x1c64 <itoa+0x1c>
-    1c5a:	97 fb       	bst	r25, 7
-    1c5c:	1e f4       	brtc	.+6      	; 0x1c64 <itoa+0x1c>
-    1c5e:	90 95       	com	r25
-    1c60:	81 95       	neg	r24
-    1c62:	9f 4f       	sbci	r25, 0xFF	; 255
-    1c64:	64 2f       	mov	r22, r20
-    1c66:	77 27       	eor	r23, r23
-    1c68:	0e 94 55 0e 	call	0x1caa	; 0x1caa <__udivmodhi4>
-    1c6c:	80 5d       	subi	r24, 0xD0	; 208
-    1c6e:	8a 33       	cpi	r24, 0x3A	; 58
-    1c70:	0c f0       	brlt	.+2      	; 0x1c74 <itoa+0x2c>
-    1c72:	89 5d       	subi	r24, 0xD9	; 217
-    1c74:	81 93       	st	Z+, r24
-    1c76:	cb 01       	movw	r24, r22
-    1c78:	00 97       	sbiw	r24, 0x00	; 0
-    1c7a:	a1 f7       	brne	.-24     	; 0x1c64 <itoa+0x1c>
-    1c7c:	16 f4       	brtc	.+4      	; 0x1c82 <itoa+0x3a>
-    1c7e:	5d e2       	ldi	r21, 0x2D	; 45
-    1c80:	51 93       	st	Z+, r21
-    1c82:	10 82       	st	Z, r1
-    1c84:	c9 01       	movw	r24, r18
-    1c86:	0c 94 45 0e 	jmp	0x1c8a	; 0x1c8a <strrev>
-
-00001c8a <strrev>:
-    1c8a:	dc 01       	movw	r26, r24
-    1c8c:	fc 01       	movw	r30, r24
-    1c8e:	67 2f       	mov	r22, r23
-    1c90:	71 91       	ld	r23, Z+
-    1c92:	77 23       	and	r23, r23
-    1c94:	e1 f7       	brne	.-8      	; 0x1c8e <strrev+0x4>
-    1c96:	32 97       	sbiw	r30, 0x02	; 2
-    1c98:	04 c0       	rjmp	.+8      	; 0x1ca2 <strrev+0x18>
-    1c9a:	7c 91       	ld	r23, X
-    1c9c:	6d 93       	st	X+, r22
-    1c9e:	70 83       	st	Z, r23
-    1ca0:	62 91       	ld	r22, -Z
-    1ca2:	ae 17       	cp	r26, r30
-    1ca4:	bf 07       	cpc	r27, r31
-    1ca6:	c8 f3       	brcs	.-14     	; 0x1c9a <strrev+0x10>
-    1ca8:	08 95       	ret
-
-00001caa <__udivmodhi4>:
-    1caa:	aa 1b       	sub	r26, r26
-    1cac:	bb 1b       	sub	r27, r27
-    1cae:	51 e1       	ldi	r21, 0x11	; 17
-    1cb0:	07 c0       	rjmp	.+14     	; 0x1cc0 <__udivmodhi4_ep>
-
-00001cb2 <__udivmodhi4_loop>:
-    1cb2:	aa 1f       	adc	r26, r26
-    1cb4:	bb 1f       	adc	r27, r27
-    1cb6:	a6 17       	cp	r26, r22
-    1cb8:	b7 07       	cpc	r27, r23
-    1cba:	10 f0       	brcs	.+4      	; 0x1cc0 <__udivmodhi4_ep>
-    1cbc:	a6 1b       	sub	r26, r22
-    1cbe:	b7 0b       	sbc	r27, r23
-
-00001cc0 <__udivmodhi4_ep>:
-    1cc0:	88 1f       	adc	r24, r24
-    1cc2:	99 1f       	adc	r25, r25
-    1cc4:	5a 95       	dec	r21
-    1cc6:	a9 f7       	brne	.-22     	; 0x1cb2 <__udivmodhi4_loop>
-    1cc8:	80 95       	com	r24
-    1cca:	90 95       	com	r25
-    1ccc:	bc 01       	movw	r22, r24
-    1cce:	cd 01       	movw	r24, r26
-    1cd0:	08 95       	ret
-
-00001cd2 <_exit>:
-    1cd2:	f8 94       	cli
-
-00001cd4 <__stop_program>:
-    1cd4:	ff cf       	rjmp	.-2      	; 0x1cd4 <__stop_program>
+  åeor?{µ”~ıì‰Wê%Ë¨/îagye„zîQ–V
+Bê‹Âwùd•Fiüò/şmXV$WW~Ùï¾ĞÛÃœpiu ÔëåŒµ­ÿìóûxs©7Iàì&[´H#§ğë³'¼Y¨–zaKlkWV*±|®„GX†,ú	Ÿ«´vk™;àö“ŠÌó»“èTöá<ÄrìÖT÷Nº?D~‚åîc_AûS'Xê>ör ù	–èO~9à³¬û„z•‹ÅFÛ¢mŒ‡§Ì´6²ğJÿ5¤²ıä ¬Ÿ½õ
+ÛHñ§ô³/Rı©GØ—8™³ÍÇİ—áøjM ÍŸ¦
+;ÂŞÖØ¾èõÈÒà=úÌÑö…@º?İKM2äOïgGJ2ŞÀ;SÙTÿ'=ûş})(SØö¹@?›½EÑéÊëøz~]Ûø¥¸‹ıb²>|6»ŒOÂ•OåDñoPçF<])şyqà¯ŠëümqıšÖ«í |ƒ¯ªë4)|î›Â9¸8°îº¥ŞG!&Caóë˜çö°ãê½$Â&\›ˆƒj¹İ™Ô–;iLqğŒJa·?)òæ˜§Åvqğ
+=5Úg‡œ?õTùã;×!o”¤éG’è-äı0}˜ƒ­°|"H’í’ûw$Uw‘  dĞYµ±Ù ~ÛTé4)7j‰òøhsã#Ø£íÒC”6Ûà'ËÜ V¨Ø°ÜÒôD?«/<3’ü»o§X)ù‘‰Á“Uºt“a‘ßÒ‹„Á@0Î!Æ]ıÜ ¿7#àC
+Ï<'È“MT¦u®İÃÜİRjUµ]o™?†÷'t88FeƒâL7ÛcªígŠÓşÓğ@S=¼Àxl|_qø/]àã¤øŞÔvş˜ùBYp	ÆÍ<€d“{ãeÂPlA§ád•ç.G.‚+à¿§w58şÕáXW¦ÏJÄó^ĞìğÁ!:(M8®ÅIíL Ÿ•DLšõIÄk9 à€V€ mI´Çj3§ `'4V6lèè«gLÆ-–ó ÀÒĞó°› ¶ tl‡QØM°»`7lƒÙ×n;:qÂæS©LÈ³Qó‰í"µ´bU‰k†RÃ¥Æ±ó„²Gªˆƒ”Éd¡öwˆ¨èóì‚§ÿÄ-²"¹SH•2¶Nr·á$wxJƒ§t!\å\ZÃ§Do`w"†Jº”Ì–fÀüê I#’]Ó[Q>Yt%ó¯Ùeƒìz'½¨#a€]%Oˆ÷˜VFaûªQUr9…P‹“UÙùT"É«\NœrnÍ“E×O$ÁË[év«ù¸RÃ}u"UêÉŠ÷56fÉöé »f€İØÏnh4Jq¢Ş"ÁZÔUÒ8³¤ùÔJøÓ$r-
+$³°7Â,ì©MT[Ü'±“›Šü	Åğœrí »«QéúK¯V4^ç‰Ô(	ã±Wì!“®–ğîÃìçÓ¦Xèâ ÊÌ~a”‘ÁuÇ¨ü\|±¦Èà€¦zÀİ¢gHßº¨òÕZê­hÖîq‘!ÁºLFÊ=ŸÆÈ^&ıãoİ)æ±Ù-éŒáWç)&ìÀòuÇ%~ø!Ùv±U‚CH°Òìl‡—ô%•K+VW7ˆÓK}ÕÚJƒÑ†SM"jˆ‚-oDlÈ9ÇC.Ûl6ytp\Õ\ßP·2ôd÷À	Í] ç§4wáÚ¾­ë…2E³Üê	vöâIÍ=íÍR¾ÄI÷=qË.Ù²ÒæXS„Ü¨ô¨á'M7?jZşFr¸Zš'±a	Ÿ@SC'’Ó÷‰Ã{Š³øĞ;¬™L<Ç&œJÂÎn¡ÚÖ‘š9!Ö—F‰€tJla˜‡7æ#=ŞYD¹á·më6`jSOm¸„z{OåÖmPË1|¶ç»PÃ‰ûŠ<ÃÅû²çé}¢ì» äYğô™Ø­ê›(Ïšæ¡3Ú'Ó»©Š~™ÔÓ¶­E±%µvÓ‰…M—Ü×Ù~^_[~;I
+ù)êPå‚Õ¾WÃsÒ	ëÇÌ37¶ç×¼ØÒ^¾(n>ó#õ¢B¦Á¸íXMµÛ¦‡Orâ002Iñ‘3ëªN/»`ñbÛ„aåê>òıD}R\_×q\'çr>>ß§ıˆŒóidÓàÃ$¼Çˆ'nÅ¡²×.p	Ô€Å˜ã
+/Ö›Šp„¶ã\°“Ál<|Æ øŒ³À]¬˜ãt€™ óÀlœĞ °lÇr°«Áqœ!9W <â36ƒÅØÌ®¸à:€ n¸€œÑ¶²ë“ˆxÎsw<ğ¸‹w»ø(xŠwƒ§¸ìÄ{ >g´·< <ÒnFp3X–›á<¶lÌsÁÜFå¤nwqØ“[ÀĞÜ†æv2±@M&Ç¨ÎMâ:ò§ºnÄÉ†¾}qÖ!F¯b¤€+ÈÁp“°’7RØg	¯V—ƒá5Â’ôyâä;Z˜¸×ğ½•ÅèŸ"Ôn|xqõ‹pª°/Ÿ¨øSÕ	,—N_Ct2ŞB§È7³çŠ¤_Ú¡Ãìéê~ÙC•™ò•Ú`VQú´ôfâØU§ÔMĞØÂ¥
+û‡ô0h­=DîHœ`m>İTûÚAöÔ^vÖÛLy	§ÖWˆÉõJ?{ù ˜i_P	ˆ#n^?;$NªWITİÁÃÄed¾€Ó«ÉL~2q¤ôõäˆó©Ò×Á0K(}İŸ ç›ÏÑ#q!í‘·÷2ºıb£DK$´Dr™HÒ»õÔ´m4~6‰ÆİLMŠëy¬O\/awŠÿ=ì>qÅ›.d—«7M•FÆ-V"f³«TZò“Lz7Õ–:ŠëÕù&G.THÊXaŞAöì[ÌG|AÁD<Ä=ãkäóY£ë¾4±ÂíËâEk^+üÆZbOkÂÑ©®NŸ#®ô#¬w>rìrôv¶@8ıN";¼@~7}‰`í&íNcÓ—p/Kó%¨œ³Ä’×ˆÌDy«QF¿¹‡¥qIƒ¼N¾ÚX"ZS/yİ¯¿ŒJé4H¨•Fìåâz%»V\qlK?MZï/áU¢‰£Éşâ“†ëËqÔ4V,Óšã ëß¯pÆQÄç`°œ|áä9ÊÓ2°Æ“X®ËJJxÎxÜr9éó’Û`•ÁÄ™ªKW°ÍGİRç>DÊ©2^òãùı5¾¦ê{¢Y´P«¾®;»vf÷¸Ã)ŒáWÍÂŞèñw“5“Ìm
+á`¿Î¦ÕFYH×ºX½‹‘KoÕ%jDB)¶ÿ´/UG +WÖ–Æ±¤rÑêeAC‡ä° f€´1VP*ò;Á!¿½‡î::Jò×ÓI‚{a”gCeÍJI²Hnn±ò%5Óf§[òş¬<\osW¤x_f•ÃTq	W®†xçaşcõ(aÄüŞ.ğãÒT°¡Ë8ïGH×¦l
+•…Œ¶=¬Ã ‡¨d¤Hî1ÛmÎáitúõ_Õ×Ùi9;ÛÈè†Ï½Öà‰–ãµ?ügcéÈÛ&¾é8‹1hÑÛ–’ñ––ŞG2ğ›<ŸÅò‹[[/B.xTXLx+|„t‚dš„¨;mhÛ	Z¥¢–×Ù…© cw×Ö|Ij´ı©”¬xÍ43tË>_
+Á[À¥S~GK_gëf’ùv] §MP"M®ÚJR¥¶ô
+~6OœRÂ!JsI=}ë{ÔÇ²#ÒYa2Ú“O5L"ÃË	Kri;û;:€JÜ§ZœwÄr»Ñ4ïF Ï[õ±ñõ?rı½8ã#•·û3B³]•İÖé60=·áx¹ŒU90`%À
+)/{R»q¼ìÁ]/Üföán;ÀawBŸOœTÏÇéõ|œmÏ‡ˆ.3 ªqRmÄIµ²98®°gÖ%%‹¸Ëq¢½q»w%dé{„fÏÂ9ö,œcÏÂ™õ,y˜½ÇÕÛ HhöLö$®÷ĞñòlH¿ãêÙì	œco¸àœhxà)ko‡Xì†½àn qÔ½ErÛ!¢+µçâ{.Î»çâ¨»	[ptŞ‚còöy7	ºŞpÀ] Gs\4jÛ.¸µp\Ç`ßQGPGÉñğËÁ`X@†'ªk¾¸º„IlŒ¿fÚç‹Æa²]¬’§ª­xnÑQâ‚5ú%œĞ°7şÒbö™;á$|Q•É²ÇW¢$â^ñÄCl¿‘y–]æıFæyt´©|'°¯ş%NšÙÓ$
+óÑ/Õ$æ7Ç”xè—KÆÌ”gå¯Søëƒ8ŸÒ¶şëıìktfëg_ÙÃ!úSñÛÎsúÙ—Ù[´ÃßÇ<8q²AÇÓªo*å<ÈégïˆüGÔƒ)÷ $r9ø°ç ñú&ğa_%eòØIÇ°AÒ–$[§ÃY')$['tH¶ê/“oÂQææÎeI~22?ø¤‹å9çÓ»tÊ›C<ÙD’"XMc3»=Æ>
+{‚R|×Aö¢¸¾Fšw„YÃ$:cíUKíEzî5^Ç%^‡‡_‡ºeğÍ²ƒtH§ãÎ[d–[—!4ÂÖ&/}‰gØ·H`º–¾I4ˆùÎ~w€½Fo]["ÎJo² €ğ[z”Á[*ô›%xY‚DOx“Œç—@HùÍ’" ¯H¡£¬7M>ÚU.]˜úH¹„NÀ/Bìù(Ëõ» ¶L]/ÒÓÀ¤|ƒ.M¿‰û}l\5D¾å˜·Â ¬!Ò+“¨mËÙØï‰ócöqEøDT@W
+“K²‹«d|CÇ¯zj
+Ğoğ\h9ÿ½9¼í¤>«í$œË×NXœH'Sü&ÛâW¬§}–tëaãÂÓ"×wLÌ’#ù¬áO¦ XJZvôN£U¬³wZc;ĞvTlhÙÖ+/†XaÊ‘°˜NhB¶0AXĞ×éÕ1Ÿ÷ïÃ à]Ç©u.¼&•¸‡+&vĞHOå<D*JO"2]†›æ¢L7Ñ£¼Q­æ'I¨7PvE’êš Hå„©7dC(&ë€é†2MáøN2²HRÅwÀ´R&•&ÛíZŞù‹ï=NÙ«#…ë!Ï•ŒH iÅn2@ˆë¤õ]½½`ÓmfJY`:J¶·œ.?¶Ñ„N…õ’/HQí°?÷š_eI;1£{,$D…ä fç´êf›¦V¹¡x+[p^ĞácG”jvF‡TQ„ØPTOJØ«pë ì8ÆÓ;'×­ª¤U£ÂêÈ™oQ¾Ì|X'H€@[8	y#ÎF\/ºŸ¦ì¸áë0‰å&¹z,@~õ”qIÔ¥ò Æ¸)n<ÀD€ÉnêK &Eí°YŠ^íÅ£…@9k¥w­‰f÷uŠùps•›–4ê¾eè¾S‹ò³)L—¨£b@I#•Ñœ_¼—öı¬´¢HSŠŸgEô+<‹q	•3­ºH‡YI³¡:z–]G?ù¿óZî#cøßÑg…uôs¸„G4"úÑÀÄYsæÌ)_?ÕÓ:½œä\¦FÎ­‹ªÖT4T’ ^	ï¢¸K¬<£JDYÇÇ…ZÂ+-…2Ä|$İl†Òy)´zU5Uy3¥vSÇŞ²zÛ†–Ş¶xI“Æ Š‰>¢ò­)r®\n<RTÄ\‡C™dy‰1ƒÒ%M°”LãôÊaİ tŠ=dOhÇ’®V!«b'ÉN(êmô
+òD°½sc
+0·†ÙÄ‡±µxÆ¿í‘İ_¥ñ`{¥:ş¶‰ïô‚„ØÓ­º«Ôæ›§bUVY¦²ÆıVóâ;ÀÚ½VM\ë¸]ÛÛ5˜®8òâÈ[„©·XvKHÄÔ›*M¼•‚“[Nî4Ì¿ÓÁİ	Nî,X|›P07‰ÎÇó NÀ ÜÉ §àl6µE8•-Àm!l¿
+PaÎÉI–Á>?ç÷9àzQa‹%—±ÂÈ›Êüª ]—DaîótÁ ”Ò¯Y°æŠùz1dp+!ƒ»ä€éS{†Â>SMÚ+ááê [ú8ËdU¨ëg5dîL½Í•IËg£h2¯¤ß/ÇY±ºŸÕîc£dòòÇYª‘LñÆ“êÃÂM¡–XÅü¡Óûºû.nŒC<û˜6ÄBØ1Mò&V¶uÃX7äâs‹<[aşXb#=Ä°ç`õ'¥ÓŞã#ÜËGÇ†8´ ãÚ'Ã†8á87Ä¿¿ıÁ•?Ë~‡ëH¡İˆÿ‘8•Ä†tÁëÙD›dzu±é.6ÓÅæ¸Ø<;ÉÅNv±d¿ÊÅNq±S]¬ÂÅ¹Øb["Ìø1WÚpœãb­.v‘‹]ìbƒ.vDóánÉ¶—rK~Oï®¶ÆşcéR:±MŸšOJfÉ6dZ¾ˆ_0qnÅÜ™sç.Œ&ÄŒ^Oûvq£ãÆŒZk¥'—/œÌlpÉ'OkYxò´Dª_ÂL>q$«ÛÚ¶À2–R*Õ­nh>­bMEs¶>‹©`ÁæÊ¦ĞË\¶¹‹XEKÚ{h)ßEÆ°ièm‡ FB=5ûæĞ‘élXµºRêz¦µà³”µvmÛÕİ¾i3LÈ˜òKõ¶÷‚y¤Ğ6wmm+ÃÂC™ŒAO.[ß×Ş±ÁÌ)¢ˆ‘ OşÈÈ²>cû$ÓH«¥£¬³QªŒ.AÑ.S|ÇIæÁIµû‹(BÖ3‚Óå¸
+ît²(ÎfK¶ÅÈój0.‘P6wu[¤ë;[(±¹‰ù˜,jnLeÃìOÃ½X‘’RW_7DW©;“#Zµlş´M%Úz¶g'R;~¶íñ?†?ç¿§~ıÈÄ‰‡î=4/eu6·Ä¢¡¶ïA¶ğêª6v3a5K¬fQÓè#•Ú±¥Ó¥>0xr‹È€¢¼2#¶áÁå¦¤öímK»„01Y Û&ÆŠ“,ÂtÔFÁVUòæbÔ´l“<mÈOSQrË‚ÁÒ–­í»d"Ê«i£]\kT®jFAÕ:Ò'¬qQ(…«€î®-áîƒ•/
+ÌG»d~0ä³c‰¥Ã‰G}ßúm„Ø:IJC†é¨ÂòVWÉvHÚDN}wÈ:êío53êbš<È™ºw#¢¾JvìÄvEêˆä­ã2bˆöe!ØôĞ)Îg.çòƒU·ìÌÚT3~1–+Ée±Ô2Ô¹´ƒf•7%+^,+$l~ \3z½ø¢–M‚©ÑMEã…²ÃSÒ#É<Vı¢®®¶ó½‚p«»¤ÀH¸ñV\ñİÔùwZ/¢iª—,U}Õ²¡vZ¿5^¶ñÒ¥«’§
+“ ì°Y!ñfWÍ9Ã,ê#ºZgx¬1OE?¨{CRª[ÖcÎbGXõNvıĞøàŒoS¡Â‰¤¿	}<ÜXV×–E½á{mç6±<Á£
+}j‚ÒÏMp\£p şÿ"*bS7¼vµƒ^crJí3J°×©ˆ^ó¤EÚñ½†»!Õà£‚Q \·‘0A·z…dJB[Kß FÈ"îºÛŒ: E~jÔÆs¸'‡/–¶á$	Q…–ó„+İÓ¼Ñ~~°lIépáNîtà9|M{O»ÀÈ–•…²W­Õõ¸ƒ”¾Âä’¥°ƒš ­Ò©ğ&E=ª«L,Ò”(:ÿæŞ­T†ŞÛµ´[¼ Õ´Ú6lÆv‚vº™Ìñél•Îêu¶ZgktÖ¨³3tÖ¤³µ:[§³3uv–ÎÎ&±C]¢³Kuv™Î.×Ù:Û­³+uv•Î®ÖÙ5:»Vg×éìzİ ³uv“ÎnÖÙ-:»Ug·éìvİ¡³;uv—ÎîÖÙ=:¤ã¶A^:Û„[°4Òª#&šh´øµ+â:·ÅGOÎ,*³9w[HA’ú,Šûşkô_¼dÁR»È°(©æa‰ì&‰Yh®%ZöwÃwO|çÒ	Q0BÚrx~Ï„(!ÅŒÔ tU”ªOB¥*†!ºÜ‚Å1Ty!ƒÒ'Mh‡ÒğÌ…-øæ:ÕªÄxF…å10!.T5mThqj}³ò[ädÇ
+Ïfés~û¤µv/f.oÊGhª¹˜	…¢¤õb)Q+»¨mALúhHO+
+±j7¿Ğ.2(ßnÕv+‹ÏÏĞªcì·Níç¸¹©BÕ,jÅC¤ÂÖ„‰;Ew•wŠü˜öè‹îÔ5¢&Ä¶"	ó…ÑZ$tôŠŠG-0b?*]Ö†¯,1½rÔºØ~Ì>2Rşp‰VÃæzHVƒÀ€çÙ/!Jö+ÉÉ¸€ızQ¿hÚoI‹Möª{f±)ä"°à|€ øÀ>°f]0ì‚Y`<şÀ³ Ïx˜ı©¿øƒ‡=ÂşèaO´³?!î?<l;û³‡¤ÈşÓÃdAÜ_şæaOÜÏş›‘ÿ€¨Û?!÷/	ı·‡°ÿø·‡ídÿë!³	úf±=$*D`?À Ú°{Ø… ‡vr"ÙÖrâÏâd-3OÀéš} “ë d3åqä!Ó"Däíâ©ö('-¶Ó8ÙÈ\ÎIæo'™¿ÏñL³=ì!NêmrâQ¯à~ÛÆ‰3}@-'‘Â>‡Ô1ÖÁÇzØz>”xx>;>‰½Î§ '±¯ğ© Iì|ÀD€I “
+“Ø·x‘›½Ä»İìe^	p ™Fy•OX@VQ^ãkÈJÿë|:À€™ ³ æ ”œ° `1À
+€€Z€&€ ô 78ñpŞäÄ¯9ÊÉjË[~‘—ºÙÛü$€E dÿÿKœÜù|ú
+'??_å§Ù—¯!ø_
+@®¾ÎW»éµï]	ÈìË79¹ú6'Ë0ßáe §¬¨h 8€ü	|Ù¾ËW¬8€lÎ|-ô}N6g~ÀÉúÌ{œLÆü— §‚÷9”ù¯ l?æK –»ÙOx  `À2€F€3 ÎhhØ@†l>@5>@¶ídû %À[ ÈıÁOòS> `@Ài ›ÈÎÏğŒŸñ äNáç¨ĞÏ‘ãçÈñs”üs”ü¾)ª£ç×IdFÁ" 	@ph¼+-°YÔı9ÿ=…&)½¯Q°ZÂ¿Hhøùc ×8Ào¦ßMOaOV9ò”“tKPL·-æ[a˜&…9Q©ùåşÜ«Mü`>O¿ƒü‚~~!#yÎD†ñJòÌGƒü†=$²Çùõ{X‚ãi¥İ¦a“èÎg!¸N×GŠŠ¼éüŞ~¾§(¡ŸßF{ƒÔÃø}ıüƒü"ğûJSúùéİé;øã$â÷Sñû2Õç±şãÚÒâ~ş#€÷Kıü‡¥ù…ƒüÕ~şÁ{—p…mšoĞÍ3¤×G"~ü'şça~©×?È‡Ø›ü‰üõ€>Ä>hòëüûtæ—ù~ÈAòçJı®~şÓF²8Ê_KÏÚPä3È_‚1Q²¸É—'ûİ¾dç9âÚÏûùó…Sûyy
+¤úR´Éf©Û›ˆi¾4
+fR¶ç9¾4`“¦
+ûİıü ˆò§’X$ØÃ’ı©TóCTNÆ@S²qEŞ,j/2ú&‡ßSßäô§Öò—iûècy3)Íi¤‰è"¯×ŒóæQåEtú ¿r?tU?*!^?m€/àõ{Kúùwü^jÔoû½şŒ~şİ!öó&?}£ß2ı™~şK&áüÚŸI8¿ògç7E^Ê~o «ÈëÃ•ÄrspÍ.òfàš3Ä¾Ûä§z–¿è÷èç_Œbo7Q5|IşpÀO£úù£~?=à|ìş^`´4>±ñMsošçíÏÅGÍÃGõçiøn¹Té<ún”æ.O|Î¼’v˜_âÏbßlr¤»ôĞı‡ùå”)ÓÈ”)3ÉÃDËK=Ì/&d¿ì2^Íë¦W£íçŸ§7#ÉQzÇlÜ9 œæH_ØÏ_w$1*[`Ì{³©È—4ÀïŒõEc~Å?–$Bùıü›t7®Ÿ•âÇôó¯ùÇR³|Ù?–ZãKõİÀ8ÿ8T`€…S¹ıüéò|ÿXzüÛş±Cì(iÀRü~şŞ+İMîV¯æ¤·‘İ}´h %}¬g¬Â+ßûzì·ã½cùÕ	şñş	ıü2«Cäæ¯r—91Š¿Ö” Q¤¡˜8Ä~ÔTäÍ¦Ş2À&±·0<˜ìŸäŸÜÏßLÏuòß¦õó½TÖÏıS¼ÔUŞ@°ŸÿÌ;
+H¯ f_W)¸Ç;Š#z¢LÈwªé£ŸïC¨”¤€ù¸óOô¦ÈÛ½@şİÜRDíw»17ÒŞGMu“›×	ñ(Kób?¿èwĞÍFÚ$4íQTˆô"KBñ ¿Ê8»káÉ”ûVc¦ïaÿ¥’MßªE††éRö´ğ/0¼ªJ‰EÅünÃ8Ö2ë.k†¹N)mÕ±ªzG£wçòİ²#Âjğ9U?ş‚hu{C	V¼©®GÕõ-;ëZ?}Õ}€ı¡ìOò*¶üñmÛªˆ³&bq.i¥Æ`A+6s¨ähÕâºÚfi1+¹¡ieesÅÊ•Õ•dî*İU-®h¨ª«%Ú¤ˆªª­o¨¨®®„é,Q]µhUÅª&#¸ºvEm]c­Ô3º.Bnª¥usÛ´Š®ÖvAÅ]ÒÖÓJÇOK0ª'’Ñh›ÍFëÓlb-Ê¸²^xL/Û@Ê”tX*#6l™´U›¼¡­g	¡.vNhÑ†—„vç¶m‚2š/ô4+Bêö×k~°¿–vf˜p[Õ¶Qé…R`Á J¯Î>™Ë-9WÄ­ë“·Š²ŒÒ$A«5Ä8OHo7ŠMn·–i#ZèÚj>#­'¢ò=á•ï1+ßc­|Oxå{B*ßc­|,.hå²ò=–Ê÷¨^|0m­Mœ ¤,”mg¯($q»(AÈ¨ pa@ Ààæş¹ÁÉ:$¦miÄ©‘ç÷Â¸»gQAœ¨Ç`ĞÖFæÏ6ÂrdËÍ#‚DwYÎÙ­UñHü…>Ú.dÅ^»Öög[AóÌ‹¡iPgKƒ¼u:TÜ* ¿VƒtÌ*àXnà)s³áDnLæ°Ó’È†@5@@-@ÀJ€ÓVÔ4 Ğyï¸z;àN…¯¸S¡¬MÛk¡0ÕN‚‡©Bs«]¬\s)œl	Ï£°Û>‰Â)–p€ÂKx>…“,á“é7G˜©€AË
+q-WWz{q¨®“T¼O,ÑĞvâ:CÅS3
+.Ö"¸æ>•ˆøèÚPä8ÌÖÂØç9 - ëZÎFê:€3l.r¼Èfg%P¦A¶‘Ü “ŞÒ&è{%‘ÆPc¬È:é!Êç]BÏƒüWÏ±?/™J©™àïn=YÛD6"òùtdô¹ÓŸ„¬~7e<`º^×Te¬6(Ö>mzm¯´I>ÇØ{L°MnÙoún_f“¼ŞHÎ³Mnİozúµ+üì ÿz§Mòº§MõvÉgÉãlo6
+'7Œ6ÉgÉÓ„ÎÁæÍ¾„Ñªedì6<½ØÒ¦Û§·éäñÑ.}½‘^dŸŞj¤Û—vĞb¢]ı×é%öégé¥öå7éS…§Åˆô³lÕÎûüßŞ¤&Æo–ífn1æF©%@LöM0;E©ltĞ–ÈÚ¨¢´¥#z‚­dS(’íşÂŒ‚Œd’îp-\qáúvÛS×LH×N¨î™Rì}X,, ÉX1€u3-	b¯°ë”å¦¹:3
+mj:óˆóBšMê®NSÖ!FÅ¨0Ø|b_P'Œ+ŸRÎ…¬4r³˜ƒLŠÀJ#Î®Ğ^ñÇÕïÿ†²ıæzÅÌh½âø»mrí¤ØL	š‘õ/”BÂ;“Ù#œÄ×#ªâï9nl8„èt’öBj:İ'zÏIÓ©¢ç¸E²
+Oßs\–Ãƒ=ge7†÷œd»óÎ‹İûI'z1ÂbøH>ïb!qj±Ö“R#zRñŠ';‚ÇU{Ë0´‘]E|*ì¯’h{l“9
+Z;*!×-FªV{·Ñî)ªİ©SRÛ'…¶ûóÿİDÆ`ğ@hÁàUÃZy¿‹¥	·²ã"dÙ­êp4k8—=Íö@oè‚òãåö¤pÎçT‚GH‡¯©\U/Nó™U5•«è8_ÕPUQİ¼¤²º¢IÚMQå1bÛN"Ø›ºIš¯l+‰•m&Ë"B@{[{ìô=ˆM—|föÉÈ=:4YœÍ¼QeÎĞSÙ¹½ä¦¤jÚ$¨cQF62Fº(tÖ>Ş‘Ç& öÂËüV–”R/0FÇ YØFm/“¡"H€¶†$“a=qƒ±‘7-=æŞ‚Ì[Û{”W#£XÜ›²qÊ(&ÛI¡ºEhExÚ{ S½²£oS;„Ûƒ…Æmšz$b¬ö2£!:Iõ€«©ÕÚ¥.†k›j.ú8Æm™-îhÛØ[¶•,8õ’¡è6"ÏĞë¥'NYÎ„aq¨ ¿’QÀè¨i=Š|¤&	"‡ôioMR“½}=RÀT'Ùp¢+İÒ•fs$	IJt”hE4iG´$;5áCõ— ˆ­Ôã×êfÜ©‚`4%ºmëp«RqîTléOñmK`3ª:rKu,t%;µµÃN
+±Eş´ºv˜È	—â2ßø£Ä9ÕÓ
+â'v[ØN[)¹ÌFˆ*ê“Öß#`¥ÉÉ“Ñ †hÍ˜yÚ¥Ùvå/uì?ûO€
+–‰¸saxLw@ˆ…ì/‡½caYj.¬HÍ±¨r‹cQå0UcQÓØö$2Ğ´`'À.€ó. ¸N/q“MŞë n ¸>O/†I§ËaÍérØpº‰/¸à*€k•]§øPmÊ	v\p=9]CN—ÂÓ17|áÆ‡£;ß¡İà:aœG§mµ¥ØîÍy˜ #< ä	“
+Ïˆİ|Åç
+êœ_A\éC`ß(öğØE>¶›|Ô˜m&OQ¢£²Û2/ÁCìLØ„İ;È"ƒ5·yN‡‚"Gb·É+xU”Ìß¥-*9tá/ñšô£7ç>Àt²rätv,<ÈnÖbéc±›Ù‡Ø-ûØ·(nÌƒì«*n®3›¬	İÒ671;1‹­jsåÖ¹®lWvb[kØzM¹ÛçN?¹£<ÙGŒşô“7o(÷ø’`ÍÄíˆåø<İŞ¤@Ê>–ëuã’¥â’Ğ½8á„Y¢ö9	÷ùÈîĞãıì±8Œd÷Ôìc³¨„™ËçÙKÅ¤ÈbR#Š1³Ü]CMøÛ1ÄÖRêX:ºssyõ},ÁK~Yï
+$¨bœˆIT1	ˆIDŒîwr‚_'ÿ±Ó' "ı‰déAº	¸à—Öï`÷Ò2-C=Bv¤(µŸ=ÔÏ$kÀdEùÖ}lÌAvë–c&ìeÉCìlªØ}/}t585v[ÓrÇ½ÌMXD/}€.cúÙıˆCØÈ[ùF¢Í2’]“n’Î.{ŒÎS øydùöVôºŞæÕ±;èws[IŸØ8À<§|øœ©¸–g©ëÙÔï?o=Ğ@÷™Ó¾¿‹îw	Û1™3(ì£ÛUÍ`°Ò"vNäÙˆÎtròÆ¼™RŒ\Ÿ¹G¶ÄHé-§ñ:,®}GpWíª.'Ïå¤ÜVñäĞ“TrËFÚ2Ïú6Ò‚‰ªŠR.-»rsY·ƒf±}ÄŞm—í'"Ç¤A(H’»'Z„^ŞÉå<â„-²UŠo<ë¥©´óÁ¯ F«‹äÅ²xÈ‹)uuÕ+ªškê–TT‡éÖÆ¡%9aøjYuÎÌo3©¦kCÚ[©EîÏÇÆöãmS.)WØƒVtìhÙÕS×Ù ;E`¢†>Ò4 kEI´¨VLRì·‰¡ï	ÑöêXomËV¾Ôø‚Ø%ÅĞ²8)GØnúÀ¬£Iv&‚şš“Hé,;ÈR&l ùX¾›(e“ÜD#H£`ùh›ÍE¹ÇZmâÏd
+V ¶eˆ•ÙJ§ÍÌ€Pj[¨m“1•Vu‰3EÑiGµmò ›JS}¡º=È¦ô³"¾ßdHÂ~¦:6øhÕ-µÃÀ`K[=9«‰_a\ƒmzØh›¬8U1Œy31¢míwÙíJva‡7Tq±¾Î’¤Ú¡ck{§Å’Oª´Ôµµ½7ÌTW¢Ùÿãìö~Ûy°*¶®“ãè§öÅ®­7LãP=Ø^Ë7Ùo£ üDf9nêi£Ñisò¢ÑHfa¤+EìÊèL…Yû©&úğDaôÅ)–³¬¢’1>2T9}ul‘šc‚üSŸÂ.P>$ò¨WO¨¦¾JB±Åd¡k\†vÆ Ë?ÌÆY|IHÒeš<Qı—ÿğ/?-
+øÅ×WÃW†)1YqÌúqtâ¶Æ –Ò¾—¡	ê
+éêËÖ»ƒÚ-5]}=mÊöU]šÅ‘YäzáÙ
+Rv%ÓŞŒ`%¬hú‘îlï&®Ä1Á\Eç“†*èÅ°ªAæÛéå–´‘ ¬Ç›k†ÉûÙÈ‰w=ˆ²·2•©lMğD2`àNğDÒÈù4&ò<Œ„±n˜µƒáº1QÇD¦˜«³Õ|=Êä$ŠqàW=Õ:_OÄÈ7z²˜Ó3V‰û‘`.›ğ*Ë¢ı6ü~6>8·¸)j¤q#)-z’'zRJô¤Éj|eÚ¯û/Ú¼ñ›´¶àßø
+gáŠ9¾"í!y¤íc'sbàÌ[I:¡}v8T«©#šnÁ¯K‡©#Á´Ë8fSGÙaıÑ‡ş˜i|w§àğeo¼²?º¨fö!åD³t„ñÆ¿MN£'¦Å=óÎúfŞYÿwf^A*®¡S™dÒ|6ßş_œoÛëÿHsíãogHd"r¾=1ãŒÌ‰©To?:¢té„On"¶
+Np%r“[ä&_‰Ü¤DœHVpÂi
+WX§b_T‰›°N³æ¿ëØÈé9ŸÆEzÎg‹ô‰^¤/üöß®£'ÖÅ½H—‡õŒñÎÜ’¸XO£9®/]nC+&Ã^pÊH5ÿ¿Œ–=ıË0ÿc#ÊgP„×Ø£‘7`º‹»¾­[w™=Ï$‰ÅÙ'Uÿ¶¡¶c¤}	Ãwo$O²3’Aµ->¼èûi ‡¥ƒæ…—Âj(€ğÀ1jXàòX&Œ…g‚2æƒağlI›09Ãc¬ü’2æfÁG[èôXKÈ+Y#”AC#~%},AĞÇX1†×^O…àu¡¼..Û\å™¯hjÓh¸M=*œFN=22İöWŠB÷‹¹FÆéZ”±È½o÷9Í4"›ã•sÃFåìˆù:œ¼Ç(œ«ìÈµ¶ó1hÓ)8èª¤™¦x]4d¶VÂä ¯2G`†ìH	Ú¢”N5;dV±Cra0ZF™¨$ÌñTGVQšã1íîXÑ­Æ‘dœÅ¶N„›#¢îÉòªªìj$Ç¡CĞáfŒÈŒH±.%bXjà¢§Èq(‡ À€‰ “`ªŠ–9l*FdAŒÁè+PBÄ`ô
+Mpø9Bªuh¦†MM8šIw%Š–›üšÅš%EcÓ˜ò9Å %bipËÍUÎS•İèÙ4ôJªÓ§Ó¥è!æ7…’V<E§OOŸN£²ÆÒ!–ÓT<À¦÷³¦2}¬QúÍ?ÏØ;"ÓÌO'Ïiæg<§ÏxNŸvÓ?ğ]5¢Á6ëÓ9Øf}6Ø>lŸöÁ6Ñõ›wG4Øf:ÛìÏÛgƒíÓ>ØJêÿ“GÏÄ/®ÁN›gõ²>Ì˜;&òîğmÎ1Qwa©x59S®èìÙ;Š‹uP|ìô¼;Ñ!“Ñ!©sBRÂZoÀ(ˆKdÇ’Èl¸“ğ
+ï!Aïe™B:´Ëå¡Ëù.—(hzÀ£p2¨ŸùIÑr´ºæ0u¢cÈ@ŒšúäàˆzXù§¯‡•ÖÃ>¾æi»ášö#êas?}=lîg=ìãëa‰#íai¿{KÏ¡íhN¼[Òy'Z˜`ø4ïÿ,O0^Ûw¶mh¥nñ™PÁÿm¡‚¿ÿ gêßiK‹_\ƒë¤^¦`øávÒ1MØÃöìÏdF$[öXë“oMvÎÆÉhø¾Úsœä‚nŒ‹u±BáÇNº¯[ ¼Ö­>êZ\ì6»İÅîp±;]ìû¶‹ıÀÅ\<ßÅ'¹øl_ìâK\¼ÒÅ—ºø2¿^º²Ë··X¸nq„8<Ô%•mí$ß/B4=@Å¦M³·9 -Zæ„Î³„¬Ô-kn¬ZÒ°œJ¬lÙp„i5UµÍ•g4ˆÉ5g4/ZİĞPW[O“BÕ«–U6×/^UW]m %ÔvuC(]«[A%Ö­h†G`aæ ¾rñêUUMÍd³°¡yyÕ2B÷†ÅV×5Ætçllşn¥ı)™¯¡3×Ù©‹W±&Á¤•¤§YD‚1flqÎ˜3ı¤P¼šPä<İ…]:Å…­˜	-Ò#^±3»¡&¡äAš	Fqc(Ï›®ë<dbeßzÒÇßŒ2\T–ş`)Bø)6MFŒjéëí’>ûH%»u‹i‚¾¤ôL®œù[¥}a¿A¹ 2Ÿl¸Æ¡I’AòZ¯y¢s©ÒĞvô
+ŞVá¬¨‚¾#±Gøq:q.õ¦ãRÏø”Í›É%t«7-Ş,äĞKæ(÷†`ô«D¹¢¯Å²Pq¢”±âS@‰OÂ?>1äødVã“¸‹O¦*>yœøäââ6ÆÅ%‰‹ºe*.âB\çÃ¸ ñm\†9'Ø¤Æ¿áZnrÌôÅ-ë…(“Í80¶<ñÙ6Æ±c,Ó'”¶v–ÄÄÕ¼3WŠŠëÚ"ÃV9û)¡”ªX–°š3¤5•EÖÉTÅ-¶N‰*®’Ü î2ü¯¹eÜ2¡(¯Ì²,ïên?nª:d´/<š,ü Êx4›zB¦²ëB{™ô ›#cÉpD[›ü”=*%U¥tm-`æµVóA,,¹¯l›zHY«4õâÑÒ#+[ºÅ©‘ûBßF=Ä´ “e¸©5vaÒâ¯?<z+uå86"‹´‘e[puz×LQw¦vñ†® ÛõêÚÚÒ.œsBnN	ï9Ä*šØv^_†ÒåM•Ğ4^Ü"Š%¿®îÙóqÊ‰gæÆöÎ–1 *¶ÓÛKq#Óµg†pí	
+ä;¯«›|òHA¹´ÒérkæÔ»	¾û„çµ ÿ¿¤MA‡~iæ½áÒÖi¨Ñæ}pK"ÒUSè›~AsÊH_Ş&ı#vyWO¯ÕÛhlsË°©¬D´Bı&‰¬³L1d»by(Eù5íA'£(¦®¾V|;Ü›}PÜË>+k»’6¨¶zšÊëio9“÷z
+ôzúh­½>#²¬à³YÁ%îw	¹Î¸½¡
++ÓÒ©aĞô´ÕE*ì`[){É*|ß5+ä‰Ìj¦…®->Vp¿S]©¹7S—[Ü×İ#¬Coné©UIÜ¬>¶NÉ·tòÀhÚrJmëåä³µµ£oC›¹õISAcCèà q!¨¶¿†K×i"Š¼A6¶´ã”ÜŞ#¥p”İÒÛº3ŠÊ–Æ£T«è­&zQ/6$ö	åÂY¬Ñê[¶ãÜp+?k¨ù)‘¦Ä=FW±&YÍÖll´{$oØVm8>Ç³¢ÈÇèr6Bº2Òíèèd„áI"#q`koÌRBÍu›¢ZlE@Ñ%®Ñı2mŒ3)7Ã†•îv}…8A¢#`O‚£;Ö•ŞƒÅ&f1[­o,¢—·ôl–ËC0®Êì¶¢&Á‘v,~zÓBÓv†•B1FO9!}Cıë.Æ±U<Ô^¤ÁVR7#4²½§7ŠßÑa‘rVXÚŞÖÃsh¢2µ¨¥;ºoàèêûÙ¡)mÛZ¬óŠ;áìˆxU­h~†cÚ¯óGõW'woj36¸N‰³ø)Nê ¡§¾okË¹]İ¥;Zºád;Ø«<"¾QFÃÛAÊ°Õº<§lmß	§‘/u+¨X²Ô‡K3#Ì•{<¹Œ8;¥ká(™
+£-ñ&ì²Ô¼›j†Õdªt'\ÛÌ…?ÛÜ·ª-£±éÌ“ÔCk†MQ=´Æ$QQ|ºåFÕbD0h´o½éœÙh•ämÖ®–¹-Ä(Ÿq,1÷¸²m¢û‡vlÛAo‘N°Ô´*Ieîôè^î"²ºiKÔµ¥]­}=U’ÂFÏë†óeãA¡[î
+ÅÑyä@Ë6O	ª‚Ö˜ğ³7Ğ+Ì&}æ0é´à6ÓÍ3CÙC×ßc$Ê)ÃÖbjı^éì:l^jÅ¶vµƒô¦í	«QÓÅ¶Gí,DÑ®¦£eWÛ†“¤êM2Z•8j˜u‰î_›¾@oğÀXÑA[µ­fùşâNôœTug–›,|r¯ÇnµÛÆC7}ãPÔ®V‹ûïP{’FÈÚd™ˆ7FyHIÁWµP»l¢Ğ÷¶ºGû³¶‰Şi|ÅbÜÒÄ‹fñ2Ì×8òÖ«ŞRßà–O¬o§Óg[È×‘Ï¶õU¦l ÍNCû6™†ÊHó°bÅéqÖ=?Ê0Lë…û;·5r‘– R”‰ı®éŠ`Í§	Âà§4ü¹‹:fÃó¾®8I½Á½Õ9:¹¸‘ı"²"eè}İêÙ` â«Kìd
+"A†R)T#‡~0B->êÚgm±>óˆ¹¾¶ºRi®m‘±˜…{p7Lë EòL7Ó	ğÿ% ábE.Vìb3]¬ÂÅ(x‘‹]ìb7ºx™‹Osñé.>ÃÅgºø|'×íK·ïëuÖª3²¿Nâ7êl“ÎÈ†O»ÎÎÕÙuèl«ÎÈêv—Î¶éì<uë¬GgdÄ¬OgÛuF:E;uFj~çëì]¨³_èì—:û•Î~­³ßèì·:ûÎ~¯³?èì:û“ÎşCgÖÙêì/:û«Îş¦³¿ëì:û§Îş¥³ÿÒÙëìtöoı¯Î>$Ci:ç:×tîĞ¹Sç‰:×uîÒy’Îİ:OÖ¹Gç):OÕyšÎÓu¡s¯Î3u¥sŸÎ³u£óQ:÷ë|´ÎséÃv'äFcÑ÷†uW/{ÍÄãôjï³5ÄjãÉH•iİGêE*ß´g¬¶İğÆĞ¤Œ¢û•Y±íDƒ¢óª£o})ytu´Í/LÒVÛïMG$ÔkglÕB0FlãSBÍŒôÏK`#§ *jŠ­IÀ5#0’eï-¦{Cã«¬^íƒG}i8ªÁ­œ»xdÉ(ó„ş[°Ô.²*22³ Ê5ÜÙº²R¢ÊŞ‚¸õ3CP!˜kÁ•[Åá‹KF!è<…!BŠÜFz)G²EÕëÖÓ²8UQ%Í}vN¿Ö“õèªø­JWE·6m^!otã(ö©³Ö-¶­SÓÔq:Qe …8æ[FBACØ«+¬¶¥bÌ®Ğê7Z5œ|‹ğ‰Yf[5-ºñíÏ°ŸtÃ«nRÄ(¨
+«£y¶§Ô1±]Î—R"1qÆÄHÆ+—Q¿TålvAt3İöJQÅ©Ã=ÃœU
+†±nŒRK©Öx{L£ÚQUoì]ı•Dù²öOÎ… 9ã¶ó>5>ÃíkFl~BtôàĞŸ_`;T†•Ê‘Sa´¯:ˆÚG­NYò¸ôƒHNeØ'™Ãş´‚á¼6VÇÅ<7i\öí£Œ»ùÇh†­øs
+Fî±òD@¬§UQ>ÇÇlˆ„³Šá¿Ø»Ëp{×´¥íjA]óQx<PŸæ˜:„}iµv›ˆcìqbQYYŸS¬u‹íë¸>ælê85²SÅ9iEyˆ]´İDû<¤æXs”‘qö±–o÷8çÄuh¦¯ ¾îçç^Ç÷^íÕlä#xÛúÑz‚Ç‚}'Ø}üB°Û=bØ…‰h~›w*³àe¡Ì‚›+îxà€¯|à[ø€‰ §Tœp5ÀMÀ»¾‹¿ğ}<`<Àv€® Øp%ÀU ¶˜¼¿ğxøşOi•ÿËÃo$ÀŞåÿåáÅØ^şßöCş?v
+ÿ7¹€áÿëaóN¨8`@#À% —ì!À§  È¯A\[âaïàñ=¬^#©÷3áoù,Äò×jš‡`µYØ¹Uszød-ÁÃ§”ÌXp	Àå ‹´D[£é¶àüR€RÍåás´$?Ys{øìça/¼
+ğÀ oàcqWÊò=ì.¼ `'ÀùHø&ïa?ø1ÀO ~
+ğ3|!î^`PÊD?`@@7J˜äágt àd€) S=|+ğğV€Í çô`¥Z²‡õk{JKñğj-ÕÃW`Wj¤ÖpÀÕ9ì¹ _«e é¦=¡‘Mò!€R-Àça/iÙŞ¦åP°§5Òéyà&Í0 ×Ã´<ä sF‡´±¸£ª!ÀkùÒû®#ÀNÓèµVhô2Ïjô2_#À4z£û´©À£Ú¿ğ¨VèaÏøÀË o|à«øÅyØ#Z±‡} T+ñğÓ ¶tt`÷k¥ö@©Væá×j4Ô¾£Íğ°g´™v  T£‘r6ÛÃ~®Íñ°ÏiåŞ¨Íõ°çµy¾R;ÉÃOÑv¹v²‡]ğŠ¶ÀÃ´…¶[;ÅÃØ­êáµZÊ£¡V¥-öğ:úó>­Á¥~’¶ÌÃîÑ–{ø<ü‡?¬æaƒÚ
+{ A«ñ°£Z­‡÷iu@YéaûµÓ=ì­ŞÃÇir°³ÚÃÏĞñŒ3<ì
+­	wk=ì»Ú:ÜĞâa×ië=ìZmSB;`@ÀV€.€í ;vœp!ÀE \p)Àe —\°àJ€« ®¸àZ€ë n ¸à&€[n¸à€;î¸à€= {î¸à~€ xàa€G øÀc ìxàI€§ >ğ4À3 Ï<°à ÀA€C ÏèHâ¯i×'ñ·´^€’ø—µv€N€m çtô ÜœÄ¿¦õìHâßĞnqóÏio|‘€CÈvóÇ´A€ÿ àHH˜P0ßÍwœäæû‰ n€d€Ñ ¹nªÚ‹ ¯ü€c"À$€É s NXp
+@Àb€¥ ËÜüIí}7ÊQâæŸÇİÓ Ï <ğÀ~Ç"7?à8ÕÍ"xày€Ã ı  ƒ G ¾ ıà¯ ÿø€p¤»ùö#nş"*ş¢c	@¥›¿¤ıØÍ_Ö¾ğ]€ßüàO ø'”ò²ÃPìæ¯8ünşªö²›¿®ıÆÍßĞş›€cº›¿©}ÕMŸì]7ÿ¢öm7[xàÏ ÿ	ğ7ÿ’ö
+À7¨B_Bñ_Fy_ÀQææ_ÕşàC7}Õï¸ù;¤‰ÅßuÌsóo9RÜüÛÀû®öğŒróï!á{À\7ÿ¾ö‡ææïiG8 \ „òCÇL7ß1ÛÍìãæ8nşSG@‘›ÿLû)ÀÏ ~ğ7ÿ¹ö[7ÿ…öw€pä¹ù/³ÜüWÚ— ¾ğu€üà ôQ~…§ıÊ‘åæ¿ÖŞø:À{ Ôâ¿Ê¯…nş4Óo´W~ ğC€_üào™ SÜü·xóßj_xà— ¿ø •ü[”ü[|Æßâá¿uäÌpóßi_póß£”ßkßø	À ÿ@ù÷@ş½£€>÷€üí+PèñúÔ¾ğ. U÷Èñ'Ç8€ñ Üü?´_¹ùŸ‘÷Ïh—ÿÔ¾GÀ‘ãæAÜ_I TŞ_SİüoÚQG2ÿöZ2ÿ‘cl2ÿ‰ö&Ù9ü»cZTqa^áøüÛLã_ç/cw;¡6H›.\±1áUêzººÖkRÅ¶_voâz•ºîV×+Õ•¶FâJ»‘oº®‘Wì•Äu¹ºNU×¹êz¹ºÒŞKä[«®µ‚3¬a&®´O~Àf“é>îlq·ÒïjaÊÏ‹-®…çZÂ·S˜¶˜¶F<,øb7i†“)f*/`‰O¤p¹¥¼[èw¾ÀÓ°ƒWÚJŠ+m3Åõ=yÅ¦Y\‹Äó5lpE¸X\Ø#Šğ…²=™ñ]Õõu­“WìjEøR…ÿ}uıúyêJ›\‹úáW[Ã^XÄïQåÑÎT\OVWÚ¸Š+ílÅu»(a—RDüxc§¥Ú™Ô2ç™ \|~Ñ€ãEü°cÀY  ›6ô ¬/rvœ° 	`-.8»H;ìXY”Áÿ÷°cy9‡9ìXQtĞqİaGs‘×}Ø±¡È›|ØÑVäM<ìh-J8ì8­hˆ¿Ù”îpüô°ãÑp5ŠmÄİ€v€s6lEêéEÎÃz€U6 ¡`w‘ã*ùLÄ®X]TRÚïØHğ'¼Ê’ƒ<zæošü	¯ğ£Îg½1y4ã¾DqÅh…ç»Jû%¤K­Afg©9ŠûŸC‹Ğõ14
+]§v‘š¹Œ·km²QéL&œ"²ŠüI‡½E>z÷º"½{5d:¶ù©Î+òé‡µE>UÒŸp”¥ú^z€~h]z~¿³pˆ¿Ú4àøQ¿ã'*¢È1àxÆ›Ğïø`ĞqÏ–6ÄŸ$ÿşAgBcî²|ëÍt<„–Røy¥~§6à8èuR#Òçp<íÕÍ˜)¸8úSábÜ:Ş'—€äÃó {ÿ@¼İílõvß¥·Ã xm³¥(ƒòwãĞu7¾/_pÁ½Lw’SHñğÎëJ²ñÎùw›¥õ—OGÅı.j˜}ä„7çÿşf„ßéOˆxCGØæ•»pçs©—tù]ê%ÏdƒlH½ä9Ú5.&ÑK’íë%uñ’ºxIİú’NŒ
+¼ ½’|O¿³>$ºÃ¶¢D‘pw}©€ÛëÇ%Ù;O¢Äv×79ıÉõM	~O} ¥ÈŸ_“”bt˜í’àOŒŞ.F÷ùÿØû€¨®sÿs™Y`AEeWQQq‰¨¨( ” &•ˆ@ ·$MÒ&MÓ´M—lÕ´Iš&5mMk°4K›Ötß÷åõu__Óí½n¯Íÿ÷;÷Ü;wfîÀ`Lš¾Ğùî=ç{î¹çó}ßùÎ·<Îáó4‡Ox(	9sÛ
+jÒe¥«K¦«»MKÖÜªÇv&íUÃâôñĞúøu°W8Ì±¯bæ¥ğëx-¼Åbb^äÏËº‚.ÕÀb1$¨nLÚ£ø#ÕÀ/èŸ´‚­*?o~µKÙ{{+ùÈœ¤¾;ıjGy‹‹$ÊAÎçÌ»ö™Àë$ôUàWy&ò«\Zã’Ä¥>Hø}·ˆgÅyõ¾-IûÕûŞ«æéô÷%èçfù]†8íÜúwr©'ş•ã~+B	ÏµYâ:PG½¡»“.W½%åÚ7Áv”;>Ñˆ
+à:”:¯! ª!É˜ö»TCÚ“UCzĞ²\—±!íz·M W´¨^±<Ûİ\©ìE0ß-êÉI»Ô“{ƒ±=îóÊ¦p&ä¤]ˆë8+Ÿc—3.‹.æ[3d¬şlayv¿Ùı‡U÷ï~‘=ïL¨ç…hÛUö&mSmxZ@¦§—“°;nCœ1^^‘“léõîç@Ë’)Á³={Ä^Ù$JVT{.S#¡qTûMû°sYSÅ¨ö©öêüIÈYWáÏ–ÿ|#ÎÔsÕ¨ötûˆã]!ÇO3Áı;¾Ö\	Şà»•à;¾r|ü‡su[Åiå	ÒEd.ÁSğÕµùê)ì&>ÇåOQ
+&û}ú?ãI?ogïhØYÀ—Õ¾….ú_<íŸ@ÈñÇ}!ç$^:ËQññ3Ÿ8‡MwW¨»>Ôİ±wãRˆw?«ßíâİZ­t»NVR©*ÁÔV•TÆV‚KÃ¬äz%nV’ã<.Ò‚î †äı!çÔ û¼(Íû9h^
+i‹4Ïİ¢ÚyÉU~0ÙèLÈßôÎL*Ò‡PRN™êÍ³×ã“ó·+ä\1ª}Í|¾iTû,¿mæ¥
+ô°şİ\WÖ8Ëøsœ;0Ì¾FnöŒüõâSò³6™'Áä37¼)äø*3ü)øB)ş~#Ç÷À†Õ#·å¸ÖZ	lûÖJ0Åo«ôguÜ^ÁÒè©ß©†]Á.	ä8ŞS›"kÆgÊ9¾}Rê5ªç`³ñ–æÙ%<s†œËñV¿BoTuÜ€¬0æòÈæ²ÙrX-	dM¸‘~#ÕÎTÀHmg*ÇHİÀÆ.ÆÉãˆÎpÆ±6-¯b†
+"ËÓq~yÈq’¡¨ŸW	ığŞ²ã•¾©C¾išzÓ,ozƒ>‚—¹TúÏµc¥oõãsK%0ö;äİÁã.}ÔóÌ.‘êÃÅõ;øÙqı aºÔ¤`Œ·ü,'å–ã—µ®ğ8º	UÜ4ªı¤G,ü7<õçáŸenÊ†˜İú«õÓÚôrô×½#N¯,ù«ö²@ºœCkSƒ¸{>Ø/j}òÔÁÓ´`jĞr.ĞËf¨²`Â,¹>•›Ì¹áo}møô5áÓÑèkƒi,yÆñãäFãäÚ@æã»CÎZ^µœßhœ=AúúmAA¼äÚq<ë¸#èI?ëxîÚ^4İx¾: •ßÂ¦8ÆöÛƒ‡¬2·İ²•ú]<Ußpßy1`4€•ø}ÖZô&ñÑFÃÜè*õèôğ£#ïŠzêkÂO}z*Ş‚kÁAËÃõ‡ÄôADÍn|õğŒ~cøá7Ê‡óé|o>>äxÌLş ?‚ù™ÁLƒ`†3Á@8í=/®LªÍÂ˜øGóŞaçŒ³£8;ªğx0+‘òj~ÈYÄ#Ç
+gòÑ³˜‡sÎ]IâŒãÎšì ×‘“ípès!è×ËàÍı|g•ÌƒçÅ-rDòƒ÷¬ãœ]#Ç Ñê¬`V¸ÕZmö¨ö‘ö@Ú°ãsµÙä€0=^›Ìæ„Ÿ
+âê©Ì'CÏ2q‰ó!Çg‚YÁì ¦İš`&Ÿ ¾§Á,ğÎ59Î{_“•“u\£M¿mwø;‡(€8ãxCÓßù^U(äÜH¾ÿ¼x
+‡«Î‹*6UµqØ¹íÊVïtŞIj ç3Éºäk[kr!ƒÕşÀÂÀClv¶ÖfŸYFË_"³‚ÙxlË¨öö² ™©99ÃáÚ\Tœ~Ç¹æ¤˜A’Å{†ßáÁlãÏvÊFDöşkÏC(qo0eTû¯¿–mvnÆ-Æc»í¸Ø-¿S¾ş²Á4è_çƒü #ø:ÆçÍ	æ Mf³‚9’ç1Æs_Vœœ§O‚9ò›÷Ë¦Zî(#K‚…›; Ó6œ³#\Ê–ùà1 Z0%˜­¯nåÔ>RqŞüºy²J³J£Ã(x˜uà€¾ë˜„µVµ®´Ö"kÏ9n0¡•zÆ¦“"_¿—2Ã—±IçoXóZØ?àqÈÍKÔîæÎæj`0ä Pßå¦`@5ä&Ò!‰lN
+Š¶§WOğÆĞAš¼êWŒL•E®W1iáçDš\y%×æÊ$N*ù$Éi~Ê^GNrA·]'‡çY²#Y	ÁILëwR0;K»ÛxÉI|Äˆãã¢ZuŞ¿ÙŸ/ËÒŞrr6!=ªâ ;rzx»Aı_g2‹ï õ‡[Æ¤[¢ÙBÉo…)ÿëpûë*$BÕgĞÅx$lKEĞ©×Ái¯Ş‰ız'^}>É&Ã×¼’‘ì—!©ıOÁ@ªÌ:z.,qÀıE`~ù]‹18\?ªı´Kªÿvf»ªÔ©‹ü—­Ó!"•"#u½Ñ2ë}ù®Úr=.G[«õ€iİF³`JK¢YoĞƒ„‰ö(ûô#D³H|ˆ‰Q¢Y­çÈãøiP‚+ÕÉ]WÖ¸3µŸé¬FNv§?¥3ÇİéwwÖx%·íÊñr½$y Ç7Š3ãøVd-–½(æñğÔqQL•’™jì‹''Er 	œzPVE$xR,Ôë¨’u³äMıÆMıv7é¬¶"ÖäêUo’èWSÍ,¹K9EÕ+u¢~^L®ôç‚±©zÌ[<úÜä×|ÃóDÊ¯3Æ'¶èõñéü.Æ'\ğ:¿¨yIıÄËzt1UêŒ£qÂÛ,í=à½1*
+‹º,í0<’Û9kğ9!Æ{wÈ9ãñ¸eëYÇÑ†7rÈ‚MáiÈ9ÅÈPfiï®M—d!hp«¸ï¿p_ıYÇ-(|…P9×3˜â­ÆW:E6ã]`\¼eA¿ŞŒğÃoÅm·‚ïÆÃ9SneŞ _ÕàUÜ®ÎYûÎ:ÓÂßƒÕ3äÍ2e÷ûƒiÀbà¥ä*Â‹†,\É2®déWn—ˆ% Ër˜úó:å$	Ã øV0›kyIYu¦ƒc=G_ü©fÓ/ÌİùQR=)[’Q‚#ª67‚¬$ÛŠ‚4wà»Õ Q8Æ£‚“dõò“é×õOÆ–:p†q†ıı·„ï¿…%ğVG×á5êğÚ×qk¸[Y"K»wÄqâ¸Ø›“â|@\Õ?n³²´ûjót&4˜'GÙĞ ûéaüÇéztµHg'ÃÏ:jP¼`×fÁ¼dµ2“Š,íD é¿…!°Pgã†ã1D?1Zóa¢Â‚ÖØĞò`0HyEŞˆSÅ`Á€óÂüDÁO Ó§2µÚÉ\i¼åäàä¶?8Ù,:ª}ŸÍ¿_6?¥6¢ë¯Cd)Jçn0?Xrº8y§§s-NN±va~0_va~ŠŞ…¸E’û`¾?OñÈÊSYœÜÊ;åôŠ¾˜œ“uZm•A?N	ÚvADÍİãn®<'ñûÍÏ	|‘'ÉõpéÕOü%6Cø‘ş5;¾Ô¦ÊRìfVÀ"Ã/7–)~ÑØ—;b>l¶z˜yŸ&i‡Æ>ıRäMCæM-R¸ÌPÈ¹t™Ö„³C!§ûœs'Ô¾óïÓ*Ï9/×Äq‘‹“+4ñŒö^üoºY{áä?—)7R*O8T~|©¥§ğ%ûì^5âø
+«?Æ·İ]^ãt»®;„”ÂÙNéYò9çMœp ÎíaqæIDIÑeœ%úÉJÎÎ˜İ ¿á1äøÅó°;¾DûªlÊIsTS!çşJJ–Î‹¥÷òœ(h)OJ»ü˜Ê~CÚuRäÄŠÀŒ—lKš¦j.P 9‘o ÷R>ìÄ[¬—ôP£N•Ü®â6—=µÌ_½Ü±bJşƒˆ88¥:äõ<~ÔH,¿Ù¡|á‡z™iz6Y4Ìá7#Eš6YùÑcŠÄB¿N='S9XN.‡(Ò³>iººü.²+NâÕÿÔTôáøëq1Àı’Í:£¦Ñ4î¢$ë¹m@zÎÇˆPùÑuÄº–›Ñ@Ñ*¨zÛYG¦Ê¹Uæôè¼öÂ25ÌPáI)WĞYÈ›Ïã1!ÇûãŞÄf½°[ßoÇ§ı€áºİ·“TdœTık¡Ïˆi–N`!ò›O©±µ˜¡.”£ê”²|Ô¡æVmnß©&·ølR©Íå>ãòm/÷_à‡¢H]¡.OÒ»;Óìn}¹uJ±ùfk×«O¶Œ«ˆóbQ>×ï¥L„œë—ó)FNÈ~ÕwIiŞÀU¾1ÿwYFn’9r¯ĞRN‡oyÙãÙªÁn5ûŒPÓT%.W¸äÒòç6„gi÷ÈaU„÷™v,\ÿ‹*˜¥™¿ørüš‰ÓåÍXdæWB}mÆá3ÇEråi0–?h>ùÂÏµg´gŞ{ÒR›Î=¦.SWT]ş Ş‰Hç~JØô·º¶œŒD_çñ®g¥àé5zŞçÅnÍ’j­6j5%ÿNŠ‹²´» ‘HÒeGµ$ZMJNJÒıbº!]rÊ’wæ eı¥¨S.€näœ•O$O¸ÈøÇLlYäG.Œ%¶Mú²ù>sqçµæç	¨	‘Â	Ñf ¨}Iêz™úĞS¹:=/‚ØöâCÿå„H	$52“d|T¨ØªûV€ªpŸµº‹ó?Ô$óğûš”ÊZn×Ş@qğ·±2~œ+‡ûwØ½{jØ‰û‚Q×f]ŒÜš,=Ã—ë‡O(I…sUf‘j'ğÖ»6%ü4¹s™K†c`d9;—å?îhzP¸ —åësÅ-Ö%mÁ­+˜ˆ7HÜèa£Ç‚ò"djxÂÑ0â¸÷	G“j´s7àm¥ş~ÕÑPÇª£MUÇ©ã‡ÕÑàŒõ¸:>¡gÔñ¬:†ÔqXGÔñ\´#ü·Â~ZıÃ¡aS“¿¶ğ-~£â'€ü¨8¦KzåŞÎÓ|*¢îR.¹l\OÀ½÷x‰í\êÚ9Vô4:–?Ñ˜1cİ5e,§zîÏÒø‹^ÅÙÛG7uÑNÕt¿bVV~ó|3Í²yoö éd–>Z`³Ø#i2[õT´‹ªHOt±´Æÿ}ğ²P/]$t.‘åÙ.‘ã¹.1	ûU	»€±÷buc¡Š2{œ0.‰y˜¨—†¼’¸n	ÆöpQìıg–Œe‰î±c½ß(İ,““i™¢šq`À4‹ Á||`¯’}@[ ³	fÒj«X,`$’‘ZÄr‹kd	Ã3Ö2’*-Ëx¶(…bCî\âAÄú•u«¼ ¢­^$×¬%XG° `ÁF‚f‚K	¶xAë½ˆ¹¸ÚÓ£Í^Q%Z¼À–M^h”nRÎxp)òlÑÍ¼ dºİê˜)cSÍG©«dF‡¤f²òÇÅ¶a±Çà2ñ"ªÈõJc ¬|D´‹ıe£¢¬=S<ãßëgÅVd”

@@ -1,19 +1,23 @@
 \contentsline {chapter}{Nomenclature}{xiii}{dummy.6}
-\contentsline {chapter}{Acknowledgements}{xv}{dummy.9}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.10}
-\contentsline {chapter}{\numberline {2}Research}{3}{chapter.11}
-\contentsline {section}{\numberline {2.1}Hardware}{3}{section.16}
-\contentsline {section}{\numberline {2.2}Firmware}{3}{section.17}
-\contentsline {chapter}{\numberline {3}Initial Hardware and Firmware Development}{5}{chapter.18}
-\contentsline {section}{\numberline {3.1}Camera}{5}{section.23}
-\contentsline {subsection}{\numberline {3.1.1}Single Camera Operation}{6}{subsection.24}
-\contentsline {subsection}{\numberline {3.1.2}Dual Camera Operation}{7}{subsection.26}
-\contentsline {section}{\numberline {3.2}SD Card}{8}{section.27}
-\contentsline {subsection}{\numberline {3.2.1}Storing Images}{8}{subsection.28}
-\contentsline {section}{\numberline {3.3}Motor Control}{8}{section.30}
-\contentsline {section}{\numberline {3.4}PCB Development}{8}{section.32}
-\contentsline {chapter}{\numberline {4}Investigation into Vision Algorithms}{9}{chapter.33}
-\contentsline {chapter}{\numberline {5}Conclusions}{11}{chapter.34}
-\contentsline {chapter}{\numberline {A}Circuit Diagrams}{13}{appendix.35}
-\contentsline {section}{\numberline {A.1}OV7670 Breakout Board Schematic}{13}{section.36}
-\contentsline {chapter}{References}{15}{dummy.38}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.9}
+\contentsline {chapter}{\numberline {2}Research}{3}{chapter.10}
+\contentsline {section}{\numberline {2.1}Hardware Research}{3}{section.15}
+\contentsline {section}{\numberline {2.2}Image Algorithms}{3}{section.17}
+\contentsline {subsection}{\numberline {2.2.1}Comparison Algorithms}{3}{subsection.18}
+\contentsline {chapter}{\numberline {3}Initial Hardware and Firmware Development}{5}{chapter.19}
+\contentsline {section}{\numberline {3.1}Camera}{5}{section.24}
+\contentsline {subsection}{\numberline {3.1.1}Single Camera Operation}{6}{subsection.25}
+\contentsline {subsection}{\numberline {3.1.2}Dual Camera Operation}{7}{subsection.27}
+\contentsline {section}{\numberline {3.2}SD Card}{7}{section.28}
+\contentsline {subsection}{\numberline {3.2.1}Storing Images}{8}{subsection.30}
+\contentsline {section}{\numberline {3.3}Motor Control}{8}{section.34}
+\contentsline {section}{\numberline {3.4}PCB Development}{9}{section.36}
+\contentsline {chapter}{\numberline {4}Investigation into Vision Algorithms}{11}{chapter.38}
+\contentsline {section}{\numberline {4.1}Comparison}{11}{section.39}
+\contentsline {section}{\numberline {4.2}Range Finding}{11}{section.40}
+\contentsline {chapter}{\numberline {5}Conclusions}{13}{chapter.41}
+\contentsline {chapter}{\numberline {A}Circuit Diagrams}{15}{appendix.42}
+\contentsline {section}{\numberline {A.1}OV7670 Breakout Board Schematic}{15}{section.43}
+\contentsline {chapter}{\numberline {B}Bitmap File Format}{17}{appendix.45}
+\contentsline {section}{\numberline {B.1}Bitmap File Format}{17}{section.46}
+\contentsline {chapter}{References}{21}{dummy.49}

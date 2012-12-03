@@ -6,11 +6,12 @@ A level-1 auxiliary file: InvestigationVision.aux
 A level-1 auxiliary file: Results.aux
 A level-1 auxiliary file: Conclusions.aux
 A level-1 auxiliary file: AppendixA.aux
+A level-1 auxiliary file: AppendixB.aux
 The style file: ecs.bst
 Database file #1: ECS.bib
 Warning--entry type for "Pirobot" isn't style-file defined
 --line 5 of file ECS.bib
-Warning--entry type for "FATFS:Homepage" isn't style-file defined
+Warning--entry type for "FATFS" isn't style-file defined
 --line 40 of file ECS.bib
-Warning--to sort, need author or key in FATFS:Homepage
+Warning--I didn't find a database entry for "ImageComparison)"
 (There were 3 warnings)
