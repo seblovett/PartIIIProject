@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  3 DEC 2012 22:25
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  4 DEC 2012 13:28
 entering extended mode
 **Report.tex
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.tex
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +13,7 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\ecsreport.cls
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\ecsreport.cls"
 Document Class: ecsreport 2011/11/10 v2.0 LaTeX document class
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\book.cls"
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
@@ -775,40 +775,38 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
 )
 \c@@todonotes@numberoftodonotes=\count162
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 12.
+Package hyperref Info: Option `colorlinks' set `true' on input line 13.
 
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Definitions.tex
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Definitions.tex"
 \c@address=\count163
 \c@alg=\count164
 )
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.aux
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Introduction.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Research.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\HardwareDevelopment.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\InvestigationVision.aux
-
-LaTeX Warning: Label `problem_between' multiply defined.
-
-) (C:\Users\hslovett\Documents\Uni\part3_project\Report\Results.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixB.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.aux"
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Introduction.aux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Research.aux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\HardwareDevelopment.a
+ux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\InvestigationVision.a
+ux") ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Results.aux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Conclusions.aux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixA.aux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixB.aux"))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -837,7 +835,7 @@ Package caption Info: End \AtBeginDocument code.
 )
 \c@lstlisting=\count171
 \AtBeginShipoutBox=\box45
-Package hyperref Info: Link coloring ON on input line 15.
+Package hyperref Info: Link coloring ON on input line 16.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -846,12 +844,12 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count172
 )
-LaTeX Info: Redefining \ref on input line 15.
-LaTeX Info: Redefining \pageref on input line 15.
-LaTeX Info: Redefining \nameref on input line 15.
+LaTeX Info: Redefining \ref on input line 16.
+LaTeX Info: Redefining \pageref on input line 16.
+LaTeX Info: Redefining \nameref on input line 16.
 
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.out)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.out)
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.out")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.out")
 \@outlinefile=\write4
 
 ABD: EveryShipout initializing macros
@@ -866,16 +864,16 @@ ABD: EveryShipout initializing macros
 
 ]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 27.
+ine 28.
 
 ------------------------------------------------------------------------------
  Abstract Page
 ------------------------------------------------------------------------------
-LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -885,45 +883,44 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.toc [5
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.toc" [5
 
 ])
 \tf@toc=\write5
- [6]
+
+[6]
 ------------------------------------------------------------------------------
  List of Figures
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.lof)
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.lof")
 \tf@lof=\write6
  [7
 
 
-] [8
+]
+[8
 
 ]
 ------------------------------------------------------------------------------
  List of Tables
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.lot
-
-Package natbib Warning: Citation `ImageComparison)' on page ix undefined on inp
-ut line 4.
-
-)
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.lot")
 \tf@lot=\write7
  [9
 
-] [10
+]
+[10
 
 ]
 ------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.lol)
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.lol")
 \tf@lol=\write8
  [11
 
-] [12
+]
+[12
 
 ]
 ------------------------------------------------------------------------------
@@ -933,10 +930,8 @@ ut line 4.
 
 ] [14
 
-] [15] [16
-
 ]
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Introduction.tex
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Introduction.tex"
 Chapter 1.
 ------------------------------------------------------------------------------
  1 Introduction
@@ -944,7 +939,8 @@ Chapter 1.
 ) [1
 
 
-] (C:\Users\hslovett\Documents\Uni\part3_project\Report\Research.tex
+
+] ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Research.tex"
 [2
 
 
@@ -955,8 +951,8 @@ Chapter 2.
  2 Research
 ------------------------------------------------------------------------------
 ) [3]
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\HardwareDevelopment.tex
-[4
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\HardwareDevelopment.t
+ex" [4
 
 
 
@@ -980,25 +976,17 @@ Overfull \hbox (69.31824pt too wide) in paragraph at lines 68--79
  [][] 
  []
 
-
-Package natbib Warning: Citation `ImageComparison)' on page 8 undefined on inpu
-t line 79.
-
-
-Package natbib Warning: Citation `ImageComparison)' on page 8 undefined on inpu
-t line 79.
-
-<Figures/ExampleImageFromCamera.jpg, id=324, 321.2pt x 240.9pt>
+<Figures/ExampleImageFromCamera.jpg, id=326, 321.2pt x 240.9pt>
 File: Figures/ExampleImageFromCamera.jpg Graphic file (type jpg)
 
 <use Figures/ExampleImageFromCamera.jpg>
 Package pdftex.def Info: Figures/ExampleImageFromCamera.jpg used on input line 
 90.
 (pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
-) [8] [9 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/ExampleI
-mageFromCamera.jpg>]
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\InvestigationVision.tex
-[10
+) [8] [9 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/Examp
+leImageFromCamera.jpg>]
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\InvestigationVision.t
+ex" [10
 
 
 
@@ -1007,44 +995,77 @@ Chapter 4.
 ------------------------------------------------------------------------------
  4 Investigation into Vision Algorithms
 ------------------------------------------------------------------------------
-[11] <Figures/problem1.png, id=357, 811.53188pt x 542.77782pt>
+<./Figures/deskLeft.png, id=346, 401.5pt x 301.125pt>
+File: ./Figures/deskLeft.png Graphic file (type png)
+
+<use ./Figures/deskLeft.png>
+Package pdftex.def Info: ./Figures/deskLeft.png used on input line 13.
+(pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
+
+<./Figures/deskRight.png, id=347, 401.5pt x 301.125pt>
+File: ./Figures/deskRight.png Graphic file (type png)
+
+<use ./Figures/deskRight.png>
+Package pdftex.def Info: ./Figures/deskRight.png used on input line 14.
+(pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
+ [11 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/deskLeft.
+png (PNG copy)> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figure
+s/deskRight.png (PNG copy)>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 39.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\chi' on input line 39.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 39.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 39.
+
+[12] <Figures/problem1.png, id=379, 811.53188pt x 542.77782pt>
 File: Figures/problem1.png Graphic file (type png)
 
 <use Figures/problem1.png>
-Package pdftex.def Info: Figures/problem1.png used on input line 48.
+Package pdftex.def Info: Figures/problem1.png used on input line 74.
 (pdftex.def)             Requested size: 417.47922pt x 279.22311pt.
-
-<Figures/left_simplified.png, id=361, 581.92406pt x 224.33812pt>
+ [13 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/problem1.
+png>]
+<Figures/left_simplified.png, id=396, 581.92406pt x 224.33812pt>
 File: Figures/left_simplified.png Graphic file (type png)
 
 <use Figures/left_simplified.png>
-Package pdftex.def Info: Figures/left_simplified.png used on input line 65.
+Package pdftex.def Info: Figures/left_simplified.png used on input line 91.
 (pdftex.def)             Requested size: 417.48438pt x 160.94481pt.
- [12] [13 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/problem
-1.png> <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/left_simpl
-ified.png>]
-<Figures/problem2.png, id=389, 818.30719pt x 543.53062pt>
+ [14 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/left_simp
+lified.png>]
+<Figures/problem2.png, id=419, 818.30719pt x 543.53062pt>
 File: Figures/problem2.png Graphic file (type png)
 
 <use Figures/problem2.png>
-Package pdftex.def Info: Figures/problem2.png used on input line 107.
+Package pdftex.def Info: Figures/problem2.png used on input line 133.
 (pdftex.def)             Requested size: 417.48099pt x 277.29646pt.
-) [14 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/problem2.pn
-g>]
+) [15 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/problem2
+.png>]
 No file Results.tex.
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.tex
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Conclusions.tex"
+[16
+
+
+
+
+
+]
 Chapter 5.
 ------------------------------------------------------------------------------
  5 Conclusions
 ------------------------------------------------------------------------------
-) [15
-
-
-
-
-
-] (C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.tex
-[16
+) [17] ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixA.tex"
+[18
 
 
 
@@ -1053,15 +1074,16 @@ Appendix A.
 ------------------------------------------------------------------------------
  A Circuit Diagrams
 ------------------------------------------------------------------------------
-<Figures/OV7670_Schematic.jpg, id=406, 844.5954pt x 597.432pt>
+<Figures/OV7670_Schematic.jpg, id=443, 844.5954pt x 597.432pt>
 File: Figures/OV7670_Schematic.jpg Graphic file (type jpg)
 
 <use Figures/OV7670_Schematic.jpg>
 Package pdftex.def Info: Figures/OV7670_Schematic.jpg used on input line 7.
 (pdftex.def)             Requested size: 417.47675pt x 295.30585pt.
-) [17 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/OV7670_Sche
-matic.jpg>]
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixB.tex [18
+) [19 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/OV7670_S
+chematic.jpg>]
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixB.tex"
+[20
 
 
 
@@ -1220,33 +1242,32 @@ Overfull \hbox (12.41272pt too wide) in alignment at lines 46--60
  [] [] [] [] [] 
  []
 
-[19] [20]) [21] [22
+[21] [22]) [23] [24
 
 
 ]
 ------------------------------------------------------------------------------
  References
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.bbl)
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
-[23
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.bbl")
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 60.
+ [25
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
- (C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.aux
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Introduction.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Research.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\HardwareDevelopment.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\InvestigationVision.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Results.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.aux)
-(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixB.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 60.
+
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.aux"
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Introduction.aux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Research.aux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\HardwareDevelopment.a
+ux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\InvestigationVision.a
+ux") ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Results.aux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Conclusions.aux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixA.aux")
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixB.aux"))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 60.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 60.
 
 
 Package rerunfilecheck Warning: File `Report.out' has changed.
@@ -1254,65 +1275,112 @@ Package rerunfilecheck Warning: File `Report.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Report.out':
-(rerunfilecheck)             Before: 8E87C706E40BB1ACAF54BDD5C54B2958;5518
-(rerunfilecheck)             After:  478869041259E0D05F109E0587C3D3AC;5518.
+(rerunfilecheck)             Before: 2D7A35878AA71EF073C800C1B9AF66D4;5511
+(rerunfilecheck)             After:  F1A347D27AAA122876903709DB9493C2;5511.
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 60.
  ) 
 Here is how much of TeX's memory you used:
- 19710 strings out of 494045
- 334615 string characters out of 3145960
- 431004 words of memory out of 3000000
- 22424 multiletter control sequences out of 15000+200000
- 13907 words of font info for 52 fonts, out of 3000000 for 9000
+ 19761 strings out of 494045
+ 335656 string characters out of 3145960
+ 431322 words of memory out of 3000000
+ 22447 multiletter control sequences out of 15000+200000
+ 15154 words of font info for 57 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  63i,12n,86p,738b,816s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.76} has been referenced but does not ex
+pdfTeX warning (dest): name{Hfootnote.84} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{table.76} has been referenced but does not exist, r
+pdfTeX warning (dest): name{equation.64} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.67} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.52} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.81} has been referenced but does not exist, r
 eplaced by a fixed one
 
-pdfTeX warning (dest): name{figure.caption.73} has been referenced but does not
+pdfTeX warning (dest): name{figure.caption.78} has been referenced but does not
  exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{dummy.78} has been referenced but does not exist, r
+pdfTeX warning (dest): name{figure.caption.74} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.65} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.61} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{dummy.83} has been referenced but does not exist, r
 eplaced by a fixed one
 
-pdfTeX warning (dest): name{section.75} has been referenced but does not exist,
+pdfTeX warning (dest): name{section.80} has been referenced but does not exist,
  replaced by a fixed one
 
-pdfTeX warning (dest): name{appendix.74} has been referenced but does not exist
+pdfTeX warning (dest): name{appendix.79} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{section.72} has been referenced but does not exist,
+pdfTeX warning (dest): name{section.77} has been referenced but does not exist,
  replaced by a fixed one
 
-pdfTeX warning (dest): name{appendix.71} has been referenced but does not exist
+pdfTeX warning (dest): name{appendix.76} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{chapter.70} has been referenced but does not exist,
+pdfTeX warning (dest): name{chapter.75} has been referenced but does not exist,
  replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.73} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.72} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.62} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.57} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.55} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.53} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.51} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.48} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.46} has been referenced but does not exi
+st, replaced by a fixed one
 
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Report.pdf (39 pages, 670746 bytes).
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Report.pdf (39 pages, 1010950 bytes).
 PDF statistics:
- 524 PDF objects out of 1000 (max. 8388607)
- 132 named destinations out of 1000 (max. 500000)
- 294 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 573 PDF objects out of 1000 (max. 8388607)
+ 156 named destinations out of 1000 (max. 500000)
+ 304 words of extra memory for PDF output out of 10000 (max. 10000000)
 

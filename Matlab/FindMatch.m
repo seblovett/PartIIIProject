@@ -1,3 +1,4 @@
+
 loadimages;
 show;
 BoxSize = [30,30];
@@ -11,6 +12,7 @@ rSubCoord = ginput(1);
 rSubCoord = [rSubCoord(2), rSubCoord(1)];
 rSubCoord = round(rSubCoord);
 close;
+tic;
 rightSub = GetSubImage(right, BoxSize, rSubCoord);
 %imshow(rightSub);
 rightSubGray = rgb2gray(rightSub);
@@ -21,7 +23,7 @@ figure(2);
 % subplot(1,2,1);
 surf(cL), shading flat;
 title('Normalised Cross Correlation of Right Sub and Left Image');
-
+toc;
 % cR = normxcorr2(rightSubGray(:,:), rightGray(:,:));
 % subplot(1,2,2);
 % surf(cR), shading flat;

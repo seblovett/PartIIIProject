@@ -1,32 +1,32 @@
 \contentsline {chapter}{Nomenclature}{xiii}{dummy.6}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.9}
-\contentsline {chapter}{\numberline {2}Research}{3}{chapter.10}
-\contentsline {section}{\numberline {2.1}Hardware Research}{3}{section.15}
-\contentsline {section}{\numberline {2.2}Image Algorithms}{3}{section.17}
-\contentsline {subsection}{\numberline {2.2.1}Comparison Algorithms}{3}{subsection.18}
-\contentsline {chapter}{\numberline {3}Initial Hardware and Firmware Development}{5}{chapter.19}
-\contentsline {section}{\numberline {3.1}Camera}{5}{section.24}
-\contentsline {subsection}{\numberline {3.1.1}Single Camera Operation}{6}{subsection.25}
-\contentsline {subsection}{\numberline {3.1.2}Dual Camera Operation}{7}{subsection.27}
-\contentsline {section}{\numberline {3.2}SD Card}{7}{section.28}
-\contentsline {subsection}{\numberline {3.2.1}Storing Images}{8}{subsection.30}
-\contentsline {section}{\numberline {3.3}Motor Control}{8}{section.34}
-\contentsline {section}{\numberline {3.4}PCB Development}{9}{section.36}
-\contentsline {chapter}{\numberline {4}Investigation into Vision Algorithms}{11}{chapter.38}
-\contentsline {section}{\numberline {4.1}Comparison}{11}{section.39}
-\contentsline {subsection}{\numberline {4.1.1}Sum of Absolue Differences}{11}{subsection.42}
-\contentsline {subsection}{\numberline {4.1.2}Sum of Squared Differences}{11}{subsection.44}
-\contentsline {subsection}{\numberline {4.1.3}NCC}{12}{subsection.46}
-\contentsline {subsection}{\numberline {4.1.4}ENCC}{12}{subsection.47}
-\contentsline {subsection}{\numberline {4.1.5}Comparison}{12}{subsection.48}
-\contentsline {section}{\numberline {4.2}Range Finding}{12}{section.49}
-\contentsline {subsection}{\numberline {4.2.1}Derivations}{12}{subsection.51}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Object is between the Cameras}{12}{subsubsection.56}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Object is infront of a camera}{14}{subsubsection.66}
-\contentsline {subsubsection}{\numberline {4.2.1.3}Object is to the same side in each camera}{14}{subsubsection.67}
-\contentsline {chapter}{\numberline {5}Conclusions}{15}{chapter.69}
-\contentsline {chapter}{\numberline {A}Circuit Diagrams}{17}{appendix.70}
-\contentsline {section}{\numberline {A.1}OV7670 Breakout Board Schematic}{17}{section.71}
-\contentsline {chapter}{\numberline {B}Bitmap File Format}{19}{appendix.73}
-\contentsline {section}{\numberline {B.1}Bitmap File Format}{19}{section.74}
-\contentsline {chapter}{References}{23}{dummy.77}
+\contentsline {chapter}{\numberline {2}Research}{3}{chapter.11}
+\contentsline {section}{\numberline {2.1}Hardware Research}{3}{section.16}
+\contentsline {section}{\numberline {2.2}Image Algorithms}{3}{section.18}
+\contentsline {subsection}{\numberline {2.2.1}Comparison Algorithms}{3}{subsection.19}
+\contentsline {chapter}{\numberline {3}Initial Hardware and Firmware Development}{5}{chapter.20}
+\contentsline {section}{\numberline {3.1}Camera}{5}{section.25}
+\contentsline {subsection}{\numberline {3.1.1}Single Camera Operation}{6}{subsection.26}
+\contentsline {subsection}{\numberline {3.1.2}Dual Camera Operation}{7}{subsection.28}
+\contentsline {section}{\numberline {3.2}SD Card}{7}{section.29}
+\contentsline {subsection}{\numberline {3.2.1}Storing Images}{8}{subsection.31}
+\contentsline {section}{\numberline {3.3}Motor Control}{8}{section.35}
+\contentsline {section}{\numberline {3.4}PCB Development}{9}{section.37}
+\contentsline {chapter}{\numberline {4}Investigation into Vision Algorithms}{11}{chapter.39}
+\contentsline {section}{\numberline {4.1}Comparison}{11}{section.40}
+\contentsline {subsection}{\numberline {4.1.1}Sum of Absolue Differences}{12}{subsection.47}
+\contentsline {subsection}{\numberline {4.1.2}Sum of Squared Differences}{12}{subsection.49}
+\contentsline {subsection}{\numberline {4.1.3}$\chi ^{2}$ }{12}{subsection.52}
+\contentsline {subsection}{\numberline {4.1.4}NCC}{12}{subsection.54}
+\contentsline {subsection}{\numberline {4.1.5}Comparison}{13}{subsection.56}
+\contentsline {section}{\numberline {4.2}Range Finding}{13}{section.57}
+\contentsline {subsection}{\numberline {4.2.1}Derivations}{13}{subsection.59}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Object is between the Cameras}{14}{subsubsection.64}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Object is infront of a camera}{15}{subsubsection.74}
+\contentsline {subsubsection}{\numberline {4.2.1.3}Object is to the same side in each camera}{15}{subsubsection.75}
+\contentsline {chapter}{\numberline {5}Conclusions}{17}{chapter.77}
+\contentsline {chapter}{\numberline {A}Circuit Diagrams}{19}{appendix.78}
+\contentsline {section}{\numberline {A.1}OV7670 Breakout Board Schematic}{19}{section.79}
+\contentsline {chapter}{\numberline {B}Bitmap File Format}{21}{appendix.81}
+\contentsline {section}{\numberline {B.1}Bitmap File Format}{21}{section.82}
+\contentsline {chapter}{References}{25}{dummy.85}

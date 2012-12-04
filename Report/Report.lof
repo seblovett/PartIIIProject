@@ -1,12 +1,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax }}{9}{figure.caption.33}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax }}{9}{figure.caption.34}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{13}{figure.caption.55}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Problem 1 : Left Camera Simplified\relax }}{13}{figure.caption.59}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 3 - Object is to the same side in both cameras\relax }}{14}{figure.caption.68}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{11}{figure.caption.43}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{11}{figure.caption.43}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{11}{figure.caption.43}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{13}{figure.caption.63}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 : Left Camera Simplified\relax }}{14}{figure.caption.67}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 3 - Object is to the same side in both cameras\relax }}{15}{figure.caption.76}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{17}{figure.caption.72}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{19}{figure.caption.80}
 \addvspace {10\p@ }

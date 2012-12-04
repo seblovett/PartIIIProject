@@ -1,7 +1,12 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{7}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
+
+\bibitem[Fulton(2010)]{ImageComparison}
+Wayne Fulton.
+\newblock \href{http://www.scantips.com/basics09.html}{Image file formats -
+  jpg, tif, png, gif. which to use?}, 2010.
 
 \bibitem[Goebel(2012)]{Pirobot}
 Patrick Goebel.
