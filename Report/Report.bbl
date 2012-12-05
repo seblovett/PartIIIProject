@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -45,6 +45,11 @@ Jernej Mrovlje and Damir Vran\v{c}i\'{c}.
 \newblock Distance measuring based on stereoscopic pictures.
 \newblock Technical report, University of Ljubljana, 2008.
 
+\bibitem[Nixon(2005)]{Nixon:HarrisAlgo}
+Mark Nixon.
+\newblock \href{users.ecs.soton.ac.uk/msn/book/new_demo/corners/}{Computer
+  vision demonstration website: Corner detection}, 2005.
+
 \bibitem[OmniVision(2007)]{SCCB_Interface}
 OmniVision.
 \newblock {\em OmniVision Serial Camera Control Bus (SCCB) Functional
@@ -55,20 +60,19 @@ Phillips.
 \newblock {\em PCA9542A : 2-channel I2C-bus multiplexer and interrupt logic},
   2009.
 
-\bibitem[Ruhnke et~al.()Ruhnke, K\:{u}mmerle, Grisetti, and
+\bibitem[Ruhnke et~al.(2011)Ruhnke, Kummerle, Grisetti, and
   Burgard]{Ruhnke:LaserMapping}
-Michael Ruhnke, Rainer K\:{u}mmerle, Giorgio Grisetti, and Wolfram Burgard.
-\newblock
-  \href{http://europa.informatik.uni-freiburg.de/files/ruhnke11icra.pdf}{Highly
-  accurate maximum likelihood laser mapping by joinly optimizing laser points
-  and robot poses}.
-\newblock Technical report.
+M.~Ruhnke, R.~Kummerle, G.~Grisetti, and W.~Burgard.
+\newblock Highly accurate maximum likelihood laser mapping by jointly
+  optimizing laser points and robot poses.
+\newblock In {\em Robotics and Automation (ICRA), 2011 IEEE International
+  Conference on}, pages 2812--2817. IEEE, 2011.
 
-\bibitem[Saxena et~al.(•)Saxena, Schulte, and Ng]{Saxena:DepthEstimation}
+\bibitem[Saxena et~al.(2007)Saxena, Schulte, and Ng]{Saxena:DepthEstimation}
 Ashutosh Saxena, Jamie Schulte, and Andrew~Y. Ng.
 \newblock
   \href{http://www-cs.stanford.edu/~asaxena/learningdepth/DepthEstimation_Saxena_IJCAI.pdf}{Depth
-  estimation using monocular and stereo cues}, •.
+  estimation using monocular and stereo cues}, 2007.
 
 \bibitem[Se et~al.(2002)Se, Lowe, and Little]{Se:MappingRobot}
 Stephen Se, David Lowe, and Jim Little.
@@ -92,11 +96,11 @@ Edwin Tjandranegara.
   \href{http://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1064&context=ecetr}{Distance
   estimation algorithm for stereo pair images}, 2005.
 
-\bibitem[Tsai and Lin(•)]{Tsai:NCC}
+\bibitem[Tsai and Lin(2003)]{Tsai:NCC}
 D.M. Tsai and C.T. Lin.
 \newblock
   \href{http://140.138.142.153/vision/tech/correlation2-FastNormalized.pdf}{Fast
-  normalized cross correlation for defect detection}, •.
+  normalized cross correlation for defect detection}, 2003.
 
 \bibitem[Wurm et~al.(2010)Wurm, Hornung, Bennewitz, Stachniss, and
   Burgard]{octomap}

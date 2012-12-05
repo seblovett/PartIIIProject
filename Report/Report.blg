@@ -24,13 +24,12 @@ Warning--entry type for "Tsai:NCC" isn't style-file defined
 --line 94 of file ECS.bib
 Warning--entry type for "Saxena:DepthEstimation" isn't style-file defined
 --line 110 of file ECS.bib
+Warning--entry type for "Nixon:HarrisAlgo" isn't style-file defined
+--line 171 of file ECS.bib
 Name 2 in "Fran\c{c}ois Fleuret and J\'{e}r\^{o}me Berclaz, and Richard Lengagne and Pascal Fua" has a comma at the end for entry Fleuret:OccupancyMap
 while executing---line 1262 of file ecs.bst
 Name 2 in "Fran\c{c}ois Fleuret and J\'{e}r\^{o}me Berclaz, and Richard Lengagne and Pascal Fua" has a comma at the end for entry Fleuret:OccupancyMap
 while executing---line 1338 of file ecs.bst
 Name 2 in "Fran\c{c}ois Fleuret and J\'{e}r\^{o}me Berclaz, and Richard Lengagne and Pascal Fua" has a comma at the end for entry Fleuret:OccupancyMap
 while executing---line 1338 of file ecs.bst
-Warning--empty institution in Ruhnke:LaserMapping
-Warning--empty year in Ruhnke:LaserMapping
-Warning--empty year in Ruhnke:LaserMapping
 (There were 3 error messages)

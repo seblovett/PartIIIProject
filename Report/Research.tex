@@ -14,11 +14,30 @@ The research done for this project is split down into three sections:
 
 \section{Hardware Research}
 \inote{Talk about why I chose to develop with AVRs, comparison with other uControllers. Why I used the OV7670 Camera etc etc}
+The robot is to be designed with a budget of £80 (not including P.C.B.). The choice of microcontroller will be an important one as a compromise between cost, power and usability must be made. There are three main brands of microcontrollers present in the consumer market: ARM, Atmel AVRs and PICs. 
+\inote{Do more research into ARM stuff}
+ARM is an architecture which is developed by ARM Holdings. ARM devices come in a many varieties, ARM9, ARM7, Strong ARM, ARM Cortex etc. While ARM Holdings do not fabricate and sell the devices themselves, many companies such as Texas Instruments, use the architecture and fabricate their own devices. For this comparison, the ARM7 and ARM9 will be looked at. ARM cores tend to be 32-bit and have a high clock speed. They are a RISC Harvard architecture.
 
+Atmel have a variety of products in the microcontroller market. They range from 8-bit, low clock speed packages for the hobbyist (ATMega, ATTiny), an improved 8-bit variant, XMega, and a 32-bit design, AT32UC3C. XMegas and AVR32s tend to have higher clock speeds than the ATMegas, around 30MHz for Xmegas and 60MHz for AVR32s. The AVR core is also a Harvard RISC architecture, but mainly 8-bit. Atmel devices have on board hardware implementations of common uses - \itc, SPI, ADCs as well as a number of different memories: Flash, EEPROM and SRAM. An AT32UC3C, ATXmegaA3BU and ATMega644P will be compared in this section. 
 
+\inote{Much point wasting words on PIC?}
+PICs are useless...
 \section{Image Algorithms}
 
 \subsection{Comparison Algorithms} 
-Before 
+
+\subsection{Detection Algorithms}
+It will be necessary to be able to work out what in the image are objects. For this, a number of detection algorithms can be used:
+\begin{enumerate}
+\item Corner Detection
+\item Edge Detection
+\end{enumerate}
+
+\subsection{Corner Detection}
+
+A common edge detection algorithm is the Harris Corner Detector \cite{Nixon:HarrisAlgo}. This works by placing a window over the image and measuring the intensity. If the intensity changes in both vertical and horizontal directions, there is a corner. If the window is on an edge, the intensity will only change in the direction perpendicular to the edge. This method will be useful to detect an object. However, this may not be able to detect a tall, vertical object, such as the edge of a wall.
+
+\subsection{Edge Detection}
+There are many edge detection algorithms. The 
 
 
