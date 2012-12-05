@@ -4,9 +4,9 @@
 *
 * File              : TWI_Master.h
 * Compiler          : IAR EWAAVR 2.28a/3.10c
-* Revision          : $Revision: 1.13 $
-* Date              : $Date: 24. mai 2004 11:31:22 $
-* Updated by        : $Author: ltwa $
+* Revision          : Revision: 1.13 
+* Date              : Date: 24. mai 2004 11:31:22 
+* Updated by        : Author: ltwa 
 *
 * Support mail      : avr@atmel.com
 *

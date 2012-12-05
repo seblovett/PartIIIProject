@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{8}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -39,5 +39,11 @@ OmniVision.
 Phillips.
 \newblock {\em PCA9542A : 2-channel I2C-bus multiplexer and interrupt logic},
   2009.
+
+\bibitem[Tsai and Lin(•)]{Tsai:NCC}
+D.M. Tsai and C.T. Lin.
+\newblock
+  \href{http://140.138.142.153/vision/tech/correlation2-FastNormalized.pdf}{Fast
+  normalized cross correlation for defect detection}, •.
 
 \end{thebibliography}

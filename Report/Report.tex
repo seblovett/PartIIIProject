@@ -7,8 +7,9 @@
 \usepackage{natbib}            % Use Natbib style for the refs.
 \usepackage{todonotes}
 \usepackage{longtable}
+\usepackage{color}
 \newcommand{\inote}[1] {\todo[inline]{#1}}
-
+\newcommand{\itc}{$I^{2}C$}
 %\usepackage[disable]{todonotes}
 \hypersetup{colorlinks=true}   % Set to false for black/white printing
 \input{Definitions}            % Include your abbreviations
@@ -33,7 +34,7 @@ This paper describes the research, designing and building of a stereoscopic mapp
 \listoffigures
 \listoftables
 \lstlistoflistings
-\listofsymbols{ll}{$I^{2}C$ Inter-Integrated Circuit \\ 
+\listofsymbols{ll}{\itc Inter-Integrated Circuit \\ 
 							TWI Two Wire Interface \\
 							SCCB 	Serial Camera Control Bus\\
 							kB		KiloBytes \\
@@ -54,6 +55,7 @@ This paper describes the research, designing and building of a stereoscopic mapp
 \appendix
 \include{AppendixA}
 \include{AppendixB}
+\include{AppendixC}
 \backmatter
 \bibliographystyle{ecs}
 \bibliography{ECS}

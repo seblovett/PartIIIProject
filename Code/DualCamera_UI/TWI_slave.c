@@ -4,9 +4,9 @@
 *
 * File              : TWI_Slave.c
 * Compiler          : IAR EWAAVR 2.28a/3.10c
-* Revision          : $Revision: 2475 $
-* Date              : $Date: 2007-09-20 12:00:43 +0200 (to, 20 sep 2007) $
-* Updated by        : $Author: mlarsson $
+* Revision          : Revision: 2475 
+* Date              : Date: 2007-09-20 12:00:43 +0200 (to, 20 sep 2007) 
+* Updated by        : Author: mlarsson 
 *
 * Support mail      : avr@atmel.com
 *

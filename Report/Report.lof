@@ -6,10 +6,15 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{11}{figure.caption.43}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{11}{figure.caption.43}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{11}{figure.caption.43}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{13}{figure.caption.63}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 : Left Camera Simplified\relax }}{14}{figure.caption.67}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 3 - Object is to the same side in both cameras\relax }}{15}{figure.caption.76}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{14}{figure.caption.56}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{14}{figure.caption.56}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{14}{figure.caption.56}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{14}{figure.caption.56}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{16}{figure.caption.68}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 1 : Left Camera Simplified\relax }}{16}{figure.caption.72}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 3 - Object is to the same side in both cameras\relax }}{17}{figure.caption.81}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{19}{figure.caption.80}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{21}{figure.caption.85}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
