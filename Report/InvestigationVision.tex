@@ -49,7 +49,8 @@ This is very similar to S.A.D. but adds more complexity by squaring each differe
 NCC =  \frac{1}{n}\sum\limits_{i,j} \frac{(A[i,j] - \bar{A}).(B[i,j] - \bar{B}}{\sigma _A . \sigma _B}
 \end{equation}
 \begin{center}
-Where $n$ is the number of pixels in $A$ and $B$, \\$\sigma$ is the standard deviation of the image, and \\$\bar{A}$ is the a average pixel value. \inote{Find a source for this equation}
+Where $n$ is the number of pixels in $A$ and $B$, \\$\sigma$ is the standard deviation of the image, and \\$\bar{A}$ is the a average pixel value. 
+\inote{Find a source for this equation}
 \end{center}
 \inote{No date on Reference}
 NCC is very similar to cross correlation, but normalised to reduce the error if one image is brighter than the other. It is common in computer vision (\cite{Tsai:NCC}) as cross correlation is a common operation in DSP so fast algorithms have been made to calculate this. 
@@ -152,13 +153,88 @@ D = \frac{Bx_0}{2\tan(\frac{\varphi_0}{2})(x_1 - x_2)}
 \end{equation}
 
 
-\subsubsection{Object is infront of a camera}
-
-
 \subsubsection{Object is to the same side in each camera}
+Derivation is based on the derivation from \cite{DistanceEstimation}. Using figure \ref{problem_toleft}:
+
+\begin{equation} \label{eq:p2:tanphi1}
+D.\tan(\varphi_{1}) = x_{1}
+\end{equation}
+
+\begin{equation} \label{eq:p2:tanphi0}
+D.\tan(\frac{\varphi_{1}}{2}) = \frac{x_{0}}{2}
+\end{equation}
+
+\begin{equation} \label{eq:p2:tanphi0and1}
+\frac{\tan(\varphi_{1})}{\tan(\frac{\varphi_0}{2})} = \frac{2x_1}{x_0}
+\end{equation}
+
+\begin{equation} \label{eq:p2:phi1}
+\varphi_1 = \arctan(\frac{2x_1}{x_0}\tan(\frac{\varphi_0}{2})
+\end{equation}
+
+and similarly
+\begin{equation} \label{eq:p2:phi2}
+\varphi_2 = \arctan(\frac{2x_2}{x_0}\tan(\frac{\varphi_0}{2})
+\end{equation}
+\begin{equation} \label{eq:p2:theta}
+\theta = \varphi_2 - \varphi_1
+\end{equation}
+
+Using the sine equality rule:
+
+\begin{equation} \label{eq:p2:sineeq}
+\frac{R}{\sin(\frac{\pi}{2} - \varphi_2)} = \frac{B}{\sin(\theta)}
+\end{equation}
+
+\begin{equation} \label{eq:p2:R}
+R = B.\frac{\sin(\frac{\pi}{2} - \varphi_2)}{\sin(\theta)} = B \frac{\cos(\varphi_2)}{\sin(\theta)}
+\end{equation}
+
+\begin{equation} \label{eq:p2:DeqR}
+D = \cos(\varphi_1).R
+\end{equation}
+Substituting \eqref{eq:p2:theta} into \eqref{eq:p2:R}, and then into \eqref{eq:p2:DeqR}:
+
+\begin{equation} \label{eq:p2:DeqB}
+D = B.\frac{\cos(\varphi_2).\cos(\varphi_1)}{sin(\varphi_2 - \varphi_1)}
+\end{equation}
+
+Where $\varphi_1$ is defined in equation \eqref{eq:p2:phi1} and $\varphi_2$ is defined in equation \eqref{eq:p2:phi2}. 
 
 \begin{figure}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Figures/problem2.png}
-\caption{Problem 3 - Object is to the same side in both cameras}
+\caption{Problem 2 - Object is to the same side in both cameras}
 \label{problem_toleft}
 \end{figure}
+
+\subsubsection{Object is in front of a camera}
+The distance, $D$, in this problem is given by:
+
+\begin{equation} \label{eq:p3:D}
+D = B \tan(\frac{\pi}{2} - \varphi_{2})
+\end{equation}
+Where $\varphi_2$ can be found from equation \ref{eq:p2:phi2}. 
+\begin{figure}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Figures/problem3.png}
+\caption{Problem 3 - Object is directly in front of a camera}
+\label{fig:problem_infront}
+\end{figure}
+
+\subsubsection{Summary}
+There are three situations that can occur. These are listed below with their equations.
+
+Object is between the two cameras:
+\begin{equation} \label{eq:summary:1}
+D = \frac{Bx_0}{2\tan(\frac{\varphi_0}{2})(x_1 - x_2)}
+\end{equation}
+
+Object is to the same side in both images:
+\begin{equation} \label{eq:summary:2}
+D = B.\frac{\cos(\varphi_2).\cos(\varphi_1)}{sin(\varphi_2 - \varphi_1)}
+\end{equation}
+Object is directly in front of a camera:
+\begin{equation} \label{eq:summary:3}
+D = B \tan(\frac{\pi}{2} - \varphi_{2})
+\end{equation}
+
+Where $\varphi_1$ is defined in equation \eqref{eq:p2:phi1} and $\varphi_2$ is defined in equation \eqref{eq:p2:phi2}.

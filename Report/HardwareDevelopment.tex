@@ -54,7 +54,7 @@ Operation to read an image is identical to using one camera. An ID number is pas
 
 \section{SD Card} 
 \inote{Fix the FatFS Reference}
-To use the SD card, the FATFS library \cite{FATFS} was used. The library supplies all the functions for writing a FAT File System in the files \textit{ff.c}, \textit{ff.h}, \textit{ffconf.h}, \textit{diskio.c}, \textit{diskio.h} and \textit{integer.h}. The \textit{diskio.h} functions control what device is being used - SD/MMC Card, USB drive etc. The \textit{ff.h} header contains all the functions to write to in a FAT File system. 
+To use the SD card, the FATFS library (\cite{FATFS}) was used. The library supplies all the functions for writing a FAT File System in the files \textit{ff.c}, \textit{ff.h}, \textit{ffconf.h}, \textit{diskio.c}, \textit{diskio.h} and \textit{integer.h}. The \textit{diskio.h} functions control what device is being used - SD/MMC Card, USB drive etc. The \textit{ff.h} header contains all the functions to write to in a FAT File system. 
 \\
 An SD card was chosen to be used due to it's small size, low cost and a large data storage. The cards work using an SPI bus which can be used for other devices within the system so the card only uses one extra enable pin in hardware to function. 
 
@@ -100,8 +100,8 @@ The ATMega 664P pinout for the Dual Camera operation can be seen in table \ref{t
 \centering
 \begin{tabular}{|c|c|c|c|c|}\hline
 	& 	Port A 	& 	Port B 			& 	Port C 				& 	Port D 		\\ \hline
-0	&	Data 0	&	SD Write Protect&	\itc SCL			&					\\
-1	&	Data 1	&	SD Card Detect	&	\itc SDA			&					\\
+0	&	Data 0	&	SD Write Protect&	\itc SCL			&	No Connection	\\
+1	&	Data 1	&	SD Card Detect	&	\itc SDA			&	No Connection	\\
 2	&	Data 2	&	USB Data Plus	&	Read Clock 1		&	VSync 0			\\
 3	&	Data 3	&	USB Data Minus	&	Read Reset 1		&	VSync 1			\\
 4	&	Data 4	&	SPI Chip Select	&	Write Enable 1		&	Read Clock 0	\\
@@ -116,5 +116,12 @@ The ATMega 664P pinout for the Dual Camera operation can be seen in table \ref{t
 \end{table}
 \section{Motor Control}
 \inote{do something of this SOON}
-\section{PCB Development}
-\inote{Also do something of this SOON \\ Circuit Diagram for Rev A}
+\section{Circuit and PCB Development}
+\subsection{Il Matto Development}
+Figure \ref{sch:DualCam_Schematic} shows the circuit diagram for the prototype. This uses the Il Matto development board for the main microcontroller. The prototype can be seen in figure \ref{fig:Prototype}. 
+
+\begin{figure}
+\includegraphics[width=\textwidth]{./Figures/Prototype.jpg}
+\caption{Prototype of Dual Camera operation.}
+\label{fig:Prototype}
+\end{figure}
