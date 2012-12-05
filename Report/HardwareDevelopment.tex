@@ -93,7 +93,27 @@ By writing the image in this format, the images are then able to be opened on an
 \label{ExampleImage}
 \end{figure}
 
+\subsection{User Interface}
+The ATMega 664P pinout for the Dual Camera operation can be seen in table \ref{table:644Pin}. Due to a lack of Input / Output pins remaining, an ATMega 168 was added on the \itc bus to act as a port extender. The 168 accepts a read or write, places the write data on Port D and reads in the lower nibble of Port C. When a button is pressed, this is stored in the 168 until a read has been done. This is so the master doesn't miss any button presses while busy doing lengthy operations such as writing an image. The code is based on \cite{Atmel:I2CSlave} written for IAR Compiler. This code was altered to compile with GCC under Atmel Studio. AVRs contain a hardware based \itc protocol that is interrupt based in software. The interrupt service routine of the TWI vector is a state machine which loads the data to send, stores received data, responds to acknowledges and address calls and deals with bus errors that can occur.
 
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|}\hline
+	& 	Port A 	& 	Port B 			& 	Port C 				& 	Port D 		\\ \hline
+0	&	Data 0	&	SD Write Protect&	\itc SCL			&					\\
+1	&	Data 1	&	SD Card Detect	&	\itc SDA			&					\\
+2	&	Data 2	&	USB Data Plus	&	Read Clock 1		&	VSync 0			\\
+3	&	Data 3	&	USB Data Minus	&	Read Reset 1		&	VSync 1			\\
+4	&	Data 4	&	SPI Chip Select	&	Write Enable 1		&	Read Clock 0	\\
+5	&	Data 5	&	SPI	MOSI 		&	Write Reset 1		&	Read Reset 0	\\
+6	&	Data 6	&	SPI MISO		&	Output Enable 0		&	Write Enable 0	\\
+7	&	Data 7	&	SPI Clock		&	Output Enable 0		&	Write Reset 0	\\
+\hline
+
+\end{tabular}
+\caption{Pin Connections of the ATMega 644P for Dual Camera Operation.}
+\label{table:644Pin}
+\end{table}
 \section{Motor Control}
 \inote{do something of this SOON}
 \section{PCB Development}

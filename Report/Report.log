@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  4 DEC 2012 23:42
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  5 DEC 2012 10:06
 entering extended mode
 **Report.tex
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.tex"
@@ -977,60 +977,60 @@ Overfull \hbox (69.31824pt too wide) in paragraph at lines 68--79
  [][] 
  []
 
-<Figures/ExampleImageFromCamera.jpg, id=472, 321.2pt x 240.9pt>
+<Figures/ExampleImageFromCamera.jpg, id=514, 321.2pt x 240.9pt>
 File: Figures/ExampleImageFromCamera.jpg Graphic file (type jpg)
 
 <use Figures/ExampleImageFromCamera.jpg>
 Package pdftex.def Info: Figures/ExampleImageFromCamera.jpg used on input line 
 90.
 (pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
-) [8] [9 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/Examp
-leImageFromCamera.jpg>]
+ [8] [9 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/Exampl
+eImageFromCamera.jpg>]) [10]
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\InvestigationVision.t
-ex" [10
-
-
-
-]
+ex"
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Investigation into Vision Algorithms
 ------------------------------------------------------------------------------
-<./Figures/deskLeft.png, id=492, 401.5pt x 301.125pt>
+<./Figures/deskLeft.png, id=538, 401.5pt x 301.125pt>
 File: ./Figures/deskLeft.png Graphic file (type png)
 
 <use ./Figures/deskLeft.png>
 Package pdftex.def Info: ./Figures/deskLeft.png used on input line 13.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
 
-<./Figures/deskRight.png, id=493, 401.5pt x 301.125pt>
+<./Figures/deskRight.png, id=539, 401.5pt x 301.125pt>
 File: ./Figures/deskRight.png Graphic file (type png)
 
 <use ./Figures/deskRight.png>
 Package pdftex.def Info: ./Figures/deskRight.png used on input line 14.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
- [11 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/deskLeft.
-png (PNG copy)> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figure
-s/deskRight.png (PNG copy)>]
+ [11
+
+
+
+ <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/deskLeft.png 
+(PNG copy)> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/de
+skRight.png (PNG copy)>]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
  [12]
-<./Figures/SADResults.jpg, id=521, 960.58875pt x 631.35875pt>
+<./Figures/SADResults.jpg, id=566, 960.58875pt x 631.35875pt>
 File: ./Figures/SADResults.jpg Graphic file (type jpg)
 
 <use ./Figures/SADResults.jpg>
 Package pdftex.def Info: ./Figures/SADResults.jpg used on input line 68.
 (pdftex.def)             Requested size: 341.43306pt x 224.40848pt.
 
-<./Figures/SSDResults.jpg, id=522, 1446.40375pt x 836.12375pt>
+<./Figures/SSDResults.jpg, id=567, 1446.40375pt x 836.12375pt>
 File: ./Figures/SSDResults.jpg Graphic file (type jpg)
 
 <use ./Figures/SSDResults.jpg>
 Package pdftex.def Info: ./Figures/SSDResults.jpg used on input line 69.
 (pdftex.def)             Requested size: 341.43306pt x 197.36942pt.
 
-<./Figures/NCCResults.jpg, id=523, 1446.40375pt x 836.12375pt>
+<./Figures/NCCResults.jpg, id=568, 1446.40375pt x 836.12375pt>
 File: ./Figures/NCCResults.jpg Graphic file (type jpg)
 
 <use ./Figures/NCCResults.jpg>
@@ -1043,14 +1043,14 @@ LaTeX Warning: Float too large for page by 31.57423pt on input line 73.
 [13] [14 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/SADRe
 sults.jpg> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/SSD
 Results.jpg> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/N
-CCResults.jpg>] <Figures/problem1.png, id=542, 811.53188pt x 542.77782pt>
+CCResults.jpg>] <Figures/problem1.png, id=587, 811.53188pt x 542.77782pt>
 File: Figures/problem1.png Graphic file (type png)
 
 <use Figures/problem1.png>
 Package pdftex.def Info: Figures/problem1.png used on input line 102.
 (pdftex.def)             Requested size: 417.47922pt x 279.22311pt.
 
-<Figures/left_simplified.png, id=546, 581.92406pt x 224.33812pt>
+<Figures/left_simplified.png, id=591, 581.92406pt x 224.33812pt>
 File: Figures/left_simplified.png Graphic file (type png)
 
 <use Figures/left_simplified.png>
@@ -1059,7 +1059,7 @@ Package pdftex.def Info: Figures/left_simplified.png used on input line 119.
  [15] [16 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/prob
 lem1.png> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/left
 _simplified.png>]
-<Figures/problem2.png, id=573, 818.30719pt x 543.53062pt>
+<Figures/problem2.png, id=618, 818.30719pt x 543.53062pt>
 File: Figures/problem2.png Graphic file (type png)
 
 <use Figures/problem2.png>
@@ -1090,20 +1090,24 @@ Appendix A.
 ------------------------------------------------------------------------------
  A Circuit Diagrams
 ------------------------------------------------------------------------------
-<Figures/OV7670_Schematic.jpg, id=594, 844.5954pt x 597.432pt>
+<Figures/OV7670_Schematic.jpg, id=639, 844.5954pt x 597.432pt>
 File: Figures/OV7670_Schematic.jpg Graphic file (type jpg)
 
 <use Figures/OV7670_Schematic.jpg>
 Package pdftex.def Info: Figures/OV7670_Schematic.jpg used on input line 7.
 (pdftex.def)             Requested size: 417.47675pt x 295.30585pt.
+
+<Figures/IlMattoCamera_CircuitDiagram.png, id=640, 753.0534pt x 694.7556pt>
+File: Figures/IlMattoCamera_CircuitDiagram.png Graphic file (type png)
+
+<use Figures/IlMattoCamera_CircuitDiagram.png>
+Package pdftex.def Info: Figures/IlMattoCamera_CircuitDiagram.png used on input
+ line 15.
+(pdftex.def)             Requested size: 753.05156pt x 694.75389pt.
 ) [21 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/OV7670_S
-chematic.jpg>]
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixB.tex"
-[22
-
-
-
-]
+chematic.jpg>] [22 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Fig
+ures/IlMattoCamera_CircuitDiagram.png>] ("C:\Users\hslovett\My Documents\Uni\pa
+rt3_project\Report\AppendixB.tex"
 Appendix B.
 ------------------------------------------------------------------------------
  B Bitmap File Format
@@ -1258,7 +1262,11 @@ Overfull \hbox (12.41272pt too wide) in alignment at lines 46--60
  [] [] [] [] [] 
  []
 
-[23] [24]) [25]
+[23
+
+
+
+] [24]) [25]
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixC.tex"
 [26
 
@@ -1381,30 +1389,20 @@ ux") ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Results.aux")
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixC.aux"))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 62.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 62.
-
-
-Package rerunfilecheck Warning: File `Report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Report.out':
-(rerunfilecheck)             Before: 9D5FBF81F269AA232563B58B4A077EAC;9426
-(rerunfilecheck)             After:  74A837706F7935404198A18F184B0719;10056.
+Package rerunfilecheck Info: File `Report.out' has not changed.
+(rerunfilecheck)             Checksum: 3922C03E3258BADFCD8E74674A422377;10486.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 62.
  ) 
 Here is how much of TeX's memory you used:
- 24768 strings out of 494045
- 403029 string characters out of 3145960
- 1569987 words of memory out of 3000000
- 24883 multiletter control sequences out of 15000+200000
+ 24786 strings out of 494045
+ 403478 string characters out of 3145960
+ 1570235 words of memory out of 3000000
+ 24897 multiletter control sequences out of 15000+200000
  14075 words of font info for 53 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 63i,12n,86p,738b,1853s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.89} has been referenced but does not ex
+ 63i,12n,86p,988b,1853s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.92} has been referenced but does not ex
 ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{dummy.2322} has been referenced but does not exist,
- replaced by a fixed one
 
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
@@ -1422,9 +1420,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2
 onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on Report.pdf (91 pages, 1846588 bytes).
+Output written on Report.pdf (91 pages, 1922266 bytes).
 PDF statistics:
- 3836 PDF objects out of 4296 (max. 8388607)
- 2638 named destinations out of 2984 (max. 500000)
- 495 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3874 PDF objects out of 4296 (max. 8388607)
+ 2641 named destinations out of 2984 (max. 500000)
+ 548 words of extra memory for PDF output out of 10000 (max. 10000000)
 
