@@ -8,14 +8,5 @@ A level-1 auxiliary file: Conclusions.aux
 A level-1 auxiliary file: AppendixA.aux
 A level-1 auxiliary file: AppendixB.aux
 A level-1 auxiliary file: AppendixC.aux
-The style file: ecs.bst
-Database file #1: ECS.bib
-Warning--entry type for "Pirobot" isn't style-file defined
---line 5 of file ECS.bib
-Warning--entry type for "FATFS" isn't style-file defined
---line 40 of file ECS.bib
-Warning--entry type for "ImageComparison" isn't style-file defined
---line 48 of file ECS.bib
-Warning--entry type for "Tsai:NCC" isn't style-file defined
---line 73 of file ECS.bib
-(There were 4 warnings)
+I found no \bibstyle command---while reading file Report.aux
+(There was 1 error message)

@@ -42,19 +42,18 @@
 \contentsline {subsubsection}{\numberline {C.1.1.6}DualCameras.h}{35}{subsubsection.513}
 \contentsline {subsubsection}{\numberline {C.1.1.7}DualCameras.c}{40}{subsubsection.798}
 \contentsline {subsubsection}{\numberline {C.1.1.8}PCA9542A.h}{48}{subsubsection.1276}
-\contentsline {subsubsection}{\numberline {C.1.1.9}PCA9542A.c}{48}{subsubsection.1303}
-\contentsline {subsubsection}{\numberline {C.1.1.10}TWI\_Master.h}{49}{subsubsection.1352}
+\contentsline {subsubsection}{\numberline {C.1.1.9}PCA9542A.c}{49}{subsubsection.1303}
+\contentsline {subsubsection}{\numberline {C.1.1.10}TWI\_Master.h}{50}{subsubsection.1352}
 \contentsline {subsubsection}{\numberline {C.1.1.11}TWI\_Master.c}{52}{subsubsection.1479}
-\contentsline {subsubsection}{\numberline {C.1.1.12}Usart.h}{57}{subsubsection.1702}
+\contentsline {subsubsection}{\numberline {C.1.1.12}Usart.h}{58}{subsubsection.1702}
 \contentsline {subsubsection}{\numberline {C.1.1.13}Usart.c}{58}{subsubsection.1732}
-\contentsline {subsection}{\numberline {C.1.2}Dual Camera User Interface}{59}{subsection.1816}
-\contentsline {subsubsection}{\numberline {C.1.2.1}DualCamera\_UI.c}{59}{subsubsection.1817}
-\contentsline {subsubsection}{\numberline {C.1.2.2}TWI\_slave.h}{61}{subsubsection.1923}
-\contentsline {subsubsection}{\numberline {C.1.2.3}TWI\_slave.c}{64}{subsubsection.2049}
-\contentsline {section}{\numberline {C.2}MATLAB Code for Image Algorithm Prototyping}{70}{section.2308}
-\contentsline {subsubsection}{\numberline {C.2.0.4}loadimages.m}{70}{subsubsection.2309}
+\contentsline {subsection}{\numberline {C.1.2}Dual Camera User Interface}{60}{subsection.1816}
+\contentsline {subsubsection}{\numberline {C.1.2.1}DualCamera\_UI.c}{60}{subsubsection.1817}
+\contentsline {subsubsection}{\numberline {C.1.2.2}TWI\_slave.h}{62}{subsubsection.1923}
+\contentsline {subsubsection}{\numberline {C.1.2.3}TWI\_slave.c}{65}{subsubsection.2049}
+\contentsline {section}{\numberline {C.2}MATLAB Code for Image Algorithm Prototyping}{71}{section.2308}
+\contentsline {subsubsection}{\numberline {C.2.0.4}loadimages.m}{71}{subsubsection.2309}
 \contentsline {subsubsection}{\numberline {C.2.0.5}GetSubImage.m}{71}{subsubsection.2325}
-\contentsline {subsubsection}{\numberline {C.2.0.6}SADAll.m}{71}{subsubsection.2366}
-\contentsline {subsubsection}{\numberline {C.2.0.7}SSDAll.m}{72}{subsubsection.2411}
-\contentsline {subsubsection}{\numberline {C.2.0.8}NCC.m}{73}{subsubsection.2455}
-\contentsline {chapter}{References}{77}{dummy.2541}
+\contentsline {subsubsection}{\numberline {C.2.0.6}SADAll.m}{72}{subsubsection.2366}
+\contentsline {subsubsection}{\numberline {C.2.0.7}SSDAll.m}{73}{subsubsection.2411}
+\contentsline {subsubsection}{\numberline {C.2.0.8}NCC.m}{74}{subsubsection.2455}

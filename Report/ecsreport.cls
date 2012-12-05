@@ -167,6 +167,8 @@
       \vfill
   \bigskip
       \bigskip
+Supervisor: Prof. Steve Gunn \\
+Second Examiner: Prof. Mark Zwolinski \\
       \bigskip
       \bigskip
   {\large \bf \@title \par}
@@ -176,7 +178,7 @@
       \bigskip
       {\large \textbf{\authornames} \par}
       \vfill
-      {\large Technical Report \par}
+      {\large  A project report for a Part Three Project for the award of BEng Electronic Engineering \par}
       \bigskip
       \bigskip
       \bigskip

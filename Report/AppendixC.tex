@@ -1,118 +1,108 @@
 %% ----------------------------------------------------------------
-%% AppendixB.tex
+%% AppendixC.tex
 %% ---------------------------------------------------------------- 
 \chapter{Source Code} \label{Chapter:AppendixC:Code}
 \section{C Code for AVR}
-\lstset{
-	tabsize=4,
-	language=c,
-        basicstyle=\scriptsize,
-        %upquote=true,
-        aboveskip={1.5\baselineskip},
-        columns=fixed,
-        showstringspaces=false,
-        extendedchars=true,
-        breaklines=true,
-        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
-	frame=single,
-        showtabs=false,
-        showspaces=false,
-        showstringspaces=false,
-        identifierstyle=\ttfamily,
-        keywordstyle=\color[rgb]{0,0,1},
-        commentstyle=\color[rgb]{0.133,0.545,0.133},
-        stringstyle=\color[rgb]{0.627,0.126,0.941},
-	language=C
-}
-\lstset{
-	tabsize=4,
-	language=matlab,
-        basicstyle=\scriptsize,
-        %upquote=true,
-        aboveskip={1.5\baselineskip},
-        columns=fixed,
-        showstringspaces=false,
-        extendedchars=true,
-        breaklines=true,
-        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
-	frame=single,
-        showtabs=false,
-        showspaces=false,
-        showstringspaces=false,
-        identifierstyle=\ttfamily,
-        keywordstyle=\color[rgb]{0,0,1},
-        commentstyle=\color[rgb]{0.133,0.545,0.133},
-        stringstyle=\color[rgb]{0.627,0.126,0.941},
-	language=matlab
-}
+\lstset{basicstyle=\scriptsize\ttfamily,
+        keepspaces=true,
+        	numbers=left,
+		numberstyle=\ttfamily\tiny,
+		numberblanklines=false,
+		stepnumber=1,
+		numbersep=12pt,
+		backgroundcolor=\color{black!2},
+		showspaces=false,       
+		showstringspaces=false,       
+		showtabs=false,         
+		frame=lrtb,
+		rulecolor=\color{black!40}, 
+		tabsize=4,
+		captionpos=t,
+		breaklines=true,
+		breakatwhitespace=false,
+		framesep=8pt,
+		framerule=1pt,
+		xleftmargin=9pt,
+		xrightmargin=9pt,
+		title=\lstname}
+\lstdefinestyle{matlab} {
+        language=Matlab,
+        keywordstyle=\color{blue},
+        commentstyle=\color[rgb]{0.13,0.55,0.13}\em,
+        stringstyle=\color[rgb]{0.7,0,0} }
+\lstdefinestyle{c} {
+        language=C,
+        keywordstyle=\color{blue},
+        commentstyle=\color[rgb]{0,0.6,0},
+        stringstyle=\color{red}} %[rgb]{0.58,0,0.82} }
 \inote{should I include FatFS Files?}
 
 \subsection{Dual Camera Operation}
 \subsubsection{main.c}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/main.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/main.c}
 
 \subsubsection{Bitmap.h}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Bitmap.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Bitmap.h}
 
 \subsubsection{Bitmap.c}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Bitmap.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Bitmap.c}
 
 \subsubsection{Config.h}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Config.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Config.h}
 
 \subsubsection{Config.c}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Config.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Config.c}
 
 \subsubsection{DualCameras.h}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/DualCameras.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/DualCameras.h}
 
 \subsubsection{DualCameras.c}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/DualCameras.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/DualCameras.c}
 
 \subsubsection{PCA9542A.h}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/PCA9542A.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/PCA9542A.h}
 
 \subsubsection{PCA9542A.c}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/PCA9542A.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/PCA9542A.c}
 
 \subsubsection{TWI\_Master.h}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/TWI_Master.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/TWI_Master.h}
 
 \subsubsection{TWI\_Master.c}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/TWI_Master.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/TWI_Master.c}
 
 \subsubsection{Usart.h}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Usart.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Usart.h}
 
 \subsubsection{Usart.c}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Usart.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Usart.c}
 
 
 \subsection{Dual Camera User Interface}
 
 \subsubsection{DualCamera\_UI.c}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/DualCamera_UI.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/DualCamera_UI.c}
 
 \subsubsection{TWI\_slave.h}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/TWI_slave.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/TWI_slave.h}
 
 \subsubsection{TWI\_slave.c}
-\lstinputlisting[language=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/TWI_slave.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/TWI_slave.c}
 
 \section{MATLAB Code for Image Algorithm Prototyping}
 
 \subsubsection{loadimages.m}
-\lstinputlisting[language=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/loadimages.m}
+\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/loadimages.m}
 
 \subsubsection{GetSubImage.m}
-\lstinputlisting[language=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/GetSubImage.m}
+\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/GetSubImage.m}
 
 
 \subsubsection{SADAll.m}
-\lstinputlisting[language=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/SADAll.m}
+\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/SADAll.m}
 
 \subsubsection{SSDAll.m}
-\lstinputlisting[language=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/SSDAll.m}
+\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/SSDAll.m}
 
 \subsubsection{NCC.m}
-\lstinputlisting[language=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/NCC.m}
+\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/NCC.m}
