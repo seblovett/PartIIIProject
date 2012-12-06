@@ -21,7 +21,7 @@ In computer vision, there are many different ways of comparing two similar image
 %\inote{Maybe do a basic 5x5 example for each?}
 \subsection{Sum of Absolue Differences}
 
-Given two indentically sized matricies, $A, B$ of dimensions $I,J$, SAD is defined as
+Given two identically sized two dimensional matrices, $A, B$ of dimensions $I,J$, SAD is defined as
 \begin{equation} \label{eq:SAD}
 SAD = \sum\limits_{i=0}^{I-1} \sum\limits_{j=0}^{J-1} A[i,j] - B[i,j] 
 \end{equation}
@@ -33,7 +33,7 @@ This method takes each sub image and subtracts the observed sub image from the e
 SSD = \sum\limits_{i=0}^{I-1} \sum\limits_{j=0}^{J-1} (A[i,j] - B[i,j] )^2
 \end{equation}
 
-This is very similar to S.A.D. but adds more complexity by squaring each difference. This removes the ability of equally different but opposite differences cancelling each other out (grey to white of one pixel will cancel out a white to grey difference in the other). Again, a low result is a match in this case.
+This is very similar to S.A.D. but adds more complexity by squaring each difference. This removes the ability of equally different but opposite differences cancelling each other out (grey to white of one pixel will cancel out a white to grey difference in the other with SAD). Again, a low result is a match in this case.
 
 %\inote{sort chi out, if I want to do it...}
 %\subsection{'Chi Squared'}
@@ -46,7 +46,7 @@ This is very similar to S.A.D. but adds more complexity by squaring each differe
 
 \subsection{NCC}
 \begin{equation}\label{eq:NCC}
-NCC =  \frac{1}{n}\sum\limits_{i,j} \frac{(A[i,j] - \bar{A}).(B[i,j] - \bar{B}}{\sigma _A . \sigma _B}
+NCC =  \frac{1}{n}\sum\limits_{i,j} \frac{(A[i,j] - \bar{A}).(B[i,j] - \bar{B})}{\sigma _A . \sigma _B}
 \end{equation}
 \begin{center}
 Where $n$ is the number of pixels in $A$ and $B$, \\$\sigma$ is the standard deviation of the image, and \\$\bar{A}$ is the a average pixel value. 
@@ -55,14 +55,14 @@ Where $n$ is the number of pixels in $A$ and $B$, \\$\sigma$ is the standard dev
 %\inote{No date on Reference}
 NCC is very similar to cross correlation, but normalised to reduce the error if one image is brighter than the other. It is common in computer vision (\cite{Tsai:NCC}) as cross correlation is a common operation in DSP so fast algorithms have been made to calculate this. 
 
-Unlike S.S.D. and S.A.D., the normalised cross correlation gives a high value for a match. The downside to this algorithm comes with the complexity of the equation with division in it and a square root to calculate the standard deviation. These operations are rarely implemented in hardware and are time consuming to carry out. They also require floating point registers and operations slow on a Microcontroller with a small amount of floating point registers. 
+Unlike S.S.D. and S.A.D., the normalised cross correlation gives a high value for a match. The downside to this algorithm comes with the complexity of the equation with division in it and a square root to calculate the standard deviation. These operations are rarely implemented in hardware and are time consuming to carry out. They also require floating point registers and operations slow on a microcontroller with a small amount of floating point registers. 
 
 
 
 %test and compare
 \subsection{Comparison}
 
-To compare these equations, a 50 by 50 image taken from the Right picture was compared with the left image over the entire valid range. The coordinates on the graph give the centre pixel of the calculation. Fi
+To compare these equations, a 50 by 50 image taken from the right picture was compared with the left image over the entire valid range. The coordinates on the graph give the centre pixel of the calculation. 
 
 \begin{figure}
 \centering
@@ -73,16 +73,16 @@ To compare these equations, a 50 by 50 image taken from the Right picture was co
 \label{fg:CompResults}
 \end{figure}
 
-Each of the graphs show the correct area being indentified as a match, but this also highlights the downfalls of the SAD and SSD. The figures in figure \ref{fg:CompResults} are orientated to match the orientation of the images in figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the phone from the test figure. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem \cite{haller2012design}.
+Each of the graphs show the correct area being indentified as a match, but this also highlights the downfalls of the SAD and SSD. The figures in figure \ref{fg:CompResults} are orientated to match the orientation of the images in figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the phone from the test figure. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem(\cite{haller2012design}).
 
-SAD results in figure \ref{fg:Results:SSD} show large areas of matching. The actual match is at (170, 175) and a minimum does occur at this position as expected of a value of $5.66\times 10^4$. However, along the bottom of the image where a dark area occurs in the lower part of figures \ref{fig:StereoTest} below the desk, the SAD algorithm detects a greater comparison with the lowest value in this area being $3370$ at $(227, 275)$. This creates a false detection here. 
+SAD results in figure \ref{fg:Results:SSD} show large areas of matching. The actual match is at (170, 175) and a minimum does occur at this position as expected, of a value of $5.66\times 10^4$. However, along the bottom of the image where a dark area occurs in the lower part of figures \ref{fig:StereoTest} below the desk, the SAD algorithm detects a greater comparison with the lowest value in this area being $3370$ at $(227, 275)$. This creates a false detection here. 
 
 SSD shows matches in the same two areas: where a match should occur and the dark area beneath the desk. The minimum values where the match should occur is $4.355 \times 10^5$ at location $(170,176)$. However, again, there is thought to be a large match correlation between the dark area under the desk where the actual lowest value of $2.768$ is at $(225,274)$. This, again, is a false match and is a downfall of this algorithm. 
 
-The NCC results are visible in figure \ref{fg:Results:NCC}. A match can be seen at coordinate $(195,201)$ with a peak value of $0.9654$. The coordinate is different to the previous results because the cross correlation works over the boundary of the image creating more results. The dimensions of the image are 300 $\times$ 400, but the NCC returns an data set of dimensions 350 $\times$ 450 when using a box size of 50 $\times$ 50. To get the actual match, half of the box size must be subtracted from the returned coordinate. This means the match occurs at $(170,176)$. 
+The NCC results are visible in figure \ref{fg:Results:NCC}. A match can be seen at coordinate $(195,201)$ with a peak value of $0.9654$. The coordinate is different to the previous results because the cross correlation works over the boundary of the image creating more results. The dimensions of the image are 300 $\times$ 400, but the NCC returns an data set of dimensions 350 $\times$ 450 when using a box size of 50 $\times$ 50. To get the actual match, half of the box size must be subtracted from the returned coordinate. This means the match occurs at $(170,176)$. With this algorithm, there is no area of the image which is close to a false detection. 
 
 \subsection{Conclusion}
-It can be seen there is a direct correlation between the complexity of the matching algorithm to the reliability of the match returned. In brightly lit, colourful environments absent of dark colours, SAD and SSD should provide a reliable result, but this cannot guaranteed to always be the case. Therefore further development of the matching algorithm will start with using the Normalised Cross Correlation. There is a compromise of complexity for reliability, of which reliability is more desirable. Cross correlation is also a large area of research, so optimised algorithms do exist. 
+It can be seen there is a direct correlation between the complexity of the matching algorithm to the reliability of the match returned. In brightly lit, colourful environments absent of dark colours, SAD and SSD should provide a reliable result, but this cannot guaranteed to always be the case. Therefore further development of the matching algorithm will start with using the Normalised Cross Correlation. There is a compromise of complexity for reliability to be made, of which reliability is more desirable. Cross correlation is also a large area of research, so optimised algorithms do exist.
 
 \section{Range Finding}
 %\inote{Derive the range finding equations and test them}
@@ -237,3 +237,5 @@ D = B \tan(\frac{\pi}{2} - \varphi_{2})
 \end{equation}
 
 Where $\varphi_1$ is defined in equation \eqref{eq:p2:phi1} and $\varphi_2$ is defined in equation \eqref{eq:p2:phi2}.
+
+When the images have been match, these equations can be used to calculate the range to an object.

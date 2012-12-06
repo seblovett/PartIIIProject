@@ -4,11 +4,11 @@
 \chapter{Conclusions and Further Work} \label{Chapter: Conclusions}
 %\section{Conclusion}
 
-So far the project has completed three aspects of the whole design: image acquisition, object matching a range finding. So far, all these aspects have been developed separately on different platforms, on a ATMega644P or in MATLAB. 
+So far the project has completed three aspects of the whole design: image acquisition, object matching a range finding. All these aspects have been developed separately on different platforms; on an ATMega644P or in MATLAB. 
 
 A full image can be read from a camera and stored on an SD card in a FAT32 filesystem. This gives the ability of removable memory that can be viewed on a computer to see any internal logs that have been written. Images are stored in QVGA format (320 by 240 pixels) as a bitmap image. 
 
-Multiple comparison algorithms have been investigated and compared. They were then all tested using the same image. It was clear that, although at a sacrifice of computations, the normalised cross correlation is the best measure to use.
+Multiple comparison algorithms have been investigated and compared. They were then all tested using the same image. It was clear that, although at a sacrifice of computations, the normalised cross correlation is the best measure to use for reliability.
 
 Range finding equations were then derived. These use the characteristics of the camera and the separation distance between them. 
 

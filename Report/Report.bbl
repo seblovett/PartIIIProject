@@ -1,16 +1,37 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{23}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 
-\bibitem[Corporation(2007)]{Atmel:I2CSlave}
-Atmel Corporation.
+\bibitem[{Atmel Corporation}(2007)]{Atmel:I2CSlave}
+{Atmel Corporation}.
 \newblock {\em AVR311: TWI Slave}, 2007.
 
-\bibitem[Corporation(2012)]{Atmel:ASF}
-Atmel Corporation.
+\bibitem[{Atmel Corporation}(2012{\natexlab{a}})]{Atmel:UC3C}
+{Atmel Corporation}.
+\newblock {\em AT32UC3C0512C Datasheet}, 2012{\natexlab{a}}.
+
+\bibitem[{Atmel Corporation}(2012{\natexlab{b}})]{Atmel:644P}
+{Atmel Corporation}.
+\newblock {\em ATMega644P Datasheet}, 2012{\natexlab{b}}.
+
+\bibitem[{Atmel Corporation}(2012{\natexlab{c}})]{Atmel:ASF}
+{Atmel Corporation}.
 \newblock \href{http://www.atmel.com/tools/AVRSOFTWAREFRAMEWORK.aspx}{Atmel
-  software framewrok}, 2012.
+  software framewrok}, 2012{\natexlab{c}}.
+
+\bibitem[{Atmel Corporation}(2012{\natexlab{d}})]{Atmel:A3BU}
+{Atmel Corporation}.
+\newblock {\em ATXMega256A3BU Datasheet}, 2012{\natexlab{d}}.
+
+\bibitem[{Electronic Lives Manufacturing}(2012)]{FATFS}
+{Electronic Lives Manufacturing}.
+\newblock \href{http://elm-chan.org/fsw/ff/00index_e.html}{Fatfs - generic fat
+  file system module}, 2012.
+
+\bibitem[Farnell(2012)]{Farnell}
+Farnell.
+\newblock \href{uk.farnell.com}{Farnell online store}, 2012.
 
 \bibitem[Fleuret et~al.(2007)Fleuret, Berclaz, Lengagne, and
   Fua]{Fleuret:OccupancyMap}
@@ -37,11 +58,6 @@ Rostam~Affendi Hamzah, Sani Irwan~Md Salim, and Hasrul~Nisham Rosly.
   application.
 \newblock {\em Canadian Journal on Electrical and Electronics Engineering},
   1\penalty0 (3):\penalty0 49--53, 2010.
-
-\bibitem[Manufacturing(2012)]{FATFS}
-Electronic~Lives Manufacturing.
-\newblock \href{http://elm-chan.org/fsw/ff/00index_e.html}{Fatfs - generic fat
-  file system module}, 2012.
 
 \bibitem[Microsoft(2012)]{Microsoft:Kinect}
 Microsoft.
@@ -84,6 +100,10 @@ Stephen Se, David Lowe, and Jim Little.
   landmarks}.
 \newblock {\em The International Journal of Robotics Research}, pages 735--758,
   2002.
+
+\bibitem[{Texas Instruments}(2012)]{ARM:Stellaris}
+{Texas Instruments}.
+\newblock {\em Stellaris LM3S9B96 Datasheet}, 2012.
 
 \bibitem[Thrun and Montemerlo(2006)]{Thrun:SLAM}
 Sebastian Thrun and Michael Montemerlo.

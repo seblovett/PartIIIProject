@@ -1,12 +1,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison Table of some common microcontrollers\relax }}{4}{table.caption.18}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison Table of some common microcontrollers. Data of microcontroller taken from \cite {Atmel:UC3C}, \cite {Atmel:644P}, \cite {Atmel:A3BU} and \cite {ARM:Stellaris}. Costings from \cite {Farnell}\relax }}{4}{table.caption.18}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available (\cite {ImageComparison})\relax }}{10}{table.caption.35}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega 644P for Dual Camera Operation.\relax }}{11}{table.caption.39}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega 644P for Dual Camera Operation.\relax }}{11}{table.caption.38}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {B.1}{\ignorespaces Feasible triples for a highly variable Grid}}{27}{table.103}
+\contentsline {table}{\numberline {B.1}{\ignorespaces Feasible triples for a highly variable Grid}}{27}{table.102}
 \addvspace {10\p@ }
