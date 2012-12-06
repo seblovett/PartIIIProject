@@ -1,24 +1,24 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces The base of the robot will use\relax }}{2}{figure.caption.9}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces The base of the robot will use\relax }}{2}{figure.caption.10}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax }}{11}{figure.caption.36}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Prototype of Dual Camera operation.\relax }}{12}{figure.caption.41}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax }}{11}{figure.caption.37}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Prototype of Dual Camera operation.\relax }}{12}{figure.caption.42}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{13}{figure.caption.45}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{13}{figure.caption.45}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{13}{figure.caption.45}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{16}{figure.caption.56}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{16}{figure.caption.56}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{16}{figure.caption.56}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{16}{figure.caption.56}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{17}{figure.caption.66}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 1 : Left Camera Simplified\relax }}{18}{figure.caption.70}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{20}{figure.caption.88}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{21}{figure.caption.91}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{13}{figure.caption.46}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{13}{figure.caption.46}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{13}{figure.caption.46}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{16}{figure.caption.57}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{16}{figure.caption.57}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{16}{figure.caption.57}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{16}{figure.caption.57}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{17}{figure.caption.67}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 1 : Left Camera Simplified\relax }}{18}{figure.caption.71}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{20}{figure.caption.89}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{21}{figure.caption.92}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{25}{figure.caption.98}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{26}{figure.caption.99}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{25}{figure.caption.99}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{26}{figure.caption.100}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

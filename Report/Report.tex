@@ -3,7 +3,6 @@
 %% ---------------------------------------------------------------- 
 \documentclass{ecsreport}      % Use the Report Style
 \graphicspath{{./Figures/}}   % Location of your graphics files
-%\graphicspath{{Figures/}{../Figures/}}
 \usepackage{natbib}            % Use Natbib style for the refs.
 %\usepackage[square,numbers,sort]{natbib}
 \usepackage{todonotes}
@@ -32,19 +31,19 @@
 \maketitle
 \inote{Turn off iNotes!}
 \begin{abstract}
-This paper describes the research, designing and building of a stereoscopic mapping robot. Mapping robots usually utilise Infra-red or laser range finders to do the distance calculations. By using two cameras, distances to objects can be calculated. The end goal is to build up an occupancy map which shows the state of an explored area as either unknown, free or occupied. 
+This paper describes the research, designing and building of a stereoscopic mapping robot. Mapping robots usually utilise Infra-red or laser range finders to do the distance calculations. By using two cameras, distances to objects can be calculated from the resulting two images. An occupancy map, which shows the state of an explored area as either unknown, free or occupied, can then be built up from the resulting images and by searching an area. 
 \end{abstract}
 \tableofcontents
 \listoffigures
 \listoftables
 %\lstlistoflistings
-\listofsymbols{ll}{\itc 	Inter-Integrated Circuit \\ 
-							TWI	Two Wire Interface \\
-							SCCB 		Serial Camera Control Bus\\
-							kB	KiloBytes \\
-			$\varphi_0$		Field of View of the Camera \\
-			$B$ 	Seperation Distance of two Cameras \\
-			$i,j$ 	Pixel Index of an Image }
+\listofsymbols{ll}{\itc 	& Inter-Integrated Circuit \\ 
+							TWI &	Two Wire Interface \\
+							SCCB 	&	Serial Camera Control Bus\\
+							kB &	KiloBytes \\
+			$\varphi_0$	&Field of View of the Camera \\
+			$B$ 	& Seperation Distance of two Cameras \\
+			$i,j$  &	Pixel Index of an Image }
 			
 %\acknowledgements{Thanks to no one.}
 %\dedicatory{To \dots}
