@@ -10,22 +10,20 @@ A level-1 auxiliary file: AppendixB.aux
 A level-1 auxiliary file: AppendixC.aux
 The style file: ecs.bst
 Database file #1: ECS.bib
-Warning--entry type for "Pirobot" isn't style-file defined
---line 5 of file ECS.bib
+Warning--entry type for "Atmel:ASF" isn't style-file defined
+--line 4 of file ECS.bib
 Warning--entry type for "DistanceEstimation" isn't style-file defined
---line 17 of file ECS.bib
+--line 33 of file ECS.bib
 Warning--entry type for "Microsoft:Kinect" isn't style-file defined
---line 26 of file ECS.bib
+--line 42 of file ECS.bib
 Warning--entry type for "FATFS" isn't style-file defined
---line 61 of file ECS.bib
+--line 77 of file ECS.bib
 Warning--entry type for "ImageComparison" isn't style-file defined
---line 69 of file ECS.bib
+--line 85 of file ECS.bib
 Warning--entry type for "Tsai:NCC" isn't style-file defined
---line 94 of file ECS.bib
-Warning--entry type for "Saxena:DepthEstimation" isn't style-file defined
 --line 110 of file ECS.bib
-Warning--entry type for "Nixon:HarrisAlgo" isn't style-file defined
---line 171 of file ECS.bib
+Warning--entry type for "Saxena:DepthEstimation" isn't style-file defined
+--line 126 of file ECS.bib
 Name 2 in "Fran\c{c}ois Fleuret and J\'{e}r\^{o}me Berclaz, and Richard Lengagne and Pascal Fua" has a comma at the end for entry Fleuret:OccupancyMap
 while executing---line 1262 of file ecs.bst
 Name 2 in "Fran\c{c}ois Fleuret and J\'{e}r\^{o}me Berclaz, and Richard Lengagne and Pascal Fua" has a comma at the end for entry Fleuret:OccupancyMap

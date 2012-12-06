@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  5 DEC 2012 22:33
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  6 DEC 2012 20:28
 entering extended mode
 **Report.tex
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.tex"
@@ -792,22 +792,22 @@ ux") ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Results.aux")
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixA.aux")
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixB.aux")
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixC.aux"))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -836,7 +836,7 @@ Package caption Info: End \AtBeginDocument code.
 )
 \c@lstlisting=\count171
 \AtBeginShipoutBox=\box45
-Package hyperref Info: Link coloring ON on input line 20.
+Package hyperref Info: Link coloring ON on input line 21.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -845,9 +845,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count172
 )
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
 
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.out")
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.out")
@@ -865,16 +865,16 @@ ABD: EveryShipout initializing macros
 
 ]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 32.
+ine 33.
 
 ------------------------------------------------------------------------------
  Abstract Page
 ------------------------------------------------------------------------------
-LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -914,22 +914,11 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 ]
 ------------------------------------------------------------------------------
- Table of Contents
-------------------------------------------------------------------------------
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.lol")
-\tf@lol=\write8
- [11
-
-]
-[12
-
-]
-------------------------------------------------------------------------------
  Nomenclature
 ------------------------------------------------------------------------------
-[13
+[11
 
-] [14
+] [12
 
 ]
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Introduction.tex"
@@ -937,17 +926,17 @@ Chapter 1.
 ------------------------------------------------------------------------------
  1 Introduction
 ------------------------------------------------------------------------------
-[1
-
-
-
-] <./Figures/RobotBase.jpg, id=462, 4291.03125pt x 2653.915pt>
+<./Figures/RobotBase.jpg, id=434, 4291.03125pt x 2653.915pt>
 File: ./Figures/RobotBase.jpg Graphic file (type jpg)
 
 <use ./Figures/RobotBase.jpg>
 Package pdftex.def Info: ./Figures/RobotBase.jpg used on input line 32.
 (pdftex.def)             Requested size: 417.47307pt x 258.19885pt.
-) [2 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/RobotBase
+) [1
+
+
+
+] [2 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/RobotBase
 .jpg>]
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Research.tex"
 Chapter 2.
@@ -960,18 +949,93 @@ Missing character: There is no £ in font cmr10!
 
 
 
-]) [4]
+]
+Overfull \hbox (2.95808pt too wide) in paragraph at lines 34--34
+[]\OT1/cmr/m/n/10.95 AT32UC3C0512C| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[]\OT1/cmr/m/n/10.95 64, 100,
+ []
+
+
+Underfull \hbox (badness 6032) in paragraph at lines 37--37
+[]\OT1/cmr/m/n/10.95 64 QFP or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+[]\OT1/cmr/m/n/10.95 40 DIP, 44
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+\OT1/cmr/m/n/10.95 TQFP, 44
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+[]\OT1/cmr/m/n/10.95 Operating Volt-age
+ []
+
+
+Underfull \hbox (badness 4531) in paragraph at lines 44--44
+[]\OT1/cmr/m/n/10.95 Communication In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+\OT1/cmr/m/n/10.95 MAC, CAN,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+\OT1/cmr/m/n/10.95 EPI, USB,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+\OT1/cmr/m/n/10.95 USB, Eth-er-net,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+\OT1/cmr/m/n/10.95 CAN, US-ART,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[]\OT1/cmr/m/n/10.95 USART,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+\OT1/cmr/m/n/10.95 TWI, USB,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
+[]\OT1/cmr/m/n/10.95 SPI, TWI,
+ []
+
+
+Overfull \hbox (26.63869pt too wide) in paragraph at lines 33--50
+ [][] 
+ []
+
+[4]) [5]
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\HardwareDevelopment.t
-ex"
+ex" [6
+
+
+
+]
 Chapter 3.
 ------------------------------------------------------------------------------
  3 Initial Hardware and Firmware Development
 ------------------------------------------------------------------------------
-[5
-
-
-
-] [6] [7]
+[7] [8] [9]
 Underfull \hbox (badness 10000) in paragraph at lines 71--71
 []\OT1/cmr/m/n/10.95 Lossless and
  []
@@ -986,22 +1050,22 @@ Overfull \hbox (69.31824pt too wide) in paragraph at lines 68--79
  [][] 
  []
 
-<Figures/ExampleImageFromCamera.jpg, id=532, 321.2pt x 240.9pt>
+<Figures/ExampleImageFromCamera.jpg, id=523, 321.2pt x 240.9pt>
 File: Figures/ExampleImageFromCamera.jpg Graphic file (type jpg)
 
 <use Figures/ExampleImageFromCamera.jpg>
 Package pdftex.def Info: Figures/ExampleImageFromCamera.jpg used on input line 
 90.
 (pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
- [8] [9 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/Exampl
-eImageFromCamera.jpg>]
-<./Figures/Prototype.jpg, id=549, 4117.3825pt x 2294.5725pt>
+ [10] [11 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/Exam
+pleImageFromCamera.jpg>]
+<./Figures/Prototype.jpg, id=540, 4117.3825pt x 2294.5725pt>
 File: ./Figures/Prototype.jpg Graphic file (type jpg)
 
 <use ./Figures/Prototype.jpg>
 Package pdftex.def Info: ./Figures/Prototype.jpg used on input line 124.
 (pdftex.def)             Requested size: 417.47307pt x 232.6218pt.
-) [10 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/Prototyp
+) [12 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/Prototyp
 e.jpg>]
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\InvestigationVision.t
 ex"
@@ -1009,41 +1073,41 @@ Chapter 4.
 ------------------------------------------------------------------------------
  4 Investigation into Vision Algorithms
 ------------------------------------------------------------------------------
-<./Figures/deskLeft.png, id=558, 401.5pt x 301.125pt>
+<./Figures/deskLeft.png, id=548, 401.5pt x 301.125pt>
 File: ./Figures/deskLeft.png Graphic file (type png)
 
 <use ./Figures/deskLeft.png>
 Package pdftex.def Info: ./Figures/deskLeft.png used on input line 13.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
 
-<./Figures/deskRight.png, id=559, 401.5pt x 301.125pt>
+<./Figures/deskRight.png, id=549, 401.5pt x 301.125pt>
 File: ./Figures/deskRight.png Graphic file (type png)
 
 <use ./Figures/deskRight.png>
 Package pdftex.def Info: ./Figures/deskRight.png used on input line 14.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
- [11
+ [13
 
 
 
  <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/deskLeft.png 
 (PNG copy)> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/de
-skRight.png (PNG copy)>] [12]
-<./Figures/SADResults.jpg, id=586, 960.58875pt x 631.35875pt>
+skRight.png (PNG copy)>] [14]
+<./Figures/SADResults.jpg, id=574, 960.58875pt x 631.35875pt>
 File: ./Figures/SADResults.jpg Graphic file (type jpg)
 
 <use ./Figures/SADResults.jpg>
 Package pdftex.def Info: ./Figures/SADResults.jpg used on input line 69.
 (pdftex.def)             Requested size: 341.43306pt x 224.40848pt.
 
-<./Figures/SSDResults.jpg, id=587, 1446.40375pt x 836.12375pt>
+<./Figures/SSDResults.jpg, id=575, 1446.40375pt x 836.12375pt>
 File: ./Figures/SSDResults.jpg Graphic file (type jpg)
 
 <use ./Figures/SSDResults.jpg>
 Package pdftex.def Info: ./Figures/SSDResults.jpg used on input line 70.
 (pdftex.def)             Requested size: 341.43306pt x 197.36942pt.
 
-<./Figures/NCCResults.jpg, id=588, 1446.40375pt x 836.12375pt>
+<./Figures/NCCResults.jpg, id=576, 1446.40375pt x 836.12375pt>
 File: ./Figures/NCCResults.jpg Graphic file (type jpg)
 
 <use ./Figures/NCCResults.jpg>
@@ -1053,44 +1117,44 @@ Package pdftex.def Info: ./Figures/NCCResults.jpg used on input line 71.
 
 LaTeX Warning: Float too large for page by 31.57423pt on input line 74.
 
-[13] [14 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/SADRe
+[15] [16 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/SADRe
 sults.jpg> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/SSD
 Results.jpg> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/N
-CCResults.jpg>] <Figures/problem1.png, id=607, 811.53188pt x 542.77782pt>
+CCResults.jpg>] <Figures/problem1.png, id=599, 811.53188pt x 542.77782pt>
 File: Figures/problem1.png Graphic file (type png)
 
 <use Figures/problem1.png>
-Package pdftex.def Info: Figures/problem1.png used on input line 103.
+Package pdftex.def Info: Figures/problem1.png used on input line 102.
 (pdftex.def)             Requested size: 417.47922pt x 279.22311pt.
-
+ [17 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/problem1.
+png>]
 <Figures/left_simplified.png, id=611, 581.92406pt x 224.33812pt>
 File: Figures/left_simplified.png Graphic file (type png)
 
 <use Figures/left_simplified.png>
-Package pdftex.def Info: Figures/left_simplified.png used on input line 120.
+Package pdftex.def Info: Figures/left_simplified.png used on input line 119.
 (pdftex.def)             Requested size: 417.48438pt x 160.94481pt.
- [15] [16 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/prob
-lem1.png> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/left
-_simplified.png>] [17]
-<Figures/problem2.png, id=662, 818.30719pt x 543.53062pt>
+ [18 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/left_simp
+lified.png>]
+<Figures/problem2.png, id=637, 818.30719pt x 543.53062pt>
 File: Figures/problem2.png Graphic file (type png)
 
 <use Figures/problem2.png>
-Package pdftex.def Info: Figures/problem2.png used on input line 205.
+Package pdftex.def Info: Figures/problem2.png used on input line 204.
 (pdftex.def)             Requested size: 417.48099pt x 277.29646pt.
-
-<Figures/problem3.png, id=664, 818.30719pt x 543.53062pt>
+ [19]
+<Figures/problem3.png, id=656, 818.30719pt x 543.53062pt>
 File: Figures/problem3.png Graphic file (type png)
 
 <use Figures/problem3.png>
-Package pdftex.def Info: Figures/problem3.png used on input line 218.
+Package pdftex.def Info: Figures/problem3.png used on input line 217.
 (pdftex.def)             Requested size: 417.48099pt x 277.29646pt.
- [18 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/problem2.
-png>]) [19 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/pro
+ [20 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/problem2.
+png>]) [21 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/pro
 blem3.png>]
 No file Results.tex.
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Conclusions.tex"
-[20
+[22
 
 
 
@@ -1101,34 +1165,34 @@ Chapter 5.
 ------------------------------------------------------------------------------
  5 Conclusions and Further Work
 ------------------------------------------------------------------------------
-) [21] ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixA.tex"
-[22
-
-
-
-]
+) [23] [24]
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixA.tex"
 Appendix A.
 ------------------------------------------------------------------------------
  A Circuit Diagrams
 ------------------------------------------------------------------------------
-<Figures/OV7670_Schematic.jpg, id=694, 844.5954pt x 597.432pt>
+<Figures/OV7670_Schematic.jpg, id=685, 844.5954pt x 597.432pt>
 File: Figures/OV7670_Schematic.jpg Graphic file (type jpg)
 
 <use Figures/OV7670_Schematic.jpg>
 Package pdftex.def Info: Figures/OV7670_Schematic.jpg used on input line 8.
 (pdftex.def)             Requested size: 844.59334pt x 597.43054pt.
 
-<Figures/IlMattoCamera_CircuitDiagram.png, id=695, 753.0534pt x 694.7556pt>
+<Figures/IlMattoCamera_CircuitDiagram.png, id=686, 753.0534pt x 694.7556pt>
 File: Figures/IlMattoCamera_CircuitDiagram.png Graphic file (type png)
 
 <use Figures/IlMattoCamera_CircuitDiagram.png>
 Package pdftex.def Info: Figures/IlMattoCamera_CircuitDiagram.png used on input
  line 17.
 (pdftex.def)             Requested size: 753.05156pt x 694.75389pt.
-) [23 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/OV7670_S
-chematic.jpg>] [24 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Fig
-ures/IlMattoCamera_CircuitDiagram.png>] ("C:\Users\hslovett\My Documents\Uni\pa
-rt3_project\Report\AppendixB.tex"
+) [25
+
+
+
+ <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/OV7670_Schema
+tic.jpg>] [26 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/
+IlMattoCamera_CircuitDiagram.png>] ("C:\Users\hslovett\My Documents\Uni\part3_p
+roject\Report\AppendixB.tex"
 Appendix B.
 ------------------------------------------------------------------------------
  B Bitmap File Format
@@ -1283,13 +1347,13 @@ Overfull \hbox (12.41272pt too wide) in alignment at lines 46--60
  [] [] [] [] [] 
  []
 
-[25
+[27
 
 
 
-] [26]) [27]
+] [28]) [29]
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixC.tex"
-[28
+[30
 
 
 
@@ -1305,79 +1369,75 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\main.c"
-[29] [30] [31] [32])
+[31] [32] [33] [34])
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\Bitmap.h")
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\Bitmap.c"
-[33]) [34]
+[35]) [36]
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\Config.h"
-[35])
+[37])
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\Config.c"
-[36])
+[38])
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\DualCameras.
-h" [37] [38] [39] [40] [41])
+h" [39] [40] [41] [42]) [43]
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\DualCameras.
-c" [42] [43] [44] [45] [46] [47] [48] [49])
+c" [44] [45] [46] [47] [48] [49] [50] [51])
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\PCA9542A.h")
-[50]
-("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\PCA9542A.c"
-[51])
+[52]
+("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\PCA9542A.c")
+[53]
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\TWI_Master.h
-" [52] [53]
+" [54] [55]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 )
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\TWI_Master.c
-" [54] [55] [56] [57] [58]
+" [56] [57] [58] [59] [60]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
-) [59]
-("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\Usart.h")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\Usart.c"
-[60] [61])
+)
+("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\Usart.h"
+[61]) ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualOV7670\Usart.
+c" [62]) [63]
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualCamera_UI\DualCamer
-a_UI.c" [62] [63])
+a_UI.c" [64] [65])
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualCamera_UI\TWI_slave
-.h" [64] [65]
+.h" [66] [67]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
-) [66]
+)
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Code\DualCamera_UI\TWI_slave
-.c" [67] [68] [69] [70] [71]
+.c" [68] [69] [70] [71] [72] [73]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
- [72])
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 94.
-
+ [74])
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 ("C:\Users\hslovett\My Documents\Uni\part3_project\MATLAB\loadimages.m")
 ("C:\Users\hslovett\My Documents\Uni\part3_project\MATLAB\GetSubImage.m"
-[73]) ("C:\Users\hslovett\My Documents\Uni\part3_project\MATLAB\SADAll.m"
-[74]) ("C:\Users\hslovett\My Documents\Uni\part3_project\MATLAB\SSDAll.m"
-[75]) ("C:\Users\hslovett\My Documents\Uni\part3_project\MATLAB\NCC.m" [76]))
-[77] [78
+[75]) ("C:\Users\hslovett\My Documents\Uni\part3_project\MATLAB\SADAll.m"
+[76]) ("C:\Users\hslovett\My Documents\Uni\part3_project\MATLAB\SSDAll.m")
+[77] ("C:\Users\hslovett\My Documents\Uni\part3_project\MATLAB\NCC.m" [78]))
+[79] [80
 
 
 ]
 ------------------------------------------------------------------------------
  References
 ------------------------------------------------------------------------------
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.bbl" [79
+("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.bbl" [81
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
 
-[80]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 65.
+[82]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
  ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.aux"
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Introduction.aux")
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Research.aux")
@@ -1389,22 +1449,25 @@ ux") ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Results.aux")
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixA.aux")
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixB.aux")
 ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixC.aux"))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 65.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 65.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 8ED7380EDE211CC579B428A09EF53CB7;10955.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 65.
+(rerunfilecheck)             Checksum: 6C5E236DB3EF05011EC2C0A77637F678;10756.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
  ) 
 Here is how much of TeX's memory you used:
- 24864 strings out of 494045
- 404885 string characters out of 3145960
- 1380766 words of memory out of 3000000
- 24941 multiletter control sequences out of 15000+200000
- 14579 words of font info for 56 fonts, out of 3000000 for 9000
+ 24841 strings out of 494045
+ 404371 string characters out of 3145960
+ 1379269 words of memory out of 3000000
+ 24932 multiletter control sequences out of 15000+200000
+ 14874 words of font info for 57 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 63i,12n,100p,988b,1881s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.115} has been referenced but does not e
+ 63i,18n,100p,988b,1878s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.103} has been referenced but does not e
 xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exis
+t, replaced by a fixed one
 
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
@@ -1423,10 +1486,11 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmtt8.pfb>
-Output written on Report.pdf (94 pages, 11801452 bytes).
+e1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmu10.pfb>
+Output written on Report.pdf (94 pages, 11811025 bytes).
 PDF statistics:
- 3978 PDF objects out of 4296 (max. 8388607)
- 2676 named destinations out of 2984 (max. 500000)
- 587 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3967 PDF objects out of 4296 (max. 8388607)
+ 2664 named destinations out of 2984 (max. 500000)
+ 579 words of extra memory for PDF output out of 10000 (max. 10000000)
 

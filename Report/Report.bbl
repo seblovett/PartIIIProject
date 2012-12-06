@@ -7,6 +7,11 @@
 Atmel Corporation.
 \newblock {\em AVR311: TWI Slave}, 2007.
 
+\bibitem[Corporation(2012)]{Atmel:ASF}
+Atmel Corporation.
+\newblock \href{http://www.atmel.com/tools/AVRSOFTWAREFRAMEWORK.aspx}{Atmel
+  software framewrok}, 2012.
+
 \bibitem[Fleuret et~al.(2007)Fleuret, Berclaz, Lengagne, and
   Fua]{Fleuret:OccupancyMap}
 Fran\c{c}ois Fleuret, J\'{e}r\^{o}me Berclaz, Richard Lengagne, and Pascal Fua.
@@ -19,10 +24,12 @@ Wayne Fulton.
 \newblock \href{http://www.scantips.com/basics09.html}{Image file formats -
   jpg, tif, png, gif. which to use?}, 2010.
 
-\bibitem[Goebel(2012)]{Pirobot}
-Patrick Goebel.
-\newblock \href{http://www.pirobot.org/blog/0015/}{Robot cartography: Ros +
-  slam}, 2012.
+\bibitem[Haller and Nedevschi(2012)]{haller2012design}
+I.~Haller and S.~Nedevschi.
+\newblock Design of interpolation functions for subpixel-accuracy stereo-vision
+  systems.
+\newblock {\em Image Processing, IEEE Transactions on}, 21\penalty0
+  (2):\penalty0 889--898, 2012.
 
 \bibitem[Hamzah et~al.(2010)Hamzah, Salim, and Rosly]{Hamzah:DistanceDetection}
 Rostam~Affendi Hamzah, Sani Irwan~Md Salim, and Hasrul~Nisham Rosly.
@@ -44,11 +51,6 @@ Microsoft.
 Jernej Mrovlje and Damir Vran\v{c}i\'{c}.
 \newblock Distance measuring based on stereoscopic pictures.
 \newblock Technical report, University of Ljubljana, 2008.
-
-\bibitem[Nixon(2005)]{Nixon:HarrisAlgo}
-Mark Nixon.
-\newblock \href{users.ecs.soton.ac.uk/msn/book/new_demo/corners/}{Computer
-  vision demonstration website: Corner detection}, 2005.
 
 \bibitem[OmniVision(2007)]{SCCB_Interface}
 OmniVision.

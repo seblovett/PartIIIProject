@@ -18,7 +18,7 @@ In computer vision, there are many different ways of comparing two similar image
 
 
 %Explanation of how they work
-\inote{Maybe do a basic 5x5 example for each?}
+%\inote{Maybe do a basic 5x5 example for each?}
 \subsection{Sum of Absolue Differences}
 
 Given two indentically sized matricies, $A, B$ of dimensions $I,J$, SAD is defined as
@@ -52,7 +52,7 @@ NCC =  \frac{1}{n}\sum\limits_{i,j} \frac{(A[i,j] - \bar{A}).(B[i,j] - \bar{B}}{
 Where $n$ is the number of pixels in $A$ and $B$, \\$\sigma$ is the standard deviation of the image, and \\$\bar{A}$ is the a average pixel value. 
 \inote{Find a source for this equation}
 \end{center}
-\inote{No date on Reference}
+%\inote{No date on Reference}
 NCC is very similar to cross correlation, but normalised to reduce the error if one image is brighter than the other. It is common in computer vision (\cite{Tsai:NCC}) as cross correlation is a common operation in DSP so fast algorithms have been made to calculate this. 
 
 Unlike S.S.D. and S.A.D., the normalised cross correlation gives a high value for a match. The downside to this algorithm comes with the complexity of the equation with division in it and a square root to calculate the standard deviation. These operations are rarely implemented in hardware and are time consuming to carry out. They also require floating point registers and operations slow on a Microcontroller with a small amount of floating point registers. 
@@ -73,8 +73,7 @@ To compare these equations, a 50 by 50 image taken from the Right picture was co
 \label{fg:CompResults}
 \end{figure}
 
-Each of the graphs show the correct area being indentified as a match, but this also highlights the downfalls of the SAD and SSD. The figures in figure \ref{fg:CompResults} are orientated to match the orientation of the images in figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the phone from the test figure. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem.
-\inote{reference for sub pixel problem?}
+Each of the graphs show the correct area being indentified as a match, but this also highlights the downfalls of the SAD and SSD. The figures in figure \ref{fg:CompResults} are orientated to match the orientation of the images in figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the phone from the test figure. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem \cite{haller2012design}.
 
 SAD results in figure \ref{fg:Results:SSD} show large areas of matching. The actual match is at (170, 175) and a minimum does occur at this position as expected of a value of $5.66\times 10^4$. However, along the bottom of the image where a dark area occurs in the lower part of figures \ref{fig:StereoTest} below the desk, the SAD algorithm detects a greater comparison with the lowest value in this area being $3370$ at $(227, 275)$. This creates a false detection here. 
 
@@ -86,7 +85,7 @@ The NCC results are visible in figure \ref{fg:Results:NCC}. A match can be seen 
 It can be seen there is a direct correlation between the complexity of the matching algorithm to the reliability of the match returned. In brightly lit, colourful environments absent of dark colours, SAD and SSD should provide a reliable result, but this cannot guaranteed to always be the case. Therefore further development of the matching algorithm will start with using the Normalised Cross Correlation. There is a compromise of complexity for reliability, of which reliability is more desirable. Cross correlation is also a large area of research, so optimised algorithms do exist. 
 
 \section{Range Finding}
-\inote{Derive the range finding equations and test them}
+%\inote{Derive the range finding equations and test them}
 
 \subsection{Derivations}
 
@@ -95,8 +94,8 @@ By using two images separated by a horizontal difference, the range of an object
 The problem is broken down into 3
 \begin{enumerate}
 \item Object is between the cameras (Figure \ref{problem_between})
-\item Object is directly in front of a camera
-\item Object is in left or right hand sides of both images
+\item Object is in left or right hand sides of both images (Figure \ref{problem_toleft})
+\item Object is directly in front of a camera (Figure \ref{fig:problem_infront})
 \end{enumerate}
 
 \begin{figure}
