@@ -19,8 +19,8 @@
 This report documents the designing, testing and building of a stereoscopic mapping robot. The end product will be a small, two wheeled robot with a roller ball, that will autonomously search and map an unkown area and produce an occupancy map of the searched area. 
 
 Stereoscopy in computer vision is the ability to calculate the locations and depths using images from two cameras that are used to triangulate and estimate distances (\cite{Saxena:DepthEstimation}). By using two cameras on the same plane, separated by a set horizontal distance, the depth of the observed scene can be perceived by the system.
-\inote{Cite Occupancy Map}
-An occupancy map is a representation of an area where a location is given a value of either \textit{free, occupied} or \textit{unkown}.  Three dimensional occupancy maps can also be generated, such as the OctoMap (\cite{octomap}). Objects can also be tracked using an occupancy map and statistics (\cite{Fleuret:OccupancyMap}). 
+
+An occupancy map is a representation of an area where a location is given a value of either \textit{free, occupied} or \textit{unkown}\cite{thrun2003learning}.  Three dimensional occupancy maps can also be generated, such as the OctoMap (\cite{octomap}). Objects can also be tracked using an occupancy map and statistics (\cite{Fleuret:OccupancyMap}). 
 
 The purpose of a mapping robot is to build a representation of the area around it. This then facilitates the use of any application that requires prior knowledge of the area. One algorithm that is used to build up an occupancy map is the S.L.A.M. algorithm (\cite{Thrun:SLAM}) and is used in other mapping robots(\cite{Se:MappingRobot}). Accurate mapping robots tend to use laser range finders (\cite{Ruhnke:LaserMapping}).
 

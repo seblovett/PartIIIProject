@@ -5,27 +5,27 @@ A level-1 auxiliary file: HardwareDevelopment.aux
 A level-1 auxiliary file: InvestigationVision.aux
 A level-1 auxiliary file: Results.aux
 A level-1 auxiliary file: Conclusions.aux
+The style file: ecs.bst
 A level-1 auxiliary file: AppendixA.aux
 A level-1 auxiliary file: AppendixB.aux
 A level-1 auxiliary file: AppendixC.aux
-The style file: ecs.bst
 Database file #1: ECS.bib
 Warning--entry type for "Atmel:ASF" isn't style-file defined
---line 4 of file ECS.bib
+--line 25 of file ECS.bib
 Warning--entry type for "Farnell" isn't style-file defined
---line 29 of file ECS.bib
+--line 50 of file ECS.bib
 Warning--entry type for "DistanceEstimation" isn't style-file defined
---line 66 of file ECS.bib
+--line 87 of file ECS.bib
 Warning--entry type for "Microsoft:Kinect" isn't style-file defined
---line 75 of file ECS.bib
+--line 96 of file ECS.bib
 Warning--entry type for "FATFS" isn't style-file defined
---line 110 of file ECS.bib
+--line 131 of file ECS.bib
 Warning--entry type for "ImageComparison" isn't style-file defined
---line 118 of file ECS.bib
+--line 139 of file ECS.bib
 Warning--entry type for "Tsai:NCC" isn't style-file defined
---line 143 of file ECS.bib
+--line 164 of file ECS.bib
 Warning--entry type for "Saxena:DepthEstimation" isn't style-file defined
---line 159 of file ECS.bib
+--line 180 of file ECS.bib
 Name 2 in "Fran\c{c}ois Fleuret and J\'{e}r\^{o}me Berclaz, and Richard Lengagne and Pascal Fua" has a comma at the end for entry Fleuret:OccupancyMap
 while executing---line 1262 of file ecs.bst
 Name 2 in "Fran\c{c}ois Fleuret and J\'{e}r\^{o}me Berclaz, and Richard Lengagne and Pascal Fua" has a comma at the end for entry Fleuret:OccupancyMap

@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{25}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -105,6 +105,11 @@ Stephen Se, David Lowe, and Jim Little.
 {Texas Instruments}.
 \newblock {\em Stellaris LM3S9B96 Datasheet}, 2012.
 
+\bibitem[Thrun(2003)]{thrun2003learning}
+S.~Thrun.
+\newblock Learning occupancy grid maps with forward sensor models.
+\newblock {\em Autonomous robots}, 15\penalty0 (2):\penalty0 111--127, 2003.
+
 \bibitem[Thrun and Montemerlo(2006)]{Thrun:SLAM}
 Sebastian Thrun and Michael Montemerlo.
 \newblock The graphslam algorithm with applications to large-scale mapping of
@@ -133,5 +138,12 @@ K.~M. Wurm, A.~Hornung, M.~Bennewitz, C.~Stachniss, and W.~Burgard.
   Perception and Modeling for Mobile Manipulation}, Anchorage, AK, USA, May
   2010.
 \newblock Software available at \url{http://octomap.sf.net/}.
+
+\bibitem[Zhao et~al.(2006)Zhao, Huang, and Gao]{zhao2006image}
+F.~Zhao, Q.~Huang, and W.~Gao.
+\newblock Image matching by normalized cross-correlation.
+\newblock In {\em Acoustics, Speech and Signal Processing, 2006. ICASSP 2006
+  Proceedings. 2006 IEEE International Conference on}, volume~2, pages II--II.
+  IEEE, 2006.
 
 \end{thebibliography}

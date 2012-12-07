@@ -4,9 +4,9 @@
 \chapter{Investigation into Vision Algorithms} \label{Chapter:InvestigationVision}
 
 \section{Comparison}
-\inote{find some references to back these claims up}
+%\inote{find some references to back these claims up}
 %\inote{Talk about how to compare images and TEST them all. Make a final comparison to decide on which will be used}
-In computer vision, there are many different ways of comparing two similar images. These include the sum of absolute differences (S.A.D.) (\cite{Hamzah:DistanceDetection}), the sum of squared differences (S.S.D.) and  normalised cross correlation (N.C.C.). Each of these methods will be explained and tested to compare them. All testing will use images seen in figure \ref{fig:StereoTest}. Each test uses the same size of image to compare to of 50$\times$ 50 pixels of the same part of the image. 
+In computer vision, there are many different ways of comparing two similar images. These include the sum of absolute differences (S.A.D.) (\cite{Hamzah:DistanceDetection}), the sum of squared differences (S.S.D.)\cite{Mrovlje:Distance_Stereoscopic} and  normalised cross correlation (N.C.C.)\cite{zhao2006image}. Each of these methods will be explained and tested to compare them. All testing will use images seen in figure \ref{fig:StereoTest}. Each test uses the same size of image to compare to of 50$\times$ 50 pixels of the same part of the image. 
 
 \begin{figure}
 \centering
@@ -50,7 +50,7 @@ NCC =  \frac{1}{n}\sum\limits_{i,j} \frac{(A[i,j] - \bar{A}).(B[i,j] - \bar{B})}
 \end{equation}
 \begin{center}
 Where $n$ is the number of pixels in $A$ and $B$, \\$\sigma$ is the standard deviation of the image, and \\$\bar{A}$ is the a average pixel value. 
-\inote{Find a source for this equation}
+%\inote{Find a source for this equation}
 \end{center}
 %\inote{No date on Reference}
 NCC is very similar to cross correlation, but normalised to reduce the error if one image is brighter than the other. This is common in computer vision (\cite{Tsai:NCC}) and cross correlation is a often used in digital signal processing, so fast algorithms have been made to calculate this. 
