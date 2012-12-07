@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  7 DEC 2012 22:14
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  7 DEC 2012 22:37
 entering extended mode
 **Report.tex
-(C:\Users\hslovett\Dropbox\part3_project\Report\Report.tex
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +13,7 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-(C:\Users\hslovett\Dropbox\part3_project\Report\ecsproject.cls
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\ecsproject.cls
 Document Class: ecsproject 2011/11/10 v2.0 LaTeX document class
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\book.cls"
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
@@ -828,20 +828,20 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 15.
 
-(C:\Users\hslovett\Dropbox\part3_project\Report\Definitions.tex
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Definitions.tex
 \c@address=\count189
 \c@alg=\count190
 )
-(C:\Users\hslovett\Dropbox\part3_project\Report\Report.aux
-(C:\Users\hslovett\Dropbox\part3_project\Report\Introduction.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\Research.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\HardwareDevelopment.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\InvestigationVision.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\Results.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\Conclusions.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\AppendixA.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\AppendixB.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\AppendixC.aux))
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.aux
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Introduction.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Research.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\HardwareDevelopment.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\InvestigationVision.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Results.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixB.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixC.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
@@ -899,8 +899,8 @@ LaTeX Info: Redefining \ref on input line 20.
 LaTeX Info: Redefining \pageref on input line 20.
 LaTeX Info: Redefining \nameref on input line 20.
 
-(C:\Users\hslovett\Dropbox\part3_project\Report\Report.out)
-(C:\Users\hslovett\Dropbox\part3_project\Report\Report.out)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.out)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.out)
 \@outlinefile=\write4
 
 ABD: EveryShipout initializing macros
@@ -934,7 +934,7 @@ ine 37.
 ------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Dropbox\part3_project\Report\Report.toc [5
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.toc [5
 
 ])
 \tf@toc=\write5
@@ -942,7 +942,7 @@ ine 37.
 ------------------------------------------------------------------------------
  List of Figures
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Dropbox\part3_project\Report\Report.lof)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.lof)
 \tf@lof=\write6
  [7
 
@@ -953,7 +953,7 @@ ine 37.
 ------------------------------------------------------------------------------
  List of Tables
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Dropbox\part3_project\Report\Report.lot)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.lot)
 \tf@lot=\write7
  [9
 
@@ -967,7 +967,8 @@ ine 37.
 
 ] [12
 
-] (C:\Users\hslovett\Dropbox\part3_project\Report\Introduction.tex
+]
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Introduction.tex
 Chapter 1.
 ------------------------------------------------------------------------------
  1 Introduction
@@ -982,8 +983,9 @@ File: ./Figures/RobotBase.jpg Graphic file (type jpg)
 <use ./Figures/RobotBase.jpg>
 Package pdftex.def Info: ./Figures/RobotBase.jpg used on input line 32.
 (pdftex.def)             Requested size: 417.47307pt x 258.19885pt.
-) [2 <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/RobotBase.jpg>]
-(C:\Users\hslovett\Dropbox\part3_project\Report\Research.tex
+) [2 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/RobotBase.jp
+g>]
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Research.tex
 Chapter 2.
 ------------------------------------------------------------------------------
  2 Research
@@ -1083,7 +1085,7 @@ Overfull \hbox (26.63869pt too wide) in paragraph at lines 32--49
  []
 
 [4]) [5]
-(C:\Users\hslovett\Dropbox\part3_project\Report\HardwareDevelopment.tex
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\HardwareDevelopment.tex
 [6
 
 
@@ -1107,9 +1109,9 @@ File: ./Figures/ov7670_im_capture.png Graphic file (type png)
 Package pdftex.def Info: ./Figures/ov7670_im_capture.png used on input line 38.
 
 (pdftex.def)             Requested size: 417.47307pt x 175.4242pt.
- [8 <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/RGB565.png>] [9 <C:
-/Users/hslovett/Dropbox/part3_project/Report/Figures/ov7670_im_capture.png>] [1
-0]
+ [8 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/RGB565.png>] 
+[9 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/ov7670_im_capt
+ure.png>] [10]
 Underfull \hbox (badness 10000) in paragraph at lines 79--79
 []\OT1/cmr/m/n/12 *.jpg
  []
@@ -1146,16 +1148,17 @@ File: Figures/ExampleImageFromCamera.jpg Graphic file (type jpg)
 Package pdftex.def Info: Figures/ExampleImageFromCamera.jpg used on input line 
 98.
 (pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
- [11] [12 <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/ExampleImageF
-romCamera.jpg>]
+ [11] [12 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/Example
+ImageFromCamera.jpg>]
 <./Figures/Prototype.jpg, id=589, 4117.3825pt x 2294.5725pt>
 File: ./Figures/Prototype.jpg Graphic file (type jpg)
 
 <use ./Figures/Prototype.jpg>
 Package pdftex.def Info: ./Figures/Prototype.jpg used on input line 132.
 (pdftex.def)             Requested size: 417.47307pt x 232.6218pt.
-) [13 <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/Prototype.jpg>]
-(C:\Users\hslovett\Dropbox\part3_project\Report\InvestigationVision.tex
+) [13 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/Prototype.j
+pg>]
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\InvestigationVision.tex
 [14
 
 
@@ -1178,9 +1181,9 @@ File: ./Figures/deskRight.png Graphic file (type png)
 <use ./Figures/deskRight.png>
 Package pdftex.def Info: ./Figures/deskRight.png used on input line 14.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
- [15 <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/deskLeft.png (PNG 
-copy)> <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/deskRight.png (P
-NG copy)>] [16]
+ [15 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/deskLeft.png
+ (PNG copy)> <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/desk
+Right.png (PNG copy)>] [16]
 <./Figures/SADResults.jpg, id=631, 960.58875pt x 631.35875pt>
 File: ./Figures/SADResults.jpg Graphic file (type jpg)
 
@@ -1205,17 +1208,17 @@ Package pdftex.def Info: ./Figures/NCCResults.jpg used on input line 71.
 
 LaTeX Warning: Float too large for page by 35.17421pt on input line 74.
 
-[17] [18 <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/SADResults.jpg
-> <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/SSDResults.jpg> <C:/U
-sers/hslovett/Dropbox/part3_project/Report/Figures/NCCResults.jpg>]
-<Figures/problem1.png, id=656, 791.20593pt x 910.15031pt>
+[17] [18 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/SADResul
+ts.jpg> <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/SSDResult
+s.jpg> <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/NCCResults
+.jpg>] <Figures/problem1.png, id=656, 791.20593pt x 910.15031pt>
 File: Figures/problem1.png Graphic file (type png)
 
 <use Figures/problem1.png>
 Package pdftex.def Info: Figures/problem1.png used on input line 102.
 (pdftex.def)             Requested size: 417.47794pt x 480.23866pt.
- [19] [20 <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/problem1.png>
-] [21]
+ [19] [20 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/problem
+1.png>] [21]
 <Figures/problem2.png, id=704, 805.50937pt x 928.97063pt>
 File: Figures/problem2.png Graphic file (type png)
 
@@ -1229,10 +1232,11 @@ File: Figures/problem3.png Graphic file (type png)
 <use Figures/problem3.png>
 Package pdftex.def Info: Figures/problem3.png used on input line 217.
 (pdftex.def)             Requested size: 417.47311pt x 481.2756pt.
- [22]) [23 <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/problem2.png
->] [24 <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/problem3.png>]
+ [22]) [23 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/proble
+m2.png>] [24 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/prob
+lem3.png>]
 No file Results.tex.
-(C:\Users\hslovett\Dropbox\part3_project\Report\Conclusions.tex
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.tex
 Chapter 5.
 ------------------------------------------------------------------------------
  5 Conclusions and Further Work
@@ -1247,12 +1251,12 @@ Chapter 5.
 ------------------------------------------------------------------------------
  References
 ------------------------------------------------------------------------------
-(C:\Users\hslovett\Dropbox\part3_project\Report\Report.bbl [27
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.bbl [27
 
 
 
 ]) [28]
-(C:\Users\hslovett\Dropbox\part3_project\Report\AppendixA.tex
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.tex
 ------------------------------------------------------------------------------
   Circuit Diagrams
 ------------------------------------------------------------------------------
@@ -1273,10 +1277,10 @@ Package pdftex.def Info: Figures/IlMattoCamera_CircuitDiagram.png used on input
 ) [29
 
 
- <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/OV7670_Schematic.jpg>]
- [30 <C:/Users/hslovett/Dropbox/part3_project/Report/Figures/IlMattoCamera_Circ
-uitDiagram.png>]
-(C:\Users\hslovett\Dropbox\part3_project\Report\AppendixB.tex
+ <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/OV7670_Schematic
+.jpg>] [30 <C:/Users/hslovett/Documents/Uni/part3_project/Report/Figures/IlMatt
+oCamera_CircuitDiagram.png>] (C:\Users\hslovett\Documents\Uni\part3_project\Rep
+ort\AppendixB.tex
 ------------------------------------------------------------------------------
   Bitmap File Format
 ------------------------------------------------------------------------------
@@ -1524,8 +1528,8 @@ Overfull \hbox (12.41272pt too wide) in alignment at lines 45--59
 
 
 
-] [32]) [33] (C:\Users\hslovett\Dropbox\part3_project\Report\AppendixC.tex
-[34
+] [32]) [33]
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixC.tex [34
 
 
 
@@ -1539,42 +1543,46 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\main.c [35] [36]
-[37] [38]) (C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\Bitmap.h)
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\Bitmap.c [39])
-[40] (C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\Config.h [41])
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\Config.c [42])
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\DualCameras.h [43]
-[44] [45] [46] [47])
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\DualCameras.c [48]
-[49] [50] [51] [52] [53] [54] [55])
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\PCA9542A.h [56])
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\PCA9542A.c [57])
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\TWI_Master.h [58]
-[59]
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\main.c [35]
+[36] [37] [38])
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\Bitmap.h)
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\Bitmap.c
+[39]) [40]
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\Config.h
+[41]) (C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\Config.c
+[42])
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\DualCameras.h
+[43] [44] [45] [46] [47])
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\DualCameras.c
+[48] [49] [50] [51] [52] [53] [54] [55])
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\PCA9542A.h
+[56]) (C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\PCA9542A.c
+[57])
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\TWI_Master.h
+[58] [59]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
  [60]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 )
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\TWI_Master.c [61]
-[62] [63] [64] [65]
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\TWI_Master.c
+[61] [62] [63] [64] [65]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 )
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\Usart.h [66])
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualOV7670\Usart.c [67])
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualCamera_UI\DualCamera_UI.c
-[68] [69])
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualCamera_UI\TWI_slave.h
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\Usart.h [66])
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualOV7670\Usart.c [67])
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualCamera_UI\DualCamera_UI
+.c [68] [69])
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualCamera_UI\TWI_slave.h
 [70] [71] [72]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 )
-(C:\Users\hslovett\Dropbox\part3_project\Code\DualCamera_UI\TWI_slave.c
+(C:\Users\hslovett\Documents\Uni\part3_project\Code\DualCamera_UI\TWI_slave.c
 [73] [74] [75] [76] [77] [78]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
@@ -1584,24 +1592,24 @@ Missing character: There is no ” in font cmtt8!
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(C:\Users\hslovett\Dropbox\part3_project\MATLAB\loadimages.m)
-(C:\Users\hslovett\Dropbox\part3_project\MATLAB\GetSubImage.m [80])
-(C:\Users\hslovett\Dropbox\part3_project\MATLAB\SADAll.m [81])
-(C:\Users\hslovett\Dropbox\part3_project\MATLAB\SSDAll.m [82])
-(C:\Users\hslovett\Dropbox\part3_project\MATLAB\NCC.m [83])) [84]
+(C:\Users\hslovett\Documents\Uni\part3_project\MATLAB\loadimages.m)
+(C:\Users\hslovett\Documents\Uni\part3_project\MATLAB\GetSubImage.m [80])
+(C:\Users\hslovett\Documents\Uni\part3_project\MATLAB\SADAll.m [81])
+(C:\Users\hslovett\Documents\Uni\part3_project\MATLAB\SSDAll.m [82])
+(C:\Users\hslovett\Documents\Uni\part3_project\MATLAB\NCC.m [83])) [84]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
 
-(C:\Users\hslovett\Dropbox\part3_project\Report\Report.aux
-(C:\Users\hslovett\Dropbox\part3_project\Report\Introduction.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\Research.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\HardwareDevelopment.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\InvestigationVision.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\Results.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\Conclusions.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\AppendixA.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\AppendixB.aux)
-(C:\Users\hslovett\Dropbox\part3_project\Report\AppendixC.aux))
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Report.aux
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Introduction.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Research.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\HardwareDevelopment.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\InvestigationVision.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Results.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\Conclusions.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixA.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixB.aux)
+(C:\Users\hslovett\Documents\Uni\part3_project\Report\AppendixC.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 80.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 80.
 Package rerunfilecheck Info: File `Report.out' has not changed.
@@ -1610,7 +1618,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 80.
  ) 
 Here is how much of TeX's memory you used:
  25727 strings out of 494045
- 415150 string characters out of 3145960
+ 415870 string characters out of 3145960
  1465866 words of memory out of 3000000
  25795 multiletter control sequences out of 15000+200000
  15022 words of font info for 59 fonts, out of 3000000 for 9000
@@ -1641,7 +1649,7 @@ nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 ype1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmu10.pfb>
-Output written on Report.pdf (96 pages, 11863448 bytes).
+Output written on Report.pdf (96 pages, 11865454 bytes).
 PDF statistics:
  4023 PDF objects out of 4296 (max. 8388607)
  2669 named destinations out of 2984 (max. 500000)
