@@ -16,17 +16,17 @@
 %why mine is important 
 
 
-This report documents the design, test and build of a stereoscopic mapping robot. The end product will be a small, two wheeled robot with a roller ball, that will autonomously search and map an unkown area and build up an occupancy map of the searched area. 
+This report documents the designing, testing and building of a stereoscopic mapping robot. The end product will be a small, two wheeled robot with a roller ball, that will autonomously search and map an unkown area and produce an occupancy map of the searched area. 
 
-Stereoscopy in computer vision is the ability to calculate the locations and depths using images from two cameras that are used to triangulate and estimate distances (\cite{Saxena:DepthEstimation}). By using two cameras on the same plane and serparated by a set horizontal distance, depth of the observed scene can be perceived by the system.
+Stereoscopy in computer vision is the ability to calculate the locations and depths using images from two cameras that are used to triangulate and estimate distances (\cite{Saxena:DepthEstimation}). By using two cameras on the same plane, separated by a set horizontal distance, the depth of the observed scene can be perceived by the system.
 \inote{Cite Occupancy Map}
 An occupancy map is a representation of an area where a location is given a value of either \textit{free, occupied} or \textit{unkown}.  Three dimensional occupancy maps can also be generated, such as the OctoMap (\cite{octomap}). Objects can also be tracked using an occupancy map and statistics (\cite{Fleuret:OccupancyMap}). 
 
-The purpose of a mapping robot is to build a representation of the area around it. This then leads on to being able to conduct an application that requires knowledge of the area. One algorithm used to build up an occupancy map is the S.L.A.M. algorithm (\cite{Thrun:SLAM}) and is used in other mapping robots(\cite{Se:MappingRobot}). Accurate mapping robots tend to use laser range finders (\cite{Ruhnke:LaserMapping}).
+The purpose of a mapping robot is to build a representation of the area around it. This then facilitates the use of any application that requires prior knowledge of the area. One algorithm that is used to build up an occupancy map is the S.L.A.M. algorithm (\cite{Thrun:SLAM}) and is used in other mapping robots(\cite{Se:MappingRobot}). Accurate mapping robots tend to use laser range finders (\cite{Ruhnke:LaserMapping}).
 
-Stereovision is a small section of computer vision which is widely used in many applications, including Microsofts Xbox Kinect (\cite{Microsoft:Kinect}) where stereo vision is used to locate a game player to involve them more in the game. \cite{Mrovlje:Distance_Stereoscopic} uses stereovision to be able to locate the distance to a marker.
+Stereovision is a small section of computer vision which is widely used in many applications, including Microsofts Xbox Kinect (\cite{Microsoft:Kinect}), where stereo vision is used to locate a game player in order to use their movements to control the game. \cite{Mrovlje:Distance_Stereoscopic} uses stereovision to be able to locate the distance to a marker.
 
-The stereovision mapping robot discussed in this report is a low cost alternative to other robots which use laser range finders or high quality cameras (\cite{Se:MappingRobot}). The robot discussed will use the base seen in figure \ref{fig:RobotBase} and use two OmniVision OV7670 cameras delivering up to VGA format images.
+The stereovision mapping robot discussed in this report is a low cost alternative to other robots which use laser range finders or high quality cameras (\cite{Se:MappingRobot}). The robot will use the base seen in figure \ref{fig:RobotBase} and use two OmniVision OV7670 cameras delivering up to VGA format images.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{./Figures/RobotBase.jpg}
