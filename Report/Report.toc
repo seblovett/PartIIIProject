@@ -27,36 +27,36 @@
 \contentsline {subsubsection}{\numberline {4.2.1.1}Object is between the Cameras}{19}{subsubsection.64}
 \contentsline {subsubsection}{\numberline {4.2.1.2}Object is to the same side in each camera}{21}{subsubsection.73}
 \contentsline {subsubsection}{\numberline {4.2.1.3}Object is in front of a camera}{22}{subsubsection.85}
-\contentsline {subsubsection}{\numberline {4.2.1.4}Summary}{25}{subsubsection.88}
-\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{27}{chapter.92}
-\contentsline {chapter}{References}{29}{dummy.93}
-\contentsline {chapter}{Circuit Diagrams}{31}{appendix*.95}
-\contentsline {chapter}{Bitmap File Format}{33}{appendix*.98}
-\contentsline {section}{\numberline {.1}Bitmap File Format}{33}{section.99}
-\contentsline {chapter}{Source Code}{37}{appendix*.102}
-\contentsline {section}{\numberline {.2}C Code for AVR}{37}{section.103}
-\contentsline {subsection}{\numberline {.2.1}Dual Camera Operation}{37}{subsection.104}
-\contentsline {subsubsection}{\numberline {.2.1.1}main.c}{37}{subsubsection.105}
-\contentsline {subsubsection}{\numberline {.2.1.2}Bitmap.h}{41}{subsubsection.312}
-\contentsline {subsubsection}{\numberline {.2.1.3}Bitmap.c}{41}{subsubsection.338}
-\contentsline {subsubsection}{\numberline {.2.1.4}Config.h}{43}{subsubsection.409}
-\contentsline {subsubsection}{\numberline {.2.1.5}Config.c}{44}{subsubsection.488}
-\contentsline {subsubsection}{\numberline {.2.1.6}DualCameras.h}{45}{subsubsection.521}
-\contentsline {subsubsection}{\numberline {.2.1.7}DualCameras.c}{50}{subsubsection.806}
-\contentsline {subsubsection}{\numberline {.2.1.8}PCA9542A.h}{58}{subsubsection.1284}
-\contentsline {subsubsection}{\numberline {.2.1.9}PCA9542A.c}{59}{subsubsection.1311}
-\contentsline {subsubsection}{\numberline {.2.1.10}TWI\_Master.h}{60}{subsubsection.1360}
-\contentsline {subsubsection}{\numberline {.2.1.11}TWI\_Master.c}{63}{subsubsection.1487}
-\contentsline {subsubsection}{\numberline {.2.1.12}Usart.h}{68}{subsubsection.1710}
-\contentsline {subsubsection}{\numberline {.2.1.13}Usart.c}{69}{subsubsection.1740}
-\contentsline {subsection}{\numberline {.2.2}Dual Camera User Interface}{70}{subsection.1824}
-\contentsline {subsubsection}{\numberline {.2.2.1}DualCamera\_UI.c}{70}{subsubsection.1825}
-\contentsline {subsubsection}{\numberline {.2.2.2}TWI\_slave.h}{72}{subsubsection.1931}
-\contentsline {subsubsection}{\numberline {.2.2.3}TWI\_slave.c}{75}{subsubsection.2057}
-\contentsline {section}{\numberline {.3}MATLAB Code for Image Algorithm Prototyping}{82}{section.2316}
-\contentsline {subsection}{\numberline {.3.1}Image Matching Algorithms}{82}{subsection.2317}
-\contentsline {subsubsection}{\numberline {.3.1.1}loadimages.m}{82}{subsubsection.2318}
-\contentsline {subsubsection}{\numberline {.3.1.2}GetSubImage.m}{82}{subsubsection.2334}
-\contentsline {subsubsection}{\numberline {.3.1.3}SADAll.m}{83}{subsubsection.2375}
-\contentsline {subsubsection}{\numberline {.3.1.4}SSDAll.m}{84}{subsubsection.2420}
-\contentsline {subsubsection}{\numberline {.3.1.5}NCC.m}{85}{subsubsection.2464}
+\contentsline {subsubsection}{\numberline {4.2.1.4}Summary}{22}{subsubsection.88}
+\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{25}{chapter.92}
+\contentsline {chapter}{References}{27}{dummy.93}
+\contentsline {chapter}{Circuit Diagrams}{29}{appendix*.95}
+\contentsline {chapter}{Bitmap File Format}{31}{appendix*.98}
+\contentsline {section}{\numberline {.1}Bitmap File Format}{31}{section.99}
+\contentsline {chapter}{Source Code}{35}{appendix*.102}
+\contentsline {section}{\numberline {.2}C Code for AVR}{35}{section.103}
+\contentsline {subsection}{\numberline {.2.1}Dual Camera Operation}{35}{subsection.104}
+\contentsline {subsubsection}{\numberline {.2.1.1}main.c}{35}{subsubsection.105}
+\contentsline {subsubsection}{\numberline {.2.1.2}Bitmap.h}{39}{subsubsection.312}
+\contentsline {subsubsection}{\numberline {.2.1.3}Bitmap.c}{39}{subsubsection.338}
+\contentsline {subsubsection}{\numberline {.2.1.4}Config.h}{41}{subsubsection.409}
+\contentsline {subsubsection}{\numberline {.2.1.5}Config.c}{42}{subsubsection.488}
+\contentsline {subsubsection}{\numberline {.2.1.6}DualCameras.h}{43}{subsubsection.521}
+\contentsline {subsubsection}{\numberline {.2.1.7}DualCameras.c}{48}{subsubsection.806}
+\contentsline {subsubsection}{\numberline {.2.1.8}PCA9542A.h}{56}{subsubsection.1284}
+\contentsline {subsubsection}{\numberline {.2.1.9}PCA9542A.c}{57}{subsubsection.1311}
+\contentsline {subsubsection}{\numberline {.2.1.10}TWI\_Master.h}{58}{subsubsection.1360}
+\contentsline {subsubsection}{\numberline {.2.1.11}TWI\_Master.c}{61}{subsubsection.1487}
+\contentsline {subsubsection}{\numberline {.2.1.12}Usart.h}{66}{subsubsection.1710}
+\contentsline {subsubsection}{\numberline {.2.1.13}Usart.c}{67}{subsubsection.1740}
+\contentsline {subsection}{\numberline {.2.2}Dual Camera User Interface}{68}{subsection.1824}
+\contentsline {subsubsection}{\numberline {.2.2.1}DualCamera\_UI.c}{68}{subsubsection.1825}
+\contentsline {subsubsection}{\numberline {.2.2.2}TWI\_slave.h}{70}{subsubsection.1931}
+\contentsline {subsubsection}{\numberline {.2.2.3}TWI\_slave.c}{73}{subsubsection.2057}
+\contentsline {section}{\numberline {.3}MATLAB Code for Image Algorithm Prototyping}{80}{section.2316}
+\contentsline {subsection}{\numberline {.3.1}Image Matching Algorithms}{80}{subsection.2317}
+\contentsline {subsubsection}{\numberline {.3.1.1}loadimages.m}{80}{subsubsection.2318}
+\contentsline {subsubsection}{\numberline {.3.1.2}GetSubImage.m}{80}{subsubsection.2334}
+\contentsline {subsubsection}{\numberline {.3.1.3}SADAll.m}{81}{subsubsection.2375}
+\contentsline {subsubsection}{\numberline {.3.1.4}SSDAll.m}{82}{subsubsection.2420}
+\contentsline {subsubsection}{\numberline {.3.1.5}NCC.m}{83}{subsubsection.2464}
