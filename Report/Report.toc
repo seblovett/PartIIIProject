@@ -1,62 +1,64 @@
 \contentsline {chapter}{List of Symbols}{xi}{dummy.5}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.8}
-\contentsline {chapter}{\numberline {2}Research}{3}{chapter.10}
-\contentsline {section}{\numberline {2.1}Hardware Research}{3}{section.15}
-\contentsline {subsection}{\numberline {2.1.1}Microcontrollers}{3}{subsection.16}
-\contentsline {section}{\numberline {2.2}Firmware}{4}{section.19}
-\contentsline {subsection}{\numberline {2.2.1}Camera}{4}{subsection.20}
-\contentsline {subsection}{\numberline {2.2.2}Atmel Software Framework}{5}{subsection.21}
-\contentsline {chapter}{\numberline {3}Initial Hardware and Firmware Development}{7}{chapter.22}
-\contentsline {section}{\numberline {3.1}Camera}{7}{section.26}
-\contentsline {subsection}{\numberline {3.1.1}Single Camera Operation}{8}{subsection.27}
-\contentsline {subsection}{\numberline {3.1.2}Dual Camera Operation}{9}{subsection.31}
-\contentsline {section}{\numberline {3.2}SD Card}{10}{section.32}
-\contentsline {subsection}{\numberline {3.2.1}Storing Images}{11}{subsection.33}
-\contentsline {subsection}{\numberline {3.2.2}User Interface}{12}{subsection.36}
-\contentsline {section}{\numberline {3.3}Circuit and PCB Development}{13}{section.38}
-\contentsline {subsection}{\numberline {3.3.1}Il Matto Development}{13}{subsection.39}
-\contentsline {chapter}{\numberline {4}Investigation into Vision Algorithms}{15}{chapter.41}
-\contentsline {section}{\numberline {4.1}Comparison}{15}{section.42}
-\contentsline {subsection}{\numberline {4.1.1}Sum of Absolue Differences}{16}{subsection.46}
-\contentsline {subsection}{\numberline {4.1.2}Sum of Squared Differences}{16}{subsection.48}
-\contentsline {subsection}{\numberline {4.1.3}NCC}{16}{subsection.50}
-\contentsline {subsection}{\numberline {4.1.4}Comparison}{17}{subsection.52}
-\contentsline {subsection}{\numberline {4.1.5}Conclusion}{19}{subsection.57}
-\contentsline {section}{\numberline {4.2}Range Finding}{19}{section.58}
-\contentsline {subsection}{\numberline {4.2.1}Derivations}{19}{subsection.59}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Object is between the Cameras}{19}{subsubsection.64}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Object is to the same side in each camera}{21}{subsubsection.73}
-\contentsline {subsubsection}{\numberline {4.2.1.3}Object is in front of a camera}{22}{subsubsection.85}
-\contentsline {subsubsection}{\numberline {4.2.1.4}Summary}{22}{subsubsection.88}
-\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{25}{chapter.92}
-\contentsline {chapter}{References}{27}{dummy.93}
-\contentsline {chapter}{Circuit Diagrams}{29}{appendix*.95}
-\contentsline {chapter}{Bitmap File Format}{31}{appendix*.98}
-\contentsline {section}{\numberline {.1}Bitmap File Format}{31}{section.99}
-\contentsline {chapter}{Source Code}{35}{appendix*.102}
-\contentsline {section}{\numberline {.2}C Code for AVR}{35}{section.103}
-\contentsline {subsection}{\numberline {.2.1}Dual Camera Operation}{35}{subsection.104}
-\contentsline {subsubsection}{\numberline {.2.1.1}main.c}{35}{subsubsection.105}
-\contentsline {subsubsection}{\numberline {.2.1.2}Bitmap.h}{39}{subsubsection.312}
-\contentsline {subsubsection}{\numberline {.2.1.3}Bitmap.c}{39}{subsubsection.338}
-\contentsline {subsubsection}{\numberline {.2.1.4}Config.h}{41}{subsubsection.409}
-\contentsline {subsubsection}{\numberline {.2.1.5}Config.c}{42}{subsubsection.488}
-\contentsline {subsubsection}{\numberline {.2.1.6}DualCameras.h}{43}{subsubsection.521}
-\contentsline {subsubsection}{\numberline {.2.1.7}DualCameras.c}{48}{subsubsection.806}
-\contentsline {subsubsection}{\numberline {.2.1.8}PCA9542A.h}{56}{subsubsection.1284}
-\contentsline {subsubsection}{\numberline {.2.1.9}PCA9542A.c}{57}{subsubsection.1311}
-\contentsline {subsubsection}{\numberline {.2.1.10}TWI\_Master.h}{58}{subsubsection.1360}
-\contentsline {subsubsection}{\numberline {.2.1.11}TWI\_Master.c}{61}{subsubsection.1487}
-\contentsline {subsubsection}{\numberline {.2.1.12}Usart.h}{66}{subsubsection.1710}
-\contentsline {subsubsection}{\numberline {.2.1.13}Usart.c}{67}{subsubsection.1740}
-\contentsline {subsection}{\numberline {.2.2}Dual Camera User Interface}{68}{subsection.1824}
-\contentsline {subsubsection}{\numberline {.2.2.1}DualCamera\_UI.c}{68}{subsubsection.1825}
-\contentsline {subsubsection}{\numberline {.2.2.2}TWI\_slave.h}{70}{subsubsection.1931}
-\contentsline {subsubsection}{\numberline {.2.2.3}TWI\_slave.c}{73}{subsubsection.2057}
-\contentsline {section}{\numberline {.3}MATLAB Code for Image Algorithm Prototyping}{80}{section.2316}
-\contentsline {subsection}{\numberline {.3.1}Image Matching Algorithms}{80}{subsection.2317}
-\contentsline {subsubsection}{\numberline {.3.1.1}loadimages.m}{80}{subsubsection.2318}
-\contentsline {subsubsection}{\numberline {.3.1.2}GetSubImage.m}{80}{subsubsection.2334}
-\contentsline {subsubsection}{\numberline {.3.1.3}SADAll.m}{81}{subsubsection.2375}
-\contentsline {subsubsection}{\numberline {.3.1.4}SSDAll.m}{82}{subsubsection.2420}
-\contentsline {subsubsection}{\numberline {.3.1.5}NCC.m}{83}{subsubsection.2464}
+\contentsline {section}{\numberline {1.1}Project Management}{2}{section.10}
+\contentsline {chapter}{\numberline {2}Research}{5}{chapter.12}
+\contentsline {section}{\numberline {2.1}Hardware Research}{5}{section.17}
+\contentsline {subsection}{\numberline {2.1.1}Microcontrollers}{5}{subsection.18}
+\contentsline {section}{\numberline {2.2}Firmware}{6}{section.21}
+\contentsline {subsection}{\numberline {2.2.1}Camera}{6}{subsection.22}
+\contentsline {subsection}{\numberline {2.2.2}Atmel Software Framework}{7}{subsection.23}
+\contentsline {chapter}{\numberline {3}Initial Hardware and Firmware Development}{9}{chapter.24}
+\contentsline {section}{\numberline {3.1}Camera}{9}{section.28}
+\contentsline {subsection}{\numberline {3.1.1}Single Camera Operation}{10}{subsection.29}
+\contentsline {subsection}{\numberline {3.1.2}Dual Camera Operation}{11}{subsection.33}
+\contentsline {section}{\numberline {3.2}SD Card}{12}{section.34}
+\contentsline {subsection}{\numberline {3.2.1}Storing Images}{13}{subsection.35}
+\contentsline {subsection}{\numberline {3.2.2}User Interface}{14}{subsection.38}
+\contentsline {section}{\numberline {3.3}Circuit and PCB Development}{15}{section.40}
+\contentsline {subsection}{\numberline {3.3.1}Il Matto Development}{15}{subsection.41}
+\contentsline {chapter}{\numberline {4}Investigation into Vision Algorithms}{17}{chapter.43}
+\contentsline {section}{\numberline {4.1}Comparison}{17}{section.44}
+\contentsline {subsection}{\numberline {4.1.1}Sum of Absolue Differences}{18}{subsection.48}
+\contentsline {subsection}{\numberline {4.1.2}Sum of Squared Differences}{18}{subsection.50}
+\contentsline {subsection}{\numberline {4.1.3}NCC}{18}{subsection.52}
+\contentsline {subsection}{\numberline {4.1.4}Comparison}{19}{subsection.54}
+\contentsline {subsection}{\numberline {4.1.5}Conclusion}{21}{subsection.59}
+\contentsline {section}{\numberline {4.2}Range Finding}{21}{section.60}
+\contentsline {subsection}{\numberline {4.2.1}Derivations}{21}{subsection.61}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Object is between the Cameras}{21}{subsubsection.66}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Object is to the same side in each camera}{23}{subsubsection.75}
+\contentsline {subsubsection}{\numberline {4.2.1.3}Object is in front of a camera}{24}{subsubsection.87}
+\contentsline {subsubsection}{\numberline {4.2.1.4}Summary}{24}{subsubsection.90}
+\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{27}{chapter.94}
+\contentsline {chapter}{\numberline {A}Gannt Chart}{29}{appendix.95}
+\contentsline {chapter}{\numberline {B}Circuit Diagrams}{31}{appendix.97}
+\contentsline {chapter}{\numberline {C}Bitmap File Format}{33}{appendix.100}
+\contentsline {section}{\numberline {C.1}Bitmap File Format}{33}{section.101}
+\contentsline {chapter}{\numberline {D}Source Code}{37}{appendix.104}
+\contentsline {section}{\numberline {D.1}C Code for AVR}{37}{section.105}
+\contentsline {subsection}{\numberline {D.1.1}Dual Camera Operation}{37}{subsection.106}
+\contentsline {subsubsection}{\numberline {D.1.1.1}main.c}{37}{subsubsection.107}
+\contentsline {subsubsection}{\numberline {D.1.1.2}Bitmap.h}{41}{subsubsection.314}
+\contentsline {subsubsection}{\numberline {D.1.1.3}Bitmap.c}{41}{subsubsection.340}
+\contentsline {subsubsection}{\numberline {D.1.1.4}Config.h}{43}{subsubsection.411}
+\contentsline {subsubsection}{\numberline {D.1.1.5}Config.c}{44}{subsubsection.490}
+\contentsline {subsubsection}{\numberline {D.1.1.6}DualCameras.h}{45}{subsubsection.523}
+\contentsline {subsubsection}{\numberline {D.1.1.7}DualCameras.c}{50}{subsubsection.808}
+\contentsline {subsubsection}{\numberline {D.1.1.8}PCA9542A.h}{58}{subsubsection.1286}
+\contentsline {subsubsection}{\numberline {D.1.1.9}PCA9542A.c}{59}{subsubsection.1313}
+\contentsline {subsubsection}{\numberline {D.1.1.10}TWI\_Master.h}{60}{subsubsection.1362}
+\contentsline {subsubsection}{\numberline {D.1.1.11}TWI\_Master.c}{63}{subsubsection.1489}
+\contentsline {subsubsection}{\numberline {D.1.1.12}Usart.h}{68}{subsubsection.1712}
+\contentsline {subsubsection}{\numberline {D.1.1.13}Usart.c}{69}{subsubsection.1742}
+\contentsline {subsection}{\numberline {D.1.2}Dual Camera User Interface}{70}{subsection.1826}
+\contentsline {subsubsection}{\numberline {D.1.2.1}DualCamera\_UI.c}{70}{subsubsection.1827}
+\contentsline {subsubsection}{\numberline {D.1.2.2}TWI\_slave.h}{72}{subsubsection.1933}
+\contentsline {subsubsection}{\numberline {D.1.2.3}TWI\_slave.c}{75}{subsubsection.2059}
+\contentsline {section}{\numberline {D.2}MATLAB Code for Image Algorithm Prototyping}{82}{section.2318}
+\contentsline {subsection}{\numberline {D.2.1}Image Matching Algorithms}{82}{subsection.2319}
+\contentsline {subsubsection}{\numberline {D.2.1.1}loadimages.m}{82}{subsubsection.2320}
+\contentsline {subsubsection}{\numberline {D.2.1.2}GetSubImage.m}{82}{subsubsection.2336}
+\contentsline {subsubsection}{\numberline {D.2.1.3}SADAll.m}{83}{subsubsection.2377}
+\contentsline {subsubsection}{\numberline {D.2.1.4}SSDAll.m}{84}{subsubsection.2422}
+\contentsline {subsubsection}{\numberline {D.2.1.5}NCC.m}{85}{subsubsection.2466}
+\contentsline {chapter}{References}{87}{dummy.2552}

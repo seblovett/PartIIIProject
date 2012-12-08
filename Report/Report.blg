@@ -5,10 +5,11 @@ A level-1 auxiliary file: HardwareDevelopment.aux
 A level-1 auxiliary file: InvestigationVision.aux
 A level-1 auxiliary file: Results.aux
 A level-1 auxiliary file: Conclusions.aux
-The style file: ecs.bst
+A level-1 auxiliary file: AppendixD.aux
 A level-1 auxiliary file: AppendixA.aux
 A level-1 auxiliary file: AppendixB.aux
 A level-1 auxiliary file: AppendixC.aux
+The style file: ecs.bst
 Database file #1: ECS.bib
 Warning--entry type for "Atmel:ASF" isn't style-file defined
 --line 25 of file ECS.bib

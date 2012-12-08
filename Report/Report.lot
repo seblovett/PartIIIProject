@@ -1,12 +1,14 @@
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces A list of risks and the prevention steps to reduce their impact\relax }}{3}{table.caption.11}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison Table of some common microcontrollers. Data of microcontroller taken from \cite {Atmel:UC3C}, \cite {Atmel:644P}, \cite {Atmel:A3BU} and \cite {ARM:Stellaris}. Costings from \cite {Farnell}\relax }}{5}{table.caption.17}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison Table of some common microcontrollers. Data of microcontroller taken from \cite {Atmel:UC3C}, \cite {Atmel:644P}, \cite {Atmel:A3BU} and \cite {ARM:Stellaris}. Costings from \cite {Farnell}\relax }}{7}{table.caption.19}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available (\cite {ImageComparison})\relax }}{11}{table.caption.34}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega644P for Dual Camera Operation.\relax }}{13}{table.caption.37}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available (\cite {ImageComparison})\relax }}{13}{table.caption.36}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega644P for Dual Camera Operation.\relax }}{15}{table.caption.39}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{31}{table.100}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {C.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{33}{table.102}
 \addvspace {10\p@ }
