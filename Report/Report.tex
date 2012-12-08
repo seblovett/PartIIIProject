@@ -9,7 +9,7 @@
 \usepackage{longtable}
 \usepackage{color}
 \newcommand{\inote}[1] {\todo[inline]{#1}}
-\newcommand{\itc}{$I^{2}C$}
+\newcommand{\itc}{$I^{2}C$ }
 %\usepackage[disable]{todonotes}
 
 \hypersetup{colorlinks=true}   % Set to false for black/white printing
@@ -37,7 +37,7 @@
 \inote{Turn off iNotes!}
 \begin{abstract}
 %This paper describes the research, designing and building of a stereoscopic mapping robot. Mapping robots usually utilise Infra-red or laser range finders to do the distance calculations. By using two cameras, distances to objects can be calculated from the resulting two images. An occupancy map, which shows the state of an explored area as either unknown, free or occupied, can then be built up from the resulting images and by searching an area. 
-This paper describes the research, design, build and testing of a stereoscopic mapping robot. Two cameras are used to locate objects and calculate distances to solid items. This allows an occupancy map to be built up of the unknown area. The object detection is done by a normalised cross correlation and uses derived equations to find distances. The camera used is an OV7670 by OmniVision delivering QVGA sized images. The end product will be a mobile wheeled robot that explores an unknown area. Multiple modules of the design have been developed and tested and all aspects will be brought together onto an AVR32 for the final product.
+This paper describes the research, design, build and test of a stereoscopic mapping robot. Two cameras are used to locate objects and calculate distances to solid items. This allows an occupancy map to be built up of the unknown area. The object detection is done by a normalised cross correlation and uses derived equations to find distances. The camera used is an OV7670 by OmniVision delivering QVGA sized images. The end product will be a mobile wheeled robot that explores an unknown area. Multiple modules of the design have been developed and tested and all aspects will be brought together onto an AVR32 for the final product.
 \end{abstract}
 \tableofcontents
 \listoffigures
@@ -49,11 +49,12 @@ TWI 					&	Two Wire Interface \\
 SCCB 					&	Serial Camera Control Bus\\
 SPI						&	Serial Peripheral Interface \\
 kB 						&	KiloBytes \\
-$\varphi_0$				&	Field of View of the Camera \\
+ISR						&	Interrupt Service Routine	\\
+$\varphi_0$				&	Field of view of the camera \\
 $\varphi_1, \varphi_2$	&	Angle from camera to the object \\
-$B$ 					&	Seperation Distance of two Cameras \\
+$B$ 					&	Seperation distance of two cameras \\
 $D$						&	Distance from camera to the object \\
-$i,j$  					&	Pixel Index of an Image 	\\
+$i,j$  					&	Pixel index of an Image 	\\
 $x_0$					&	Horizontal resolution of the image \\
 $x_1, x_2$				&	Distance of object from the normal of the camera \\
 

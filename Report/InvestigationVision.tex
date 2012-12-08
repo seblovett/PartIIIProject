@@ -6,7 +6,7 @@
 \section{Comparison}
 %\inote{find some references to back these claims up}
 %\inote{Talk about how to compare images and TEST them all. Make a final comparison to decide on which will be used}
-In computer vision, there are many different ways of comparing two similar images. These include the sum of absolute differences (S.A.D.) (\cite{Hamzah:DistanceDetection}), the sum of squared differences (S.S.D.)\cite{Mrovlje:Distance_Stereoscopic} and  normalised cross correlation (N.C.C.)\cite{zhao2006image}. Each of these methods will be explained and tested to compare them. All testing will use images seen in figure \ref{fig:StereoTest}. Each test uses the same size of image to compare to of 50$\times$ 50 pixels of the same part of the image. 
+In computer vision, there are many different ways of comparing two similar images. These include the sum of absolute differences (S.A.D.) (\cite{Hamzah:DistanceDetection}), the sum of squared differences (S.S.D.)(\cite{Mrovlje:Distance_Stereoscopic}) and  normalised cross correlation (N.C.C.)(\cite{zhao2006image}). Each of these methods will be explained and tested to compare them. All testing will use images seen in figure \ref{fig:StereoTest}. Each test uses the same size window ($50\times50$) to compare the two images. 
 
 \begin{figure}
 \centering
@@ -26,7 +26,7 @@ Given two identically sized two dimensional matrices, $A, B$, of dimensions $I,J
 SAD = \sum\limits_{i=0}^{I-1} \sum\limits_{j=0}^{J-1} A[i,j] - B[i,j] 
 \end{equation}
 
-This method takes each sub image and subtracts the observed sub image from the expected. All differences are then added together. This algorithm is simple and requires a small amount of computation. The algorithm returns values where a small result means the two images are well matched.
+This method subtracts the observed window from the expected. All differences are then added together. This algorithm is simple and requires a small amount of computation. The algorithm returns values where a small result means the two images are well matched.
 
 \subsection{Sum of Squared Differences}
 \begin{equation}\label{eq:SSD}
@@ -55,14 +55,14 @@ Where $n$ is the number of pixels in $A$ and $B$, \\$\sigma$ is the standard dev
 %\inote{No date on Reference}
 NCC is very similar to cross correlation, but normalised to reduce the error if one image is brighter than the other. This is common in computer vision (\cite{Tsai:NCC}) and cross correlation is a often used in digital signal processing, so fast algorithms have been made to calculate this. 
 
-Unlike S.S.D. and S.A.D., the normalised cross correlation gives a high value for a match. The downside to this algorithm comes with the complexity of the equation, containing division and the necessity to square root a number in order to calculate the standard deviation. These operations are rarely implemented in hardware and are time consuming to carry out. They also require floating point registers and operates slowly on a microcontroller with a small amount of floating point registers. 
+Unlike S.S.D. and S.A.D., the normalised cross correlation gives a high value for a match. The downside to this algorithm comes with the complexity of the equation as it contains division and the a square root of a number in order to calculate the standard deviation. These operations are rarely implemented in hardware and are time consuming to carry out in software. They also require floating point registers and operates slowly on a microcontroller without any. 
 
 
 
 %test and compare
 \subsection{Comparison}
 
-To compare these equations, a 50 by 50 image taken from the right picture was compared with the left image over the entire valid range. The coordinates on the graph give the centre pixel of the calculation. 
+To compare these equations, a 50 by 50 window taken from the right picture was compared with the left image over the entire valid range. The coordinates on the graph give the centre pixel of the calculation. 
 
 \begin{figure}
 \centering
@@ -73,13 +73,13 @@ To compare these equations, a 50 by 50 image taken from the right picture was co
 \label{fg:CompResults}
 \end{figure}
 
-Each of the graphs show the correct area being indentified as a match, but this also highlights the downfalls of the SAD and SSD. The figures in figure \ref{fg:CompResults} are rotated to match the orientation of the images in figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the phone from the test figure. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem(\cite{haller2012design}).
+Each of the graphs show the correct area being indentified as a match, but this also highlights the downfalls of the SAD and SSD. The figures in figure \ref{fg:CompResults} are rotated to match the orientation of the images in figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the phone from the test figure. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem (\cite{haller2012design}).
 
-SAD results in figure \ref{fg:Results:SSD} show large areas of matching. The actual match is at (170, 175) and a minimum does occur at this position as expected, of a value of $5.66\times 10^4$. However, along the bottom of the image, where a dark area occurs in the lower part of figures \ref{fig:StereoTest} below the desk, the SAD algorithm detects a greater comparison with the lowest value in this area being $3370$ at $(227, 275)$. This creates a false detection here. 
+SAD results in figure \ref{fg:Results:SSD} show large areas of matching. A minimum occurs around the location expected($170,175$) of a value of $5.66\times 10^4$. However, along the bottom of the image, where a dark area occurs below the desk in the lower part of figures \ref{fig:StereoTest}, the SAD algorithm detects a greater comparison, with the lowest value in this area being $3370$ at $(227, 275)$. This creates a false detection here. 
 
-SSD shows matches in the same two areas: where a match should occur and the dark area beneath the desk. The minimum values where the match should occur is $4.355 \times 10^5$ at location $(170,176)$. However, there is a large match correlation between the dark area under the desk where the actual lowest value of $2.768$ occurs at $(225,274)$. This, again, is a false match and is a downfall of this algorithm. 
+SSD shows matches in the same two areas: where a match should occur and the dark area beneath the desk. The minimum value where the match should occur is $4.355 \times 10^5$ at location $(170,176)$. However, there is a large match correlation between the dark area under the desk where the actual lowest value of $2.768\times10^4$ occurs at $(225,274)$. This, again, is a false match and is a downfall of this algorithm. 
 
-The NCC results are visible in figure \ref{fg:Results:NCC}. A match can be seen at coordinate $(195,201)$ with a peak value of $0.9654$. The coordinate is different to the previous results because the cross correlation works over the boundary of the image creating more results. The dimensions of the image are 300 $\times$ 400, but the NCC returns an data set of dimensions 350 $\times$ 450 when using a box size of 50 $\times$ 50. To get the actual match, half of the box size must be subtracted from the returned coordinate. This means the match occurs at $(170,176)$. With this algorithm, there is no area of the image which is close to a false detection. 
+The NCC results are visible in figure \ref{fg:Results:NCC}. A match can be seen at coordinate $(195,201)$ with a peak value of $0.9654$. The coordinate is different to the previous results because the cross correlation works over the boundary of the image creating more results. The dimensions of the image are 300 $\times$ 400, but the NCC returns an data set of dimensions 350 $\times$ 450 when using a window size of $50\times 50$. To get the actual match, half of the box size must be subtracted from the returned coordinate. This means the match occurs at $(170,176)$. With this algorithm, there is no area of the image which is close to a false detection. 
 
 \subsection{Conclusion}
 It can be seen that there is a direct correlation between the complexity of the matching algorithm to the reliability of the match returned. In brightly lit, colourful environments absent of dark colours, SAD and SSD should provide a reliable result, but this cannot be guaranteed to always be the case. Therefore further development of the matching algorithm will start with using the normalised cross correlation. A comprise between complexity and reliability needs to be reached, where reliability is the more desirable of the two. Cross correlation is also a large area of research, so optimised algorithms do exist.
@@ -89,7 +89,7 @@ It can be seen that there is a direct correlation between the complexity of the 
 
 \subsection{Derivations}
 
-By using two images separated by a horizontal difference, the range of an object can be found given some characteristics of the camera. The following is a derivation of the equations used to calculate distance. 
+By using two images separated by a horizontal distance, $B$, the range of an object can be found given some characteristics of the camera. The following are a derivations of the equations used to calculate distance. 
 
 The problem is broken down into three parts:
 \begin{enumerate}
@@ -122,7 +122,7 @@ D = \frac{B}{\tan(\varphi_{1}) + \tan(\varphi_{2})}
 %\end{figure}
 
 \begin{equation} \label{eq:phi}
-D\tan\left(\frac{\varphi_{0}}{2}\right) = x_{0} / 2
+D\tan\left(\frac{\varphi_{0}}{2}\right) = \frac{x_{0}}{2}
 \end{equation}
 
 \begin{equation} \label{eq:phi1}
@@ -238,4 +238,4 @@ D = B \tan\left(\frac{\pi}{2} - \varphi_{2}\right)
 
 Where $\varphi_1$ is defined in equation \eqref{eq:p2:phi1} and $\varphi_2$ is defined in equation \eqref{eq:p2:phi2}.
 
-When the images have been match, these equations can be used to calculate the range to an object.
+When the images have been matched, these equations can be used to calculate the range to an object.
