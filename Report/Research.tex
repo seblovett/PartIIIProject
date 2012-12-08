@@ -12,7 +12,7 @@ The research done for this project is split into three sections:
 \end{enumerate}
 \end{enumerate}
 
-Hardware and Firmware research will be discussed in this section. Vision algorithms are looked at in detail in chapter \ref{Chapter:InvestigationVision}.
+Hardware and firmware research will be discussed in this section. Vision algorithms are looked at in detail in chapter \ref{Chapter:InvestigationVision}.
 \section{Hardware Research}
 %\inote{Talk about why I chose to develop with AVRs, comparison with other uControllers. Why I used the OV7670 Camera etc etc}
 \subsection{Microcontrollers}
@@ -20,7 +20,7 @@ The robot is to be designed with a budget of \pounds 80 (not including P.C.B.). 
 %\inote{Do more research into ARM stuff}
 ARM is an architecture which is developed by ARM Holdings. ARM devices come in a many varieties: ARM9, ARM7, Strong ARM, ARM Cortex etc. Whilst ARM Holdings do not fabricate and sell the devices themselves, many companies, such as Texas Instruments, use the architecture and manufacture their own devices. ARM cores are based on a RISC Harvard architecture and tend to be 32-bit with a high clock speed. ARM microcontrollers have onboard support for SPI, \itc, PWM, ADCs and can have Flash, SRAM and EEPROM memory built-in. For this comparison, the Stellaris by Texas Instruments will be examined. 
 
-Atmel have a variety of products in the microcontroller market. They range from 8-bit, low clock speed devices for the hobbyist, the ATMega and ATTiny series, to an improved 8-bit variant, XMega, and a 32-bit design, AT32UC3. XMegas and AVR32s tend to have higher clock speeds than the ATMegas. The AVR core is also a Harvard RISC architecture, but mainly 8-bit. Atmel devices often have on board peripherals such as \itc (called TWI on AVRs), SPI, ADCs as well as a number of different memories: Flash, EEPROM and SRAM. An AT32UC3C0512C, ATXmega256A3BU and ATMega644P will be compared in this section. 
+Atmel have a variety of products in the microcontroller market. They range from 8-bit, low clock speed devices for the hobbyist (ATMega and ATTiny series), to an improved 8-bit variant (XMega), and a 32-bit design (AT32UC3). XMegas and AVR32s tend to have higher clock speeds than the ATMegas. The AVR core also has a Harvard RISC architecture, and is mainly 8-bit. Atmel devices often have on board peripherals such as \itc (called TWI on AVRs), SPI and ADCs, as well as a number of different memories: Flash, EEPROM and SRAM. An AT32UC3C0512C, ATXmega256A3BU and ATMega644P will be compared in this section. 
 
 
 Table \ref{tab:uCComp} shows a brief summary of some common ARM and AVR microcontrollers. The Stellaris offers the most power with the largest DMIPS performance. However, due to the necessity of floating point operations, the AT32 clearly has a distinct advantage by having a built-in floating point unit. The XMega and ATMega do not offer enough power and are restricted by a small amount of SRAM and Flash. All devices looked at use 3.3V supply and have basic communication protocols (SPI, \itc and USART). Overall, the AT32UC3C0512C is the best choice with a high throughput, a floating point unit and a vast amount of GPIO and communications. There is no EEPROM which may be desirable, but these can be added onto an SPI or \itc bus. This device, although slightly more costly, is best suited to this application out of the selection researched.
@@ -46,7 +46,7 @@ ADCs					&	16					&	16					&	16			&	8			\\
 Timers					&	4					&	3 16-bit			& 7 16-bit, 8 8-bit & 2 8-bit, 1 16-bit \\
 \hline
 \end{tabular}
-\caption{Comparison Table of some common microcontrollers. Data of microcontroller taken from \cite{Atmel:UC3C}, \cite{Atmel:644P}, \cite{Atmel:A3BU} and \cite{ARM:Stellaris}. Costings from \cite{Farnell}}
+\caption{Comparison Table of some common microcontrollers. Data of microcontrollers taken from \cite{Atmel:UC3C}, \cite{Atmel:644P}, \cite{Atmel:A3BU} and \cite{ARM:Stellaris}. Costings from \cite{Farnell}}
 \label{tab:uCComp}
 \end{table}
 

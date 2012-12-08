@@ -2,7 +2,7 @@
 %% Hardware Development.tex
 %% ---------------------------------------------------------------- 
 \chapter{Initial Hardware and Firmware Development} \label{Chapter:HardwareDevelopment}
-For initial development, the \textit{Il Matto} board, designed by Steve Gunn was used. The system has an ATMega644P clocked at 12MHz and has an on-board SD card socket. 
+For initial development, the \textit{Il Matto} board, designed by Steve Gunn, was used. The system has an ATMega644P clocked at 12MHz and has an on-board SD card socket. 
 
 The following section is broken down into the following parts:
 \begin{enumerate}
@@ -16,11 +16,11 @@ The following section is broken down into the following parts:
 
 The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components needed and a 24MHz clock mounted. The schematic for the device can be seen in appendix \ref{Chapter:AppendixA:CircuitDiagrams}.
 
-Original code for the camera operation was given by Steve Gunn, of which I used to gain the operation required. This code streamed continuous video to a TFT screen. The operation required was to take a single photo from the camera and store the data. 
+Original code for the camera operation was given by Steve Gunn, which I used to gain the operation required. This code streamed continuous video to a TFT screen. The operation required was to take a single photo from the camera and store the data. 
 
 \subsection{Single Camera Operation}
 
-The camera uses a SCCB Interface (\cite{SCCB_Interface}) created by OmniVision. This is almost identical to the $I^{2}C$ Interface by Phillips and the two protocols are compatible. The original code used a bit-banged SCCB interface which was very slow and used up processing time. This was changed to make used of the built in interrupt driven $I^{2}C$ interface (named TWI in Atmel AVRs)\footnote{$I^{2}C$ , SCCB and TWI are all the same but are called differently due to Phillips owning the right to the name ``$I^{2}C$"}. This communication bus is used to set up the control registers of the OV7670 to enable operation in the correct format. RGB565 is used in my application.
+The camera uses a SCCB Interface (\cite{SCCB_Interface}) created by OmniVision. This is almost identical to the $I^{2}C$ Interface by Phillips and the two protocols are compatible. The original code used a bit-banged SCCB interface which was very slow and used up processing time. This was changed to make used of the built-in interrupt-driven $I^{2}C$ interface (named TWI in Atmel AVRs)\footnote{$I^{2}C$ , SCCB and TWI are all the same but are called differently due to Phillips owning the right to the name ``$I^{2}C$"}. This communication bus is used to set up the control registers of the OV7670 to enable operation in the correct format. RGB565 is used in my application.
 
 RGB565 is a 16 bit pixel representation where bits 0:4 represent the blue intensity, 5:10 is the green intensity and 11:15 represent the red intensity (see figure \ref{fig:RGB565}). This is a compact way of storing data but only allows 65536 colours. Greys can also appear to be slightly green due to the inconsistent colour ratio of the green field. 
 \begin{figure}
@@ -29,7 +29,7 @@ RGB565 is a 16 bit pixel representation where bits 0:4 represent the blue intens
 \label{fig:RGB565}
 \end{figure}
 
-The camera must use a high speed clock in order to ensure the pixels obtained are from the same time. This makes it difficult for an AVRs (ATMegas typically clocked at 8-12MHz) to be able to respond to the camera quick enough. This highlights the importance of the necessity for a FIFO Buffer. 
+The camera must use a high speed clock in order to ensure the pixels obtained are from the same time. This makes it difficult for an AVR to be able to respond to the camera quick enough (ATMegas typically clocked at 8-12MHz). This highlights the necessity for a FIFO Buffer. 
 
 The OV7670 is set up so that the VSYNC pin goes low at the beginning of every full frame of data, and HREF is high when the data being output is valid. The pixel data is then clocked out on every rising edge of PCLK. To control the buffer, WEN (write enable) is NAND with the HREF signal. When both are high, the write enable to the buffer will be active and the data will be clocked in by PCLK. In order to acquire a full frame, the first VSYNC pin is set up to interrupt the AVR to enable WEN. The camera will output an entire frame of pixel data and store it into the buffer. When the second VSYNC is received, the WEN signal is disabled, stopping any more data being stored. The FIFO buffer now contains an entire image.
 
@@ -48,7 +48,7 @@ Firstly, data was sent straight to a desktop computer via a COM Port using USART
 The second option was to use extra memory connected to the microcontroller. An SD card is used as FAT file system so that data can be looked at by a user on a computer. Text log files are also written to aid debugging. This is discussed in section \ref{sect:SDCard}. 
 
 \subsection{Dual Camera Operation}
-In order for stereovision to be successful, two cameras separated by a horizontal distance, $B$, will need to be driven at the same time to obtain photos within a small time frame of one another.
+In order for stereovision to be successful, two cameras separated by a horizontal distance ($B$) will need to be driven at the same time to obtain photos within a small time frame of one another.
 
 A major problem occurred with using the \itc interface to set up both cameras. The camera has a set \itc address of $21_{16}$, which cannot be changed. Multiple \itc devices with exactly the same address cannot be used on the same bus. 
 Two solutions to this are possible: driving one from $I^{2}C$ and one from SCCB, or using an \itc multiplexer. By using two different buses, there can be no bus contention. However, SCCB is slow and processor-hungry as it deals with the protocol bit by bit in software. This takes up memory and is not reusable for other operations.
