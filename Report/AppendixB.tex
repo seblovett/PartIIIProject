@@ -21,12 +21,12 @@
 \hline \hline
 \endlastfoot
 
-Bitmap Header& Signature&	Declares the file is a Bitamp Image		& 2			& 424D\\
-		&	File Size&	Size of the whole file including headers	& 4			& 36580200 (153654)\footnote{This is different to the 225kB said in Table \ref{ImageFormats} due to ommitting many optional fields} \\ 
+Bitmap Header& Signature&	Declares the file is a Bitmap Image		& 2			& 424D\\
+		&	File Size&	Size of the whole file including headers	& 4			& 36580200 (153654)\footnote{This is different to the 225kB stated in Table \ref{ImageFormats} due to omitting many optional fields} \\ 
 		&	Reserved&							&	 4	& 00000000 \\
 		& 	Offset to Pixel Array & The address of the start of the pixel data from the beginning of the file & 4 & 36000000 \\
 \hline
-DIB (Device Independant Bitmap) Header & Size & Size of the DIB Header (dictates the version) & 4	&	7C000000 \\
+DIB (Device Independent Bitmap) Header & Size & Size of the DIB Header (dictates the version) & 4	&	7C000000 \\
 	& 	Width	& Width of the image (320 pixels) & 4 	&	40010000 \\
 	& 	Height	& Height of the image (240 pixels)	& 	4	& F0000000 \\
 	& 	Planes	& Number of colour planes		& 2 & 0100 \\

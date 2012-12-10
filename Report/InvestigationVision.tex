@@ -73,7 +73,7 @@ To compare these equations, a 50 by 50 window taken from the right picture was c
 \label{fg:CompResults}
 \end{figure}
 
-Each of the graphs show the correct area being indentified as a match, but this also highlights the downfalls of the SAD and SSD. The figures in figure \ref{fg:CompResults} are rotated to match the orientation of the images in figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the phone from the test figure. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem (\cite{haller2012design}).
+Each graph shows the correct area being identified as a match, but this also highlights the downfalls of the SAD and SSD. The figures in figure \ref{fg:CompResults} are rotated to match the orientation of the images in figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the desk phone from the right image to the entirety of the left image. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem (\cite{haller2012design}).
 
 SAD results in figure \ref{fg:Results:SSD} show large areas of matching. A minimum occurs around the location expected($170,175$) of a value of $5.66\times 10^4$. However, along the bottom of the image, where a dark area occurs below the desk in the lower part of figures \ref{fig:StereoTest}, the SAD algorithm detects a greater comparison, with the lowest value in this area being $3370$ at $(227, 275)$. This creates a false detection here. 
 
@@ -89,7 +89,7 @@ It can be seen that there is a direct correlation between the complexity of the 
 
 \subsection{Derivations}
 
-By using two images separated by a horizontal distance, $B$, the range of an object can be found given some characteristics of the camera. The following are a derivations of the equations used to calculate distance. 
+By using two images separated by a horizontal distance, $B$, the range of an object can be found given some characteristics of the camera. The following are derivations of the equations used to calculate distance. 
 
 The problem is broken down into three parts:
 \begin{enumerate}
