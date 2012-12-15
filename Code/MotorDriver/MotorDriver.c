@@ -8,33 +8,60 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#define F_CPU 12000000UL
+#include "Usart.h"
+#include "Motor.h"
+#include <util/delay.h>
+static FILE mystdout = FDEV_SETUP_STREAM(Usart_printf, NULL, _FDEV_SETUP_WRITE);
 
-void PWM_Init( void )
+void Timer_Init()
 {
-	//Set clear on Compare, 10 bit PWM
-	TCCR1A = (0 << WGM11) | (1 << WGM10) | (1 << COM1A1) | (0 << COM1A0) | (1 << COM1B1) | (0 << COM1B0);
-	TCCR1B = (0 << WGM13) | (1 << WGM12) | (0 << CS12) | (0 << CS11) | (1 << CS10);
-	OCR1A = 0x00FF;
+	TCCR0B = (1 << CS00);
+	TIMSK0 = (1 << TOIE0);
+	
 }
-void ADC_Init(void)
+ISR(TIMER0_OVF_vect)
 {
-	ADMUX = (0 << REFS1) | (1 << REFS0) ;
-	ADCSRA = (1 << ADEN) | (1 << ADIE) | (1 << ADSC);
-}
-ISR(ADC_vect)
-{
-	OCR1A = (ADC>>2);
-	OCR1B = 255 - OCR1A;
-	ADCSRA |= (1 << ADSC);
+	Motor_Execute();
+	printf("Counter = %d\n", Counter);
 }
 int main(void)
 {
+	stdout = &mystdout;
+	USART0_Init();
+	printf("Hello\n\n");
 	DDRD = 0xFF;
-	PWM_Init();
-	ADC_Init();
+	Motor_Init();
+	Timer_Init();
 	sei();
+	char buff[20];
     while(1)
     {
-        ;//TODO:: Please write your application code 
+// 		Motor_Execute();
+// 		printf("Counter = %d\n", Counter);
+// 		_delay_ms(50);
+		Usart_get_line(&buff, 20);
+		switch(buff[0])
+		{
+			case 'F':
+				printf("Forward\n");
+				Motor_Go(FORWARD);
+				break;
+				
+			case 'R':
+				printf("Reverse\n");
+				Motor_Go(REVERSE);
+				break;
+			
+			case 'B':
+				printf("Break\n");
+				Motor_Go(BREAK);
+				break;
+			
+			case 'S':
+				printf("Stop\n");
+				Motor_Go(STOP);
+				break;
+		}			
     }
 }

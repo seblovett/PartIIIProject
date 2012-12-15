@@ -35,7 +35,9 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../MotorDriver.c
+../Motor.c \
+../MotorDriver.c \
+../Usart.c
 
 
 PREPROCESSING_SRCS += 
@@ -45,19 +47,27 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-MotorDriver.o
+Motor.o \
+MotorDriver.o \
+Usart.o
 
 
 OBJS_AS_ARGS +=  \
-MotorDriver.o
+Motor.o \
+MotorDriver.o \
+Usart.o
 
 
 C_DEPS +=  \
-MotorDriver.d
+Motor.d \
+MotorDriver.d \
+Usart.d
 
 
 C_DEPS_AS_ARGS +=  \
-MotorDriver.d
+Motor.d \
+MotorDriver.d \
+Usart.d
 
 
 OUTPUT_FILE_PATH +=MotorDriver.elf
@@ -69,6 +79,10 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
+
+
 
 
 
