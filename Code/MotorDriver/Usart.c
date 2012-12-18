@@ -53,7 +53,7 @@ int Usart_printf(char var, FILE *stream) {
 
 void Usart_get_line (char *buff, int len)
 {
-	cli();
+	//cli();
 	char c;
 	int i = 0;
 
@@ -73,7 +73,7 @@ void Usart_get_line (char *buff, int len)
 	}
 	buff[i] = 0;
 	Usart_SendChar('\n');
-	sei();
+	//sei();
 }
 void USART0_Senduint16 (uint16_t Data)
 {
