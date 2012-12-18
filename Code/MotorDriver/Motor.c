@@ -71,6 +71,7 @@ void Motor_Init()
 	AComp_Init();
 	
 }
+
 void Motor_State_Change()
 {
 	switch (Motor_State)
@@ -95,7 +96,7 @@ void Motor_State_Change()
 	}
 	
 }
-void Motor_Execute() //method to run everytime the counter overflows
+void Motor_Execute() //method to run every time the counter overflows
 {
 	switch(Motor_State)//state machine
 	{
@@ -125,12 +126,12 @@ void Motor_Execute() //method to run everytime the counter overflows
 		Comparator_Sleep--;
 	//printf("Motor: Counter = %d\n", Counter);
 }
-void Test_Motor()
-{
-	Counter = 0;
-	Counter_Target = 10;
-	Motor_State = FORWARD;
-}
+// void Test_Motor()
+// {
+// 	Counter = 0;
+// 	Counter_Target = 10;
+// 	Motor_State = FORWARD;
+// }
 int Motor_Move(int Distance_mm)
 {
 	Counter_Target = (Distance_mm * INTS_PER_REV) / CIRCUMFERENCE; 

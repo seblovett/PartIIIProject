@@ -39,6 +39,6 @@ uint8_t Motor_State;
 void Motor_Init();
 void Motor_Execute();
 //void Motor_State_Change();
-void Test_Motor();
+/*void Test_Motor();*/
 int Motor_Move(int Distance_mm);
 #endif /* MOTOR_H_ */
