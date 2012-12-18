@@ -47,6 +47,14 @@ ISR(ANALOG_COMP_vect)
 	Counter++;
 	ACSR &= ~(1 << ACIE); //turn interrupt off. To stop edge bounce. Reenabled at timer overflow
 	Comparator_Sleep = 10;
+	
+	//Proportional Controller
+	uint8_t TempSpeed;
+	TempSpeed = TopSpeed - ((TopSpeed * Counter) / Counter_Target);
+	if (TempSpeed < MINSPEED)
+		OCR1A = MINSPEED;
+	else
+		OCR1A = TempSpeed;
 }
 void Motor_Init()
 {
@@ -56,16 +64,16 @@ void Motor_Init()
 	//ADC_Value = 0;
 	Counter = 0;
 	//Motor_Threshold = 180;
-	TopSpeed = 128;
+	TopSpeed = MAXSPEED;
 	Comparator_Sleep = 0;
 	PWM_Init();
 	//ADC_Init();
 	AComp_Init();
 	
 }
-void Motor_Go(uint8_t Direction)
+void Motor_State_Change()
 {
-	switch (Direction)
+	switch (Motor_State)
 	{
 		case STOP:
 			MOTOR_PORT &= ~((1 << IN1) | (1 << IN2));
@@ -85,16 +93,52 @@ void Motor_Go(uint8_t Direction)
 			MOTOR_PORT |= ((1 << IN1) | (1 << IN2));
 			break;
 	}
+	
 }
-void Motor_Execute()
+void Motor_Execute() //method to run everytime the counter overflows
 {
-	if (Counter >= Counter_Max)
-		Motor_Go(STOP);
+	switch(Motor_State)//state machine
+	{
+		case FORWARD:
+		case REVERSE:
+			if (Counter >= Counter_Target)
+			{
+				Motor_State = BREAK;	
+			}
+			
+			break;
+			
+		case BREAK:
+			Motor_State = STOP;
+			break;
+			
+		default:
+			Motor_State = STOP;
+			
+	}
+	Motor_State_Change();//update driving pins
+	
+	//sleep of comparator
+	if(Comparator_Sleep == 0)
+		ACSR |= (1 << ACIE);//re enable interrupt
+	else
+		Comparator_Sleep--;
 	//printf("Motor: Counter = %d\n", Counter);
 }
 void Test_Motor()
 {
 	Counter = 0;
-	Counter_Max = 10;
-	Motor_Go(FORWARD);
+	Counter_Target = 10;
+	Motor_State = FORWARD;
+}
+int Motor_Move(int Distance_mm)
+{
+	Counter_Target = (Distance_mm * INTS_PER_REV) / CIRCUMFERENCE; 
+	Counter = 0;
+	if (Distance_mm > 0)
+		Motor_State = FORWARD;
+	else 
+		Motor_State = REVERSE;
+		
+	return (Counter_Target * CIRCUMFERENCE)/INTS_PER_REV; //return actual distance to move
 }

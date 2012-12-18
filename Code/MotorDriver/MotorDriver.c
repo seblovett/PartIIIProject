@@ -24,10 +24,7 @@ ISR(TIMER0_OVF_vect)
 {
 	
 	Motor_Execute();
-	if(Comparator_Sleep == 0)
-		ACSR |= (1 << ACIE);//reenable interrupt
-	else
-		Comparator_Sleep--;
+	
 }
 int main(void)
 {
@@ -41,36 +38,9 @@ int main(void)
 	Timer_Init();
 	sei();
 	char buff[20];
-	Test_Motor();
+	Motor_Move(1000);
     while(1)
     {
-// 		Motor_Execute();
-// 		printf("Counter = %d\n", Counter);
-// 		_delay_ms(50);
 		
-//  		Usart_get_line(&buff, 20);
-// 		
-// 		switch(buff[0])
-// 		{
-// 			case 'F':
-// 				printf("Forward\n");
-// 				Motor_Go(FORWARD);
-// 				break;
-// 				
-// 			case 'R':
-// 				printf("Reverse\n");
-// 				Motor_Go(REVERSE);
-// 				break;
-// 			
-// 			case 'B':
-// 				printf("Break\n");
-// 				Motor_Go(BREAK);
-// 				break;
-// 			
-// 			case 'S':
-// 				printf("Stop\n");
-// 				Motor_Go(STOP);
-// 				break;
-// 		}			
     }
 }
