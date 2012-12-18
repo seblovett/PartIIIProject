@@ -51,7 +51,7 @@ ISR(ANALOG_COMP_vect)
 	//Proportional Controller
 	uint8_t TempSpeed;
 	TempSpeed = TopSpeed - ((TopSpeed * Counter) / Counter_Target);
-	if (TempSpeed < MINSPEED)
+	if (TempSpeed < MINSPEED) //min speed in place so that the wheel doesn't slow down to a speed that can't move.
 		OCR1A = MINSPEED;
 	else
 		OCR1A = TempSpeed;

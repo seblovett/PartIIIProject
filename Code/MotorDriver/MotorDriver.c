@@ -38,7 +38,7 @@ int main(void)
 	Timer_Init();
 	sei();
 	char buff[20];
-	Motor_Move(1000);
+	//Motor_Move(1000);
     while(1)
     {
 		
