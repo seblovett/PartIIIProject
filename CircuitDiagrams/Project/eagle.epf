@@ -21,7 +21,7 @@ UsedLibrary="C:/Program Files (x86)/EAGLE-6.1.0/lbr/supply1.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="-1024 0 -19 767"
+Loc="-1028 -4 -23 763"
 State=1
 Number=0
 
