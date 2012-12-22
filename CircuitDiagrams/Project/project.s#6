@@ -9411,7 +9411,7 @@ package type SS</description>
 <wire x1="5.08" y1="2.54" x2="5.08" y2="-25.4" width="0.127" layer="21"/>
 <wire x1="5.08" y1="-25.4" x2="-2.54" y2="-25.4" width="0.127" layer="21"/>
 <wire x1="-2.54" y1="-25.4" x2="-2.54" y2="2.54" width="0.127" layer="21"/>
-<text x="-2.54" y="2.54" size="1.27" layer="25">Name</text>
+<text x="-2.54" y="2.54" size="1.27" layer="25">&gt;Name</text>
 </package>
 <package name="SDBMF-009XXBXX2">
 <description>&lt;b&gt;SD MEMORY CARD&lt;/b&gt; PUSH-PUSH WITH CONNECTOR TYPE B (BIG SWUÌTCH #3)&lt;p&gt;

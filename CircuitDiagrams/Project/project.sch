@@ -9948,10 +9948,10 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <part name="J3" library="Headers" deviceset="1BY2" device="THROUGHHOLE"/>
 <part name="Q3" library="Semiconductors" deviceset="VREG" device="SOT-223"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="C1" library="passives" deviceset="C-EU" device="C1206" value="22pF"/>
-<part name="C2" library="passives" deviceset="C-EU" device="C1206" value="22pF"/>
-<part name="C3" library="passives" deviceset="CPOL-EU" device="SMCE" value="10uF"/>
-<part name="C4" library="passives" deviceset="CPOL-EU" device="SMCE" value="10uF"/>
+<part name="C1" library="passives" deviceset="C-EU" device="C0603" value="22pF"/>
+<part name="C2" library="passives" deviceset="C-EU" device="C0603" value="22pF"/>
+<part name="C3" library="passives" deviceset="CPOL-EU" device="SMCP" value="10uF"/>
+<part name="C4" library="passives" deviceset="CPOL-EU" device="SMCP" value="10uF"/>
 <part name="+3V15" library="supply1" deviceset="+3V3" device=""/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="P+2" library="supply1" deviceset="+5V" device=""/>
@@ -9998,23 +9998,23 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <part name="+3V12" library="supply1" deviceset="+3V3" device=""/>
 <part name="Q6" library="crystal" deviceset="CSM-7X-DU" device=""/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
-<part name="C5" library="passives" deviceset="C-EU" device="C1206" value="2.2u"/>
-<part name="C6" library="passives" deviceset="C-EU" device="C1206" value="1n"/>
-<part name="C7" library="passives" deviceset="C-EU" device="C1206" value="100n"/>
-<part name="C8" library="passives" deviceset="C-EU" device="C1206" value="4.7u"/>
+<part name="C5" library="passives" deviceset="C-EU" device="C0603" value="2.2u"/>
+<part name="C6" library="passives" deviceset="C-EU" device="C0603" value="1n"/>
+<part name="C7" library="passives" deviceset="C-EU" device="C0603" value="100n"/>
+<part name="C8" library="passives" deviceset="C-EU" device="C0603" value="4.7u"/>
 <part name="C9" library="passives" deviceset="C-EU" device="C0603" value="33n"/>
-<part name="C10" library="passives" deviceset="C-EU" device="C1206" value="4.7u"/>
-<part name="C11" library="passives" deviceset="C-EU" device="C1206" value="33n"/>
-<part name="C12" library="passives" deviceset="C-EU" device="C1206" value="100n"/>
-<part name="C13" library="passives" deviceset="C-EU" device="C1206" value="33n"/>
-<part name="C14" library="passives" deviceset="C-EU" device="C1206" value="100n"/>
-<part name="C15" library="passives" deviceset="C-EU" device="C1206" value="33n"/>
-<part name="C16" library="passives" deviceset="C-EU" device="C1206" value="100n"/>
-<part name="C17" library="passives" deviceset="C-EU" device="C1206" value="33n"/>
+<part name="C10" library="passives" deviceset="C-EU" device="C0603" value="4.7u"/>
+<part name="C11" library="passives" deviceset="C-EU" device="C0603" value="33n"/>
+<part name="C12" library="passives" deviceset="C-EU" device="C0603" value="100n"/>
+<part name="C13" library="passives" deviceset="C-EU" device="C0603" value="33n"/>
+<part name="C14" library="passives" deviceset="C-EU" device="C0603" value="100n"/>
+<part name="C15" library="passives" deviceset="C-EU" device="C0603" value="33n"/>
+<part name="C16" library="passives" deviceset="C-EU" device="C0603" value="100n"/>
+<part name="C17" library="passives" deviceset="C-EU" device="C0603" value="33n"/>
 <part name="C18" library="passives" deviceset="C-EU" device="C0603" value="100n"/>
-<part name="C19" library="passives" deviceset="C-EU" device="C1206" value="100n"/>
-<part name="C20" library="passives" deviceset="C-EU" device="C1206" value="33n"/>
-<part name="C21" library="passives" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C19" library="passives" deviceset="C-EU" device="C0603" value="100n"/>
+<part name="C20" library="passives" deviceset="C-EU" device="C0603" value="33n"/>
+<part name="C21" library="passives" deviceset="C-EU" device="C0603" value="100n"/>
 <part name="C22" library="passives" deviceset="C-EU" device="C0603" value="33n"/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
