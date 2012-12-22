@@ -1,30 +1,19 @@
 [Eagle]
 Version="06 03 00"
-Platform="Windows"
+Platform="Mac OS X"
 Serial="7032C93440-LSR-WLM50ES"
 Globals="Globals"
 Desktop="Desktop"
 
 [Globals]
 AutoSaveProject=1
-UsedLibrary="C:/Users/hslovett/Documents/Eagle/Libraries/Atmel_By_element14_Batch_1.lbr"
-UsedLibrary="C:/Users/hslovett/Documents/Eagle/Libraries/Atmel_MCUs.lbr"
-UsedLibrary="C:/Users/hslovett/Documents/Eagle/Libraries/Headers.lbr"
-UsedLibrary="C:/Users/hslovett/Documents/Eagle/Libraries/ICs.lbr"
-UsedLibrary="C:/Users/hslovett/Documents/Eagle/Libraries/Misc.lbr"
-UsedLibrary="C:/Users/hslovett/Documents/Eagle/Libraries/Semiconductors.lbr"
-UsedLibrary="C:/Users/hslovett/Documents/Eagle/Libraries/Sensors.lbr"
-UsedLibrary="C:/Users/hslovett/Documents/Eagle/Libraries/SparkFun.lbr"
-UsedLibrary="C:/Users/hslovett/Documents/Eagle/Libraries/microbuilder.lbr"
-UsedLibrary="C:/Users/hslovett/Documents/Eagle/Libraries/passives.lbr"
-UsedLibrary="C:/Program Files (x86)/EAGLE-6.1.0/lbr/supply1.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="-1028 -4 -23 763"
-State=1
+Loc="320 218 919 617"
+State=2
 Number=0
 
 [Desktop]
-Screen="4384 1080"
+Screen="1280 800"
 Window="Win_1"

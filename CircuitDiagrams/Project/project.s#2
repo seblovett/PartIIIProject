@@ -9718,6 +9718,22 @@ package type SS</description>
 <text x="2.1" y="2.7" size="1.27" layer="25">&gt;Name</text>
 <text x="3.1" y="-3.6" size="1.27" layer="27">&gt;Value</text>
 </package>
+<package name="SMC_C">
+<description>&lt;b&gt;Chip Capacitor &lt;/b&gt; Polar tantalum capacitors with solid electrolyte&lt;p&gt;
+Siemens Matsushita Components B 45 194, B 45 197, B 45 198&lt;br&gt;
+Source: www.farnell.com/datasheets/247.pdf</description>
+<wire x1="-2.85" y1="1.55" x2="2.85" y2="1.55" width="0.1016" layer="51"/>
+<wire x1="2.85" y1="1.55" x2="2.85" y2="-1.55" width="0.1016" layer="51"/>
+<wire x1="2.85" y1="-1.55" x2="-2.85" y2="-1.55" width="0.1016" layer="51"/>
+<wire x1="-2.85" y1="-1.55" x2="-2.85" y2="1.55" width="0.1016" layer="51"/>
+<smd name="+" x="-2.5" y="0" dx="2.4" dy="2.4" layer="1"/>
+<smd name="-" x="2.5" y="0" dx="2.4" dy="2.4" layer="1" rot="R180"/>
+<text x="-1.905" y="1.905" size="1.016" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-2.54" size="1.016" layer="27">&gt;VALUE</text>
+<rectangle x1="-3" y1="-1.1" x2="-2.8" y2="1.1" layer="51"/>
+<rectangle x1="2.8" y1="-1.1" x2="3" y2="1.1" layer="51" rot="R180"/>
+<rectangle x1="-2.85" y1="-1.55" x2="-1.9" y2="1.55" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="VREG">
@@ -9731,6 +9747,17 @@ package type SS</description>
 <text x="-10.16" y="3.048" size="1.778" layer="95">&gt;Name</text>
 <text x="-9.906" y="-9.652" size="1.778" layer="96">&gt;Value</text>
 </symbol>
+<symbol name="DIODE">
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="0" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="0" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.778" x2="-2.54" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.778" x2="2.54" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-1.778" width="0.254" layer="94"/>
+<pin name="ANODE" x="0" y="5.08" visible="off" length="short" rot="R270"/>
+<pin name="CATHODE" x="0" y="-5.08" visible="off" length="short" rot="R90"/>
+<text x="0.254" y="3.048" size="1.778" layer="95">&gt;Name</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="VREG" prefix="Q">
@@ -9743,6 +9770,22 @@ package type SS</description>
 <connect gate="G$1" pin="GND" pad="1"/>
 <connect gate="G$1" pin="VIN" pad="3"/>
 <connect gate="G$1" pin="VOUT" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DIODE" prefix="D">
+<gates>
+<gate name="G$1" symbol="DIODE" x="0" y="2.54"/>
+</gates>
+<devices>
+<device name="SMD" package="SMC_C">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="+"/>
+<connect gate="G$1" pin="CATHODE" pad="-"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -10077,6 +10120,12 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <part name="R41" library="passives" deviceset="R" device="0603" value="100k"/>
 <part name="+3V37" library="supply1" deviceset="+3V3" device=""/>
 <part name="J4" library="Headers" deviceset="1BY2" device="THROUGHHOLE"/>
+<part name="R42" library="passives" deviceset="R" device="0603" value="39R"/>
+<part name="R43" library="passives" deviceset="R" device="0603" value="39R"/>
+<part name="C31" library="passives" deviceset="C-EU" device="C0603" value="100n"/>
+<part name="D1" library="Semiconductors" deviceset="DIODE" device="SMD"/>
+<part name="+3V38" library="supply1" deviceset="+3V3" device=""/>
+<part name="GND37" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10196,6 +10245,18 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <instance part="+3V25" gate="G$1" x="292.1" y="73.66"/>
 <instance part="+3V26" gate="G$1" x="314.96" y="73.66"/>
 <instance part="+3V27" gate="G$1" x="228.6" y="40.64"/>
+<instance part="R42" gate="G$1" x="96.52" y="-12.7" smashed="yes" rot="R90">
+<attribute name="NAME" x="96.0374" y="-20.066" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="96.266" y="-9.906" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R43" gate="G$1" x="99.06" y="-12.7" smashed="yes" rot="R90">
+<attribute name="NAME" x="98.5774" y="-20.066" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="98.806" y="-9.906" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C31" gate="G$1" x="200.66" y="12.7"/>
+<instance part="D1" gate="G$1" x="200.66" y="25.4"/>
+<instance part="+3V38" gate="G$1" x="200.66" y="35.56"/>
+<instance part="GND37" gate="1" x="200.66" y="2.54"/>
 </instances>
 <busses>
 <bus name="PA[0..29]">
@@ -10208,6 +10269,11 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="172.72" y1="20.32" x2="172.72" y2="12.7" width="0.762" layer="92"/>
 <wire x1="172.72" y1="12.7" x2="175.26" y2="10.16" width="0.762" layer="92"/>
 <label x="175.26" y="10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="195.58" y1="20.32" x2="195.58" y2="15.24" width="0.762" layer="92"/>
+<wire x1="195.58" y1="15.24" x2="193.04" y2="12.7" width="0.762" layer="92"/>
+<label x="193.04" y="12.7" size="1.778" layer="95" rot="R90"/>
 </segment>
 </bus>
 <bus name="PB[0..31]">
@@ -10514,6 +10580,11 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <pinref part="+3V27" gate="G$1" pin="+3V3"/>
 <junction x="228.6" y="38.1"/>
 </segment>
+<segment>
+<pinref part="+3V38" gate="G$1" pin="+3V3"/>
+<pinref part="D1" gate="G$1" pin="ANODE"/>
+<wire x1="200.66" y1="33.02" x2="200.66" y2="30.48" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="PA0" class="0">
 <segment>
@@ -10563,6 +10634,11 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <segment>
 <pinref part="IC1" gate="G$1" pin="PA04"/>
 <wire x1="22.86" y1="119.38" x2="22.86" y2="124.46" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="ID"/>
+<wire x1="142.24" y1="45.72" x2="137.16" y2="45.72" width="0.1524" layer="91"/>
+<label x="137.16" y="45.72" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PA5" class="0">
@@ -10635,6 +10711,14 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <segment>
 <pinref part="IC1" gate="G$1" pin="PA16"/>
 <wire x1="53.34" y1="119.38" x2="53.34" y2="124.46" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="D1" gate="G$1" pin="CATHODE"/>
+<pinref part="C31" gate="G$1" pin="1"/>
+<wire x1="200.66" y1="20.32" x2="200.66" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="17.78" x2="200.66" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="17.78" x2="200.66" y2="17.78" width="0.1524" layer="91"/>
+<junction x="200.66" y="17.78"/>
 </segment>
 </net>
 <net name="PA19" class="0">
@@ -11295,20 +11379,22 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <segment>
 <pinref part="U$1" gate="G$1" pin="D+"/>
 <wire x1="142.24" y1="48.26" x2="137.16" y2="48.26" width="0.1524" layer="91"/>
+<label x="137.16" y="48.26" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="G$1" pin="DP"/>
-<wire x1="99.06" y1="-5.08" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="R43" gate="G$1" pin="1"/>
+<wire x1="99.06" y1="-17.78" x2="99.06" y2="-20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="DM" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="D-"/>
 <wire x1="142.24" y1="50.8" x2="137.16" y2="50.8" width="0.1524" layer="91"/>
+<label x="137.16" y="50.8" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="G$1" pin="DM"/>
-<wire x1="96.52" y1="-5.08" x2="96.52" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="R42" gate="G$1" pin="1"/>
+<wire x1="96.52" y1="-17.78" x2="96.52" y2="-20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RESET_N" class="0">
@@ -11381,6 +11467,20 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="269.24" y1="25.4" x2="264.16" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="264.16" y1="25.4" x2="264.16" y2="27.94" width="0.1524" layer="91"/>
 <label x="262.128" y="22.098" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$28" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="DM"/>
+<pinref part="R42" gate="G$1" pin="2"/>
+<wire x1="96.52" y1="-5.08" x2="96.52" y2="-7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$29" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="DP"/>
+<pinref part="R43" gate="G$1" pin="2"/>
+<wire x1="99.06" y1="-5.08" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
@@ -11752,15 +11852,14 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 </sheet>
 <sheet>
 <plain>
-<wire x1="0" y1="55.88" x2="0" y2="0" width="0.1524" layer="97"/>
-<wire x1="0" y1="0" x2="121.92" y2="0" width="0.1524" layer="97"/>
-<wire x1="121.92" y1="0" x2="121.92" y2="58.42" width="0.1524" layer="97"/>
+<wire x1="0" y1="58.42" x2="0" y2="-7.62" width="0.1524" layer="97"/>
+<wire x1="0" y1="-7.62" x2="121.92" y2="-7.62" width="0.1524" layer="97"/>
+<wire x1="121.92" y1="-7.62" x2="121.92" y2="58.42" width="0.1524" layer="97"/>
 <wire x1="121.92" y1="58.42" x2="0" y2="58.42" width="0.1524" layer="97"/>
-<wire x1="0" y1="58.42" x2="0" y2="55.88" width="0.1524" layer="97"/>
 <text x="2.54" y="55.88" size="1.778" layer="97">Cameras</text>
 <wire x1="121.92" y1="58.42" x2="154.94" y2="58.42" width="0.1524" layer="97"/>
-<wire x1="154.94" y1="58.42" x2="154.94" y2="0" width="0.1524" layer="97"/>
-<wire x1="154.94" y1="0" x2="121.92" y2="0" width="0.1524" layer="97"/>
+<wire x1="154.94" y1="58.42" x2="154.94" y2="-7.62" width="0.1524" layer="97"/>
+<wire x1="154.94" y1="-7.62" x2="121.92" y2="-7.62" width="0.1524" layer="97"/>
 <text x="124.46" y="55.88" size="1.778" layer="97">Decoupling Capacitors</text>
 </plain>
 <instances>
@@ -11780,11 +11879,31 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <instance part="GND35" gate="1" x="142.24" y="10.16"/>
 </instances>
 <busses>
-<bus name="OVDATA[0..7]">
+<bus name="PB[0..7]">
 <segment>
-<wire x1="60.96" y1="40.64" x2="60.96" y2="20.32" width="0.762" layer="92"/>
-<wire x1="60.96" y1="20.32" x2="63.5" y2="17.78" width="0.762" layer="92"/>
-<label x="63.5" y="17.78" size="1.778" layer="95" rot="R270"/>
+<wire x1="60.96" y1="40.64" x2="60.96" y2="22.86" width="0.762" layer="92"/>
+<label x="58.42" y="7.62" size="1.778" layer="95" rot="R90"/>
+<wire x1="60.96" y1="22.86" x2="58.42" y2="20.32" width="0.762" layer="92"/>
+<wire x1="58.42" y1="20.32" x2="58.42" y2="0" width="0.762" layer="92"/>
+</segment>
+</bus>
+<bus name="PB[0..31]">
+<segment>
+<wire x1="63.5" y1="17.78" x2="63.5" y2="0" width="0.762" layer="92"/>
+<wire x1="63.5" y1="0" x2="66.04" y2="-2.54" width="0.762" layer="92"/>
+<label x="68.58" y="-2.54" size="1.778" layer="95"/>
+</segment>
+</bus>
+<bus name="PA[0..29]">
+<segment>
+<wire x1="106.68" y1="35.56" x2="106.68" y2="22.86" width="0.762" layer="92"/>
+<wire x1="106.68" y1="22.86" x2="109.22" y2="20.32" width="0.762" layer="92"/>
+<label x="111.76" y="20.32" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<wire x1="15.24" y1="35.56" x2="15.24" y2="22.86" width="0.762" layer="92"/>
+<wire x1="15.24" y1="22.86" x2="12.7" y2="20.32" width="0.762" layer="92"/>
+<label x="12.7" y="20.32" size="1.778" layer="95" rot="R90"/>
 </segment>
 </bus>
 </busses>
@@ -11965,88 +12084,136 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="63.5" y1="22.86" x2="60.96" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="OV_VSYNC0" class="0">
+<net name="PB0" class="0">
+<segment>
+<wire x1="58.42" y1="17.78" x2="63.5" y2="17.78" width="0.1524" layer="91"/>
+<label x="58.42" y="17.78" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB1" class="0">
+<segment>
+<wire x1="58.42" y1="15.24" x2="63.5" y2="15.24" width="0.1524" layer="91"/>
+<label x="58.42" y="15.24" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB2" class="0">
+<segment>
+<wire x1="58.42" y1="12.7" x2="63.5" y2="12.7" width="0.1524" layer="91"/>
+<label x="58.42" y="12.7" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB3" class="0">
+<segment>
+<wire x1="58.42" y1="10.16" x2="63.5" y2="10.16" width="0.1524" layer="91"/>
+<label x="58.42" y="10.16" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB4" class="0">
+<segment>
+<wire x1="58.42" y1="7.62" x2="63.5" y2="7.62" width="0.1524" layer="91"/>
+<label x="58.42" y="7.62" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB5" class="0">
+<segment>
+<wire x1="58.42" y1="5.08" x2="63.5" y2="5.08" width="0.1524" layer="91"/>
+<label x="58.42" y="5.08" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB6" class="0">
+<segment>
+<wire x1="58.42" y1="2.54" x2="63.5" y2="2.54" width="0.1524" layer="91"/>
+<label x="58.42" y="2.54" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB7" class="0">
+<segment>
+<wire x1="58.42" y1="0" x2="63.5" y2="0" width="0.1524" layer="91"/>
+<label x="58.42" y="0" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PA29" class="0">
 <segment>
 <pinref part="Q1" gate="G$1" pin="VSYNC"/>
-<wire x1="25.4" y1="35.56" x2="20.32" y2="35.56" width="0.1524" layer="91"/>
-<label x="5.08" y="35.56" size="1.778" layer="95"/>
+<wire x1="25.4" y1="35.56" x2="15.24" y2="35.56" width="0.1524" layer="91"/>
+<label x="14.986" y="35.814" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="OV_NOE0" class="0">
-<segment>
-<pinref part="Q1" gate="G$1" pin="NOE"/>
-<wire x1="25.4" y1="33.02" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
-<label x="5.08" y="33.02" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="OV_RRST0" class="0">
-<segment>
-<pinref part="Q1" gate="G$1" pin="RRST"/>
-<wire x1="25.4" y1="30.48" x2="20.32" y2="30.48" width="0.1524" layer="91"/>
-<label x="5.08" y="30.48" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="OV_RCLK0" class="0">
-<segment>
-<pinref part="Q1" gate="G$1" pin="RCLK"/>
-<wire x1="25.4" y1="27.94" x2="20.32" y2="27.94" width="0.1524" layer="91"/>
-<label x="5.08" y="27.94" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="OV_WEN0" class="0">
-<segment>
-<pinref part="Q1" gate="G$1" pin="WEN"/>
-<wire x1="25.4" y1="25.4" x2="20.32" y2="25.4" width="0.1524" layer="91"/>
-<label x="5.08" y="25.4" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="OV_WRST0" class="0">
-<segment>
-<pinref part="Q1" gate="G$1" pin="WRST"/>
-<wire x1="25.4" y1="22.86" x2="20.32" y2="22.86" width="0.1524" layer="91"/>
-<label x="5.08" y="22.86" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="OV_VSYNC1" class="0">
+<net name="PA26" class="0">
 <segment>
 <pinref part="Q2" gate="G$1" pin="VSYNC"/>
-<wire x1="96.52" y1="35.56" x2="101.6" y2="35.56" width="0.1524" layer="91"/>
-<label x="101.6" y="35.56" size="1.778" layer="95"/>
+<wire x1="96.52" y1="35.56" x2="106.68" y2="35.56" width="0.1524" layer="91"/>
+<label x="101.6" y="35.814" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="OV_NOE1" class="0">
+<net name="PA27" class="0">
 <segment>
 <pinref part="Q2" gate="G$1" pin="NOE"/>
-<wire x1="96.52" y1="33.02" x2="101.6" y2="33.02" width="0.1524" layer="91"/>
-<label x="101.6" y="33.02" size="1.778" layer="95"/>
+<wire x1="96.52" y1="33.02" x2="106.68" y2="33.02" width="0.1524" layer="91"/>
+<label x="100.33" y="33.274" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="OV_RRST1" class="0">
+<net name="PA28" class="0">
+<segment>
+<pinref part="Q1" gate="G$1" pin="NOE"/>
+<wire x1="25.4" y1="33.02" x2="15.24" y2="33.02" width="0.1524" layer="91"/>
+<label x="16.002" y="33.274" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PA15" class="0">
+<segment>
+<pinref part="Q1" gate="G$1" pin="RRST"/>
+<wire x1="25.4" y1="30.48" x2="15.24" y2="30.48" width="0.1524" layer="91"/>
+<label x="16.002" y="30.734" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PA19" class="0">
+<segment>
+<pinref part="Q1" gate="G$1" pin="RCLK"/>
+<wire x1="25.4" y1="27.94" x2="15.24" y2="27.94" width="0.1524" layer="91"/>
+<label x="16.002" y="28.194" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PA20" class="0">
+<segment>
+<pinref part="Q1" gate="G$1" pin="WEN"/>
+<wire x1="25.4" y1="25.4" x2="15.24" y2="25.4" width="0.1524" layer="91"/>
+<label x="16.002" y="25.654" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PA21" class="0">
+<segment>
+<pinref part="Q1" gate="G$1" pin="WRST"/>
+<wire x1="25.4" y1="22.86" x2="15.24" y2="22.86" width="0.1524" layer="91"/>
+<label x="16.002" y="23.114" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PA22" class="0">
 <segment>
 <pinref part="Q2" gate="G$1" pin="RRST"/>
-<wire x1="96.52" y1="30.48" x2="101.6" y2="30.48" width="0.1524" layer="91"/>
-<label x="101.6" y="30.48" size="1.778" layer="95"/>
+<wire x1="96.52" y1="30.48" x2="106.68" y2="30.48" width="0.1524" layer="91"/>
+<label x="100.33" y="30.734" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="OV_RCLK1" class="0">
+<net name="PA23" class="0">
 <segment>
 <pinref part="Q2" gate="G$1" pin="RCLK"/>
-<wire x1="96.52" y1="27.94" x2="101.6" y2="27.94" width="0.1524" layer="91"/>
-<label x="101.6" y="27.94" size="1.778" layer="95"/>
+<wire x1="96.52" y1="27.94" x2="106.68" y2="27.94" width="0.1524" layer="91"/>
+<label x="100.33" y="28.194" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="OV_WEN1" class="0">
+<net name="PA24" class="0">
 <segment>
 <pinref part="Q2" gate="G$1" pin="WEN"/>
-<wire x1="96.52" y1="25.4" x2="101.6" y2="25.4" width="0.1524" layer="91"/>
-<label x="101.6" y="25.4" size="1.778" layer="95"/>
+<wire x1="96.52" y1="25.4" x2="106.68" y2="25.4" width="0.1524" layer="91"/>
+<label x="100.33" y="25.654" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="OV_WRST1" class="0">
+<net name="PA25" class="0">
 <segment>
 <pinref part="Q2" gate="G$1" pin="WRST"/>
-<wire x1="96.52" y1="22.86" x2="101.6" y2="22.86" width="0.1524" layer="91"/>
-<label x="101.6" y="22.86" size="1.778" layer="95"/>
+<wire x1="96.52" y1="22.86" x2="106.68" y2="22.86" width="0.1524" layer="91"/>
+<label x="100.33" y="23.114" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -12600,8 +12767,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <text x="73.66" y="127" size="1.778" layer="97">Motor Sensors</text>
 <wire x1="2.54" y1="20.32" x2="20.32" y2="20.32" width="0.1524" layer="97"/>
 <wire x1="20.32" y1="20.32" x2="40.64" y2="20.32" width="0.1524" layer="97"/>
-<wire x1="40.64" y1="20.32" x2="40.64" y2="15.24" width="0.1524" layer="97"/>
-<wire x1="40.64" y1="15.24" x2="40.64" y2="2.54" width="0.1524" layer="97"/>
+<wire x1="40.64" y1="20.32" x2="40.64" y2="2.54" width="0.1524" layer="97"/>
 <wire x1="40.64" y1="2.54" x2="20.32" y2="2.54" width="0.1524" layer="97"/>
 <wire x1="20.32" y1="2.54" x2="2.54" y2="2.54" width="0.1524" layer="97"/>
 <wire x1="2.54" y1="2.54" x2="2.54" y2="20.32" width="0.1524" layer="97"/>
@@ -12611,8 +12777,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <text x="20.32" y="0" size="1.778" layer="97">Near VM</text>
 <wire x1="86.36" y1="20.32" x2="104.14" y2="20.32" width="0.1524" layer="97"/>
 <wire x1="104.14" y1="20.32" x2="124.46" y2="20.32" width="0.1524" layer="97"/>
-<wire x1="124.46" y1="20.32" x2="124.46" y2="15.24" width="0.1524" layer="97"/>
-<wire x1="124.46" y1="15.24" x2="124.46" y2="2.54" width="0.1524" layer="97"/>
+<wire x1="124.46" y1="20.32" x2="124.46" y2="2.54" width="0.1524" layer="97"/>
 <wire x1="124.46" y1="2.54" x2="104.14" y2="2.54" width="0.1524" layer="97"/>
 <wire x1="104.14" y1="2.54" x2="86.36" y2="2.54" width="0.1524" layer="97"/>
 <wire x1="86.36" y1="2.54" x2="86.36" y2="20.32" width="0.1524" layer="97"/>
@@ -12620,13 +12785,12 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <text x="124.968" y="13.462" size="1.778" layer="97">Decoupling Capacitors</text>
 <text x="86.36" y="0" size="1.778" layer="97">Near VCC</text>
 <text x="104.14" y="0" size="1.778" layer="97">Near VM</text>
-<wire x1="0" y1="-2.54" x2="78.74" y2="-2.54" width="0.1524" layer="97"/>
 <wire x1="78.74" y1="-2.54" x2="160.02" y2="-2.54" width="0.1524" layer="97"/>
 <wire x1="160.02" y1="-2.54" x2="160.02" y2="134.62" width="0.1524" layer="97"/>
 <wire x1="160.02" y1="134.62" x2="78.74" y2="134.62" width="0.1524" layer="97"/>
-<wire x1="78.74" y1="134.62" x2="0" y2="134.62" width="0.1524" layer="97"/>
-<wire x1="0" y1="134.62" x2="0" y2="-2.54" width="0.1524" layer="97"/>
-<wire x1="0" y1="-2.54" x2="78.74" y2="-2.54" width="0.1524" layer="97"/>
+<wire x1="78.74" y1="134.62" x2="-10.16" y2="134.62" width="0.1524" layer="97"/>
+<wire x1="-10.16" y1="134.62" x2="-10.16" y2="-2.54" width="0.1524" layer="97"/>
+<wire x1="-10.16" y1="-2.54" x2="78.74" y2="-2.54" width="0.1524" layer="97"/>
 <wire x1="78.74" y1="-2.54" x2="78.74" y2="134.62" width="0.1524" layer="97"/>
 </plain>
 <instances>
@@ -12672,6 +12836,30 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <instance part="+3V35" gate="G$1" x="111.76" y="17.78"/>
 </instances>
 <busses>
+<bus name="PA[0..29]">
+<segment>
+<wire x1="33.02" y1="124.46" x2="53.34" y2="124.46" width="0.762" layer="92"/>
+<wire x1="53.34" y1="124.46" x2="55.88" y2="127" width="0.762" layer="92"/>
+<label x="55.88" y="127" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="119.38" y1="124.46" x2="139.7" y2="124.46" width="0.762" layer="92"/>
+<wire x1="139.7" y1="124.46" x2="142.24" y2="127" width="0.762" layer="92"/>
+<label x="142.24" y="127" size="1.778" layer="95"/>
+</segment>
+</bus>
+<bus name="PB[0..31]">
+<segment>
+<wire x1="-2.54" y1="55.88" x2="-2.54" y2="48.26" width="0.762" layer="92"/>
+<wire x1="-2.54" y1="48.26" x2="-5.08" y2="45.72" width="0.762" layer="92"/>
+<label x="-5.08" y="45.72" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<wire x1="83.82" y1="55.88" x2="83.82" y2="48.26" width="0.762" layer="92"/>
+<wire x1="83.82" y1="48.26" x2="81.28" y2="45.72" width="0.762" layer="92"/>
+<label x="81.28" y="45.72" size="1.778" layer="95" rot="R90"/>
+</segment>
+</bus>
 </busses>
 <nets>
 <net name="GND" class="0">
@@ -12959,16 +13147,6 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="12.7" y1="104.14" x2="12.7" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="MOTOR_SENSE_1" class="0">
-<segment>
-<pinref part="R12" gate="G$1" pin="1"/>
-<pinref part="Q4" gate="G$1" pin="COLLECTOR"/>
-<wire x1="22.86" y1="106.68" x2="22.86" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="104.14" x2="33.02" y2="104.14" width="0.1524" layer="91"/>
-<junction x="22.86" y="104.14"/>
-<label x="24.13" y="104.902" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="Q5" gate="G$1" pin="ANODE"/>
@@ -12976,7 +13154,28 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="99.06" y1="104.14" x2="99.06" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="MOTOR_SENSE_2" class="0">
+<net name="PA6" class="0">
+<segment>
+<pinref part="R12" gate="G$1" pin="1"/>
+<pinref part="Q4" gate="G$1" pin="COLLECTOR"/>
+<wire x1="22.86" y1="106.68" x2="22.86" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="104.14" x2="33.02" y2="104.14" width="0.1524" layer="91"/>
+<junction x="22.86" y="104.14"/>
+<label x="24.13" y="104.902" size="1.778" layer="95"/>
+<wire x1="33.02" y1="124.46" x2="33.02" y2="104.14" width="0.1524" layer="91"/>
+<label x="32.004" y="119.634" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PA7" class="0">
+<segment>
+<pinref part="R15" gate="G$1" pin="S"/>
+<wire x1="50.8" y1="104.14" x2="53.34" y2="104.14" width="0.1524" layer="91"/>
+<label x="50.8" y="104.14" size="1.778" layer="95"/>
+<wire x1="53.34" y1="124.46" x2="53.34" y2="104.14" width="0.1524" layer="91"/>
+<label x="55.88" y="119.38" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PA8" class="0">
 <segment>
 <pinref part="R14" gate="G$1" pin="1"/>
 <pinref part="Q5" gate="G$1" pin="COLLECTOR"/>
@@ -12984,20 +13183,71 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="109.22" y1="104.14" x2="119.38" y2="104.14" width="0.1524" layer="91"/>
 <junction x="109.22" y="104.14"/>
 <label x="110.49" y="104.902" size="1.778" layer="95"/>
+<wire x1="119.38" y1="124.46" x2="119.38" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="MOTOR_REF_1" class="0">
-<segment>
-<pinref part="R15" gate="G$1" pin="S"/>
-<wire x1="50.8" y1="104.14" x2="53.34" y2="104.14" width="0.1524" layer="91"/>
-<label x="50.8" y="104.14" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="MOTOR_REF_2" class="0">
+<net name="PA9" class="0">
 <segment>
 <pinref part="R16" gate="G$1" pin="S"/>
 <wire x1="137.16" y1="104.14" x2="139.7" y2="104.14" width="0.1524" layer="91"/>
 <label x="139.7" y="104.14" size="1.778" layer="95"/>
+<wire x1="139.7" y1="124.46" x2="139.7" y2="104.14" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PB11" class="0">
+<segment>
+<pinref part="IC4" gate="G$1" pin="PWM"/>
+<wire x1="2.54" y1="48.26" x2="-2.54" y2="48.26" width="0.1524" layer="91"/>
+<label x="-2.54" y="48.26" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB8" class="0">
+<segment>
+<pinref part="IC4" gate="G$1" pin="STBY"/>
+<wire x1="-2.54" y1="55.88" x2="2.54" y2="55.88" width="0.1524" layer="91"/>
+<label x="-2.54" y="55.88" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB9" class="0">
+<segment>
+<pinref part="IC4" gate="G$1" pin="IN1"/>
+<wire x1="2.54" y1="53.34" x2="-2.54" y2="53.34" width="0.1524" layer="91"/>
+<label x="-2.54" y="53.34" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB10" class="0">
+<segment>
+<pinref part="IC4" gate="G$1" pin="IN2"/>
+<wire x1="2.54" y1="50.8" x2="-2.54" y2="50.8" width="0.1524" layer="91"/>
+<label x="-2.54" y="50.8" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB13" class="0">
+<segment>
+<pinref part="IC5" gate="G$1" pin="PWM"/>
+<wire x1="88.9" y1="48.26" x2="83.82" y2="48.26" width="0.1524" layer="91"/>
+<label x="83.82" y="48.26" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB14" class="0">
+<segment>
+<pinref part="IC5" gate="G$1" pin="IN2"/>
+<wire x1="88.9" y1="50.8" x2="83.82" y2="50.8" width="0.1524" layer="91"/>
+<label x="83.82" y="50.8" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB15" class="0">
+<segment>
+<pinref part="IC5" gate="G$1" pin="IN1"/>
+<wire x1="88.9" y1="53.34" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
+<label x="83.82" y="53.34" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB16" class="0">
+<segment>
+<pinref part="IC5" gate="G$1" pin="STBY"/>
+<wire x1="88.9" y1="55.88" x2="83.82" y2="55.88" width="0.1524" layer="91"/>
+<label x="83.82" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

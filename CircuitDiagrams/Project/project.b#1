@@ -1080,11 +1080,11 @@ These are for the base setup for PCB CART.</description>
 <element name="IC5" library="ICs" package="SSOP20" value="TB6593FNGSSOP20" x="9.51" y="25.74" rot="MR180"/>
 <element name="J2" library="Headers" package="1BY2" value="1BY2THROUGHHOLE" x="2.12" y="45.78" rot="R180"/>
 <element name="J3" library="Headers" package="1BY2" value="1BY2THROUGHHOLE" x="1.83" y="25.95"/>
-<element name="Q3" library="Semiconductors" package="SOT-223" value="VREGSOT-223" x="86.75" y="65.31"/>
+<element name="Q3" library="Semiconductors" package="SOT-223" value="VREGSOT-223" x="6.69" y="15.75" rot="R90"/>
 <element name="C1" library="passives" package="C0603" value="22pF" x="52.8" y="35.2" rot="R90"/>
 <element name="C2" library="passives" package="C0603" value="22pF" x="52.85" y="43.8" rot="R90"/>
-<element name="C3" library="passives" package="SMC_P" value="10uF" x="86.59" y="58.09" rot="R270"/>
-<element name="C4" library="passives" package="SMC_P" value="10uF" x="88.86" y="58.06" rot="R270"/>
+<element name="C3" library="passives" package="SMC_P" value="10uF" x="14.91" y="13.59"/>
+<element name="C4" library="passives" package="SMC_P" value="10uF" x="14.94" y="17.86"/>
 <element name="R11" library="passives" package="R0603" value="150" x="51" y="4"/>
 <element name="R12" library="passives" package="R0603" value="10k" x="47" y="4"/>
 <element name="Q4" library="Sensors" package="TCRT1010" value="TCRT1010TH" x="52" y="2" rot="R180"/>
@@ -1287,9 +1287,9 @@ These are for the base setup for PCB CART.</description>
 <contactref element="C43" pad="2"/>
 <contactref element="R36" pad="2"/>
 <contactref element="C31" pad="2"/>
-<wire x1="88.86" y1="56.485" x2="94.27" y2="56.79" width="0" layer="19" extent="1-1"/>
-<wire x1="86.59" y1="56.515" x2="88.86" y2="56.485" width="0" layer="19" extent="1-1"/>
-<wire x1="84.45" y1="62.31" x2="86.59" y2="56.515" width="0" layer="19" extent="1-1"/>
+<wire x1="16.515" y1="17.86" x2="94.27" y2="56.79" width="0" layer="19" extent="1-1"/>
+<wire x1="16.485" y1="13.59" x2="16.515" y2="17.86" width="0" layer="19" extent="1-1"/>
+<wire x1="9.69" y1="13.45" x2="16.485" y2="13.59" width="0" layer="19" extent="1-1"/>
 <wire x1="94.27" y1="44.09" x2="94.27" y2="56.79" width="0" layer="19" extent="1-1"/>
 <wire x1="94" y1="39.85" x2="94.27" y2="44.09" width="0" layer="19" extent="1-1"/>
 <wire x1="98" y1="39.85" x2="94" y2="39.85" width="0" layer="19" extent="1-1"/>
@@ -1467,8 +1467,8 @@ These are for the base setup for PCB CART.</description>
 <contactref element="R41" pad="1"/>
 <contactref element="D1" pad="+"/>
 <contactref element="X2" pad="SW"/>
-<wire x1="86.59" y1="59.665" x2="86.75" y2="62.31" width="0" layer="19" extent="1-1"/>
-<wire x1="96.81" y1="44.09" x2="86.59" y2="59.665" width="0" layer="19" extent="1-1"/>
+<wire x1="13.335" y1="13.59" x2="9.69" y2="15.75" width="0" layer="19" extent="1-1"/>
+<wire x1="96.81" y1="44.09" x2="13.335" y2="13.59" width="0" layer="19" extent="1-1"/>
 <wire x1="98" y1="38.15" x2="96.81" y2="44.09" width="0" layer="19" extent="1-1"/>
 <wire x1="94" y1="38.15" x2="98" y2="38.15" width="0" layer="19" extent="1-1"/>
 <wire x1="98" y1="29.15" x2="98" y2="38.15" width="0" layer="19" extent="1-1"/>
@@ -2231,8 +2231,8 @@ These are for the base setup for PCB CART.</description>
 <contactref element="Q3" pad="3"/>
 <contactref element="IC1" pad="49"/>
 <contactref element="U$1" pad="VBUS"/>
-<wire x1="88.86" y1="59.635" x2="89.05" y2="62.31" width="0" layer="19" extent="1-1"/>
-<wire x1="25.13" y1="37.14" x2="88.86" y2="59.635" width="0" layer="19" extent="1-1"/>
+<wire x1="13.365" y1="17.86" x2="9.69" y2="18.05" width="0" layer="19" extent="1-1"/>
+<wire x1="25.13" y1="37.14" x2="13.365" y2="17.86" width="0" layer="19" extent="1-1"/>
 <wire x1="8.83" y1="37.99" x2="25.13" y2="37.14" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
