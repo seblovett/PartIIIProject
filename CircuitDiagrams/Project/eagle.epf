@@ -7,10 +7,22 @@ Desktop="Desktop"
 
 [Globals]
 AutoSaveProject=1
+UsedLibrary="/Applications/EAGLE-6.3.0/lbr/supply1.lbr"
+UsedLibrary="/Users/seblovett/Documents/eagle/Libraries/Atmel_By_element14_Batch_1.lbr"
+UsedLibrary="/Users/seblovett/Documents/eagle/Libraries/Atmel_MCUs.lbr"
+UsedLibrary="/Users/seblovett/Documents/eagle/Libraries/Headers.lbr"
+UsedLibrary="/Users/seblovett/Documents/eagle/Libraries/ICs.lbr"
+UsedLibrary="/Users/seblovett/Documents/eagle/Libraries/Misc.lbr"
+UsedLibrary="/Users/seblovett/Documents/eagle/Libraries/Molex_By_element14_Batch_1.lbr"
+UsedLibrary="/Users/seblovett/Documents/eagle/Libraries/Semiconductors.lbr"
+UsedLibrary="/Users/seblovett/Documents/eagle/Libraries/Sensors.lbr"
+UsedLibrary="/Users/seblovett/Documents/eagle/Libraries/SparkFun.lbr"
+UsedLibrary="/Users/seblovett/Documents/eagle/Libraries/microbuilder.lbr"
+UsedLibrary="/Users/seblovett/Documents/eagle/Libraries/passives.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="320 218 919 617"
+Loc="199 35 798 434"
 State=2
 Number=0
 

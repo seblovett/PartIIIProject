@@ -453,6 +453,26 @@ shrink quad flat pack, square (smd-ipc)</description>
 <wire x1="-1.27" y1="-2.54" x2="-1.27" y2="2.54" width="0.127" layer="22"/>
 <text x="-1.905" y="-3.175" size="1.27" layer="25" rot="R90">&gt;Name</text>
 </package>
+<package name="1.27MM2X4TH">
+<pad name="1" x="0" y="0" drill="0.8"/>
+<pad name="2" x="2.54" y="0" drill="0.8"/>
+<pad name="3" x="5.08" y="0" drill="0.8"/>
+<pad name="4" x="7.62" y="0" drill="0.8"/>
+<pad name="5" x="7.62" y="2.54" drill="0.8"/>
+<pad name="6" x="5.08" y="2.54" drill="0.8"/>
+<pad name="7" x="2.54" y="2.54" drill="0.8"/>
+<pad name="8" x="0" y="2.54" drill="0.8"/>
+<text x="0" y="-2.54" size="1.27" layer="21" rot="R90">1</text>
+<wire x1="-1.27" y1="-1.27" x2="8.89" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="8.89" y1="-1.27" x2="8.89" y2="3.81" width="0.127" layer="21"/>
+<wire x1="8.89" y1="3.81" x2="-1.27" y2="3.81" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="3.81" x2="-1.27" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="-1.27" y2="3.81" width="0.127" layer="22"/>
+<wire x1="-1.27" y1="3.81" x2="8.89" y2="3.81" width="0.127" layer="22"/>
+<wire x1="8.89" y1="3.81" x2="8.89" y2="-1.27" width="0.127" layer="22"/>
+<wire x1="8.89" y1="-1.27" x2="-1.27" y2="-1.27" width="0.127" layer="22"/>
+<text x="-1.27" y="-1.27" size="1.27" layer="25" rot="R90">&gt;Name</text>
+</package>
 </packages>
 </library>
 <library name="SparkFun">
@@ -826,6 +846,22 @@ package type SS</description>
 <text x="2.1" y="2.7" size="1.27" layer="25">&gt;Name</text>
 <text x="3.1" y="-3.6" size="1.27" layer="27">&gt;Value</text>
 </package>
+<package name="SMC_C">
+<description>&lt;b&gt;Chip Capacitor &lt;/b&gt; Polar tantalum capacitors with solid electrolyte&lt;p&gt;
+Siemens Matsushita Components B 45 194, B 45 197, B 45 198&lt;br&gt;
+Source: www.farnell.com/datasheets/247.pdf</description>
+<wire x1="-2.85" y1="1.55" x2="2.85" y2="1.55" width="0.1016" layer="51"/>
+<wire x1="2.85" y1="1.55" x2="2.85" y2="-1.55" width="0.1016" layer="51"/>
+<wire x1="2.85" y1="-1.55" x2="-2.85" y2="-1.55" width="0.1016" layer="51"/>
+<wire x1="-2.85" y1="-1.55" x2="-2.85" y2="1.55" width="0.1016" layer="51"/>
+<smd name="+" x="-2.5" y="0" dx="2.4" dy="2.4" layer="1"/>
+<smd name="-" x="2.5" y="0" dx="2.4" dy="2.4" layer="1" rot="R180"/>
+<text x="-1.905" y="1.905" size="1.016" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-2.54" size="1.016" layer="27">&gt;VALUE</text>
+<rectangle x1="-3" y1="-1.1" x2="-2.8" y2="1.1" layer="51"/>
+<rectangle x1="2.8" y1="-1.1" x2="3" y2="1.1" layer="51" rot="R180"/>
+<rectangle x1="-2.85" y1="-1.55" x2="-1.9" y2="1.55" layer="51"/>
+</package>
 </packages>
 </library>
 <library name="Sensors">
@@ -1064,11 +1100,11 @@ These are for the base setup for PCB CART.</description>
 <element name="IC5" library="ICs" package="SSOP20" value="TB6593FNGSSOP20" x="9.51" y="25.74" rot="MR180"/>
 <element name="J2" library="Headers" package="1BY2" value="1BY2THROUGHHOLE" x="2.12" y="45.78" rot="R180"/>
 <element name="J3" library="Headers" package="1BY2" value="1BY2THROUGHHOLE" x="1.83" y="25.95"/>
-<element name="Q3" library="Semiconductors" package="SOT-223" value="VREGSOT-223" x="86.75" y="65.31"/>
+<element name="Q3" library="Semiconductors" package="SOT-223" value="VREGSOT-223" x="6.69" y="15.75" rot="R90"/>
 <element name="C1" library="passives" package="C0603" value="22pF" x="52.8" y="35.2" rot="R90"/>
 <element name="C2" library="passives" package="C0603" value="22pF" x="52.85" y="43.8" rot="R90"/>
-<element name="C3" library="passives" package="SMC_P" value="10uF" x="86.59" y="58.09" rot="R270"/>
-<element name="C4" library="passives" package="SMC_P" value="10uF" x="88.86" y="58.06" rot="R270"/>
+<element name="C3" library="passives" package="SMC_P" value="10uF" x="14.91" y="13.59"/>
+<element name="C4" library="passives" package="SMC_P" value="10uF" x="14.94" y="17.86"/>
 <element name="R11" library="passives" package="R0603" value="150" x="51" y="4"/>
 <element name="R12" library="passives" package="R0603" value="10k" x="47" y="4"/>
 <element name="Q4" library="Sensors" package="TCRT1010" value="TCRT1010TH" x="52" y="2" rot="R180"/>
@@ -1163,14 +1199,23 @@ These are for the base setup for PCB CART.</description>
 <element name="C39" library="passives" package="C0603" value="0.1u" x="15" y="26" rot="MR0"/>
 <element name="C40" library="passives" package="SMC_Z" value="10u" x="15" y="23" rot="MR0"/>
 <element name="C41" library="passives" package="SMC_Z" value="10u" x="15" y="20" rot="MR0"/>
-<element name="R36" library="passives" package="R0603" value="1k5" x="18" y="62" rot="R270"/>
+<element name="R36" library="passives" package="R0603" value="100k" x="20" y="67"/>
 <element name="C42" library="passives" package="C0603" value="100n" x="94" y="30" rot="R90"/>
 <element name="C43" library="passives" package="C0603" value="33n" x="98" y="30" rot="R90"/>
+<element name="R37" library="passives" package="R0603" value="68R" x="20" y="59"/>
+<element name="R38" library="passives" package="R0603" value="68R" x="20" y="61"/>
+<element name="R39" library="passives" package="R0603" value="68R" x="20" y="63"/>
+<element name="R40" library="passives" package="R0603" value="68R" x="20" y="65"/>
+<element name="R41" library="passives" package="R0603" value="100k" x="20" y="57"/>
+<element name="J4" library="Headers" package="1BY2" value="1BY2THROUGHHOLE" x="63" y="4" rot="R180"/>
+<element name="R42" library="passives" package="R0603" value="39R" x="16" y="37"/>
+<element name="R43" library="passives" package="R0603" value="39R" x="16" y="35"/>
+<element name="C31" library="passives" package="C0603" value="100n" x="29" y="54"/>
+<element name="D1" library="Semiconductors" package="SMC_C" value="DIODESMD" x="31" y="57" rot="R180"/>
+<element name="J5" library="Headers" package="1.27MM2X4TH" value="8PIN1.27MM2X4TH" x="0" y="-7"/>
 </elements>
 <signals>
 <signal name="GND">
-<contactref element="J1" pad="2"/>
-<contactref element="J1" pad="10"/>
 <contactref element="IC1" pad="6"/>
 <contactref element="IC1" pad="37"/>
 <contactref element="IC1" pad="52"/>
@@ -1257,12 +1302,12 @@ These are for the base setup for PCB CART.</description>
 <contactref element="C38" pad="2"/>
 <contactref element="C41" pad="-"/>
 <contactref element="C39" pad="2"/>
-<contactref element="X2" pad="SW"/>
 <contactref element="C42" pad="2"/>
 <contactref element="C43" pad="2"/>
-<wire x1="88.86" y1="56.485" x2="94.27" y2="56.79" width="0" layer="19" extent="1-1"/>
-<wire x1="86.59" y1="56.515" x2="88.86" y2="56.485" width="0" layer="19" extent="1-1"/>
-<wire x1="84.45" y1="62.31" x2="86.59" y2="56.515" width="0" layer="19" extent="1-1"/>
+<contactref element="R36" pad="2"/>
+<contactref element="C31" pad="2"/>
+<contactref element="J1" pad="10"/>
+<contactref element="J1" pad="2"/>
 <wire x1="94.27" y1="44.09" x2="94.27" y2="56.79" width="0" layer="19" extent="1-1"/>
 <wire x1="94" y1="39.85" x2="94.27" y2="44.09" width="0" layer="19" extent="1-1"/>
 <wire x1="98" y1="39.85" x2="94" y2="39.85" width="0" layer="19" extent="1-1"/>
@@ -1301,6 +1346,7 @@ These are for the base setup for PCB CART.</description>
 <wire x1="42.48" y1="23.79" x2="46.33" y2="30.64" width="0" layer="19" extent="1-1"/>
 <wire x1="43" y1="19.15" x2="42.48" y2="23.79" width="0" layer="19" extent="1-1"/>
 <wire x1="41" y1="19.15" x2="43" y2="19.15" width="0" layer="19" extent="1-1"/>
+<wire x1="29.85" y1="54" x2="38" y2="49.15" width="0" layer="19" extent="1-1"/>
 <wire x1="30" y1="19.15" x2="41" y2="19.15" width="0" layer="19" extent="1-1"/>
 <wire x1="28" y1="19.15" x2="30" y2="19.15" width="0" layer="19" extent="1-1"/>
 <wire x1="28.48" y1="23.79" x2="28" y2="19.15" width="0" layer="19" extent="1-1"/>
@@ -1338,14 +1384,17 @@ These are for the base setup for PCB CART.</description>
 <wire x1="11.785" y1="22.115" x2="12.435" y2="22.115" width="0" layer="19" extent="16-16"/>
 <wire x1="11.135" y1="22.115" x2="11.785" y2="22.115" width="0" layer="19" extent="16-16"/>
 <wire x1="14" y1="20" x2="12.435" y2="22.115" width="0" layer="19" extent="16-16"/>
+<wire x1="16.515" y1="17.86" x2="14" y2="20" width="0" layer="19" extent="1-16"/>
+<wire x1="16.485" y1="13.59" x2="16.515" y2="17.86" width="0" layer="19" extent="1-1"/>
+<wire x1="9.69" y1="13.45" x2="16.485" y2="13.59" width="0" layer="19" extent="1-1"/>
+<wire x1="16.29" y1="2.79" x2="16.485" y2="13.59" width="0" layer="19" extent="1-1"/>
+<wire x1="26.45" y1="2.79" x2="16.29" y2="2.79" width="0" layer="19" extent="1-1"/>
 <wire x1="2.65" y1="63.159" x2="2.15" y2="51" width="0" layer="19" extent="1-1"/>
-<wire x1="14.285" y1="67.73" x2="2.65" y2="63.159" width="0" layer="19" extent="1-1"/>
 <wire x1="94.98" y1="2.46" x2="94.98" y2="15.16" width="0" layer="19" extent="1-1"/>
-<wire x1="41.54" y1="3" x2="41" y2="19.15" width="0" layer="19" extent="1-1"/>
+<wire x1="41.54" y1="3" x2="26.45" y2="2.79" width="0" layer="19" extent="1-1"/>
 <wire x1="48.19" y1="2" x2="41.54" y2="3" width="0" layer="19" extent="1-1"/>
 <wire x1="50.73" y1="2" x2="48.19" y2="2" width="0" layer="19" extent="1-1"/>
-<wire x1="26.45" y1="2.79" x2="41.54" y2="3" width="0" layer="19" extent="1-1"/>
-<wire x1="16.29" y1="2.79" x2="26.45" y2="2.79" width="0" layer="19" extent="1-1"/>
+<wire x1="20.85" y1="67" x2="29.85" y2="54" width="0" layer="19" extent="1-1"/>
 <wire x1="48.27" y1="67" x2="48.01" y2="48.435" width="0" layer="19" extent="1-1"/>
 <wire x1="50.81" y1="67" x2="48.27" y2="67" width="0" layer="19" extent="1-1"/>
 <wire x1="57.46" y1="67" x2="50.81" y2="67" width="0" layer="19" extent="1-1"/>
@@ -1436,8 +1485,11 @@ These are for the base setup for PCB CART.</description>
 <contactref element="C41" pad="+"/>
 <contactref element="C42" pad="1"/>
 <contactref element="C43" pad="1"/>
-<wire x1="86.59" y1="59.665" x2="86.75" y2="62.31" width="0" layer="19" extent="1-1"/>
-<wire x1="96.81" y1="44.09" x2="86.59" y2="59.665" width="0" layer="19" extent="1-1"/>
+<contactref element="R41" pad="1"/>
+<contactref element="D1" pad="+"/>
+<contactref element="X2" pad="SW"/>
+<wire x1="13.335" y1="13.59" x2="9.69" y2="15.75" width="0" layer="19" extent="1-1"/>
+<wire x1="96.81" y1="44.09" x2="13.335" y2="13.59" width="0" layer="19" extent="1-1"/>
 <wire x1="98" y1="38.15" x2="96.81" y2="44.09" width="0" layer="19" extent="1-1"/>
 <wire x1="94" y1="38.15" x2="98" y2="38.15" width="0" layer="19" extent="1-1"/>
 <wire x1="98" y1="29.15" x2="98" y2="38.15" width="0" layer="19" extent="1-1"/>
@@ -1515,11 +1567,14 @@ These are for the base setup for PCB CART.</description>
 <wire x1="8.265" y1="49.855" x2="8.265" y2="42.605" width="0" layer="19" extent="16-16"/>
 <wire x1="8.915" y1="49.855" x2="8.265" y2="49.855" width="0" layer="19" extent="16-16"/>
 <wire x1="3.85" y1="51" x2="8.265" y2="49.855" width="0" layer="19" extent="1-16"/>
+<wire x1="19.15" y1="57" x2="16.85" y2="48" width="0" layer="19" extent="1-16"/>
 <wire x1="2.65" y1="60.873" x2="3.85" y2="51" width="0" layer="19" extent="1-1"/>
+<wire x1="14.285" y1="67.73" x2="19.15" y2="57" width="0" layer="19" extent="1-1"/>
 <wire x1="47.85" y1="4" x2="43" y2="20.85" width="0" layer="19" extent="1-1"/>
 <wire x1="51.85" y1="4" x2="47.85" y2="4" width="0" layer="19" extent="1-1"/>
 <wire x1="36.46" y1="3" x2="47.85" y2="4" width="0" layer="19" extent="1-1"/>
 <wire x1="23.91" y1="2.79" x2="36.46" y2="3" width="0" layer="19" extent="1-1"/>
+<wire x1="33.5" y1="57" x2="23.91" y2="2.79" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA0">
 <contactref element="IC1" pad="1"/>
@@ -1543,21 +1598,35 @@ These are for the base setup for PCB CART.</description>
 </signal>
 <signal name="PA4">
 <contactref element="IC1" pad="21"/>
+<contactref element="U$1" pad="ID"/>
+<wire x1="8.83" y1="35.59" x2="34.48" y2="44.99" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA5">
 <contactref element="IC1" pad="22"/>
 </signal>
 <signal name="PA6">
 <contactref element="IC1" pad="23"/>
+<contactref element="R12" pad="1"/>
+<contactref element="Q4" pad="COLLECTOR"/>
+<wire x1="46.15" y1="4" x2="33.48" y2="44.99" width="0" layer="19" extent="1-1"/>
+<wire x1="46.92" y1="2" x2="46.15" y2="4" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA7">
 <contactref element="IC1" pad="24"/>
+<contactref element="R15" pad="1"/>
+<wire x1="39" y1="8.08" x2="32.98" y2="44.99" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA8">
 <contactref element="IC1" pad="25"/>
+<contactref element="R14" pad="1"/>
+<contactref element="Q5" pad="COLLECTOR"/>
+<wire x1="51.15" y1="64" x2="52.08" y2="67" width="0" layer="19" extent="1-1"/>
+<wire x1="32.48" y1="44.99" x2="51.15" y2="64" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA9">
 <contactref element="IC1" pad="26"/>
+<contactref element="R16" pad="1"/>
+<wire x1="31.98" y1="44.99" x2="60" y2="61.92" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA10">
 <contactref element="IC1" pad="27"/>
@@ -1576,42 +1645,70 @@ These are for the base setup for PCB CART.</description>
 </signal>
 <signal name="PA15">
 <contactref element="IC1" pad="32"/>
+<contactref element="Q1" pad="RRST"/>
+<wire x1="28.98" y1="44.99" x2="96.81" y2="54.25" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA16">
 <contactref element="IC1" pad="33"/>
+<contactref element="D1" pad="-"/>
+<contactref element="C31" pad="1"/>
+<wire x1="28.15" y1="54" x2="28.48" y2="44.99" width="0" layer="19" extent="1-1"/>
+<wire x1="28.5" y1="57" x2="28.15" y2="54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA19">
 <contactref element="IC1" pad="36"/>
+<contactref element="Q1" pad="RCLK"/>
+<wire x1="26.98" y1="44.99" x2="96.81" y2="56.79" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA20">
 <contactref element="IC1" pad="39"/>
+<contactref element="Q1" pad="WEN"/>
+<wire x1="25.13" y1="42.14" x2="96.81" y2="51.71" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA21">
 <contactref element="IC1" pad="40"/>
+<contactref element="Q1" pad="WRST"/>
+<wire x1="25.13" y1="41.64" x2="94.27" y2="49.17" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA22">
 <contactref element="IC1" pad="41"/>
+<contactref element="Q2" pad="RRST"/>
+<wire x1="25.13" y1="41.14" x2="97.52" y2="12.62" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA23">
 <contactref element="IC1" pad="42"/>
+<contactref element="Q2" pad="RCLK"/>
+<wire x1="25.13" y1="40.64" x2="97.52" y2="15.16" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA24">
 <contactref element="IC1" pad="43"/>
+<contactref element="Q2" pad="WEN"/>
+<wire x1="25.13" y1="40.14" x2="97.52" y2="10.08" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA25">
 <contactref element="IC1" pad="44"/>
+<contactref element="Q2" pad="WRST"/>
+<wire x1="25.13" y1="39.64" x2="94.98" y2="7.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA26">
 <contactref element="IC1" pad="45"/>
+<contactref element="Q2" pad="VSYNC"/>
+<wire x1="25.13" y1="39.14" x2="97.52" y2="7.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA27">
 <contactref element="IC1" pad="46"/>
+<contactref element="Q2" pad="NOE"/>
+<wire x1="25.13" y1="38.64" x2="94.98" y2="12.62" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA28">
 <contactref element="IC1" pad="47"/>
+<contactref element="Q1" pad="NOE"/>
+<wire x1="25.13" y1="38.14" x2="94.27" y2="54.25" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA29">
 <contactref element="IC1" pad="48"/>
+<contactref element="Q1" pad="VSYNC"/>
+<wire x1="25.13" y1="37.64" x2="96.81" y2="49.17" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PB0">
 <contactref element="IC1" pad="140"/>
@@ -1647,38 +1744,46 @@ These are for the base setup for PCB CART.</description>
 </signal>
 <signal name="PB8">
 <contactref element="IC1" pad="11"/>
+<contactref element="IC4" pad="3"/>
+<wire x1="7.615" y1="49.855" x2="39.48" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PB9">
 <contactref element="IC1" pad="12"/>
+<contactref element="IC4" pad="18"/>
+<wire x1="7.615" y1="42.605" x2="38.98" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PB10">
 <contactref element="IC1" pad="13"/>
-<contactref element="X2" pad="2"/>
-<wire x1="2.6627" y1="59.7681" x2="38.48" y2="44.99" width="0" layer="19" extent="1-1"/>
+<contactref element="IC4" pad="19"/>
+<wire x1="6.965" y1="42.605" x2="38.48" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PB11">
 <contactref element="IC1" pad="14"/>
-<contactref element="X2" pad="7"/>
-<wire x1="2.65" y1="64.302" x2="37.98" y2="44.99" width="0" layer="19" extent="1-1"/>
+<contactref element="IC4" pad="2"/>
+<wire x1="6.965" y1="49.855" x2="37.98" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PB12">
 <contactref element="IC1" pad="15"/>
-<contactref element="X2" pad="5"/>
-<wire x1="2.65" y1="62.016" x2="37.48" y2="44.99" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PB13">
 <contactref element="IC1" pad="16"/>
-<contactref element="X2" pad="1"/>
-<wire x1="2.65" y1="58.587" x2="36.98" y2="44.99" width="0" layer="19" extent="1-1"/>
+<contactref element="IC5" pad="2"/>
+<wire x1="7.235" y1="29.365" x2="36.98" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PB14">
 <contactref element="IC1" pad="17"/>
+<contactref element="IC5" pad="19"/>
+<wire x1="7.235" y1="22.115" x2="36.48" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PB15">
 <contactref element="IC1" pad="18"/>
+<contactref element="IC5" pad="18"/>
+<wire x1="7.885" y1="22.115" x2="35.98" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PB16">
 <contactref element="IC1" pad="19"/>
+<contactref element="IC5" pad="3"/>
+<wire x1="7.885" y1="29.365" x2="35.48" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PB17">
 <contactref element="IC1" pad="20"/>
@@ -1688,27 +1793,53 @@ These are for the base setup for PCB CART.</description>
 </signal>
 <signal name="PB19">
 <contactref element="IC1" pad="58"/>
+<contactref element="R38" pad="1"/>
+<contactref element="J5" pad="1"/>
+<wire x1="25.13" y1="32.64" x2="19.15" y2="61" width="0" layer="19" extent="1-1"/>
+<wire x1="0" y1="-7" x2="25.13" y2="32.64" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PB20">
 <contactref element="IC1" pad="59"/>
+<contactref element="R40" pad="1"/>
+<contactref element="J5" pad="2"/>
+<wire x1="25.13" y1="32.14" x2="19.15" y2="65" width="0" layer="19" extent="1-1"/>
+<wire x1="2.54" y1="-7" x2="25.13" y2="32.14" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PB21">
 <contactref element="IC1" pad="60"/>
+<contactref element="R39" pad="1"/>
+<contactref element="J5" pad="3"/>
+<wire x1="25.13" y1="31.64" x2="19.15" y2="63" width="0" layer="19" extent="1-1"/>
+<wire x1="5.08" y1="-7" x2="25.13" y2="31.64" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PB22">
 <contactref element="IC1" pad="61"/>
+<contactref element="J5" pad="5"/>
+<wire x1="7.62" y1="-4.46" x2="25.13" y2="31.14" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PB23">
 <contactref element="IC1" pad="62"/>
+<contactref element="J5" pad="6"/>
+<wire x1="5.08" y1="-4.46" x2="25.13" y2="30.64" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PB24">
 <contactref element="IC1" pad="63"/>
+<contactref element="J5" pad="7"/>
+<wire x1="2.54" y1="-4.46" x2="25.13" y2="30.14" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PB25">
 <contactref element="IC1" pad="64"/>
+<contactref element="R37" pad="1"/>
+<contactref element="J5" pad="8"/>
+<wire x1="25.13" y1="29.64" x2="19.15" y2="59" width="0" layer="19" extent="1-1"/>
+<wire x1="0" y1="-4.46" x2="25.13" y2="29.64" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PB26">
 <contactref element="IC1" pad="65"/>
+<contactref element="R36" pad="1"/>
+<contactref element="X2" pad="CD"/>
+<wire x1="5.285" y1="67.73" x2="19.15" y2="67" width="0" layer="19" extent="1-1"/>
+<wire x1="25.13" y1="29.14" x2="19.15" y2="67" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PB27">
 <contactref element="IC1" pad="66"/>
@@ -1745,6 +1876,8 @@ These are for the base setup for PCB CART.</description>
 </signal>
 <signal name="PD24">
 <contactref element="IC1" pad="133"/>
+<contactref element="IC3" pad="39"/>
+<wire x1="46.33" y1="37.64" x2="64.87645625" y2="29.369821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD23">
 <contactref element="IC1" pad="132"/>
@@ -1754,9 +1887,13 @@ These are for the base setup for PCB CART.</description>
 </signal>
 <signal name="PD21">
 <contactref element="IC1" pad="130"/>
+<contactref element="IC3" pad="21"/>
+<wire x1="46.33" y1="36.14" x2="68.87645625" y2="40.169821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD20">
 <contactref element="IC1" pad="129"/>
+<contactref element="IC3" pad="20"/>
+<wire x1="46.33" y1="35.64" x2="68.07645625" y2="40.169821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD19">
 <contactref element="IC1" pad="128"/>
@@ -1766,15 +1903,21 @@ These are for the base setup for PCB CART.</description>
 </signal>
 <signal name="PD17">
 <contactref element="IC1" pad="126"/>
+<contactref element="IC3" pad="35"/>
+<wire x1="46.33" y1="34.14" x2="68.07645625" y2="29.369821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD16">
 <contactref element="IC1" pad="125"/>
 </signal>
 <signal name="PD15">
 <contactref element="IC1" pad="124"/>
+<contactref element="IC3" pad="34"/>
+<wire x1="46.33" y1="33.14" x2="68.87645625" y2="29.369821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD14">
 <contactref element="IC1" pad="123"/>
+<contactref element="IC3" pad="33"/>
+<wire x1="46.33" y1="32.64" x2="69.67645625" y2="29.369821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD13">
 <contactref element="IC1" pad="122"/>
@@ -1783,33 +1926,51 @@ These are for the base setup for PCB CART.</description>
 </signal>
 <signal name="PD12">
 <contactref element="IC1" pad="121"/>
+<contactref element="IC3" pad="32"/>
+<wire x1="46.33" y1="31.64" x2="70.47645625" y2="29.369821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD11">
 <contactref element="IC1" pad="120"/>
+<contactref element="IC3" pad="31"/>
+<wire x1="46.33" y1="31.14" x2="71.27645625" y2="29.369821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD10">
 <contactref element="IC1" pad="117"/>
+<contactref element="IC3" pad="30"/>
+<wire x1="46.33" y1="29.64" x2="72.07645625" y2="29.369821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD9">
 <contactref element="IC1" pad="116"/>
+<contactref element="IC3" pad="29"/>
+<wire x1="46.33" y1="29.14" x2="72.87645625" y2="29.369821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD8">
 <contactref element="IC1" pad="115"/>
+<contactref element="IC3" pad="26"/>
+<wire x1="46.33" y1="28.64" x2="72.87645625" y2="40.169821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD7">
 <contactref element="IC1" pad="114"/>
+<contactref element="IC3" pad="25"/>
+<wire x1="46.33" y1="28.14" x2="72.07645625" y2="40.169821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD6">
 <contactref element="IC1" pad="113"/>
+<contactref element="IC3" pad="24"/>
+<wire x1="46.33" y1="27.64" x2="71.27645625" y2="40.169821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD5">
 <contactref element="IC1" pad="112"/>
+<contactref element="IC3" pad="23"/>
+<wire x1="46.33" y1="27.14" x2="70.47645625" y2="40.169821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD4">
 <contactref element="IC1" pad="111"/>
 </signal>
 <signal name="PD3">
 <contactref element="IC1" pad="110"/>
+<contactref element="IC3" pad="15"/>
+<wire x1="46.33" y1="26.14" x2="64.07645625" y2="40.169821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PD2">
 <contactref element="IC1" pad="109"/>
@@ -1893,6 +2054,8 @@ These are for the base setup for PCB CART.</description>
 </signal>
 <signal name="PC18">
 <contactref element="IC1" pad="91"/>
+<contactref element="IC3" pad="22"/>
+<wire x1="35.98" y1="23.79" x2="69.67645625" y2="40.169821875" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PC17">
 <contactref element="IC1" pad="90"/>
@@ -1952,15 +2115,19 @@ These are for the base setup for PCB CART.</description>
 <contactref element="IC1" pad="74"/>
 <contactref element="R2" pad="2"/>
 <contactref element="IC2" pad="12"/>
+<contactref element="J4" pad="2"/>
 <wire x1="77.81" y1="8.14" x2="82.61" y2="9.6022" width="0" layer="19" extent="16-16"/>
-<wire x1="27.48" y1="23.79" x2="77.81" y2="8.14" width="0" layer="19" extent="1-16"/>
+<wire x1="63" y1="5.27" x2="77.81" y2="8.14" width="0" layer="19" extent="16-16"/>
+<wire x1="27.48" y1="23.79" x2="63" y2="5.27" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PC2">
 <contactref element="IC1" pad="73"/>
 <contactref element="R3" pad="2"/>
 <contactref element="IC2" pad="13"/>
+<contactref element="J4" pad="1"/>
 <wire x1="75.24" y1="8.09" x2="81.96" y2="9.6022" width="0" layer="19" extent="16-16"/>
-<wire x1="26.98" y1="23.79" x2="75.24" y2="8.09" width="0" layer="19" extent="1-16"/>
+<wire x1="63" y1="2.73" x2="75.24" y2="8.09" width="0" layer="19" extent="16-16"/>
+<wire x1="26.98" y1="23.79" x2="63" y2="2.73" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PC1">
 <contactref element="IC1" pad="72"/>
@@ -1970,22 +2137,24 @@ These are for the base setup for PCB CART.</description>
 </signal>
 <signal name="DP">
 <contactref element="U$1" pad="D+"/>
-<contactref element="IC1" pad="51"/>
-<wire x1="8.83" y1="36.39" x2="25.13" y2="36.14" width="0" layer="19" extent="1-1"/>
+<contactref element="R43" pad="1"/>
+<wire x1="15.15" y1="35" x2="8.83" y2="36.39" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DM">
 <contactref element="U$1" pad="D-"/>
-<contactref element="IC1" pad="50"/>
-<wire x1="8.83" y1="37.19" x2="25.13" y2="36.64" width="0" layer="19" extent="1-1"/>
+<contactref element="R42" pad="1"/>
+<wire x1="15.15" y1="37" x2="8.83" y2="37.19" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RESET_N">
 <contactref element="IC1" pad="142"/>
 <contactref element="R1" pad="1"/>
 <contactref element="S1" pad="4"/>
 <contactref element="S1" pad="3"/>
+<contactref element="J1" pad="6"/>
 <wire x1="53.09" y1="52.245" x2="50.795" y2="55.09" width="0" layer="19" extent="1-1"/>
 <wire x1="48.01" y1="52.245" x2="50.795" y2="55.09" width="0" layer="19" extent="1-1"/>
 <wire x1="46.33" y1="42.14" x2="48.01" y2="52.245" width="0" layer="19" extent="1-1"/>
+<wire x1="21.37" y1="2.79" x2="46.33" y2="42.14" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="INT">
 <contactref element="R4" pad="2"/>
@@ -2070,42 +2239,6 @@ These are for the base setup for PCB CART.</description>
 <contactref element="Q2" pad="D7"/>
 <wire x1="94.98" y1="25.32" x2="94.27" y2="66.95" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="OV_VSYNC0">
-<contactref element="Q1" pad="VSYNC"/>
-</signal>
-<signal name="OV_NOE0">
-<contactref element="Q1" pad="NOE"/>
-</signal>
-<signal name="OV_RRST0">
-<contactref element="Q1" pad="RRST"/>
-</signal>
-<signal name="OV_RCLK0">
-<contactref element="Q1" pad="RCLK"/>
-</signal>
-<signal name="OV_WEN0">
-<contactref element="Q1" pad="WEN"/>
-</signal>
-<signal name="OV_WRST0">
-<contactref element="Q1" pad="WRST"/>
-</signal>
-<signal name="OV_VSYNC1">
-<contactref element="Q2" pad="VSYNC"/>
-</signal>
-<signal name="OV_NOE1">
-<contactref element="Q2" pad="NOE"/>
-</signal>
-<signal name="OV_RRST1">
-<contactref element="Q2" pad="RRST"/>
-</signal>
-<signal name="OV_RCLK1">
-<contactref element="Q2" pad="RCLK"/>
-</signal>
-<signal name="OV_WEN1">
-<contactref element="Q2" pad="WEN"/>
-</signal>
-<signal name="OV_WRST1">
-<contactref element="Q2" pad="WRST"/>
-</signal>
 <signal name="N$1">
 <contactref element="IC5" pad="6"/>
 <contactref element="J3" pad="1"/>
@@ -2139,8 +2272,8 @@ These are for the base setup for PCB CART.</description>
 <contactref element="Q3" pad="3"/>
 <contactref element="IC1" pad="49"/>
 <contactref element="U$1" pad="VBUS"/>
-<wire x1="88.86" y1="59.635" x2="89.05" y2="62.31" width="0" layer="19" extent="1-1"/>
-<wire x1="25.13" y1="37.14" x2="88.86" y2="59.635" width="0" layer="19" extent="1-1"/>
+<wire x1="13.365" y1="17.86" x2="9.69" y2="18.05" width="0" layer="19" extent="1-1"/>
+<wire x1="25.13" y1="37.14" x2="13.365" y2="17.86" width="0" layer="19" extent="1-1"/>
 <wire x1="8.83" y1="37.99" x2="25.13" y2="37.14" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
@@ -2148,26 +2281,10 @@ These are for the base setup for PCB CART.</description>
 <contactref element="R11" pad="1"/>
 <wire x1="50.15" y1="4" x2="52" y2="2" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="MOTOR_SENSE_1">
-<contactref element="R12" pad="1"/>
-<contactref element="Q4" pad="COLLECTOR"/>
-<wire x1="46.92" y1="2" x2="46.15" y2="4" width="0" layer="19" extent="1-1"/>
-</signal>
 <signal name="N$6">
 <contactref element="Q5" pad="ANODE"/>
 <contactref element="R13" pad="1"/>
 <wire x1="46.15" y1="64" x2="47" y2="67" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="MOTOR_SENSE_2">
-<contactref element="R14" pad="1"/>
-<contactref element="Q5" pad="COLLECTOR"/>
-<wire x1="51.15" y1="64" x2="52.08" y2="67" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="MOTOR_REF_1">
-<contactref element="R15" pad="1"/>
-</signal>
-<signal name="MOTOR_REF_2">
-<contactref element="R16" pad="1"/>
 </signal>
 <signal name="N$7">
 <contactref element="IC3" pad="2"/>
@@ -2273,10 +2390,37 @@ These are for the base setup for PCB CART.</description>
 <wire x1="28" y1="49.15" x2="31" y2="49.15" width="0" layer="19" extent="1-1"/>
 <wire x1="27.48" y1="44.99" x2="28" y2="49.15" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$32">
-<contactref element="R36" pad="1"/>
-<contactref element="X2" pad="CD"/>
-<wire x1="5.285" y1="67.73" x2="18" y2="62.85" width="0" layer="19" extent="1-1"/>
+<signal name="N$23">
+<contactref element="X2" pad="1"/>
+<contactref element="R37" pad="2"/>
+<contactref element="R41" pad="2"/>
+<wire x1="20.85" y1="57" x2="20.85" y2="59" width="0" layer="19" extent="1-1"/>
+<wire x1="2.65" y1="58.587" x2="20.85" y2="59" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$25">
+<contactref element="R38" pad="2"/>
+<contactref element="X2" pad="2"/>
+<wire x1="2.6627" y1="59.7681" x2="20.85" y2="61" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$26">
+<contactref element="R39" pad="2"/>
+<contactref element="X2" pad="5"/>
+<wire x1="2.65" y1="62.016" x2="20.85" y2="63" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$27">
+<contactref element="R40" pad="2"/>
+<contactref element="X2" pad="7"/>
+<wire x1="2.65" y1="64.302" x2="20.85" y2="65" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$28">
+<contactref element="IC1" pad="50"/>
+<contactref element="R42" pad="2"/>
+<wire x1="16.85" y1="37" x2="25.13" y2="36.64" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$29">
+<contactref element="IC1" pad="51"/>
+<contactref element="R43" pad="2"/>
+<wire x1="16.85" y1="35" x2="25.13" y2="36.14" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
