@@ -55,7 +55,7 @@
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
@@ -10586,6 +10586,21 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <part name="LED1" library="Semiconductors" deviceset="LED" device="1206"/>
 <part name="R45" library="passives" deviceset="R" device="0603" value="330R"/>
 <part name="GND41" library="supply1" deviceset="GND" device=""/>
+<part name="R44" library="passives" deviceset="R" device="0603" value="330R"/>
+<part name="LED2" library="Semiconductors" deviceset="LED" device="1206"/>
+<part name="GND40" library="supply1" deviceset="GND" device=""/>
+<part name="R46" library="passives" deviceset="R" device="0603" value="330R"/>
+<part name="LED3" library="Semiconductors" deviceset="LED" device="1206"/>
+<part name="GND42" library="supply1" deviceset="GND" device=""/>
+<part name="R47" library="passives" deviceset="R" device="0603" value="330R"/>
+<part name="LED4" library="Semiconductors" deviceset="LED" device="1206"/>
+<part name="GND43" library="supply1" deviceset="GND" device=""/>
+<part name="R48" library="passives" deviceset="R" device="0603" value="330R"/>
+<part name="LED5" library="Semiconductors" deviceset="LED" device="1206"/>
+<part name="GND44" library="supply1" deviceset="GND" device=""/>
+<part name="R49" library="passives" deviceset="R" device="0603" value="330R"/>
+<part name="LED6" library="Semiconductors" deviceset="LED" device="1206"/>
+<part name="GND45" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13884,12 +13899,12 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 </sheet>
 <sheet>
 <plain>
-<wire x1="0" y1="0" x2="0" y2="20.32" width="0.1524" layer="97"/>
-<wire x1="0" y1="20.32" x2="40.64" y2="20.32" width="0.1524" layer="97"/>
-<wire x1="40.64" y1="20.32" x2="40.64" y2="0" width="0.1524" layer="97"/>
-<wire x1="40.64" y1="0" x2="0" y2="0" width="0.1524" layer="97"/>
-<text x="5.08" y="17.78" size="1.778" layer="97">I2C Test Point</text>
-<text x="109.22" y="20.32" size="1.778" layer="97" rot="R180">1 - MOSI
+<wire x1="88.9" y1="27.94" x2="88.9" y2="48.26" width="0.1524" layer="97"/>
+<wire x1="88.9" y1="48.26" x2="129.54" y2="48.26" width="0.1524" layer="97"/>
+<wire x1="129.54" y1="48.26" x2="129.54" y2="27.94" width="0.1524" layer="97"/>
+<wire x1="129.54" y1="27.94" x2="88.9" y2="27.94" width="0.1524" layer="97"/>
+<text x="93.98" y="45.72" size="1.778" layer="97">I2C Test Point</text>
+<text x="55.88" y="20.32" size="1.778" layer="97" rot="R180">1 - MOSI
 2 - MISO
 3 - SCK
 4 - NC
@@ -13897,13 +13912,13 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 6 - CS2
 7 - CS1
 8 - CS0</text>
-<text x="17.78" y="2.54" size="1.778" layer="97">1 - SDA
+<text x="106.68" y="30.48" size="1.778" layer="97">1 - SDA
 2 - SCL</text>
-<text x="53.34" y="22.86" size="1.778" layer="97">SPI Test Point</text>
-<wire x1="50.8" y1="25.4" x2="50.8" y2="-5.08" width="0.1524" layer="97"/>
-<wire x1="50.8" y1="-5.08" x2="114.3" y2="-5.08" width="0.1524" layer="97"/>
-<wire x1="114.3" y1="-5.08" x2="114.3" y2="25.4" width="0.1524" layer="97"/>
-<wire x1="114.3" y1="25.4" x2="50.8" y2="25.4" width="0.1524" layer="97"/>
+<text x="0" y="22.86" size="1.778" layer="97">SPI Test Point</text>
+<wire x1="-2.54" y1="25.4" x2="-2.54" y2="-5.08" width="0.1524" layer="97"/>
+<wire x1="-2.54" y1="-5.08" x2="60.96" y2="-5.08" width="0.1524" layer="97"/>
+<wire x1="60.96" y1="-5.08" x2="60.96" y2="25.4" width="0.1524" layer="97"/>
+<wire x1="60.96" y1="25.4" x2="-2.54" y2="25.4" width="0.1524" layer="97"/>
 <text x="0" y="45.72" size="1.778" layer="97">Power Test Point</text>
 <text x="0" y="30.48" size="1.778" layer="97">1 - 3V3
 2 - GND
@@ -13913,44 +13928,69 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="-2.54" y1="48.26" x2="45.72" y2="48.26" width="0.1524" layer="97"/>
 <wire x1="45.72" y1="48.26" x2="45.72" y2="27.94" width="0.1524" layer="97"/>
 <wire x1="45.72" y1="27.94" x2="-2.54" y2="27.94" width="0.1524" layer="97"/>
-<text x="55.88" y="53.34" size="1.778" layer="97">USART Test Point</text>
-<text x="83.82" y="43.18" size="1.778" layer="97">1- TXD
+<text x="48.26" y="45.72" size="1.778" layer="97">USART Test Point</text>
+<text x="76.2" y="35.56" size="1.778" layer="97">1- TXD
 2 - RXD</text>
-<wire x1="53.34" y1="55.88" x2="93.98" y2="55.88" width="0.1524" layer="97"/>
-<wire x1="93.98" y1="55.88" x2="93.98" y2="35.56" width="0.1524" layer="97"/>
-<wire x1="93.98" y1="35.56" x2="53.34" y2="35.56" width="0.1524" layer="97"/>
-<wire x1="53.34" y1="35.56" x2="53.34" y2="55.88" width="0.1524" layer="97"/>
+<wire x1="48.26" y1="48.26" x2="86.36" y2="48.26" width="0.1524" layer="97"/>
+<wire x1="86.36" y1="48.26" x2="86.36" y2="27.94" width="0.1524" layer="97"/>
+<wire x1="86.36" y1="27.94" x2="48.26" y2="27.94" width="0.1524" layer="97"/>
+<wire x1="48.26" y1="27.94" x2="48.26" y2="48.26" width="0.1524" layer="97"/>
+<wire x1="66.04" y1="25.4" x2="66.04" y2="-12.7" width="0.1524" layer="97"/>
+<wire x1="66.04" y1="-12.7" x2="132.08" y2="-12.7" width="0.1524" layer="97"/>
+<wire x1="132.08" y1="-12.7" x2="132.08" y2="25.4" width="0.1524" layer="97"/>
+<wire x1="132.08" y1="25.4" x2="66.04" y2="25.4" width="0.1524" layer="97"/>
+<text x="68.58" y="22.86" size="1.778" layer="97">LEDs</text>
 </plain>
 <instances>
-<instance part="J4" gate="G$1" x="22.86" y="10.16"/>
-<instance part="J5" gate="G$1" x="68.58" y="12.7"/>
+<instance part="J4" gate="G$1" x="111.76" y="38.1"/>
+<instance part="J5" gate="G$1" x="15.24" y="12.7"/>
 <instance part="J6" gate="G$1" x="27.94" y="38.1"/>
 <instance part="+3V39" gate="G$1" x="15.24" y="40.64"/>
 <instance part="P+4" gate="1" x="40.64" y="40.64" rot="MR0"/>
 <instance part="GND38" gate="1" x="40.64" y="33.02" rot="MR0"/>
 <instance part="GND39" gate="1" x="15.24" y="33.02" rot="MR0"/>
-<instance part="J7" gate="G$1" x="68.58" y="40.64"/>
+<instance part="J7" gate="G$1" x="60.96" y="33.02"/>
+<instance part="R44" gate="G$1" x="81.28" y="0" rot="R90"/>
+<instance part="LED2" gate="G$1" x="81.28" y="10.16"/>
+<instance part="GND40" gate="1" x="81.28" y="-7.62" rot="MR0"/>
+<instance part="R46" gate="G$1" x="91.44" y="0" rot="R90"/>
+<instance part="LED3" gate="G$1" x="91.44" y="10.16"/>
+<instance part="GND42" gate="1" x="91.44" y="-7.62" rot="MR0"/>
+<instance part="R47" gate="G$1" x="101.6" y="0" rot="R90"/>
+<instance part="LED4" gate="G$1" x="101.6" y="10.16"/>
+<instance part="GND43" gate="1" x="101.6" y="-7.62" rot="MR0"/>
+<instance part="R48" gate="G$1" x="111.76" y="0" rot="R90"/>
+<instance part="LED5" gate="G$1" x="111.76" y="10.16"/>
+<instance part="GND44" gate="1" x="111.76" y="-7.62" rot="MR0"/>
+<instance part="R49" gate="G$1" x="121.92" y="0" rot="R90"/>
+<instance part="LED6" gate="G$1" x="121.92" y="10.16"/>
+<instance part="GND45" gate="1" x="121.92" y="-7.62" rot="MR0"/>
 </instances>
 <busses>
 <bus name="PC[0..31]">
 <segment>
-<wire x1="30.48" y1="15.24" x2="7.62" y2="15.24" width="0.762" layer="92"/>
-<label x="2.54" y="7.62" size="1.778" layer="95" rot="R90"/>
-<wire x1="7.62" y1="15.24" x2="5.08" y2="12.7" width="0.762" layer="92"/>
+<wire x1="119.38" y1="43.18" x2="96.52" y2="43.18" width="0.762" layer="92"/>
+<label x="91.44" y="35.56" size="1.778" layer="95" rot="R90"/>
+<wire x1="96.52" y1="43.18" x2="93.98" y2="40.64" width="0.762" layer="92"/>
 </segment>
 <segment>
-<wire x1="60.96" y1="48.26" x2="76.2" y2="48.26" width="0.762" layer="92"/>
-<wire x1="76.2" y1="48.26" x2="78.74" y2="50.8" width="0.762" layer="92"/>
-<label x="78.74" y="50.8" size="1.778" layer="95"/>
+<wire x1="53.34" y1="40.64" x2="68.58" y2="40.64" width="0.762" layer="92"/>
+<wire x1="68.58" y1="40.64" x2="71.12" y2="43.18" width="0.762" layer="92"/>
+<label x="71.12" y="43.18" size="1.778" layer="95"/>
 </segment>
 </bus>
 <bus name="PB[0..31]">
 <segment>
-<wire x1="53.34" y1="15.24" x2="53.34" y2="2.54" width="0.762" layer="92"/>
-<wire x1="53.34" y1="2.54" x2="83.82" y2="2.54" width="0.762" layer="92"/>
-<wire x1="83.82" y1="2.54" x2="83.82" y2="15.24" width="0.762" layer="92"/>
-<label x="86.36" y="17.78" size="1.778" layer="95"/>
-<wire x1="83.82" y1="15.24" x2="86.36" y2="17.78" width="0.762" layer="92"/>
+<wire x1="0" y1="15.24" x2="0" y2="2.54" width="0.762" layer="92"/>
+<wire x1="0" y1="2.54" x2="30.48" y2="2.54" width="0.762" layer="92"/>
+<wire x1="30.48" y1="2.54" x2="30.48" y2="15.24" width="0.762" layer="92"/>
+<label x="33.02" y="17.78" size="1.778" layer="95"/>
+<wire x1="30.48" y1="15.24" x2="33.02" y2="17.78" width="0.762" layer="92"/>
+</segment>
+<segment>
+<wire x1="121.92" y1="17.78" x2="81.28" y2="17.78" width="0.762" layer="92"/>
+<wire x1="81.28" y1="17.78" x2="78.74" y2="20.32" width="0.762" layer="92"/>
+<label x="68.58" y="17.78" size="1.778" layer="95"/>
 </segment>
 </bus>
 </busses>
@@ -13958,64 +13998,64 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <net name="PC2" class="0">
 <segment>
 <pinref part="J4" gate="G$1" pin="1"/>
-<wire x1="15.24" y1="15.24" x2="15.24" y2="10.16" width="0.1524" layer="91"/>
-<label x="10.16" y="10.16" size="1.778" layer="95"/>
+<wire x1="104.14" y1="43.18" x2="104.14" y2="38.1" width="0.1524" layer="91"/>
+<label x="99.06" y="38.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PC3" class="0">
 <segment>
 <pinref part="J4" gate="G$1" pin="2"/>
-<wire x1="30.48" y1="10.16" x2="30.48" y2="15.24" width="0.1524" layer="91"/>
-<label x="30.48" y="10.16" size="1.778" layer="95"/>
+<wire x1="119.38" y1="38.1" x2="119.38" y2="43.18" width="0.1524" layer="91"/>
+<label x="119.38" y="38.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PB22" class="0">
 <segment>
 <pinref part="J5" gate="G$1" pin="5"/>
-<wire x1="83.82" y1="7.62" x2="76.2" y2="7.62" width="0.1524" layer="91"/>
-<label x="76.2" y="7.62" size="1.778" layer="95"/>
+<wire x1="30.48" y1="7.62" x2="22.86" y2="7.62" width="0.1524" layer="91"/>
+<label x="22.86" y="7.62" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PB23" class="0">
 <segment>
 <pinref part="J5" gate="G$1" pin="6"/>
-<wire x1="76.2" y1="10.16" x2="83.82" y2="10.16" width="0.1524" layer="91"/>
-<label x="76.2" y="10.16" size="1.778" layer="95"/>
+<wire x1="22.86" y1="10.16" x2="30.48" y2="10.16" width="0.1524" layer="91"/>
+<label x="22.86" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PB24" class="0">
 <segment>
 <pinref part="J5" gate="G$1" pin="7"/>
-<wire x1="76.2" y1="12.7" x2="83.82" y2="12.7" width="0.1524" layer="91"/>
-<label x="76.2" y="12.7" size="1.778" layer="95"/>
+<wire x1="22.86" y1="12.7" x2="30.48" y2="12.7" width="0.1524" layer="91"/>
+<label x="22.86" y="12.7" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PB25" class="0">
 <segment>
 <pinref part="J5" gate="G$1" pin="8"/>
-<wire x1="76.2" y1="15.24" x2="83.82" y2="15.24" width="0.1524" layer="91"/>
-<label x="76.2" y="15.24" size="1.778" layer="95"/>
+<wire x1="22.86" y1="15.24" x2="30.48" y2="15.24" width="0.1524" layer="91"/>
+<label x="22.86" y="15.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PB19" class="0">
 <segment>
 <pinref part="J5" gate="G$1" pin="1"/>
-<wire x1="60.96" y1="15.24" x2="53.34" y2="15.24" width="0.1524" layer="91"/>
-<label x="53.34" y="15.24" size="1.778" layer="95"/>
+<wire x1="7.62" y1="15.24" x2="0" y2="15.24" width="0.1524" layer="91"/>
+<label x="0" y="15.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PB20" class="0">
 <segment>
 <pinref part="J5" gate="G$1" pin="2"/>
-<wire x1="60.96" y1="12.7" x2="53.34" y2="12.7" width="0.1524" layer="91"/>
-<label x="53.34" y="12.7" size="1.778" layer="95"/>
+<wire x1="7.62" y1="12.7" x2="0" y2="12.7" width="0.1524" layer="91"/>
+<label x="0" y="12.7" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PB21" class="0">
 <segment>
 <pinref part="J5" gate="G$1" pin="3"/>
-<wire x1="60.96" y1="10.16" x2="53.34" y2="10.16" width="0.1524" layer="91"/>
-<label x="53.34" y="10.16" size="1.778" layer="95"/>
+<wire x1="7.62" y1="10.16" x2="0" y2="10.16" width="0.1524" layer="91"/>
+<label x="0" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -14028,6 +14068,26 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <pinref part="GND38" gate="1" pin="GND"/>
 <pinref part="J6" gate="G$1" pin="3"/>
 <wire x1="40.64" y1="35.56" x2="38.1" y2="35.56" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R44" gate="G$1" pin="1"/>
+<pinref part="GND40" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R46" gate="G$1" pin="1"/>
+<pinref part="GND42" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R47" gate="G$1" pin="1"/>
+<pinref part="GND43" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R48" gate="G$1" pin="1"/>
+<pinref part="GND44" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R49" gate="G$1" pin="1"/>
+<pinref part="GND45" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -14047,15 +14107,80 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <net name="PC4" class="0">
 <segment>
 <pinref part="J7" gate="G$1" pin="1"/>
-<wire x1="60.96" y1="40.64" x2="60.96" y2="48.26" width="0.1524" layer="91"/>
-<label x="60.96" y="43.18" size="1.778" layer="95" rot="R90"/>
+<wire x1="53.34" y1="33.02" x2="53.34" y2="40.64" width="0.1524" layer="91"/>
+<label x="53.34" y="35.56" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="PC5" class="0">
 <segment>
 <pinref part="J7" gate="G$1" pin="2"/>
-<wire x1="76.2" y1="40.64" x2="76.2" y2="48.26" width="0.1524" layer="91"/>
-<label x="78.74" y="43.18" size="1.778" layer="95" rot="R90"/>
+<wire x1="68.58" y1="33.02" x2="68.58" y2="40.64" width="0.1524" layer="91"/>
+<label x="71.12" y="35.56" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="N$30" class="0">
+<segment>
+<pinref part="R44" gate="G$1" pin="2"/>
+<pinref part="LED2" gate="G$1" pin="C"/>
+</segment>
+</net>
+<net name="N$32" class="0">
+<segment>
+<pinref part="R46" gate="G$1" pin="2"/>
+<pinref part="LED3" gate="G$1" pin="C"/>
+</segment>
+</net>
+<net name="N$33" class="0">
+<segment>
+<pinref part="R47" gate="G$1" pin="2"/>
+<pinref part="LED4" gate="G$1" pin="C"/>
+</segment>
+</net>
+<net name="N$34" class="0">
+<segment>
+<pinref part="R48" gate="G$1" pin="2"/>
+<pinref part="LED5" gate="G$1" pin="C"/>
+</segment>
+</net>
+<net name="N$35" class="0">
+<segment>
+<pinref part="R49" gate="G$1" pin="2"/>
+<pinref part="LED6" gate="G$1" pin="C"/>
+</segment>
+</net>
+<net name="PB17" class="0">
+<segment>
+<pinref part="LED2" gate="G$1" pin="A"/>
+<wire x1="81.28" y1="17.78" x2="81.28" y2="12.7" width="0.1524" layer="91"/>
+<label x="81.026" y="11.684" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PB18" class="0">
+<segment>
+<pinref part="LED3" gate="G$1" pin="A"/>
+<wire x1="91.44" y1="12.7" x2="91.44" y2="17.78" width="0.1524" layer="91"/>
+<label x="90.932" y="11.176" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PB27" class="0">
+<segment>
+<pinref part="LED4" gate="G$1" pin="A"/>
+<wire x1="101.6" y1="12.7" x2="101.6" y2="17.78" width="0.1524" layer="91"/>
+<label x="100.838" y="11.176" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PB28" class="0">
+<segment>
+<pinref part="LED5" gate="G$1" pin="A"/>
+<wire x1="111.76" y1="12.7" x2="111.76" y2="17.78" width="0.1524" layer="91"/>
+<label x="110.998" y="11.176" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="PB29" class="0">
+<segment>
+<pinref part="LED6" gate="G$1" pin="A"/>
+<wire x1="121.92" y1="12.7" x2="121.92" y2="17.78" width="0.1524" layer="91"/>
+<label x="121.412" y="11.176" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 </nets>
