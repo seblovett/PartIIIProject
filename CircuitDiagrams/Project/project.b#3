@@ -1151,7 +1151,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <element name="J1" library="Headers" package="2.54MM2X5TH" value="JTAG2.54MM2X5TH" x="30.86" y="65.32" smashed="yes">
 <attribute name="NAME" x="31.78" y="63.855" size="1.27" layer="25" rot="R180"/>
 </element>
-<element name="U$1" library="SparkFun" package="USB-MINIB" value="USB-MINIB-5PIN" x="6.33" y="36.39"/>
+<element name="U$1" library="SparkFun" package="USB-MINIB" value="USB-MINIB-5PIN" x="5.28" y="36"/>
 <element name="S1" library="SparkFun" package="TACTILE_SWITCH_SMD" value="" x="52.45" y="53.66"/>
 <element name="R1" library="passives" package="R0603" value="10k" x="50.945" y="49.09" rot="R180"/>
 <element name="R2" library="passives" package="R0603" value="4k7" x="58.6502" y="9.7294" rot="R270"/>
@@ -1283,8 +1283,8 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <element name="J4" library="Headers" package="1BY2" value="1BY2THROUGHHOLE" x="58.6378" y="3.9746" smashed="yes" rot="R180">
 <attribute name="NAME" x="57.7628" y="6.7796" size="1.27" layer="25"/>
 </element>
-<element name="R42" library="passives" package="R0603" value="39R" x="16" y="37"/>
-<element name="R43" library="passives" package="R0603" value="39R" x="16" y="35.7"/>
+<element name="R42" library="passives" package="R0603" value="39R" x="20.2" y="37.1"/>
+<element name="R43" library="passives" package="R0603" value="39R" x="20.2" y="35.7"/>
 <element name="C31" library="passives" package="C0603" value="100n" x="30.95" y="54.6" rot="R180"/>
 <element name="D1" library="Semiconductors" package="SMC_C" value="DIODESMD" x="31" y="57"/>
 <element name="J5" library="Headers" package="2.54MM2X4TH" value="8PIN2.54MM2X4TH" x="18.206" y="65.342" smashed="yes">
@@ -1565,9 +1565,6 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="78.395" y1="20.105" x2="78.4" y2="20.11" width="0.4064" layer="16"/>
 <via x="78.4" y="20.11" extent="1-16" drill="0.5"/>
 <wire x1="78.4" y1="20.11" x2="78.4" y2="20.13" width="0.4064" layer="3"/>
-<wire x1="8.83" y1="34.79" x2="10.8" y2="34.79" width="0.4064" layer="1"/>
-<wire x1="10.8" y1="34.79" x2="10.8" y2="34.1" width="0.4064" layer="1"/>
-<via x="10.8" y="34.1" extent="1-16" drill="0.5"/>
 <wire x1="10.8" y1="34.1" x2="10.8" y2="34.08" width="0.4064" layer="3"/>
 <wire x1="9.72" y1="29.88" x2="8.19" y2="29.88" width="0.4064" layer="16"/>
 <wire x1="8.19" y1="29.88" x2="8.19" y2="29.58" width="0.4064" layer="16"/>
@@ -1652,6 +1649,9 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="89.67645625" y1="31.35354375" x2="89.67" y2="31.36" width="0.381" layer="16"/>
 <via x="89.67" y="31.36" extent="1-16" drill="0.5"/>
 <wire x1="89.67" y1="31.36" x2="89.67" y2="31.41" width="0.381" layer="3"/>
+<wire x1="7.78" y1="34.4" x2="9.6" y2="34.4" width="0.4064" layer="1"/>
+<via x="9.6" y="34.4" extent="1-16" drill="0.2"/>
+<wire x1="9.6" y1="34.4" x2="9.7" y2="34.4" width="0.4064" layer="3"/>
 </signal>
 <signal name="+3V3">
 <contactref element="J1" pad="4"/>
@@ -1987,7 +1987,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <signal name="PA4">
 <contactref element="IC1" pad="21"/>
 <contactref element="U$1" pad="ID"/>
-<wire x1="8.83" y1="35.59" x2="40.48" y2="44.99" width="0" layer="19" extent="1-1"/>
+<wire x1="7.78" y1="35.2" x2="40.48" y2="44.99" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PA5">
 <contactref element="IC1" pad="22"/>
@@ -2050,9 +2050,15 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <contactref element="D1" pad="-"/>
 <contactref element="C31" pad="1"/>
 <contactref element="IC1" pad="28"/>
-<wire x1="31.8" y1="54.6" x2="33.5" y2="57" width="0" layer="19" extent="1-1"/>
-<wire x1="34.48" y1="44.99" x2="31.8" y2="54.6" width="0" layer="19" extent="1-1"/>
-<wire x1="36.98" y1="44.99" x2="34.48" y2="44.99" width="0" layer="19" extent="1-1"/>
+<wire x1="31.8" y1="54.6" x2="33.5" y2="56.3" width="0.2032" layer="1"/>
+<wire x1="33.5" y1="56.3" x2="33.5" y2="57" width="0.2032" layer="1"/>
+<wire x1="31.8" y1="54.6" x2="34.48" y2="51.92" width="0.2032" layer="1"/>
+<wire x1="34.48" y1="51.92" x2="34.48" y2="44.99" width="0.2032" layer="1"/>
+<wire x1="36.98" y1="44.99" x2="36.98" y2="43.88" width="0.2032" layer="1"/>
+<wire x1="36.98" y1="43.88" x2="36.5" y2="43.4" width="0.2032" layer="1"/>
+<wire x1="36.5" y1="43.4" x2="34.94" y2="43.4" width="0.2032" layer="1"/>
+<wire x1="34.94" y1="43.4" x2="34.48" y2="43.86" width="0.2032" layer="1"/>
+<wire x1="34.48" y1="43.86" x2="34.48" y2="44.99" width="0.2032" layer="1"/>
 </signal>
 <signal name="PA19">
 <contactref element="IC1" pad="36"/>
@@ -2295,7 +2301,12 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <contactref element="Q6" pad="1"/>
 <wire x1="19.34" y1="14.74" x2="19.34" y2="17.37" width="0.381" layer="1"/>
 <wire x1="19.34" y1="17.37" x2="18.85" y2="17.86" width="0.381" layer="1"/>
-<wire x1="19.34" y1="17.37" x2="31.13" y2="27.14" width="0" layer="19" extent="1-1"/>
+<wire x1="31.13" y1="27.14" x2="29.84" y2="27.14" width="0.2032" layer="1"/>
+<wire x1="29.84" y1="27.14" x2="27.9" y2="25.2" width="0.2032" layer="1"/>
+<wire x1="27.9" y1="25.2" x2="27.9" y2="21" width="0.2032" layer="1"/>
+<wire x1="27.9" y1="21" x2="26.9" y2="20" width="0.2032" layer="1"/>
+<wire x1="26.9" y1="20" x2="21.97" y2="20" width="0.2032" layer="1"/>
+<wire x1="21.97" y1="20" x2="19.34" y2="17.37" width="0.2032" layer="1"/>
 </signal>
 <signal name="PB31">
 <contactref element="IC1" pad="70"/>
@@ -2303,7 +2314,10 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <contactref element="Q6" pad="2"/>
 <wire x1="27.8536" y1="14.7356" x2="27.8536" y2="17.3636" width="0.381" layer="1"/>
 <wire x1="27.8536" y1="17.3636" x2="28.35" y2="17.86" width="0.381" layer="1"/>
-<wire x1="28.35" y1="17.86" x2="31.13" y2="26.64" width="0" layer="19" extent="1-1"/>
+<wire x1="28.35" y1="17.86" x2="28.35" y2="25.08" width="0.2032" layer="1"/>
+<wire x1="28.35" y1="25.08" x2="29.92" y2="26.65" width="0.2032" layer="1"/>
+<wire x1="29.92" y1="26.65" x2="31.12" y2="26.65" width="0.2032" layer="1"/>
+<wire x1="31.12" y1="26.65" x2="31.13" y2="26.64" width="0.2032" layer="1"/>
 </signal>
 <signal name="PD30">
 <contactref element="IC1" pad="139"/>
@@ -2635,12 +2649,18 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <signal name="USB_P">
 <contactref element="U$1" pad="D+"/>
 <contactref element="R43" pad="1"/>
-<wire x1="8.83" y1="36.39" x2="15.15" y2="35.7" width="0" layer="19" extent="1-1"/>
+<wire x1="7.78" y1="36" x2="8.08" y2="36.3" width="0.1" layer="1"/>
+<wire x1="8.08" y1="36.3" x2="18.7" y2="36.3" width="0.1" layer="1"/>
+<wire x1="18.7" y1="36.3" x2="19.3" y2="35.7" width="0.1" layer="1"/>
+<wire x1="19.3" y1="35.7" x2="19.35" y2="35.7" width="0.1" layer="1"/>
 </signal>
 <signal name="USB_N">
 <contactref element="U$1" pad="D-"/>
 <contactref element="R42" pad="1"/>
-<wire x1="8.83" y1="37.19" x2="15.15" y2="37" width="0" layer="19" extent="1-1"/>
+<wire x1="7.78" y1="36.8" x2="8.08" y2="36.5" width="0.1" layer="1"/>
+<wire x1="8.08" y1="36.5" x2="18.7" y2="36.5" width="0.1" layer="1"/>
+<wire x1="18.7" y1="36.5" x2="19.3" y2="37.1" width="0.1" layer="1"/>
+<wire x1="19.3" y1="37.1" x2="19.35" y2="37.1" width="0.1" layer="1"/>
 </signal>
 <signal name="RESET_N">
 <contactref element="IC1" pad="142"/>
@@ -2736,8 +2756,8 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <contactref element="J6" pad="4"/>
 <wire x1="14.05" y1="55.31" x2="10.66" y2="65.5" width="0" layer="19" extent="1-1"/>
 <wire x1="14.09" y1="53.065" x2="14.05" y2="55.31" width="0" layer="19" extent="1-1"/>
-<wire x1="8.83" y1="37.99" x2="14.09" y2="53.065" width="0" layer="19" extent="1-1"/>
-<wire x1="31.13" y1="37.14" x2="8.83" y2="37.99" width="0" layer="19" extent="1-1"/>
+<wire x1="7.78" y1="37.6" x2="14.09" y2="53.065" width="0" layer="19" extent="1-1"/>
+<wire x1="31.13" y1="37.14" x2="14.09" y2="53.065" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="Q4" pad="ANODE"/>
@@ -2906,12 +2926,18 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <signal name="DATA_N">
 <contactref element="IC1" pad="50"/>
 <contactref element="R42" pad="2"/>
-<wire x1="16.85" y1="37" x2="31.13" y2="36.64" width="0" layer="19" extent="1-1"/>
+<wire x1="31.13" y1="36.64" x2="30.99" y2="36.5" width="0.1" layer="1"/>
+<wire x1="30.99" y1="36.5" x2="21.8" y2="36.5" width="0.1" layer="1"/>
+<wire x1="21.8" y1="36.5" x2="21.2" y2="37.1" width="0.1" layer="1"/>
+<wire x1="21.2" y1="37.1" x2="21.05" y2="37.1" width="0.1" layer="1"/>
 </signal>
 <signal name="DATA_P">
 <contactref element="IC1" pad="51"/>
 <contactref element="R43" pad="2"/>
-<wire x1="16.85" y1="35.7" x2="31.13" y2="36.14" width="0" layer="19" extent="1-1"/>
+<wire x1="31.13" y1="36.14" x2="30.97" y2="36.3" width="0.1" layer="1"/>
+<wire x1="30.97" y1="36.3" x2="21.8" y2="36.3" width="0.1" layer="1"/>
+<wire x1="21.8" y1="36.3" x2="21.2" y2="35.7" width="0.1" layer="1"/>
+<wire x1="21.2" y1="35.7" x2="21.05" y2="35.7" width="0.1" layer="1"/>
 </signal>
 <signal name="N$31">
 <contactref element="LED1" pad="C"/>
@@ -2946,7 +2972,8 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <signal name="N$36">
 <contactref element="LED7" pad="C"/>
 <contactref element="R50" pad="2"/>
-<wire x1="21.87" y1="54.85" x2="21.82" y2="56.83" width="0" layer="19" extent="1-1"/>
+<wire x1="21.87" y1="54.85" x2="21.82" y2="54.9" width="0.2032" layer="1"/>
+<wire x1="21.82" y1="54.9" x2="21.82" y2="56.83" width="0.2032" layer="1"/>
 </signal>
 </signals>
 </board>
