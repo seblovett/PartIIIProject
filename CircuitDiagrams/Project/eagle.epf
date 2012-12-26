@@ -28,7 +28,7 @@ Number=0
 
 [Win_2]
 Type="Schematic Editor"
-Loc="320 218 1350 840"
+Loc="249 173 1279 795"
 State=1
 Number=1
 File="project.sch"
@@ -64,7 +64,7 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=91
-Views=" 4: 30.9827 10.1489 82.6809 54.4353"
+Views=" 1: 30.9827 10.1489 82.6809 54.4353 4: 30.9827 10.1489 82.6809 54.4353"
 Sheet=4
 
 [Desktop]
