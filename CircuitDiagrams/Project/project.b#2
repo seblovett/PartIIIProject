@@ -9,8 +9,8 @@
 <grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="2" name="3V3" color="1" fill="3" visible="yes" active="yes"/>
-<layer number="3" name="GND" color="4" fill="3" visible="yes" active="yes"/>
+<layer number="2" name="3V3" color="1" fill="3" visible="no" active="yes"/>
+<layer number="3" name="GND" color="4" fill="3" visible="no" active="yes"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -1154,7 +1154,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <element name="U$1" library="SparkFun" package="USB-MINIB" value="USB-MINIB-5PIN" x="5.28" y="36"/>
 <element name="S1" library="SparkFun" package="TACTILE_SWITCH_SMD" value="" x="52.45" y="53.66"/>
 <element name="R1" library="passives" package="R0603" value="10k" x="50.945" y="49.09" rot="R180"/>
-<element name="R2" library="passives" package="R0603" value="4k7" x="59.4294" y="8.5502" rot="MR0"/>
+<element name="R2" library="passives" package="R0603" value="4k7" x="68.3502" y="9.4706" rot="MR90"/>
 <element name="R3" library="passives" package="R0603" value="4k7" x="68.339" y="14.2232" rot="MR270"/>
 <element name="R4" library="passives" package="R0603" value="4k7" x="74.5546" y="10.4238" rot="MR180"/>
 <element name="R5" library="passives" package="R0603" value="4k7" x="80.8632" y="12.2846" rot="MR0"/>
@@ -1252,8 +1252,8 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <element name="C18" library="passives" package="C0603" value="100n" x="56.79" y="30.11"/>
 <element name="C19" library="passives" package="C0603" value="100n" x="27" y="42.6" rot="MR0"/>
 <element name="C20" library="passives" package="C0603" value="33n" x="27" y="44" rot="MR0"/>
-<element name="C21" library="passives" package="C0603" value="100n" x="29" y="51" rot="R90"/>
-<element name="C22" library="passives" package="C0603" value="33n" x="33" y="51" rot="R90"/>
+<element name="C21" library="passives" package="C0603" value="100n" x="32.6" y="49.8" rot="R180"/>
+<element name="C22" library="passives" package="C0603" value="33n" x="32.6" y="48.3" rot="R180"/>
 <element name="C23" library="passives" package="C0603" value="4.7u" x="65.5" y="22" rot="R270"/>
 <element name="C24" library="passives" package="C0603" value="100n" x="59.8" y="24.8"/>
 <element name="C25" library="passives" package="C0603" value="33n" x="60.7" y="27.1" rot="R270"/>
@@ -1662,9 +1662,12 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="67.7" y1="23" x2="67.15" y2="23.55" width="0.4064" layer="16"/>
 <wire x1="67.7" y1="23" x2="68.509746875" y2="23" width="0.4064" layer="16"/>
 <wire x1="68.509746875" y1="23" x2="68.7445875" y2="23.234840625" width="0.4064" layer="16"/>
-<wire x1="11.2" y1="9.05" x2="11.435" y2="18.115" width="0" layer="19" extent="1-16"/>
-<wire x1="71.14" y1="13.29" x2="70.05" y2="13.29" width="0.2032" layer="16"/>
-<wire x1="70.05" y1="13.29" x2="70.05" y2="13.29" width="0" layer="19" extent="1-16"/>
+<wire x1="71.14" y1="13.29" x2="69.81" y2="13.29" width="0.4064" layer="16"/>
+<wire x1="69.81" y1="13.29" x2="69.8" y2="13.3" width="0.4064" layer="16"/>
+<via x="69.8" y="13.3" extent="1-16" drill="0.5"/>
+<wire x1="69.8" y1="13.3" x2="69.7" y2="13.3" width="0.4064" layer="3"/>
+<contactref element="J5" pad="4"/>
+<wire x1="11.435" y1="18.115" x2="11.2" y2="9.05" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="+3V3">
 <contactref element="J1" pad="4"/>
@@ -1901,7 +1904,6 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="72.9" y1="14.3" x2="72.9" y2="14.34" width="0.4064" layer="2"/>
 <wire x1="79.1158" y1="8.4662" x2="77.7704" y2="8.4662" width="0.4064" layer="16"/>
 <wire x1="77.7704" y1="8.4662" x2="77.7518" y2="8.4848" width="0.4064" layer="16"/>
-<wire x1="75.2" y1="8.5" x2="75.16" y2="8.5" width="0.4064" layer="2"/>
 <wire x1="48.25" y1="5.5" x2="49.5" y2="5.5" width="0.4064" layer="1"/>
 <via x="49.5" y="5.5" extent="1-16" drill="0.2"/>
 <wire x1="49.5" y1="5.5" x2="49.5" y2="5.54" width="0.4064" layer="2"/>
@@ -1974,12 +1976,17 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="74.7816" y1="23.5716" x2="74.78" y2="23.57" width="0.4064" layer="16"/>
 <via x="74.78" y="23.57" extent="1-16" drill="0.5"/>
 <wire x1="74.78" y1="23.57" x2="74.64" y2="23.57" width="0.4064" layer="2"/>
-<wire x1="75.2" y1="8.5" x2="77.7518" y2="8.4848" width="0" layer="19" extent="2-16"/>
-<wire x1="7.535" y1="18.115" x2="8.185" y2="18.115" width="0" layer="19" extent="16-16"/>
-<wire x1="68.339" y1="15.0732" x2="72.6496" y2="14.5504" width="0" layer="19" extent="16-16"/>
-<wire x1="60.2794" y1="8.5502" x2="61.107834375" y2="15.5980875" width="0" layer="19" extent="16-16"/>
+<wire x1="77.7518" y1="8.4848" x2="79.9152" y2="8.4848" width="0.4064" layer="16"/>
+<wire x1="79.9152" y1="8.4848" x2="80.3" y2="8.1" width="0.4064" layer="16"/>
+<via x="80.3" y="8.1" extent="1-16" drill="0.5"/>
+<wire x1="80.3" y1="8.1" x2="80.4" y2="8.1" width="0.4064" layer="2"/>
+<wire x1="68.339" y1="15.0732" x2="72.1268" y2="15.0732" width="0.4064" layer="16"/>
+<wire x1="72.1268" y1="15.0732" x2="72.9" y2="14.3" width="0.4064" layer="16"/>
+<wire x1="68.3502" y1="8.6206" x2="70.7306" y2="8.6206" width="0.4064" layer="16"/>
+<wire x1="70.7306" y1="8.6206" x2="72.54" y2="10.43" width="0.4064" layer="16"/>
+<wire x1="8.185" y1="18.115" x2="7.535" y2="18.115" width="0" layer="19" extent="16-16"/>
 </signal>
-<signal name="PA0" airwireshidden="yes">
+<signal name="PA0">
 <contactref element="IC1" pad="1"/>
 <contactref element="J1" pad="1"/>
 <wire x1="50.48" y1="44.99" x2="50.48" y2="46.42" width="0.2032" layer="1"/>
@@ -1991,7 +1998,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="41.6" y1="66.6" x2="32.14" y2="66.6" width="0.2032" layer="1"/>
 <wire x1="32.14" y1="66.6" x2="30.86" y2="65.32" width="0.2032" layer="1"/>
 </signal>
-<signal name="PA1" airwireshidden="yes">
+<signal name="PA1">
 <contactref element="IC1" pad="2"/>
 <contactref element="J1" pad="9"/>
 <wire x1="49.98" y1="44.99" x2="49.98" y2="46.42" width="0.2032" layer="1"/>
@@ -1999,7 +2006,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="40.9" y1="55.5" x2="40.9" y2="65.2" width="0.2032" layer="1"/>
 <wire x1="40.9" y1="65.2" x2="41.02" y2="65.32" width="0.2032" layer="1"/>
 </signal>
-<signal name="PA2" airwireshidden="yes">
+<signal name="PA2">
 <contactref element="IC1" pad="3"/>
 <contactref element="J1" pad="3"/>
 <wire x1="49.48" y1="44.99" x2="49.48" y2="46.42" width="0.2032" layer="1"/>
@@ -2015,7 +2022,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="34.8" y1="65.5" x2="33.58" y2="65.5" width="0.2032" layer="1"/>
 <wire x1="33.58" y1="65.5" x2="33.4" y2="65.32" width="0.2032" layer="1"/>
 </signal>
-<signal name="PA3" airwireshidden="yes">
+<signal name="PA3">
 <contactref element="IC1" pad="4"/>
 <contactref element="J1" pad="5"/>
 <wire x1="48.98" y1="44.99" x2="48.98" y2="45.5" width="0.2032" layer="1"/>
@@ -2028,62 +2035,107 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <signal name="PA4">
 <contactref element="IC1" pad="21"/>
 <contactref element="U$1" pad="ID"/>
-<wire x1="7.78" y1="35.2" x2="9.7" y2="35.2" width="0.2032" layer="1"/>
-<via x="9.7" y="35.2" extent="1-16" drill="0.5"/>
-<wire x1="9.7" y1="35.2" x2="10.9" y2="35.2" width="0.2032" layer="16"/>
-<wire x1="10.9" y1="35.2" x2="12.1" y2="36.4" width="0.2032" layer="16"/>
-<wire x1="12.1" y1="36.4" x2="33.73" y2="36.4" width="0.2032" layer="16"/>
-<wire x1="33.73" y1="36.4" x2="40.48" y2="43.15" width="0.2032" layer="16"/>
-<via x="40.48" y="43.15" extent="1-16" drill="0.5"/>
-<wire x1="40.48" y1="43.15" x2="40.48" y2="44.99" width="0.2032" layer="1"/>
+<wire x1="40.48" y1="44.99" x2="40.48" y2="43.52" width="0.2032" layer="1"/>
+<wire x1="40.48" y1="43.52" x2="40.5" y2="43.5" width="0.2032" layer="1"/>
+<via x="40.5" y="43.5" extent="1-16" drill="0.5"/>
+<wire x1="40.5" y1="43.5" x2="39.6" y2="43.5" width="0.2032" layer="16"/>
+<wire x1="39.6" y1="43.5" x2="32.6" y2="36.5" width="0.2032" layer="16"/>
+<wire x1="32.6" y1="36.5" x2="26.2" y2="36.5" width="0.2032" layer="16"/>
+<wire x1="26.2" y1="36.5" x2="24.4" y2="34.7" width="0.2032" layer="16"/>
+<via x="24.4" y="34.7" extent="1-16" drill="0.5"/>
+<wire x1="24.4" y1="34.7" x2="11.3" y2="34.7" width="0.2032" layer="1"/>
+<wire x1="11.3" y1="34.7" x2="10.8" y2="35.2" width="0.2032" layer="1"/>
+<wire x1="10.8" y1="35.2" x2="7.78" y2="35.2" width="0.2032" layer="1"/>
 </signal>
-<signal name="PA5" airwireshidden="yes">
+<signal name="PA5">
 <contactref element="IC1" pad="22"/>
 <contactref element="J8" pad="6"/>
 <wire x1="73.8736" y1="5.24" x2="39.98" y2="44.99" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PA6" airwireshidden="yes">
+<signal name="PA6">
 <contactref element="IC1" pad="23"/>
 <contactref element="R12" pad="1"/>
 <contactref element="Q4" pad="COLLECTOR"/>
 <wire x1="46.55" y1="5.5" x2="46.55" y2="2.37" width="0.381" layer="1"/>
 <wire x1="46.55" y1="2.37" x2="46.92" y2="2" width="0.381" layer="1"/>
-<wire x1="46.55" y1="5.5" x2="39.48" y2="44.99" width="0" layer="19" extent="1-1"/>
+<wire x1="39.48" y1="44.99" x2="39.5" y2="44.97" width="0.2032" layer="1"/>
+<wire x1="39.5" y1="44.97" x2="39.5" y2="42.3" width="0.2032" layer="1"/>
+<wire x1="39.5" y1="42.3" x2="39.9" y2="41.9" width="0.2032" layer="1"/>
+<wire x1="39.9" y1="41.9" x2="39.9" y2="41.5" width="0.2032" layer="1"/>
+<via x="39.9" y="41.5" extent="1-16" drill="0.5"/>
+<wire x1="39.9" y1="41.5" x2="39.9" y2="41" width="0.2032" layer="16"/>
+<wire x1="39.9" y1="41" x2="39.4" y2="40.5" width="0.2032" layer="16"/>
+<wire x1="39.4" y1="40.5" x2="39.4" y2="39.8" width="0.2032" layer="16"/>
+<wire x1="39.4" y1="39.8" x2="39.4" y2="11.5" width="0.2032" layer="16"/>
+<wire x1="39.4" y1="11.5" x2="42.8" y2="8.1" width="0.2032" layer="16"/>
+<wire x1="42.8" y1="8.1" x2="45.4" y2="5.5" width="0.2032" layer="16"/>
+<via x="45.4" y="5.5" extent="1-16" drill="0.5"/>
+<wire x1="45.4" y1="5.5" x2="46.55" y2="5.5" width="0.2032" layer="1"/>
 </signal>
-<signal name="PA7" airwireshidden="yes">
+<signal name="PA7">
 <contactref element="IC1" pad="24"/>
 <contactref element="R15" pad="1"/>
-<wire x1="40" y1="9.08" x2="38.98" y2="44.99" width="0" layer="19" extent="1-1"/>
+<wire x1="40" y1="9.08" x2="39" y2="10.08" width="0.2032" layer="16"/>
+<wire x1="39" y1="10.08" x2="39" y2="41.4" width="0.2032" layer="16"/>
+<via x="39" y="41.4" extent="1-16" drill="0.5"/>
+<wire x1="39" y1="41.4" x2="38.98" y2="41.42" width="0.2032" layer="1"/>
+<wire x1="38.98" y1="41.42" x2="38.98" y2="44.99" width="0.2032" layer="1"/>
 </signal>
-<signal name="PA8" airwireshidden="yes">
+<signal name="PA8">
 <contactref element="IC1" pad="25"/>
 <contactref element="R14" pad="1"/>
 <contactref element="Q5" pad="COLLECTOR"/>
 <wire x1="52.08" y1="67" x2="52.08" y2="64.07" width="0.381" layer="1"/>
 <wire x1="52.08" y1="64.07" x2="52.1" y2="64.05" width="0.381" layer="1"/>
-<wire x1="38.48" y1="44.99" x2="52.08" y2="64.07" width="0" layer="19" extent="1-1"/>
+<wire x1="52.08" y1="64.07" x2="52.08" y2="63.58" width="0.2032" layer="1"/>
+<wire x1="52.08" y1="63.58" x2="50.7" y2="62.2" width="0.2032" layer="1"/>
+<wire x1="50.7" y1="62.2" x2="50.6" y2="62.1" width="0.2032" layer="1"/>
+<wire x1="50.6" y1="62.1" x2="47.8" y2="62.1" width="0.2032" layer="1"/>
+<wire x1="47.8" y1="62.1" x2="45.2" y2="62.1" width="0.2032" layer="1"/>
+<via x="45.2" y="62.1" extent="1-16" drill="0.5"/>
+<wire x1="45.2" y1="62.1" x2="44.2" y2="61.1" width="0.2032" layer="16"/>
+<wire x1="44.2" y1="61.1" x2="44.2" y2="60.9" width="0.2032" layer="16"/>
+<wire x1="44.2" y1="60.9" x2="41.7" y2="58.4" width="0.2032" layer="16"/>
+<wire x1="41.7" y1="58.4" x2="39.6" y2="58.4" width="0.2032" layer="16"/>
+<via x="39.6" y="58.4" extent="1-16" drill="0.5"/>
+<wire x1="39.6" y1="58.4" x2="38.8" y2="57.6" width="0.2032" layer="1"/>
+<wire x1="38.8" y1="57.6" x2="38.8" y2="57.2" width="0.2032" layer="1"/>
+<via x="38.8" y="57.2" extent="1-16" drill="0.5"/>
+<via x="38.6" y="55.6" extent="1-16" drill="0.5"/>
+<wire x1="38.4" y1="55.5" x2="38.4" y2="51.1" width="0.2032" layer="1"/>
+<wire x1="38.4" y1="51.1" x2="38.48" y2="51.02" width="0.2032" layer="1"/>
+<wire x1="38.48" y1="51.02" x2="38.48" y2="44.99" width="0.2032" layer="1"/>
+<wire x1="38.4" y1="55.5" x2="38.5" y2="55.6" width="0.2032" layer="1"/>
+<wire x1="38.5" y1="55.6" x2="38.6" y2="55.6" width="0.2032" layer="1"/>
+<wire x1="38.6" y1="55.6" x2="38.8" y2="55.8" width="0.2032" layer="16"/>
+<wire x1="38.8" y1="55.8" x2="38.8" y2="57.2" width="0.2032" layer="16"/>
 </signal>
-<signal name="PA9" airwireshidden="yes">
+<signal name="PA9">
 <contactref element="IC1" pad="26"/>
 <contactref element="R16" pad="1"/>
-<wire x1="37.98" y1="44.99" x2="37.92" y2="59" width="0" layer="19" extent="1-1"/>
+<wire x1="37.98" y1="44.99" x2="37.98" y2="56.02" width="0.2032" layer="1"/>
+<wire x1="37.98" y1="56.02" x2="35.6" y2="58.4" width="0.2032" layer="1"/>
+<wire x1="35.6" y1="58.4" x2="35.1" y2="58.9" width="0.2032" layer="1"/>
+<via x="35.1" y="58.9" extent="1-16" drill="0.5"/>
+<wire x1="35.1" y1="58.9" x2="37.82" y2="58.9" width="0.2032" layer="16"/>
+<wire x1="37.82" y1="58.9" x2="37.92" y2="59" width="0.2032" layer="16"/>
 </signal>
-<signal name="PA10" airwireshidden="yes">
+<signal name="PA10">
 <contactref element="IC1" pad="27"/>
 <contactref element="J8" pad="7"/>
 <wire x1="76.4136" y1="2.7" x2="37.48" y2="44.99" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PA12" airwireshidden="yes">
+<signal name="PA12">
 <contactref element="IC1" pad="29"/>
 <contactref element="J8" pad="8"/>
 <wire x1="36.48" y1="44.99" x2="76.4136" y2="5.24" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PA13" airwireshidden="yes">
+<signal name="PA13">
 <contactref element="IC1" pad="30"/>
 <contactref element="J8" pad="9"/>
 <wire x1="35.98" y1="44.99" x2="78.9536" y2="2.7" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PA14" airwireshidden="yes">
+<signal name="PA14">
 <contactref element="IC1" pad="31"/>
 <contactref element="J8" pad="10"/>
 <wire x1="35.48" y1="44.99" x2="78.9536" y2="5.24" width="0" layer="19" extent="1-1"/>
@@ -2091,9 +2143,22 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <signal name="PA15">
 <contactref element="IC1" pad="32"/>
 <contactref element="Q1" pad="RRST"/>
-<wire x1="34.98" y1="44.99" x2="97.01" y2="55.15" width="0" layer="19" extent="1-1"/>
+<wire x1="97.01" y1="55.15" x2="96.25" y2="55.15" width="0.2032" layer="16"/>
+<wire x1="96.25" y1="55.15" x2="95" y2="53.9" width="0.2032" layer="16"/>
+<wire x1="95" y1="53.9" x2="93.87" y2="53.9" width="0.2032" layer="16"/>
+<wire x1="93.87" y1="53.9" x2="91.3" y2="51.33" width="0.2032" layer="16"/>
+<wire x1="91.3" y1="51.33" x2="51.6" y2="51.33" width="0.2032" layer="16"/>
+<wire x1="51.6" y1="51.33" x2="49.73" y2="53.2" width="0.2032" layer="16"/>
+<wire x1="49.73" y1="53.2" x2="49.71" y2="53.22" width="0.2032" layer="16"/>
+<wire x1="49.71" y1="53.22" x2="42.92" y2="53.22" width="0.2032" layer="16"/>
+<wire x1="42.92" y1="53.22" x2="40.6" y2="50.9" width="0.2032" layer="16"/>
+<via x="35.05" y="47.64" extent="1-16" drill="0.5"/>
+<wire x1="35.05" y1="47.64" x2="34.98" y2="47.57" width="0.2032" layer="1"/>
+<wire x1="34.98" y1="47.57" x2="34.98" y2="44.99" width="0.2032" layer="1"/>
+<wire x1="40.6" y1="50.9" x2="37.34" y2="47.64" width="0.2032" layer="16"/>
+<wire x1="37.34" y1="47.64" x2="35.05" y2="47.64" width="0.2032" layer="16"/>
 </signal>
-<signal name="PA16" airwireshidden="yes">
+<signal name="PA16">
 <contactref element="IC1" pad="33"/>
 <contactref element="D1" pad="-"/>
 <contactref element="C31" pad="1"/>
@@ -2111,57 +2176,286 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <signal name="PA19">
 <contactref element="IC1" pad="36"/>
 <contactref element="Q1" pad="RCLK"/>
-<wire x1="32.98" y1="44.99" x2="97.01" y2="57.69" width="0" layer="19" extent="1-1"/>
+<wire x1="97.01" y1="57.69" x2="96.99" y2="57.69" width="0.2032" layer="16"/>
+<wire x1="96.99" y1="57.69" x2="95.6" y2="56.3" width="0.2032" layer="16"/>
+<wire x1="95.6" y1="56.3" x2="94.3" y2="56.3" width="0.2032" layer="16"/>
+<wire x1="94.3" y1="56.3" x2="89.7" y2="51.7" width="0.2032" layer="16"/>
+<wire x1="89.7" y1="51.7" x2="89.64" y2="51.64" width="0.2032" layer="16"/>
+<wire x1="89.64" y1="51.64" x2="51.79" y2="51.64" width="0.2032" layer="16"/>
+<wire x1="51.79" y1="51.64" x2="49.89" y2="53.54" width="0.2032" layer="16"/>
+<wire x1="49.89" y1="53.54" x2="42.78" y2="53.54" width="0.2032" layer="16"/>
+<wire x1="42.78" y1="53.54" x2="42.49" y2="53.25" width="0.2032" layer="16"/>
+<wire x1="42.49" y1="53.25" x2="40.34" y2="51.1" width="0.2032" layer="16"/>
+<wire x1="40.34" y1="51.1" x2="37.44" y2="48.2" width="0.2032" layer="16"/>
+<wire x1="37.44" y1="48.2" x2="34.8" y2="48.2" width="0.2032" layer="16"/>
+<wire x1="34.8" y1="48.2" x2="33" y2="46.4" width="0.2032" layer="16"/>
+<wire x1="33" y1="46.4" x2="33" y2="43.2" width="0.2032" layer="16"/>
+<via x="33" y="43.2" extent="1-16" drill="0.5"/>
+<wire x1="33" y1="43.2" x2="32.98" y2="43.22" width="0.2032" layer="1"/>
+<wire x1="32.98" y1="43.22" x2="32.98" y2="44.99" width="0.2032" layer="1"/>
 </signal>
 <signal name="PA20">
 <contactref element="IC1" pad="39"/>
 <contactref element="Q1" pad="WEN"/>
-<wire x1="31.13" y1="42.14" x2="97.01" y2="52.61" width="0" layer="19" extent="1-1"/>
+<wire x1="31.13" y1="42.14" x2="34.64" y2="42.14" width="0.2032" layer="1"/>
+<wire x1="34.64" y1="42.14" x2="34.8" y2="42.3" width="0.2032" layer="1"/>
+<via x="34.8" y="42.3" extent="1-16" drill="0.5"/>
+<wire x1="34.8" y1="42.3" x2="35.05" y2="42.55" width="0.2032" layer="16"/>
+<wire x1="35.05" y1="42.55" x2="36.35" y2="42.55" width="0.2032" layer="16"/>
+<wire x1="36.35" y1="42.55" x2="36.93" y2="43.13" width="0.2032" layer="16"/>
+<wire x1="36.93" y1="43.13" x2="40.88" y2="47.08" width="0.2032" layer="16"/>
+<wire x1="40.88" y1="47.08" x2="40.88" y2="48.16" width="0.2032" layer="16"/>
+<wire x1="40.88" y1="48.16" x2="40.88" y2="50.66" width="0.2032" layer="16"/>
+<wire x1="40.88" y1="50.66" x2="43.12" y2="52.9" width="0.2032" layer="16"/>
+<wire x1="43.12" y1="52.9" x2="49.53" y2="52.9" width="0.2032" layer="16"/>
+<wire x1="49.53" y1="52.9" x2="51.45" y2="50.98" width="0.2032" layer="16"/>
+<wire x1="51.45" y1="50.98" x2="91.48" y2="50.98" width="0.2032" layer="16"/>
+<wire x1="91.48" y1="50.98" x2="92" y2="51.5" width="0.2032" layer="16"/>
+<wire x1="92" y1="51.5" x2="95.9" y2="51.5" width="0.2032" layer="16"/>
+<wire x1="95.9" y1="51.5" x2="97.01" y2="52.61" width="0.2032" layer="16"/>
 </signal>
 <signal name="PA21">
 <contactref element="IC1" pad="40"/>
 <contactref element="Q1" pad="WRST"/>
-<wire x1="31.13" y1="41.64" x2="94.47" y2="50.07" width="0" layer="19" extent="1-1"/>
+<wire x1="94.47" y1="50.07" x2="94.23" y2="50.31" width="0.2032" layer="16"/>
+<wire x1="94.23" y1="50.31" x2="89.9" y2="50.31" width="0.2032" layer="16"/>
+<wire x1="89.9" y1="50.31" x2="51.19" y2="50.31" width="0.2032" layer="16"/>
+<wire x1="51.19" y1="50.31" x2="49.3" y2="52.2" width="0.2032" layer="16"/>
+<wire x1="49.3" y1="52.2" x2="49.27" y2="52.23" width="0.2032" layer="16"/>
+<wire x1="49.27" y1="52.23" x2="43.43" y2="52.23" width="0.2032" layer="16"/>
+<wire x1="43.43" y1="52.23" x2="43.2" y2="52" width="0.2032" layer="16"/>
+<wire x1="43.2" y1="52" x2="41.59" y2="50.39" width="0.2032" layer="16"/>
+<wire x1="41.59" y1="50.39" x2="41.59" y2="47.69" width="0.2032" layer="16"/>
+<wire x1="41.59" y1="47.69" x2="41.59" y2="46.84" width="0.2032" layer="16"/>
+<wire x1="41.59" y1="46.84" x2="41.35" y2="46.6" width="0.2032" layer="16"/>
+<wire x1="41.35" y1="46.6" x2="36.35" y2="41.6" width="0.2032" layer="16"/>
+<wire x1="36.35" y1="41.6" x2="36" y2="41.6" width="0.2032" layer="16"/>
+<via x="36" y="41.6" extent="1-16" drill="0.5"/>
+<wire x1="36" y1="41.6" x2="35.96" y2="41.64" width="0.2032" layer="1"/>
+<wire x1="35.96" y1="41.64" x2="31.13" y2="41.64" width="0.2032" layer="1"/>
 </signal>
 <signal name="PA22">
 <contactref element="IC1" pad="41"/>
 <contactref element="Q2" pad="RRST"/>
-<wire x1="31.13" y1="41.14" x2="97.02" y2="13.22" width="0" layer="19" extent="1-1"/>
+<wire x1="97.02" y1="13.22" x2="96.1" y2="12.3" width="0.2032" layer="1"/>
+<wire x1="96.1" y1="12.3" x2="96.1" y2="10.3" width="0.2032" layer="1"/>
+<wire x1="96.1" y1="10.3" x2="95.11" y2="9.31" width="0.2032" layer="1"/>
+<wire x1="95.11" y1="9.31" x2="93.74" y2="9.31" width="0.2032" layer="1"/>
+<wire x1="93.74" y1="9.31" x2="93.71" y2="9.31" width="0.2032" layer="1"/>
+<wire x1="93.71" y1="9.31" x2="93.63" y2="9.31" width="0.2032" layer="1"/>
+<wire x1="93.63" y1="9.31" x2="79.68" y2="9.31" width="0.2032" layer="1"/>
+<wire x1="79.68" y1="9.31" x2="78.43" y2="8.06" width="0.2032" layer="1"/>
+<wire x1="78.43" y1="8.06" x2="77.87" y2="8.06" width="0.2032" layer="1"/>
+<wire x1="77.87" y1="8.06" x2="44.54" y2="8.06" width="0.2032" layer="1"/>
+<via x="33.6" y="11.6" extent="1-16" drill="0.5"/>
+<wire x1="44.54" y1="8.06" x2="41" y2="11.6" width="0.2032" layer="1"/>
+<wire x1="41" y1="11.6" x2="33.6" y2="11.6" width="0.2032" layer="1"/>
+<wire x1="33.6" y1="11.6" x2="32.42" y2="12.78" width="0.2032" layer="16"/>
+<wire x1="32.42" y1="12.78" x2="30.34" y2="12.78" width="0.2032" layer="16"/>
+<wire x1="30.34" y1="12.78" x2="26.46" y2="12.78" width="0.2032" layer="16"/>
+<wire x1="26.46" y1="12.78" x2="25.09" y2="14.15" width="0.2032" layer="16"/>
+<wire x1="25.09" y1="14.15" x2="24.46" y2="14.78" width="0.2032" layer="16"/>
+<wire x1="24.46" y1="14.78" x2="22.37" y2="16.87" width="0.2032" layer="16"/>
+<wire x1="22.37" y1="16.87" x2="21.78" y2="17.46" width="0.2032" layer="16"/>
+<wire x1="21.78" y1="17.46" x2="21.78" y2="18.37" width="0.2032" layer="16"/>
+<wire x1="21.78" y1="18.37" x2="21.78" y2="20.06" width="0.2032" layer="16"/>
+<wire x1="21.78" y1="20.06" x2="21.78" y2="39.18" width="0.2032" layer="16"/>
+<wire x1="21.78" y1="39.18" x2="21.78" y2="39.48" width="0.2032" layer="16"/>
+<wire x1="21.78" y1="39.48" x2="23.9" y2="41.6" width="0.2032" layer="16"/>
+<via x="23.9" y="41.6" extent="1-16" drill="0.5"/>
+<wire x1="23.9" y1="41.6" x2="24.77" y2="41.6" width="0.2032" layer="1"/>
+<wire x1="24.77" y1="41.6" x2="25.25" y2="41.12" width="0.2032" layer="1"/>
+<wire x1="25.25" y1="41.12" x2="31.11" y2="41.12" width="0.2032" layer="1"/>
+<wire x1="31.11" y1="41.12" x2="31.13" y2="41.14" width="0.2032" layer="1"/>
 </signal>
 <signal name="PA23">
 <contactref element="IC1" pad="42"/>
 <contactref element="Q2" pad="RCLK"/>
-<wire x1="31.13" y1="40.64" x2="97.02" y2="15.76" width="0" layer="19" extent="1-1"/>
+<wire x1="97.02" y1="15.76" x2="95.36" y2="14.1" width="0.2032" layer="1"/>
+<wire x1="95.36" y1="14.1" x2="93.8" y2="14.1" width="0.2032" layer="1"/>
+<wire x1="93.8" y1="14.1" x2="89.67" y2="9.97" width="0.2032" layer="1"/>
+<wire x1="89.67" y1="9.97" x2="88.19" y2="9.97" width="0.2032" layer="1"/>
+<wire x1="88.19" y1="9.97" x2="85.87" y2="9.97" width="0.2032" layer="1"/>
+<wire x1="85.87" y1="9.97" x2="79.47" y2="9.97" width="0.2032" layer="1"/>
+<wire x1="79.47" y1="9.97" x2="78.21" y2="8.71" width="0.2032" layer="1"/>
+<wire x1="78.21" y1="8.71" x2="77.75" y2="8.71" width="0.2032" layer="1"/>
+<wire x1="77.75" y1="8.71" x2="44.99" y2="8.71" width="0.2032" layer="1"/>
+<wire x1="44.99" y1="8.71" x2="40.9" y2="12.8" width="0.2032" layer="1"/>
+<wire x1="40.9" y1="12.8" x2="40.6" y2="13.1" width="0.2032" layer="1"/>
+<via x="33.6" y="13.1" extent="1-16" drill="0.5"/>
+<wire x1="40.6" y1="13.1" x2="33.6" y2="13.1" width="0.2032" layer="1"/>
+<wire x1="33.6" y1="13.1" x2="33.5" y2="13.1" width="0.2032" layer="16"/>
+<wire x1="33.5" y1="13.1" x2="26.6" y2="13.1" width="0.2032" layer="16"/>
+<wire x1="26.6" y1="13.1" x2="22.1" y2="17.6" width="0.2032" layer="16"/>
+<wire x1="22.1" y1="17.6" x2="22.1" y2="33.3" width="0.2032" layer="16"/>
+<wire x1="22.1" y1="33.3" x2="22.1" y2="39" width="0.2032" layer="16"/>
+<wire x1="22.1" y1="39" x2="23.74" y2="40.64" width="0.2032" layer="16"/>
+<wire x1="23.74" y1="40.64" x2="23.94" y2="40.64" width="0.2032" layer="16"/>
+<via x="23.94" y="40.64" extent="1-16" drill="0.5"/>
+<wire x1="23.94" y1="40.64" x2="31.13" y2="40.64" width="0.2032" layer="1"/>
 </signal>
 <signal name="PA24">
 <contactref element="IC1" pad="43"/>
 <contactref element="Q2" pad="WEN"/>
-<wire x1="31.13" y1="40.14" x2="97.02" y2="10.68" width="0" layer="19" extent="1-1"/>
+<wire x1="97.02" y1="10.68" x2="96.98" y2="10.68" width="0.2032" layer="1"/>
+<wire x1="96.98" y1="10.68" x2="95.3" y2="9" width="0.2032" layer="1"/>
+<wire x1="95.3" y1="9" x2="93.25" y2="9" width="0.2032" layer="1"/>
+<wire x1="93.25" y1="9" x2="79.9" y2="9" width="0.2032" layer="1"/>
+<wire x1="79.9" y1="9" x2="78.7" y2="7.8" width="0.2032" layer="1"/>
+<wire x1="78.7" y1="7.8" x2="78.67" y2="7.77" width="0.2032" layer="1"/>
+<wire x1="78.67" y1="7.77" x2="78.65" y2="7.75" width="0.2032" layer="1"/>
+<wire x1="78.65" y1="7.75" x2="78.63" y2="7.73" width="0.2032" layer="1"/>
+<wire x1="78.63" y1="7.73" x2="77.86" y2="7.73" width="0.2032" layer="1"/>
+<wire x1="77.86" y1="7.73" x2="44.37" y2="7.73" width="0.2032" layer="1"/>
+<via x="30.6" y="13.7" extent="1-16" drill="0.5"/>
+<wire x1="41.4" y1="10.7" x2="44.37" y2="7.73" width="0.2032" layer="1"/>
+<wire x1="33.4" y1="10.9" x2="41.2" y2="10.9" width="0.2032" layer="1"/>
+<wire x1="41.2" y1="10.9" x2="41.4" y2="10.7" width="0.2032" layer="1"/>
+<wire x1="26.5" y1="13.7" x2="24.7" y2="15.5" width="0.2032" layer="16"/>
+<wire x1="24.7" y1="15.5" x2="22.42" y2="17.78" width="0.2032" layer="16"/>
+<wire x1="22.42" y1="17.78" x2="22.42" y2="18.33" width="0.2032" layer="16"/>
+<wire x1="22.42" y1="18.33" x2="22.42" y2="38.22" width="0.2032" layer="16"/>
+<wire x1="22.42" y1="38.22" x2="23.9" y2="39.7" width="0.2032" layer="16"/>
+<via x="23.9" y="39.7" extent="1-16" drill="0.5"/>
+<wire x1="31.09" y1="40.1" x2="31.13" y2="40.14" width="0.2032" layer="1"/>
+<wire x1="33.4" y1="10.9" x2="30.6" y2="13.7" width="0.2032" layer="1"/>
+<wire x1="30.6" y1="13.7" x2="26.5" y2="13.7" width="0.2032" layer="16"/>
+<wire x1="23.9" y1="39.7" x2="24.4" y2="40.2" width="0.2032" layer="1"/>
+<wire x1="24.4" y1="40.2" x2="31.07" y2="40.2" width="0.2032" layer="1"/>
+<wire x1="31.07" y1="40.2" x2="31.13" y2="40.14" width="0.2032" layer="1"/>
 </signal>
 <signal name="PA25">
 <contactref element="IC1" pad="44"/>
 <contactref element="Q2" pad="WRST"/>
-<wire x1="31.13" y1="39.64" x2="94.48" y2="8.14" width="0" layer="19" extent="1-1"/>
+<wire x1="94.48" y1="8.14" x2="93.75" y2="7.41" width="0.2032" layer="1"/>
+<wire x1="93.75" y1="7.41" x2="78.07" y2="7.41" width="0.2032" layer="1"/>
+<wire x1="78.07" y1="7.41" x2="44.19" y2="7.41" width="0.2032" layer="1"/>
+<wire x1="44.19" y1="7.41" x2="41.1" y2="10.5" width="0.2032" layer="1"/>
+<wire x1="41.1" y1="10.5" x2="41.02" y2="10.58" width="0.2032" layer="1"/>
+<wire x1="41.02" y1="10.58" x2="33.26" y2="10.58" width="0.2032" layer="1"/>
+<wire x1="33.26" y1="10.58" x2="32.87" y2="10.97" width="0.2032" layer="1"/>
+<wire x1="32.87" y1="10.97" x2="32.53" y2="10.97" width="0.2032" layer="1"/>
+<via x="29.7" y="14.3" extent="1-16" drill="0.5"/>
+<wire x1="25.5" y1="15.2" x2="22.74" y2="17.96" width="0.2032" layer="16"/>
+<wire x1="22.74" y1="17.96" x2="22.74" y2="19.1" width="0.2032" layer="16"/>
+<wire x1="22.74" y1="19.1" x2="22.74" y2="37.54" width="0.2032" layer="16"/>
+<wire x1="22.74" y1="37.54" x2="24.8" y2="39.6" width="0.2032" layer="16"/>
+<via x="24.8" y="39.6" extent="1-16" drill="0.5"/>
+<wire x1="24.8" y1="39.6" x2="31.09" y2="39.6" width="0.2032" layer="1"/>
+<wire x1="31.09" y1="39.6" x2="31.13" y2="39.64" width="0.2032" layer="1"/>
+<wire x1="32.53" y1="10.97" x2="32.43" y2="10.97" width="0.2032" layer="1"/>
+<wire x1="32.43" y1="10.97" x2="30" y2="13.4" width="0.2032" layer="1"/>
+<wire x1="30" y1="13.4" x2="30" y2="14" width="0.2032" layer="1"/>
+<wire x1="30" y1="14" x2="29.7" y2="14.3" width="0.2032" layer="1"/>
+<wire x1="29.7" y1="14.3" x2="27" y2="14.3" width="0.2032" layer="16"/>
+<wire x1="27" y1="14.3" x2="26.4" y2="14.3" width="0.2032" layer="16"/>
+<wire x1="26.4" y1="14.3" x2="25.5" y2="15.2" width="0.2032" layer="16"/>
 </signal>
 <signal name="PA26">
 <contactref element="IC1" pad="45"/>
 <contactref element="Q2" pad="VSYNC"/>
-<wire x1="31.13" y1="39.14" x2="97.02" y2="8.14" width="0" layer="19" extent="1-1"/>
+<wire x1="97.02" y1="8.14" x2="95.98" y2="7.1" width="0.2032" layer="1"/>
+<wire x1="95.98" y1="7.1" x2="78.1" y2="7.1" width="0.2032" layer="1"/>
+<wire x1="78.1" y1="7.1" x2="44" y2="7.1" width="0.2032" layer="1"/>
+<via x="25.39" y="38.94" extent="1-16" drill="0.5"/>
+<wire x1="31.13" y1="39.14" x2="31.09" y2="39.1" width="0.2032" layer="1"/>
+<wire x1="31.09" y1="39.1" x2="26.4" y2="39.1" width="0.2032" layer="1"/>
+<wire x1="26.4" y1="39.1" x2="25.55" y2="39.1" width="0.2032" layer="1"/>
+<wire x1="25.55" y1="39.1" x2="25.39" y2="38.94" width="0.2032" layer="1"/>
+<wire x1="44" y1="7.1" x2="40.9" y2="10.2" width="0.2032" layer="1"/>
+<wire x1="40.9" y1="10.2" x2="40.85" y2="10.25" width="0.2032" layer="1"/>
+<wire x1="40.85" y1="10.25" x2="39.26" y2="10.25" width="0.2032" layer="1"/>
+<wire x1="39.26" y1="10.25" x2="32.72" y2="10.25" width="0.2032" layer="1"/>
+<wire x1="32.72" y1="10.25" x2="32.07" y2="10.9" width="0.2032" layer="1"/>
+<wire x1="32.07" y1="10.9" x2="29" y2="13.97" width="0.2032" layer="1"/>
+<wire x1="29" y1="13.97" x2="29" y2="15.2" width="0.2032" layer="1"/>
+<wire x1="29" y1="15.2" x2="29.3" y2="15.5" width="0.2032" layer="1"/>
+<via x="29.3" y="15.5" extent="1-16" drill="0.5"/>
+<wire x1="23.1" y1="18.1" x2="23.1" y2="19.5" width="0.2032" layer="16"/>
+<wire x1="23.1" y1="19.5" x2="23.1" y2="37.3" width="0.2032" layer="16"/>
+<wire x1="23.1" y1="37.3" x2="24.5" y2="38.7" width="0.2032" layer="16"/>
+<wire x1="24.5" y1="38.7" x2="25.15" y2="38.7" width="0.2032" layer="16"/>
+<wire x1="25.15" y1="38.7" x2="25.39" y2="38.94" width="0.2032" layer="16"/>
+<wire x1="29.3" y1="15.5" x2="28.42" y2="14.62" width="0.2032" layer="16"/>
+<wire x1="28.42" y1="14.62" x2="26.58" y2="14.62" width="0.2032" layer="16"/>
+<wire x1="26.58" y1="14.62" x2="25.56" y2="15.64" width="0.2032" layer="16"/>
+<wire x1="25.56" y1="15.64" x2="23.1" y2="18.1" width="0.2032" layer="16"/>
 </signal>
 <signal name="PA27">
 <contactref element="IC1" pad="46"/>
 <contactref element="Q2" pad="NOE"/>
-<wire x1="31.13" y1="38.64" x2="94.48" y2="13.22" width="0" layer="19" extent="1-1"/>
+<wire x1="94.48" y1="13.22" x2="94.5" y2="13.22" width="0.2032" layer="1"/>
+<wire x1="94.5" y1="13.22" x2="95.78" y2="11.94" width="0.2032" layer="1"/>
+<wire x1="95.78" y1="11.94" x2="95.78" y2="10.45" width="0.2032" layer="1"/>
+<wire x1="95.78" y1="10.45" x2="94.96" y2="9.63" width="0.2032" layer="1"/>
+<wire x1="94.96" y1="9.63" x2="79.57" y2="9.63" width="0.2032" layer="1"/>
+<wire x1="79.57" y1="9.63" x2="79.08" y2="9.14" width="0.2032" layer="1"/>
+<wire x1="79.08" y1="9.14" x2="78.32" y2="8.38" width="0.2032" layer="1"/>
+<wire x1="78.32" y1="8.38" x2="77.92" y2="8.38" width="0.2032" layer="1"/>
+<wire x1="77.92" y1="8.38" x2="44.82" y2="8.38" width="0.2032" layer="1"/>
+<wire x1="44.82" y1="8.38" x2="41" y2="12.2" width="0.2032" layer="1"/>
+<wire x1="41" y1="12.2" x2="33.1" y2="12.2" width="0.2032" layer="1"/>
+<wire x1="33.1" y1="12.2" x2="32" y2="13.3" width="0.2032" layer="1"/>
+<via x="32" y="14" extent="1-16" drill="0.5"/>
+<via x="26.06" y="38.34" extent="1-16" drill="0.5"/>
+<wire x1="24.2" y1="37.8" x2="24.74" y2="38.34" width="0.2032" layer="16"/>
+<wire x1="24.74" y1="38.34" x2="26.06" y2="38.34" width="0.2032" layer="16"/>
+<wire x1="26.06" y1="38.34" x2="26.36" y2="38.64" width="0.2032" layer="1"/>
+<wire x1="26.36" y1="38.64" x2="31.13" y2="38.64" width="0.2032" layer="1"/>
+<wire x1="32" y1="13.3" x2="32" y2="14" width="0.2032" layer="1"/>
+<wire x1="32" y1="14" x2="31.8" y2="14" width="0.2032" layer="16"/>
+<wire x1="31.8" y1="14" x2="29.8" y2="16" width="0.2032" layer="16"/>
+<wire x1="29.8" y1="16" x2="29.7" y2="16.1" width="0.2032" layer="16"/>
+<wire x1="29.7" y1="16.1" x2="25.6" y2="16.1" width="0.2032" layer="16"/>
+<wire x1="25.6" y1="16.1" x2="25.2" y2="16.5" width="0.2032" layer="16"/>
+<wire x1="25.2" y1="16.5" x2="23.46" y2="18.24" width="0.2032" layer="16"/>
+<wire x1="23.46" y1="18.24" x2="23.46" y2="21.27" width="0.2032" layer="16"/>
+<wire x1="23.46" y1="21.27" x2="23.46" y2="37.06" width="0.2032" layer="16"/>
+<wire x1="23.46" y1="37.06" x2="24.2" y2="37.8" width="0.2032" layer="16"/>
 </signal>
 <signal name="PA28">
 <contactref element="IC1" pad="47"/>
 <contactref element="Q1" pad="NOE"/>
-<wire x1="31.13" y1="38.14" x2="94.47" y2="55.15" width="0" layer="19" extent="1-1"/>
+<wire x1="31.13" y1="38.14" x2="32.24" y2="38.14" width="0.2032" layer="1"/>
+<wire x1="32.24" y1="38.14" x2="32.9" y2="38.8" width="0.2032" layer="1"/>
+<via x="32.9" y="38.8" extent="1-16" drill="0.5"/>
+<wire x1="32.9" y1="38.8" x2="32.9" y2="39.3" width="0.2032" layer="16"/>
+<wire x1="32.9" y1="39.3" x2="35.8" y2="42.2" width="0.2032" layer="16"/>
+<wire x1="35.8" y1="42.2" x2="36.5" y2="42.2" width="0.2032" layer="16"/>
+<wire x1="36.5" y1="42.2" x2="37.1" y2="42.8" width="0.2032" layer="16"/>
+<wire x1="37.1" y1="42.8" x2="41.2" y2="46.9" width="0.2032" layer="16"/>
+<wire x1="41.2" y1="46.9" x2="41.2" y2="50.4" width="0.2032" layer="16"/>
+<wire x1="49.41" y1="52.53" x2="51.31" y2="50.63" width="0.2032" layer="16"/>
+<wire x1="51.31" y1="50.63" x2="92.13" y2="50.63" width="0.2032" layer="16"/>
+<wire x1="92.13" y1="50.63" x2="92.4" y2="50.9" width="0.2032" layer="16"/>
+<via x="92.4" y="50.9" extent="1-16" drill="0.5"/>
+<wire x1="92.4" y1="50.9" x2="92.4" y2="54.8" width="0.2032" layer="1"/>
+<wire x1="92.4" y1="54.8" x2="92.8" y2="55.2" width="0.2032" layer="1"/>
+<wire x1="92.8" y1="55.2" x2="94.42" y2="55.2" width="0.2032" layer="1"/>
+<wire x1="94.42" y1="55.2" x2="94.47" y2="55.15" width="0.2032" layer="1"/>
+<wire x1="41.2" y1="50.4" x2="41.2" y2="50.5" width="0.2032" layer="16"/>
+<wire x1="41.2" y1="50.5" x2="43.23" y2="52.53" width="0.2032" layer="16"/>
+<wire x1="43.23" y1="52.53" x2="43.27" y2="52.57" width="0.2032" layer="16"/>
+<wire x1="43.27" y1="52.57" x2="49.37" y2="52.57" width="0.2032" layer="16"/>
+<wire x1="49.37" y1="52.57" x2="49.41" y2="52.53" width="0.2032" layer="16"/>
 </signal>
 <signal name="PA29">
 <contactref element="IC1" pad="48"/>
 <contactref element="Q1" pad="VSYNC"/>
-<wire x1="31.13" y1="37.64" x2="97.01" y2="50.07" width="0" layer="19" extent="1-1"/>
+<wire x1="31.13" y1="37.64" x2="32.84" y2="37.64" width="0.2032" layer="1"/>
+<wire x1="32.84" y1="37.64" x2="32.9" y2="37.7" width="0.2032" layer="1"/>
+<via x="32.9" y="37.7" extent="1-16" drill="0.5"/>
+<wire x1="32.9" y1="37.7" x2="41.9" y2="46.7" width="0.2032" layer="16"/>
+<wire x1="41.9" y1="46.7" x2="41.9" y2="50.1" width="0.2032" layer="16"/>
+<wire x1="41.9" y1="50.1" x2="43.6" y2="51.8" width="0.2032" layer="16"/>
+<wire x1="43.6" y1="51.8" x2="43.6" y2="51.9" width="0.2032" layer="16"/>
+<wire x1="43.6" y1="51.9" x2="49.1" y2="51.9" width="0.2032" layer="16"/>
+<wire x1="49.1" y1="51.9" x2="51" y2="50" width="0.2032" layer="16"/>
+<wire x1="51" y1="50" x2="90.8" y2="50" width="0.2032" layer="16"/>
+<wire x1="95.4" y1="48.5" x2="96.97" y2="50.07" width="0.2032" layer="16"/>
+<wire x1="96.97" y1="50.07" x2="97.01" y2="50.07" width="0.2032" layer="16"/>
+<wire x1="90.8" y1="50" x2="92.3" y2="48.5" width="0.2032" layer="16"/>
+<wire x1="92.3" y1="48.5" x2="95.4" y2="48.5" width="0.2032" layer="16"/>
 </signal>
 <signal name="PB0">
 <contactref element="IC1" pad="140"/>
@@ -2364,105 +2658,209 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="45.9" y1="46.4" x2="45.9" y2="45.07" width="0.2032" layer="1"/>
 <wire x1="45.9" y1="45.07" x2="45.98" y2="44.99" width="0.2032" layer="1"/>
 </signal>
-<signal name="PB8" airwireshidden="yes">
+<signal name="PB8">
 <contactref element="IC1" pad="11"/>
 <contactref element="IC4" pad="3"/>
 <wire x1="7.615" y1="56.205" x2="45.48" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
-<signal name="PB9" airwireshidden="yes">
+<signal name="PB9">
 <contactref element="IC1" pad="12"/>
 <contactref element="IC4" pad="18"/>
 <wire x1="7.615" y1="48.955" x2="44.98" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
-<signal name="PB10" airwireshidden="yes">
+<signal name="PB10">
 <contactref element="IC1" pad="13"/>
 <contactref element="IC4" pad="19"/>
 <wire x1="6.965" y1="48.955" x2="44.48" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
-<signal name="PB11" airwireshidden="yes">
+<signal name="PB11">
 <contactref element="IC1" pad="14"/>
 <contactref element="IC4" pad="2"/>
 <wire x1="6.965" y1="56.205" x2="43.98" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
-<signal name="PB12" airwireshidden="yes">
+<signal name="PB12">
 <contactref element="IC1" pad="15"/>
 <contactref element="LED1" pad="A"/>
 <wire x1="25.6" y1="23.9" x2="43.48" y2="44.99" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PB13" airwireshidden="yes">
+<signal name="PB13">
 <contactref element="IC1" pad="16"/>
 <contactref element="IC5" pad="2"/>
 <wire x1="6.235" y1="25.365" x2="42.98" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
-<signal name="PB14" airwireshidden="yes">
+<signal name="PB14">
 <contactref element="IC1" pad="17"/>
 <contactref element="IC5" pad="19"/>
 <wire x1="6.235" y1="18.115" x2="42.48" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
-<signal name="PB15" airwireshidden="yes">
+<signal name="PB15">
 <contactref element="IC1" pad="18"/>
 <contactref element="IC5" pad="18"/>
 <wire x1="6.885" y1="18.115" x2="41.98" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
-<signal name="PB16" airwireshidden="yes">
+<signal name="PB16">
 <contactref element="IC1" pad="19"/>
 <contactref element="IC5" pad="3"/>
 <wire x1="6.885" y1="25.365" x2="41.48" y2="44.99" width="0" layer="19" extent="1-16"/>
 </signal>
-<signal name="PB17" airwireshidden="yes">
+<signal name="PB17">
 <contactref element="IC1" pad="20"/>
 <contactref element="LED2" pad="A"/>
 <wire x1="13.5" y1="15.5" x2="40.98" y2="44.99" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PB18" airwireshidden="yes">
+<signal name="PB18">
 <contactref element="IC1" pad="57"/>
 <contactref element="LED3" pad="A"/>
 <wire x1="11.2" y1="15.5" x2="31.13" y2="33.14" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PB19" airwireshidden="yes">
+<signal name="PB19">
 <contactref element="IC1" pad="58"/>
 <contactref element="R38" pad="1"/>
 <contactref element="J5" pad="1"/>
-<wire x1="31.13" y1="32.64" x2="67.77" y2="59.08" width="0" layer="19" extent="1-16"/>
-<wire x1="18.206" y1="65.342" x2="31.13" y2="32.64" width="0" layer="19" extent="1-1"/>
+<via x="17.2" y="33.9" extent="1-16" drill="0.5"/>
+<wire x1="31.13" y1="32.64" x2="26.66" y2="32.64" width="0.2032" layer="1"/>
+<wire x1="26.66" y1="32.64" x2="25.9" y2="33.4" width="0.2032" layer="1"/>
+<wire x1="25.9" y1="33.4" x2="17.7" y2="33.4" width="0.2032" layer="1"/>
+<wire x1="17.7" y1="33.4" x2="17.2" y2="33.9" width="0.2032" layer="1"/>
+<wire x1="17.2" y1="33.9" x2="17.2" y2="64.336" width="0.2032" layer="16"/>
+<wire x1="17.2" y1="64.336" x2="18.206" y2="65.342" width="0.2032" layer="16"/>
+<wire x1="67.77" y1="59.08" x2="63.23" y2="54.54" width="0.2032" layer="16"/>
+<wire x1="63.23" y1="54.54" x2="47.99" y2="54.54" width="0.2032" layer="16"/>
+<wire x1="47.99" y1="54.54" x2="34.86" y2="54.54" width="0.2032" layer="16"/>
+<wire x1="34.86" y1="54.54" x2="27.2" y2="62.2" width="0.2032" layer="16"/>
+<wire x1="27.2" y1="62.2" x2="26.1" y2="62.2" width="0.2032" layer="16"/>
+<wire x1="26.1" y1="62.2" x2="24.2" y2="64.1" width="0.2032" layer="16"/>
+<via x="24.2" y="64.1" extent="1-16" drill="0.5"/>
+<wire x1="24.2" y1="64.1" x2="19.448" y2="64.1" width="0.2032" layer="1"/>
+<wire x1="19.448" y1="64.1" x2="18.206" y2="65.342" width="0.2032" layer="1"/>
 </signal>
-<signal name="PB20" airwireshidden="yes">
+<signal name="PB20">
 <contactref element="IC1" pad="59"/>
 <contactref element="R40" pad="1"/>
 <contactref element="J5" pad="2"/>
-<wire x1="31.13" y1="32.14" x2="72.33" y2="58.18" width="0" layer="19" extent="1-16"/>
-<wire x1="20.746" y1="65.342" x2="31.13" y2="32.14" width="0" layer="19" extent="1-1"/>
+<via x="16.6" y="33.2" extent="1-16" drill="0.5"/>
+<wire x1="16.6" y1="33.2" x2="16.6" y2="32.6" width="0.2032" layer="1"/>
+<wire x1="16.6" y1="32.6" x2="17.2" y2="32" width="0.2032" layer="1"/>
+<wire x1="17.2" y1="32" x2="30.99" y2="32" width="0.2032" layer="1"/>
+<wire x1="30.99" y1="32" x2="31.13" y2="32.14" width="0.2032" layer="1"/>
+<wire x1="16.6" y1="33.2" x2="16.6" y2="65.1" width="0.2032" layer="16"/>
+<wire x1="16.6" y1="65.1" x2="17.8" y2="66.3" width="0.2032" layer="16"/>
+<wire x1="17.8" y1="66.3" x2="19.788" y2="66.3" width="0.2032" layer="16"/>
+<wire x1="19.788" y1="66.3" x2="20.746" y2="65.342" width="0.2032" layer="16"/>
+<wire x1="72.33" y1="58.18" x2="68.05" y2="53.9" width="0.2032" layer="16"/>
+<wire x1="68.05" y1="53.9" x2="48" y2="53.9" width="0.2032" layer="16"/>
+<wire x1="48" y1="53.9" x2="34.3" y2="53.9" width="0.2032" layer="16"/>
+<wire x1="34.3" y1="53.9" x2="26.9" y2="61.3" width="0.2032" layer="16"/>
+<wire x1="26.9" y1="61.3" x2="24.788" y2="61.3" width="0.2032" layer="16"/>
+<wire x1="24.788" y1="61.3" x2="20.746" y2="65.342" width="0.2032" layer="16"/>
 </signal>
-<signal name="PB21" airwireshidden="yes">
+<signal name="PB21">
 <contactref element="IC1" pad="60"/>
 <contactref element="R39" pad="1"/>
 <contactref element="J5" pad="3"/>
-<wire x1="23.286" y1="65.342" x2="69.97" y2="59.07" width="0" layer="19" extent="16-16"/>
-<wire x1="31.13" y1="31.64" x2="23.286" y2="65.342" width="0" layer="19" extent="1-1"/>
+<via x="16" y="33.9" extent="1-16" drill="0.5"/>
+<wire x1="31.13" y1="31.64" x2="16.16" y2="31.64" width="0.2032" layer="1"/>
+<wire x1="16" y1="33.9" x2="16" y2="31.8" width="0.2032" layer="1"/>
+<wire x1="16" y1="31.8" x2="16.16" y2="31.64" width="0.2032" layer="1"/>
+<wire x1="16" y1="33.9" x2="16" y2="65.2" width="0.2032" layer="16"/>
+<wire x1="16" y1="65.2" x2="17.5" y2="66.7" width="0.2032" layer="16"/>
+<wire x1="17.5" y1="66.7" x2="21.928" y2="66.7" width="0.2032" layer="16"/>
+<wire x1="21.928" y1="66.7" x2="23.286" y2="65.342" width="0.2032" layer="16"/>
+<wire x1="69.97" y1="59.07" x2="65.13" y2="54.23" width="0.2032" layer="16"/>
+<wire x1="65.13" y1="54.23" x2="48" y2="54.23" width="0.2032" layer="16"/>
+<wire x1="48" y1="54.23" x2="34.57" y2="54.23" width="0.2032" layer="16"/>
+<wire x1="34.57" y1="54.23" x2="27.2" y2="61.6" width="0.2032" layer="16"/>
+<wire x1="27.2" y1="61.6" x2="27.1" y2="61.7" width="0.2032" layer="16"/>
+<wire x1="27.1" y1="61.7" x2="25" y2="61.7" width="0.2032" layer="16"/>
+<wire x1="25" y1="61.7" x2="23.3" y2="63.4" width="0.2032" layer="16"/>
+<wire x1="23.3" y1="63.4" x2="23.3" y2="65.328" width="0.2032" layer="16"/>
+<wire x1="23.3" y1="65.328" x2="23.286" y2="65.342" width="0.2032" layer="16"/>
 </signal>
-<signal name="PB22" airwireshidden="yes">
+<signal name="PB22">
 <contactref element="IC1" pad="61"/>
 <contactref element="J5" pad="5"/>
-<wire x1="31.13" y1="31.14" x2="25.826" y2="67.882" width="0" layer="19" extent="1-1"/>
+<via x="15.4" y="33.2" extent="1-16" drill="0.5"/>
+<wire x1="15.4" y1="33.2" x2="15.4" y2="31.4" width="0.2032" layer="1"/>
+<wire x1="15.4" y1="31.4" x2="15.7" y2="31.1" width="0.2032" layer="1"/>
+<wire x1="15.7" y1="31.1" x2="31.09" y2="31.1" width="0.2032" layer="1"/>
+<wire x1="31.09" y1="31.1" x2="31.13" y2="31.14" width="0.2032" layer="1"/>
+<wire x1="15.4" y1="33.2" x2="15.4" y2="65.6" width="0.2032" layer="16"/>
+<via x="15.4" y="65.6" extent="1-16" drill="0.5"/>
+<wire x1="15.4" y1="65.6" x2="16.1" y2="66.3" width="0.2032" layer="1"/>
+<wire x1="16.1" y1="66.3" x2="24.3" y2="66.3" width="0.2032" layer="1"/>
+<wire x1="24.3" y1="66.3" x2="25.826" y2="67.826" width="0.2032" layer="1"/>
+<wire x1="25.826" y1="67.826" x2="25.826" y2="67.882" width="0.2032" layer="1"/>
 </signal>
-<signal name="PB23" airwireshidden="yes">
+<signal name="PB23">
 <contactref element="IC1" pad="62"/>
 <contactref element="J5" pad="6"/>
-<wire x1="31.13" y1="30.64" x2="23.286" y2="67.882" width="0" layer="19" extent="1-1"/>
+<via x="14.8" y="33.9" extent="1-16" drill="0.5"/>
+<wire x1="31.13" y1="30.64" x2="15.36" y2="30.64" width="0.2032" layer="1"/>
+<wire x1="15.36" y1="30.64" x2="14.8" y2="31.2" width="0.2032" layer="1"/>
+<wire x1="14.8" y1="31.2" x2="14.8" y2="33.9" width="0.2032" layer="1"/>
+<wire x1="23.286" y1="67.882" x2="22.104" y2="66.7" width="0.2032" layer="1"/>
+<wire x1="22.104" y1="66.7" x2="15.4" y2="66.7" width="0.2032" layer="1"/>
+<wire x1="15.4" y1="66.7" x2="14.5" y2="65.8" width="0.2032" layer="1"/>
+<wire x1="14.5" y1="65.8" x2="14.5" y2="65.4" width="0.2032" layer="1"/>
+<via x="14.5" y="65.4" extent="1-16" drill="0.5"/>
+<wire x1="14.5" y1="65.4" x2="14.5" y2="59.6" width="0.2032" layer="16"/>
+<wire x1="14.5" y1="59.6" x2="14.8" y2="59.3" width="0.2032" layer="16"/>
+<wire x1="14.8" y1="59.3" x2="14.8" y2="33.9" width="0.2032" layer="16"/>
 </signal>
-<signal name="PB24" airwireshidden="yes">
+<signal name="PB24">
 <contactref element="IC1" pad="63"/>
 <contactref element="J5" pad="7"/>
-<wire x1="31.13" y1="30.14" x2="20.746" y2="67.882" width="0" layer="19" extent="1-1"/>
+<via x="14.1" y="33.2" extent="1-16" drill="0.5"/>
+<wire x1="14.1" y1="33.2" x2="14.1" y2="30.4" width="0.2032" layer="1"/>
+<wire x1="14.1" y1="30.4" x2="14.4" y2="30.1" width="0.2032" layer="1"/>
+<wire x1="14.4" y1="30.1" x2="31.09" y2="30.1" width="0.2032" layer="1"/>
+<wire x1="31.09" y1="30.1" x2="31.13" y2="30.14" width="0.2032" layer="1"/>
+<wire x1="14.1" y1="33.2" x2="14.1" y2="63.3" width="0.2032" layer="16"/>
+<wire x1="14.1" y1="63.3" x2="13.1" y2="64.3" width="0.2032" layer="16"/>
+<wire x1="13.1" y1="64.3" x2="12.2" y2="65.2" width="0.2032" layer="16"/>
+<wire x1="12.2" y1="65.2" x2="12.2" y2="65.8" width="0.2032" layer="16"/>
+<wire x1="12.2" y1="65.8" x2="12.6" y2="66.2" width="0.2032" layer="16"/>
+<wire x1="12.6" y1="66.2" x2="13.5" y2="67.1" width="0.2032" layer="16"/>
+<wire x1="13.5" y1="67.1" x2="15.3" y2="67.1" width="0.2032" layer="16"/>
+<wire x1="15.3" y1="67.1" x2="17" y2="68.8" width="0.2032" layer="16"/>
+<wire x1="17" y1="68.8" x2="17.2" y2="68.8" width="0.2032" layer="16"/>
+<wire x1="17.2" y1="68.8" x2="19.828" y2="68.8" width="0.2032" layer="16"/>
+<wire x1="19.828" y1="68.8" x2="20.746" y2="67.882" width="0.2032" layer="16"/>
 </signal>
-<signal name="PB25" airwireshidden="yes">
+<signal name="PB25">
 <contactref element="IC1" pad="64"/>
 <contactref element="R37" pad="1"/>
 <contactref element="J5" pad="8"/>
-<wire x1="31.13" y1="29.64" x2="64.06" y2="59.1" width="0" layer="19" extent="1-16"/>
-<wire x1="18.206" y1="67.882" x2="31.13" y2="29.64" width="0" layer="19" extent="1-1"/>
+<via x="13.5" y="33.9" extent="1-16" drill="0.5"/>
+<wire x1="31.13" y1="29.64" x2="14.26" y2="29.64" width="0.2032" layer="1"/>
+<wire x1="14.26" y1="29.64" x2="13.5" y2="30.4" width="0.2032" layer="1"/>
+<wire x1="13.5" y1="30.4" x2="13.5" y2="33.9" width="0.2032" layer="1"/>
+<wire x1="18.206" y1="67.882" x2="16.082" y2="67.882" width="0.2032" layer="1"/>
+<wire x1="16.082" y1="67.882" x2="15.3" y2="67.1" width="0.2032" layer="1"/>
+<wire x1="15.3" y1="67.1" x2="13.5" y2="67.1" width="0.2032" layer="1"/>
+<wire x1="13.5" y1="67.1" x2="12.2" y2="65.8" width="0.2032" layer="1"/>
+<wire x1="12.2" y1="65.8" x2="12.2" y2="64.3" width="0.2032" layer="1"/>
+<wire x1="12.2" y1="64.3" x2="13.3" y2="63.2" width="0.2032" layer="1"/>
+<via x="13.3" y="63.2" extent="1-16" drill="0.5"/>
+<wire x1="13.3" y1="63.2" x2="13.3" y2="34.1" width="0.2032" layer="16"/>
+<wire x1="13.3" y1="34.1" x2="13.5" y2="33.9" width="0.2032" layer="16"/>
+<wire x1="64.06" y1="59.1" x2="59.81" y2="54.85" width="0.2032" layer="16"/>
+<wire x1="59.81" y1="54.85" x2="48" y2="54.85" width="0.2032" layer="16"/>
+<wire x1="48" y1="54.85" x2="35.15" y2="54.85" width="0.2032" layer="16"/>
+<wire x1="35.15" y1="54.85" x2="26.5" y2="63.5" width="0.2032" layer="16"/>
+<wire x1="26.5" y1="63.5" x2="26.1" y2="63.5" width="0.2032" layer="16"/>
+<wire x1="26.1" y1="63.5" x2="24.5" y2="65.1" width="0.2032" layer="16"/>
+<wire x1="24.5" y1="65.1" x2="24.5" y2="65.9" width="0.2032" layer="16"/>
+<wire x1="24.5" y1="65.9" x2="23.6" y2="66.8" width="0.2032" layer="16"/>
+<wire x1="23.6" y1="66.8" x2="23" y2="66.8" width="0.2032" layer="16"/>
+<wire x1="23" y1="66.8" x2="22" y2="67.8" width="0.2032" layer="16"/>
+<wire x1="22" y1="67.8" x2="22" y2="68.2" width="0.2032" layer="16"/>
+<wire x1="22" y1="68.2" x2="21.1" y2="69.1" width="0.2032" layer="16"/>
+<via x="21.1" y="69.1" extent="1-16" drill="0.5"/>
+<wire x1="21.1" y1="69.1" x2="19.424" y2="69.1" width="0.2032" layer="1"/>
+<wire x1="19.424" y1="69.1" x2="18.206" y2="67.882" width="0.2032" layer="1"/>
 </signal>
-<signal name="PB26" airwireshidden="yes">
+<signal name="PB26">
 <contactref element="IC1" pad="65"/>
 <contactref element="R36" pad="1"/>
 <contactref element="X2" pad="CD"/>
@@ -2471,24 +2869,45 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <via x="74.4" y="63.8" extent="1-16" drill="0.5"/>
 <wire x1="74.4" y1="63.8" x2="74.11" y2="64.09" width="0.381" layer="16"/>
 <wire x1="74.11" y1="64.09" x2="72.89" y2="64.09" width="0.381" layer="16"/>
-<wire x1="31.13" y1="29.14" x2="72.89" y2="64.09" width="0" layer="19" extent="1-16"/>
+<wire x1="72.89" y1="64.09" x2="72.41" y2="64.09" width="0.2032" layer="16"/>
+<wire x1="72.41" y1="64.09" x2="71.6" y2="64.9" width="0.2032" layer="16"/>
+<wire x1="71.6" y1="64.9" x2="67.8" y2="64.9" width="0.2032" layer="16"/>
+<wire x1="67.8" y1="64.9" x2="67.3" y2="65.4" width="0.2032" layer="16"/>
+<wire x1="67.3" y1="65.4" x2="66.4" y2="65.4" width="0.2032" layer="16"/>
+<wire x1="66.4" y1="65.4" x2="66" y2="65.8" width="0.2032" layer="16"/>
+<wire x1="66" y1="65.8" x2="63.4" y2="65.8" width="0.2032" layer="16"/>
+<wire x1="63.4" y1="65.8" x2="62" y2="64.4" width="0.2032" layer="16"/>
+<wire x1="62" y1="64.4" x2="55.4" y2="57.8" width="0.2032" layer="16"/>
+<wire x1="55.4" y1="57.8" x2="39.6" y2="57.8" width="0.2032" layer="16"/>
+<wire x1="39.6" y1="57.8" x2="33" y2="57.8" width="0.2032" layer="16"/>
+<wire x1="33" y1="57.8" x2="27" y2="63.8" width="0.2032" layer="16"/>
+<wire x1="27" y1="63.8" x2="27" y2="64.2" width="0.2032" layer="16"/>
+<via x="27" y="64.2" extent="1-16" drill="0.5"/>
+<wire x1="27" y1="64.2" x2="26.2" y2="63.4" width="0.2032" layer="1"/>
+<wire x1="26.2" y1="63.4" x2="19.7" y2="63.4" width="0.2032" layer="1"/>
+<via x="19.7" y="63.4" extent="1-16" drill="0.5"/>
+<wire x1="19.7" y1="63.4" x2="17.8" y2="61.5" width="0.2032" layer="16"/>
+<wire x1="17.8" y1="61.5" x2="17.8" y2="28.8" width="0.2032" layer="16"/>
+<via x="17.8" y="28.8" extent="1-16" drill="0.5"/>
+<wire x1="17.8" y1="28.8" x2="18.14" y2="29.14" width="0.2032" layer="1"/>
+<wire x1="18.14" y1="29.14" x2="31.13" y2="29.14" width="0.2032" layer="1"/>
 </signal>
-<signal name="PB27" airwireshidden="yes">
+<signal name="PB27">
 <contactref element="IC1" pad="66"/>
 <contactref element="LED4" pad="A"/>
 <wire x1="8.9" y1="15.5" x2="31.13" y2="28.64" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PB28" airwireshidden="yes">
+<signal name="PB28">
 <contactref element="IC1" pad="67"/>
 <contactref element="LED5" pad="A"/>
 <wire x1="6.6" y1="15.5" x2="31.13" y2="28.14" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PB29" airwireshidden="yes">
+<signal name="PB29">
 <contactref element="IC1" pad="68"/>
 <contactref element="LED6" pad="A"/>
 <wire x1="4.3" y1="15.5" x2="31.13" y2="27.64" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PB30" airwireshidden="yes">
+<signal name="PB30">
 <contactref element="IC1" pad="69"/>
 <contactref element="C2" pad="1"/>
 <contactref element="Q6" pad="1"/>
@@ -2501,7 +2920,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="26.9" y1="20" x2="21.97" y2="20" width="0.2032" layer="1"/>
 <wire x1="21.97" y1="20" x2="19.34" y2="17.37" width="0.2032" layer="1"/>
 </signal>
-<signal name="PB31" airwireshidden="yes">
+<signal name="PB31">
 <contactref element="IC1" pad="70"/>
 <contactref element="C1" pad="1"/>
 <contactref element="Q6" pad="2"/>
@@ -2512,37 +2931,37 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="29.92" y1="26.65" x2="31.12" y2="26.65" width="0.2032" layer="1"/>
 <wire x1="31.12" y1="26.65" x2="31.13" y2="26.64" width="0.2032" layer="1"/>
 </signal>
-<signal name="PD30" airwireshidden="yes">
+<signal name="PD30">
 <contactref element="IC1" pad="139"/>
 <contactref element="J9" pad="7"/>
 <wire x1="24.822278125" y1="2.494140625" x2="52.33" y2="40.64" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD29" airwireshidden="yes">
+<signal name="PD29">
 <contactref element="IC1" pad="138"/>
 <contactref element="J9" pad="6"/>
 <wire x1="22.282278125" y1="2.494140625" x2="52.33" y2="40.14" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD28" airwireshidden="yes">
+<signal name="PD28">
 <contactref element="IC1" pad="137"/>
 <contactref element="J9" pad="5"/>
 <wire x1="19.742278125" y1="2.494140625" x2="52.33" y2="39.64" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD27" airwireshidden="yes">
+<signal name="PD27">
 <contactref element="IC1" pad="136"/>
 <contactref element="J9" pad="4"/>
 <wire x1="17.202278125" y1="2.494140625" x2="52.33" y2="39.14" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD26" airwireshidden="yes">
+<signal name="PD26">
 <contactref element="IC1" pad="135"/>
 <contactref element="J9" pad="3"/>
 <wire x1="14.662278125" y1="2.494140625" x2="52.33" y2="38.64" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD25" airwireshidden="yes">
+<signal name="PD25">
 <contactref element="IC1" pad="134"/>
 <contactref element="J9" pad="2"/>
 <wire x1="12.122278125" y1="2.494140625" x2="52.33" y2="38.14" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD24" airwireshidden="yes">
+<signal name="PD24">
 <contactref element="IC1" pad="133"/>
 <contactref element="IC3" pad="39"/>
 <wire x1="60.25930625" y1="31.720121875" x2="61.4" y2="32.860815625" width="0.2032" layer="16"/>
@@ -2553,17 +2972,17 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="56.46" y1="37.65" x2="56.45" y2="37.64" width="0.2032" layer="1"/>
 <wire x1="56.45" y1="37.64" x2="52.33" y2="37.64" width="0.2032" layer="1"/>
 </signal>
-<signal name="PD23" airwireshidden="yes">
+<signal name="PD23">
 <contactref element="IC1" pad="132"/>
 <contactref element="J9" pad="1"/>
 <wire x1="9.582278125" y1="2.494140625" x2="52.33" y2="37.14" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD22" airwireshidden="yes">
+<signal name="PD22">
 <contactref element="IC1" pad="131"/>
 <contactref element="J8" pad="5"/>
 <wire x1="73.8736" y1="2.7" x2="52.33" y2="36.64" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD21" airwireshidden="yes">
+<signal name="PD21">
 <contactref element="IC1" pad="130"/>
 <contactref element="IC3" pad="21"/>
 <wire x1="49.794125" y1="26.911796875" x2="49.92560625" y2="27.043278125" width="0.2032" layer="16"/>
@@ -2577,7 +2996,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="50.26560625" y1="36.06560625" x2="50.445209375" y2="36.14" width="0.2032" layer="1" curve="-44.999295"/>
 <wire x1="50.445209375" y1="36.14" x2="52.33" y2="36.14" width="0.2032" layer="1"/>
 </signal>
-<signal name="PD20" airwireshidden="yes">
+<signal name="PD20">
 <contactref element="IC1" pad="129"/>
 <contactref element="IC3" pad="20"/>
 <wire x1="50.3598125" y1="26.346109375" x2="50.42560625" y2="26.411903125" width="0.2032" layer="16"/>
@@ -2592,17 +3011,17 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="49.9" y1="34.8" x2="49.2" y2="34.1" width="0.2032" layer="16"/>
 <wire x1="49.2" y1="34.1" x2="49.2" y2="30.405209375" width="0.2032" layer="16"/>
 </signal>
-<signal name="PD19" airwireshidden="yes">
+<signal name="PD19">
 <contactref element="IC1" pad="128"/>
 <contactref element="J8" pad="4"/>
 <wire x1="71.3336" y1="5.24" x2="52.33" y2="35.14" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD18" airwireshidden="yes">
+<signal name="PD18">
 <contactref element="IC1" pad="127"/>
 <contactref element="J8" pad="3"/>
 <wire x1="71.3336" y1="2.7" x2="52.33" y2="34.64" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD17" airwireshidden="yes">
+<signal name="PD17">
 <contactref element="IC1" pad="126"/>
 <contactref element="IC3" pad="35"/>
 <wire x1="52.33" y1="34.14" x2="52.42656875" y2="34.1" width="0.2032" layer="1" curve="45"/>
@@ -2615,12 +3034,12 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="57.70846875" y1="33.90846875" x2="57.888071875" y2="33.9828625" width="0.2032" layer="16" curve="-44.999295"/>
 <wire x1="57.888071875" y1="33.9828625" x2="57.996565625" y2="33.9828625" width="0.2032" layer="16"/>
 </signal>
-<signal name="PD16" airwireshidden="yes">
+<signal name="PD16">
 <contactref element="IC1" pad="125"/>
 <contactref element="J8" pad="2"/>
 <wire x1="68.7936" y1="5.24" x2="52.33" y2="33.64" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD15" airwireshidden="yes">
+<signal name="PD15">
 <contactref element="IC1" pad="124"/>
 <contactref element="IC3" pad="34"/>
 <wire x1="56.4" y1="33.4124625" x2="56.4" y2="32.7" width="0.2032" layer="16"/>
@@ -2632,7 +3051,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="54.13439375" y1="33.06560625" x2="53.954790625" y2="33.14" width="0.2032" layer="1" curve="44.999295"/>
 <wire x1="53.954790625" y1="33.14" x2="52.33" y2="33.14" width="0.2032" layer="1"/>
 </signal>
-<signal name="PD14" airwireshidden="yes">
+<signal name="PD14">
 <contactref element="IC1" pad="123"/>
 <contactref element="IC3" pad="33"/>
 <wire x1="56.86519375" y1="35.114234375" x2="55.67439375" y2="33.923434375" width="0.2032" layer="16"/>
@@ -2643,7 +3062,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="53.96" y1="32.64" x2="54.5" y2="32.1" width="0.2032" layer="1"/>
 <wire x1="54.5" y1="32.1" x2="55.6" y2="32.1" width="0.2032" layer="1"/>
 </signal>
-<signal name="PD13" airwireshidden="yes">
+<signal name="PD13">
 <contactref element="IC1" pad="122"/>
 <contactref element="R33" pad="1"/>
 <wire x1="52.33" y1="32.14" x2="53.86" y2="32.14" width="0.2032" layer="1"/>
@@ -2655,7 +3074,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="59.3" y1="34.5" x2="61.04" y2="34.5" width="0.2032" layer="1"/>
 <wire x1="61.04" y1="34.5" x2="61.69" y2="35.15" width="0.2032" layer="1"/>
 </signal>
-<signal name="PD12" airwireshidden="yes">
+<signal name="PD12">
 <contactref element="IC1" pad="121"/>
 <contactref element="IC3" pad="32"/>
 <via x="53.66" y="31.29" extent="1-16" drill="0.5"/>
@@ -2664,7 +3083,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="53.66" y1="31.29" x2="53.66" y2="33.040409375" width="0.2032" layer="16"/>
 <wire x1="53.66" y1="33.040409375" x2="56.299509375" y2="35.67991875" width="0.2032" layer="16"/>
 </signal>
-<signal name="PD11" airwireshidden="yes">
+<signal name="PD11">
 <contactref element="IC1" pad="120"/>
 <contactref element="IC3" pad="31"/>
 <wire x1="55.733821875" y1="36.24560625" x2="51.488215625" y2="32" width="0.2032" layer="16"/>
@@ -2674,7 +3093,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="51" y1="31.34" x2="51.2" y2="31.14" width="0.2032" layer="1"/>
 <wire x1="51.2" y1="31.14" x2="52.33" y2="31.14" width="0.2032" layer="1"/>
 </signal>
-<signal name="PD10" airwireshidden="yes">
+<signal name="PD10">
 <contactref element="IC1" pad="117"/>
 <contactref element="IC3" pad="30"/>
 <wire x1="55.1681375" y1="36.811290625" x2="55.111290625" y2="36.811290625" width="0.2032" layer="16"/>
@@ -2688,7 +3107,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="50.4" y1="32.2" x2="55.011290625" y2="36.811290625" width="0.2032" layer="16"/>
 <wire x1="55.011290625" y1="36.811290625" x2="55.1681375" y2="36.811290625" width="0.2032" layer="16"/>
 </signal>
-<signal name="PD9" airwireshidden="yes">
+<signal name="PD9">
 <contactref element="IC1" pad="116"/>
 <contactref element="IC3" pad="29"/>
 <wire x1="54.602453125" y1="37.376975" x2="54.576975" y2="37.376975" width="0.2032" layer="16"/>
@@ -2702,7 +3121,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="51.2" y1="34.7" x2="50" y2="33.5" width="0.2032" layer="16"/>
 <wire x1="50" y1="33.5" x2="50" y2="30.6" width="0.2032" layer="16"/>
 </signal>
-<signal name="PD8" airwireshidden="yes">
+<signal name="PD8">
 <contactref element="IC1" pad="115"/>
 <contactref element="IC3" pad="26"/>
 <wire x1="46.9657" y1="29.740221875" x2="46.941290625" y2="29.681290625" width="0.2032" layer="16" curve="-44.998481"/>
@@ -2711,7 +3130,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="45.91" y1="28.65" x2="52.305859375" y2="28.65" width="0.2032" layer="1"/>
 <wire x1="52.305859375" y1="28.65" x2="52.33" y2="28.64" width="0.2032" layer="1" curve="-45"/>
 </signal>
-<signal name="PD7" airwireshidden="yes">
+<signal name="PD7">
 <contactref element="IC1" pad="114"/>
 <contactref element="IC3" pad="25"/>
 <wire x1="47.531384375" y1="29.1745375" x2="47.45844375" y2="28.99844375" width="0.2032" layer="16" curve="-45"/>
@@ -2722,7 +3141,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="52.305859375" y1="28.13" x2="46.630709375" y2="28.13" width="0.2032" layer="1"/>
 <wire x1="46.630709375" y1="28.13" x2="46.51" y2="28.08" width="0.2032" layer="1" curve="45"/>
 </signal>
-<signal name="PD6" airwireshidden="yes">
+<signal name="PD6">
 <contactref element="IC1" pad="113"/>
 <contactref element="IC3" pad="24"/>
 <via x="47.1" y="27.5" extent="1-16" drill="0.5"/>
@@ -2733,7 +3152,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="47.345209375" y1="27.64" x2="47.16560625" y2="27.56560625" width="0.2032" layer="1" curve="44.999502"/>
 <wire x1="47.16560625" y1="27.56560625" x2="47.1" y2="27.5" width="0.2032" layer="1"/>
 </signal>
-<signal name="PD5" airwireshidden="yes">
+<signal name="PD5">
 <contactref element="IC1" pad="112"/>
 <contactref element="IC3" pad="23"/>
 <via x="47.7" y="26.9" extent="1-16" drill="0.5"/>
@@ -2744,12 +3163,12 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="48.045209375" y1="27.14" x2="47.86560625" y2="27.06560625" width="0.2032" layer="1" curve="44.999502"/>
 <wire x1="47.86560625" y1="27.06560625" x2="47.7" y2="26.9" width="0.2032" layer="1"/>
 </signal>
-<signal name="PD4" airwireshidden="yes">
+<signal name="PD4">
 <contactref element="IC1" pad="111"/>
 <contactref element="J8" pad="1"/>
 <wire x1="68.7936" y1="2.7" x2="52.33" y2="26.64" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PD3" airwireshidden="yes">
+<signal name="PD3">
 <contactref element="IC1" pad="110"/>
 <contactref element="IC3" pad="15"/>
 <wire x1="52.33" y1="26.14" x2="52.474853125" y2="26.2" width="0.2032" layer="1" curve="-45"/>
@@ -2759,7 +3178,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="54.2" y1="24.63465625" x2="54.12560625" y2="24.455053125" width="0.2032" layer="16" curve="-44.999502"/>
 <wire x1="54.12560625" y1="24.455053125" x2="53.1882375" y2="23.517684375" width="0.2032" layer="16"/>
 </signal>
-<signal name="PD2" airwireshidden="yes">
+<signal name="PD2">
 <contactref element="IC1" pad="109"/>
 <contactref element="R32" pad="2"/>
 <wire x1="52.35" y1="25.66" x2="52.33" y2="25.64" width="0.2032" layer="1"/>
@@ -2774,7 +3193,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="56.63439375" y1="25.56560625" x2="56.454790625" y2="25.64" width="0.2032" layer="1" curve="44.999295"/>
 <wire x1="56.454790625" y1="25.64" x2="52.33" y2="25.64" width="0.2032" layer="1"/>
 </signal>
-<signal name="PD1" airwireshidden="yes">
+<signal name="PD1">
 <contactref element="IC1" pad="108"/>
 <contactref element="R31" pad="2"/>
 <wire x1="69.602921875" y1="27.02560625" x2="69.782525" y2="27.1" width="0.2032" layer="16" curve="-44.999295"/>
@@ -2805,7 +3224,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="50.5" y1="23.1" x2="50.48" y2="23.148284375" width="0.2032" layer="1" curve="-45"/>
 <wire x1="50.48" y1="23.148284375" x2="50.48" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PD0" airwireshidden="yes">
+<signal name="PD0">
 <contactref element="IC1" pad="107"/>
 <contactref element="R30" pad="2"/>
 <wire x1="49.9" y1="23.87" x2="49.98" y2="23.79" width="0.2032" layer="1"/>
@@ -2840,7 +3259,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="50.05439375" y1="22.94560625" x2="49.98" y2="23.125209375" width="0.2032" layer="1" curve="-44.999295"/>
 <wire x1="49.98" y1="23.125209375" x2="49.98" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC31" airwireshidden="yes">
+<signal name="PC31">
 <contactref element="IC1" pad="106"/>
 <contactref element="R29" pad="2"/>
 <wire x1="67.89343125" y1="28.710228125" x2="67.908809375" y2="28.72560625" width="0.2032" layer="16"/>
@@ -2871,7 +3290,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="49.55439375" y1="22.94560625" x2="49.48" y2="23.125209375" width="0.2032" layer="1" curve="-44.999295"/>
 <wire x1="49.48" y1="23.125209375" x2="49.48" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC30" airwireshidden="yes">
+<signal name="PC30">
 <contactref element="IC1" pad="105"/>
 <contactref element="R28" pad="2"/>
 <wire x1="67.044903125" y1="29.55875625" x2="67.853421875" y2="30.367275" width="0.2032" layer="16"/>
@@ -2893,7 +3312,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="48.9" y1="23.604790625" x2="48.97439375" y2="23.78439375" width="0.2032" layer="1" curve="-44.999502"/>
 <wire x1="48.97439375" y1="23.78439375" x2="48.98" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC29" airwireshidden="yes">
+<signal name="PC29">
 <contactref element="IC1" pad="102"/>
 <contactref element="R27" pad="2"/>
 <wire x1="68.3" y1="31" x2="68.729290625" y2="30.570709375" width="0.2032" layer="16"/>
@@ -2916,7 +3335,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="60.894790625" y1="22.3" x2="61.07439375" y2="22.37439375" width="0.2032" layer="1" curve="44.999502"/>
 <wire x1="61.07439375" y1="22.37439375" x2="68.5" y2="29.8" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC28" airwireshidden="yes">
+<signal name="PC28">
 <contactref element="IC1" pad="101"/>
 <contactref element="R26" pad="2"/>
 <wire x1="65.347846875" y1="31.2558125" x2="65.650603125" y2="31.2558125" width="0.2032" layer="16"/>
@@ -2939,7 +3358,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="61.294790625" y1="21.9" x2="61.47439375" y2="21.97439375" width="0.2032" layer="1" curve="44.999502"/>
 <wire x1="61.47439375" y1="21.97439375" x2="69.42560625" y2="29.92560625" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC27" airwireshidden="yes">
+<signal name="PC27">
 <contactref element="IC1" pad="100"/>
 <contactref element="R25" pad="2"/>
 <wire x1="64.49931875" y1="32.104340625" x2="64.69913125" y2="32.104340625" width="0.2032" layer="16"/>
@@ -2964,7 +3383,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="61.394790625" y1="21.5" x2="61.57439375" y2="21.57439375" width="0.2032" layer="1" curve="44.999502"/>
 <wire x1="61.57439375" y1="21.57439375" x2="70.02560625" y2="30.02560625" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC26" airwireshidden="yes">
+<signal name="PC26">
 <contactref element="IC1" pad="99"/>
 <contactref element="R24" pad="2"/>
 <wire x1="51.70068125" y1="19.72996875" x2="50.27003125" y2="19.72996875" width="0.2032" layer="16"/>
@@ -2975,7 +3394,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="45.97" y1="22.46" x2="45.97" y2="23.78" width="0.2032" layer="1"/>
 <wire x1="45.97" y1="23.78" x2="45.98" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC25" airwireshidden="yes">
+<signal name="PC25">
 <contactref element="IC1" pad="98"/>
 <contactref element="R23" pad="2"/>
 <wire x1="52.549209375" y1="18.881440625" x2="52.181440625" y2="18.881440625" width="0.2032" layer="16"/>
@@ -2987,7 +3406,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="45.5" y1="22.4" x2="45.5" y2="23.77" width="0.2032" layer="1"/>
 <wire x1="45.5" y1="23.77" x2="45.48" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC24" airwireshidden="yes">
+<signal name="PC24">
 <contactref element="IC1" pad="97"/>
 <contactref element="R22" pad="2"/>
 <wire x1="53.3977375" y1="18.0329125" x2="52.9329125" y2="18.0329125" width="0.2032" layer="16"/>
@@ -2999,7 +3418,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="44.96" y1="22.45" x2="44.96" y2="23.77" width="0.2032" layer="1"/>
 <wire x1="44.96" y1="23.77" x2="44.98" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC23" airwireshidden="yes">
+<signal name="PC23">
 <contactref element="IC1" pad="96"/>
 <contactref element="R21" pad="2"/>
 <wire x1="54.246265625" y1="17.184384375" x2="53.884384375" y2="17.184384375" width="0.2032" layer="16"/>
@@ -3010,7 +3429,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="50.31" y1="16.6" x2="44.48" y2="22.43" width="0.2032" layer="1"/>
 <wire x1="44.48" y1="22.43" x2="44.48" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC22" airwireshidden="yes">
+<signal name="PC22">
 <contactref element="IC1" pad="95"/>
 <contactref element="R20" pad="2"/>
 <wire x1="55.09479375" y1="16.33585625" x2="54.63585625" y2="16.33585625" width="0.2032" layer="16"/>
@@ -3020,7 +3439,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="50.3" y1="15.7" x2="43.98" y2="22.02" width="0.2032" layer="1"/>
 <wire x1="43.98" y1="22.02" x2="43.98" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC21" airwireshidden="yes">
+<signal name="PC21">
 <contactref element="IC1" pad="94"/>
 <contactref element="R19" pad="2"/>
 <wire x1="56.014034375" y1="15.416615625" x2="55.59741875" y2="15" width="0.2032" layer="16"/>
@@ -3030,7 +3449,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="50" y1="15" x2="43.48" y2="21.52" width="0.2032" layer="1"/>
 <wire x1="43.48" y1="21.52" x2="43.48" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC20" airwireshidden="yes">
+<signal name="PC20">
 <contactref element="IC1" pad="93"/>
 <contactref element="R18" pad="2"/>
 <wire x1="56.8625625" y1="14.5680875" x2="56.494475" y2="14.2" width="0.2032" layer="16"/>
@@ -3040,7 +3459,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="50.3" y1="14.2" x2="42.98" y2="21.52" width="0.2032" layer="1"/>
 <wire x1="42.98" y1="21.52" x2="42.98" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC19" airwireshidden="yes">
+<signal name="PC19">
 <contactref element="IC1" pad="92"/>
 <contactref element="R17" pad="2"/>
 <wire x1="57.716828125" y1="13.718353125" x2="57.7" y2="13.701525" width="0.2032" layer="16"/>
@@ -3052,7 +3471,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="50.2" y1="13.5" x2="42.48" y2="21.22" width="0.2032" layer="1"/>
 <wire x1="42.48" y1="21.22" x2="42.48" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC18" airwireshidden="yes">
+<signal name="PC18">
 <contactref element="IC1" pad="91"/>
 <contactref element="IC3" pad="22"/>
 <wire x1="49.228440625" y1="27.47748125" x2="47.950959375" y2="26.2" width="0.2032" layer="16"/>
@@ -3061,7 +3480,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="43" y1="26.2" x2="41.98" y2="25.18" width="0.2032" layer="1"/>
 <wire x1="41.98" y1="25.18" x2="41.98" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC17" airwireshidden="yes">
+<signal name="PC17">
 <contactref element="IC1" pad="90"/>
 <contactref element="IC3" pad="18"/>
 <wire x1="51.49118125" y1="25.214740625" x2="51.376440625" y2="25.1" width="0.2032" layer="16"/>
@@ -3070,7 +3489,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="41.4" y1="25.1" x2="41.48" y2="25.02" width="0.2032" layer="1"/>
 <wire x1="41.48" y1="25.02" x2="41.48" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC16" airwireshidden="yes">
+<signal name="PC16">
 <contactref element="IC1" pad="89"/>
 <contactref element="IC3" pad="17"/>
 <wire x1="52.05686875" y1="24.649053125" x2="49.107815625" y2="21.7" width="0.2032" layer="16"/>
@@ -3079,7 +3498,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="41.9" y1="21.7" x2="40.98" y2="22.62" width="0.2032" layer="1"/>
 <wire x1="40.98" y1="22.62" x2="40.98" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC15" airwireshidden="yes">
+<signal name="PC15">
 <contactref element="IC1" pad="88"/>
 <contactref element="IC3" pad="16"/>
 <wire x1="52.622553125" y1="24.08336875" x2="48.939184375" y2="20.4" width="0.2032" layer="16"/>
@@ -3088,7 +3507,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="42.3" y1="20.4" x2="40.48" y2="22.22" width="0.2032" layer="1"/>
 <wire x1="40.48" y1="22.22" x2="40.48" y2="23.79" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC14" airwireshidden="yes">
+<signal name="PC14">
 <contactref element="IC1" pad="87"/>
 <contactref element="R35" pad="2"/>
 <contactref element="IC3" pad="37"/>
@@ -3111,63 +3530,102 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="59.4" y1="35.2" x2="60" y2="35.8" width="0.2032" layer="1"/>
 <wire x1="60" y1="35.8" x2="60" y2="37.05" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC13" airwireshidden="yes">
+<signal name="PC13">
 <contactref element="IC1" pad="86"/>
 <contactref element="J9" pad="8"/>
 <wire x1="27.362278125" y1="2.494140625" x2="39.48" y2="23.79" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PC12" airwireshidden="yes">
+<signal name="PC12">
 <contactref element="IC1" pad="85"/>
 <contactref element="J9" pad="9"/>
 <wire x1="27.362278125" y1="5.034140625" x2="38.98" y2="23.79" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PC11" airwireshidden="yes">
+<signal name="PC11">
 <contactref element="IC1" pad="84"/>
 <contactref element="J9" pad="10"/>
 <wire x1="24.822278125" y1="5.034140625" x2="38.48" y2="23.79" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PC10" airwireshidden="yes">
+<signal name="PC10">
 <contactref element="IC1" pad="83"/>
 <contactref element="J9" pad="11"/>
 <wire x1="22.282278125" y1="5.034140625" x2="37.98" y2="23.79" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PC9" airwireshidden="yes">
+<signal name="PC9">
 <contactref element="IC1" pad="82"/>
 <contactref element="J9" pad="12"/>
 <wire x1="19.742278125" y1="5.034140625" x2="37.48" y2="23.79" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PC8" airwireshidden="yes">
+<signal name="PC8">
 <contactref element="IC1" pad="81"/>
 <contactref element="IC3" pad="19"/>
 <wire x1="50.925496875" y1="25.780425" x2="50.745071875" y2="25.6" width="0.2032" layer="16"/>
 <wire x1="50.745071875" y1="25.6" x2="42.1" y2="25.6" width="0.2032" layer="16"/>
 <wire x1="42.1" y1="25.6" x2="41.8" y2="25.9" width="0.2032" layer="16"/>
 <wire x1="41.8" y1="25.9" x2="40.6" y2="25.9" width="0.2032" layer="16"/>
-<wire x1="40.6" y1="25.9" x2="40.2" y2="25.5" width="0.2032" layer="16"/>
-<wire x1="40.2" y1="25.5" x2="37.8" y2="25.5" width="0.2032" layer="16"/>
-<via x="37.8" y="25.5" extent="1-16" drill="0.5"/>
-<wire x1="37.8" y1="25.5" x2="36.98" y2="24.68" width="0.2032" layer="1"/>
+<via x="40.2" y="25.9" extent="1-16" drill="0.5"/>
 <wire x1="36.98" y1="24.68" x2="36.98" y2="23.79" width="0.2032" layer="1"/>
+<wire x1="40.6" y1="25.9" x2="40.2" y2="25.9" width="0.2032" layer="16"/>
+<wire x1="40.2" y1="25.9" x2="38.2" y2="25.9" width="0.2032" layer="1"/>
+<wire x1="38.2" y1="25.9" x2="36.98" y2="24.68" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC7" airwireshidden="yes">
+<signal name="PC7">
 <contactref element="IC1" pad="80"/>
 <contactref element="J9" pad="13"/>
 <wire x1="17.202278125" y1="5.034140625" x2="36.48" y2="23.79" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PC6" airwireshidden="yes">
+<signal name="PC6">
 <contactref element="IC1" pad="79"/>
 <contactref element="J9" pad="14"/>
 <wire x1="14.662278125" y1="5.034140625" x2="35.98" y2="23.79" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PC5" airwireshidden="yes">
+<signal name="PC5">
 <contactref element="IC1" pad="78"/>
 <contactref element="J7" pad="2"/>
-<wire x1="35.48" y1="23.79" x2="61.1686" y2="5.2446" width="0" layer="19" extent="1-1"/>
+<wire x1="35.48" y1="23.79" x2="35.48" y2="22.92" width="0.2032" layer="1"/>
+<wire x1="35.48" y1="22.92" x2="36" y2="22.4" width="0.2032" layer="1"/>
+<wire x1="36" y1="22.4" x2="36" y2="15.9" width="0.2032" layer="1"/>
+<wire x1="36" y1="15.9" x2="37.3" y2="14.6" width="0.2032" layer="1"/>
+<wire x1="37.3" y1="14.6" x2="41.2" y2="14.6" width="0.2032" layer="1"/>
+<wire x1="41.2" y1="14.6" x2="45.5" y2="10.3" width="0.2032" layer="1"/>
+<wire x1="45.5" y1="10.3" x2="54.3" y2="10.3" width="0.2032" layer="1"/>
+<wire x1="54.3" y1="10.3" x2="54.7" y2="10.7" width="0.2032" layer="1"/>
+<wire x1="54.7" y1="10.7" x2="54.74" y2="10.74" width="0.2032" layer="1"/>
+<wire x1="62.55" y1="10.74" x2="63.39" y2="9.9" width="0.2032" layer="1"/>
+<wire x1="63.39" y1="9.9" x2="63.39" y2="9.79" width="0.2032" layer="1"/>
+<via x="63.39" y="9.79" extent="1-16" drill="0.5"/>
+<wire x1="63.39" y1="9.79" x2="63.39" y2="9.49" width="0.2032" layer="16"/>
+<wire x1="63.39" y1="9.49" x2="62.6" y2="8.7" width="0.2032" layer="16"/>
+<wire x1="62.6" y1="8.7" x2="61.1686" y2="7.2686" width="0.2032" layer="16"/>
+<wire x1="61.1686" y1="7.2686" x2="61.1686" y2="5.2446" width="0.2032" layer="16"/>
+<wire x1="54.74" y1="10.74" x2="54.82" y2="10.82" width="0.2032" layer="1"/>
+<wire x1="54.82" y1="10.82" x2="60.81" y2="10.82" width="0.2032" layer="1"/>
+<wire x1="60.81" y1="10.82" x2="62.47" y2="10.82" width="0.2032" layer="1"/>
+<wire x1="62.47" y1="10.82" x2="62.55" y2="10.74" width="0.2032" layer="1"/>
 </signal>
-<signal name="PC4" airwireshidden="yes">
+<signal name="PC4">
 <contactref element="IC1" pad="77"/>
 <contactref element="J7" pad="1"/>
-<wire x1="34.98" y1="23.79" x2="61.1686" y2="2.7046" width="0" layer="19" extent="1-1"/>
+<wire x1="34.98" y1="23.79" x2="34.98" y2="22.82" width="0.2032" layer="1"/>
+<wire x1="34.98" y1="22.82" x2="35.6" y2="22.2" width="0.2032" layer="1"/>
+<wire x1="35.6" y1="22.2" x2="35.6" y2="15.7" width="0.2032" layer="1"/>
+<wire x1="35.6" y1="15.7" x2="37.1" y2="14.2" width="0.2032" layer="1"/>
+<wire x1="37.1" y1="14.2" x2="41" y2="14.2" width="0.2032" layer="1"/>
+<wire x1="41" y1="14.2" x2="41.4" y2="13.8" width="0.2032" layer="1"/>
+<wire x1="41.4" y1="13.8" x2="45.3" y2="9.9" width="0.2032" layer="1"/>
+<wire x1="45.3" y1="9.9" x2="47.1" y2="9.9" width="0.2032" layer="1"/>
+<wire x1="47.1" y1="9.9" x2="54.5" y2="9.9" width="0.2032" layer="1"/>
+<wire x1="54.5" y1="9.9" x2="54.84" y2="10.24" width="0.2032" layer="1"/>
+<wire x1="54.84" y1="10.24" x2="57.98" y2="10.24" width="0.2032" layer="1"/>
+<wire x1="57.98" y1="10.24" x2="58.22" y2="10.48" width="0.2032" layer="1"/>
+<wire x1="58.22" y1="10.48" x2="62.08" y2="10.48" width="0.2032" layer="1"/>
+<wire x1="62.08" y1="10.48" x2="62.5" y2="10.06" width="0.2032" layer="1"/>
+<wire x1="62.5" y1="10.06" x2="62.5" y2="9.7" width="0.2032" layer="1"/>
+<via x="62.5" y="9.7" extent="1-16" drill="0.5"/>
+<wire x1="62.5" y1="9.7" x2="59.9" y2="7.1" width="0.2032" layer="16"/>
+<wire x1="59.9" y1="7.1" x2="59.9" y2="5.2" width="0.2032" layer="16"/>
+<wire x1="59.9" y1="5.2" x2="59.9" y2="3.4" width="0.2032" layer="16"/>
+<wire x1="59.9" y1="3.4" x2="60.5954" y2="2.7046" width="0.2032" layer="16"/>
+<wire x1="60.5954" y1="2.7046" x2="61.1686" y2="2.7046" width="0.2032" layer="16"/>
 </signal>
 <signal name="PC3">
 <contactref element="IC1" pad="74"/>
@@ -3176,35 +3634,67 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <contactref element="J4" pad="2"/>
 <wire x1="75.795" y1="13.2706" x2="75.795" y2="12.395" width="0.2032" layer="16"/>
 <wire x1="75.795" y1="12.395" x2="74.8" y2="11.4" width="0.2032" layer="16"/>
-<wire x1="74.8" y1="11.4" x2="63" y2="11.4" width="0.2032" layer="16"/>
-<wire x1="58.5794" y1="8.5502" x2="63" y2="11.4" width="0" layer="19" extent="16-16"/>
-<wire x1="58.6378" y1="5.2446" x2="58.5794" y2="8.5502" width="0" layer="19" extent="16-16"/>
-<wire x1="33.48" y1="23.79" x2="58.5794" y2="8.5502" width="0" layer="19" extent="1-16"/>
+<wire x1="74.8" y1="11.4" x2="68.4" y2="11.4" width="0.2032" layer="16"/>
+<wire x1="68.4" y1="11.4" x2="63" y2="11.4" width="0.2032" layer="16"/>
+<wire x1="68.3502" y1="10.3206" x2="68.4" y2="10.3206" width="0.2032" layer="16"/>
+<wire x1="68.4" y1="10.3206" x2="68.4" y2="11.4" width="0.2032" layer="16"/>
+<wire x1="63" y1="11.4" x2="58.6378" y2="7.0378" width="0.2032" layer="16"/>
+<wire x1="58.6378" y1="7.0378" x2="58.6378" y2="5.2446" width="0.2032" layer="16"/>
+<wire x1="33.48" y1="23.79" x2="33.48" y2="16.96" width="0.2032" layer="1"/>
+<wire x1="33.48" y1="16.96" x2="36.58" y2="13.86" width="0.2032" layer="1"/>
+<wire x1="36.58" y1="13.86" x2="40.83" y2="13.86" width="0.2032" layer="1"/>
+<wire x1="40.83" y1="13.86" x2="41.74" y2="12.95" width="0.2032" layer="1"/>
+<wire x1="41.74" y1="12.95" x2="45.17" y2="9.52" width="0.2032" layer="1"/>
+<wire x1="45.17" y1="9.52" x2="47.96" y2="9.52" width="0.2032" layer="1"/>
+<wire x1="47.96" y1="9.52" x2="56.92" y2="9.52" width="0.2032" layer="1"/>
+<wire x1="56.92" y1="9.52" x2="57.3" y2="9.9" width="0.2032" layer="1"/>
+<wire x1="57.3" y1="9.9" x2="60.5" y2="9.9" width="0.2032" layer="1"/>
+<via x="61.49" y="9.9" extent="1-16" drill="0.5"/>
+<wire x1="60.5" y1="9.9" x2="61.49" y2="9.9" width="0.2032" layer="1"/>
+<wire x1="63" y1="11.4" x2="62.99" y2="11.4" width="0.2032" layer="16"/>
+<wire x1="62.99" y1="11.4" x2="61.49" y2="9.9" width="0.2032" layer="16"/>
 </signal>
 <signal name="PC2">
 <contactref element="IC1" pad="73"/>
 <contactref element="R3" pad="2"/>
 <contactref element="IC2" pad="13"/>
 <contactref element="J4" pad="1"/>
-<wire x1="62.7" y1="12" x2="74.7" y2="12" width="0.2032" layer="16"/>
-<wire x1="74.7" y1="12" x2="75.2" y2="12.5" width="0.2032" layer="16"/>
-<wire x1="75.2" y1="12.5" x2="75.2" y2="13.2156" width="0.2032" layer="16"/>
-<wire x1="75.2" y1="13.2156" x2="75.145" y2="13.2706" width="0.2032" layer="16"/>
-<wire x1="62.7" y1="12" x2="68.339" y2="13.3732" width="0" layer="19" extent="16-16"/>
-<wire x1="58.6378" y1="2.7046" x2="62.7" y2="12" width="0" layer="19" extent="16-16"/>
-<wire x1="32.98" y1="23.79" x2="62.7" y2="12" width="0" layer="19" extent="1-16"/>
+<wire x1="32.98" y1="23.79" x2="32.98" y2="16.92" width="0.2032" layer="1"/>
+<wire x1="32.98" y1="16.92" x2="36.4" y2="13.5" width="0.2032" layer="1"/>
+<wire x1="36.4" y1="13.5" x2="40.7" y2="13.5" width="0.2032" layer="1"/>
+<wire x1="40.7" y1="13.5" x2="42.6" y2="11.6" width="0.2032" layer="1"/>
+<wire x1="42.6" y1="11.6" x2="45" y2="9.2" width="0.2032" layer="1"/>
+<wire x1="45" y1="9.2" x2="47.7" y2="9.2" width="0.2032" layer="1"/>
+<via x="57.66" y="9.29" extent="1-16" drill="0.5"/>
+<wire x1="57.64" y1="9.04" x2="57.64" y2="4.11" width="0.2032" layer="16"/>
+<wire x1="57.64" y1="4.11" x2="58.6378" y2="3.1122" width="0.2032" layer="16"/>
+<wire x1="58.6378" y1="3.1122" x2="58.6378" y2="2.7046" width="0.2032" layer="16"/>
+<wire x1="47.7" y1="9.2" x2="57.57" y2="9.2" width="0.2032" layer="1"/>
+<wire x1="57.57" y1="9.2" x2="57.66" y2="9.29" width="0.2032" layer="1"/>
+<wire x1="57.64" y1="9.04" x2="57.64" y2="9.27" width="0.2032" layer="16"/>
+<wire x1="57.64" y1="9.27" x2="57.66" y2="9.29" width="0.2032" layer="16"/>
+<wire x1="68.339" y1="13.3732" x2="68.339" y2="12.239" width="0.2032" layer="16"/>
+<wire x1="68.339" y1="12.239" x2="67.9" y2="11.8" width="0.2032" layer="16"/>
+<wire x1="67.9" y1="11.8" x2="62.5" y2="11.8" width="0.2032" layer="16"/>
+<wire x1="62.5" y1="11.8" x2="60" y2="9.3" width="0.2032" layer="16"/>
+<wire x1="60" y1="9.3" x2="57.67" y2="9.3" width="0.2032" layer="16"/>
+<wire x1="57.67" y1="9.3" x2="57.66" y2="9.29" width="0.2032" layer="16"/>
+<wire x1="75.145" y1="13.2706" x2="75.145" y2="12.645" width="0.2032" layer="16"/>
+<wire x1="75.145" y1="12.645" x2="74.4" y2="11.9" width="0.2032" layer="16"/>
+<wire x1="74.4" y1="11.9" x2="68.678" y2="11.9" width="0.2032" layer="16"/>
+<wire x1="68.678" y1="11.9" x2="68.339" y2="12.239" width="0.2032" layer="16"/>
 </signal>
-<signal name="PC1" airwireshidden="yes">
+<signal name="PC1">
 <contactref element="IC1" pad="72"/>
 <contactref element="J9" pad="15"/>
 <wire x1="12.122278125" y1="5.034140625" x2="31.13" y2="25.64" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PC0" airwireshidden="yes">
+<signal name="PC0">
 <contactref element="IC1" pad="71"/>
 <contactref element="J9" pad="16"/>
 <wire x1="9.582278125" y1="5.034140625" x2="31.13" y2="26.14" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="USB_P" airwireshidden="yes">
+<signal name="USB_P">
 <contactref element="U$1" pad="D+"/>
 <contactref element="R43" pad="1"/>
 <wire x1="7.78" y1="36" x2="8.08" y2="36.3" width="0.1" layer="1"/>
@@ -3212,7 +3702,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="18.7" y1="36.3" x2="19.3" y2="35.7" width="0.1" layer="1"/>
 <wire x1="19.3" y1="35.7" x2="19.35" y2="35.7" width="0.1" layer="1"/>
 </signal>
-<signal name="USB_N" airwireshidden="yes">
+<signal name="USB_N">
 <contactref element="U$1" pad="D-"/>
 <contactref element="R42" pad="1"/>
 <wire x1="7.78" y1="36.8" x2="8.08" y2="36.5" width="0.1" layer="1"/>
@@ -3220,7 +3710,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="18.7" y1="36.5" x2="19.3" y2="37.1" width="0.1" layer="1"/>
 <wire x1="19.3" y1="37.1" x2="19.35" y2="37.1" width="0.1" layer="1"/>
 </signal>
-<signal name="RESET_N" airwireshidden="yes">
+<signal name="RESET_N">
 <contactref element="IC1" pad="142"/>
 <contactref element="R1" pad="1"/>
 <contactref element="S1" pad="4"/>
@@ -3256,15 +3746,22 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <contactref element="Q2" pad="SCL"/>
 <wire x1="77.095" y1="13.2706" x2="77.095" y2="10.8416" width="0.2032" layer="16"/>
 <wire x1="77.095" y1="10.8416" x2="77.7518" y2="10.1848" width="0.2032" layer="16"/>
-<wire x1="77.7518" y1="10.1848" x2="77.4848" y2="10.1848" width="0.2032" layer="16"/>
-<wire x1="77.4848" y1="10.1848" x2="76.7" y2="9.4" width="0.2032" layer="16"/>
-<wire x1="76.7" y1="9.4" x2="76.7" y2="7.9" width="0.2032" layer="16"/>
-<wire x1="76.7" y1="7.9" x2="77.2" y2="7.4" width="0.2032" layer="16"/>
-<wire x1="77.2" y1="7.4" x2="89.7" y2="7.4" width="0.2032" layer="16"/>
-<wire x1="89.7" y1="7.4" x2="92.1" y2="5" width="0.2032" layer="16"/>
-<wire x1="92.1" y1="5" x2="92.6" y2="4.5" width="0.2032" layer="16"/>
-<wire x1="92.6" y1="4.5" x2="95.92" y2="4.5" width="0.2032" layer="16"/>
-<wire x1="95.92" y1="4.5" x2="97.02" y2="5.6" width="0.2032" layer="16"/>
+<via x="81.46" y="7.97" extent="1-16" drill="0.5"/>
+<wire x1="81.46" y1="7.97" x2="81.43" y2="7.97" width="0.2032" layer="16"/>
+<wire x1="81.43" y1="7.97" x2="80.1" y2="9.3" width="0.2032" layer="16"/>
+<wire x1="80.1" y1="9.3" x2="77.9" y2="9.3" width="0.2032" layer="16"/>
+<wire x1="77.9" y1="9.3" x2="77.7" y2="9.5" width="0.2032" layer="16"/>
+<wire x1="77.7" y1="9.5" x2="77.7" y2="10.133" width="0.2032" layer="16"/>
+<wire x1="77.7" y1="10.133" x2="77.7518" y2="10.1848" width="0.2032" layer="16"/>
+<via x="93" y="8" extent="1-16" drill="0.5"/>
+<wire x1="97.02" y1="5.6" x2="95.8" y2="5.6" width="0.2032" layer="16"/>
+<wire x1="95.8" y1="5.6" x2="94.3" y2="7.1" width="0.2032" layer="16"/>
+<wire x1="94.3" y1="7.1" x2="93.9" y2="7.1" width="0.2032" layer="16"/>
+<wire x1="93.9" y1="7.1" x2="93" y2="8" width="0.2032" layer="16"/>
+<wire x1="93" y1="8" x2="92.8" y2="7.8" width="0.2032" layer="1"/>
+<wire x1="92.8" y1="7.8" x2="91.3" y2="7.8" width="0.2032" layer="1"/>
+<wire x1="91.3" y1="7.8" x2="81.63" y2="7.8" width="0.2032" layer="1"/>
+<wire x1="81.63" y1="7.8" x2="81.46" y2="7.97" width="0.2032" layer="1"/>
 </signal>
 <signal name="SDA1">
 <contactref element="R6" pad="2"/>
@@ -3272,11 +3769,14 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <contactref element="Q2" pad="SDA"/>
 <wire x1="79.1158" y1="10.1662" x2="77.745" y2="11.537" width="0.2032" layer="16"/>
 <wire x1="77.745" y1="11.537" x2="77.745" y2="13.2706" width="0.2032" layer="16"/>
-<wire x1="94.48" y1="5.6" x2="92" y2="5.6" width="0.2032" layer="16"/>
-<wire x1="79.1158" y1="10.1662" x2="81.442" y2="7.84" width="0.2032" layer="16"/>
-<wire x1="81.442" y1="7.84" x2="89.4" y2="7.84" width="0.2032" layer="16"/>
-<wire x1="89.4" y1="7.84" x2="89.76" y2="7.84" width="0.2032" layer="16"/>
-<wire x1="89.76" y1="7.84" x2="92" y2="5.6" width="0.2032" layer="16"/>
+<via x="82.59" y="8.44" extent="1-16" drill="0.5"/>
+<wire x1="79.1158" y1="10.1662" x2="80.8638" y2="10.1662" width="0.2032" layer="16"/>
+<wire x1="80.8638" y1="10.1662" x2="82.59" y2="8.44" width="0.2032" layer="16"/>
+<wire x1="82.59" y1="8.44" x2="92.06" y2="8.44" width="0.2032" layer="1"/>
+<wire x1="92.06" y1="8.44" x2="92.1" y2="8.4" width="0.2032" layer="1"/>
+<via x="92.1" y="8.4" extent="1-16" drill="0.5"/>
+<wire x1="92.1" y1="8.4" x2="92.1" y2="7.98" width="0.2032" layer="16"/>
+<wire x1="92.1" y1="7.98" x2="94.48" y2="5.6" width="0.2032" layer="16"/>
 </signal>
 <signal name="INT1">
 <contactref element="R5" pad="2"/>
@@ -3324,35 +3824,35 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="95.9" y1="45.7" x2="97.01" y2="46.81" width="0.2032" layer="16"/>
 <wire x1="97.01" y1="46.81" x2="97.01" y2="47.53" width="0.2032" layer="16"/>
 </signal>
-<signal name="N$1" airwireshidden="yes">
+<signal name="N$1">
 <contactref element="IC5" pad="6"/>
 <contactref element="IC5" pad="14"/>
 <contactref element="J3" pad="1"/>
 <wire x1="1.83" y1="27.22" x2="8.835" y2="25.365" width="0" layer="19" extent="16-16"/>
 <wire x1="9.485" y1="18.115" x2="8.835" y2="25.365" width="0" layer="19" extent="16-16"/>
 </signal>
-<signal name="N$2" airwireshidden="yes">
+<signal name="N$2">
 <contactref element="IC5" pad="7"/>
 <contactref element="IC5" pad="15"/>
 <contactref element="J3" pad="2"/>
 <wire x1="8.835" y1="18.115" x2="9.485" y2="25.365" width="0" layer="19" extent="16-16"/>
 <wire x1="1.83" y1="24.68" x2="9.485" y2="25.365" width="0" layer="19" extent="16-16"/>
 </signal>
-<signal name="N$3" airwireshidden="yes">
+<signal name="N$3">
 <contactref element="IC4" pad="7"/>
 <contactref element="IC4" pad="15"/>
 <contactref element="J2" pad="2"/>
 <wire x1="9.565" y1="48.955" x2="10.215" y2="56.205" width="0" layer="19" extent="16-16"/>
 <wire x1="2.12" y1="47.05" x2="9.565" y2="48.955" width="0" layer="19" extent="16-16"/>
 </signal>
-<signal name="N$4" airwireshidden="yes">
+<signal name="N$4">
 <contactref element="IC4" pad="6"/>
 <contactref element="IC4" pad="14"/>
 <contactref element="J2" pad="1"/>
 <wire x1="10.215" y1="48.955" x2="9.565" y2="56.205" width="0" layer="19" extent="16-16"/>
 <wire x1="2.12" y1="44.51" x2="10.215" y2="48.955" width="0" layer="19" extent="16-16"/>
 </signal>
-<signal name="+5V" airwireshidden="yes">
+<signal name="+5V">
 <contactref element="C4" pad="+"/>
 <contactref element="Q3" pad="3"/>
 <contactref element="IC1" pad="49"/>
@@ -3377,13 +3877,13 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="18.7" y1="38.1" x2="18.2" y2="37.6" width="0.4064" layer="1"/>
 <wire x1="18.2" y1="37.6" x2="7.78" y2="37.6" width="0.4064" layer="1"/>
 </signal>
-<signal name="N$5" airwireshidden="yes">
+<signal name="N$5">
 <contactref element="Q4" pad="ANODE"/>
 <contactref element="R11" pad="1"/>
 <wire x1="52.55" y1="5.5" x2="52.55" y2="2.55" width="0.381" layer="1"/>
 <wire x1="52.55" y1="2.55" x2="52" y2="2" width="0.381" layer="1"/>
 </signal>
-<signal name="N$6" airwireshidden="yes">
+<signal name="N$6">
 <contactref element="Q5" pad="ANODE"/>
 <contactref element="R13" pad="1"/>
 <wire x1="45.99" y1="64.05" x2="45.99" y2="65.99" width="0.381" layer="1"/>
@@ -3485,7 +3985,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="68.178903125" y1="23.800525" x2="69.23693125" y2="24.858553125" width="0.2032" layer="16"/>
 <wire x1="69.23693125" y1="24.858553125" x2="69.23693125" y2="24.962559375" width="0.2032" layer="16"/>
 </signal>
-<signal name="SDRAMCLK" airwireshidden="yes">
+<signal name="SDRAMCLK">
 <contactref element="R33" pad="2"/>
 <contactref element="IC3" pad="38"/>
 <contactref element="R34" pad="2"/>
@@ -3497,7 +3997,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="60.7" y1="33.3" x2="60.7" y2="33.292184375" width="0.2032" layer="16"/>
 <wire x1="60.7" y1="33.292184375" x2="59.693621875" y2="32.28580625" width="0.2032" layer="16"/>
 </signal>
-<signal name="VDDCORE" airwireshidden="yes">
+<signal name="VDDCORE">
 <contactref element="IC1" pad="55"/>
 <contactref element="C6" pad="1"/>
 <contactref element="C5" pad="1"/>
@@ -3509,21 +4009,23 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="27.98" y1="34.14" x2="27.99" y2="34.14" width="0.4064" layer="16"/>
 <wire x1="27.99" y1="34.14" x2="27.99" y2="32.66" width="0.4064" layer="16"/>
 </signal>
-<signal name="ADCREFP" airwireshidden="yes">
+<signal name="ADCREFP">
 <contactref element="IC1" pad="34"/>
 <contactref element="C21" pad="1"/>
 <contactref element="C22" pad="1"/>
-<wire x1="29" y1="50.15" x2="33" y2="50.15" width="0" layer="19" extent="1-1"/>
-<wire x1="33.98" y1="44.99" x2="33" y2="50.15" width="0" layer="19" extent="1-1"/>
+<wire x1="33.45" y1="49.8" x2="33.45" y2="48.3" width="0.4064" layer="1"/>
+<wire x1="33.98" y1="44.99" x2="33.98" y2="47.77" width="0.381" layer="1"/>
+<wire x1="33.98" y1="47.77" x2="33.45" y2="48.3" width="0.381" layer="1"/>
 </signal>
-<signal name="ADCREFN" airwireshidden="yes">
+<signal name="ADCREFN">
 <contactref element="IC1" pad="35"/>
 <contactref element="C22" pad="2"/>
 <contactref element="C21" pad="2"/>
-<wire x1="29" y1="51.85" x2="33" y2="51.85" width="0" layer="19" extent="1-1"/>
-<wire x1="33.48" y1="44.99" x2="33" y2="51.85" width="0" layer="19" extent="1-1"/>
+<wire x1="31.75" y1="49.8" x2="31.75" y2="48.3" width="0.4064" layer="1"/>
+<wire x1="33.48" y1="44.99" x2="33.48" y2="46.57" width="0.381" layer="1"/>
+<wire x1="33.48" y1="46.57" x2="31.75" y2="48.3" width="0.381" layer="1"/>
 </signal>
-<signal name="N$23" airwireshidden="yes">
+<signal name="N$23">
 <contactref element="X2" pad="1"/>
 <contactref element="R37" pad="2"/>
 <contactref element="R41" pad="2"/>
@@ -3535,7 +4037,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="64.92" y1="62.97" x2="64.06" y2="62.11" width="0.381" layer="16"/>
 <wire x1="64.06" y1="62.11" x2="64.06" y2="60.8" width="0.381" layer="16"/>
 </signal>
-<signal name="N$25" airwireshidden="yes">
+<signal name="N$25">
 <contactref element="R38" pad="2"/>
 <contactref element="X2" pad="2"/>
 <wire x1="67.7681" y1="67.3373" x2="67.76" y2="67.3292" width="0.381" layer="1"/>
@@ -3544,7 +4046,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="67.76" y1="63.05" x2="67.77" y2="63.04" width="0.381" layer="16"/>
 <wire x1="67.77" y1="63.04" x2="67.77" y2="60.78" width="0.381" layer="16"/>
 </signal>
-<signal name="N$26" airwireshidden="yes">
+<signal name="N$26">
 <contactref element="R39" pad="2"/>
 <contactref element="X2" pad="5"/>
 <wire x1="70.016" y1="67.35" x2="70" y2="67.334" width="0.381" layer="1"/>
@@ -3553,7 +4055,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="70" y1="62.91" x2="69.97" y2="62.88" width="0.381" layer="16"/>
 <wire x1="69.97" y1="62.88" x2="69.97" y2="60.77" width="0.381" layer="16"/>
 </signal>
-<signal name="N$27" airwireshidden="yes">
+<signal name="N$27">
 <contactref element="R40" pad="2"/>
 <contactref element="X2" pad="7"/>
 <wire x1="72.302" y1="67.35" x2="72.32" y2="67.332" width="0.381" layer="1"/>
@@ -3562,7 +4064,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="72.32" y1="61.22" x2="72.33" y2="61.21" width="0.381" layer="16"/>
 <wire x1="72.33" y1="61.21" x2="72.33" y2="59.88" width="0.381" layer="16"/>
 </signal>
-<signal name="DATA_N" airwireshidden="yes">
+<signal name="DATA_N">
 <contactref element="IC1" pad="50"/>
 <contactref element="R42" pad="2"/>
 <wire x1="31.13" y1="36.64" x2="30.99" y2="36.5" width="0.1" layer="1"/>
@@ -3570,7 +4072,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="21.8" y1="36.5" x2="21.2" y2="37.1" width="0.1" layer="1"/>
 <wire x1="21.2" y1="37.1" x2="21.05" y2="37.1" width="0.1" layer="1"/>
 </signal>
-<signal name="DATA_P" airwireshidden="yes">
+<signal name="DATA_P">
 <contactref element="IC1" pad="51"/>
 <contactref element="R43" pad="2"/>
 <wire x1="31.13" y1="36.14" x2="30.97" y2="36.3" width="0.1" layer="1"/>
@@ -3578,37 +4080,37 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="21.8" y1="36.3" x2="21.2" y2="35.7" width="0.1" layer="1"/>
 <wire x1="21.2" y1="35.7" x2="21.05" y2="35.7" width="0.1" layer="1"/>
 </signal>
-<signal name="N$31" airwireshidden="yes">
+<signal name="N$31">
 <contactref element="LED1" pad="C"/>
 <contactref element="R45" pad="2"/>
 <wire x1="22.6" y1="23.9" x2="20.25" y2="23.9" width="0.381" layer="1"/>
 </signal>
-<signal name="N$30" airwireshidden="yes">
+<signal name="N$30">
 <contactref element="R44" pad="2"/>
 <contactref element="LED2" pad="C"/>
 <wire x1="13.5" y1="10.75" x2="13.5" y2="12.5" width="0.381" layer="1"/>
 </signal>
-<signal name="N$32" airwireshidden="yes">
+<signal name="N$32">
 <contactref element="R46" pad="2"/>
 <contactref element="LED3" pad="C"/>
 <wire x1="11.2" y1="10.75" x2="11.2" y2="12.5" width="0.381" layer="1"/>
 </signal>
-<signal name="N$33" airwireshidden="yes">
+<signal name="N$33">
 <contactref element="R47" pad="2"/>
 <contactref element="LED4" pad="C"/>
 <wire x1="8.9" y1="12.5" x2="8.9" y2="10.75" width="0.381" layer="1"/>
 </signal>
-<signal name="N$34" airwireshidden="yes">
+<signal name="N$34">
 <contactref element="R48" pad="2"/>
 <contactref element="LED5" pad="C"/>
 <wire x1="6.6" y1="12.5" x2="6.6" y2="10.75" width="0.381" layer="1"/>
 </signal>
-<signal name="N$35" airwireshidden="yes">
+<signal name="N$35">
 <contactref element="R49" pad="2"/>
 <contactref element="LED6" pad="C"/>
 <wire x1="4.3" y1="12.5" x2="4.3" y2="10.75" width="0.381" layer="1"/>
 </signal>
-<signal name="N$36" airwireshidden="yes">
+<signal name="N$36">
 <contactref element="LED7" pad="C"/>
 <contactref element="R50" pad="2"/>
 <wire x1="21.87" y1="54.85" x2="21.82" y2="54.9" width="0.2032" layer="1"/>
