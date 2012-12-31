@@ -13504,7 +13504,7 @@ Reference</text>
 <label x="124.46" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$24" class="0">
+<net name="SDRAMCLK" class="0">
 <segment>
 <pinref part="R33" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="25.4" x2="40.64" y2="25.4" width="0.1524" layer="91"/>
