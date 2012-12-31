@@ -12257,14 +12257,14 @@ Reference</text>
 <label x="178.308" y="-16.002" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$28" class="0">
+<net name="DATA_N" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="DM"/>
 <pinref part="R42" gate="G$1" pin="2"/>
 <wire x1="96.52" y1="-5.08" x2="96.52" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$29" class="0">
+<net name="DATA_P" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="DP"/>
 <pinref part="R43" gate="G$1" pin="2"/>
