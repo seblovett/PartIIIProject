@@ -3688,15 +3688,22 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <contactref element="Q2" pad="SCL"/>
 <wire x1="77.095" y1="13.2706" x2="77.095" y2="10.8416" width="0.2032" layer="16"/>
 <wire x1="77.095" y1="10.8416" x2="77.7518" y2="10.1848" width="0.2032" layer="16"/>
-<wire x1="77.7518" y1="10.1848" x2="77.4848" y2="10.1848" width="0.2032" layer="16"/>
-<wire x1="77.4848" y1="10.1848" x2="76.7" y2="9.4" width="0.2032" layer="16"/>
-<wire x1="76.7" y1="9.4" x2="76.7" y2="7.9" width="0.2032" layer="16"/>
-<wire x1="76.7" y1="7.9" x2="77.2" y2="7.4" width="0.2032" layer="16"/>
-<wire x1="77.2" y1="7.4" x2="89.7" y2="7.4" width="0.2032" layer="16"/>
-<wire x1="89.7" y1="7.4" x2="92.1" y2="5" width="0.2032" layer="16"/>
-<wire x1="92.1" y1="5" x2="92.6" y2="4.5" width="0.2032" layer="16"/>
-<wire x1="92.6" y1="4.5" x2="95.92" y2="4.5" width="0.2032" layer="16"/>
-<wire x1="95.92" y1="4.5" x2="97.02" y2="5.6" width="0.2032" layer="16"/>
+<via x="81.46" y="7.97" extent="1-16" drill="0.5"/>
+<wire x1="81.46" y1="7.97" x2="81.43" y2="7.97" width="0.2032" layer="16"/>
+<wire x1="81.43" y1="7.97" x2="80.1" y2="9.3" width="0.2032" layer="16"/>
+<wire x1="80.1" y1="9.3" x2="77.9" y2="9.3" width="0.2032" layer="16"/>
+<wire x1="77.9" y1="9.3" x2="77.7" y2="9.5" width="0.2032" layer="16"/>
+<wire x1="77.7" y1="9.5" x2="77.7" y2="10.133" width="0.2032" layer="16"/>
+<wire x1="77.7" y1="10.133" x2="77.7518" y2="10.1848" width="0.2032" layer="16"/>
+<via x="93" y="8" extent="1-16" drill="0.5"/>
+<wire x1="97.02" y1="5.6" x2="95.8" y2="5.6" width="0.2032" layer="16"/>
+<wire x1="95.8" y1="5.6" x2="94.3" y2="7.1" width="0.2032" layer="16"/>
+<wire x1="94.3" y1="7.1" x2="93.9" y2="7.1" width="0.2032" layer="16"/>
+<wire x1="93.9" y1="7.1" x2="93" y2="8" width="0.2032" layer="16"/>
+<wire x1="93" y1="8" x2="92.8" y2="7.8" width="0.2032" layer="1"/>
+<wire x1="92.8" y1="7.8" x2="91.3" y2="7.8" width="0.2032" layer="1"/>
+<wire x1="91.3" y1="7.8" x2="81.63" y2="7.8" width="0.2032" layer="1"/>
+<wire x1="81.63" y1="7.8" x2="81.46" y2="7.97" width="0.2032" layer="1"/>
 </signal>
 <signal name="SDA1">
 <contactref element="R6" pad="2"/>
@@ -3704,11 +3711,14 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <contactref element="Q2" pad="SDA"/>
 <wire x1="79.1158" y1="10.1662" x2="77.745" y2="11.537" width="0.2032" layer="16"/>
 <wire x1="77.745" y1="11.537" x2="77.745" y2="13.2706" width="0.2032" layer="16"/>
-<wire x1="94.48" y1="5.6" x2="92" y2="5.6" width="0.2032" layer="16"/>
-<wire x1="79.1158" y1="10.1662" x2="81.442" y2="7.84" width="0.2032" layer="16"/>
-<wire x1="81.442" y1="7.84" x2="89.4" y2="7.84" width="0.2032" layer="16"/>
-<wire x1="89.4" y1="7.84" x2="89.76" y2="7.84" width="0.2032" layer="16"/>
-<wire x1="89.76" y1="7.84" x2="92" y2="5.6" width="0.2032" layer="16"/>
+<via x="82.59" y="8.44" extent="1-16" drill="0.5"/>
+<wire x1="79.1158" y1="10.1662" x2="80.8638" y2="10.1662" width="0.2032" layer="16"/>
+<wire x1="80.8638" y1="10.1662" x2="82.59" y2="8.44" width="0.2032" layer="16"/>
+<wire x1="82.59" y1="8.44" x2="92.06" y2="8.44" width="0.2032" layer="1"/>
+<wire x1="92.06" y1="8.44" x2="92.1" y2="8.4" width="0.2032" layer="1"/>
+<via x="92.1" y="8.4" extent="1-16" drill="0.5"/>
+<wire x1="92.1" y1="8.4" x2="92.1" y2="7.98" width="0.2032" layer="16"/>
+<wire x1="92.1" y1="7.98" x2="94.48" y2="5.6" width="0.2032" layer="16"/>
 </signal>
 <signal name="INT1">
 <contactref element="R5" pad="2"/>
