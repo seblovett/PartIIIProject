@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.393701" altunitdist="mil" altunit="mil"/>
+<grid distance="39.370079" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.393701" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="3V3" color="1" fill="3" visible="no" active="yes"/>
@@ -4632,7 +4632,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <contactref element="U$1" pad="D+"/>
 <contactref element="R43" pad="1"/>
 <wire x1="7.78" y1="36" x2="7.88" y2="35.9" width="0.1" layer="1"/>
-<wire x1="7.88" y1="35.9" x2="19.15" y2="35.9" width="0.1" layer="1"/>
+<wire x1="7.88" y1="35.9" x2="19.15" y2="35.9" width="0.1905" layer="1"/>
 </signal>
 <signal name="USB_N">
 <contactref element="U$1" pad="D-"/>
@@ -4881,7 +4881,8 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="20.5" y1="38.6" x2="19.1" y2="40" width="0.4064" layer="1"/>
 <wire x1="7.78" y1="37.6" x2="8.78" y2="38.6" width="0.4064" layer="1"/>
 <wire x1="8.78" y1="38.6" x2="16" y2="38.6" width="0.4064" layer="1"/>
-<wire x1="16" y1="38.6" x2="18.6" y2="39.5" width="0" layer="19" extent="1-16"/>
+<wire x1="16" y1="38.6" x2="17.7" y2="38.6" width="0.4064" layer="1"/>
+<wire x1="17.7" y1="38.6" x2="18.6" y2="39.5" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$5">
 <contactref element="Q4" pad="ANODE"/>
