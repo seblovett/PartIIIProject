@@ -1402,7 +1402,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <smd name="2" x="2.54" y="1.905" dx="0.762" dy="1.524" layer="1" rot="R90"/>
 <smd name="3" x="-2.54" y="-1.905" dx="0.762" dy="1.524" layer="1" rot="R90"/>
 <smd name="4" x="2.54" y="-1.905" dx="0.762" dy="1.524" layer="1" rot="R90"/>
-<text x="-0.889" y="1.778" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-1.524" y="3.048" size="0.8128" layer="25">&gt;NAME</text>
 <text x="-0.889" y="-2.032" size="0.4064" layer="27">&gt;Value</text>
 </package>
 <package name="TACTILE-PTH">
@@ -10238,7 +10238,7 @@ Source: www.farnell.com/datasheets/247.pdf</description>
 <wire x1="-0.3" y1="-0.6" x2="0.3" y2="0" width="0.2032" layer="21"/>
 <smd name="A" x="-1.5" y="0" dx="1.2" dy="1.4" layer="1"/>
 <smd name="C" x="1.5" y="0" dx="1.2" dy="1.4" layer="1"/>
-<text x="-0.889" y="1.397" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-2.159" y="1.397" size="1.016" layer="25">&gt;NAME</text>
 <text x="-1.016" y="-1.778" size="0.4064" layer="27">&gt;VALUE</text>
 </package>
 <package name="LED-0603">
@@ -10831,8 +10831,6 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <part name="R41" library="passives" deviceset="R" device="0603" value="100k"/>
 <part name="+3V37" library="supply1" deviceset="+3V3" device=""/>
 <part name="J4" library="Headers" deviceset="1BY2" device="THROUGHHOLE"/>
-<part name="R42" library="passives" deviceset="R" device="0603" value="39R"/>
-<part name="R43" library="passives" deviceset="R" device="0603" value="39R"/>
 <part name="C31" library="passives" deviceset="C-EU" device="C0603" value="100n"/>
 <part name="D1" library="Semiconductors" deviceset="DIODE" device="SMD"/>
 <part name="+3V38" library="supply1" deviceset="+3V3" device=""/>
@@ -10844,7 +10842,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <part name="GND38" library="supply1" deviceset="GND" device=""/>
 <part name="GND39" library="supply1" deviceset="GND" device=""/>
 <part name="J7" library="Headers" deviceset="1BY2" device="THROUGHHOLE"/>
-<part name="LED1" library="Semiconductors" deviceset="LED" device="1206"/>
+<part name="MOTOR" library="Semiconductors" deviceset="LED" device="1206"/>
 <part name="R45" library="passives" deviceset="R" device="0603" value="330R"/>
 <part name="GND41" library="supply1" deviceset="GND" device=""/>
 <part name="R44" library="passives" deviceset="R" device="0603" value="330R"/>
@@ -10862,7 +10860,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <part name="R49" library="passives" deviceset="R" device="0603" value="330R"/>
 <part name="LED6" library="Semiconductors" deviceset="LED" device="1206"/>
 <part name="GND45" library="supply1" deviceset="GND" device=""/>
-<part name="LED7" library="Semiconductors" deviceset="LED" device="1206"/>
+<part name="POWER" library="Semiconductors" deviceset="LED" device="1206"/>
 <part name="R50" library="passives" deviceset="R" device="0603" value="330R"/>
 <part name="GND46" library="supply1" deviceset="GND" device=""/>
 <part name="+3V21" library="supply1" deviceset="+3V3" device=""/>
@@ -11005,19 +11003,11 @@ Reference</text>
 <instance part="+3V25" gate="G$1" x="208.28" y="35.56"/>
 <instance part="+3V26" gate="G$1" x="231.14" y="35.56"/>
 <instance part="+3V27" gate="G$1" x="144.78" y="2.54"/>
-<instance part="R42" gate="G$1" x="96.52" y="-12.7" smashed="yes" rot="R90">
-<attribute name="NAME" x="95.0214" y="-14.986" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="96.266" y="-9.906" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="R43" gate="G$1" x="99.06" y="-12.7" smashed="yes" rot="R90">
-<attribute name="NAME" x="102.1334" y="-14.986" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="98.806" y="-9.906" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="C31" gate="G$1" x="238.76" y="88.9"/>
 <instance part="D1" gate="G$1" x="238.76" y="101.6"/>
 <instance part="+3V38" gate="G$1" x="238.76" y="110.49"/>
 <instance part="GND37" gate="1" x="238.76" y="81.28"/>
-<instance part="LED7" gate="G$1" x="236.22" y="139.7"/>
+<instance part="POWER" gate="G$1" x="236.22" y="139.7"/>
 <instance part="R50" gate="G$1" x="236.22" y="129.54" rot="R90"/>
 <instance part="GND46" gate="1" x="236.22" y="121.92"/>
 <instance part="+3V21" gate="G$1" x="236.22" y="144.78"/>
@@ -11348,7 +11338,7 @@ Reference</text>
 <wire x1="238.76" y1="107.95" x2="238.76" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="LED7" gate="G$1" pin="A"/>
+<pinref part="POWER" gate="G$1" pin="A"/>
 <pinref part="+3V21" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
@@ -12147,9 +12137,11 @@ Reference</text>
 <label x="130.048" y="119.634" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R43" gate="G$1" pin="1"/>
 <wire x1="99.06" y1="-17.78" x2="99.06" y2="-20.32" width="0.1524" layer="91"/>
 <label x="99.568" y="-19.812" size="1.778" layer="95"/>
+<pinref part="IC1" gate="G$1" pin="DP"/>
+<wire x1="99.06" y1="-5.08" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-17.78" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="USB_N" class="0">
@@ -12159,9 +12151,11 @@ Reference</text>
 <label x="130.048" y="121.92" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R42" gate="G$1" pin="1"/>
 <wire x1="96.52" y1="-17.78" x2="96.52" y2="-20.32" width="0.1524" layer="91"/>
 <label x="96.52" y="-17.78" size="1.778" layer="95" rot="R180"/>
+<pinref part="IC1" gate="G$1" pin="DM"/>
+<wire x1="96.52" y1="-5.08" x2="96.52" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="-17.78" x2="96.52" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RESET_N" class="0">
@@ -12252,23 +12246,9 @@ Reference</text>
 <label x="178.308" y="-16.002" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DATA_N" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="DM"/>
-<pinref part="R42" gate="G$1" pin="2"/>
-<wire x1="96.52" y1="-5.08" x2="96.52" y2="-7.62" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="DATA_P" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="DP"/>
-<pinref part="R43" gate="G$1" pin="2"/>
-<wire x1="99.06" y1="-5.08" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$36" class="0">
 <segment>
-<pinref part="LED7" gate="G$1" pin="C"/>
+<pinref part="POWER" gate="G$1" pin="C"/>
 <pinref part="R50" gate="G$1" pin="2"/>
 </segment>
 </net>
@@ -13757,7 +13737,7 @@ Reference</text>
 <instance part="GND34" gate="1" x="106.68" y="2.54" rot="MR0"/>
 <instance part="+3V34" gate="G$1" x="127" y="15.24" rot="MR0"/>
 <instance part="+3V35" gate="G$1" x="106.68" y="15.24" rot="MR0"/>
-<instance part="LED1" gate="G$1" x="71.12" y="55.88"/>
+<instance part="MOTOR" gate="G$1" x="71.12" y="55.88"/>
 <instance part="R45" gate="G$1" x="71.12" y="43.18" rot="R90"/>
 <instance part="GND41" gate="1" x="71.12" y="35.56"/>
 </instances>
@@ -14184,14 +14164,14 @@ Reference</text>
 </net>
 <net name="N$31" class="0">
 <segment>
-<pinref part="LED1" gate="G$1" pin="C"/>
+<pinref part="MOTOR" gate="G$1" pin="C"/>
 <pinref part="R45" gate="G$1" pin="2"/>
 <wire x1="71.12" y1="50.8" x2="71.12" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PB12" class="0">
 <segment>
-<pinref part="LED1" gate="G$1" pin="A"/>
+<pinref part="MOTOR" gate="G$1" pin="A"/>
 <wire x1="71.12" y1="63.5" x2="71.12" y2="58.42" width="0.1524" layer="91"/>
 <label x="71.12" y="60.96" size="1.778" layer="95"/>
 </segment>

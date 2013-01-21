@@ -10874,6 +10874,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <part name="GND46" library="supply1" deviceset="GND" device=""/>
 <part name="+3V21" library="supply1" deviceset="+3V3" device=""/>
 <part name="J9" library="Headers" deviceset="16PIN" device="2.54MM2X8TH"/>
+<part name="GND47" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13504,7 +13505,7 @@ Reference</text>
 <label x="124.46" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$24" class="0">
+<net name="SDRAMCLK" class="0">
 <segment>
 <pinref part="R33" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="25.4" x2="40.64" y2="25.4" width="0.1524" layer="91"/>
@@ -14213,7 +14214,7 @@ Reference</text>
 <text x="127" y="48.26" size="1.778" layer="97" rot="R180">1 - MOSI
 2 - MISO
 3 - SCK
-4 - NC
+4 - GND
 5 - CS3
 6 - CS2
 7 - CS1
@@ -14274,6 +14275,7 @@ Reference</text>
 <instance part="GND45" gate="1" x="55.88" y="27.94" rot="MR0"/>
 <instance part="J8" gate="G$1" x="15.24" y="81.28" rot="R90"/>
 <instance part="J9" gate="G$1" x="33.02" y="81.28" rot="R90"/>
+<instance part="GND47" gate="1" x="78.74" y="33.02" rot="MR0"/>
 </instances>
 <busses>
 <bus name="PC[0..31]">
@@ -14419,6 +14421,10 @@ Reference</text>
 <segment>
 <pinref part="R49" gate="G$1" pin="1"/>
 <pinref part="GND45" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="J5" gate="G$1" pin="4"/>
+<pinref part="GND47" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
