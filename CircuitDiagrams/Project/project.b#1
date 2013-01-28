@@ -9,21 +9,21 @@
 <grid distance="0.01" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.001" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="2" name="3V3" color="1" fill="3" visible="yes" active="yes"/>
-<layer number="3" name="GND" color="4" fill="3" visible="yes" active="yes"/>
+<layer number="2" name="3V3" color="1" fill="3" visible="no" active="yes"/>
+<layer number="3" name="GND" color="4" fill="3" visible="no" active="yes"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="yes"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
@@ -136,6 +136,8 @@ SDA      TXD</text>
 <text x="56.75" y="0.76" size="1.778" layer="51">1</text>
 <text x="41.06" y="1.42" size="1.778" layer="51" rot="R90">POT1</text>
 <text x="41.59" y="62.32" size="1.778" layer="51" rot="R180">POT2</text>
+<text x="81.35" y="27.1" size="2.54" layer="51" rot="R90">The Columbus</text>
+<text x="3.19" y="8.7" size="1.778" layer="51">Henry Lovett, 2013, Rev A</text>
 </plain>
 <libraries>
 <library name="Atmel_MCUs">
@@ -2021,7 +2023,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <via x="47.9" y="36.02" extent="1-16" drill="0.5"/>
 <via x="41.16" y="18.91" extent="1-16" drill="0.5"/>
 <via x="44.58" y="16.96" extent="1-16" drill="0.5"/>
-<via x="78.48" y="40.92" extent="1-16" drill="0.5"/>
+<via x="76.08" y="40.42" extent="1-16" drill="0.5"/>
 <via x="63.69" y="67.25" extent="1-16" drill="0.5"/>
 <via x="74.74" y="67.15" extent="1-16" drill="0.5"/>
 <via x="37.42" y="37.92" extent="1-16" drill="0.5"/>
@@ -2043,7 +2045,7 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <via x="54.03" y="63.26" extent="1-16" drill="0.5"/>
 <via x="43.69" y="66.66" extent="1-16" drill="0.5"/>
 <via x="8.74" y="65.53" extent="1-16" drill="0.5"/>
-<via x="79.43" y="37.16" extent="1-16" drill="0.5"/>
+<via x="84.52" y="36.89" extent="1-16" drill="0.5"/>
 <via x="38.83" y="60.54" extent="1-16" drill="0.5"/>
 <via x="52.69" y="59.87" extent="1-16" drill="0.5"/>
 <via x="19.47" y="37.67" extent="1-16" drill="0.2"/>
@@ -3156,14 +3158,14 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <wire x1="91.04" y1="24.39" x2="91" y2="24.39" width="0.2032" layer="1"/>
 <wire x1="91" y1="24.39" x2="85.36" y2="30.03" width="0.2032" layer="1"/>
 <wire x1="85.36" y1="30.03" x2="85.36" y2="30.04" width="0.2032" layer="1"/>
-<wire x1="85.36" y1="30.04" x2="82.12" y2="33.28" width="0.2032" layer="1"/>
-<wire x1="82.12" y1="33.28" x2="82.12" y2="34.91" width="0.2032" layer="1"/>
-<wire x1="82.12" y1="34.91" x2="82.1" y2="34.93" width="0.2032" layer="1"/>
-<via x="82.1" y="34.93" extent="1-16" drill="0.5"/>
-<wire x1="82.1" y1="34.93" x2="88.85" y2="34.93" width="0.2032" layer="16"/>
 <wire x1="88.85" y1="34.93" x2="89.66" y2="35.74" width="0.2032" layer="16"/>
 <via x="89.66" y="35.74" extent="1-16" drill="0.5"/>
 <wire x1="89.66" y1="35.74" x2="89.66" y2="36.87" width="0.2032" layer="1"/>
+<wire x1="85.36" y1="30.04" x2="85.41" y2="30.04" width="0.2032" layer="1"/>
+<wire x1="85.41" y1="30.04" x2="85.41" y2="34.24" width="0.2032" layer="1"/>
+<via x="85.41" y="34.24" extent="1-16" drill="0.6"/>
+<wire x1="85.41" y1="34.24" x2="88.16" y2="34.24" width="0.2032" layer="16"/>
+<wire x1="88.16" y1="34.24" x2="88.85" y2="34.93" width="0.2032" layer="16"/>
 </signal>
 <signal name="PB4">
 <contactref element="IC1" pad="7"/>
