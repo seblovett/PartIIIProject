@@ -127,9 +127,13 @@ The ATMega 664P pinout for the dual camera operation can be seen in table \ref{t
 %\section{Motor Control}
 %\inote{do something of this SOON}
 \section{Circuit and PCB Development}
-\subsection{Il Matto Development}
-Figure \ref{sch:DualCam_Schematic} shows the circuit diagram for the prototype. This uses the Il Matto development board for the main microcontroller. The prototype can be seen in figure \ref{fig:Prototype}. 
+\subsection{Stereo Camera Development}
+Figure \ref{sch:DualCam_Schematic} shows the circuit diagram for the prototype. This uses the Il Matto development board for the main microcontroller. The prototype can be seen in figure \ref{fig:Prototype}. This circuit captured and stored two images from the cameras to the SD card. 
 
+\subsection{Motor Driving Development}
+
+\subsection{PCB Circuit Development}
+As discussed in \ref{Research:Microcontroller}, a AT32UC3C is going to be used. The Atmel UC3-EK provided a base template to develop the circuit on as this has a SD card and SRAM on it and code is provided for using these devices. 
 \begin{figure}
 \includegraphics[width=\textwidth]{./Figures/Prototype.jpg}
 \caption{Prototype of Dual Camera operation.}

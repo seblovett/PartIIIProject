@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.7)  10 DEC 2012 11:14
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  28 JAN 2013 14:34
 entering extended mode
 **Report.tex
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.tex"
+(E:\Uni\part3_project\Report\Report.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +13,7 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\ecsproject.cls"
+(E:\Uni\part3_project\Report\ecsproject.cls
 Document Class: ecsproject 2011/11/10 v2.0 LaTeX document class
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\book.cls"
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
@@ -837,22 +837,21 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 15.
 
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Definitions.tex"
+(E:\Uni\part3_project\Report\Definitions.tex
 \c@address=\count189
 \c@alg=\count190
 )
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.aux"
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Introduction.aux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Research.aux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\HardwareDevelopment.a
-ux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\InvestigationVision.a
-ux") ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Results.aux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Conclusions.aux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixD.aux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixA.aux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixB.aux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\AppendixC.aux"))
+(E:\Uni\part3_project\Report\Report.aux
+(E:\Uni\part3_project\Report\Introduction.aux)
+(E:\Uni\part3_project\Report\Research.aux)
+(E:\Uni\part3_project\Report\HardwareDevelopment.aux)
+(E:\Uni\part3_project\Report\InvestigationVision.aux)
+(E:\Uni\part3_project\Report\Results.aux)
+(E:\Uni\part3_project\Report\Conclusions.aux)
+(E:\Uni\part3_project\Report\AppendixD.aux)
+(E:\Uni\part3_project\Report\AppendixA.aux)
+(E:\Uni\part3_project\Report\AppendixB.aux)
+(E:\Uni\part3_project\Report\AppendixC.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
@@ -910,12 +909,71 @@ LaTeX Info: Redefining \ref on input line 20.
 LaTeX Info: Redefining \pageref on input line 20.
 LaTeX Info: Redefining \nameref on input line 20.
 
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.out")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.out")
+(E:\Uni\part3_project\Report\Report.out)
+(E:\Uni\part3_project\Report\Report.out)
 \@outlinefile=\write4
+ ABD: EveryShipout initializing macros
+------------------------------------------------------------------------------
+ Title Page
+------------------------------------------------------------------------------
+LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 36.
 
-ABD: EveryShipout initializing macros
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Introduction.tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+) [1
+
+
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+
+]
+------------------------------------------------------------------------------
+ Abstract Page
+------------------------------------------------------------------------------
+[3] [4
+
+]
+------------------------------------------------------------------------------
+ Table of Contents
+------------------------------------------------------------------------------
+(E:\Uni\part3_project\Report\Report.toc [5
+
+])
+\tf@toc=\write5
+ [6]
+------------------------------------------------------------------------------
+ List of Figures
+------------------------------------------------------------------------------
+(E:\Uni\part3_project\Report\Report.lof)
+\tf@lof=\write6
+ [7
+
+
+] [8
+
+]
+------------------------------------------------------------------------------
+ List of Tables
+------------------------------------------------------------------------------
+(E:\Uni\part3_project\Report\Report.lot)
+\tf@lot=\write7
+ [9
+
+] [10
+
+]
+------------------------------------------------------------------------------
+ List of Symbols
+------------------------------------------------------------------------------
+[11
+
+] [12
+
+] (E:\Uni\part3_project\Report\Introduction.tex
 Chapter 1.
 ------------------------------------------------------------------------------
  1 Introduction
@@ -924,25 +982,13 @@ Chapter 1.
 
 
 
-
-
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<./Figures/RobotBase.jpg, id=300, 4291.03125pt x 2653.915pt>
+] <./Figures/RobotBase.jpg, id=485, 4291.03125pt x 2653.915pt>
 File: ./Figures/RobotBase.jpg Graphic file (type jpg)
 
 <use ./Figures/RobotBase.jpg>
 Package pdftex.def Info: ./Figures/RobotBase.jpg used on input line 32.
 (pdftex.def)             Requested size: 417.47307pt x 258.19885pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 42.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 42.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
 Underfull \hbox (badness 5954) in paragraph at lines 47--47
 []\OT1/cmr/m/n/12 Failure of per-sonal com-puter
  []
@@ -952,10 +998,8 @@ Overfull \hbox (16.86548pt too wide) in paragraph at lines 42--51
 [][] 
  []
 
-) [2 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/RobotBase
-.jpg>] [3]
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Research.tex"
-[4
+) [2 <E:/Uni/part3_project/Report/Figures/RobotBase.jpg>] [3]
+(E:\Uni\part3_project\Report\Research.tex [4
 
 
 
@@ -1054,9 +1098,7 @@ Overfull \hbox (26.63869pt too wide) in paragraph at lines 32--49
  [][] 
  []
 
-[6]) [7]
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\HardwareDevelopment.t
-ex" [8
+[6]) [7] (E:\Uni\part3_project\Report\HardwareDevelopment.tex [8
 
 
 
@@ -1065,23 +1107,23 @@ Chapter 3.
 ------------------------------------------------------------------------------
  3 Initial Hardware and Firmware Development
 ------------------------------------------------------------------------------
-[9] <./Figures/RGB565.png, id=403, 809.27344pt x 148.30406pt>
+[9] <./Figures/RGB565.png, id=564, 809.27344pt x 148.30406pt>
 File: ./Figures/RGB565.png Graphic file (type png)
 
 <use ./Figures/RGB565.png>
 Package pdftex.def Info: ./Figures/RGB565.png used on input line 27.
 (pdftex.def)             Requested size: 417.47307pt x 76.50528pt.
 
-<./Figures/ov7670_im_capture.png, id=405, 1273.75874pt x 535.2497pt>
+<./Figures/ov7670_im_capture.png, id=566, 1273.75874pt x 535.2497pt>
 File: ./Figures/ov7670_im_capture.png Graphic file (type png)
 
 <use ./Figures/ov7670_im_capture.png>
 Package pdftex.def Info: ./Figures/ov7670_im_capture.png used on input line 38.
 
 (pdftex.def)             Requested size: 417.47307pt x 175.4242pt.
- [10 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/RGB565.pn
-g>] [11 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/ov7670
-_im_capture.png>] [12]
+ [10 <E:/Uni/part3_project/Report/Figures/RGB565.png>] [11 <E:/Uni/part3_projec
+t/Report/Figures/ov7670_im_capture.png>]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 81--81
 []\OT1/cmr/m/n/12 *.jpg
  []
@@ -1111,25 +1153,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--86
 \OT1/cmr/m/n/12 only 256
  []
 
-<Figures/ExampleImageFromCamera.jpg, id=442, 321.2pt x 240.9pt>
+<Figures/ExampleImageFromCamera.jpg, id=597, 321.2pt x 240.9pt>
 File: Figures/ExampleImageFromCamera.jpg Graphic file (type jpg)
 
 <use Figures/ExampleImageFromCamera.jpg>
 Package pdftex.def Info: Figures/ExampleImageFromCamera.jpg used on input line 
 100.
 (pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
- [13] [14 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/Exam
-pleImageFromCamera.jpg>]
-<./Figures/Prototype.jpg, id=464, 4117.3825pt x 2294.5725pt>
+ [13] [14 <E:/Uni/part3_project/Report/Figures/ExampleImageFromCamera.jpg>]
+<./Figures/Prototype.jpg, id=613, 4117.3825pt x 2294.5725pt>
 File: ./Figures/Prototype.jpg Graphic file (type jpg)
 
 <use ./Figures/Prototype.jpg>
 Package pdftex.def Info: ./Figures/Prototype.jpg used on input line 134.
 (pdftex.def)             Requested size: 417.47307pt x 232.6218pt.
-) [15 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/Prototyp
-e.jpg>]
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\InvestigationVision.t
-ex" [16
+) [15 <E:/Uni/part3_project/Report/Figures/Prototype.jpg>] (E:\Uni\part3_projec
+t\Report\InvestigationVision.tex [16
 
 
 
@@ -1138,37 +1177,36 @@ Chapter 4.
 ------------------------------------------------------------------------------
  4 Investigation into Vision Algorithms
 ------------------------------------------------------------------------------
-<./Figures/deskLeft.png, id=484, 401.5pt x 301.125pt>
+<./Figures/deskLeft.png, id=629, 401.5pt x 301.125pt>
 File: ./Figures/deskLeft.png Graphic file (type png)
 
 <use ./Figures/deskLeft.png>
 Package pdftex.def Info: ./Figures/deskLeft.png used on input line 13.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
 
-<./Figures/deskRight.png, id=485, 401.5pt x 301.125pt>
+<./Figures/deskRight.png, id=630, 401.5pt x 301.125pt>
 File: ./Figures/deskRight.png Graphic file (type png)
 
 <use ./Figures/deskRight.png>
 Package pdftex.def Info: ./Figures/deskRight.png used on input line 14.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
- [17 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/deskLeft.
-png (PNG copy)> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figure
-s/deskRight.png (PNG copy)>] [18]
-<./Figures/SADResults.jpg, id=516, 960.58875pt x 631.35875pt>
+ [17 <E:/Uni/part3_project/Report/Figures/deskLeft.png (PNG copy)> <E:/Uni/part
+3_project/Report/Figures/deskRight.png (PNG copy)>] [18] <./Figures/SADResults.
+jpg, id=654, 960.58875pt x 631.35875pt>
 File: ./Figures/SADResults.jpg Graphic file (type jpg)
 
 <use ./Figures/SADResults.jpg>
 Package pdftex.def Info: ./Figures/SADResults.jpg used on input line 69.
 (pdftex.def)             Requested size: 341.43306pt x 224.40848pt.
 
-<./Figures/SSDResults.jpg, id=517, 1446.40375pt x 836.12375pt>
+<./Figures/SSDResults.jpg, id=655, 1446.40375pt x 836.12375pt>
 File: ./Figures/SSDResults.jpg Graphic file (type jpg)
 
 <use ./Figures/SSDResults.jpg>
 Package pdftex.def Info: ./Figures/SSDResults.jpg used on input line 70.
 (pdftex.def)             Requested size: 341.43306pt x 197.36942pt.
 
-<./Figures/NCCResults.jpg, id=518, 1446.40375pt x 836.12375pt>
+<./Figures/NCCResults.jpg, id=656, 1446.40375pt x 836.12375pt>
 File: ./Figures/NCCResults.jpg Graphic file (type jpg)
 
 <use ./Figures/NCCResults.jpg>
@@ -1178,35 +1216,32 @@ Package pdftex.def Info: ./Figures/NCCResults.jpg used on input line 71.
 
 LaTeX Warning: Float too large for page by 35.17421pt on input line 74.
 
-[19] [20 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/SADRe
-sults.jpg> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/SSD
-Results.jpg> <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/N
-CCResults.jpg>] <Figures/problem1.png, id=547, 791.20593pt x 910.15031pt>
+[19] [20 <E:/Uni/part3_project/Report/Figures/SADResults.jpg> <E:/Uni/part3_pro
+ject/Report/Figures/SSDResults.jpg> <E:/Uni/part3_project/Report/Figures/NCCRes
+ults.jpg>] <Figures/problem1.png, id=681, 791.20593pt x 910.15031pt>
 File: Figures/problem1.png Graphic file (type png)
 
 <use Figures/problem1.png>
 Package pdftex.def Info: Figures/problem1.png used on input line 102.
 (pdftex.def)             Requested size: 417.47794pt x 480.23866pt.
- [21] [22 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/prob
-lem1.png>] [23]
-<Figures/problem2.png, id=604, 805.50937pt x 928.97063pt>
+ [21] [22 <E:/Uni/part3_project/Report/Figures/problem1.png>] [23] <Figures/pro
+blem2.png, id=728, 805.50937pt x 928.97063pt>
 File: Figures/problem2.png Graphic file (type png)
 
 <use Figures/problem2.png>
 Package pdftex.def Info: Figures/problem2.png used on input line 204.
 (pdftex.def)             Requested size: 417.4661pt x 481.45157pt.
 
-<Figures/problem3.png, id=606, 797.98125pt x 919.93687pt>
+<Figures/problem3.png, id=730, 797.98125pt x 919.93687pt>
 File: Figures/problem3.png Graphic file (type png)
 
 <use Figures/problem3.png>
 Package pdftex.def Info: Figures/problem3.png used on input line 217.
 (pdftex.def)             Requested size: 417.47311pt x 481.2756pt.
- [24]) [25 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figures/pro
-blem2.png>] [26 <C:/Users/hslovett/My Documents/Uni/part3_project/Report/Figure
-s/problem3.png>]
+ [24]) [25 <E:/Uni/part3_project/Report/Figures/problem2.png>] [26 <E:/Uni/part
+3_project/Report/Figures/problem3.png>]
 No file Results.tex.
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Conclusions.tex"
+(E:\Uni\part3_project\Report\Conclusions.tex
 Chapter 5.
 ------------------------------------------------------------------------------
  5 Conclusions and Further Work
@@ -1217,377 +1252,419 @@ Chapter 5.
 
 
 
-]) [28]
+]) [28] (E:\Uni\part3_project\Report\AppendixD.tex
+Appendix A.
+------------------------------------------------------------------------------
+ A Gantt Chart
+------------------------------------------------------------------------------
+<Figures/Gantt.png, id=762, 805.50937pt x 380.17032pt>
+File: Figures/Gantt.png Graphic file (type png)
+ <use Figures/Gantt.png>
+Package pdftex.def Info: Figures/Gantt.png used on input line 8.
+(pdftex.def)             Requested size: 805.5074pt x 380.16939pt.
+) [29
+
+
+
+] [30 <E:/Uni/part3_project/Report/Figures/Gantt.png>]
+(E:\Uni\part3_project\Report\AppendixA.tex
+Appendix B.
+------------------------------------------------------------------------------
+ B Circuit Diagrams
+------------------------------------------------------------------------------
+<Figures/OV7670_Schematic.jpg, id=771, 844.5954pt x 597.432pt>
+File: Figures/OV7670_Schematic.jpg Graphic file (type jpg)
+
+<use Figures/OV7670_Schematic.jpg>
+Package pdftex.def Info: Figures/OV7670_Schematic.jpg used on input line 8.
+(pdftex.def)             Requested size: 844.59334pt x 597.43054pt.
+
+<Figures/IlMattoCamera_CircuitDiagram.png, id=772, 753.0534pt x 694.7556pt>
+File: Figures/IlMattoCamera_CircuitDiagram.png Graphic file (type png)
+
+<use Figures/IlMattoCamera_CircuitDiagram.png>
+Package pdftex.def Info: Figures/IlMattoCamera_CircuitDiagram.png used on input
+ line 17.
+(pdftex.def)             Requested size: 753.05156pt x 694.75389pt.
+) [31
+
+
+
+ <E:/Uni/part3_project/Report/Figures/OV7670_Schematic.jpg>] [32 <E:/Uni/part3_
+project/Report/Figures/IlMattoCamera_CircuitDiagram.png>] (E:\Uni\part3_project
+\Report\AppendixB.tex
+Appendix C.
+------------------------------------------------------------------------------
+ C Bitmap File Format
+------------------------------------------------------------------------------
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+[]|\OT1/cmr/m/n/12 Size
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+[]|\OT1/cmr/m/n/12 Value
+ []
+
+
+Overfull \hbox (12.41272pt too wide) in alignment at lines 7--11
+ [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\OT1/cmr/m/n/12 Size
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\OT1/cmr/m/n/12 Value
+ []
+
+
+Overfull \hbox (12.41272pt too wide) in alignment at lines 11--16
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (12.41272pt too wide) in alignment at lines 16--19
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (12.41272pt too wide) in alignment at lines 19--22
+ [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\OT1/cmr/m/n/12 Bitmap
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+[]|\OT1/cmr/m/n/12 36580200
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+[]|\OT1/cmr/m/n/12 Offset to
+ []
+
+
+Underfull \hbox (badness 2894) in paragraph at lines 27--27
+[]|\OT1/cmr/m/n/12 The ad-dress of the
+ []
+
+
+Underfull \hbox (badness 4582) in paragraph at lines 29--29
+[]|\OT1/cmr/m/n/12 DIB (De-vice
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+\OT1/cmr/m/n/12 In-de-pen-dent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+\OT1/cmr/m/n/12 Bitmap)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+[]|\OT1/cmr/m/n/12 Size of the DIB
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 29--29
+\OT1/cmr/m/n/12 Header (dic-tates the
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 30--30
+[]|\OT1/cmr/m/n/12 Width of the im-age
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--32
+[]|\OT1/cmr/m/n/12 Number of colour
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 33--33
+[]|\OT1/cmr/m/n/12 Number of bits per
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
+[]|\OT1/cmr/m/n/12 Compression Be-ing
+ []
+
+
+Underfull \hbox (badness 2932) in paragraph at lines 36--36
+[]|\OT1/cmr/m/n/12 Horizontal res-o-lu-tion
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 36--37
+[]|\OT1/cmr/m/n/12 13 0B 00
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 37--38
+[]|\OT1/cmr/m/n/12 13 0B 00
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]|\OT1/cmr/m/n/12 Colours in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[]|\OT1/cmr/m/n/12 Important
+ []
+
+
+Underfull \hbox (badness 3471) in paragraph at lines 41--41
+[]|\OT1/cmr/m/n/12 Bit mask of Green
+ []
+
+
+Underfull \hbox (badness 2662) in paragraph at lines 41--42
+[]|\OT1/cmr/m/n/12 E0 07 00
+ []
+
+
+Underfull \hbox (badness 3343) in paragraph at lines 43--43
+[]|\OT1/cmr/m/n/12 Bit mask of Al-pha
+ []
+
+
+Overfull \hbox (12.41272pt too wide) in alignment at lines 22--45
+ [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\OT1/cmr/m/n/12 Sets end-points for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+\OT1/cmr/m/n/12 colours within the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+[]|\OT1/cmr/m/n/12 Whole
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+[]|\OT1/cmr/m/n/12 Gamma
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+[]|\OT1/cmr/m/n/12 Gamma Value of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+\OT1/cmr/m/n/12 Green Field (not
+ []
+
+
+Underfull \hbox (badness 4036) in paragraph at lines 49--49
+[]|\OT1/cmr/m/n/12 Enum dic-tat-ing the
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 49--49
+\OT1/cmr/m/n/12 in-tent of the im-age
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+[]|\OT1/cmr/m/n/12 ICC Pro-file
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 50--50
+[]|\OT1/cmr/m/n/12 Offset from the file
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+\OT1/cmr/m/n/12 start to the ICC
+ []
+
+
+Underfull \hbox (badness 4660) in paragraph at lines 50--50
+\OT1/cmr/m/n/12 Colour Pro-file (Not
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
+[]|\OT1/cmr/m/n/12 ICC Pro-file
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--54
+[]|\OT1/cmr/m/n/12 Image Data
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--54
+[]|\OT1/cmr/m/n/12 Each field
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--54
+\OT1/cmr/m/n/12 con-tains all
+ []
+
+
+Underfull \hbox (badness 3138) in paragraph at lines 54--54
+[]|\OT1/cmr/m/n/12 Padding is used to
+ []
+
+
+Overfull \hbox (12.41272pt too wide) in alignment at lines 45--59
+ [] [] [] [] [] 
+ []
+
+[33
+
+
+
+] [34]) [35] (E:\Uni\part3_project\Report\AppendixC.tex [36
+
+
+
+]
+Appendix D.
+------------------------------------------------------------------------------
+ D Source Code
+------------------------------------------------------------------------------
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+)
+(E:\Uni\part3_project\Code\DualOV7670\main.c [37] [38] [39] [40])
+(E:\Uni\part3_project\Code\DualOV7670\Bitmap.h)
+(E:\Uni\part3_project\Code\DualOV7670\Bitmap.c [41] [42])
+(E:\Uni\part3_project\Code\DualOV7670\Config.h [43])
+(E:\Uni\part3_project\Code\DualOV7670\Config.c [44])
+(E:\Uni\part3_project\Code\DualOV7670\DualCameras.h [45] [46] [47] [48]
+[49]) (E:\Uni\part3_project\Code\DualOV7670\DualCameras.c [50] [51] [52]
+[53] [54] [55] [56] [57]) (E:\Uni\part3_project\Code\DualOV7670\PCA9542A.h
+[58]) (E:\Uni\part3_project\Code\DualOV7670\PCA9542A.c [59])
+(E:\Uni\part3_project\Code\DualOV7670\TWI_Master.h [60] [61]
+Missing character: There is no “ in font cmtt8!
+Missing character: There is no ” in font cmtt8!
+ [62]
+Missing character: There is no “ in font cmtt8!
+Missing character: There is no ” in font cmtt8!
+)
+(E:\Uni\part3_project\Code\DualOV7670\TWI_Master.c [63] [64] [65] [66] [67]
+Missing character: There is no “ in font cmtt8!
+Missing character: There is no ” in font cmtt8!
+)
+(E:\Uni\part3_project\Code\DualOV7670\Usart.h [68])
+(E:\Uni\part3_project\Code\DualOV7670\Usart.c [69])
+(E:\Uni\part3_project\Code\DualCamera_UI\DualCamera_UI.c [70] [71]) [72]
+(E:\Uni\part3_project\Code\DualCamera_UI\TWI_slave.h [73] [74]
+Missing character: There is no “ in font cmtt8!
+Missing character: There is no ” in font cmtt8!
+Missing character: There is no “ in font cmtt8!
+Missing character: There is no ” in font cmtt8!
+)
+(E:\Uni\part3_project\Code\DualCamera_UI\TWI_slave.c [75] [76] [77] [78]
+[79] [80]
+Missing character: There is no “ in font cmtt8!
+Missing character: There is no ” in font cmtt8!
+Missing character: There is no “ in font cmtt8!
+Missing character: There is no ” in font cmtt8!
+ [81])
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(E:\Uni\part3_project\MATLAB\loadimages.m)
+(E:\Uni\part3_project\MATLAB\GetSubImage.m [82])
+(E:\Uni\part3_project\MATLAB\SADAll.m [83])
+(E:\Uni\part3_project\MATLAB\SSDAll.m [84]) (E:\Uni\part3_project\MATLAB\NCC.m
+[85])) [86]
+------------------------------------------------------------------------------
+ References
+------------------------------------------------------------------------------
+(E:\Uni\part3_project\Report\Report.bbl [87
+
+
+
+])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
+ [88]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
- ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Report.aux" ("C:\Use
-rs\hslovett\My Documents\Uni\part3_project\Report\Introduction.aux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Research.aux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\HardwareDevelopment.a
-ux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\InvestigationVision.a
-ux") ("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Results.aux")
-("C:\Users\hslovett\My Documents\Uni\part3_project\Report\Conclusions.aux"))
+
+(E:\Uni\part3_project\Report\Report.aux
+(E:\Uni\part3_project\Report\Introduction.aux)
+(E:\Uni\part3_project\Report\Research.aux)
+(E:\Uni\part3_project\Report\HardwareDevelopment.aux)
+(E:\Uni\part3_project\Report\InvestigationVision.aux)
+(E:\Uni\part3_project\Report\Results.aux)
+(E:\Uni\part3_project\Report\Conclusions.aux)
+(E:\Uni\part3_project\Report\AppendixD.aux)
+(E:\Uni\part3_project\Report\AppendixA.aux)
+(E:\Uni\part3_project\Report\AppendixB.aux)
+(E:\Uni\part3_project\Report\AppendixC.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
-
-
-Package rerunfilecheck Warning: File `Report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Report.out':
-(rerunfilecheck)             Before: 5CB9C2BDE16424FAC1B761068FE8D200;11063
-(rerunfilecheck)             After:  AE09250EAF41D09A4BF41D0F04CD7ACF;5595.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: File `Report.out' has not changed.
+(rerunfilecheck)             Checksum: 5CB9C2BDE16424FAC1B761068FE8D200;11063.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
  ) 
 Here is how much of TeX's memory you used:
- 20702 strings out of 494045
- 347518 string characters out of 3145960
- 440995 words of memory out of 3000000
- 23313 multiletter control sequences out of 15000+200000
- 13102 words of font info for 50 fonts, out of 3000000 for 9000
+ 25709 strings out of 494045
+ 412372 string characters out of 3145960
+ 1436067 words of memory out of 3000000
+ 25758 multiletter control sequences out of 15000+200000
+ 15022 words of font info for 59 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 63i,18n,76p,1065b,402s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{equation.79} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.83} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.82} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.80} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.DistanceEstimation} has been referenced but do
-es not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.68} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.88} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.85} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.64} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subfigure.57} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{subfigure.56} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.haller2012design} has been referenced but does
- not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.54} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Tsai:NCC} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.44} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.zhao2006image} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Hamzah:DistanceDetection} has been referenced 
-but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.41} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.98} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Atmel:I2CSlave} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.38} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.36} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.35} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.ImageComparison} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.FATFS} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.I2C_Mux} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.31} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.SCCB_Interface} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Atmel:ASF} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Farnell} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.ARM:Stellaris} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Atmel:A3BU} has been referenced but does not e
+ 63i,18n,100p,1065b,1878s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.102} has been referenced but does not e
 xist, replaced by a fixed one
 
-pdfTeX warning (dest): name{cite.Atmel:644P} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Atmel:UC3C} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
+pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not exis
 t, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.18} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.95} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.10} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.8} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Mrovlje:Distance_Stereoscopic} has been refere
-nced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Microsoft:Kinect} has been referenced but does
- not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Saxena:DepthEstimation} has been referenced bu
-t does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Ruhnke:LaserMapping} has been referenced but d
-oes not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Se:MappingRobot} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Thrun:SLAM} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.Fleuret:OccupancyMap} has been referenced but 
-does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.octomap} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.thrun2003learning} has been referenced but doe
-s not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{dummy.2551} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2465} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2421} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2376} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2335} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2319} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2318} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2317} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2058} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.1932} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.1826} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1825} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.1741} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.1711} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.1488} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.1361} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.1312} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.1285} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.807} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.522} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.489} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.410} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.339} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.313} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.106} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.105} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.104} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.103} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.100} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.99} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.96} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.94} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.93} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.89} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.86} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.74} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.65} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.60} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.59} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.58} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.53} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.51} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.49} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.43} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.42} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.40} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.39} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.37} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.32} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.23} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.21} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.20} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.17} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.16} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.11} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{section.9} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.7} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{dummy.4} has been referenced but does not exist, re
-placed by a fixed one
 
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmu10.pfb>
-Output written on Report.pdf (28 pages, 10859579 bytes).
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmu10.pfb>
+Output written on Report.pdf (100 pages, 11905192 bytes).
 PDF statistics:
- 743 PDF objects out of 1000 (max. 8388607)
- 221 named destinations out of 1000 (max. 500000)
- 590 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4058 PDF objects out of 4296 (max. 8388607)
+ 2676 named destinations out of 2984 (max. 500000)
+ 605 words of extra memory for PDF output out of 10000 (max. 10000000)
 
