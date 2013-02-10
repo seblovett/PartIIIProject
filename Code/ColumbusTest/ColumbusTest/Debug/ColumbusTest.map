@@ -274,8 +274,6 @@ Discarded input sections
  .bss           0x00000000        0x0 src/asf/avr32/drivers/intc/intc.o
  .text._unhandled_interrupt
                 0x00000000        0x2 src/asf/avr32/drivers/intc/intc.o
- .text.INTC_register_interrupt
-                0x00000000       0x80 src/asf/avr32/drivers/intc/intc.o
  .text.INTC_init_interrupts
                 0x00000000       0x54 src/asf/avr32/drivers/intc/intc.o
  .text          0x00000000        0x0 src/asf/avr32/drivers/pdca/pdca.o
@@ -465,6 +463,17 @@ Discarded input sections
                 0x00000000        0x8 src/asf/avr32/drivers/spi/spi.o
  .text.spi_getStatus
                 0x00000000       0x2c src/asf/avr32/drivers/spi/spi.o
+ .text          0x00000000        0x0 src/asf/avr32/drivers/twim/twim.o
+ .data          0x00000000        0x0 src/asf/avr32/drivers/twim/twim.o
+ .bss           0x00000000        0x0 src/asf/avr32/drivers/twim/twim.o
+ .text.twim_chained_transfer
+                0x00000000      0x1dc src/asf/avr32/drivers/twim/twim.o
+ .text.twim_write_packet
+                0x00000000       0xdc src/asf/avr32/drivers/twim/twim.o
+ .text.twim_read
+                0x00000000       0xd8 src/asf/avr32/drivers/twim/twim.o
+ .text.twim_read_packet
+                0x00000000      0x110 src/asf/avr32/drivers/twim/twim.o
  .text          0x00000000        0x0 src/asf/avr32/drivers/usart/usart.o
  .data          0x00000000        0x0 src/asf/avr32/drivers/usart/usart.o
  .bss           0x00000000        0x0 src/asf/avr32/drivers/usart/usart.o
@@ -984,6 +993,7 @@ LOAD src/asf/avr32/drivers/pm/pm_uc3c.o
 LOAD src/asf/avr32/drivers/pm/power_clocks_lib.o
 LOAD src/asf/avr32/drivers/scif/scif_uc3c.o
 LOAD src/asf/avr32/drivers/spi/spi.o
+LOAD src/asf/avr32/drivers/twim/twim.o
 LOAD src/asf/avr32/drivers/usart/usart.o
 LOAD src/asf/avr32/services/fs/fat/fat.o
 LOAD src/asf/avr32/services/fs/fat/fat_unusual.o
@@ -1119,7 +1129,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .plt
  *(.plt)
 
-.text           0x80002004     0x1a78
+.text           0x80002004     0x1eb4
  *(.text .stub .text.* .gnu.linkonce.t.*)
  .text.sd_mmc_spi_get_capacity
                 0x80002004      0x11c src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -1231,148 +1241,178 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .text.gpio_clr_gpio_pin
                 0x80002ff0       0x1c src/asf/avr32/drivers/gpio/gpio.o
                 0x80002ff0                gpio_clr_gpio_pin
+ .text.INTC_register_interrupt
+                0x8000300c       0x80 src/asf/avr32/drivers/intc/intc.o
+                0x8000300c                INTC_register_interrupt
  .text._get_interrupt_handler
-                0x8000300c       0x38 src/asf/avr32/drivers/intc/intc.o
-                0x8000300c                _get_interrupt_handler
+                0x8000308c       0x38 src/asf/avr32/drivers/intc/intc.o
+                0x8000308c                _get_interrupt_handler
  .text.pm_set_mclk_source
-                0x80003044       0x20 src/asf/avr32/drivers/pm/pm_uc3c.o
-                0x80003044                pm_set_mclk_source
+                0x800030c4       0x20 src/asf/avr32/drivers/pm/pm_uc3c.o
+                0x800030c4                pm_set_mclk_source
  .text.pcl_switch_to_osc
-                0x80003064       0x44 src/asf/avr32/drivers/pm/power_clocks_lib.o
-                0x80003064                pcl_switch_to_osc
+                0x800030e4       0x44 src/asf/avr32/drivers/pm/power_clocks_lib.o
+                0x800030e4                pcl_switch_to_osc
  .text.scif_pclksr_statushigh_wait
-                0x800030a8       0x1a src/asf/avr32/drivers/scif/scif_uc3c.o
- *fill*         0x800030c2        0x2 d703d703
+                0x80003128       0x1a src/asf/avr32/drivers/scif/scif_uc3c.o
+ *fill*         0x80003142        0x2 d703d703
  .text.scif_enable_osc
-                0x800030c4       0x74 src/asf/avr32/drivers/scif/scif_uc3c.o
-                0x800030c4                scif_enable_osc
+                0x80003144       0x74 src/asf/avr32/drivers/scif/scif_uc3c.o
+                0x80003144                scif_enable_osc
  .text.scif_configure_osc_crystalmode
-                0x80003138       0xd0 src/asf/avr32/drivers/scif/scif_uc3c.o
-                0x80003138                scif_configure_osc_crystalmode
+                0x800031b8       0xd0 src/asf/avr32/drivers/scif/scif_uc3c.o
+                0x800031b8                scif_configure_osc_crystalmode
  .text.getBaudDiv
-                0x80003208       0x20 src/asf/avr32/drivers/spi/spi.o
-                0x80003208                getBaudDiv
+                0x80003288       0x20 src/asf/avr32/drivers/spi/spi.o
+                0x80003288                getBaudDiv
  .text.spi_initMaster
-                0x80003228       0x38 src/asf/avr32/drivers/spi/spi.o
-                0x80003228                spi_initMaster
+                0x800032a8       0x38 src/asf/avr32/drivers/spi/spi.o
+                0x800032a8                spi_initMaster
  .text.spi_selectionMode
-                0x80003260       0x3e src/asf/avr32/drivers/spi/spi.o
-                0x80003260                spi_selectionMode
+                0x800032e0       0x3e src/asf/avr32/drivers/spi/spi.o
+                0x800032e0                spi_selectionMode
  .text.spi_selectChip
-                0x8000329e       0x4c src/asf/avr32/drivers/spi/spi.o
-                0x8000329e                spi_selectChip
+                0x8000331e       0x4c src/asf/avr32/drivers/spi/spi.o
+                0x8000331e                spi_selectChip
  .text.spi_unselectChip
-                0x800032ea       0x26 src/asf/avr32/drivers/spi/spi.o
-                0x800032ea                spi_unselectChip
+                0x8000336a       0x26 src/asf/avr32/drivers/spi/spi.o
+                0x8000336a                spi_unselectChip
  .text.spi_setupChipReg
-                0x80003310       0xb8 src/asf/avr32/drivers/spi/spi.o
-                0x80003310                spi_setupChipReg
+                0x80003390       0xb8 src/asf/avr32/drivers/spi/spi.o
+                0x80003390                spi_setupChipReg
  .text.spi_enable
-                0x800033c8        0x6 src/asf/avr32/drivers/spi/spi.o
-                0x800033c8                spi_enable
+                0x80003448        0x6 src/asf/avr32/drivers/spi/spi.o
+                0x80003448                spi_enable
  .text.spi_write
-                0x800033ce       0x1c src/asf/avr32/drivers/spi/spi.o
-                0x800033ce                spi_write
+                0x8000344e       0x1c src/asf/avr32/drivers/spi/spi.o
+                0x8000344e                spi_write
  .text.spi_read
-                0x800033ea       0x20 src/asf/avr32/drivers/spi/spi.o
-                0x800033ea                spi_read
+                0x8000346a       0x20 src/asf/avr32/drivers/spi/spi.o
+                0x8000346a                spi_read
+ *fill*         0x8000348a        0x2 d703d703
+ .text.twim_master_interrupt_handler
+                0x8000348c       0xdc src/asf/avr32/drivers/twim/twim.o
+ .text.twim_set_speed
+                0x80003568       0x70 src/asf/avr32/drivers/twim/twim.o
+                0x80003568                twim_set_speed
+ .text.twim_status
+                0x800035d8       0x10 src/asf/avr32/drivers/twim/twim.o
+                0x800035d8                twim_status
+ .text.twim_disable_interrupt
+                0x800035e8       0x14 src/asf/avr32/drivers/twim/twim.o
+                0x800035e8                twim_disable_interrupt
+ .text.twim_write
+                0x800035fc       0xb4 src/asf/avr32/drivers/twim/twim.o
+                0x800035fc                twim_write
+ .text.twim_probe
+                0x800036b0       0x1c src/asf/avr32/drivers/twim/twim.o
+                0x800036b0                twim_probe
+ .text.twim_master_init
+                0x800036cc       0xb4 src/asf/avr32/drivers/twim/twim.o
+                0x800036cc                twim_master_init
  .text.usart_set_async_baudrate
-                0x8000340a       0x5a src/asf/avr32/drivers/usart/usart.o
+                0x80003780       0x5a src/asf/avr32/drivers/usart/usart.o
  .text.usart_write_char
-                0x80003464       0x14 src/asf/avr32/drivers/usart/usart.o
-                0x80003464                usart_write_char
+                0x800037da       0x14 src/asf/avr32/drivers/usart/usart.o
+                0x800037da                usart_write_char
+ *fill*         0x800037ee        0x2 d703d703
  .text.usart_putchar
-                0x80003478       0x2c src/asf/avr32/drivers/usart/usart.o
-                0x80003478                usart_putchar
+                0x800037f0       0x2c src/asf/avr32/drivers/usart/usart.o
+                0x800037f0                usart_putchar
  .text.usart_write_line
-                0x800034a4       0x24 src/asf/avr32/drivers/usart/usart.o
-                0x800034a4                usart_write_line
+                0x8000381c       0x24 src/asf/avr32/drivers/usart/usart.o
+                0x8000381c                usart_write_line
  .text.usart_reset
-                0x800034c8       0x2c src/asf/avr32/drivers/usart/usart.o
-                0x800034c8                usart_reset
+                0x80003840       0x2c src/asf/avr32/drivers/usart/usart.o
+                0x80003840                usart_reset
  .text.usart_init_rs232
-                0x800034f4       0xcc src/asf/avr32/drivers/usart/usart.o
-                0x800034f4                usart_init_rs232
+                0x8000386c       0xcc src/asf/avr32/drivers/usart/usart.o
+                0x8000386c                usart_init_rs232
  .text.print_char
-                0x800035c0        0xc src/asf/avr32/utils/debug/print_funcs.o
-                0x800035c0                print_char
+                0x80003938        0xc src/asf/avr32/utils/debug/print_funcs.o
+                0x80003938                print_char
  .text.print_dbg_char
-                0x800035cc       0x14 src/asf/avr32/utils/debug/print_funcs.o
-                0x800035cc                print_dbg_char
- .text.print    0x800035e0        0xc src/asf/avr32/utils/debug/print_funcs.o
-                0x800035e0                print
+                0x80003944       0x14 src/asf/avr32/utils/debug/print_funcs.o
+                0x80003944                print_dbg_char
+ .text.print    0x80003958        0xc src/asf/avr32/utils/debug/print_funcs.o
+                0x80003958                print
  .text.print_ulong
-                0x800035ec       0x48 src/asf/avr32/utils/debug/print_funcs.o
-                0x800035ec                print_ulong
+                0x80003964       0x48 src/asf/avr32/utils/debug/print_funcs.o
+                0x80003964                print_ulong
  .text.print_dbg_ulong
-                0x80003634       0x14 src/asf/avr32/utils/debug/print_funcs.o
-                0x80003634                print_dbg_ulong
+                0x800039ac       0x14 src/asf/avr32/utils/debug/print_funcs.o
+                0x800039ac                print_dbg_ulong
  .text.print_dbg
-                0x80003648       0x14 src/asf/avr32/utils/debug/print_funcs.o
-                0x80003648                print_dbg
+                0x800039c0       0x14 src/asf/avr32/utils/debug/print_funcs.o
+                0x800039c0                print_dbg
  .text.init_dbg_rs232_ex
-                0x8000365c       0x40 src/asf/avr32/utils/debug/print_funcs.o
-                0x8000365c                init_dbg_rs232_ex
+                0x800039d4       0x40 src/asf/avr32/utils/debug/print_funcs.o
+                0x800039d4                init_dbg_rs232_ex
  .text.init_dbg_rs232
-                0x8000369c       0x14 src/asf/avr32/utils/debug/print_funcs.o
-                0x8000369c                init_dbg_rs232
- .text._stext   0x800036b0       0x4c src/asf/avr32/utils/startup/startup_uc3.o
+                0x80003a14       0x14 src/asf/avr32/utils/debug/print_funcs.o
+                0x80003a14                init_dbg_rs232
+ .text._stext   0x80003a28       0x4c src/asf/avr32/utils/startup/startup_uc3.o
                                  0x50 (size before relaxing)
-                0x800036b0                _stext
+                0x80003a28                _stext
  .text.board_init
-                0x800036fc        0x2 src/asf/common/boards/user_board/init.o
-                0x800036fc                board_init
- *fill*         0x800036fe        0x2 d703d703
+                0x80003a74        0x2 src/asf/common/boards/user_board/init.o
+                0x80003a74                board_init
+ *fill*         0x80003a76        0x2 d703d703
  .text.mem_test_unit_ready
-                0x80003700       0x14 src/asf/common/services/storage/ctrl_access/ctrl_access.o
-                0x80003700                mem_test_unit_ready
+                0x80003a78       0x14 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x80003a78                mem_test_unit_ready
  .text.mem_read_capacity
-                0x80003714       0x18 src/asf/common/services/storage/ctrl_access/ctrl_access.o
-                0x80003714                mem_read_capacity
+                0x80003a8c       0x18 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x80003a8c                mem_read_capacity
  .text.sd_mmc_resources_init
-                0x8000372c       0x84 src/CustomDevices/SD_Card.o
-                0x8000372c                sd_mmc_resources_init
- .text.main     0x800037b0      0x2cc src/main.o
-                0x800037b0                main
+                0x80003aa4       0x84 src/CustomDevices/SD_Card.o
+                0x80003aa4                sd_mmc_resources_init
+ .text.main     0x80003b28      0x390 src/main.o
+                0x80003b28                main
  *(.text.*personality*)
  *(.gnu.warning)
 
-.exception      0x80003c00      0x200
- .exception     0x80003c00      0x200 src/asf/avr32/drivers/intc/exception.o
-                0x80003c00                _evba
-                0x80003d04                _int0
-                0x80003d12                _int1
-                0x80003d20                _int2
-                0x80003d2e                _int3
+.exception      0x80004000      0x200
+ .exception     0x80004000      0x200 src/asf/avr32/drivers/intc/exception.o
+                0x80004000                _evba
+                0x80004104                _int0
+                0x80004112                _int1
+                0x80004120                _int2
+                0x8000412e                _int3
 
 .fini
  *(.fini)
-                0x80003e00                PROVIDE (__etext, .)
-                0x80003e00                PROVIDE (_etext, .)
-                0x80003e00                PROVIDE (etext, .)
+                0x80004200                PROVIDE (__etext, .)
+                0x80004200                PROVIDE (_etext, .)
+                0x80004200                PROVIDE (etext, .)
 
-.rodata         0x80003e00      0x500
+.rodata         0x80004200      0x554
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.SDRAMC_EBI_GPIO_MAP.14470
-                0x80003e00      0x128 src/asf/avr32/drivers/ebi/sdramc/sdramc.o
+                0x80004200      0x128 src/asf/avr32/drivers/ebi/sdramc/sdramc.o
  .rodata.gpio_enable_module_pin
-                0x80003f28       0x20 src/asf/avr32/drivers/gpio/gpio.o
+                0x80004328       0x20 src/asf/avr32/drivers/gpio/gpio.o
  .rodata._int_handler_table
-                0x80003f48      0x178 src/asf/avr32/drivers/intc/intc.o
+                0x80004348      0x178 src/asf/avr32/drivers/intc/intc.o
  .rodata.DBG_USART_GPIO_MAP.14756
-                0x800040c0       0x10 src/asf/avr32/utils/debug/print_funcs.o
+                0x800044c0       0x10 src/asf/avr32/utils/debug/print_funcs.o
  .rodata.lun_desc
-                0x800040d0       0x1c src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x800044d0       0x1c src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .rodata.str1.4
-                0x800040ec       0x17 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x800044ec       0x17 src/asf/common/services/storage/ctrl_access/ctrl_access.o
                                  0x18 (size before relaxing)
- *fill*         0x80004103        0x1 00
- .rodata.C.60.16795
-                0x80004104       0x10 src/CustomDevices/SD_Card.o
- .rodata.SD_MMC_SPI_GPIO_MAP.16793
-                0x80004114       0x20 src/CustomDevices/SD_Card.o
+ *fill*         0x80004503        0x1 00
+ .rodata.SD_MMC_SPI_GPIO_MAP.16877
+                0x80004504       0x20 src/CustomDevices/SD_Card.o
+ .rodata.C.60.16879
+                0x80004524       0x10 src/CustomDevices/SD_Card.o
+ .rodata.C.58.16864
+                0x80004534       0x10 src/main.o
  .rodata.str1.4
-                0x80004134      0x1cc src/main.o
+                0x80004544      0x200 src/main.o
+                                0x204 (size before relaxing)
+ .rodata.C.57.16863
+                0x80004744       0x10 src/main.o
 
 .rodata1
  *(.rodata1)
@@ -1387,9 +1427,10 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.gcc_except_table)
  *(.gcc_except_table.*)
 
-.dalign         0x80004300        0x0
-                0x80004300                . = ALIGN (0x8)
-                0x80004300                PROVIDE (_data_lma, .)
+.dalign         0x80004754        0x4
+                0x80004758                . = ALIGN (0x8)
+ *fill*         0x80004754        0x4 00
+                0x80004758                PROVIDE (_data_lma, .)
                 0x00000004                PROVIDE (_data, ORIGIN (CPUSRAM))
                 0x00000004                . = ORIGIN (CPUSRAM)
 
@@ -1448,7 +1489,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.got.plt)
  *(.got)
 
-.data           0x00000004        0x8 load address 0x80004300
+.data           0x00000004        0x8 load address 0x80004758
  *(.data .data.* .gnu.linkonce.d.*)
  .data.sd_mmc_spi_presence_status
                 0x00000004        0x1 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -1462,7 +1503,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .data1
  *(.data1)
 
-.balign         0x0000000c        0x4 load address 0x80004308
+.balign         0x0000000c        0x4 load address 0x80004760
                 0x00000010                . = ALIGN (0x8)
  *fill*         0x0000000c        0x4 00
                 0x00000010                _edata = .
@@ -1470,7 +1511,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                 0x00000010                PROVIDE (edata, .)
                 0x00000010                __bss_start = .
 
-.bss            0x00000010      0x418 load address 0x80004308
+.bss            0x00000010      0x438 load address 0x80004760
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
  .bss.gl_ptr_mem
@@ -1579,23 +1620,42 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                 0x000001f0        0x4 src/asf/avr32/drivers/intc/intc.o
  .bss._int_line_handler_table_46
                 0x000001f4        0x4 src/asf/avr32/drivers/intc/intc.o
+ .bss.twim_inst
+                0x000001f8        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_rx_data
+                0x000001fc        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_rx_nb_bytes
+                0x00000200        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.transfer_status
+                0x00000204        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_tx_data
+                0x00000208        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_it_mask
+                0x0000020c        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_next
+                0x00000210        0x1 src/asf/avr32/drivers/twim/twim.o
+ *fill*         0x00000211        0x3 00
+ .bss.twim_package
+                0x00000214        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_tx_nb_bytes
+                0x00000218        0x4 src/asf/avr32/drivers/twim/twim.o
  *(COMMON)
- COMMON         0x000001f8      0x229 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
-                0x000001f8                data_mem
-                0x000003fc                capacity
-                0x00000404                capacity_mult
-                0x00000406                erase_group_size
-                0x00000408                sd_mmc_spi_last_block_address
-                0x0000040c                r2
-                0x0000040e                card_type
-                0x00000410                csd
-                0x00000420                r1
-                0x00000428                . = ALIGN (0x8)
- *fill*         0x00000421        0x7 00
-                0x00000428                . = ALIGN (0x8)
-                0x00000428                _end = .
-                0x00000428                PROVIDE (end, .)
-                0x00000428                __heap_start__ = ALIGN (0x8)
+ COMMON         0x0000021c      0x229 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
+                0x0000021c                data_mem
+                0x00000420                capacity
+                0x00000428                capacity_mult
+                0x0000042a                erase_group_size
+                0x0000042c                sd_mmc_spi_last_block_address
+                0x00000430                r2
+                0x00000432                card_type
+                0x00000434                csd
+                0x00000444                r1
+                0x00000448                . = ALIGN (0x8)
+ *fill*         0x00000445        0x3 00
+                0x00000448                . = ALIGN (0x8)
+                0x00000448                _end = .
+                0x00000448                PROVIDE (end, .)
+                0x00000448                __heap_start__ = ALIGN (0x8)
                 0x0000f000                . = ((ORIGIN (CPUSRAM) + 0xfffc) - _stack_size)
                 0x0000f000                __heap_end__ = .
 
@@ -1630,6 +1690,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .comment       0x00000000       0x31 src/asf/avr32/drivers/pm/power_clocks_lib.o
  .comment       0x00000000       0x31 src/asf/avr32/drivers/scif/scif_uc3c.o
  .comment       0x00000000       0x31 src/asf/avr32/drivers/spi/spi.o
+ .comment       0x00000000       0x31 src/asf/avr32/drivers/twim/twim.o
  .comment       0x00000000       0x31 src/asf/avr32/drivers/usart/usart.o
  .comment       0x00000000       0x31 src/asf/avr32/utils/debug/print_funcs.o
  .comment       0x00000000       0x31 src/asf/common/boards/user_board/init.o
@@ -1649,7 +1710,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x9d8
+.debug_aranges  0x00000000      0xa48
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0xf0 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -1672,20 +1733,22 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_aranges
                 0x000006e8       0xa8 src/asf/avr32/drivers/spi/spi.o
  .debug_aranges
-                0x00000790       0xe0 src/asf/avr32/drivers/usart/usart.o
+                0x00000790       0x70 src/asf/avr32/drivers/twim/twim.o
  .debug_aranges
-                0x00000870       0x88 src/asf/avr32/utils/debug/print_funcs.o
+                0x00000800       0xe0 src/asf/avr32/drivers/usart/usart.o
  .debug_aranges
-                0x000008f8       0x20 src/asf/common/boards/user_board/init.o
+                0x000008e0       0x88 src/asf/avr32/utils/debug/print_funcs.o
  .debug_aranges
-                0x00000918       0x68 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x00000968       0x20 src/asf/common/boards/user_board/init.o
  .debug_aranges
-                0x00000980       0x38 src/CustomDevices/SD_Card.o
+                0x00000988       0x68 src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_aranges
-                0x000009b8       0x20 src/main.o
+                0x000009f0       0x38 src/CustomDevices/SD_Card.o
+ .debug_aranges
+                0x00000a28       0x20 src/main.o
 
 .debug_pubnames
-                0x00000000     0x1c28
+                0x00000000     0x1cfe
  *(.debug_pubnames)
  .debug_pubnames
                 0x00000000      0x3b1 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -1708,19 +1771,21 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_pubnames
                 0x000015d8      0x178 src/asf/avr32/drivers/spi/spi.o
  .debug_pubnames
-                0x00001750      0x227 src/asf/avr32/drivers/usart/usart.o
+                0x00001750       0xd6 src/asf/avr32/drivers/twim/twim.o
  .debug_pubnames
-                0x00001977      0x10f src/asf/avr32/utils/debug/print_funcs.o
+                0x00001826      0x227 src/asf/avr32/drivers/usart/usart.o
  .debug_pubnames
-                0x00001a86       0x21 src/asf/common/boards/user_board/init.o
+                0x00001a4d      0x10f src/asf/avr32/utils/debug/print_funcs.o
  .debug_pubnames
-                0x00001aa7       0xc5 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x00001b5c       0x21 src/asf/common/boards/user_board/init.o
  .debug_pubnames
-                0x00001b6c       0xa1 src/CustomDevices/SD_Card.o
+                0x00001b7d       0xc5 src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_pubnames
-                0x00001c0d       0x1b src/main.o
+                0x00001c42       0xa1 src/CustomDevices/SD_Card.o
+ .debug_pubnames
+                0x00001ce3       0x1b src/main.o
 
-.debug_info     0x00000000    0x115b9
+.debug_info     0x00000000    0x133dd
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x154b src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_info    0x0000154b      0x224 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -1732,14 +1797,15 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_info    0x0000687f      0x58f src/asf/avr32/drivers/pm/power_clocks_lib.o
  .debug_info    0x00006e0e     0x1caa src/asf/avr32/drivers/scif/scif_uc3c.o
  .debug_info    0x00008ab8     0x1309 src/asf/avr32/drivers/spi/spi.o
- .debug_info    0x00009dc1     0x3166 src/asf/avr32/drivers/usart/usart.o
- .debug_info    0x0000cf27     0x2a1b src/asf/avr32/utils/debug/print_funcs.o
- .debug_info    0x0000f942       0xa6 src/asf/common/boards/user_board/init.o
- .debug_info    0x0000f9e8      0x459 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_info    0x0000fe41     0x140e src/CustomDevices/SD_Card.o
- .debug_info    0x0001124f      0x36a src/main.o
+ .debug_info    0x00009dc1     0x120f src/asf/avr32/drivers/twim/twim.o
+ .debug_info    0x0000afd0     0x3166 src/asf/avr32/drivers/usart/usart.o
+ .debug_info    0x0000e136     0x2a1b src/asf/avr32/utils/debug/print_funcs.o
+ .debug_info    0x00010b51       0xa6 src/asf/common/boards/user_board/init.o
+ .debug_info    0x00010bf7      0x459 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_info    0x00011050     0x140e src/CustomDevices/SD_Card.o
+ .debug_info    0x0001245e      0xf7f src/main.o
 
-.debug_abbrev   0x00000000     0x20b5
+.debug_abbrev   0x00000000     0x23ef
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x2a4 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_abbrev  0x000002a4      0x145 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -1751,14 +1817,15 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_abbrev  0x00000fe5      0x191 src/asf/avr32/drivers/pm/power_clocks_lib.o
  .debug_abbrev  0x00001176      0x30c src/asf/avr32/drivers/scif/scif_uc3c.o
  .debug_abbrev  0x00001482      0x281 src/asf/avr32/drivers/spi/spi.o
- .debug_abbrev  0x00001703      0x32b src/asf/avr32/drivers/usart/usart.o
- .debug_abbrev  0x00001a2e      0x1a8 src/asf/avr32/utils/debug/print_funcs.o
- .debug_abbrev  0x00001bd6       0x4c src/asf/common/boards/user_board/init.o
- .debug_abbrev  0x00001c22      0x15e src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_abbrev  0x00001d80      0x1b7 src/CustomDevices/SD_Card.o
- .debug_abbrev  0x00001f37      0x17e src/main.o
+ .debug_abbrev  0x00001703      0x282 src/asf/avr32/drivers/twim/twim.o
+ .debug_abbrev  0x00001985      0x32b src/asf/avr32/drivers/usart/usart.o
+ .debug_abbrev  0x00001cb0      0x1a8 src/asf/avr32/utils/debug/print_funcs.o
+ .debug_abbrev  0x00001e58       0x4c src/asf/common/boards/user_board/init.o
+ .debug_abbrev  0x00001ea4      0x15e src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_abbrev  0x00002002      0x1b7 src/CustomDevices/SD_Card.o
+ .debug_abbrev  0x000021b9      0x236 src/main.o
 
-.debug_line     0x00000000     0xa27c
+.debug_line     0x00000000     0xad05
  *(.debug_line)
  .debug_line    0x00000000      0xbfe src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_line    0x00000bfe      0x929 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -1770,14 +1837,15 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_line    0x000044d2      0x87c src/asf/avr32/drivers/pm/power_clocks_lib.o
  .debug_line    0x00004d4e      0xaea src/asf/avr32/drivers/scif/scif_uc3c.o
  .debug_line    0x00005838      0x8db src/asf/avr32/drivers/spi/spi.o
- .debug_line    0x00006113      0xa20 src/asf/avr32/drivers/usart/usart.o
- .debug_line    0x00006b33      0x93b src/asf/avr32/utils/debug/print_funcs.o
- .debug_line    0x0000746e      0xbe8 src/asf/common/boards/user_board/init.o
- .debug_line    0x00008056      0x90e src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_line    0x00008964      0xc7b src/CustomDevices/SD_Card.o
- .debug_line    0x000095df      0xc9d src/main.o
+ .debug_line    0x00006113      0x9bd src/asf/avr32/drivers/twim/twim.o
+ .debug_line    0x00006ad0      0xa20 src/asf/avr32/drivers/usart/usart.o
+ .debug_line    0x000074f0      0x93b src/asf/avr32/utils/debug/print_funcs.o
+ .debug_line    0x00007e2b      0xc1f src/asf/common/boards/user_board/init.o
+ .debug_line    0x00008a4a      0x90e src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_line    0x00009358      0xcb2 src/CustomDevices/SD_Card.o
+ .debug_line    0x0000a00a      0xcfb src/main.o
 
-.debug_frame    0x00000000     0x1980
+.debug_frame    0x00000000     0x1ac8
  *(.debug_frame)
  .debug_frame   0x00000000      0x364 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_frame   0x00000364       0xb4 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -1789,14 +1857,15 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_frame   0x00000e80       0xa4 src/asf/avr32/drivers/pm/power_clocks_lib.o
  .debug_frame   0x00000f24      0x308 src/asf/avr32/drivers/scif/scif_uc3c.o
  .debug_frame   0x0000122c      0x168 src/asf/avr32/drivers/spi/spi.o
- .debug_frame   0x00001394      0x2ac src/asf/avr32/drivers/usart/usart.o
- .debug_frame   0x00001640      0x17c src/asf/avr32/utils/debug/print_funcs.o
- .debug_frame   0x000017bc       0x20 src/asf/common/boards/user_board/init.o
- .debug_frame   0x000017dc       0xe0 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_frame   0x000018bc       0x80 src/CustomDevices/SD_Card.o
- .debug_frame   0x0000193c       0x44 src/main.o
+ .debug_frame   0x00001394      0x148 src/asf/avr32/drivers/twim/twim.o
+ .debug_frame   0x000014dc      0x2ac src/asf/avr32/drivers/usart/usart.o
+ .debug_frame   0x00001788      0x17c src/asf/avr32/utils/debug/print_funcs.o
+ .debug_frame   0x00001904       0x20 src/asf/common/boards/user_board/init.o
+ .debug_frame   0x00001924       0xe0 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_frame   0x00001a04       0x80 src/CustomDevices/SD_Card.o
+ .debug_frame   0x00001a84       0x44 src/main.o
 
-.debug_str      0x00000000     0x45ef
+.debug_str      0x00000000     0x4b21
  *(.debug_str)
  .debug_str     0x00000000      0x819 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
                                 0x8c9 (size before relaxing)
@@ -1818,20 +1887,22 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                                 0xc42 (size before relaxing)
  .debug_str     0x0000362c      0x19a src/asf/avr32/drivers/spi/spi.o
                                 0x653 (size before relaxing)
- .debug_str     0x000037c6      0x904 src/asf/avr32/drivers/usart/usart.o
+ .debug_str     0x000037c6      0x519 src/asf/avr32/drivers/twim/twim.o
+                                0x6d9 (size before relaxing)
+ .debug_str     0x00003cdf      0x8f8 src/asf/avr32/drivers/usart/usart.o
                                 0xae1 (size before relaxing)
- .debug_str     0x000040ca      0x120 src/asf/avr32/utils/debug/print_funcs.o
+ .debug_str     0x000045d7      0x120 src/asf/avr32/utils/debug/print_funcs.o
                                 0x820 (size before relaxing)
- .debug_str     0x000041ea       0x36 src/asf/common/boards/user_board/init.o
+ .debug_str     0x000046f7       0x36 src/asf/common/boards/user_board/init.o
                                 0x118 (size before relaxing)
- .debug_str     0x00004220       0xdf src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_str     0x0000472d       0xdf src/asf/common/services/storage/ctrl_access/ctrl_access.o
                                 0x26e (size before relaxing)
- .debug_str     0x000042ff      0x1e8 src/CustomDevices/SD_Card.o
+ .debug_str     0x0000480c      0x1e8 src/CustomDevices/SD_Card.o
                                 0x606 (size before relaxing)
- .debug_str     0x000044e7      0x108 src/main.o
-                                0x275 (size before relaxing)
+ .debug_str     0x000049f4      0x12d src/main.o
+                                0x59b (size before relaxing)
 
-.debug_loc      0x00000000     0x3f94
+.debug_loc      0x00000000     0x446d
  *(.debug_loc)
  .debug_loc     0x00000000      0x911 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_loc     0x00000911      0x131 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -1843,13 +1914,14 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_loc     0x000021cf      0x31f src/asf/avr32/drivers/pm/power_clocks_lib.o
  .debug_loc     0x000024ee      0x4b4 src/asf/avr32/drivers/scif/scif_uc3c.o
  .debug_loc     0x000029a2      0x3dc src/asf/avr32/drivers/spi/spi.o
- .debug_loc     0x00002d7e      0x9c5 src/asf/avr32/drivers/usart/usart.o
- .debug_loc     0x00003743      0x3bc src/asf/avr32/utils/debug/print_funcs.o
- .debug_loc     0x00003aff      0x286 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_loc     0x00003d85       0xe4 src/CustomDevices/SD_Card.o
- .debug_loc     0x00003e69      0x12b src/main.o
+ .debug_loc     0x00002d7e      0x496 src/asf/avr32/drivers/twim/twim.o
+ .debug_loc     0x00003214      0x9c5 src/asf/avr32/drivers/usart/usart.o
+ .debug_loc     0x00003bd9      0x3bc src/asf/avr32/utils/debug/print_funcs.o
+ .debug_loc     0x00003f95      0x286 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_loc     0x0000421b       0xe4 src/CustomDevices/SD_Card.o
+ .debug_loc     0x000042ff      0x16e src/main.o
 
-.debug_macinfo  0x00000000  0x14ac974
+.debug_macinfo  0x00000000  0x15f723e
  *(.debug_macinfo)
  .debug_macinfo
                 0x00000000   0x14b45d src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -1872,17 +1944,19 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_macinfo
                 0x00b9642c   0x148d73 src/asf/avr32/drivers/spi/spi.o
  .debug_macinfo
-                0x00cdf19f   0x149136 src/asf/avr32/drivers/usart/usart.o
+                0x00cdf19f   0x149ed1 src/asf/avr32/drivers/twim/twim.o
  .debug_macinfo
-                0x00e282d5   0x14a54f src/asf/avr32/utils/debug/print_funcs.o
+                0x00e29070   0x149136 src/asf/avr32/drivers/usart/usart.o
  .debug_macinfo
-                0x00f72824   0x14fbc9 src/asf/common/boards/user_board/init.o
+                0x00f721a6   0x14a54f src/asf/avr32/utils/debug/print_funcs.o
  .debug_macinfo
-                0x010c23ed   0x14ad21 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x010bc6f5   0x14fef5 src/asf/common/boards/user_board/init.o
  .debug_macinfo
-                0x0120d10e   0x14fc35 src/CustomDevices/SD_Card.o
+                0x0120c5ea   0x14ad21 src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_macinfo
-                0x0135cd43   0x14fc31 src/main.o
+                0x0135730b   0x14ff61 src/CustomDevices/SD_Card.o
+ .debug_macinfo
+                0x014a726c   0x14ffd2 src/main.o
 
 .debug_weaknames
  *(.debug_weaknames)
@@ -1919,7 +1993,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.note.GNU-stack)
 OUTPUT(ColumbusTest.elf elf32-avr32)
 
-.debug_ranges   0x00000000      0x9b8
+.debug_ranges   0x00000000      0xa38
  .debug_ranges  0x00000000       0xe8 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_ranges  0x000000e8       0x48 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
  .debug_ranges  0x00000130       0x30 src/asf/avr32/drivers/ebi/sdramc/sdramc.o
@@ -1930,9 +2004,10 @@ OUTPUT(ColumbusTest.elf elf32-avr32)
  .debug_ranges  0x00000538       0x38 src/asf/avr32/drivers/pm/power_clocks_lib.o
  .debug_ranges  0x00000570      0x160 src/asf/avr32/drivers/scif/scif_uc3c.o
  .debug_ranges  0x000006d0       0xa0 src/asf/avr32/drivers/spi/spi.o
- .debug_ranges  0x00000770       0xd8 src/asf/avr32/drivers/usart/usart.o
- .debug_ranges  0x00000848       0x80 src/asf/avr32/utils/debug/print_funcs.o
- .debug_ranges  0x000008c8       0x18 src/asf/common/boards/user_board/init.o
- .debug_ranges  0x000008e0       0x60 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_ranges  0x00000940       0x30 src/CustomDevices/SD_Card.o
- .debug_ranges  0x00000970       0x48 src/main.o
+ .debug_ranges  0x00000770       0x68 src/asf/avr32/drivers/twim/twim.o
+ .debug_ranges  0x000007d8       0xd8 src/asf/avr32/drivers/usart/usart.o
+ .debug_ranges  0x000008b0       0x80 src/asf/avr32/utils/debug/print_funcs.o
+ .debug_ranges  0x00000930       0x18 src/asf/common/boards/user_board/init.o
+ .debug_ranges  0x00000948       0x60 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_ranges  0x000009a8       0x30 src/CustomDevices/SD_Card.o
+ .debug_ranges  0x000009d8       0x60 src/main.o

@@ -26,6 +26,8 @@ src\asf\avr32\drivers\scif\scif_uc3c.c
 
 src\asf\avr32\drivers\spi\spi.c
 
+src\asf\avr32\drivers\twim\twim.c
+
 src\asf\avr32\drivers\usart\usart.c
 
 src\asf\avr32\services\fs\fat\fat.c

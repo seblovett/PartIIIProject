@@ -16,7 +16,41 @@
 #include "conf_sd_mmc_spi.h"
 
 
-// Software wait
+#define TWIM               (&AVR32_TWIM0)  //! TWIM Module Used
+
+#define TARGET_ADDRESS     0x05            //! Target's TWI address
+#define TARGET_ADDR_LGT    3               //! Internal Address length
+#define VIRTUALMEM_ADDR    0x123456        //! Internal Address
+#define TWIM_MASTER_SPEED  50000           //! Speed of TWI
+static void twim_init (void)
+{
+	int8_t status;
+	/**
+	* \internal
+	* PIN 2 & 3 in Header J24 can be used in EVK1104
+	* PIN 1 & 2 in Header J44 can be used in UC3C_EK
+	* \endinternal
+	*/
+	const gpio_map_t TWIM_GPIO_MAP = {
+	{AVR32_TWIMS0_TWCK_0_0_PIN, AVR32_TWIMS0_TWCK_0_0_FUNCTION},
+	{AVR32_TWIMS0_TWD_0_0_PIN, AVR32_TWIMS0_TWD_0_0_FUNCTION}
+	};
+
+	// Set TWIM options
+	const twi_options_t TWIM_OPTIONS = {
+		.pba_hz = FOSC0,
+		.speed = TWIM_MASTER_SPEED,
+		.chip = TARGET_ADDRESS,
+		.smbus = false,
+	};
+	// TWIM gpio pins configuration
+	gpio_enable_module (TWIM_GPIO_MAP,
+			sizeof (TWIM_GPIO_MAP) / sizeof (TWIM_GPIO_MAP[0]));
+	
+	// Initialize as master.
+	status = twim_master_init (TWIM, &TWIM_OPTIONS);
+
+}
 
 
 
@@ -130,10 +164,32 @@ int main (void)
 	}
 
 
-
-
-
-
+	print_dbg("\n\n\rTWI Test:\n\r");
+	twim_init();
+	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+	tmp = 0;
+	for(i = 0; i < 8; i++)
+	{
+		print_dbg_ulong(i);
+		print_dbg_char(' ');
+		for(j = 0; j < 16; j++)
+		{
+			int status = twim_probe(TWIM, tmp++);
+			if(status == STATUS_OK)
+			{
+				print_dbg_char('A');
+			}
+			else
+			{
+				print_dbg_char('-');
+			}
+			print_dbg_char(' ');
+		}
+		print_dbg("\n\r");
+	}
+	
+	print_dbg("\n\rMotor Testing:\n\r");
+	
 	print_dbg("\n\rTest Complete!");
 	// Insert application code here, after the board has been initialized.
 	while(1)

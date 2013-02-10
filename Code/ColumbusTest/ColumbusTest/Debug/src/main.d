@@ -97,8 +97,8 @@ src/main.d src/main.o src/main.o: ../src/main.c ../src/asf.h \
  ../src/asf/avr32/drivers/scif/scif_uc3c.h \
  ../src/asf/avr32/drivers/pm/sleep.h \
  ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.h \
- ../src/asf/avr32/drivers/spi/spi.h \
- ../src/asf/avr32/drivers/usart/usart.h \
+ ../src/asf/avr32/drivers/spi/spi.h ../src/asf/avr32/drivers/twim/twim.h \
+ ../src/config/conf_twim.h ../src/asf/avr32/drivers/usart/usart.h \
  ../src/asf/avr32/utils/debug/print_funcs.h \
  ../src/CustomDevices/SD_Card.h ../src/config/conf_sd_mmc_spi.h \
  ../src/config/conf_access.h
@@ -308,6 +308,10 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.h:
 
 ../src/asf/avr32/drivers/spi/spi.h:
+
+../src/asf/avr32/drivers/twim/twim.h:
+
+../src/config/conf_twim.h:
 
 ../src/asf/avr32/drivers/usart/usart.h:
 

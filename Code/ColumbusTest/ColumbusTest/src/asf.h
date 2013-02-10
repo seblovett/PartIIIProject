@@ -109,6 +109,9 @@
 // From module: System Clock Control - UC3 C implementation
 #include <sysclk.h>
 
+// From module: TWI - Two-Wire Master Interface
+#include <twim.h>
+
 // From module: USART - Universal Synchronous/Asynchronous Receiver/Transmitter
 #include <usart.h>
 
