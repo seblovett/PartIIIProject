@@ -65,6 +65,12 @@
 // From module: EBI SDRAM Controller
 #include <sdramc.h>
 
+// From module: FAT file system
+#include <fat.h>
+#include <file.h>
+#include <fs_com.h>
+#include <navigation.h>
+
 // From module: FLASHC - Flash Controller
 #include <flashc.h>
 
@@ -77,6 +83,12 @@
 // From module: Interrupt management - UC3 implementation
 #include <interrupt.h>
 
+// From module: Memory Control Access Interface
+#include <ctrl_access.h>
+
+// From module: PDCA - Peripheral DMA Controller
+#include <pdca.h>
+
 // From module: PM Power Manager - UC3 C0/C1/C2 implementation
 #include <power_clocks_lib.h>
 #include <sleep.h>
@@ -86,6 +98,13 @@
 
 // From module: SCIF System Control Interface - UC3C implementation
 #include <scif_uc3c.h>
+
+// From module: SD/MMC card access using SPI
+#include <sd_mmc_spi.h>
+#include <sd_mmc_spi_mem.h>
+
+// From module: SPI - Serial Peripheral Interface
+#include <spi.h>
 
 // From module: System Clock Control - UC3 C implementation
 #include <sysclk.h>

@@ -291,8 +291,10 @@ extern void board_init(void);
  */
 extern void board_init(void);
 #endif
-
-
+void wait();
+static void pdca_int_handler(void);
+static void sd_mmc_resources_init(void);
+void local_pdca_init(void);
 #ifdef __cplusplus
 }
 #endif

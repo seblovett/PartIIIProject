@@ -102,8 +102,20 @@
 #define SD_MMC_SPI_MISO_FUNCTION    AVR32_SPI1_MISO_0_1_FUNCTION
 #define SD_MMC_SPI_MOSI_PIN         AVR32_SPI1_MOSI_0_1_PIN
 #define SD_MMC_SPI_MOSI_FUNCTION    AVR32_SPI1_MOSI_0_1_FUNCTION
-#define SD_MMC_SPI_NPCS_PIN         AVR32_SPI1_NPCS_3_2_PIN
-#define SD_MMC_SPI_NPCS_FUNCTION    AVR32_SPI1_NPCS_3_2_FUNCTION
+#define SD_MMC_SPI_NPCS_PIN         AVR32_SPI1_NPCS_0_2_PIN
+#define SD_MMC_SPI_NPCS_FUNCTION    AVR32_SPI1_NPCS_0_2_FUNCTION
+//! \brief PBA clock frequency (Hz)
+#define PBA_HZ                FOSC0
+
+//! \brief Number of bytes in the receive buffer when operating in slave mode
+#define BUFFERSIZE            64
+
+
+#define AVR32_PDCA_CHANNEL_USED_RX AVR32_PDCA_PID_SPI1_RX
+#define AVR32_PDCA_CHANNEL_USED_TX AVR32_PDCA_PID_SPI1_TX
+
+#define AVR32_PDCA_CHANNEL_SPI_RX 0 // In the example we will use the pdca channel 0.
+#define AVR32_PDCA_CHANNEL_SPI_TX 1 // In the example we will use the pdca channel 1.
 
 //USART
 

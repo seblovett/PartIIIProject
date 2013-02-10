@@ -83,12 +83,24 @@ src/asf/common/boards/user_board/init.d \
  ../src/asf/common/services/clock/uc3c/genclk.h \
  ../src/asf/avr32/drivers/ebi/sdramc/sdramc.h \
  ../src/asf/avr32/components/memory/sdram/mt48lc16m16a2tg7e/mt48lc16m16a2tg7e.h \
+ ../src/asf/avr32/services/fs/fat/fat.h \
+ ../src/asf/avr32/services/fs/fat/fs_com.h ../src/config/conf_explorer.h \
+ ../src/asf/avr32/services/fs/fat/file.h \
+ ../src/asf/avr32/services/fs/fat/fat.h \
+ ../src/asf/avr32/services/fs/fat/fs_com.h \
+ ../src/asf/avr32/services/fs/fat/navigation.h \
  ../src/asf/avr32/drivers/flashc/flashc.h \
  ../src/asf/avr32/drivers/gpio/gpio.h \
+ ../src/asf/common/services/storage/ctrl_access/ctrl_access.h \
+ ../src/config/conf_access.h \
+ ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.h \
+ ../src/asf/avr32/drivers/pdca/pdca.h \
  ../src/asf/avr32/drivers/pm/power_clocks_lib.h \
  ../src/asf/avr32/drivers/pm/pm_uc3c.h \
  ../src/asf/avr32/drivers/scif/scif_uc3c.h \
  ../src/asf/avr32/drivers/pm/sleep.h \
+ ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.h \
+ ../src/asf/avr32/drivers/spi/spi.h \
  ../src/asf/avr32/drivers/usart/usart.h \
  ../src/asf/avr32/utils/debug/print_funcs.h
 
@@ -260,9 +272,31 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 
 ../src/asf/avr32/components/memory/sdram/mt48lc16m16a2tg7e/mt48lc16m16a2tg7e.h:
 
+../src/asf/avr32/services/fs/fat/fat.h:
+
+../src/asf/avr32/services/fs/fat/fs_com.h:
+
+../src/config/conf_explorer.h:
+
+../src/asf/avr32/services/fs/fat/file.h:
+
+../src/asf/avr32/services/fs/fat/fat.h:
+
+../src/asf/avr32/services/fs/fat/fs_com.h:
+
+../src/asf/avr32/services/fs/fat/navigation.h:
+
 ../src/asf/avr32/drivers/flashc/flashc.h:
 
 ../src/asf/avr32/drivers/gpio/gpio.h:
+
+../src/asf/common/services/storage/ctrl_access/ctrl_access.h:
+
+../src/config/conf_access.h:
+
+../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.h:
+
+../src/asf/avr32/drivers/pdca/pdca.h:
 
 ../src/asf/avr32/drivers/pm/power_clocks_lib.h:
 
@@ -271,6 +305,10 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/asf/avr32/drivers/scif/scif_uc3c.h:
 
 ../src/asf/avr32/drivers/pm/sleep.h:
+
+../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.h:
+
+../src/asf/avr32/drivers/spi/spi.h:
 
 ../src/asf/avr32/drivers/usart/usart.h:
 
