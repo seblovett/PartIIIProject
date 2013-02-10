@@ -128,11 +128,11 @@
 #endif
 
 //! Pointer to SDRAM.
-#if UC3C
+//#if UC3C
 #define SDRAM           ((void *)AVR32_EBI_CS0_ADDRESS)
-#else
-#define SDRAM           ((void *)AVR32_EBI_CS1_ADDRESS)
-#endif
+// #else
+// #define SDRAM           ((void *)AVR32_EBI_CS1_ADDRESS)
+// #endif
 
 //! SDRAM size.
 #define SDRAM_SIZE      (1 << (SDRAM_BANK_BITS + \

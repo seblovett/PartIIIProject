@@ -84,9 +84,9 @@ static void sdramc_ck_delay(unsigned long ck)
 80002026:	d7 03       	nop
 
 80002028 <sdramc_init>:
-{
-}
-#endif
+// {
+// }
+// #endif
 
 void sdramc_init(unsigned long hsb_hz)
 {
@@ -117,7 +117,7 @@ void sdramc_init(unsigned long hsb_hz)
   AVR32_HMATRIXB.sfr[AVR32_EBI_HMATRIX_NR] |= 1 << AVR32_EBI_SDRAM_CS;
 8000204c:	fe 68 20 00 	mov	r8,-122880
 80002050:	f0 f9 01 28 	ld.w	r9,r8[296]
-80002054:	a1 b9       	sbr	r9,0x1
+80002054:	a1 a9       	sbr	r9,0x0
 80002056:	f1 49 01 28 	st.w	r8[296],r9
   AVR32_HMATRIXB.sfr[AVR32_EBI_HMATRIX_NR];
 8000205a:	f0 f8 01 28 	ld.w	r8,r8[296]

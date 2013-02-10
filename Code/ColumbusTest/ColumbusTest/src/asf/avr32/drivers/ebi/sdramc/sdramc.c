@@ -88,64 +88,64 @@ static void sdramc_ck_delay(unsigned long ck)
 /*! \brief Puts the multiplexed MCU pins used for the SDRAM under control of the
  *         SDRAMC.
  */
-#if ( UC3A0 || UC3A3)
-static void sdramc_enable_muxed_pins(void)
-{
-  static const gpio_map_t SDRAMC_EBI_GPIO_MAP =
-  {
-    // Enable data pins.
-#define SDRAMC_ENABLE_DATA_PIN(DATA_BIT, unused) \
-    {AVR32_EBI_DATA_##DATA_BIT##_PIN, AVR32_EBI_DATA_##DATA_BIT##_FUNCTION},
-    MREPEAT(SDRAM_DBW, SDRAMC_ENABLE_DATA_PIN, ~)
-#undef SDRAMC_ENABLE_DATA_PIN
-
-    // Enable row/column address pins.
-    {AVR32_EBI_ADDR_2_PIN,            AVR32_EBI_ADDR_2_FUNCTION           },
-    {AVR32_EBI_ADDR_3_PIN,            AVR32_EBI_ADDR_3_FUNCTION           },
-    {AVR32_EBI_ADDR_4_PIN,            AVR32_EBI_ADDR_4_FUNCTION           },
-    {AVR32_EBI_ADDR_5_PIN,            AVR32_EBI_ADDR_5_FUNCTION           },
-    {AVR32_EBI_ADDR_6_PIN,            AVR32_EBI_ADDR_6_FUNCTION           },
-    {AVR32_EBI_ADDR_7_PIN,            AVR32_EBI_ADDR_7_FUNCTION           },
-    {AVR32_EBI_ADDR_8_PIN,            AVR32_EBI_ADDR_8_FUNCTION           },
-    {AVR32_EBI_ADDR_9_PIN,            AVR32_EBI_ADDR_9_FUNCTION           },
-    {AVR32_EBI_ADDR_10_PIN,           AVR32_EBI_ADDR_10_FUNCTION          },
-    {AVR32_EBI_ADDR_11_PIN,           AVR32_EBI_ADDR_11_FUNCTION          },
-    {AVR32_EBI_SDA10_0_PIN,           AVR32_EBI_SDA10_0_FUNCTION          },
-#if SDRAM_ROW_BITS >= 12
-    {AVR32_EBI_ADDR_13_PIN,           AVR32_EBI_ADDR_13_FUNCTION          },
-  #if SDRAM_ROW_BITS >= 13
-    {AVR32_EBI_ADDR_14_PIN,           AVR32_EBI_ADDR_14_FUNCTION          },
-  #endif
-#endif
-
-    // Enable bank address pins.
-    {AVR32_EBI_ADDR_16_PIN,           AVR32_EBI_ADDR_16_FUNCTION          },
-#if SDRAM_BANK_BITS >= 2
-    {AVR32_EBI_ADDR_17_PIN,           AVR32_EBI_ADDR_17_FUNCTION          },
-#endif
-
-    // Enable data mask pins.
-    {AVR32_EBI_ADDR_0_PIN,            AVR32_EBI_ADDR_0_FUNCTION           },
-    {AVR32_EBI_NWE1_0_PIN,            AVR32_EBI_NWE1_0_FUNCTION           },
-#if SDRAM_DBW >= 32
-    {AVR32_EBI_ADDR_1_PIN,            AVR32_EBI_ADDR_1_FUNCTION           },
-    {AVR32_EBI_NWE3_0_PIN,            AVR32_EBI_NWE3_0_FUNCTION           },
-#endif
-
-    // Enable control pins.
-    {AVR32_EBI_SDWE_0_PIN,            AVR32_EBI_SDWE_0_FUNCTION           },
-    {AVR32_EBI_CAS_0_PIN,             AVR32_EBI_CAS_0_FUNCTION            },
-    {AVR32_EBI_RAS_0_PIN,             AVR32_EBI_RAS_0_FUNCTION            },
-    {AVR32_EBI_NCS_0_PIN,             AVR32_EBI_NCS_0_FUNCTION            },
-
-    // Enable clock-related pins.
-    {AVR32_EBI_SDCK_0_PIN,            AVR32_EBI_SDCK_0_FUNCTION           },
-    {AVR32_EBI_SDCKE_0_PIN,           AVR32_EBI_SDCKE_0_FUNCTION          }
-  };
-
-  gpio_enable_module(SDRAMC_EBI_GPIO_MAP, sizeof(SDRAMC_EBI_GPIO_MAP) / sizeof(SDRAMC_EBI_GPIO_MAP[0]));
-}
-#elif UC3C0
+// #if ( UC3A0 || UC3A3)
+// static void sdramc_enable_muxed_pins(void)
+// {
+//   static const gpio_map_t SDRAMC_EBI_GPIO_MAP =
+//   {
+//     // Enable data pins.
+// #define SDRAMC_ENABLE_DATA_PIN(DATA_BIT, unused) \
+//     {AVR32_EBI_DATA_##DATA_BIT##_PIN, AVR32_EBI_DATA_##DATA_BIT##_FUNCTION},
+//     MREPEAT(SDRAM_DBW, SDRAMC_ENABLE_DATA_PIN, ~)
+// #undef SDRAMC_ENABLE_DATA_PIN
+// 
+//     // Enable row/column address pins.
+//     {AVR32_EBI_ADDR_2_PIN,            AVR32_EBI_ADDR_2_FUNCTION           },
+//     {AVR32_EBI_ADDR_3_PIN,            AVR32_EBI_ADDR_3_FUNCTION           },
+//     {AVR32_EBI_ADDR_4_PIN,            AVR32_EBI_ADDR_4_FUNCTION           },
+//     {AVR32_EBI_ADDR_5_PIN,            AVR32_EBI_ADDR_5_FUNCTION           },
+//     {AVR32_EBI_ADDR_6_PIN,            AVR32_EBI_ADDR_6_FUNCTION           },
+//     {AVR32_EBI_ADDR_7_PIN,            AVR32_EBI_ADDR_7_FUNCTION           },
+//     {AVR32_EBI_ADDR_8_PIN,            AVR32_EBI_ADDR_8_FUNCTION           },
+//     {AVR32_EBI_ADDR_9_PIN,            AVR32_EBI_ADDR_9_FUNCTION           },
+//     {AVR32_EBI_ADDR_10_PIN,           AVR32_EBI_ADDR_10_FUNCTION          },
+//     {AVR32_EBI_ADDR_11_PIN,           AVR32_EBI_ADDR_11_FUNCTION          },
+//     {AVR32_EBI_SDA10_PIN,           AVR32_EBI_SDA10_FUNCTION          },
+// #if SDRAM_ROW_BITS >= 12
+//     {AVR32_EBI_ADDR_13_PIN,           AVR32_EBI_ADDR_13_FUNCTION          },
+//   #if SDRAM_ROW_BITS >= 13
+//     {AVR32_EBI_ADDR_14_PIN,           AVR32_EBI_ADDR_14_FUNCTION          },
+//   #endif
+// #endif
+// 
+//     // Enable bank address pins.
+//     {AVR32_EBI_ADDR_16_PIN,           AVR32_EBI_ADDR_16_FUNCTION          },
+// #if SDRAM_BANK_BITS >= 2
+//     {AVR32_EBI_ADDR_17_PIN,           AVR32_EBI_ADDR_17_FUNCTION          },
+// #endif
+// 
+//     // Enable data mask pins.
+//     {AVR32_EBI_ADDR_0_PIN,            AVR32_EBI_ADDR_0_FUNCTION           },
+//     {AVR32_EBI_NWE0_PIN,            AVR32_EBI_NWE0_FUNCTION           },
+// #if SDRAM_DBW >= 32
+//     {AVR32_EBI_ADDR_1_PIN,            AVR32_EBI_ADDR_1_FUNCTION           },
+//     {AVR32_EBI_NWE3_0_PIN,            AVR32_EBI_NWE3_0_FUNCTION           },
+// #endif
+// 
+//     // Enable control pins.
+//     {AVR32_EBI_SDWE_PIN,            AVR32_EBI_SDWE_FUNCTION           },
+//     {AVR32_EBI_CAS_PIN,             AVR32_EBI_CAS_FUNCTION            },
+//     {AVR32_EBI_RAS_PIN,             AVR32_EBI_RAS_FUNCTION            },
+//     {AVR32_EBI_NCS_0_PIN,             AVR32_EBI_NCS_0_FUNCTION            },
+// 
+//     // Enable clock-related pins.
+//     {AVR32_EBI_SDCK_PIN,            AVR32_EBI_SDCK_FUNCTION           },
+//     {AVR32_EBI_SDCKE_PIN,           AVR32_EBI_SDCKE_FUNCTION          }
+//   };
+// 
+//   gpio_enable_module(SDRAMC_EBI_GPIO_MAP, sizeof(SDRAMC_EBI_GPIO_MAP) / sizeof(SDRAMC_EBI_GPIO_MAP[0]));
+// }
+/*#elif UC3C0*/
 static void sdramc_enable_muxed_pins(void)
 {
   static const gpio_map_t SDRAMC_EBI_GPIO_MAP =
@@ -193,7 +193,7 @@ static void sdramc_enable_muxed_pins(void)
     {AVR32_EBI_SDWE_PIN,            AVR32_EBI_SDWE_FUNCTION           },
     {AVR32_EBI_CAS_PIN,             AVR32_EBI_CAS_FUNCTION            },
     {AVR32_EBI_RAS_PIN,             AVR32_EBI_RAS_FUNCTION            },
-    {AVR32_EBI_NCS_1_PIN,             AVR32_EBI_NCS_1_FUNCTION            },
+    {AVR32_EBI_NCS_0_PIN,             AVR32_EBI_NCS_0_FUNCTION            },
 
     // Enable clock-related pins.
     {AVR32_EBI_SDCK_PIN,            AVR32_EBI_SDCK_FUNCTION           },
@@ -202,12 +202,12 @@ static void sdramc_enable_muxed_pins(void)
 
   gpio_enable_module(SDRAMC_EBI_GPIO_MAP, sizeof(SDRAMC_EBI_GPIO_MAP) / sizeof(SDRAMC_EBI_GPIO_MAP[0]));
 }
-#else
-# warning GPIO setups configuration to use in the driver is missing. Default configuration is used.
-static void sdramc_enable_muxed_pins(void)
-{
-}
-#endif
+// #else
+// # warning GPIO setups configuration to use in the driver is missing. Default configuration is used.
+// static void sdramc_enable_muxed_pins(void)
+// {
+// }
+// #endif
 
 void sdramc_init(unsigned long hsb_hz)
 {
@@ -219,7 +219,7 @@ void sdramc_init(unsigned long hsb_hz)
   // Put the multiplexed MCU pins used for the SDRAM under control of the SDRAMC.
   sdramc_enable_muxed_pins();
 
-  // Enable SDRAM mode for CS1.
+  // Enable SDRAM mode for CS1. //changed for CS0
 #if (defined AVR32_HMATRIX)
   AVR32_HMATRIX.sfr[AVR32_EBI_HMATRIX_NR] |= 1 << AVR32_EBI_SDRAM_CS;
   AVR32_HMATRIX.sfr[AVR32_EBI_HMATRIX_NR];
