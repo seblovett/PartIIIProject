@@ -72,7 +72,8 @@ SUBDIRS :=  \
 ../src/asf/common/services/storage/ctrl_access/ \
 ../src/asf/common/utils/ \
 ../src/asf/common/utils/interrupt/ \
-../src/config/
+../src/config/ \
+../src/CustomDevices
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -99,6 +100,7 @@ C_SRCS +=  \
 ../src/asf/common/services/clock/uc3c/pll.c \
 ../src/asf/common/services/clock/uc3c/sysclk.c \
 ../src/asf/common/services/storage/ctrl_access/ctrl_access.c \
+../src/CustomDevices/SD_Card.c \
 ../src/main.c
 
 
@@ -137,6 +139,7 @@ src/asf/common/services/clock/uc3c/osc.o \
 src/asf/common/services/clock/uc3c/pll.o \
 src/asf/common/services/clock/uc3c/sysclk.o \
 src/asf/common/services/storage/ctrl_access/ctrl_access.o \
+src/CustomDevices/SD_Card.o \
 src/main.o
 
 
@@ -166,6 +169,7 @@ src/asf/common/services/clock/uc3c/osc.o \
 src/asf/common/services/clock/uc3c/pll.o \
 src/asf/common/services/clock/uc3c/sysclk.o \
 src/asf/common/services/storage/ctrl_access/ctrl_access.o \
+src/CustomDevices/SD_Card.o \
 src/main.o
 
 
@@ -192,6 +196,7 @@ src/asf/common/services/clock/uc3c/osc.d \
 src/asf/common/services/clock/uc3c/pll.d \
 src/asf/common/services/clock/uc3c/sysclk.d \
 src/asf/common/services/storage/ctrl_access/ctrl_access.d \
+src/CustomDevices/SD_Card.d \
 src/main.d
 
 
@@ -218,6 +223,7 @@ src/asf/common/services/clock/uc3c/osc.d \
 src/asf/common/services/clock/uc3c/pll.d \
 src/asf/common/services/clock/uc3c/sysclk.d \
 src/asf/common/services/storage/ctrl_access/ctrl_access.d \
+src/CustomDevices/SD_Card.d \
 src/main.d
 
 
@@ -230,6 +236,8 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
 
 
 
@@ -362,6 +370,12 @@ src/asf/common/services/clock/uc3c/%.o: ../src/asf/common/services/clock/uc3c/%.
 	@echo Finished building: $<
 
 src/asf/common/services/storage/ctrl_access/%.o: ../src/asf/common/services/storage/ctrl_access/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR32/GNU C Compiler : (AVR_32_bit_GNU_Toolchain_3.4.1_348) 4.4.3
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr32-gcc.exe$(QUOTE) -DBOARD=USER_BOARD -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED  -I"../src" -I"../src/asf/avr32/drivers/intc" -I"../src/asf/avr32/utils" -I"../src/asf/avr32/utils/preprocessor" -I"../src/asf/common/applications/user_application/user_board" -I"../src/asf/common/boards" -I"../src/asf/common/boards/user_board" -I"../src/asf/common/utils" -I"../src/config" -I"../src/asf/avr32/drivers/flashc" -I"../src/asf/avr32/drivers/gpio" -I"../src/asf/avr32/drivers/pm" -I"../src/asf/avr32/drivers/scif" -I"../src/asf/avr32/drivers/cpu/cycle_counter" -I"../src/asf/common/services/clock" -I"../src/asf/common/services/delay" -I"../src/asf/avr32/drivers/usart" -I"../src/asf/avr32/utils/debug" -I"../src/asf/avr32/components/memory/sdram" -I"../src/asf/avr32/drivers/ebi/sdramc" -I"../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi" -I"../src/asf/avr32/drivers/pdca" -I"../src/asf/avr32/drivers/spi" -I"../src/asf/avr32/services/fs/fat" -I"../src/asf/common/services/storage/ctrl_access"  -O1 -fdata-sections -ffunction-sections -g3 -Wall -c -Werror-implicit-function-declaration -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -mno-cond-exec-before-reload -mrelax -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mpart=uc3c0512c   -o"$@" "$<" 
+	@echo Finished building: $<
+
+src/CustomDevices/%.o: ../src/CustomDevices/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR32/GNU C Compiler : (AVR_32_bit_GNU_Toolchain_3.4.1_348) 4.4.3
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr32-gcc.exe$(QUOTE) -DBOARD=USER_BOARD -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED  -I"../src" -I"../src/asf/avr32/drivers/intc" -I"../src/asf/avr32/utils" -I"../src/asf/avr32/utils/preprocessor" -I"../src/asf/common/applications/user_application/user_board" -I"../src/asf/common/boards" -I"../src/asf/common/boards/user_board" -I"../src/asf/common/utils" -I"../src/config" -I"../src/asf/avr32/drivers/flashc" -I"../src/asf/avr32/drivers/gpio" -I"../src/asf/avr32/drivers/pm" -I"../src/asf/avr32/drivers/scif" -I"../src/asf/avr32/drivers/cpu/cycle_counter" -I"../src/asf/common/services/clock" -I"../src/asf/common/services/delay" -I"../src/asf/avr32/drivers/usart" -I"../src/asf/avr32/utils/debug" -I"../src/asf/avr32/components/memory/sdram" -I"../src/asf/avr32/drivers/ebi/sdramc" -I"../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi" -I"../src/asf/avr32/drivers/pdca" -I"../src/asf/avr32/drivers/spi" -I"../src/asf/avr32/services/fs/fat" -I"../src/asf/common/services/storage/ctrl_access"  -O1 -fdata-sections -ffunction-sections -g3 -Wall -c -Werror-implicit-function-declaration -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -mno-cond-exec-before-reload -mrelax -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mpart=uc3c0512c   -o"$@" "$<" 

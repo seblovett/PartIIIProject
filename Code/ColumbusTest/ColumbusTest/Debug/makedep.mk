@@ -52,5 +52,7 @@ src\asf\common\services\clock\uc3c\sysclk.c
 
 src\asf\common\services\storage\ctrl_access\ctrl_access.c
 
+src\CustomDevices\SD_Card.c
+
 src\main.c
 

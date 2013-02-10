@@ -7,41 +7,41 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   1 .rela.got     00000000  80002004  80002004  00002404  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  2 .text         00001a54  80002004  80002004  00002404  2**2
+  2 .text         00001a78  80002004  80002004  00002404  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   3 .exception    00000200  80003c00  80003c00  00004000  2**9
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  4 .rodata       000004e0  80003e00  80003e00  00004200  2**2
+  4 .rodata       00000500  80003e00  80003e00  00004200  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .data         00000008  00000004  800042e0  00004804  2**2
+  5 .data         00000008  00000004  80004300  00004804  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .balign       00000004  0000000c  800042e8  0000480c  2**0
+  6 .balign       00000004  0000000c  80004308  0000480c  2**0
                   ALLOC
-  7 .bss          00000418  00000010  800042e8  00004810  2**2
+  7 .bss          00000418  00000010  80004308  00004810  2**2
                   ALLOC
   8 .comment      00000030  00000000  00000000  0000480c  2**0
                   CONTENTS, READONLY
-  9 .debug_aranges 000009b8  00000000  00000000  0000483c  2**0
+  9 .debug_aranges 000009d8  00000000  00000000  0000483c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_pubnames 00001bfc  00000000  00000000  000051f4  2**0
+ 10 .debug_pubnames 00001c28  00000000  00000000  00005214  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_info   00011558  00000000  00000000  00006df0  2**0
+ 11 .debug_info   000115b9  00000000  00000000  00006e3c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_abbrev 00002050  00000000  00000000  00018348  2**0
+ 12 .debug_abbrev 000020b5  00000000  00000000  000183f5  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_line   00009636  00000000  00000000  0001a398  2**0
+ 13 .debug_line   0000a27c  00000000  00000000  0001a4aa  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_frame  00001954  00000000  00000000  000239d0  2**2
+ 14 .debug_frame  00001980  00000000  00000000  00024728  2**2
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_str    000045d0  00000000  00000000  00025324  2**0
+ 15 .debug_str    000045ef  00000000  00000000  000260a8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_loc    00003f6a  00000000  00000000  000298f4  2**0
+ 16 .debug_loc    00003f94  00000000  00000000  0002a697  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_macinfo 0135cd31  00000000  00000000  0002d85e  2**0
+ 17 .debug_macinfo 014ac974  00000000  00000000  0002e62b  2**0
                   CONTENTS, READONLY, DEBUGGING
  18 .stack        00001000  0000f000  0000f000  00000400  2**0
                   ALLOC
- 19 .debug_ranges 000009a0  00000000  00000000  0138a58f  2**0
+ 19 .debug_ranges 000009b8  00000000  00000000  014daf9f  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .reset:
@@ -4256,7 +4256,7 @@ void init_dbg_rs232(long pba_hz)
 800036de:	cf e3       	brcs	800036da <udata_clear_loop>
 
 800036e0 <udata_clear_loop_end>:
-800036e0:	fe cf ff b4 	sub	pc,pc,-76
+800036e0:	fe cf ff 30 	sub	pc,pc,-208
 800036e4:	00 01       	add	r1,r0
 800036e6:	00 00       	add	r0,r0
 800036e8:	00 00       	add	r0,r0
@@ -4264,7 +4264,7 @@ void init_dbg_rs232(long pba_hz)
 800036ec:	00 00       	add	r0,r0
 800036ee:	00 10       	sub	r0,r0
 800036f0:	80 00       	ld.sh	r0,r0[0x0]
-800036f2:	42 e0       	lddsp	r0,sp[0xb8]
+800036f2:	43 00       	lddsp	r0,sp[0xc0]
 800036f4:	00 00       	add	r0,r0
 800036f6:	00 10       	sub	r0,r0
 800036f8:	00 00       	add	r0,r0
@@ -4342,562 +4342,587 @@ Ctrl_status mem_read_capacity(U8 lun, U32 *u32_nb_sector)
 80003728:	80 00       	ld.sh	r0,r0[0x0]
 8000372a:	40 d0       	lddsp	r0,sp[0x34]
 
-8000372c <main>:
+8000372c <sd_mmc_resources_init>:
 }
 
-
-
-int main (void)
-{
-8000372c:	d4 31       	pushm	r0-r7,lr
-8000372e:	20 5d       	sub	sp,20
-	unsigned long sdram_size, progress_inc, i, j, tmp, noErrors = 0;
-	volatile unsigned long *sdram = SDRAM;
-	uint32_t VarTemp;
-	board_init();
-80003730:	f0 1f 00 a5 	mcall	800039c4 <main+0x298>
-	pcl_switch_to_osc(PCL_OSC0, FOSC0, OSC0_STARTUP);
-80003734:	30 3a       	mov	r10,3
-80003736:	e0 6b 24 00 	mov	r11,9216
-8000373a:	ea 1b 00 f4 	orh	r11,0xf4
-8000373e:	30 0c       	mov	r12,0
-80003740:	f0 1f 00 a2 	mcall	800039c8 <main+0x29c>
-	init_dbg_rs232(FOSC0);
-80003744:	e0 6c 24 00 	mov	r12,9216
-80003748:	ea 1c 00 f4 	orh	r12,0xf4
-8000374c:	f0 1f 00 a0 	mcall	800039cc <main+0x2a0>
-	print_dbg("\x0C Columbus Board Tester");
-80003750:	fe fc 02 80 	ld.w	r12,pc[640]
-80003754:	f0 1f 00 a0 	mcall	800039d4 <main+0x2a8>
-	print_dbg("\n\rAll LEDS on;");
-80003758:	fe fc 02 80 	ld.w	r12,pc[640]
-8000375c:	f0 1f 00 9e 	mcall	800039d4 <main+0x2a8>
-	LEDMOTOR_SET;
-80003760:	32 cc       	mov	r12,44
-80003762:	f0 1f 00 9f 	mcall	800039dc <main+0x2b0>
-	LED2_SET;
-80003766:	33 1c       	mov	r12,49
-80003768:	f0 1f 00 9d 	mcall	800039dc <main+0x2b0>
-	LED3_SET;
-8000376c:	33 2c       	mov	r12,50
-8000376e:	f0 1f 00 9c 	mcall	800039dc <main+0x2b0>
-	LED4_SET;
-80003772:	33 bc       	mov	r12,59
-80003774:	f0 1f 00 9a 	mcall	800039dc <main+0x2b0>
-	LED5_SET;
-80003778:	33 cc       	mov	r12,60
-8000377a:	f0 1f 00 99 	mcall	800039dc <main+0x2b0>
-	LED6_SET;
-8000377e:	33 dc       	mov	r12,61
-80003780:	f0 1f 00 97 	mcall	800039dc <main+0x2b0>
- * \param  delay:   (input) delay in CPU cycles before timeout.
- * \param  cpu_time: (output) internal information used by the timer API.
+/*! \brief Initializes SD/MMC resources: GPIO, SPI and SD/MMC.
  */
-__always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
+void sd_mmc_resources_init(void)
 {
-  cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80003784:	e1 b8 00 42 	mfsr	r8,0x108
-  cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80003788:	e0 6a 24 00 	mov	r10,9216
-8000378c:	ea 1a 00 f4 	orh	r10,0xf4
-80003790:	f0 0a 00 0a 	add	r10,r8,r10
- *
- * \return true if timeout occurred, otherwise false.
- */
-__always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
-{
-  unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80003794:	e1 b9 00 42 	mfsr	r9,0x108
-  // Test if the timeout as already occurred.
-  else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
-    return true;
-
-  // If the ending cycle count of this timeout is wrapped, ...
-  else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80003798:	14 38       	cp.w	r8,r10
-8000379a:	e0 88 00 09 	brls	800037ac <main+0x80>
-  {
-    if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-8000379e:	12 38       	cp.w	r8,r9
-800037a0:	fe 98 ff fa 	brls	80003794 <main+0x68>
-800037a4:	12 3a       	cp.w	r10,r9
-800037a6:	e0 83 00 d5 	brlo	80003950 <main+0x224>
-800037aa:	cf 5b       	rjmp	80003794 <main+0x68>
-    }
-    return false;
-  }
-  else
-  {
-    if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-800037ac:	12 38       	cp.w	r8,r9
-800037ae:	e0 8b 00 d1 	brhi	80003950 <main+0x224>
-800037b2:	12 3a       	cp.w	r10,r9
-800037b4:	e0 83 00 ce 	brlo	80003950 <main+0x224>
-800037b8:	ce eb       	rjmp	80003794 <main+0x68>
- *
- * \return true if timeout occurred, otherwise false.
- */
-__always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
-{
-  unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-800037ba:	e1 b9 00 42 	mfsr	r9,0x108
-  // Test if the timeout as already occurred.
-  else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
-    return true;
-
-  // If the ending cycle count of this timeout is wrapped, ...
-  else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-800037be:	14 38       	cp.w	r8,r10
-800037c0:	e0 88 00 09 	brls	800037d2 <main+0xa6>
-  {
-    if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-800037c4:	12 38       	cp.w	r8,r9
-800037c6:	fe 98 ff fa 	brls	800037ba <main+0x8e>
-800037ca:	12 3a       	cp.w	r10,r9
-800037cc:	e0 83 00 e0 	brlo	8000398c <main+0x260>
-800037d0:	cf 5b       	rjmp	800037ba <main+0x8e>
-    }
-    return false;
-  }
-  else
-  {
-    if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-800037d2:	12 38       	cp.w	r8,r9
-800037d4:	e0 8b 00 dc 	brhi	8000398c <main+0x260>
-800037d8:	12 3a       	cp.w	r10,r9
-800037da:	e0 83 00 d9 	brlo	8000398c <main+0x260>
-800037de:	ce eb       	rjmp	800037ba <main+0x8e>
-800037e0:	0c 95       	mov	r5,r6
-	// printed progression status.
-	progress_inc = (sdram_size + 50) / 100;
-	// Fill the SDRAM with the test pattern.
-	for (i = 0, j = 0; i < sdram_size; i++)
-	{
-		if (i == j * progress_inc)
-800037e2:	ea 03 02 48 	mul	r8,r5,r3
-800037e6:	0e 38       	cp.w	r8,r7
-800037e8:	c0 30       	breq	800037ee <main+0xc2>
-800037ea:	0a 96       	mov	r6,r5
-800037ec:	c0 c8       	rjmp	80003804 <main+0xd8>
-		{
-			//LED_Toggle(LED_SDRAM_WRITE);
-			print_dbg("\rFilling SDRAM with test pattern: ");
-800037ee:	04 9c       	mov	r12,r2
-800037f0:	f0 1f 00 79 	mcall	800039d4 <main+0x2a8>
-			print_dbg_ulong(j++);
-800037f4:	ea c6 ff ff 	sub	r6,r5,-1
-800037f8:	0a 9c       	mov	r12,r5
-800037fa:	f0 1f 00 7a 	mcall	800039e0 <main+0x2b4>
-			print_dbg_char('%');
-800037fe:	02 9c       	mov	r12,r1
-80003800:	f0 1f 00 79 	mcall	800039e4 <main+0x2b8>
-		}
-		sdram[i] = i;
-80003804:	08 a7       	st.w	r4++,r7
-	print_dbg("SDRAM initialized\r\n");
-	// Determine the increment of SDRAM word address requiring an update of the
-	// printed progression status.
-	progress_inc = (sdram_size + 50) / 100;
-	// Fill the SDRAM with the test pattern.
-	for (i = 0, j = 0; i < sdram_size; i++)
-80003806:	2f f7       	sub	r7,-1
-80003808:	fc 18 00 10 	movh	r8,0x10
-8000380c:	10 37       	cp.w	r7,r8
-8000380e:	ce 91       	brne	800037e0 <main+0xb4>
-			print_dbg_char('%');
-		}
-		sdram[i] = i;
-		
-	}
-	print_dbg("\rSDRAM filled with test pattern       \r\n");
-80003810:	4f 6c       	lddpc	r12,800039e8 <main+0x2bc>
-80003812:	f0 1f 00 71 	mcall	800039d4 <main+0x2a8>
-80003816:	fc 15 c0 00 	movh	r5,0xc000
-8000381a:	30 07       	mov	r7,0
-8000381c:	0e 93       	mov	r3,r7
-8000381e:	0e 96       	mov	r6,r7
-	// Recover the test pattern from the SDRAM and verify it.
-	for (i = 0, j = 0; i < sdram_size; i++)
-	{
-		
-		if (i == j * progress_inc)
-80003820:	e0 62 28 f6 	mov	r2,10486
-		{
-			print_dbg("\rRecovering test pattern from SDRAM: ");
-80003824:	4f 21       	lddpc	r1,800039ec <main+0x2c0>
-			print_dbg_ulong(j++);
-			print_dbg_char('%');
-80003826:	32 50       	mov	r0,37
-	print_dbg("\rSDRAM filled with test pattern       \r\n");
-	// Recover the test pattern from the SDRAM and verify it.
-	for (i = 0, j = 0; i < sdram_size; i++)
-	{
-		
-		if (i == j * progress_inc)
-80003828:	ec 02 02 48 	mul	r8,r6,r2
-8000382c:	0e 38       	cp.w	r8,r7
-8000382e:	c0 30       	breq	80003834 <main+0x108>
-80003830:	0c 94       	mov	r4,r6
-80003832:	c0 c8       	rjmp	8000384a <main+0x11e>
-		{
-			print_dbg("\rRecovering test pattern from SDRAM: ");
-80003834:	02 9c       	mov	r12,r1
-80003836:	f0 1f 00 68 	mcall	800039d4 <main+0x2a8>
-			print_dbg_ulong(j++);
-8000383a:	ec c4 ff ff 	sub	r4,r6,-1
-8000383e:	0c 9c       	mov	r12,r6
-80003840:	f0 1f 00 68 	mcall	800039e0 <main+0x2b4>
-			print_dbg_char('%');
-80003844:	00 9c       	mov	r12,r0
-80003846:	f0 1f 00 68 	mcall	800039e4 <main+0x2b8>
-		}
-		tmp = sdram[i];
-8000384a:	6a 08       	ld.w	r8,r5[0x0]
-		if (tmp != i)//failed
-		{
-			noErrors++;
-8000384c:	0e 38       	cp.w	r8,r7
-8000384e:	f7 b3 01 ff 	subne	r3,-1
-		sdram[i] = i;
-		
-	}
-	print_dbg("\rSDRAM filled with test pattern       \r\n");
-	// Recover the test pattern from the SDRAM and verify it.
-	for (i = 0, j = 0; i < sdram_size; i++)
-80003852:	2f f7       	sub	r7,-1
-80003854:	2f c5       	sub	r5,-4
-80003856:	fc 18 00 10 	movh	r8,0x10
-8000385a:	10 37       	cp.w	r7,r8
-8000385c:	c0 30       	breq	80003862 <main+0x136>
-8000385e:	08 96       	mov	r6,r4
-80003860:	ce 4b       	rjmp	80003828 <main+0xfc>
-		{
-			noErrors++;
-		}
-
-	}
-	print_dbg("\rSDRAM tested: ");
-80003862:	4e 4c       	lddpc	r12,800039f0 <main+0x2c4>
-80003864:	f0 1f 00 5c 	mcall	800039d4 <main+0x2a8>
-	print_dbg_ulong(noErrors);
-80003868:	06 9c       	mov	r12,r3
-8000386a:	f0 1f 00 5e 	mcall	800039e0 <main+0x2b4>
-	print_dbg(" corrupted word(s)       \r\n");
-8000386e:	4e 2c       	lddpc	r12,800039f4 <main+0x2c8>
-80003870:	f0 1f 00 59 	mcall	800039d4 <main+0x2a8>
-	if (noErrors)
-80003874:	58 03       	cp.w	r3,0
-80003876:	c0 50       	breq	80003880 <main+0x154>
-	{
-			LED3_SET;
-80003878:	33 2c       	mov	r12,50
-8000387a:	f0 1f 00 59 	mcall	800039dc <main+0x2b0>
-8000387e:	c0 48       	rjmp	80003886 <main+0x15a>
-	}
-	else
-	{
-			LED2_SET;
-80003880:	33 1c       	mov	r12,49
-80003882:	f0 1f 00 57 	mcall	800039dc <main+0x2b0>
-80003886:	fc 16 c0 00 	movh	r6,0xc000
-8000388a:	30 07       	mov	r7,0
-	
-	
-	for(i = 0; i < 10; i++)
-	{
-		sdram[i] = i;
-		print_dbg("\n\rWritten data: ");
-8000388c:	4d b5       	lddpc	r5,800039f8 <main+0x2cc>
-		print_dbg_ulong(i);
-		print_dbg("\n\rRead data: ");
-8000388e:	4d c4       	lddpc	r4,800039fc <main+0x2d0>
-	}
-	
-	
-	for(i = 0; i < 10; i++)
-	{
-		sdram[i] = i;
-80003890:	8d 07       	st.w	r6[0x0],r7
-		print_dbg("\n\rWritten data: ");
-80003892:	0a 9c       	mov	r12,r5
-80003894:	f0 1f 00 50 	mcall	800039d4 <main+0x2a8>
-		print_dbg_ulong(i);
-80003898:	0e 9c       	mov	r12,r7
-8000389a:	f0 1f 00 52 	mcall	800039e0 <main+0x2b4>
-		print_dbg("\n\rRead data: ");
-8000389e:	08 9c       	mov	r12,r4
-800038a0:	f0 1f 00 4d 	mcall	800039d4 <main+0x2a8>
-		print_dbg_ulong(sdram[i]);
-800038a4:	0d 0c       	ld.w	r12,r6++
-800038a6:	f0 1f 00 4f 	mcall	800039e0 <main+0x2b4>
-	{
-			LED2_SET;
-	}
-	
-	
-	for(i = 0; i < 10; i++)
-800038aa:	2f f7       	sub	r7,-1
-800038ac:	58 a7       	cp.w	r7,10
-800038ae:	cf 11       	brne	80003890 <main+0x164>
+8000372c:	eb cd 40 80 	pushm	r7,lr
+80003730:	20 4d       	sub	sp,16
     .spck_delay   = 0,
     .trans_delay  = 0,
     .stay_act     = 1,
     .spi_mode     = 0,
     .modfdis      = 1
   };
-800038b0:	4d 48       	lddpc	r8,80003a00 <main+0x2d4>
-800038b2:	1a 97       	mov	r7,sp
-800038b4:	70 09       	ld.w	r9,r8[0x0]
-800038b6:	50 09       	stdsp	sp[0x0],r9
-800038b8:	70 19       	ld.w	r9,r8[0x4]
-800038ba:	50 19       	stdsp	sp[0x4],r9
-800038bc:	70 29       	ld.w	r9,r8[0x8]
-800038be:	50 29       	stdsp	sp[0x8],r9
-800038c0:	70 38       	ld.w	r8,r8[0xc]
-800038c2:	50 38       	stdsp	sp[0xc],r8
+80003732:	49 98       	lddpc	r8,80003794 <sd_mmc_resources_init+0x68>
+80003734:	1a 97       	mov	r7,sp
+80003736:	70 09       	ld.w	r9,r8[0x0]
+80003738:	50 09       	stdsp	sp[0x0],r9
+8000373a:	70 19       	ld.w	r9,r8[0x4]
+8000373c:	50 19       	stdsp	sp[0x4],r9
+8000373e:	70 29       	ld.w	r9,r8[0x8]
+80003740:	50 29       	stdsp	sp[0x8],r9
+80003742:	70 38       	ld.w	r8,r8[0xc]
+80003744:	50 38       	stdsp	sp[0xc],r8
 
   // Assign I/Os to SPI.
   gpio_enable_module(SD_MMC_SPI_GPIO_MAP,
-800038c4:	30 4b       	mov	r11,4
-800038c6:	4d 0c       	lddpc	r12,80003a04 <main+0x2d8>
-800038c8:	f0 1f 00 50 	mcall	80003a08 <main+0x2dc>
+80003746:	30 4b       	mov	r11,4
+80003748:	49 4c       	lddpc	r12,80003798 <sd_mmc_resources_init+0x6c>
+8000374a:	f0 1f 00 15 	mcall	8000379c <sd_mmc_resources_init+0x70>
                      sizeof(SD_MMC_SPI_GPIO_MAP) / sizeof(SD_MMC_SPI_GPIO_MAP[0]));
 
   // Initialize as master.
   spi_initMaster(SD_MMC_SPI, &spiOptions);
-800038cc:	1a 9b       	mov	r11,sp
-800038ce:	fe 7c 34 00 	mov	r12,-52224
-800038d2:	f0 1f 00 4f 	mcall	80003a0c <main+0x2e0>
+8000374e:	1a 9b       	mov	r11,sp
+80003750:	fe 7c 34 00 	mov	r12,-52224
+80003754:	f0 1f 00 13 	mcall	800037a0 <sd_mmc_resources_init+0x74>
 
   // Set SPI selection mode: variable_ps, pcs_decode, delay.
   spi_selectionMode(SD_MMC_SPI, 0, 0, 0);
-800038d6:	30 09       	mov	r9,0
-800038d8:	12 9a       	mov	r10,r9
-800038da:	12 9b       	mov	r11,r9
-800038dc:	fe 7c 34 00 	mov	r12,-52224
-800038e0:	f0 1f 00 4c 	mcall	80003a10 <main+0x2e4>
+80003758:	30 09       	mov	r9,0
+8000375a:	12 9a       	mov	r10,r9
+8000375c:	12 9b       	mov	r11,r9
+8000375e:	fe 7c 34 00 	mov	r12,-52224
+80003762:	f0 1f 00 11 	mcall	800037a4 <sd_mmc_resources_init+0x78>
 
   // Enable SPI module.
   spi_enable(SD_MMC_SPI);
-800038e4:	fe 7c 34 00 	mov	r12,-52224
-800038e8:	f0 1f 00 4b 	mcall	80003a14 <main+0x2e8>
+80003766:	fe 7c 34 00 	mov	r12,-52224
+8000376a:	f0 1f 00 10 	mcall	800037a8 <sd_mmc_resources_init+0x7c>
 
   // Initialize SD/MMC driver with SPI clock (PBA).
   sd_mmc_spi_init(spiOptions, PBA_HZ);
-800038ec:	20 4d       	sub	sp,16
-800038ee:	6e 08       	ld.w	r8,r7[0x0]
-800038f0:	50 08       	stdsp	sp[0x0],r8
-800038f2:	6e 18       	ld.w	r8,r7[0x4]
-800038f4:	50 18       	stdsp	sp[0x4],r8
-800038f6:	6e 28       	ld.w	r8,r7[0x8]
-800038f8:	50 28       	stdsp	sp[0x8],r8
-800038fa:	6e 38       	ld.w	r8,r7[0xc]
-800038fc:	50 38       	stdsp	sp[0xc],r8
-800038fe:	e0 6c 24 00 	mov	r12,9216
-80003902:	ea 1c 00 f4 	orh	r12,0xf4
-80003906:	f0 1f 00 45 	mcall	80003a18 <main+0x2ec>
-		print_dbg_ulong(sdram[i]);
-	}
+8000376e:	20 4d       	sub	sp,16
+80003770:	6e 08       	ld.w	r8,r7[0x0]
+80003772:	50 08       	stdsp	sp[0x0],r8
+80003774:	6e 18       	ld.w	r8,r7[0x4]
+80003776:	50 18       	stdsp	sp[0x4],r8
+80003778:	6e 28       	ld.w	r8,r7[0x8]
+8000377a:	50 28       	stdsp	sp[0x8],r8
+8000377c:	6e 38       	ld.w	r8,r7[0xc]
+8000377e:	50 38       	stdsp	sp[0xc],r8
+80003780:	e0 6c 24 00 	mov	r12,9216
+80003784:	ea 1c 00 f4 	orh	r12,0xf4
+80003788:	f0 1f 00 09 	mcall	800037ac <sd_mmc_resources_init+0x80>
+8000378c:	2f cd       	sub	sp,-16
+}
+8000378e:	2f cd       	sub	sp,-16
+80003790:	e3 cd 80 80 	ldm	sp++,r7,pc
+80003794:	80 00       	ld.sh	r0,r0[0x0]
+80003796:	41 04       	lddsp	r4,sp[0x40]
+80003798:	80 00       	ld.sh	r0,r0[0x0]
+8000379a:	41 14       	lddsp	r4,sp[0x44]
+8000379c:	80 00       	ld.sh	r0,r0[0x0]
+8000379e:	2f a4       	sub	r4,-6
+800037a0:	80 00       	ld.sh	r0,r0[0x0]
+800037a2:	32 28       	mov	r8,34
+800037a4:	80 00       	ld.sh	r0,r0[0x0]
+800037a6:	32 60       	mov	r0,38
+800037a8:	80 00       	ld.sh	r0,r0[0x0]
+800037aa:	33 c8       	mov	r8,60
+800037ac:	80 00       	ld.sh	r0,r0[0x0]
+800037ae:	2b 10       	sub	r0,-79
 
-
-	sd_mmc_resources_init();
-	print_dbg("\n\rSD Card Memory Test:\n\r");
-8000390a:	4c 5c       	lddpc	r12,80003a1c <main+0x2f0>
-8000390c:	f0 1f 00 32 	mcall	800039d4 <main+0x2a8>
-	// Test if the memory is ready - using the control access memory abstraction layer (/SERVICES/MEMORY/CTRL_ACCESS/)
-	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
-80003910:	30 0c       	mov	r12,0
-80003912:	f0 1f 00 44 	mcall	80003a20 <main+0x2f4>
-80003916:	2f cd       	sub	sp,-16
-80003918:	58 0c       	cp.w	r12,0
-8000391a:	c1 41       	brne	80003942 <main+0x216>
-	{
-		// Get and display the capacity
-		mem_read_capacity(LUN_ID_SD_MMC_SPI_MEM, &VarTemp);
-8000391c:	fa cb ff f0 	sub	r11,sp,-16
-80003920:	f0 1f 00 41 	mcall	80003a24 <main+0x2f8>
-		print_dbg("OK:\t");
-80003924:	4c 1c       	lddpc	r12,80003a28 <main+0x2fc>
-80003926:	f0 1f 00 2c 	mcall	800039d4 <main+0x2a8>
-		print_dbg_ulong((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
-8000392a:	40 4c       	lddsp	r12,sp[0x10]
-8000392c:	2f fc       	sub	r12,-1
-8000392e:	ab 9c       	lsr	r12,0xb
-80003930:	f0 1f 00 2c 	mcall	800039e0 <main+0x2b4>
-		print_dbg("MB\r\n");
-80003934:	4b ec       	lddpc	r12,80003a2c <main+0x300>
-80003936:	f0 1f 00 28 	mcall	800039d4 <main+0x2a8>
-		print_dbg("SD Card Okay.\n\r");
-8000393a:	4b ec       	lddpc	r12,80003a30 <main+0x304>
-8000393c:	f0 1f 00 26 	mcall	800039d4 <main+0x2a8>
-80003940:	c0 48       	rjmp	80003948 <main+0x21c>
-	}
-	else
-	{
-		// Display an error message
-		print_dbg("Not initialized: Check if memory is ready...\r\n");
-80003942:	4b dc       	lddpc	r12,80003a34 <main+0x308>
-80003944:	f0 1f 00 24 	mcall	800039d4 <main+0x2a8>
+800037b0 <main>:
+// Software wait
 
 
 
-
-
-	print_dbg("\n\rTest Complete!");
-80003948:	4b cc       	lddpc	r12,80003a38 <main+0x30c>
-8000394a:	f0 1f 00 23 	mcall	800039d4 <main+0x2a8>
-8000394e:	c0 08       	rjmp	8000394e <main+0x222>
+int main (void)
+{
+800037b0:	d4 31       	pushm	r0-r7,lr
+800037b2:	20 1d       	sub	sp,4
+	unsigned long sdram_size, progress_inc, i, j, tmp, noErrors = 0;
+	volatile unsigned long *sdram = SDRAM;
+	uint32_t VarTemp;
+	board_init();
+800037b4:	f0 1f 00 91 	mcall	800039f8 <main+0x248>
+	pcl_switch_to_osc(PCL_OSC0, FOSC0, OSC0_STARTUP);
+800037b8:	30 3a       	mov	r10,3
+800037ba:	e0 6b 24 00 	mov	r11,9216
+800037be:	ea 1b 00 f4 	orh	r11,0xf4
+800037c2:	30 0c       	mov	r12,0
+800037c4:	f0 1f 00 8e 	mcall	800039fc <main+0x24c>
+	init_dbg_rs232(FOSC0);
+800037c8:	e0 6c 24 00 	mov	r12,9216
+800037cc:	ea 1c 00 f4 	orh	r12,0xf4
+800037d0:	f0 1f 00 8c 	mcall	80003a00 <main+0x250>
+	print_dbg("\x0C");
+800037d4:	fe fc 02 30 	ld.w	r12,pc[560]
+800037d8:	f0 1f 00 8c 	mcall	80003a08 <main+0x258>
+	print_dbg("Columbus Board Tester\n\n\r");
+800037dc:	fe fc 02 30 	ld.w	r12,pc[560]
+800037e0:	f0 1f 00 8a 	mcall	80003a08 <main+0x258>
+	print_dbg("LED Test:\n\rAll LEDS on;");
+800037e4:	fe fc 02 2c 	ld.w	r12,pc[556]
+800037e8:	f0 1f 00 88 	mcall	80003a08 <main+0x258>
+	LEDMOTOR_SET;
+800037ec:	32 cc       	mov	r12,44
+800037ee:	f0 1f 00 8a 	mcall	80003a14 <main+0x264>
+	LED2_SET;
+800037f2:	33 1c       	mov	r12,49
+800037f4:	f0 1f 00 88 	mcall	80003a14 <main+0x264>
 	LED3_SET;
+800037f8:	33 2c       	mov	r12,50
+800037fa:	f0 1f 00 87 	mcall	80003a14 <main+0x264>
 	LED4_SET;
+800037fe:	33 bc       	mov	r12,59
+80003800:	f0 1f 00 85 	mcall	80003a14 <main+0x264>
 	LED5_SET;
+80003804:	33 cc       	mov	r12,60
+80003806:	f0 1f 00 84 	mcall	80003a14 <main+0x264>
 	LED6_SET;
-	delay_s(1);
-	print_dbg("\n\rAll LEDS off;");
-80003950:	4b bc       	lddpc	r12,80003a3c <main+0x310>
-80003952:	f0 1f 00 21 	mcall	800039d4 <main+0x2a8>
-	LEDMOTOR_CLR;
-80003956:	32 cc       	mov	r12,44
-80003958:	f0 1f 00 3a 	mcall	80003a40 <main+0x314>
-	LED2_CLR;
-8000395c:	33 1c       	mov	r12,49
-8000395e:	f0 1f 00 39 	mcall	80003a40 <main+0x314>
-	LED3_CLR;
-80003962:	33 2c       	mov	r12,50
-80003964:	f0 1f 00 37 	mcall	80003a40 <main+0x314>
-	LED4_CLR;
-80003968:	33 bc       	mov	r12,59
-8000396a:	f0 1f 00 36 	mcall	80003a40 <main+0x314>
-	LED5_CLR;
-8000396e:	33 cc       	mov	r12,60
-80003970:	f0 1f 00 34 	mcall	80003a40 <main+0x314>
-	LED6_CLR;
-80003974:	33 dc       	mov	r12,61
-80003976:	f0 1f 00 33 	mcall	80003a40 <main+0x314>
+8000380a:	33 dc       	mov	r12,61
+8000380c:	f0 1f 00 82 	mcall	80003a14 <main+0x264>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-8000397a:	e1 b8 00 42 	mfsr	r8,0x108
+80003810:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-8000397e:	e0 6a 24 00 	mov	r10,9216
-80003982:	ea 1a 00 f4 	orh	r10,0xf4
-80003986:	f0 0a 00 0a 	add	r10,r8,r10
-8000398a:	c1 8b       	rjmp	800037ba <main+0x8e>
-	delay_s(1);
-	
-	
-	sdram_size = SDRAM_SIZE >> 2;
-	print_dbg("\n\rSDRAM size: ");
-8000398c:	4a ec       	lddpc	r12,80003a44 <main+0x318>
-8000398e:	f0 1f 00 12 	mcall	800039d4 <main+0x2a8>
-	print_dbg_ulong(SDRAM_SIZE >> 20);
-80003992:	30 4c       	mov	r12,4
-80003994:	f0 1f 00 13 	mcall	800039e0 <main+0x2b4>
-	print_dbg(" MB\r\n");
-80003998:	4a cc       	lddpc	r12,80003a48 <main+0x31c>
-8000399a:	f0 1f 00 0f 	mcall	800039d4 <main+0x2a8>
-	sdramc_init(FOSC0);
-8000399e:	e0 6c 24 00 	mov	r12,9216
-800039a2:	ea 1c 00 f4 	orh	r12,0xf4
-800039a6:	f0 1f 00 2a 	mcall	80003a4c <main+0x320>
-	print_dbg("SDRAM initialized\r\n");
-800039aa:	4a ac       	lddpc	r12,80003a50 <main+0x324>
-800039ac:	f0 1f 00 0a 	mcall	800039d4 <main+0x2a8>
-800039b0:	fc 14 c0 00 	movh	r4,0xc000
-800039b4:	30 07       	mov	r7,0
-800039b6:	0e 95       	mov	r5,r7
+80003814:	e0 6a 24 00 	mov	r10,9216
+80003818:	ea 1a 00 f4 	orh	r10,0xf4
+8000381c:	f0 0a 00 0a 	add	r10,r8,r10
+ *
+ * \return true if timeout occurred, otherwise false.
+ */
+__always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
+{
+  unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
+80003820:	e1 b9 00 42 	mfsr	r9,0x108
+  // Test if the timeout as already occurred.
+  else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
+    return true;
+
+  // If the ending cycle count of this timeout is wrapped, ...
+  else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
+80003824:	14 38       	cp.w	r8,r10
+80003826:	e0 88 00 09 	brls	80003838 <main+0x88>
+  {
+    if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
+8000382a:	12 38       	cp.w	r8,r9
+8000382c:	fe 98 ff fa 	brls	80003820 <main+0x70>
+80003830:	12 3a       	cp.w	r10,r9
+80003832:	e0 83 00 a7 	brlo	80003980 <main+0x1d0>
+80003836:	cf 5b       	rjmp	80003820 <main+0x70>
+    }
+    return false;
+  }
+  else
+  {
+    if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
+80003838:	12 38       	cp.w	r8,r9
+8000383a:	e0 8b 00 a3 	brhi	80003980 <main+0x1d0>
+8000383e:	12 3a       	cp.w	r10,r9
+80003840:	e0 83 00 a0 	brlo	80003980 <main+0x1d0>
+80003844:	ce eb       	rjmp	80003820 <main+0x70>
+ *
+ * \return true if timeout occurred, otherwise false.
+ */
+__always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
+{
+  unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
+80003846:	e1 b9 00 42 	mfsr	r9,0x108
+  // Test if the timeout as already occurred.
+  else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
+    return true;
+
+  // If the ending cycle count of this timeout is wrapped, ...
+  else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
+8000384a:	14 38       	cp.w	r8,r10
+8000384c:	e0 88 00 09 	brls	8000385e <main+0xae>
+  {
+    if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
+80003850:	12 38       	cp.w	r8,r9
+80003852:	fe 98 ff fa 	brls	80003846 <main+0x96>
+80003856:	12 3a       	cp.w	r10,r9
+80003858:	e0 83 00 b2 	brlo	800039bc <main+0x20c>
+8000385c:	cf 5b       	rjmp	80003846 <main+0x96>
+    }
+    return false;
+  }
+  else
+  {
+    if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
+8000385e:	12 38       	cp.w	r8,r9
+80003860:	e0 8b 00 ae 	brhi	800039bc <main+0x20c>
+80003864:	12 3a       	cp.w	r10,r9
+80003866:	e0 83 00 ab 	brlo	800039bc <main+0x20c>
+8000386a:	ce eb       	rjmp	80003846 <main+0x96>
+8000386c:	0c 95       	mov	r5,r6
 	// printed progression status.
 	progress_inc = (sdram_size + 50) / 100;
 	// Fill the SDRAM with the test pattern.
 	for (i = 0, j = 0; i < sdram_size; i++)
 	{
 		if (i == j * progress_inc)
-800039b8:	e0 63 28 f6 	mov	r3,10486
+8000386e:	ea 03 02 48 	mul	r8,r5,r3
+80003872:	0e 38       	cp.w	r8,r7
+80003874:	c0 30       	breq	8000387a <main+0xca>
+80003876:	0a 96       	mov	r6,r5
+80003878:	c0 c8       	rjmp	80003890 <main+0xe0>
 		{
 			//LED_Toggle(LED_SDRAM_WRITE);
 			print_dbg("\rFilling SDRAM with test pattern: ");
-800039bc:	4a 62       	lddpc	r2,80003a54 <main+0x328>
+8000387a:	04 9c       	mov	r12,r2
+8000387c:	f0 1f 00 63 	mcall	80003a08 <main+0x258>
+			print_dbg_ulong(j++);
+80003880:	ea c6 ff ff 	sub	r6,r5,-1
+80003884:	0a 9c       	mov	r12,r5
+80003886:	f0 1f 00 65 	mcall	80003a18 <main+0x268>
+			print_dbg_char('%');
+8000388a:	02 9c       	mov	r12,r1
+8000388c:	f0 1f 00 64 	mcall	80003a1c <main+0x26c>
+		}
+		sdram[i] = i;
+80003890:	08 a7       	st.w	r4++,r7
+	print_dbg("SDRAM initialized\r\n");
+	// Determine the increment of SDRAM word address requiring an update of the
+	// printed progression status.
+	progress_inc = (sdram_size + 50) / 100;
+	// Fill the SDRAM with the test pattern.
+	for (i = 0, j = 0; i < sdram_size; i++)
+80003892:	2f f7       	sub	r7,-1
+80003894:	fc 18 00 10 	movh	r8,0x10
+80003898:	10 37       	cp.w	r7,r8
+8000389a:	ce 91       	brne	8000386c <main+0xbc>
+			print_dbg_char('%');
+		}
+		sdram[i] = i;
+		
+	}
+	print_dbg("\rSDRAM filled with test pattern       \r\n");
+8000389c:	4e 1c       	lddpc	r12,80003a20 <main+0x270>
+8000389e:	f0 1f 00 5b 	mcall	80003a08 <main+0x258>
+800038a2:	fc 15 c0 00 	movh	r5,0xc000
+800038a6:	30 04       	mov	r4,0
+800038a8:	08 96       	mov	r6,r4
+800038aa:	08 97       	mov	r7,r4
+	// Recover the test pattern from the SDRAM and verify it.
+	for (i = 0, j = 0; i < sdram_size; i++)
+	{
+		
+		if (i == j * progress_inc)
+800038ac:	e0 62 28 f6 	mov	r2,10486
+		{
+			print_dbg("\rRecovering test pattern from SDRAM: ");
+800038b0:	4d d1       	lddpc	r1,80003a24 <main+0x274>
 			print_dbg_ulong(j++);
 			print_dbg_char('%');
-800039be:	32 51       	mov	r1,37
-800039c0:	c1 1b       	rjmp	800037e2 <main+0xb6>
-800039c2:	00 00       	add	r0,r0
-800039c4:	80 00       	ld.sh	r0,r0[0x0]
-800039c6:	36 fc       	mov	r12,111
-800039c8:	80 00       	ld.sh	r0,r0[0x0]
-800039ca:	30 64       	mov	r4,6
-800039cc:	80 00       	ld.sh	r0,r0[0x0]
-800039ce:	36 9c       	mov	r12,105
-800039d0:	80 00       	ld.sh	r0,r0[0x0]
-800039d2:	41 34       	lddsp	r4,sp[0x4c]
-800039d4:	80 00       	ld.sh	r0,r0[0x0]
-800039d6:	36 48       	mov	r8,100
-800039d8:	80 00       	ld.sh	r0,r0[0x0]
-800039da:	41 4c       	lddsp	r12,sp[0x50]
-800039dc:	80 00       	ld.sh	r0,r0[0x0]
-800039de:	2f d4       	sub	r4,-3
-800039e0:	80 00       	ld.sh	r0,r0[0x0]
-800039e2:	36 34       	mov	r4,99
-800039e4:	80 00       	ld.sh	r0,r0[0x0]
-800039e6:	35 cc       	mov	r12,92
-800039e8:	80 00       	ld.sh	r0,r0[0x0]
-800039ea:	41 80       	lddsp	r0,sp[0x60]
-800039ec:	80 00       	ld.sh	r0,r0[0x0]
-800039ee:	41 ac       	lddsp	r12,sp[0x68]
-800039f0:	80 00       	ld.sh	r0,r0[0x0]
-800039f2:	41 d4       	lddsp	r4,sp[0x74]
-800039f4:	80 00       	ld.sh	r0,r0[0x0]
-800039f6:	41 e4       	lddsp	r4,sp[0x78]
+800038b2:	32 50       	mov	r0,37
+	print_dbg("\rSDRAM filled with test pattern       \r\n");
+	// Recover the test pattern from the SDRAM and verify it.
+	for (i = 0, j = 0; i < sdram_size; i++)
+	{
+		
+		if (i == j * progress_inc)
+800038b4:	ec 02 02 48 	mul	r8,r6,r2
+800038b8:	0e 38       	cp.w	r8,r7
+800038ba:	c0 30       	breq	800038c0 <main+0x110>
+800038bc:	0c 93       	mov	r3,r6
+800038be:	c0 c8       	rjmp	800038d6 <main+0x126>
+		{
+			print_dbg("\rRecovering test pattern from SDRAM: ");
+800038c0:	02 9c       	mov	r12,r1
+800038c2:	f0 1f 00 52 	mcall	80003a08 <main+0x258>
+			print_dbg_ulong(j++);
+800038c6:	ec c3 ff ff 	sub	r3,r6,-1
+800038ca:	0c 9c       	mov	r12,r6
+800038cc:	f0 1f 00 53 	mcall	80003a18 <main+0x268>
+			print_dbg_char('%');
+800038d0:	00 9c       	mov	r12,r0
+800038d2:	f0 1f 00 53 	mcall	80003a1c <main+0x26c>
+		}
+		tmp = sdram[i];
+800038d6:	6a 08       	ld.w	r8,r5[0x0]
+		if (tmp != i)//failed
+		{
+			noErrors++;
+800038d8:	0e 38       	cp.w	r8,r7
+800038da:	f7 b4 01 ff 	subne	r4,-1
+		sdram[i] = i;
+		
+	}
+	print_dbg("\rSDRAM filled with test pattern       \r\n");
+	// Recover the test pattern from the SDRAM and verify it.
+	for (i = 0, j = 0; i < sdram_size; i++)
+800038de:	2f f7       	sub	r7,-1
+800038e0:	2f c5       	sub	r5,-4
+800038e2:	fc 18 00 10 	movh	r8,0x10
+800038e6:	10 37       	cp.w	r7,r8
+800038e8:	c0 30       	breq	800038ee <main+0x13e>
+800038ea:	06 96       	mov	r6,r3
+800038ec:	ce 4b       	rjmp	800038b4 <main+0x104>
+		{
+			noErrors++;
+		}
+
+	}
+	print_dbg("\rSDRAM tested: ");
+800038ee:	4c fc       	lddpc	r12,80003a28 <main+0x278>
+800038f0:	f0 1f 00 46 	mcall	80003a08 <main+0x258>
+	print_dbg_ulong(noErrors);
+800038f4:	08 9c       	mov	r12,r4
+800038f6:	f0 1f 00 49 	mcall	80003a18 <main+0x268>
+	print_dbg(" corrupted word(s)       \r\n");
+800038fa:	4c dc       	lddpc	r12,80003a2c <main+0x27c>
+800038fc:	f0 1f 00 43 	mcall	80003a08 <main+0x258>
+	if (noErrors)
+80003900:	58 04       	cp.w	r4,0
+80003902:	c0 50       	breq	8000390c <main+0x15c>
+	{
+			LED3_SET;
+80003904:	33 2c       	mov	r12,50
+80003906:	f0 1f 00 44 	mcall	80003a14 <main+0x264>
+8000390a:	c0 48       	rjmp	80003912 <main+0x162>
+	}
+	else
+	{
+			LED2_SET;
+8000390c:	33 1c       	mov	r12,49
+8000390e:	f0 1f 00 42 	mcall	80003a14 <main+0x264>
+80003912:	fc 16 c0 00 	movh	r6,0xc000
+80003916:	30 07       	mov	r7,0
+	
+	
+	for(i = 0; i < 10; i++)
+	{
+		sdram[i] = i;
+		print_dbg("\n\rWritten data: ");
+80003918:	4c 65       	lddpc	r5,80003a30 <main+0x280>
+		print_dbg_ulong(i);
+		print_dbg("\n\rRead data: ");
+8000391a:	4c 74       	lddpc	r4,80003a34 <main+0x284>
+	}
+	
+	
+	for(i = 0; i < 10; i++)
+	{
+		sdram[i] = i;
+8000391c:	8d 07       	st.w	r6[0x0],r7
+		print_dbg("\n\rWritten data: ");
+8000391e:	0a 9c       	mov	r12,r5
+80003920:	f0 1f 00 3a 	mcall	80003a08 <main+0x258>
+		print_dbg_ulong(i);
+80003924:	0e 9c       	mov	r12,r7
+80003926:	f0 1f 00 3d 	mcall	80003a18 <main+0x268>
+		print_dbg("\n\rRead data: ");
+8000392a:	08 9c       	mov	r12,r4
+8000392c:	f0 1f 00 37 	mcall	80003a08 <main+0x258>
+		print_dbg_ulong(sdram[i]);
+80003930:	0d 0c       	ld.w	r12,r6++
+80003932:	f0 1f 00 3a 	mcall	80003a18 <main+0x268>
+	{
+			LED2_SET;
+	}
+	
+	
+	for(i = 0; i < 10; i++)
+80003936:	2f f7       	sub	r7,-1
+80003938:	58 a7       	cp.w	r7,10
+8000393a:	cf 11       	brne	8000391c <main+0x16c>
+		print_dbg_ulong(i);
+		print_dbg("\n\rRead data: ");
+		print_dbg_ulong(sdram[i]);
+	}
+
+	sd_mmc_resources_init();
+8000393c:	f0 1f 00 3f 	mcall	80003a38 <main+0x288>
+	//sd_mmc_resources_init();
+	print_dbg("\n\n\rSD Card Memory Test:\n\r");
+80003940:	4b fc       	lddpc	r12,80003a3c <main+0x28c>
+80003942:	f0 1f 00 32 	mcall	80003a08 <main+0x258>
+	// Test if the memory is ready - using the control access memory abstraction layer (/SERVICES/MEMORY/CTRL_ACCESS/)
+	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
+80003946:	30 0c       	mov	r12,0
+80003948:	f0 1f 00 3e 	mcall	80003a40 <main+0x290>
+8000394c:	c1 31       	brne	80003972 <main+0x1c2>
+	{
+		// Get and display the capacity
+		mem_read_capacity(LUN_ID_SD_MMC_SPI_MEM, &VarTemp);
+8000394e:	1a 9b       	mov	r11,sp
+80003950:	f0 1f 00 3d 	mcall	80003a44 <main+0x294>
+		print_dbg("OK:\t");
+80003954:	4b dc       	lddpc	r12,80003a48 <main+0x298>
+80003956:	f0 1f 00 2d 	mcall	80003a08 <main+0x258>
+		print_dbg_ulong((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
+8000395a:	40 0c       	lddsp	r12,sp[0x0]
+8000395c:	2f fc       	sub	r12,-1
+8000395e:	ab 9c       	lsr	r12,0xb
+80003960:	f0 1f 00 2e 	mcall	80003a18 <main+0x268>
+		print_dbg("MB\r\n");
+80003964:	4b ac       	lddpc	r12,80003a4c <main+0x29c>
+80003966:	f0 1f 00 29 	mcall	80003a08 <main+0x258>
+		print_dbg("SD Card Okay.\n\r");
+8000396a:	4b ac       	lddpc	r12,80003a50 <main+0x2a0>
+8000396c:	f0 1f 00 27 	mcall	80003a08 <main+0x258>
+80003970:	c0 48       	rjmp	80003978 <main+0x1c8>
+	}
+	else
+	{
+		// Display an error message
+		print_dbg("Not initialized: Check if memory is ready...\r\n");
+80003972:	4b 9c       	lddpc	r12,80003a54 <main+0x2a4>
+80003974:	f0 1f 00 25 	mcall	80003a08 <main+0x258>
+
+
+
+
+
+	print_dbg("\n\rTest Complete!");
+80003978:	4b 8c       	lddpc	r12,80003a58 <main+0x2a8>
+8000397a:	f0 1f 00 24 	mcall	80003a08 <main+0x258>
+8000397e:	c0 08       	rjmp	8000397e <main+0x1ce>
+	LED3_SET;
+	LED4_SET;
+	LED5_SET;
+	LED6_SET;
+	delay_s(1);
+	print_dbg("\n\rAll LEDS off;");
+80003980:	4b 7c       	lddpc	r12,80003a5c <main+0x2ac>
+80003982:	f0 1f 00 22 	mcall	80003a08 <main+0x258>
+	LEDMOTOR_CLR;
+80003986:	32 cc       	mov	r12,44
+80003988:	f0 1f 00 36 	mcall	80003a60 <main+0x2b0>
+	LED2_CLR;
+8000398c:	33 1c       	mov	r12,49
+8000398e:	f0 1f 00 35 	mcall	80003a60 <main+0x2b0>
+	LED3_CLR;
+80003992:	33 2c       	mov	r12,50
+80003994:	f0 1f 00 33 	mcall	80003a60 <main+0x2b0>
+	LED4_CLR;
+80003998:	33 bc       	mov	r12,59
+8000399a:	f0 1f 00 32 	mcall	80003a60 <main+0x2b0>
+	LED5_CLR;
+8000399e:	33 cc       	mov	r12,60
+800039a0:	f0 1f 00 30 	mcall	80003a60 <main+0x2b0>
+	LED6_CLR;
+800039a4:	33 dc       	mov	r12,61
+800039a6:	f0 1f 00 2f 	mcall	80003a60 <main+0x2b0>
+ * \param  delay:   (input) delay in CPU cycles before timeout.
+ * \param  cpu_time: (output) internal information used by the timer API.
+ */
+__always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
+{
+  cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
+800039aa:	e1 b8 00 42 	mfsr	r8,0x108
+  cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
+800039ae:	e0 6a 24 00 	mov	r10,9216
+800039b2:	ea 1a 00 f4 	orh	r10,0xf4
+800039b6:	f0 0a 00 0a 	add	r10,r8,r10
+800039ba:	c4 6b       	rjmp	80003846 <main+0x96>
+	delay_s(1);
+	
+	print_dbg("\n\n\rSDRAM Test:");
+800039bc:	4a ac       	lddpc	r12,80003a64 <main+0x2b4>
+800039be:	f0 1f 00 13 	mcall	80003a08 <main+0x258>
+	sdram_size = SDRAM_SIZE >> 2;
+	print_dbg("\n\rSDRAM size: ");
+800039c2:	4a ac       	lddpc	r12,80003a68 <main+0x2b8>
+800039c4:	f0 1f 00 11 	mcall	80003a08 <main+0x258>
+	print_dbg_ulong(SDRAM_SIZE >> 20);
+800039c8:	30 4c       	mov	r12,4
+800039ca:	f0 1f 00 14 	mcall	80003a18 <main+0x268>
+	print_dbg(" MB\r\n");
+800039ce:	4a 8c       	lddpc	r12,80003a6c <main+0x2bc>
+800039d0:	f0 1f 00 0e 	mcall	80003a08 <main+0x258>
+	sdramc_init(FOSC0);
+800039d4:	e0 6c 24 00 	mov	r12,9216
+800039d8:	ea 1c 00 f4 	orh	r12,0xf4
+800039dc:	f0 1f 00 25 	mcall	80003a70 <main+0x2c0>
+	print_dbg("SDRAM initialized\r\n");
+800039e0:	4a 5c       	lddpc	r12,80003a74 <main+0x2c4>
+800039e2:	f0 1f 00 0a 	mcall	80003a08 <main+0x258>
+800039e6:	fc 14 c0 00 	movh	r4,0xc000
+800039ea:	30 05       	mov	r5,0
+800039ec:	0a 97       	mov	r7,r5
+	// printed progression status.
+	progress_inc = (sdram_size + 50) / 100;
+	// Fill the SDRAM with the test pattern.
+	for (i = 0, j = 0; i < sdram_size; i++)
+	{
+		if (i == j * progress_inc)
+800039ee:	e0 63 28 f6 	mov	r3,10486
+		{
+			//LED_Toggle(LED_SDRAM_WRITE);
+			print_dbg("\rFilling SDRAM with test pattern: ");
+800039f2:	4a 22       	lddpc	r2,80003a78 <main+0x2c8>
+			print_dbg_ulong(j++);
+			print_dbg_char('%');
+800039f4:	32 51       	mov	r1,37
+800039f6:	c3 cb       	rjmp	8000386e <main+0xbe>
 800039f8:	80 00       	ld.sh	r0,r0[0x0]
-800039fa:	42 00       	lddsp	r0,sp[0x80]
+800039fa:	36 fc       	mov	r12,111
 800039fc:	80 00       	ld.sh	r0,r0[0x0]
-800039fe:	42 14       	lddsp	r4,sp[0x84]
+800039fe:	30 64       	mov	r4,6
 80003a00:	80 00       	ld.sh	r0,r0[0x0]
-80003a02:	41 04       	lddsp	r4,sp[0x40]
+80003a02:	36 9c       	mov	r12,105
 80003a04:	80 00       	ld.sh	r0,r0[0x0]
-80003a06:	41 14       	lddsp	r4,sp[0x44]
+80003a06:	41 34       	lddsp	r4,sp[0x4c]
 80003a08:	80 00       	ld.sh	r0,r0[0x0]
-80003a0a:	2f a4       	sub	r4,-6
+80003a0a:	36 48       	mov	r8,100
 80003a0c:	80 00       	ld.sh	r0,r0[0x0]
-80003a0e:	32 28       	mov	r8,34
+80003a0e:	41 38       	lddsp	r8,sp[0x4c]
 80003a10:	80 00       	ld.sh	r0,r0[0x0]
-80003a12:	32 60       	mov	r0,38
+80003a12:	41 54       	lddsp	r4,sp[0x54]
 80003a14:	80 00       	ld.sh	r0,r0[0x0]
-80003a16:	33 c8       	mov	r8,60
+80003a16:	2f d4       	sub	r4,-3
 80003a18:	80 00       	ld.sh	r0,r0[0x0]
-80003a1a:	2b 10       	sub	r0,-79
+80003a1a:	36 34       	mov	r4,99
 80003a1c:	80 00       	ld.sh	r0,r0[0x0]
-80003a1e:	42 24       	lddsp	r4,sp[0x88]
+80003a1e:	35 cc       	mov	r12,92
 80003a20:	80 00       	ld.sh	r0,r0[0x0]
-80003a22:	37 00       	mov	r0,112
+80003a22:	41 90       	lddsp	r0,sp[0x64]
 80003a24:	80 00       	ld.sh	r0,r0[0x0]
-80003a26:	37 14       	mov	r4,113
+80003a26:	41 bc       	lddsp	r12,sp[0x6c]
 80003a28:	80 00       	ld.sh	r0,r0[0x0]
-80003a2a:	42 40       	lddsp	r0,sp[0x90]
+80003a2a:	41 e4       	lddsp	r4,sp[0x78]
 80003a2c:	80 00       	ld.sh	r0,r0[0x0]
-80003a2e:	42 48       	lddsp	r8,sp[0x90]
+80003a2e:	41 f4       	lddsp	r4,sp[0x7c]
 80003a30:	80 00       	ld.sh	r0,r0[0x0]
-80003a32:	42 50       	lddsp	r0,sp[0x94]
+80003a32:	42 10       	lddsp	r0,sp[0x84]
 80003a34:	80 00       	ld.sh	r0,r0[0x0]
-80003a36:	42 60       	lddsp	r0,sp[0x98]
+80003a36:	42 24       	lddsp	r4,sp[0x88]
 80003a38:	80 00       	ld.sh	r0,r0[0x0]
-80003a3a:	42 90       	lddsp	r0,sp[0xa4]
+80003a3a:	37 2c       	mov	r12,114
 80003a3c:	80 00       	ld.sh	r0,r0[0x0]
-80003a3e:	42 a4       	lddsp	r4,sp[0xa8]
+80003a3e:	42 34       	lddsp	r4,sp[0x8c]
 80003a40:	80 00       	ld.sh	r0,r0[0x0]
-80003a42:	2f f0       	sub	r0,-1
+80003a42:	37 00       	mov	r0,112
 80003a44:	80 00       	ld.sh	r0,r0[0x0]
-80003a46:	42 b4       	lddsp	r4,sp[0xac]
+80003a46:	37 14       	mov	r4,113
 80003a48:	80 00       	ld.sh	r0,r0[0x0]
-80003a4a:	42 c4       	lddsp	r4,sp[0xb0]
+80003a4a:	42 50       	lddsp	r0,sp[0x94]
 80003a4c:	80 00       	ld.sh	r0,r0[0x0]
-80003a4e:	2c f4       	sub	r4,-49
+80003a4e:	42 58       	lddsp	r8,sp[0x94]
 80003a50:	80 00       	ld.sh	r0,r0[0x0]
-80003a52:	42 cc       	lddsp	r12,sp[0xb0]
+80003a52:	42 60       	lddsp	r0,sp[0x98]
 80003a54:	80 00       	ld.sh	r0,r0[0x0]
-80003a56:	41 5c       	lddsp	r12,sp[0x54]
+80003a56:	42 70       	lddsp	r0,sp[0x9c]
+80003a58:	80 00       	ld.sh	r0,r0[0x0]
+80003a5a:	42 a0       	lddsp	r0,sp[0xa8]
+80003a5c:	80 00       	ld.sh	r0,r0[0x0]
+80003a5e:	42 b4       	lddsp	r4,sp[0xac]
+80003a60:	80 00       	ld.sh	r0,r0[0x0]
+80003a62:	2f f0       	sub	r0,-1
+80003a64:	80 00       	ld.sh	r0,r0[0x0]
+80003a66:	42 c4       	lddsp	r4,sp[0xb0]
+80003a68:	80 00       	ld.sh	r0,r0[0x0]
+80003a6a:	42 d4       	lddsp	r4,sp[0xb4]
+80003a6c:	80 00       	ld.sh	r0,r0[0x0]
+80003a6e:	42 e4       	lddsp	r4,sp[0xb8]
+80003a70:	80 00       	ld.sh	r0,r0[0x0]
+80003a72:	2c f4       	sub	r4,-49
+80003a74:	80 00       	ld.sh	r0,r0[0x0]
+80003a76:	42 ec       	lddsp	r12,sp[0xb8]
+80003a78:	80 00       	ld.sh	r0,r0[0x0]
+80003a7a:	41 6c       	lddsp	r12,sp[0x58]
 
 Disassembly of section .exception:
 
