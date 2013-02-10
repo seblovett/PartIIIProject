@@ -29,19 +29,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  12 .debug_abbrev 00002050  00000000  00000000  00018348  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_line   00009634  00000000  00000000  0001a398  2**0
+ 13 .debug_line   00009636  00000000  00000000  0001a398  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_frame  00001954  00000000  00000000  000239cc  2**2
+ 14 .debug_frame  00001954  00000000  00000000  000239d0  2**2
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_str    000045d0  00000000  00000000  00025320  2**0
+ 15 .debug_str    000045d0  00000000  00000000  00025324  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_loc    00003f6a  00000000  00000000  000298f0  2**0
+ 16 .debug_loc    00003f6a  00000000  00000000  000298f4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_macinfo 0135cd31  00000000  00000000  0002d85a  2**0
+ 17 .debug_macinfo 0135cd31  00000000  00000000  0002d85e  2**0
                   CONTENTS, READONLY, DEBUGGING
  18 .stack        00001000  0000f000  0000f000  00000400  2**0
                   ALLOC
- 19 .debug_ranges 000009a0  00000000  00000000  0138a58b  2**0
+ 19 .debug_ranges 000009a0  00000000  00000000  0138a58f  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .reset:
@@ -4343,8 +4343,8 @@ Ctrl_status mem_read_capacity(U8 lun, U32 *u32_nb_sector)
 8000372a:	40 d0       	lddsp	r0,sp[0x34]
 
 8000372c <main>:
-
 }
+
 
 
 int main (void)
@@ -4513,9 +4513,9 @@ __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 80003810:	4f 6c       	lddpc	r12,800039e8 <main+0x2bc>
 80003812:	f0 1f 00 71 	mcall	800039d4 <main+0x2a8>
 80003816:	fc 15 c0 00 	movh	r5,0xc000
-8000381a:	30 04       	mov	r4,0
-8000381c:	08 96       	mov	r6,r4
-8000381e:	08 97       	mov	r7,r4
+8000381a:	30 07       	mov	r7,0
+8000381c:	0e 93       	mov	r3,r7
+8000381e:	0e 96       	mov	r6,r7
 	// Recover the test pattern from the SDRAM and verify it.
 	for (i = 0, j = 0; i < sdram_size; i++)
 	{
@@ -4537,14 +4537,14 @@ __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 80003828:	ec 02 02 48 	mul	r8,r6,r2
 8000382c:	0e 38       	cp.w	r8,r7
 8000382e:	c0 30       	breq	80003834 <main+0x108>
-80003830:	0c 93       	mov	r3,r6
+80003830:	0c 94       	mov	r4,r6
 80003832:	c0 c8       	rjmp	8000384a <main+0x11e>
 		{
 			print_dbg("\rRecovering test pattern from SDRAM: ");
 80003834:	02 9c       	mov	r12,r1
 80003836:	f0 1f 00 68 	mcall	800039d4 <main+0x2a8>
 			print_dbg_ulong(j++);
-8000383a:	ec c3 ff ff 	sub	r3,r6,-1
+8000383a:	ec c4 ff ff 	sub	r4,r6,-1
 8000383e:	0c 9c       	mov	r12,r6
 80003840:	f0 1f 00 68 	mcall	800039e0 <main+0x2b4>
 			print_dbg_char('%');
@@ -4557,7 +4557,7 @@ __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 		{
 			noErrors++;
 8000384c:	0e 38       	cp.w	r8,r7
-8000384e:	f7 b4 01 ff 	subne	r4,-1
+8000384e:	f7 b3 01 ff 	subne	r3,-1
 		sdram[i] = i;
 		
 	}
@@ -4569,7 +4569,7 @@ __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 80003856:	fc 18 00 10 	movh	r8,0x10
 8000385a:	10 37       	cp.w	r7,r8
 8000385c:	c0 30       	breq	80003862 <main+0x136>
-8000385e:	06 96       	mov	r6,r3
+8000385e:	08 96       	mov	r6,r4
 80003860:	ce 4b       	rjmp	80003828 <main+0xfc>
 		{
 			noErrors++;
@@ -4580,13 +4580,13 @@ __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 80003862:	4e 4c       	lddpc	r12,800039f0 <main+0x2c4>
 80003864:	f0 1f 00 5c 	mcall	800039d4 <main+0x2a8>
 	print_dbg_ulong(noErrors);
-80003868:	08 9c       	mov	r12,r4
+80003868:	06 9c       	mov	r12,r3
 8000386a:	f0 1f 00 5e 	mcall	800039e0 <main+0x2b4>
 	print_dbg(" corrupted word(s)       \r\n");
 8000386e:	4e 2c       	lddpc	r12,800039f4 <main+0x2c8>
 80003870:	f0 1f 00 59 	mcall	800039d4 <main+0x2a8>
 	if (noErrors)
-80003874:	58 04       	cp.w	r4,0
+80003874:	58 03       	cp.w	r3,0
 80003876:	c0 50       	breq	80003880 <main+0x154>
 	{
 			LED3_SET;
@@ -4806,8 +4806,8 @@ __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu
 800039aa:	4a ac       	lddpc	r12,80003a50 <main+0x324>
 800039ac:	f0 1f 00 0a 	mcall	800039d4 <main+0x2a8>
 800039b0:	fc 14 c0 00 	movh	r4,0xc000
-800039b4:	30 05       	mov	r5,0
-800039b6:	0a 97       	mov	r7,r5
+800039b4:	30 07       	mov	r7,0
+800039b6:	0e 95       	mov	r5,r7
 	// printed progression status.
 	progress_inc = (sdram_size + 50) / 100;
 	// Fill the SDRAM with the test pattern.

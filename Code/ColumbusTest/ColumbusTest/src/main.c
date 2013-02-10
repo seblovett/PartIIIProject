@@ -10,25 +10,21 @@
  * Atmel Software Framework (ASF).
  */
 #include <asf.h>
-
+#include <conf_board.h>
 
 #include "conf_sd_mmc_spi.h"
+
+
 // Software wait
 // Dummy char table
 const char dummy_data[] =
 #include "dummy.h"
 ;
-
-
-
-
 // PDCA Channel pointer
 volatile avr32_pdca_channel_t* pdca_channelrx ;
 volatile avr32_pdca_channel_t* pdca_channeltx ;
-
 // Used to indicate the end of PDCA transfer
 volatile bool end_of_transfer;
-
 // Local RAM buffer for the example to store data received from the SD/MMC card
 volatile char ram_buffer[1000];
 void wait()
@@ -36,16 +32,10 @@ void wait()
   volatile int i;
   for(i = 0 ; i < 5000; i++);
 }
-
-
 /* interrupt handler to notify if the Data reception from flash is
  * over, in this case lunch the Memory(ram_buffer) to USART transfer and
  * disable interrupt*/
-#if defined (__GNUC__)
-__attribute__((__interrupt__))
-#elif defined (__ICCAVR32__)
-__interrupt
-#endif
+
 static void pdca_int_handler(void)
 {
   // Disable all interrupts.
@@ -65,7 +55,6 @@ static void pdca_int_handler(void)
 
   end_of_transfer = true;
 }
-
 
 /*! \brief Initializes SD/MMC resources: GPIO, SPI and SD/MMC.
  */
@@ -110,7 +99,6 @@ static void sd_mmc_resources_init(void)
   sd_mmc_spi_init(spiOptions, PBA_HZ);
 }
 
-
 /*! \brief Initialize PDCA (Peripheral DMA Controller A) resources for the SPI transfer and start a dummy transfer
  */
 void local_pdca_init(void)
@@ -151,6 +139,7 @@ void local_pdca_init(void)
   INTC_register_interrupt(&pdca_int_handler, AVR32_PDCA_IRQ_0, AVR32_INTC_INT1);  // pdca_channel_spi1_RX = 0
 
 }
+
 
 
 int main (void)

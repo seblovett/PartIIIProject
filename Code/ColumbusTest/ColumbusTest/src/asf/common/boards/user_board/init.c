@@ -21,3 +21,4 @@ void board_init(void)
 // 		{USART_TXD_PIN, USART_TXD_FUNCTION}
 //	};
 }
+

@@ -138,5 +138,6 @@
 // 		.stopbits     = USART_1_STOPBIT,
 // 		.channelmode  = USART_NORMAL_CHMODE
 // 	};
-	
+
+
 #endif // CONF_BOARD_H
