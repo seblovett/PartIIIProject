@@ -22,6 +22,8 @@ src\asf\avr32\drivers\pm\pm_uc3c.c
 
 src\asf\avr32\drivers\pm\power_clocks_lib.c
 
+src\asf\avr32\drivers\pwm\pwm4.c
+
 src\asf\avr32\drivers\scif\scif_uc3c.c
 
 src\asf\avr32\drivers\spi\spi.c
@@ -53,6 +55,8 @@ src\asf\common\services\clock\uc3c\pll.c
 src\asf\common\services\clock\uc3c\sysclk.c
 
 src\asf\common\services\storage\ctrl_access\ctrl_access.c
+
+src\CustomDevices\MotorDriver.c
 
 src\CustomDevices\SD_Card.c
 

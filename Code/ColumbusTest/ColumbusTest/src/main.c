@@ -13,6 +13,7 @@
 #include <conf_board.h>
 //#include "SD_Card.h"
 #include "CustomDevices/SD_Card.h"
+#include "CustomDevices/MotorDriver.h"
 #include "conf_sd_mmc_spi.h"
 
 
@@ -188,8 +189,13 @@ int main (void)
 		print_dbg("\n\r");
 	}
 	
-	print_dbg("\n\rMotor Testing:\n\r");
-	
+	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
+	Motor_Init();
+	//print_dbg("Motors Forward:");
+	//Motor_Go(FORWARD);
+	//delay_s(2);
+// 	print_dbg("Motor Stop;");
+// 	Motor_Go(STOP);
 	print_dbg("\n\rTest Complete!");
 	// Insert application code here, after the board has been initialized.
 	while(1)
