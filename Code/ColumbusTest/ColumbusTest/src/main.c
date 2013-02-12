@@ -65,129 +65,129 @@ int main (void)
 	init_dbg_rs232(FOSC0);
 	print_dbg("\x0C");
 	print_dbg("Columbus Board Tester\n\n\r");
-// 	print_dbg("LED Test:\n\rAll LEDS on;");
-// 	LEDMOTOR_SET;
-// 	LED2_SET;
-// 	LED3_SET;
-// 	LED4_SET;
-// 	LED5_SET;
-// 	LED6_SET;
-// 	delay_s(1);
-// 	print_dbg("\n\rAll LEDS off;");
-// 	LEDMOTOR_CLR;
-// 	LED2_CLR;
-// 	LED3_CLR;
-// 	LED4_CLR;
-// 	LED5_CLR;
-// 	LED6_CLR;
-// 	delay_s(1);
-// 	
-// 	print_dbg("\n\n\rSDRAM Test:");
-// 	sdram_size = SDRAM_SIZE >> 2;
-// 	print_dbg("\n\rSDRAM size: ");
-// 	print_dbg_ulong(SDRAM_SIZE >> 20);
-// 	print_dbg(" MB\r\n");
-// 	sdramc_init(FOSC0);
-// 	print_dbg("SDRAM initialized\r\n");
-// 	// Determine the increment of SDRAM word address requiring an update of the
-// 	// printed progression status.
-// 	progress_inc = (sdram_size + 50) / 100;
-// 	// Fill the SDRAM with the test pattern.
-// 	for (i = 0, j = 0; i < sdram_size; i++)
-// 	{
-// 		if (i == j * progress_inc)
-// 		{
-// 			//LED_Toggle(LED_SDRAM_WRITE);
-// 			print_dbg("\rFilling SDRAM with test pattern: ");
-// 			print_dbg_ulong(j++);
-// 			print_dbg_char('%');
-// 		}
-// 		sdram[i] = i;
-// 		
-// 	}
-// 	print_dbg("\rSDRAM filled with test pattern       \r\n");
-// 	// Recover the test pattern from the SDRAM and verify it.
-// 	for (i = 0, j = 0; i < sdram_size; i++)
-// 	{
-// 		
-// 		if (i == j * progress_inc)
-// 		{
-// 			print_dbg("\rRecovering test pattern from SDRAM: ");
-// 			print_dbg_ulong(j++);
-// 			print_dbg_char('%');
-// 		}
-// 		tmp = sdram[i];
-// 		if (tmp != i)//failed
-// 		{
-// 			noErrors++;
-// 		}
-// 
-// 	}
-// 	print_dbg("\rSDRAM tested: ");
-// 	print_dbg_ulong(noErrors);
-// 	print_dbg(" corrupted word(s)       \r\n");
-// 	if (noErrors)
-// 	{
-// 			LED3_SET;
-// 	}
-// 	else
-// 	{
-// 			LED2_SET;
-// 	}
-// 	
-// 	
-// 	for(i = 0; i < 10; i++)
-// 	{
-// 		sdram[i] = i;
-// 		print_dbg("\n\rWritten data: ");
-// 		print_dbg_ulong(i);
-// 		print_dbg("\n\rRead data: ");
-// 		print_dbg_ulong(sdram[i]);
-// 	}
-// 
-// 	sd_mmc_resources_init();
-// 	//sd_mmc_resources_init();
-// 	print_dbg("\n\n\rSD Card Memory Test:\n\r");
-// 	// Test if the memory is ready - using the control access memory abstraction layer (/SERVICES/MEMORY/CTRL_ACCESS/)
-// 	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
-// 	{
-// 		// Get and display the capacity
-// 		mem_read_capacity(LUN_ID_SD_MMC_SPI_MEM, &VarTemp);
-// 		print_dbg("OK:\t");
-// 		print_dbg_ulong((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
-// 		print_dbg("MB\r\n");
-// 		print_dbg("SD Card Okay.\n\r");
-// 	}
-// 	else
-// 	{
-// 		// Display an error message
-// 		print_dbg("Not initialized: Check if memory is ready...\r\n");
-// 	}
-// 
-// 
-// 	print_dbg("\n\n\rTWI Test:\n\r");
-// 	twim_init();
-// 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
-// 	tmp = 0;
-// 	for(i = 0; i < 8; i++)
-// 	{
-// 		print_dbg_ulong(i);
-// 		print_dbg_char(' ');
-// 		for(j = 0; j < 16; j++)
-// 		{
-// 			int status = twim_probe(TWIM, tmp++);
-// 			if(status == STATUS_OK)
-// 			{
-// 				print_dbg_char('A');
-// 			}
-// 			else
-// 			{
-// 				print_dbg_char('-');
-// 			}
-// 			print_dbg_char(' ');
-// 		}
-// 		print_dbg("\n\r");
-// 	}
+	print_dbg("LED Test:\n\rAll LEDS on;");
+	LEDMOTOR_SET;
+	LED2_SET;
+	LED3_SET;
+	LED4_SET;
+	LED5_SET;
+	LED6_SET;
+	delay_s(1);
+	print_dbg("\n\rAll LEDS off;");
+	LEDMOTOR_CLR;
+	LED2_CLR;
+	LED3_CLR;
+	LED4_CLR;
+	LED5_CLR;
+	LED6_CLR;
+	delay_s(1);
+	
+	print_dbg("\n\n\rSDRAM Test:");
+	sdram_size = SDRAM_SIZE >> 2;
+	print_dbg("\n\rSDRAM size: ");
+	print_dbg_ulong(SDRAM_SIZE >> 20);
+	print_dbg(" MB\r\n");
+	sdramc_init(FOSC0);
+	print_dbg("SDRAM initialized\r\n");
+	// Determine the increment of SDRAM word address requiring an update of the
+	// printed progression status.
+	progress_inc = (sdram_size + 50) / 100;
+	// Fill the SDRAM with the test pattern.
+	for (i = 0, j = 0; i < sdram_size; i++)
+	{
+		if (i == j * progress_inc)
+		{
+			//LED_Toggle(LED_SDRAM_WRITE);
+			print_dbg("\rFilling SDRAM with test pattern: ");
+			print_dbg_ulong(j++);
+			print_dbg_char('%');
+		}
+		sdram[i] = i;
+		
+	}
+	print_dbg("\rSDRAM filled with test pattern       \r\n");
+	// Recover the test pattern from the SDRAM and verify it.
+	for (i = 0, j = 0; i < sdram_size; i++)
+	{
+		
+		if (i == j * progress_inc)
+		{
+			print_dbg("\rRecovering test pattern from SDRAM: ");
+			print_dbg_ulong(j++);
+			print_dbg_char('%');
+		}
+		tmp = sdram[i];
+		if (tmp != i)//failed
+		{
+			noErrors++;
+		}
+
+	}
+	print_dbg("\rSDRAM tested: ");
+	print_dbg_ulong(noErrors);
+	print_dbg(" corrupted word(s)       \r\n");
+	if (noErrors)
+	{
+			LED3_SET;
+	}
+	else
+	{
+			LED2_SET;
+	}
+	
+	
+	for(i = 0; i < 10; i++)
+	{
+		sdram[i] = i;
+		print_dbg("\n\rWritten data: ");
+		print_dbg_ulong(i);
+		print_dbg("\n\rRead data: ");
+		print_dbg_ulong(sdram[i]);
+	}
+
+	sd_mmc_resources_init();
+	//sd_mmc_resources_init();
+	print_dbg("\n\n\rSD Card Memory Test:\n\r");
+	// Test if the memory is ready - using the control access memory abstraction layer (/SERVICES/MEMORY/CTRL_ACCESS/)
+	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
+	{
+		// Get and display the capacity
+		mem_read_capacity(LUN_ID_SD_MMC_SPI_MEM, &VarTemp);
+		print_dbg("OK:\t");
+		print_dbg_ulong((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
+		print_dbg("MB\r\n");
+		print_dbg("SD Card Okay.\n\r");
+	}
+	else
+	{
+		// Display an error message
+		print_dbg("Not initialized: Check if memory is ready...\r\n");
+	}
+
+
+	print_dbg("\n\n\rTWI Test:\n\r");
+	twim_init();
+	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+	tmp = 0;
+	for(i = 0; i < 8; i++)
+	{
+		print_dbg_ulong(i);
+		print_dbg_char(' ');
+		for(j = 0; j < 16; j++)
+		{
+			int status = twim_probe(TWIM, tmp++);
+			if(status == STATUS_OK)
+			{
+				print_dbg_char('A');
+			}
+			else
+			{
+				print_dbg_char('-');
+			}
+			print_dbg_char(' ');
+		}
+		print_dbg("\n\r");
+	}
 	
 	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
 	Motor_Init();

@@ -154,6 +154,7 @@ void Stop_Motor(int Motors)
 }
 void Motor_Go(int Direction)
 {
+	LEDMOTOR_SET; //assume we start moving unless we stop
 	switch(Direction)
 	{
 		case STOP: //Stop Movement
@@ -164,6 +165,7 @@ void Motor_Go(int Direction)
 			M1_IN1_CLR;
 			M1_IN2_CLR;
 			Stop_Motor(MOTOR0 | MOTOR1);
+			LEDMOTOR_CLR;
 			break;
 			
 		case FORWARD://Drive Both Motors Forward
