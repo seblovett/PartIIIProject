@@ -110,8 +110,8 @@
 #define M0_IN2_SET		{gpio_set_gpio_pin(MOTOR_0_IN2);}
 #define M0_IN1_CLR		{gpio_clr_gpio_pin(MOTOR_0_IN1);}
 #define M0_IN2_CLR		{gpio_clr_gpio_pin(MOTOR_0_IN2);}
-#define M0_PWM_HIGH		{gpio_set_gpio_pin(MOTOR_0_PWM);}
-#define M0_PWM_LOW		{gpio_clr_gpio_pin(MOTOR_0_PWM);}
+// #define M0_PWM_HIGH		{gpio_set_gpio_pin(MOTOR_0_PWM);}
+// #define M0_PWM_LOW		{gpio_clr_gpio_pin(MOTOR_0_PWM);}
 	
 #define M1_STANDBY		{gpio_clr_gpio_pin(MOTOR_1_STBY);}
 #define M1_GO			{gpio_set_gpio_pin(MOTOR_1_STBY);}
@@ -119,8 +119,8 @@
 #define M1_IN2_SET		{gpio_set_gpio_pin(MOTOR_1_IN2);}
 #define M1_IN1_CLR		{gpio_clr_gpio_pin(MOTOR_1_IN1);}
 #define M1_IN2_CLR		{gpio_clr_gpio_pin(MOTOR_1_IN2);}
-#define M1_PWM_HIGH		{gpio_set_gpio_pin(MOTOR_1_PWM);}
-#define M1_PWM_LOW		{gpio_clr_gpio_pin(MOTOR_1_PWM);}	
+// #define M1_PWM_HIGH		{gpio_set_gpio_pin(MOTOR_1_PWM);}
+// #define M1_PWM_LOW		{gpio_clr_gpio_pin(MOTOR_1_PWM);}	
 //SD Card
 
 #define SD_MMC_SPI_MEM_CNT          1

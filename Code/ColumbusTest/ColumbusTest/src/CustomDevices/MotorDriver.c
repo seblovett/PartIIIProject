@@ -82,7 +82,7 @@ void Motor_Init()
 	// Start Enable Generic Clock with PLL as source clock
 	pwm_start_gc();
 	
-	channel_id = 1;//EXAMPLE_PWM_CHANNEL_ID;
+	
 // 	gpio_enable_module_pin(EXAMPLE_PWM_L_PIN, EXAMPLE_PWM_L_FUNCTION);
 // 	gpio_enable_module_pin(EXAMPLE_PWM_H_PIN, EXAMPLE_PWM_H_FUNCTION);
 // 	gpio_enable_module_pin(M0_PWM_H_PIN, M0_PWM_H_FUNCTION);
@@ -120,14 +120,38 @@ void Motor_Init()
 	pwm_channel.cdty      = 100;       // Channel duty cycle, should be < CPRD.
 	pwm_channel.cprd      = 200;       // Channel period.
 	
-
+	channel_id = M0_PWM_CHANNEL_ID;
 	pwm_channel_init(channel_id, &pwm_channel); // Set channel configuration to channel 0
 	//pwm_start_channels((1 << channel_id));  // Start channel 0 & 1.
-	channel_id = 2; 
+	channel_id = M1_PWM_CHANNEL_ID; 
 	pwm_channel_init(channel_id, &pwm_channel); // Set channel configuration to channel 0
 	//pwm_start_channels((1 << channel_id));  // Start channel 0 & 1.
 }
+void Start_Motor(int Motors)
+{
+	if(Motors & MOTOR0)
+	{
+		pwm_start_channels((1 << MOTOR0)); //Start PWM Channel on M0 line
+	}
+	
+	if(Motors & MOTOR1)
+	{
+		pwm_start_channels((1 << MOTOR1));
+	}	
+}
 
+void Stop_Motor(int Motors)
+{
+	if(Motors & MOTOR0)
+	{
+		pwm_stop_channels((1 << MOTOR0)); //Start PWM Channel on M0 line
+	}
+	
+	if(Motors & MOTOR1)
+	{
+		pwm_stop_channels((1 << MOTOR1));
+	}
+}
 void Motor_Go(int Direction)
 {
 	switch(Direction)
@@ -139,6 +163,7 @@ void Motor_Go(int Direction)
 			M0_IN2_CLR;
 			M1_IN1_CLR;
 			M1_IN2_CLR;
+			Stop_Motor(MOTOR0 | MOTOR1);
 			break;
 			
 		case FORWARD://Drive Both Motors Forward
@@ -146,8 +171,7 @@ void Motor_Go(int Direction)
 			M1_IN1_SET;
 			M0_IN2_CLR;
 			M1_IN2_CLR;
-// 			M0_PWM_HIGH;
-// 			M1_PWM_HIGH;
+			Start_Motor(MOTOR0 | MOTOR1);//start PWM on both motors.
 			M0_GO;
 			M1_GO;
 			break;

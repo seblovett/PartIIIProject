@@ -10,8 +10,8 @@
 #define MOTORDRIVER_H_
 #include <asf.h>
 //Definitions
-#define MOTOR0			0
-#define MOTOR1			1
+#define MOTOR0			M0_PWM_CHANNEL_ID
+#define MOTOR1			M1_PWM_CHANNEL_ID
 
 #define FORWARD			2
 #define BACKWARD		3
