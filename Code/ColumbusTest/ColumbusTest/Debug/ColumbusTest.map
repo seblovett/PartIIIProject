@@ -1169,7 +1169,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .plt
  *(.plt)
 
-.text           0x80002004     0x2534
+.text           0x80002004     0x2554
  *(.text .stub .text.* .gnu.linkonce.t.*)
  .text.sd_mmc_spi_get_capacity
                 0x80002004      0x11c src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -1457,7 +1457,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .text.sd_mmc_resources_init
                 0x800040b0       0x84 src/CustomDevices/SD_Card.o
                 0x800040b0                sd_mmc_resources_init
- .text.main     0x80004134      0x404 src/main.o
+ .text.main     0x80004134      0x424 src/main.o
                 0x80004134                main
  *(.text.*personality*)
  *(.gnu.warning)
@@ -1476,7 +1476,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                 0x80004800                PROVIDE (_etext, .)
                 0x80004800                PROVIDE (etext, .)
 
-.rodata         0x80004800      0x5a8
+.rodata         0x80004800      0x5d0
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.SDRAMC_EBI_GPIO_MAP.14470
                 0x80004800      0x128 src/asf/avr32/drivers/ebi/sdramc/sdramc.o
@@ -1499,12 +1499,12 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .rodata.SD_MMC_SPI_GPIO_MAP.16982
                 0x80004b28       0x20 src/CustomDevices/SD_Card.o
  .rodata.str1.4
-                0x80004b48      0x240 src/main.o
-                                0x244 (size before relaxing)
+                0x80004b48      0x268 src/main.o
+                                0x26c (size before relaxing)
  .rodata.C.57.16973
-                0x80004d88       0x10 src/main.o
+                0x80004db0       0x10 src/main.o
  .rodata.C.58.16974
-                0x80004d98       0x10 src/main.o
+                0x80004dc0       0x10 src/main.o
 
 .rodata1
  *(.rodata1)
@@ -1519,9 +1519,9 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.gcc_except_table)
  *(.gcc_except_table.*)
 
-.dalign         0x80004da8        0x0
-                0x80004da8                . = ALIGN (0x8)
-                0x80004da8                PROVIDE (_data_lma, .)
+.dalign         0x80004dd0        0x0
+                0x80004dd0                . = ALIGN (0x8)
+                0x80004dd0                PROVIDE (_data_lma, .)
                 0x00000004                PROVIDE (_data, ORIGIN (CPUSRAM))
                 0x00000004                . = ORIGIN (CPUSRAM)
 
@@ -1580,7 +1580,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.got.plt)
  *(.got)
 
-.data           0x00000004        0x8 load address 0x80004da8
+.data           0x00000004        0x8 load address 0x80004dd0
  *(.data .data.* .gnu.linkonce.d.*)
  .data.sd_mmc_spi_presence_status
                 0x00000004        0x1 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -1594,7 +1594,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .data1
  *(.data1)
 
-.balign         0x0000000c        0x4 load address 0x80004db0
+.balign         0x0000000c        0x4 load address 0x80004dd8
                 0x00000010                . = ALIGN (0x8)
  *fill*         0x0000000c        0x4 00
                 0x00000010                _edata = .
@@ -1602,7 +1602,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                 0x00000010                PROVIDE (edata, .)
                 0x00000010                __bss_start = .
 
-.bss            0x00000010      0x478 load address 0x80004db0
+.bss            0x00000010      0x478 load address 0x80004dd8
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
  .bss.gl_ptr_mem
@@ -1934,7 +1934,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_abbrev  0x0000249b      0x1b7 src/CustomDevices/SD_Card.o
  .debug_abbrev  0x00002652      0x250 src/main.o
 
-.debug_line     0x00000000     0xc451
+.debug_line     0x00000000     0xc44a
  *(.debug_line)
  .debug_line    0x00000000      0xbfe src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_line    0x00000bfe      0x929 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -1954,7 +1954,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_line    0x00009430      0x90e src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_line    0x00009d3e      0xced src/CustomDevices/MotorDriver.o
  .debug_line    0x0000aa2b      0xcd9 src/CustomDevices/SD_Card.o
- .debug_line    0x0000b704      0xd4d src/main.o
+ .debug_line    0x0000b704      0xd46 src/main.o
 
 .debug_frame    0x00000000     0x1d38
  *(.debug_frame)
@@ -2019,7 +2019,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_str     0x0000575f      0x12d src/main.o
                                 0x742 (size before relaxing)
 
-.debug_loc      0x00000000     0x49e0
+.debug_loc      0x00000000     0x49d4
  *(.debug_loc)
  .debug_loc     0x00000000      0x911 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_loc     0x00000911      0x131 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -2038,9 +2038,9 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_loc     0x000043b9      0x286 src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_loc     0x0000463f      0x10f src/CustomDevices/MotorDriver.o
  .debug_loc     0x0000474e       0xe4 src/CustomDevices/SD_Card.o
- .debug_loc     0x00004832      0x1ae src/main.o
+ .debug_loc     0x00004832      0x1a2 src/main.o
 
-.debug_macinfo  0x00000000  0x1894706
+.debug_macinfo  0x00000000  0x189471b
  *(.debug_macinfo)
  .debug_macinfo
                 0x00000000   0x14b869 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -2079,7 +2079,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_macinfo
                 0x015f330c   0x15097f src/CustomDevices/SD_Card.o
  .debug_macinfo
-                0x01743c8b   0x150a7b src/main.o
+                0x01743c8b   0x150a90 src/main.o
 
 .debug_weaknames
  *(.debug_weaknames)

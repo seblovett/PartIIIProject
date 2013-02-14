@@ -15,7 +15,9 @@
 #include "CustomDevices/SD_Card.h"
 #include "CustomDevices/MotorDriver.h"
 #include "conf_sd_mmc_spi.h"
-
+#include "fat.h"
+#include "file.h"
+#include "navigation.h"
 
 #define TWIM               (&AVR32_TWIM0)  //! TWIM Module Used
 
@@ -53,7 +55,7 @@ static void twim_init (void)
 
 }
 
-
+#define LOG_FILE "log.txt"
 
 int main (void)
 {
@@ -65,6 +67,75 @@ int main (void)
 	init_dbg_rs232(FOSC0);
 	print_dbg("\x0C");
 	print_dbg("Columbus Board Tester\n\n\r");
+	sd_mmc_resources_init();
+	//sd_mmc_resources_init();
+	print_dbg("\n\n\rSD Card Memory Test:\n\r");
+	// Test if the memory is ready - using the control access memory abstraction layer (/SERVICES/MEMORY/CTRL_ACCESS/)
+	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
+	{
+		// Get and display the capacity
+		mem_read_capacity(LUN_ID_SD_MMC_SPI_MEM, &VarTemp);
+		print_dbg("OK:\t");
+		print_dbg_ulong((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
+		print_dbg("MB\r\n");
+		print_dbg("SD Card Okay.\n\r");
+	}
+	else
+	{
+		// Display an error message
+		print_dbg("Not initialized: Check if memory is ready...\r\n");
+	}
+	// Check if params are correct or mount needed.
+// 	if (nav_drive_get() >= nav_drive_nb() || first_ls)
+// 	{
+// 		first_ls = false;
+// 		// Reset navigators .
+// 		nav_reset();
+// 		// Use the last drive available as default.
+// 		nav_drive_set(nav_drive_nb() - 1);
+// 		// Mount it.
+// 		nav_partition_mount();
+// 	}
+// 	// Get the volume name
+// 	nav_dir_name((FS_STRING)str_buff, MAX_FILE_PATH_LENGTH);
+// 	// Display general informations (drive letter and current path)
+// 	print_dbg("\r\nVolume is ");
+// 	print_dbg_char('A' + nav_drive_get());
+// 	print_dbg(":\r\nDir name is ");
+// 	print_dbg(str_buff);
+// 	print(SHL_USART, CRLF);
+// 	// Try to sort items by folders
+// 	if (!nav_filelist_first(FS_DIR))
+// 	{
+// 		// Sort items by files
+// 		nav_filelist_first(FS_FILE);
+// 	}
+// 	// Display items informations
+// 	print_dbg("\tSize (Bytes)\tName\r\n");
+// 	// reset filelist before to start the listing
+// 	nav_filelist_reset();
+// 	// While an item can be found
+// 	while (nav_filelist_set(0, FS_FIND_NEXT))
+// 	{
+// 		// Get and display current item informations
+// 		print_dbg((nav_file_isdir()) ? "Dir\t" : "   \t");
+// 		print_dbg_ulong(SHL_USART, nav_file_lgt());
+// 		print_dbg(SHL_USART, "\t\t");
+// 		nav_file_name((FS_STRING)str_buff, MAX_FILE_PATH_LENGTH, FS_NAME_GET, true);
+// 		print_dbg(str_buff);
+// 		print_dbg(CRLF);
+// 	}
+// 	// Display the files number 
+// 	print_dbg_ulong(nav_filelist_nb(FS_FILE));
+// 	print_dbg("  Files\r\n");
+// 	// Display the folders number
+// 	print_dbg_ulong(nav_filelist_nb(FS_DIR));
+// 	print_dbg("  Dir\r\n");
+	
+	
+	
+	
+	//nav_file_create(&LOG_FILE);
 	print_dbg("LED Test:\n\rAll LEDS on;");
 	LEDMOTOR_SET;
 	LED2_SET;
@@ -144,25 +215,10 @@ int main (void)
 		print_dbg("\n\rRead data: ");
 		print_dbg_ulong(sdram[i]);
 	}
-
-	sd_mmc_resources_init();
-	//sd_mmc_resources_init();
-	print_dbg("\n\n\rSD Card Memory Test:\n\r");
-	// Test if the memory is ready - using the control access memory abstraction layer (/SERVICES/MEMORY/CTRL_ACCESS/)
-	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
-	{
-		// Get and display the capacity
-		mem_read_capacity(LUN_ID_SD_MMC_SPI_MEM, &VarTemp);
-		print_dbg("OK:\t");
-		print_dbg_ulong((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
-		print_dbg("MB\r\n");
-		print_dbg("SD Card Okay.\n\r");
-	}
-	else
-	{
-		// Display an error message
-		print_dbg("Not initialized: Check if memory is ready...\r\n");
-	}
+	print_dbg("\n\rRead data from address 1: ");
+	print_dbg_ulong(sdram[1]);
+	
+	
 
 
 	print_dbg("\n\n\rTWI Test:\n\r");
@@ -191,10 +247,10 @@ int main (void)
 	
 	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
 	Motor_Init();
-	print_dbg("Motors Forward:");
+	print_dbg("\n\rMotors Forward:");
 	Motor_Go(FORWARD);
 	delay_s(2);
-	print_dbg("Motor Stop;");
+	print_dbg("\n\rMotor Stop;");
 	Motor_Go(STOP);
 	print_dbg("\n\rTest Complete!");
 	// Insert application code here, after the board has been initialized.
