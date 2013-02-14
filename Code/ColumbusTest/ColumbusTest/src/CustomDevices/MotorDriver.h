@@ -28,5 +28,5 @@ avr32_pwm_channel_t pwm_channel;
 void Motor_Init();
 void Motor_Go(int Direction);
 void Analogue_Comparator_Init();
-
+/*static void ACInterruptHandler(void);*/
 #endif /* MOTORDRIVER_H_ */

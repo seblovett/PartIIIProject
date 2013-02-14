@@ -117,7 +117,7 @@ void Motor_Init()
 	pwm_channel.CMR.calg  = PWM_MODE_LEFT_ALIGNED;       // Channel mode.
 	pwm_channel.CMR.cpol  = PWM_POLARITY_HIGH;            // Channel polarity.
 	pwm_channel.CMR.cpre  = AVR32_PWM_CPRE_CCK;           // Channel prescaler.
-	pwm_channel.cdty      = 100;       // Channel duty cycle, should be < CPRD.
+	pwm_channel.cdty      = 50;       // Channel duty cycle, should be < CPRD.
 	pwm_channel.cprd      = 200;       // Channel period.
 	
 	channel_id = M0_PWM_CHANNEL_ID;
@@ -193,32 +193,41 @@ void Motor_Go(int Direction)
 	}
 	
 }
-void ACInterruptHandler()
+
+
+__attribute__((__interrupt__)) static void ACInterruptHandler(void)
 {
-// 	if (acifa_is_acb_inp_higher(&AVR32_ACIFA1))
-// 	{
-// 		// 				print_dbg("ACMP0 > ACMPN0");
-// 		// 				print_dbg("\r\n");
-// 		LED5_SET;
-// 				
-// 	}
-// 	else
-// 	{
-// 		LED5_CLR;
-// 	}
-// 			
-// 	if (acifa_is_aca_inp_higher(&AVR32_ACIFA1))
-// 	{
-// 		// 				print_dbg("ACMP0 > ACMPN0");
-// 		// 				print_dbg("\r\n");
-// 		LED6_SET;
-// 				
-// 	}
-// 	else
-// 	{
-// 		LED6_CLR;
-// 	}
+	
+	if (acifa_is_acb_inp_higher(&AVR32_ACIFA1))
+	{
+		// 				print_dbg("ACMP0 > ACMPN0");
+		// 				print_dbg("\r\n");
+		LED5_SET;
+				
+	}
+	else
+	{
+		LED5_CLR;
+	}
+			
+	if (acifa_is_aca_inp_higher(&AVR32_ACIFA1))
+	{
+		// 				print_dbg("ACMP0 > ACMPN0");
+		// 				print_dbg("\r\n");
+		LED6_SET;
+				
+	}
+	else
+	{
+		LED6_CLR;
+	}
+	//print_dbg("\n\rACIFA Interrupt Entered.");
+ 	acifa_clear_flags(&AVR32_ACIFA1, 3);
+// 	Enable_global_interrupt();
 }
+
+
+
 void Analogue_Comparator_Init()
 {
 		static const gpio_map_t ACIFA_GPIO_MAP =
@@ -230,28 +239,48 @@ void Analogue_Comparator_Init()
 		};
 		
 		gpio_enable_module(ACIFA_GPIO_MAP, sizeof(ACIFA_GPIO_MAP) / sizeof(ACIFA_GPIO_MAP[0]));
+		//Make it an interrupt
+		Disable_global_interrupt();
 		
+		INTC_init_interrupts();
 		
 		acifa_configure(&AVR32_ACIFA1,
 		ACIFA_COMP_SELA,
 		POT0_AC1AP1_INPUT,
 		SENSE0_AC1AN1_INPUT,
 		FOSC0);
-		
+		acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELA, 2);
+		acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELB, 2);
 		acifa_configure(&AVR32_ACIFA1,
 		ACIFA_COMP_SELB,
 		POT1_AC1BP1_INPUT,
 		SENSE1_AC1BN1_INPUT,
 		FOSC0);
 		
+// 		//Reset Wheels
+/*		Motor_Go(FORWARD);*/
+		//M0_IN1_CLR;
+// 		M1_IN1_CLR;
+// 		while(acifa_is_aca_inp_higher(&AVR32_ACIFA1) == false)
+// 			;
+// 		M0_IN1_CLR;
+// 		
+// 		M1_IN1_SET;
+// 		while(!acifa_is_acb_inp_higher(&AVR32_ACIFA1))
+// 			;
+// 		M1_IN1_CLR;
+		
+		
+		//Motor_Go(S)
+		acifa_enable_interrupt(&AVR32_ACIFA1, 3);//Enable ACBINT and ACAINT
+		acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELA);
+		acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELB);
 		acifa_start(&AVR32_ACIFA1, (ACIFA_COMP_SELA|ACIFA_COMP_SELB));
 		
-		//Make it an interrupt
-// 		Disable_global_interrupt();
-// 		
-// 		INTC_init_interrupts();
-// 		
-// 		INTC_register_interrupt(&ACInterruptHandler,AVR32_ACIFA1_IRQ ,AVR32_INTC_INT0);
-// 		
-// 		Enable_global_interrupt();
+		
+		
+		
+		INTC_register_interrupt(&ACInterruptHandler,AVR32_ACIFA1_IRQ ,AVR32_INTC_INT0);
+		
+		Enable_global_interrupt();
 }

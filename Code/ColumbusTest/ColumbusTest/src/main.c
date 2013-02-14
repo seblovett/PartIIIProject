@@ -56,6 +56,15 @@ static void twim_init (void)
 }
 
 #define LOG_FILE "log.txt"
+void LED_Flash()
+{
+	LED2_SET;
+	delay_s(1);
+	LED2_CLR;
+	delay_s(1);
+}
+
+#define TOGGLE LED_Flash
 
 int main (void)
 {
@@ -153,105 +162,105 @@ int main (void)
 	LED6_CLR;
 	delay_s(1);
 	
-	print_dbg("\n\n\rSDRAM Test:");
-	sdram_size = SDRAM_SIZE >> 2;
-	print_dbg("\n\rSDRAM size: ");
-	print_dbg_ulong(SDRAM_SIZE >> 20);
-	print_dbg(" MB\r\n");
-	sdramc_init(FOSC0);
-	print_dbg("SDRAM initialized\r\n");
-	// Determine the increment of SDRAM word address requiring an update of the
-	// printed progression status.
-	progress_inc = (sdram_size + 50) / 100;
-	// Fill the SDRAM with the test pattern.
-	for (i = 0, j = 0; i < sdram_size; i++)
-	{
-		if (i == j * progress_inc)
-		{
-			//LED_Toggle(LED_SDRAM_WRITE);
-			print_dbg("\rFilling SDRAM with test pattern: ");
-			print_dbg_ulong(j++);
-			print_dbg_char('%');
-		}
-		sdram[i] = i;
-		
-	}
-	print_dbg("\rSDRAM filled with test pattern       \r\n");
-	// Recover the test pattern from the SDRAM and verify it.
-	for (i = 0, j = 0; i < sdram_size; i++)
-	{
-		
-		if (i == j * progress_inc)
-		{
-			print_dbg("\rRecovering test pattern from SDRAM: ");
-			print_dbg_ulong(j++);
-			print_dbg_char('%');
-		}
-		tmp = sdram[i];
-		if (tmp != i)//failed
-		{
-			noErrors++;
-		}
-
-	}
-	print_dbg("\rSDRAM tested: ");
-	print_dbg_ulong(noErrors);
-	print_dbg(" corrupted word(s)       \r\n");
-	if (noErrors)
-	{
-			LED3_SET;
-	}
-	else
-	{
-			LED2_SET;
-	}
-	
-	
-	for(i = 0; i < 10; i++)
-	{
-		sdram[i] = i;
-		print_dbg("\n\rWritten data: ");
-		print_dbg_ulong(i);
-		print_dbg("\n\rRead data: ");
-		print_dbg_ulong(sdram[i]);
-	}
-	print_dbg("\n\rRead data from address 1: ");
-	print_dbg_ulong(sdram[1]);
-	
-	
-
-
-	print_dbg("\n\n\rTWI Test:\n\r");
-	twim_init();
-	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
-	tmp = 0;
-	for(i = 0; i < 8; i++)
-	{
-		print_dbg_ulong(i);
-		print_dbg_char(' ');
-		for(j = 0; j < 16; j++)
-		{
-			int status = twim_probe(TWIM, tmp++);
-			if(status == STATUS_OK)
-			{
-				print_dbg_char('A');
-			}
-			else
-			{
-				print_dbg_char('-');
-			}
-			print_dbg_char(' ');
-		}
-		print_dbg("\n\r");
-	}
-	
-	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
-	Motor_Init();
-	print_dbg("\n\rMotors Forward:");
-	Motor_Go(FORWARD);
-	delay_s(2);
-	print_dbg("\n\rMotor Stop;");
-	Motor_Go(STOP);
+// 	print_dbg("\n\n\rSDRAM Test:");
+// 	sdram_size = SDRAM_SIZE >> 2;
+// 	print_dbg("\n\rSDRAM size: ");
+// 	print_dbg_ulong(SDRAM_SIZE >> 20);
+// 	print_dbg(" MB\r\n");
+// 	sdramc_init(FOSC0);
+// 	print_dbg("SDRAM initialized\r\n");
+// 	// Determine the increment of SDRAM word address requiring an update of the
+// 	// printed progression status.
+// 	progress_inc = (sdram_size + 50) / 100;
+// 	// Fill the SDRAM with the test pattern.
+// 	for (i = 0, j = 0; i < sdram_size; i++)
+// 	{
+// 		if (i == j * progress_inc)
+// 		{
+// 			//LED_Toggle(LED_SDRAM_WRITE);
+// 			print_dbg("\rFilling SDRAM with test pattern: ");
+// 			print_dbg_ulong(j++);
+// 			print_dbg_char('%');
+// 		}
+// 		sdram[i] = i;
+// 		
+// 	}
+// 	print_dbg("\rSDRAM filled with test pattern       \r\n");
+// 	// Recover the test pattern from the SDRAM and verify it.
+// 	for (i = 0, j = 0; i < sdram_size; i++)
+// 	{
+// 		
+// 		if (i == j * progress_inc)
+// 		{
+// 			print_dbg("\rRecovering test pattern from SDRAM: ");
+// 			print_dbg_ulong(j++);
+// 			print_dbg_char('%');
+// 		}
+// 		tmp = sdram[i];
+// 		if (tmp != i)//failed
+// 		{
+// 			noErrors++;
+// 		}
+// 
+// 	}
+// 	print_dbg("\rSDRAM tested: ");
+// 	print_dbg_ulong(noErrors);
+// 	print_dbg(" corrupted word(s)       \r\n");
+// 	if (noErrors)
+// 	{
+// 			LED3_SET;
+// 	}
+// 	else
+// 	{
+// 			LED2_SET;
+// 	}
+// 	
+// 	
+// 	for(i = 0; i < 10; i++)
+// 	{
+// 		sdram[i] = i;
+// 		print_dbg("\n\rWritten data: ");
+// 		print_dbg_ulong(i);
+// 		print_dbg("\n\rRead data: ");
+// 		print_dbg_ulong(sdram[i]);
+// 	}
+// 	print_dbg("\n\rRead data from address 1: ");
+// 	print_dbg_ulong(sdram[1]);
+// 	
+// 	
+// 
+// 
+// 	print_dbg("\n\n\rTWI Test:\n\r");
+// 	twim_init();
+// 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+// 	tmp = 0;
+// 	for(i = 0; i < 8; i++)
+// 	{
+// 		print_dbg_ulong(i);
+// 		print_dbg_char(' ');
+// 		for(j = 0; j < 16; j++)
+// 		{
+// 			int status = twim_probe(TWIM, tmp++);
+// 			if(status == STATUS_OK)
+// 			{
+// 				print_dbg_char('A');
+// 			}
+// 			else
+// 			{
+// 				print_dbg_char('-');
+// 			}
+// 			print_dbg_char(' ');
+// 		}
+// 		print_dbg("\n\r");
+// 	}
+// 	
+ 	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
+ 	Motor_Init();
+// 	print_dbg("\n\rMotors Forward:");
+// 	Motor_Go(FORWARD);
+// 	delay_s(2);
+// 	print_dbg("\n\rMotor Stop;");
+// 	Motor_Go(STOP);
 	
 	print_dbg("Analogue Comparator Initialised");
 	Analogue_Comparator_Init();
@@ -259,29 +268,7 @@ int main (void)
 	// Insert application code here, after the board has been initialized.
 	while(1)
 	{
-			if (acifa_is_acb_inp_higher(&AVR32_ACIFA1))
-			{
-				// 				print_dbg("ACMP0 > ACMPN0");
-				// 				print_dbg("\r\n");
-				LED5_SET;
-				
-			}
-			else
-			{
-				LED5_CLR;
-			}
-			
-			if (acifa_is_aca_inp_higher(&AVR32_ACIFA1))
-			{
-				// 				print_dbg("ACMP0 > ACMPN0");
-				// 				print_dbg("\r\n");
-				LED6_SET;
-				
-			}
-			else
-			{
-				LED6_CLR;
-			}
+		TOGGLE();
 
 	}
 }
