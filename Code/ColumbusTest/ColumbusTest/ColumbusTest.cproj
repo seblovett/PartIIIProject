@@ -16,6 +16,7 @@
     <option id="avr32.drivers.gpio" value="Add" config="" content-id="Atmel.ASF" />
     <option id="avr32.drivers.pdca" value="Add" config="" content-id="Atmel.ASF" />
     <option id="avr32.drivers.pm" value="Add" config="" content-id="Atmel.ASF" />
+    <option id="avr32.drivers.pwm" value="Add" config="" content-id="Atmel.ASF" />
     <option id="avr32.drivers.spi" value="Add" config="" content-id="Atmel.ASF" />
     <option id="avr32.drivers.twim" value="Add" config="" content-id="Atmel.ASF" />
     <option id="avr32.services.fs.fat" value="Add" config="" content-id="Atmel.ASF" />
@@ -23,7 +24,7 @@
     <option id="common.boards" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.delay" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.storage.ctrl_access" value="Add" config="" content-id="Atmel.ASF" />
-    <option id="avr32.drivers.pwm" value="Add" config="" content-id="Atmel.ASF" />
+    <option id="avr32.drivers.acifa" value="Add" config="" content-id="Atmel.ASF" />
   </options>
   <configurations>
     <configuration key="config.avr32.utils.trampoline" value="yes" default="yes" content-id="Atmel.ASF" />
@@ -112,6 +113,8 @@
     <file path="src/config/conf_twim.h" framework="" version="" source="avr32\drivers\twim\module_config\conf_twim.h" changed="False" content-id="Atmel.ASF" />
     <file path="src/asf/avr32/drivers/pwm/pwm4.c" framework="" version="" source="avr32\drivers\pwm\pwm4.c" changed="False" content-id="Atmel.ASF" />
     <file path="src/asf/avr32/drivers/pwm/pwm4.h" framework="" version="" source="avr32\drivers\pwm\pwm4.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/asf/avr32/drivers/acifa/acifa.c" framework="" version="" source="avr32\drivers\acifa\acifa.c" changed="False" content-id="Atmel.ASF" />
+    <file path="src/asf/avr32/drivers/acifa/acifa.h" framework="" version="" source="avr32\drivers\acifa\acifa.h" changed="False" content-id="Atmel.ASF" />
   </files>
   <documentation help="http://asf.atmel.com/docs/3.5.0/common.applications.user_application.user_board.uc3c/html/index.html" />
 </framework-data>
@@ -204,6 +207,7 @@
       <Value>../src/asf/common/services/storage/ctrl_access</Value>
       <Value>../src/asf/avr32/drivers/twim</Value>
       <Value>../src/asf/avr32/drivers/pwm</Value>
+      <Value>../src/asf/avr32/drivers/acifa</Value>
     </ListValues>
   </avr32gcc.compiler.directories.IncludePaths>
   <avr32gcc.compiler.optimization.level>Optimize for size (-Os)</avr32gcc.compiler.optimization.level>
@@ -245,6 +249,7 @@
       <Value>../src/asf/common/services/storage/ctrl_access</Value>
       <Value>../src/asf/avr32/drivers/twim</Value>
       <Value>../src/asf/avr32/drivers/pwm</Value>
+      <Value>../src/asf/avr32/drivers/acifa</Value>
     </ListValues>
   </avr32gcc.assembler.general.IncludePaths>
   <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USER_BOARD -mrelax -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED</avr32gcc.preprocessingassembler.general.AssemblerFlags>
@@ -277,6 +282,7 @@
       <Value>../src/asf/common/services/storage/ctrl_access</Value>
       <Value>../src/asf/avr32/drivers/twim</Value>
       <Value>../src/asf/avr32/drivers/pwm</Value>
+      <Value>../src/asf/avr32/drivers/acifa</Value>
     </ListValues>
   </avr32gcc.preprocessingassembler.general.IncludePaths>
 </Avr32Gcc>
@@ -329,6 +335,7 @@
       <Value>../src/asf/common/services/storage/ctrl_access</Value>
       <Value>../src/asf/avr32/drivers/twim</Value>
       <Value>../src/asf/avr32/drivers/pwm</Value>
+      <Value>../src/asf/avr32/drivers/acifa</Value>
     </ListValues>
   </avr32gcc.compiler.directories.IncludePaths>
   <avr32gcc.compiler.optimization.level>Optimize (-O1)</avr32gcc.compiler.optimization.level>
@@ -371,6 +378,7 @@
       <Value>../src/asf/common/services/storage/ctrl_access</Value>
       <Value>../src/asf/avr32/drivers/twim</Value>
       <Value>../src/asf/avr32/drivers/pwm</Value>
+      <Value>../src/asf/avr32/drivers/acifa</Value>
     </ListValues>
   </avr32gcc.assembler.general.IncludePaths>
   <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USER_BOARD -mrelax -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED</avr32gcc.preprocessingassembler.general.AssemblerFlags>
@@ -403,6 +411,7 @@
       <Value>../src/asf/common/services/storage/ctrl_access</Value>
       <Value>../src/asf/avr32/drivers/twim</Value>
       <Value>../src/asf/avr32/drivers/pwm</Value>
+      <Value>../src/asf/avr32/drivers/acifa</Value>
     </ListValues>
   </avr32gcc.preprocessingassembler.general.IncludePaths>
 </Avr32Gcc>
@@ -429,6 +438,12 @@
       <SubType>compile</SubType>
     </Compile>
     <None Include="src\asf\avr32\components\memory\sd_mmc\sd_mmc_spi\sd_mmc_spi_mem.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\asf\avr32\drivers\acifa\acifa.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\asf\avr32\drivers\acifa\acifa.h">
       <SubType>compile</SubType>
     </None>
     <Compile Include="src\asf\avr32\drivers\ebi\sdramc\sdramc.c">
@@ -683,6 +698,7 @@
     <Folder Include="src\asf\avr32\components\memory\sd_mmc\" />
     <Folder Include="src\asf\avr32\components\memory\sd_mmc\sd_mmc_spi\" />
     <Folder Include="src\asf\avr32\drivers\" />
+    <Folder Include="src\asf\avr32\drivers\acifa\" />
     <Folder Include="src\asf\avr32\drivers\cpu\" />
     <Folder Include="src\asf\avr32\drivers\cpu\cycle_counter\" />
     <Folder Include="src\asf\avr32\drivers\ebi\" />

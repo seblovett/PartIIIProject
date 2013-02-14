@@ -2,14 +2,7 @@ src/asf/common/boards/user_board/init.d \
  src/asf/common/boards/user_board/init.o \
  src/asf/common/boards/user_board/init.o: \
  ../src/asf/common/boards/user_board/init.c ../src/asf.h \
- ../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h \
- ../src/asf/avr32/utils/compiler.h \
- ../src/asf/avr32/utils/preprocessor/preprocessor.h \
- ../src/asf/avr32/utils/preprocessor/tpaste.h \
- ../src/asf/avr32/utils/preprocessor/stringz.h \
- ../src/asf/avr32/utils/preprocessor/mrepeat.h \
- ../src/asf/avr32/utils/preprocessor/preprocessor.h \
- ../src/asf/common/utils/parts.h \
+ ../src/asf/avr32/drivers/acifa/acifa.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/io.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/uc3c0512c.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/core_sc0_212.h \
@@ -47,6 +40,13 @@ src/asf/common/boards/user_board/init.d \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/usbc_210.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/wdt_410.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/gpio_local_100.h \
+ ../src/asf/avr32/utils/compiler.h \
+ ../src/asf/avr32/utils/preprocessor/preprocessor.h \
+ ../src/asf/avr32/utils/preprocessor/tpaste.h \
+ ../src/asf/avr32/utils/preprocessor/stringz.h \
+ ../src/asf/avr32/utils/preprocessor/mrepeat.h \
+ ../src/asf/avr32/utils/preprocessor/preprocessor.h \
+ ../src/asf/common/utils/parts.h \
  ../src/asf/avr32/utils/header_files/uc3d_defines_fix.h \
  ../src/asf/avr32/utils/header_files/uc3l3_l4_defines_fix.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/include/stddef.h \
@@ -69,6 +69,7 @@ src/asf/common/boards/user_board/init.d \
  ../src/asf/common/utils/interrupt/interrupt_avr32.h \
  ../src/asf/avr32/utils/preprocessor/tpaste.h \
  ../src/asf/avr32/drivers/intc/intc.h \
+ ../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h \
  ../src/asf/avr32/utils/status_codes.h \
  ../src/asf/common/services/delay/delay.h \
  ../src/asf/common/services/clock/sysclk.h ../src/config/conf_clock.h \
@@ -106,21 +107,7 @@ src/asf/common/boards/user_board/init.d \
 
 ../src/asf.h:
 
-../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h:
-
-../src/asf/avr32/utils/compiler.h:
-
-../src/asf/avr32/utils/preprocessor/preprocessor.h:
-
-../src/asf/avr32/utils/preprocessor/tpaste.h:
-
-../src/asf/avr32/utils/preprocessor/stringz.h:
-
-../src/asf/avr32/utils/preprocessor/mrepeat.h:
-
-../src/asf/avr32/utils/preprocessor/preprocessor.h:
-
-../src/asf/common/utils/parts.h:
+../src/asf/avr32/drivers/acifa/acifa.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/io.h:
 
@@ -196,6 +183,20 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/gpio_local_100.h:
 
+../src/asf/avr32/utils/compiler.h:
+
+../src/asf/avr32/utils/preprocessor/preprocessor.h:
+
+../src/asf/avr32/utils/preprocessor/tpaste.h:
+
+../src/asf/avr32/utils/preprocessor/stringz.h:
+
+../src/asf/avr32/utils/preprocessor/mrepeat.h:
+
+../src/asf/avr32/utils/preprocessor/preprocessor.h:
+
+../src/asf/common/utils/parts.h:
+
 ../src/asf/avr32/utils/header_files/uc3d_defines_fix.h:
 
 ../src/asf/avr32/utils/header_files/uc3l3_l4_defines_fix.h:
@@ -239,6 +240,8 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/asf/avr32/utils/preprocessor/tpaste.h:
 
 ../src/asf/avr32/drivers/intc/intc.h:
+
+../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h:
 
 ../src/asf/avr32/utils/status_codes.h:
 

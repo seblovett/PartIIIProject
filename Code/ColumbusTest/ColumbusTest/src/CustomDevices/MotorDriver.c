@@ -45,11 +45,11 @@ static void pwm_start_gc(void)
   // Now enable the generic clock
   scif_gc_enable(AVR32_SCIF_GCLK_PWM);
 }
-#  define EXAMPLE_PWM_L_PIN             AVR32_PWM_PWML_0_1_PIN
-#  define EXAMPLE_PWM_L_FUNCTION        AVR32_PWM_PWML_0_1_FUNCTION
-#  define EXAMPLE_PWM_H_PIN             AVR32_PWM_PWMH_0_1_PIN
-#  define EXAMPLE_PWM_H_FUNCTION        AVR32_PWM_PWMH_0_1_FUNCTION
-#  define EXAMPLE_PWM_CHANNEL_ID        0
+// #  define EXAMPLE_PWM_L_PIN             AVR32_PWM_PWML_0_1_PIN
+// #  define EXAMPLE_PWM_L_FUNCTION        AVR32_PWM_PWML_0_1_FUNCTION
+// #  define EXAMPLE_PWM_H_PIN             AVR32_PWM_PWMH_0_1_PIN
+// #  define EXAMPLE_PWM_H_FUNCTION        AVR32_PWM_PWMH_0_1_FUNCTION
+// #  define EXAMPLE_PWM_CHANNEL_ID        0
 void Motor_Init()
 {
 	//Turn boths motors off
@@ -192,4 +192,66 @@ void Motor_Go(int Direction)
 			return;
 	}
 	
+}
+void ACInterruptHandler()
+{
+// 	if (acifa_is_acb_inp_higher(&AVR32_ACIFA1))
+// 	{
+// 		// 				print_dbg("ACMP0 > ACMPN0");
+// 		// 				print_dbg("\r\n");
+// 		LED5_SET;
+// 				
+// 	}
+// 	else
+// 	{
+// 		LED5_CLR;
+// 	}
+// 			
+// 	if (acifa_is_aca_inp_higher(&AVR32_ACIFA1))
+// 	{
+// 		// 				print_dbg("ACMP0 > ACMPN0");
+// 		// 				print_dbg("\r\n");
+// 		LED6_SET;
+// 				
+// 	}
+// 	else
+// 	{
+// 		LED6_CLR;
+// 	}
+}
+void Analogue_Comparator_Init()
+{
+		static const gpio_map_t ACIFA_GPIO_MAP =
+		{
+		{POT0_AC1AP1_PIN, POT0_AC1AP1_FUNCTION},
+		{POT1_AC1BP1_PIN, POT1_AC1BP1_FUNCTION},
+		{SENSE0_AC1AN1_PIN, SENSE0_AC1AN1_FUNCTION},
+		{SENSE1_AC1BN1_PIN, SENSE1_AC1BN1_FUNCTION},
+		};
+		
+		gpio_enable_module(ACIFA_GPIO_MAP, sizeof(ACIFA_GPIO_MAP) / sizeof(ACIFA_GPIO_MAP[0]));
+		
+		
+		acifa_configure(&AVR32_ACIFA1,
+		ACIFA_COMP_SELA,
+		POT0_AC1AP1_INPUT,
+		SENSE0_AC1AN1_INPUT,
+		FOSC0);
+		
+		acifa_configure(&AVR32_ACIFA1,
+		ACIFA_COMP_SELB,
+		POT1_AC1BP1_INPUT,
+		SENSE1_AC1BN1_INPUT,
+		FOSC0);
+		
+		acifa_start(&AVR32_ACIFA1, (ACIFA_COMP_SELA|ACIFA_COMP_SELB));
+		
+		//Make it an interrupt
+// 		Disable_global_interrupt();
+// 		
+// 		INTC_init_interrupts();
+// 		
+// 		INTC_register_interrupt(&ACInterruptHandler,AVR32_ACIFA1_IRQ ,AVR32_INTC_INT0);
+// 		
+// 		Enable_global_interrupt();
 }

@@ -252,11 +252,36 @@ int main (void)
 	delay_s(2);
 	print_dbg("\n\rMotor Stop;");
 	Motor_Go(STOP);
+	
+	print_dbg("Analogue Comparator Initialised");
+	Analogue_Comparator_Init();
 	print_dbg("\n\rTest Complete!");
 	// Insert application code here, after the board has been initialized.
 	while(1)
 	{
-		
-		
+			if (acifa_is_acb_inp_higher(&AVR32_ACIFA1))
+			{
+				// 				print_dbg("ACMP0 > ACMPN0");
+				// 				print_dbg("\r\n");
+				LED5_SET;
+				
+			}
+			else
+			{
+				LED5_CLR;
+			}
+			
+			if (acifa_is_aca_inp_higher(&AVR32_ACIFA1))
+			{
+				// 				print_dbg("ACMP0 > ACMPN0");
+				// 				print_dbg("\r\n");
+				LED6_SET;
+				
+			}
+			else
+			{
+				LED6_CLR;
+			}
+
 	}
 }

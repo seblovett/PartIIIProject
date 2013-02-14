@@ -71,7 +71,8 @@ src/CustomDevices/SD_Card.d src/CustomDevices/SD_Card.o \
  ../src/config/conf_board.h ../src/config/conf_access.h \
  ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.h \
  ../src/config/conf_access.h ../src/asf/avr32/drivers/spi/spi.h \
- ../src/asf.h ../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h \
+ ../src/asf.h ../src/asf/avr32/drivers/acifa/acifa.h \
+ ../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h \
  ../src/asf/avr32/utils/status_codes.h \
  ../src/asf/common/services/delay/delay.h \
  ../src/asf/common/services/clock/sysclk.h ../src/config/conf_clock.h \
@@ -254,6 +255,8 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/asf/avr32/drivers/spi/spi.h:
 
 ../src/asf.h:
+
+../src/asf/avr32/drivers/acifa/acifa.h:
 
 ../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h:
 

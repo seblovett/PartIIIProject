@@ -6,6 +6,8 @@ src\asf\avr32\components\memory\sd_mmc\sd_mmc_spi\sd_mmc_spi.c
 
 src\asf\avr32\components\memory\sd_mmc\sd_mmc_spi\sd_mmc_spi_mem.c
 
+src\asf\avr32\drivers\acifa\acifa.c
+
 src\asf\avr32\drivers\ebi\sdramc\sdramc.c
 
 src\asf\avr32\drivers\flashc\flashc.c
