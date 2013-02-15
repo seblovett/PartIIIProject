@@ -14,6 +14,7 @@
 //#include "SD_Card.h"
 #include "CustomDevices/SD_Card.h"
 #include "CustomDevices/MotorDriver.h"
+#include "CustomDevices/PCA9542A.h"
 #include "conf_sd_mmc_spi.h"
 #include "fat.h"
 #include "file.h"
@@ -230,42 +231,87 @@ int main (void)
 // 	
 // 
 // 
-// 	print_dbg("\n\n\rTWI Test:\n\r");
-// 	twim_init();
-// 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
-// 	tmp = 0;
-// 	for(i = 0; i < 8; i++)
-// 	{
-// 		print_dbg_ulong(i);
-// 		print_dbg_char(' ');
-// 		for(j = 0; j < 16; j++)
-// 		{
-// 			int status = twim_probe(TWIM, tmp++);
-// 			if(status == STATUS_OK)
-// 			{
-// 				print_dbg_char('A');
-// 			}
-// 			else
-// 			{
-// 				print_dbg_char('-');
-// 			}
-// 			print_dbg_char(' ');
-// 		}
-// 		print_dbg("\n\r");
-// 	}
+ 	print_dbg("\n\n\rTWI Test:\n\r");
+ 	twim_init();
+	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+	tmp = 0;
+	for(i = 0; i < 8; i++)
+	{
+		print_dbg_ulong(i);
+		print_dbg_char(' ');
+		for(j = 0; j < 16; j++)
+		{
+			int status = twim_probe(TWIM, tmp++);
+			if(status == STATUS_OK)
+			{
+				print_dbg_char('A');
+			}
+			else
+			{
+				print_dbg_char('-');
+			}
+			print_dbg_char(' ');
+		}
+		print_dbg("\n\r");
+	}
 // 	
- 	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
- 	Motor_Init();
-	Motors_Reset();//reset the motors to test them
-	//m0 is left!
-// 	print_dbg("\n\rMotors Forward:");
-// 	Motor_Go(FORWARD);
-// 	delay_s(2);
-// 	print_dbg("\n\rMotor Stop;");
-// 	Motor_Go(STOP);
+//  	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
+//  	Motor_Init();
+// 	Motors_Reset();//reset the motors to test them
 	
-// 	print_dbg("Analogue Comparator Initialised");
-// 	Analogue_Comparator_Init();
+	print_dbg("\n\rInitialising the I2C Mux");
+	PCA9542A_Init();
+	
+	//Channel 0
+	PCA9542A_Channel_Select(I2C_CHANNEL_0);
+	print_dbg("\n\rScanning Channel 0\n\r");
+	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+	tmp = 0;
+	for(i = 0; i < 8; i++)
+	{
+		print_dbg_ulong(i);
+		print_dbg_char(' ');
+		for(j = 0; j < 16; j++)
+		{
+			int status = twim_probe(TWIM, tmp++);
+			if(status == STATUS_OK)
+			{
+				print_dbg_char('A');
+			}
+			else
+			{
+				print_dbg_char('-');
+			}
+			print_dbg_char(' ');
+		}
+		print_dbg("\n\r");
+	}
+	
+	//Channel 1
+	PCA9542A_Channel_Select(I2C_CHANNEL_1);
+	print_dbg("\n\rScanning Channel 1\n\r");
+	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+	tmp = 0;
+	for(i = 0; i < 8; i++)
+	{
+		print_dbg_ulong(i);
+		print_dbg_char(' ');
+		for(j = 0; j < 16; j++)
+		{
+			int status = twim_probe(TWIM, tmp++);
+			if(status == STATUS_OK)
+			{
+				print_dbg_char('A');
+			}
+			else
+			{
+				print_dbg_char('-');
+			}
+			print_dbg_char(' ');
+		}
+		print_dbg("\n\r");
+	}
+		
 	print_dbg("\n\rTest Complete!");
 	// Insert application code here, after the board has been initialized.
 	while(1)

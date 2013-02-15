@@ -60,6 +60,8 @@ src\asf\common\services\storage\ctrl_access\ctrl_access.c
 
 src\CustomDevices\MotorDriver.c
 
+src\CustomDevices\PCA9542A.c
+
 src\CustomDevices\SD_Card.c
 
 src\main.c

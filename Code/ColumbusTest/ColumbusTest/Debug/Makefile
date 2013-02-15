@@ -107,6 +107,7 @@ C_SRCS +=  \
 ../src/asf/common/services/clock/uc3c/sysclk.c \
 ../src/asf/common/services/storage/ctrl_access/ctrl_access.c \
 ../src/CustomDevices/MotorDriver.c \
+../src/CustomDevices/PCA9542A.c \
 ../src/CustomDevices/SD_Card.c \
 ../src/main.c
 
@@ -150,6 +151,7 @@ src/asf/common/services/clock/uc3c/pll.o \
 src/asf/common/services/clock/uc3c/sysclk.o \
 src/asf/common/services/storage/ctrl_access/ctrl_access.o \
 src/CustomDevices/MotorDriver.o \
+src/CustomDevices/PCA9542A.o \
 src/CustomDevices/SD_Card.o \
 src/main.o
 
@@ -184,6 +186,7 @@ src/asf/common/services/clock/uc3c/pll.o \
 src/asf/common/services/clock/uc3c/sysclk.o \
 src/asf/common/services/storage/ctrl_access/ctrl_access.o \
 src/CustomDevices/MotorDriver.o \
+src/CustomDevices/PCA9542A.o \
 src/CustomDevices/SD_Card.o \
 src/main.o
 
@@ -215,6 +218,7 @@ src/asf/common/services/clock/uc3c/pll.d \
 src/asf/common/services/clock/uc3c/sysclk.d \
 src/asf/common/services/storage/ctrl_access/ctrl_access.d \
 src/CustomDevices/MotorDriver.d \
+src/CustomDevices/PCA9542A.d \
 src/CustomDevices/SD_Card.d \
 src/main.d
 
@@ -246,6 +250,7 @@ src/asf/common/services/clock/uc3c/pll.d \
 src/asf/common/services/clock/uc3c/sysclk.d \
 src/asf/common/services/storage/ctrl_access/ctrl_access.d \
 src/CustomDevices/MotorDriver.d \
+src/CustomDevices/PCA9542A.d \
 src/CustomDevices/SD_Card.d \
 src/main.d
 
@@ -259,6 +264,8 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
 
 
 

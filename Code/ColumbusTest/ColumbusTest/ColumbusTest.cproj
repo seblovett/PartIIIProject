@@ -626,6 +626,12 @@
     <Compile Include="src\CustomDevices\MotorDriver.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\CustomDevices\PCA9542A.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\CustomDevices\PCA9542A.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\CustomDevices\SD_Card.c">
       <SubType>compile</SubType>
     </Compile>
