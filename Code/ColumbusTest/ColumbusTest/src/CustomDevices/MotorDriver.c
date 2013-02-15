@@ -53,19 +53,19 @@ static void pwm_start_gc(void)
 void Motor_Init()
 {
 	//Turn boths motors off
-// 	M0_STANDBY;
-// 	M1_STANDBY;
+	ML_STANDBY;
+	MR_STANDBY;
 	
-	M0_IN1_CLR;
-	M0_IN2_CLR;
+	ML_IN1_CLR;
+	ML_IN2_CLR;
 	
-	M1_IN1_CLR;
-	M1_IN2_CLR;
+	MR_IN1_CLR;
+	MR_IN2_CLR;
 	
-	//initialise PWM
-// 	scif_gc_setup(AVR32_SCIF_GCLK_PWM, SCIF_GCCTRL_OSC0, AVR32_SCIF_GC_NO_DIV_CLOCK, 0);
-// 	// Now enable the generic clock
-// 	scif_gc_enable(AVR32_SCIF_GCLK_PWM);
+	Motor_Cntrl.Left_Count = 0;
+	Motor_Cntrl.Right_Count = 0;
+	Motor_Cntrl.Left_State = STOP;
+	Motor_Cntrl.Right_State = STOP;
 
 	avr32_pwm_channel_t pwm_channel = {{0}, // cmr
 											{0}, // cdty
@@ -75,7 +75,7 @@ void Motor_Init()
 											{0}, // ccnt
 											{0}, // dt
 											{0}};// dtupd  ;  One channel config.
-	unsigned int channel_id;
+/*	unsigned int channel_id;*/
 
 	// Start PLL for PWM
 	local_start_highfreq_clock();
@@ -87,8 +87,8 @@ void Motor_Init()
 // 	gpio_enable_module_pin(EXAMPLE_PWM_H_PIN, EXAMPLE_PWM_H_FUNCTION);
 // 	gpio_enable_module_pin(M0_PWM_H_PIN, M0_PWM_H_FUNCTION);
 // 	gpio_enable_module_pin(AVR32_PIN_PB10, AVR32_PWM_PWMH_1_1_FUNCTION); //PWM1 Low
-	gpio_enable_module_pin(M0_PWM_H_PIN, M0_PWM_H_FUNCTION);
-	gpio_enable_module_pin(M1_PWM_H_PIN, M1_PWM_H_FUNCTION); //PWM1 Low
+	gpio_enable_module_pin(ML_PWM_H_PIN, ML_PWM_H_FUNCTION);
+	gpio_enable_module_pin(MR_PWM_H_PIN, MR_PWM_H_FUNCTION); //PWM1 Low
 	//gpio_enable_module_pin(M1_PWM_H_PIN, M1_PWM_H_FUNCTION);
 	// PWM controller configuration.
 	pwm_opt.diva = AVR32_PWM_DIVA_CLK_OFF;
@@ -120,167 +120,178 @@ void Motor_Init()
 	pwm_channel.cdty      = 50;       // Channel duty cycle, should be < CPRD.
 	pwm_channel.cprd      = 200;       // Channel period.
 	
-	channel_id = M0_PWM_CHANNEL_ID;
-	pwm_channel_init(channel_id, &pwm_channel); // Set channel configuration to channel 0
+/*	channel_id = M0_PWM_CHANNEL_ID;*/
+	pwm_channel_init(ML_PWM_CHANNEL_ID, &pwm_channel); // Set channel configuration to channel 0
 	//pwm_start_channels((1 << channel_id));  // Start channel 0 & 1.
-	channel_id = M1_PWM_CHANNEL_ID; 
-	pwm_channel_init(channel_id, &pwm_channel); // Set channel configuration to channel 0
+/*	channel_id = M1_PWM_CHANNEL_ID; */
+	pwm_channel_init(MR_PWM_CHANNEL_ID, &pwm_channel); // Set channel configuration to channel 0
 	//pwm_start_channels((1 << channel_id));  // Start channel 0 & 1.
+	Analogue_Comparator_Init();
 }
-void Start_Motor(int Motors)
-{
-	if(Motors & MOTOR0)
-	{
-		pwm_start_channels((1 << MOTOR0)); //Start PWM Channel on M0 line
-	}
-	
-	if(Motors & MOTOR1)
-	{
-		pwm_start_channels((1 << MOTOR1));
-	}	
-}
-
-void Stop_Motor(int Motors)
-{
-	if(Motors & MOTOR0)
-	{
-		pwm_stop_channels((1 << MOTOR0)); //Start PWM Channel on M0 line
-	}
-	
-	if(Motors & MOTOR1)
-	{
-		pwm_stop_channels((1 << MOTOR1));
-	}
-}
-void Motor_Go(int Direction)
-{
-	LEDMOTOR_SET; //assume we start moving unless we stop
-	switch(Direction)
-	{
-		case STOP: //Stop Movement
-			M0_STANDBY;
-			M1_STANDBY;
-			M0_IN1_CLR;
-			M0_IN2_CLR;
-			M1_IN1_CLR;
-			M1_IN2_CLR;
-			Stop_Motor(MOTOR0 | MOTOR1);
-			LEDMOTOR_CLR;
-			break;
-			
-		case FORWARD://Drive Both Motors Forward
-			M0_IN1_SET;
-			M1_IN1_SET;
-			M0_IN2_CLR;
-			M1_IN2_CLR;
-			Start_Motor(MOTOR0 | MOTOR1);//start PWM on both motors.
-			M0_GO;
-			M1_GO;
-			break;
-			
-		case BACKWARD:
-			M0_IN1_CLR;
-			M1_IN1_CLR;
-			M0_IN2_SET;
-			M1_IN2_SET;
-			M0_GO;
-			M1_GO;
-			break;
-			
-		
-		default://Something is wrong.
-			return;
-	}
-	
-}
-
-
 __attribute__((__interrupt__)) static void ACInterruptHandler(void)
 {
+	//print_dbg("\n\rACIFA Interrupt Entered.");
+	acifa_clear_flags(&AVR32_ACIFA1, 3);
 	
-	if (acifa_is_acb_inp_higher(&AVR32_ACIFA1))
+	if (acifa_is_acb_inp_higher(&AVR32_ACIFA1)) //LEFT MOTOR
 	{
-		// 				print_dbg("ACMP0 > ACMPN0");
-		// 				print_dbg("\r\n");
-		LED5_SET;
-				
+		LED5_SET; //wheel not on white tab
 	}
 	else
 	{
 		LED5_CLR;
+		Motor_Cntrl.Left_Count --;
 	}
-			
+	
 	if (acifa_is_aca_inp_higher(&AVR32_ACIFA1))
 	{
-		// 				print_dbg("ACMP0 > ACMPN0");
-		// 				print_dbg("\r\n");
+
 		LED6_SET;
-				
+		
 	}
 	else
 	{
 		LED6_CLR;
+		Motor_Cntrl.Right_Count --;
 	}
-	//print_dbg("\n\rACIFA Interrupt Entered.");
- 	acifa_clear_flags(&AVR32_ACIFA1, 3);
-// 	Enable_global_interrupt();
+	int temp = 0;
+	if(Motor_Cntrl.Left_Count == 0) //if we have reached the end of the movement on left wheel
+		temp |= MOTOR_L;
+	
+	if(Motor_Cntrl.Right_Count == 0)
+		temp |= MOTOR_R;
+		
+	Motor_Stop(temp); //Stop the Right Motor
 }
-
-
-
 void Analogue_Comparator_Init()
 {
-		static const gpio_map_t ACIFA_GPIO_MAP =
+	static const gpio_map_t ACIFA_GPIO_MAP =
+	{
+	{POT0_AC1AP1_PIN, POT0_AC1AP1_FUNCTION},
+	{POT1_AC1BP1_PIN, POT1_AC1BP1_FUNCTION},
+	{SENSE0_AC1AN1_PIN, SENSE0_AC1AN1_FUNCTION},
+	{SENSE1_AC1BN1_PIN, SENSE1_AC1BN1_FUNCTION},
+	};
+	
+	gpio_enable_module(ACIFA_GPIO_MAP, sizeof(ACIFA_GPIO_MAP) / sizeof(ACIFA_GPIO_MAP[0]));
+	//Make it an interrupt
+	Disable_global_interrupt();
+	
+	INTC_init_interrupts();
+	
+	acifa_configure(&AVR32_ACIFA1,
+	ACIFA_COMP_SELA,
+	POT0_AC1AP1_INPUT,
+	SENSE0_AC1AN1_INPUT,
+	FOSC0);
+	acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELA, 2);
+	acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELB, 2);
+	acifa_configure(&AVR32_ACIFA1,
+	ACIFA_COMP_SELB,
+	POT1_AC1BP1_INPUT,
+	SENSE1_AC1BN1_INPUT,
+	FOSC0);
+	
+	// 		//Reset Wheels
+	/*		Motor_Go(FORWARD);*/
+	//M0_IN1_CLR;
+	// 		M1_IN1_CLR;
+	// 		while(acifa_is_aca_inp_higher(&AVR32_ACIFA1) == false)
+	// 			;
+	// 		M0_IN1_CLR;
+	//
+	// 		M1_IN1_SET;
+	// 		while(!acifa_is_acb_inp_higher(&AVR32_ACIFA1))
+	// 			;
+	// 		M1_IN1_CLR;
+	
+	
+	//Motor_Go(S)
+	acifa_enable_interrupt(&AVR32_ACIFA1, 3);//Enable ACBINT and ACAINT
+	acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELA);
+	acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELB);
+	acifa_start(&AVR32_ACIFA1, (ACIFA_COMP_SELA|ACIFA_COMP_SELB));
+	
+	
+	
+	
+	INTC_register_interrupt(&ACInterruptHandler,AVR32_ACIFA1_IRQ ,AVR32_INTC_INT0);
+	
+	Enable_global_interrupt();
+}
+void Motor_Start(int Motors)
+{
+	if(Motors & MOTOR_L)
+	{
+		if(Motor_Cntrl.Left_State == FORWARD)
 		{
-		{POT0_AC1AP1_PIN, POT0_AC1AP1_FUNCTION},
-		{POT1_AC1BP1_PIN, POT1_AC1BP1_FUNCTION},
-		{SENSE0_AC1AN1_PIN, SENSE0_AC1AN1_FUNCTION},
-		{SENSE1_AC1BN1_PIN, SENSE1_AC1BN1_FUNCTION},
-		};
-		
-		gpio_enable_module(ACIFA_GPIO_MAP, sizeof(ACIFA_GPIO_MAP) / sizeof(ACIFA_GPIO_MAP[0]));
-		//Make it an interrupt
-		Disable_global_interrupt();
-		
-		INTC_init_interrupts();
-		
-		acifa_configure(&AVR32_ACIFA1,
-		ACIFA_COMP_SELA,
-		POT0_AC1AP1_INPUT,
-		SENSE0_AC1AN1_INPUT,
-		FOSC0);
-		acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELA, 2);
-		acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELB, 2);
-		acifa_configure(&AVR32_ACIFA1,
-		ACIFA_COMP_SELB,
-		POT1_AC1BP1_INPUT,
-		SENSE1_AC1BN1_INPUT,
-		FOSC0);
-		
-// 		//Reset Wheels
-/*		Motor_Go(FORWARD);*/
-		//M0_IN1_CLR;
-// 		M1_IN1_CLR;
-// 		while(acifa_is_aca_inp_higher(&AVR32_ACIFA1) == false)
-// 			;
-// 		M0_IN1_CLR;
-// 		
-// 		M1_IN1_SET;
-// 		while(!acifa_is_acb_inp_higher(&AVR32_ACIFA1))
-// 			;
-// 		M1_IN1_CLR;
-		
-		
-		//Motor_Go(S)
-		acifa_enable_interrupt(&AVR32_ACIFA1, 3);//Enable ACBINT and ACAINT
-		acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELA);
-		acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELB);
-		acifa_start(&AVR32_ACIFA1, (ACIFA_COMP_SELA|ACIFA_COMP_SELB));
-		
-		
-		
-		
-		INTC_register_interrupt(&ACInterruptHandler,AVR32_ACIFA1_IRQ ,AVR32_INTC_INT0);
-		
-		Enable_global_interrupt();
+			ML_IN1_SET;
+			ML_IN2_CLR;
+		}
+		else if (Motor_Cntrl.Left_State == BACKWARD)
+		{
+			ML_IN1_CLR;
+			ML_IN2_SET;
+		}
+		else //Somethings gone wrong
+		{
+			ML_IN1_CLR;
+			ML_IN2_CLR;
+			return;//don't start any pwm channel
+		}
+		ML_GO;
+		pwm_start_channels((1 << MOTOR_L)); //Start PWM Channel on M0 line
+	}
+	
+	if(Motors & MOTOR_R)
+	{
+		if(Motor_Cntrl.Right_State == FORWARD)
+		{
+			MR_IN1_SET;
+			MR_IN2_CLR;
+		}
+		else if (Motor_Cntrl.Right_State == BACKWARD)
+		{
+			MR_IN1_CLR;
+			MR_IN2_SET;
+		}
+		else //Somethings gone wrong
+		{
+			MR_IN1_CLR;
+			MR_IN2_CLR;
+			return;//don't start any pwm channel
+		}
+		MR_GO;
+		pwm_start_channels((1 << MOTOR_R));
+	}	
+}
+
+void Motor_Stop(int Motors)
+{
+	if(Motors & MOTOR_L)
+	{
+		ML_STANDBY;
+		Motor_Cntrl.Left_State = STOP;
+		pwm_stop_channels((1 << MOTOR_L)); //Start PWM Channel on M0 line
+	}
+	
+	if(Motors & MOTOR_R)
+	{
+		MR_STANDBY;
+		Motor_Cntrl.Right_State = STOP;
+		pwm_stop_channels((1 << MOTOR_R));
+	}
+}
+void Motors_Move(float x_metres, float y_metres)
+{
+	//Calculate number of interrupts of each wheel
+}
+
+void Motors_Reset(void)
+{
+	Motor_Cntrl.Left_State = FORWARD;
+	Motor_Cntrl.Left_Count = 1;
+	Motor_Cntrl.Right_State = FORWARD;
+	Motor_Cntrl.Right_Count = 1;
+	Motor_Start(MOTOR_L | MOTOR_R);
 }

@@ -256,14 +256,16 @@ int main (void)
 // 	
  	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
  	Motor_Init();
+	Motors_Reset();//reset the motors to test them
+	//m0 is left!
 // 	print_dbg("\n\rMotors Forward:");
 // 	Motor_Go(FORWARD);
 // 	delay_s(2);
 // 	print_dbg("\n\rMotor Stop;");
 // 	Motor_Go(STOP);
 	
-	print_dbg("Analogue Comparator Initialised");
-	Analogue_Comparator_Init();
+// 	print_dbg("Analogue Comparator Initialised");
+// 	Analogue_Comparator_Init();
 	print_dbg("\n\rTest Complete!");
 	// Insert application code here, after the board has been initialized.
 	while(1)

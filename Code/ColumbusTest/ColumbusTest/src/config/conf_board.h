@@ -83,42 +83,42 @@
 
 
 //Motors
-#define MOTOR_0_STBY	AVR32_PIN_PB08
-#define MOTOR_0_IN1		AVR32_PIN_PB09
-#define MOTOR_0_IN2		AVR32_PIN_PB10
-#define MOTOR_0_PWM		AVR32_PIN_PB11
+#define MOTOR_L_STBY	AVR32_PIN_PB08
+#define MOTOR_L_IN1		AVR32_PIN_PB09
+#define MOTOR_L_IN2		AVR32_PIN_PB10
+#define MOTOR_L_PWM		AVR32_PIN_PB11
 
-#define MOTOR_1_STBY	AVR32_PIN_PB16
-#define MOTOR_1_IN1		AVR32_PIN_PB15
-#define MOTOR_1_IN2		AVR32_PIN_PB14
-#define MOTOR_1_PWM		AVR32_PIN_PB13
+#define MOTOR_R_STBY	AVR32_PIN_PB16
+#define MOTOR_R_IN1		AVR32_PIN_PB15
+#define MOTOR_R_IN2		AVR32_PIN_PB14
+#define MOTOR_R_PWM		AVR32_PIN_PB13
 
 //PWM
 // #  define M0_PWM_L_PIN             AVR32_PWM_PWML_0_1_PIN
 // #  define M0_PWM_L_FUNCTION        AVR32_PWM_PWML_0_1_FUNCTION
-#  define M0_PWM_H_PIN             AVR32_PWM_PWMH_1_1_PIN
-#  define M0_PWM_H_FUNCTION        AVR32_PWM_PWMH_1_1_FUNCTION
-#  define M0_PWM_CHANNEL_ID        1
-#  define M1_PWM_H_PIN             AVR32_PWM_PWMH_2_2_PIN
-#  define M1_PWM_H_FUNCTION        AVR32_PWM_PWMH_2_2_FUNCTION
-#  define M1_PWM_CHANNEL_ID        2
+#  define ML_PWM_H_PIN             AVR32_PWM_PWMH_1_1_PIN
+#  define ML_PWM_H_FUNCTION        AVR32_PWM_PWMH_1_1_FUNCTION
+#  define ML_PWM_CHANNEL_ID        1
+#  define MR_PWM_H_PIN             AVR32_PWM_PWMH_2_2_PIN
+#  define MR_PWM_H_FUNCTION        AVR32_PWM_PWMH_2_2_FUNCTION
+#  define MR_PWM_CHANNEL_ID        2
 
 //Macros
-#define M0_STANDBY		{gpio_clr_gpio_pin(MOTOR_0_STBY);}
-#define M0_GO			{gpio_set_gpio_pin(MOTOR_0_STBY);}
-#define M0_IN1_SET		{gpio_set_gpio_pin(MOTOR_0_IN1);}
-#define M0_IN2_SET		{gpio_set_gpio_pin(MOTOR_0_IN2);}
-#define M0_IN1_CLR		{gpio_clr_gpio_pin(MOTOR_0_IN1);}
-#define M0_IN2_CLR		{gpio_clr_gpio_pin(MOTOR_0_IN2);}
+#define ML_STANDBY		{gpio_clr_gpio_pin(MOTOR_L_STBY);}
+#define ML_GO			{gpio_set_gpio_pin(MOTOR_L_STBY);}
+#define ML_IN1_SET		{gpio_set_gpio_pin(MOTOR_L_IN1);}
+#define ML_IN2_SET		{gpio_set_gpio_pin(MOTOR_L_IN2);}
+#define ML_IN1_CLR		{gpio_clr_gpio_pin(MOTOR_L_IN1);}
+#define ML_IN2_CLR		{gpio_clr_gpio_pin(MOTOR_L_IN2);}
 // #define M0_PWM_HIGH		{gpio_set_gpio_pin(MOTOR_0_PWM);}
 // #define M0_PWM_LOW		{gpio_clr_gpio_pin(MOTOR_0_PWM);}
 	
-#define M1_STANDBY		{gpio_clr_gpio_pin(MOTOR_1_STBY);}
-#define M1_GO			{gpio_set_gpio_pin(MOTOR_1_STBY);}
-#define M1_IN1_SET		{gpio_set_gpio_pin(MOTOR_1_IN1);}
-#define M1_IN2_SET		{gpio_set_gpio_pin(MOTOR_1_IN2);}
-#define M1_IN1_CLR		{gpio_clr_gpio_pin(MOTOR_1_IN1);}
-#define M1_IN2_CLR		{gpio_clr_gpio_pin(MOTOR_1_IN2);}
+#define MR_STANDBY		{gpio_clr_gpio_pin(MOTOR_R_STBY);}
+#define MR_GO			{gpio_set_gpio_pin(MOTOR_R_STBY);}
+#define MR_IN1_SET		{gpio_set_gpio_pin(MOTOR_R_IN1);}
+#define MR_IN2_SET		{gpio_set_gpio_pin(MOTOR_R_IN2);}
+#define MR_IN1_CLR		{gpio_clr_gpio_pin(MOTOR_R_IN1);}
+#define MR_IN2_CLR		{gpio_clr_gpio_pin(MOTOR_R_IN2);}
 // #define M1_PWM_HIGH		{gpio_set_gpio_pin(MOTOR_1_PWM);}
 // #define M1_PWM_LOW		{gpio_clr_gpio_pin(MOTOR_1_PWM);}	
 //SD Card
