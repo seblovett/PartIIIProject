@@ -62,6 +62,8 @@ static void twim_init (void)
 }
 
 #define LOG_FILE "log.txt"
+
+
 void LED_Flash()
 {
 	LED2_SET;
@@ -72,6 +74,31 @@ void LED_Flash()
 
 #define TOGGLE LED_Flash
 
+void Log_Write(char *buff, int length) 
+{
+	nav_setcwd((FS_STRING)LOG_FILE, true, false);
+	file_open(FOPEN_MODE_APPEND);
+	if(length == -1)
+		length = sizeof(buff);
+	file_write_buf(buff, length);
+	file_close();
+}
+void Log_Write_ulong(unsigned long n)
+{
+	char tmp[11];
+	int i = sizeof(tmp) - 1;
+
+	// Convert the given number to an ASCII decimal representation.
+	tmp[i] = '\0';
+	do
+	{
+	tmp[--i] = '0' + n % 10;
+	n /= 10;
+	} while (n);
+
+	// Transmit the resulting string with the given USART.
+	Log_Write(tmp + i, -1);
+}
 int main (void)
 {
 	unsigned long sdram_size, progress_inc, i, j, tmp, noErrors = 0;
@@ -106,6 +133,18 @@ int main (void)
 	// Mount it.
 	nav_partition_mount();
 	nav_filelist_reset();
+	if(nav_filelist_findname((FS_STRING)LOG_FILE, false))
+	{
+		print_dbg("\n\rLog File Already Exists\n\rAttempting to delete...");	
+		nav_setcwd((FS_STRING)LOG_FILE, true, false);
+		nav_file_del(false);
+		
+		if(nav_filelist_findname((FS_STRING)LOG_FILE, false))
+			print_dbg("\n\rLog File Still Exists...");
+		else
+			print_dbg("\n\rLog File Deleted!");
+	}
+	
 	
 	print_dbg("\n\rCreating Log File.");
 	//char buff[20] = "log.txt";
@@ -113,13 +152,13 @@ int main (void)
 		print_dbg("\n\rSuccess!");
 	else
 		print_dbg("\n\rNot worked...");
-	return 0;
 	
+	print_dbg("\n\rWriting to log file.");
 	
-	
-	
-	//nav_file_create(&LOG_FILE);
-	print_dbg("LED Test:\n\rAll LEDS on;");
+	Log_Write("Columbus Tester:\n\r", -1);
+
+
+	print_dbg("\n\rLED Test:\n\rAll LEDS on;");
 	LEDMOTOR_SET;
 	LED2_SET;
 	LED3_SET;
@@ -205,6 +244,7 @@ int main (void)
 // 
 // 
  	print_dbg("\n\n\rTWI Test:\n\r");
+	Log_Write("\n\n\rTWI Test:\n\r", 14);
  	twim_init();
 	print_dbg("\n\rInitialising the I2C Mux");
 	PCA9542A_Init();

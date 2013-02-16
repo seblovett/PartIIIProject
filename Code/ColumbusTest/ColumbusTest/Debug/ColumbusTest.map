@@ -172,17 +172,8 @@ Discarded input sections
  .text          0x00000000        0x0 src/asf/avr32/drivers/eic/eic.o
  .data          0x00000000        0x0 src/asf/avr32/drivers/eic/eic.o
  .bss           0x00000000        0x0 src/asf/avr32/drivers/eic/eic.o
- .debug_abbrev  0x00000000      0x218 src/asf/avr32/drivers/eic/eic.o
- .debug_info    0x00000000     0x1964 src/asf/avr32/drivers/eic/eic.o
- .debug_line    0x00000000      0x8c8 src/asf/avr32/drivers/eic/eic.o
- .debug_macinfo
-                0x00000000   0x148faf src/asf/avr32/drivers/eic/eic.o
- .text.eic_init
-                0x00000000       0xd0 src/asf/avr32/drivers/eic/eic.o
  .text.eic_enable_lines
                 0x00000000        0x4 src/asf/avr32/drivers/eic/eic.o
- .text.eic_enable_line
-                0x00000000        0xa src/asf/avr32/drivers/eic/eic.o
  .text.eic_disable_lines
                 0x00000000        0x4 src/asf/avr32/drivers/eic/eic.o
  .text.eic_disable_line
@@ -191,29 +182,16 @@ Discarded input sections
                 0x00000000       0x10 src/asf/avr32/drivers/eic/eic.o
  .text.eic_enable_interrupt_lines
                 0x00000000        0x4 src/asf/avr32/drivers/eic/eic.o
- .text.eic_enable_interrupt_line
-                0x00000000        0xa src/asf/avr32/drivers/eic/eic.o
  .text.eic_is_interrupt_line_enabled
                 0x00000000       0x10 src/asf/avr32/drivers/eic/eic.o
  .text.eic_is_interrupt_line_pending
                 0x00000000       0x10 src/asf/avr32/drivers/eic/eic.o
- .text.eic_clear_interrupt_line
-                0x00000000       0x16 src/asf/avr32/drivers/eic/eic.o
  .text.eic_clear_interrupt_lines
                 0x00000000       0x10 src/asf/avr32/drivers/eic/eic.o
  .text.eic_disable_interrupt_line
                 0x00000000       0x16 src/asf/avr32/drivers/eic/eic.o
  .text.eic_disable_interrupt_lines
                 0x00000000       0x10 src/asf/avr32/drivers/eic/eic.o
- .debug_frame   0x00000000      0x100 src/asf/avr32/drivers/eic/eic.o
- .debug_loc     0x00000000       0x7e src/asf/avr32/drivers/eic/eic.o
- .debug_pubnames
-                0x00000000      0x186 src/asf/avr32/drivers/eic/eic.o
- .debug_aranges
-                0x00000000       0x88 src/asf/avr32/drivers/eic/eic.o
- .debug_ranges  0x00000000       0x80 src/asf/avr32/drivers/eic/eic.o
- .debug_str     0x00000000      0x4a0 src/asf/avr32/drivers/eic/eic.o
- .comment       0x00000000       0x31 src/asf/avr32/drivers/eic/eic.o
  .text          0x00000000        0x0 src/asf/avr32/drivers/flashc/flashc.o
  .data          0x00000000        0x0 src/asf/avr32/drivers/flashc/flashc.o
  .bss           0x00000000        0x0 src/asf/avr32/drivers/flashc/flashc.o
@@ -346,8 +324,6 @@ Discarded input sections
                 0x00000000       0x18 src/asf/avr32/drivers/gpio/gpio.o
  .text.gpio_enable_gpio
                 0x00000000       0x28 src/asf/avr32/drivers/gpio/gpio.o
- .text.gpio_enable_pin_pull_up
-                0x00000000       0x1a src/asf/avr32/drivers/gpio/gpio.o
  .text.gpio_disable_pin_pull_up
                 0x00000000       0x16 src/asf/avr32/drivers/gpio/gpio.o
  .text.gpio_enable_pin_pull_down
@@ -368,16 +344,12 @@ Discarded input sections
                 0x00000000       0x16 src/asf/avr32/drivers/gpio/gpio.o
  .text.gpio_get_gpio_open_drain_pin_output_value
                 0x00000000       0x1a src/asf/avr32/drivers/gpio/gpio.o
- .text.gpio_set_gpio_pin
-                0x00000000       0x1c src/asf/avr32/drivers/gpio/gpio.o
  .text.gpio_set_pin_high
                 0x00000000       0x16 src/asf/avr32/drivers/gpio/gpio.o
  .text.gpio_set_group_high
                 0x00000000        0xc src/asf/avr32/drivers/gpio/gpio.o
  .text.gpio_set_pin_low
                 0x00000000       0x16 src/asf/avr32/drivers/gpio/gpio.o
- .text.gpio_clr_gpio_pin
-                0x00000000       0x1c src/asf/avr32/drivers/gpio/gpio.o
  .text.gpio_set_group_low
                 0x00000000        0xc src/asf/avr32/drivers/gpio/gpio.o
  .text.gpio_tgl_gpio_pin
@@ -412,8 +384,6 @@ Discarded input sections
  .bss           0x00000000        0x0 src/asf/avr32/drivers/intc/intc.o
  .text._unhandled_interrupt
                 0x00000000        0x2 src/asf/avr32/drivers/intc/intc.o
- .text.INTC_register_interrupt
-                0x00000000       0x80 src/asf/avr32/drivers/intc/intc.o
  .text.INTC_init_interrupts
                 0x00000000       0x54 src/asf/avr32/drivers/intc/intc.o
  .text          0x00000000        0x0 src/asf/avr32/drivers/pdca/pdca.o
@@ -677,60 +647,14 @@ Discarded input sections
  .text          0x00000000        0x0 src/asf/avr32/drivers/twim/twim.o
  .data          0x00000000        0x0 src/asf/avr32/drivers/twim/twim.o
  .bss           0x00000000        0x0 src/asf/avr32/drivers/twim/twim.o
- .debug_abbrev  0x00000000      0x282 src/asf/avr32/drivers/twim/twim.o
- .debug_info    0x00000000     0x120f src/asf/avr32/drivers/twim/twim.o
- .debug_line    0x00000000      0x9bd src/asf/avr32/drivers/twim/twim.o
- .debug_macinfo
-                0x00000000   0x14a48d src/asf/avr32/drivers/twim/twim.o
- .text.twim_master_interrupt_handler
-                0x00000000       0xdc src/asf/avr32/drivers/twim/twim.o
- .text.twim_set_speed
-                0x00000000       0x70 src/asf/avr32/drivers/twim/twim.o
- .text.twim_status
-                0x00000000       0x10 src/asf/avr32/drivers/twim/twim.o
- .text.twim_disable_interrupt
-                0x00000000       0x14 src/asf/avr32/drivers/twim/twim.o
  .text.twim_chained_transfer
                 0x00000000      0x1dc src/asf/avr32/drivers/twim/twim.o
- .text.twim_write
-                0x00000000       0xb4 src/asf/avr32/drivers/twim/twim.o
- .text.twim_probe
-                0x00000000       0x1c src/asf/avr32/drivers/twim/twim.o
  .text.twim_write_packet
                 0x00000000       0xdc src/asf/avr32/drivers/twim/twim.o
  .text.twim_read
                 0x00000000       0xd8 src/asf/avr32/drivers/twim/twim.o
  .text.twim_read_packet
                 0x00000000      0x110 src/asf/avr32/drivers/twim/twim.o
- .text.twim_master_init
-                0x00000000       0xb4 src/asf/avr32/drivers/twim/twim.o
- .bss.twim_inst
-                0x00000000        0x4 src/asf/avr32/drivers/twim/twim.o
- .bss.twim_rx_data
-                0x00000000        0x4 src/asf/avr32/drivers/twim/twim.o
- .bss.twim_rx_nb_bytes
-                0x00000000        0x4 src/asf/avr32/drivers/twim/twim.o
- .bss.transfer_status
-                0x00000000        0x4 src/asf/avr32/drivers/twim/twim.o
- .bss.twim_tx_data
-                0x00000000        0x4 src/asf/avr32/drivers/twim/twim.o
- .bss.twim_it_mask
-                0x00000000        0x4 src/asf/avr32/drivers/twim/twim.o
- .bss.twim_next
-                0x00000000        0x1 src/asf/avr32/drivers/twim/twim.o
- .bss.twim_package
-                0x00000000        0x4 src/asf/avr32/drivers/twim/twim.o
- .bss.twim_tx_nb_bytes
-                0x00000000        0x4 src/asf/avr32/drivers/twim/twim.o
- .debug_frame   0x00000000      0x148 src/asf/avr32/drivers/twim/twim.o
- .debug_loc     0x00000000      0x496 src/asf/avr32/drivers/twim/twim.o
- .debug_pubnames
-                0x00000000       0xd6 src/asf/avr32/drivers/twim/twim.o
- .debug_aranges
-                0x00000000       0x70 src/asf/avr32/drivers/twim/twim.o
- .debug_ranges  0x00000000       0x68 src/asf/avr32/drivers/twim/twim.o
- .debug_str     0x00000000      0x6d9 src/asf/avr32/drivers/twim/twim.o
- .comment       0x00000000       0x31 src/asf/avr32/drivers/twim/twim.o
  .text          0x00000000        0x0 src/asf/avr32/drivers/usart/usart.o
  .data          0x00000000        0x0 src/asf/avr32/drivers/usart/usart.o
  .bss           0x00000000        0x0 src/asf/avr32/drivers/usart/usart.o
@@ -777,30 +701,12 @@ Discarded input sections
  .text          0x00000000        0x0 src/asf/avr32/services/fs/fat/fat.o
  .data          0x00000000        0x0 src/asf/avr32/services/fs/fat/fat.o
  .bss           0x00000000        0x0 src/asf/avr32/services/fs/fat/fat.o
- .text.fat_check_open
-                0x00000000       0x20 src/asf/avr32/services/fs/fat/fat.o
- .text.fat_check_is_file
-                0x00000000       0x1c src/asf/avr32/services/fs/fat/fat.o
- .text.fat_entry_is_dir
-                0x00000000       0x18 src/asf/avr32/services/fs/fat/fat.o
  .text.fat_entry_checkext
                 0x00000000       0xa0 src/asf/avr32/services/fs/fat/fat.o
- .text.fat_write_entry_file
-                0x00000000       0x50 src/asf/avr32/services/fs/fat/fat.o
  .text.fat_check_nav_access_disk
                 0x00000000       0x44 src/asf/avr32/services/fs/fat/fat.o
- .text.fat_check_nav_access_file
-                0x00000000       0x78 src/asf/avr32/services/fs/fat/fat.o
  .text.fat_copy_nav
                 0x00000000       0x64 src/asf/avr32/services/fs/fat/fat.o
- .text.fat_read_file
-                0x00000000       0xdc src/asf/avr32/services/fs/fat/fat.o
- .text.fat_write_file
-                0x00000000      0x108 src/asf/avr32/services/fs/fat/fat.o
- .text.fat_check_mount_select_open
-                0x00000000       0x24 src/asf/avr32/services/fs/fat/fat.o
- .text.fat_check_mount_select_noopen
-                0x00000000       0x24 src/asf/avr32/services/fs/fat/fat.o
  .text          0x00000000        0x0 src/asf/avr32/services/fs/fat/fat_unusual.o
  .data          0x00000000        0x0 src/asf/avr32/services/fs/fat/fat_unusual.o
  .bss           0x00000000        0x0 src/asf/avr32/services/fs/fat/fat_unusual.o
@@ -814,16 +720,12 @@ Discarded input sections
                 0x00000000       0x7c src/asf/avr32/services/fs/fat/fat_unusual.o
  .text.fat_translatedate_ascii_to_number
                 0x00000000       0xac src/asf/avr32/services/fs/fat/fat_unusual.o
- .text.fat_initialize_dir
-                0x00000000       0x98 src/asf/avr32/services/fs/fat/fat_unusual.o
  .text.fat_write_MBR
                 0x00000000       0xcc src/asf/avr32/services/fs/fat/fat_unusual.o
  .text.fat_set_date
                 0x00000000       0x40 src/asf/avr32/services/fs/fat/fat_unusual.o
  .text.fat_get_date
                 0x00000000       0x38 src/asf/avr32/services/fs/fat/fat_unusual.o
- .text.fat_delete_file
-                0x00000000       0x74 src/asf/avr32/services/fs/fat/fat_unusual.o
  .text.fat_initialize_fat
                 0x00000000       0x9c src/asf/avr32/services/fs/fat/fat_unusual.o
  .text.fat_write_PBR
@@ -862,11 +764,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/asf/avr32/services/fs/fat/file.o
  .data          0x00000000        0x0 src/asf/avr32/services/fs/fat/file.o
  .bss           0x00000000        0x0 src/asf/avr32/services/fs/fat/file.o
- .debug_abbrev  0x00000000      0x207 src/asf/avr32/services/fs/fat/file.o
- .debug_info    0x00000000      0x6cc src/asf/avr32/services/fs/fat/file.o
- .debug_line    0x00000000      0xac1 src/asf/avr32/services/fs/fat/file.o
- .debug_macinfo
-                0x00000000   0x14cd0d src/asf/avr32/services/fs/fat/file.o
  .text.file_load_segment_value
                 0x00000000       0x1c src/asf/avr32/services/fs/fat/file.o
  .text.file_eof
@@ -877,16 +774,12 @@ Discarded input sections
                 0x00000000       0xb4 src/asf/avr32/services/fs/fat/file.o
  .text.file_getpos
                 0x00000000       0x18 src/asf/avr32/services/fs/fat/file.o
- .text.file_close
-                0x00000000       0x3c src/asf/avr32/services/fs/fat/file.o
  .text.file_flush
                 0x00000000       0x1c src/asf/avr32/services/fs/fat/file.o
  .text.file_write
                 0x00000000       0x80 src/asf/avr32/services/fs/fat/file.o
  .text.file_putc
                 0x00000000       0x70 src/asf/avr32/services/fs/fat/file.o
- .text.file_write_buf
-                0x00000000      0x174 src/asf/avr32/services/fs/fat/file.o
  .text.file_set_eof
                 0x00000000       0x44 src/asf/avr32/services/fs/fat/file.o
  .text.file_getc
@@ -895,19 +788,8 @@ Discarded input sections
                 0x00000000       0xf4 src/asf/avr32/services/fs/fat/file.o
  .text.file_read_buf
                 0x00000000      0x18c src/asf/avr32/services/fs/fat/file.o
- .text.file_open
-                0x00000000       0xa0 src/asf/avr32/services/fs/fat/file.o
  .text.file_ispresent
                 0x00000000       0x18 src/asf/avr32/services/fs/fat/file.o
- .debug_frame   0x00000000      0x1d8 src/asf/avr32/services/fs/fat/file.o
- .debug_loc     0x00000000      0x595 src/asf/avr32/services/fs/fat/file.o
- .debug_pubnames
-                0x00000000       0xf8 src/asf/avr32/services/fs/fat/file.o
- .debug_aranges
-                0x00000000       0x98 src/asf/avr32/services/fs/fat/file.o
- .debug_ranges  0x00000000       0x90 src/asf/avr32/services/fs/fat/file.o
- .debug_str     0x00000000      0x520 src/asf/avr32/services/fs/fat/file.o
- .comment       0x00000000       0x31 src/asf/avr32/services/fs/fat/file.o
  .text          0x00000000        0x0 src/asf/avr32/services/fs/fat/navigation.o
  .data          0x00000000        0x0 src/asf/avr32/services/fs/fat/navigation.o
  .bss           0x00000000        0x0 src/asf/avr32/services/fs/fat/navigation.o
@@ -928,8 +810,6 @@ Discarded input sections
                 0x00000000        0xc src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_filelist_get
                 0x00000000        0xc src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_getindex
-                0x00000000       0x20 src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_file_lgt
                 0x00000000        0xc src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_file_lgtsector
@@ -946,8 +826,6 @@ Discarded input sections
                 0x00000000       0x30 src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_file_checkext
                 0x00000000       0x2c src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_file_isdir
-                0x00000000        0xc src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_file_isreadonly
                 0x00000000       0x30 src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_file_getname
@@ -960,23 +838,9 @@ Discarded input sections
                 0x00000000       0x1c src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_filelist_eol
                 0x00000000       0x48 src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_dir_gotoparent
-                0x00000000       0xa0 src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_dir_name
                 0x00000000      0x104 src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_dir_cd
-                0x00000000       0x40 src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_file_del
-                0x00000000       0xac src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_filelist_first
-                0x00000000       0x40 src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_filelist_nb
-                0x00000000       0x70 src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_filelist_last
-                0x00000000       0x50 src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_file_rename
-                0x00000000       0x90 src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_dir_make
                 0x00000000       0x90 src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_filelist_exist
                 0x00000000       0x3c src/asf/avr32/services/fs/fat/navigation.o
@@ -994,20 +858,14 @@ Discarded input sections
                 0x00000000       0x28 src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_partition_serialnumber
                 0x00000000       0x24 src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_dir_root
-                0x00000000        0xc src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_partition_type
                 0x00000000       0x28 src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_drive_format
                 0x00000000       0x38 src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_gotoindex
-                0x00000000       0x5c src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_getcwd
                 0x00000000      0x18c src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_partition_label
                 0x00000000       0xac src/asf/avr32/services/fs/fat/navigation.o
- .text.nav_setcwd
-                0x00000000      0x1c4 src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_copy
                 0x00000000       0x28 src/asf/avr32/services/fs/fat/navigation.o
  .text.nav_file_copy
@@ -1025,10 +883,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/asf/avr32/utils/debug/print_funcs.o
  .data          0x00000000        0x0 src/asf/avr32/utils/debug/print_funcs.o
  .bss           0x00000000        0x0 src/asf/avr32/utils/debug/print_funcs.o
- .text.print_char
-                0x00000000        0xc src/asf/avr32/utils/debug/print_funcs.o
- .text.print_dbg_char
-                0x00000000       0x14 src/asf/avr32/utils/debug/print_funcs.o
  .text.print_hex
                 0x00000000       0x38 src/asf/avr32/utils/debug/print_funcs.o
  .text.print_dbg_hex
@@ -1160,11 +1014,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/CustomDevices/MotorDriver.o
  .data          0x00000000        0x0 src/CustomDevices/MotorDriver.o
  .bss           0x00000000        0x0 src/CustomDevices/MotorDriver.o
- .debug_abbrev  0x00000000      0x253 src/CustomDevices/MotorDriver.o
- .debug_info    0x00000000     0x1382 src/CustomDevices/MotorDriver.o
- .debug_line    0x00000000      0xdd5 src/CustomDevices/MotorDriver.o
- .debug_macinfo
-                0x00000000   0x152b43 src/CustomDevices/MotorDriver.o
  .text.Motors_Move
                 0x00000000        0x2 src/CustomDevices/MotorDriver.o
  .text.Motor_Stop
@@ -1183,92 +1032,23 @@ Discarded input sections
                 0x00000000       0x14 src/CustomDevices/MotorDriver.o
  .rodata.ACIFA_GPIO_MAP.17156
                 0x00000000       0x20 src/CustomDevices/MotorDriver.o
- .debug_frame   0x00000000       0xc0 src/CustomDevices/MotorDriver.o
- .debug_loc     0x00000000      0x184 src/CustomDevices/MotorDriver.o
- .debug_pubnames
-                0x00000000       0xd1 src/CustomDevices/MotorDriver.o
- .debug_aranges
-                0x00000000       0x50 src/CustomDevices/MotorDriver.o
- .debug_ranges  0x00000000       0x48 src/CustomDevices/MotorDriver.o
- .debug_str     0x00000000      0x8bd src/CustomDevices/MotorDriver.o
- .comment       0x00000000       0x31 src/CustomDevices/MotorDriver.o
- COMMON         0x00000000       0x54 src/CustomDevices/MotorDriver.o
  .text          0x00000000        0x0 src/CustomDevices/OV7670.o
  .data          0x00000000        0x0 src/CustomDevices/OV7670.o
  .bss           0x00000000        0x0 src/CustomDevices/OV7670.o
- .debug_abbrev  0x00000000      0x332 src/CustomDevices/OV7670.o
- .debug_info    0x00000000     0x2ef4 src/CustomDevices/OV7670.o
- .debug_line    0x00000000      0xf65 src/CustomDevices/OV7670.o
- .debug_macinfo
-                0x00000000   0x152b43 src/CustomDevices/OV7670.o
- .text.TakePhoto
-                0x00000000       0x58 src/CustomDevices/OV7670.o
- .text.Photos_Ready
-                0x00000000       0x60 src/CustomDevices/OV7670.o
  .text.Store_Images
                 0x00000000        0x2 src/CustomDevices/OV7670.o
  .text.FIFO_Reset
                 0x00000000       0x74 src/CustomDevices/OV7670.o
- .text.FIFO_Init
-                0x00000000      0x268 src/CustomDevices/OV7670.o
- .text.VSYNC0_Handler
-                0x00000000       0x6c src/CustomDevices/OV7670.o
- .text.VSYNC1_Handler
-                0x00000000       0x6c src/CustomDevices/OV7670.o
- .text.Write_Reg
-                0x00000000       0x24 src/CustomDevices/OV7670.o
- .text.OV7670_Init
-                0x00000000      0x2a0 src/CustomDevices/OV7670.o
  .text.Read_Reg
                 0x00000000       0x48 src/CustomDevices/OV7670.o
- .rodata.str1.4
-                0x00000000       0x30 src/CustomDevices/OV7670.o
- .debug_frame   0x00000000       0xfc src/CustomDevices/OV7670.o
- .debug_loc     0x00000000      0x370 src/CustomDevices/OV7670.o
- .debug_pubnames
-                0x00000000       0xdd src/CustomDevices/OV7670.o
- .debug_aranges
-                0x00000000       0x68 src/CustomDevices/OV7670.o
- .debug_ranges  0x00000000      0x240 src/CustomDevices/OV7670.o
- .debug_str     0x00000000      0xa15 src/CustomDevices/OV7670.o
- .comment       0x00000000       0x31 src/CustomDevices/OV7670.o
  .text          0x00000000        0x0 src/CustomDevices/OV7670_Setup.o
  .data          0x00000000        0x0 src/CustomDevices/OV7670_Setup.o
  .bss           0x00000000        0x0 src/CustomDevices/OV7670_Setup.o
- .debug_abbrev  0x00000000       0xfe src/CustomDevices/OV7670_Setup.o
- .debug_info    0x00000000      0x5d5 src/CustomDevices/OV7670_Setup.o
- .debug_line    0x00000000      0xcec src/CustomDevices/OV7670_Setup.o
- .debug_macinfo
-                0x00000000   0x152b43 src/CustomDevices/OV7670_Setup.o
- .rodata.default_settings
-                0x00000000      0x14e src/CustomDevices/OV7670_Setup.o
- .debug_pubnames
-                0x00000000       0x65 src/CustomDevices/OV7670_Setup.o
- .debug_str     0x00000000      0x381 src/CustomDevices/OV7670_Setup.o
- .comment       0x00000000       0x31 src/CustomDevices/OV7670_Setup.o
  .text          0x00000000        0x0 src/CustomDevices/PCA9542A.o
  .data          0x00000000        0x0 src/CustomDevices/PCA9542A.o
  .bss           0x00000000        0x0 src/CustomDevices/PCA9542A.o
- .debug_abbrev  0x00000000      0x18f src/CustomDevices/PCA9542A.o
- .debug_info    0x00000000     0x11a9 src/CustomDevices/PCA9542A.o
- .debug_line    0x00000000      0xd20 src/CustomDevices/PCA9542A.o
- .debug_macinfo
-                0x00000000   0x152b43 src/CustomDevices/PCA9542A.o
- .text.PCA9542A_Chan_Sel
-                0x00000000       0x24 src/CustomDevices/PCA9542A.o
  .text.PCA9542A_Channel_Select
                 0x00000000       0x24 src/CustomDevices/PCA9542A.o
- .text.PCA9542A_Init
-                0x00000000       0x38 src/CustomDevices/PCA9542A.o
- .debug_frame   0x00000000       0x64 src/CustomDevices/PCA9542A.o
- .debug_loc     0x00000000       0xc5 src/CustomDevices/PCA9542A.o
- .debug_pubnames
-                0x00000000       0xa9 src/CustomDevices/PCA9542A.o
- .debug_aranges
-                0x00000000       0x30 src/CustomDevices/PCA9542A.o
- .debug_ranges  0x00000000       0x28 src/CustomDevices/PCA9542A.o
- .debug_str     0x00000000      0x68c src/CustomDevices/PCA9542A.o
- .comment       0x00000000       0x31 src/CustomDevices/PCA9542A.o
  .text          0x00000000        0x0 src/CustomDevices/SD_Card.o
  .data          0x00000000        0x0 src/CustomDevices/SD_Card.o
  .bss           0x00000000        0x0 src/CustomDevices/SD_Card.o
@@ -1283,22 +1063,11 @@ Discarded input sections
  .text          0x00000000        0x0 src/main.o
  .data          0x00000000        0x0 src/main.o
  .bss           0x00000000        0x0 src/main.o
- .text.LED_Flash
-                0x00000000       0x80 src/main.o
+ .text.Log_Write_ulong
+                0x00000000       0x4c src/main.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .debug_abbrev  0x00000000       0x59 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .debug_info    0x00000000       0x71 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .debug_line    0x00000000       0x78 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .rodata._ctype_
-                0x00000000      0x104 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .data.__ctype_ptr
-                0x00000000        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .debug_pubnames
-                0x00000000       0x2e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .debug_str     0x00000000       0x7c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .comment       0x00000000       0x31 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
@@ -1477,7 +1246,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .plt
  *(.plt)
 
-.text           0x80002004     0x393c
+.text           0x80002004     0x55b0
  *(.text .stub .text.* .gnu.linkonce.t.*)
  .text.sd_mmc_spi_get_capacity
                 0x80002004      0x11c src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -1555,358 +1324,534 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .text.sd_mmc_spi_read_capacity
                 0x80002c90       0x40 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
                 0x80002c90                sd_mmc_spi_read_capacity
+ .text.eic_init
+                0x80002cd0       0xd0 src/asf/avr32/drivers/eic/eic.o
+                0x80002cd0                eic_init
+ .text.eic_enable_line
+                0x80002da0        0xa src/asf/avr32/drivers/eic/eic.o
+                0x80002da0                eic_enable_line
+ .text.eic_enable_interrupt_line
+                0x80002daa        0xa src/asf/avr32/drivers/eic/eic.o
+                0x80002daa                eic_enable_interrupt_line
+ .text.eic_clear_interrupt_line
+                0x80002db4       0x16 src/asf/avr32/drivers/eic/eic.o
+                0x80002db4                eic_clear_interrupt_line
  .text.flashc_set_wait_state
-                0x80002cd0        0xe src/asf/avr32/drivers/flashc/flashc.o
-                0x80002cd0                flashc_set_wait_state
+                0x80002dca        0xe src/asf/avr32/drivers/flashc/flashc.o
+                0x80002dca                flashc_set_wait_state
  .text.flashc_is_ready
-                0x80002cde        0xc src/asf/avr32/drivers/flashc/flashc.o
-                0x80002cde                flashc_is_ready
- *fill*         0x80002cea        0x2 d703d703
+                0x80002dd8        0xc src/asf/avr32/drivers/flashc/flashc.o
+                0x80002dd8                flashc_is_ready
  .text.flashc_default_wait_until_ready
-                0x80002cec       0x10 src/asf/avr32/drivers/flashc/flashc.o
-                0x80002cec                flashc_default_wait_until_ready
+                0x80002de4       0x10 src/asf/avr32/drivers/flashc/flashc.o
+                0x80002de4                flashc_default_wait_until_ready
  .text.flashc_issue_command
-                0x80002cfc       0x48 src/asf/avr32/drivers/flashc/flashc.o
-                0x80002cfc                flashc_issue_command
+                0x80002df4       0x48 src/asf/avr32/drivers/flashc/flashc.o
+                0x80002df4                flashc_issue_command
  .text.flashc_set_flash_waitstate_and_readmode
-                0x80002d44       0x5c src/asf/avr32/drivers/flashc/flashc.o
-                0x80002d44                flashc_set_flash_waitstate_and_readmode
+                0x80002e3c       0x5c src/asf/avr32/drivers/flashc/flashc.o
+                0x80002e3c                flashc_set_flash_waitstate_and_readmode
  .text.gpio_enable_module_pin
-                0x80002da0       0x94 src/asf/avr32/drivers/gpio/gpio.o
-                0x80002da0                gpio_enable_module_pin
+                0x80002e98       0x94 src/asf/avr32/drivers/gpio/gpio.o
+                0x80002e98                gpio_enable_module_pin
  .text.gpio_enable_module
-                0x80002e34       0x30 src/asf/avr32/drivers/gpio/gpio.o
-                0x80002e34                gpio_enable_module
+                0x80002f2c       0x30 src/asf/avr32/drivers/gpio/gpio.o
+                0x80002f2c                gpio_enable_module
+ .text.gpio_enable_pin_pull_up
+                0x80002f5c       0x1a src/asf/avr32/drivers/gpio/gpio.o
+                0x80002f5c                gpio_enable_pin_pull_up
+ .text.gpio_set_gpio_pin
+                0x80002f76       0x1c src/asf/avr32/drivers/gpio/gpio.o
+                0x80002f76                gpio_set_gpio_pin
+ .text.gpio_clr_gpio_pin
+                0x80002f92       0x1c src/asf/avr32/drivers/gpio/gpio.o
+                0x80002f92                gpio_clr_gpio_pin
+ *fill*         0x80002fae        0x2 d703d703
+ .text.INTC_register_interrupt
+                0x80002fb0       0x80 src/asf/avr32/drivers/intc/intc.o
+                0x80002fb0                INTC_register_interrupt
  .text._get_interrupt_handler
-                0x80002e64       0x38 src/asf/avr32/drivers/intc/intc.o
-                0x80002e64                _get_interrupt_handler
+                0x80003030       0x38 src/asf/avr32/drivers/intc/intc.o
+                0x80003030                _get_interrupt_handler
  .text.pm_set_mclk_source
-                0x80002e9c       0x20 src/asf/avr32/drivers/pm/pm_uc3c.o
-                0x80002e9c                pm_set_mclk_source
+                0x80003068       0x20 src/asf/avr32/drivers/pm/pm_uc3c.o
+                0x80003068                pm_set_mclk_source
  .text.pcl_switch_to_osc
-                0x80002ebc       0x44 src/asf/avr32/drivers/pm/power_clocks_lib.o
-                0x80002ebc                pcl_switch_to_osc
+                0x80003088       0x44 src/asf/avr32/drivers/pm/power_clocks_lib.o
+                0x80003088                pcl_switch_to_osc
  .text.scif_pclksr_statushigh_wait
-                0x80002f00       0x1a src/asf/avr32/drivers/scif/scif_uc3c.o
- *fill*         0x80002f1a        0x2 d703d703
+                0x800030cc       0x1a src/asf/avr32/drivers/scif/scif_uc3c.o
+ *fill*         0x800030e6        0x2 d703d703
  .text.scif_enable_osc
-                0x80002f1c       0x74 src/asf/avr32/drivers/scif/scif_uc3c.o
-                0x80002f1c                scif_enable_osc
+                0x800030e8       0x74 src/asf/avr32/drivers/scif/scif_uc3c.o
+                0x800030e8                scif_enable_osc
  .text.scif_configure_osc_crystalmode
-                0x80002f90       0xd0 src/asf/avr32/drivers/scif/scif_uc3c.o
-                0x80002f90                scif_configure_osc_crystalmode
+                0x8000315c       0xd0 src/asf/avr32/drivers/scif/scif_uc3c.o
+                0x8000315c                scif_configure_osc_crystalmode
  .text.getBaudDiv
-                0x80003060       0x20 src/asf/avr32/drivers/spi/spi.o
-                0x80003060                getBaudDiv
+                0x8000322c       0x20 src/asf/avr32/drivers/spi/spi.o
+                0x8000322c                getBaudDiv
  .text.spi_initMaster
-                0x80003080       0x38 src/asf/avr32/drivers/spi/spi.o
-                0x80003080                spi_initMaster
+                0x8000324c       0x38 src/asf/avr32/drivers/spi/spi.o
+                0x8000324c                spi_initMaster
  .text.spi_selectionMode
-                0x800030b8       0x3e src/asf/avr32/drivers/spi/spi.o
-                0x800030b8                spi_selectionMode
+                0x80003284       0x3e src/asf/avr32/drivers/spi/spi.o
+                0x80003284                spi_selectionMode
  .text.spi_selectChip
-                0x800030f6       0x4c src/asf/avr32/drivers/spi/spi.o
-                0x800030f6                spi_selectChip
+                0x800032c2       0x4c src/asf/avr32/drivers/spi/spi.o
+                0x800032c2                spi_selectChip
  .text.spi_unselectChip
-                0x80003142       0x26 src/asf/avr32/drivers/spi/spi.o
-                0x80003142                spi_unselectChip
+                0x8000330e       0x26 src/asf/avr32/drivers/spi/spi.o
+                0x8000330e                spi_unselectChip
  .text.spi_setupChipReg
-                0x80003168       0xb8 src/asf/avr32/drivers/spi/spi.o
-                0x80003168                spi_setupChipReg
+                0x80003334       0xb8 src/asf/avr32/drivers/spi/spi.o
+                0x80003334                spi_setupChipReg
  .text.spi_enable
-                0x80003220        0x6 src/asf/avr32/drivers/spi/spi.o
-                0x80003220                spi_enable
+                0x800033ec        0x6 src/asf/avr32/drivers/spi/spi.o
+                0x800033ec                spi_enable
  .text.spi_write
-                0x80003226       0x1c src/asf/avr32/drivers/spi/spi.o
-                0x80003226                spi_write
+                0x800033f2       0x1c src/asf/avr32/drivers/spi/spi.o
+                0x800033f2                spi_write
  .text.spi_read
-                0x80003242       0x20 src/asf/avr32/drivers/spi/spi.o
-                0x80003242                spi_read
+                0x8000340e       0x20 src/asf/avr32/drivers/spi/spi.o
+                0x8000340e                spi_read
+ *fill*         0x8000342e        0x2 d703d703
+ .text.twim_master_interrupt_handler
+                0x80003430       0xdc src/asf/avr32/drivers/twim/twim.o
+ .text.twim_set_speed
+                0x8000350c       0x70 src/asf/avr32/drivers/twim/twim.o
+                0x8000350c                twim_set_speed
+ .text.twim_status
+                0x8000357c       0x10 src/asf/avr32/drivers/twim/twim.o
+                0x8000357c                twim_status
+ .text.twim_disable_interrupt
+                0x8000358c       0x14 src/asf/avr32/drivers/twim/twim.o
+                0x8000358c                twim_disable_interrupt
+ .text.twim_write
+                0x800035a0       0xb4 src/asf/avr32/drivers/twim/twim.o
+                0x800035a0                twim_write
+ .text.twim_probe
+                0x80003654       0x1c src/asf/avr32/drivers/twim/twim.o
+                0x80003654                twim_probe
+ .text.twim_master_init
+                0x80003670       0xb4 src/asf/avr32/drivers/twim/twim.o
+                0x80003670                twim_master_init
  .text.usart_set_async_baudrate
-                0x80003262       0x5a src/asf/avr32/drivers/usart/usart.o
+                0x80003724       0x5a src/asf/avr32/drivers/usart/usart.o
  .text.usart_write_char
-                0x800032bc       0x14 src/asf/avr32/drivers/usart/usart.o
-                0x800032bc                usart_write_char
+                0x8000377e       0x14 src/asf/avr32/drivers/usart/usart.o
+                0x8000377e                usart_write_char
+ *fill*         0x80003792        0x2 d703d703
  .text.usart_putchar
-                0x800032d0       0x2c src/asf/avr32/drivers/usart/usart.o
-                0x800032d0                usart_putchar
+                0x80003794       0x2c src/asf/avr32/drivers/usart/usart.o
+                0x80003794                usart_putchar
  .text.usart_write_line
-                0x800032fc       0x24 src/asf/avr32/drivers/usart/usart.o
-                0x800032fc                usart_write_line
+                0x800037c0       0x24 src/asf/avr32/drivers/usart/usart.o
+                0x800037c0                usart_write_line
  .text.usart_reset
-                0x80003320       0x2c src/asf/avr32/drivers/usart/usart.o
-                0x80003320                usart_reset
+                0x800037e4       0x2c src/asf/avr32/drivers/usart/usart.o
+                0x800037e4                usart_reset
  .text.usart_init_rs232
-                0x8000334c       0xcc src/asf/avr32/drivers/usart/usart.o
-                0x8000334c                usart_init_rs232
+                0x80003810       0xcc src/asf/avr32/drivers/usart/usart.o
+                0x80003810                usart_init_rs232
+ .text.fat_check_open
+                0x800038dc       0x20 src/asf/avr32/services/fs/fat/fat.o
+                0x800038dc                fat_check_open
  .text.fat_check_select
-                0x80003418       0x20 src/asf/avr32/services/fs/fat/fat.o
-                0x80003418                fat_check_select
+                0x800038fc       0x20 src/asf/avr32/services/fs/fat/fat.o
+                0x800038fc                fat_check_select
+ .text.fat_check_is_file
+                0x8000391c       0x1c src/asf/avr32/services/fs/fat/fat.o
+                0x8000391c                fat_check_is_file
  .text.fat_checkcluster
-                0x80003438       0x60 src/asf/avr32/services/fs/fat/fat.o
-                0x80003438                fat_checkcluster
+                0x80003938       0x60 src/asf/avr32/services/fs/fat/fat.o
+                0x80003938                fat_checkcluster
  .text.fat_cache_clusterlist_reset
-                0x80003498       0x28 src/asf/avr32/services/fs/fat/fat.o
-                0x80003498                fat_cache_clusterlist_reset
+                0x80003998       0x28 src/asf/avr32/services/fs/fat/fat.o
+                0x80003998                fat_cache_clusterlist_reset
  .text.fat_cache_clusterlist_update_start
-                0x800034c0       0x40 src/asf/avr32/services/fs/fat/fat.o
-                0x800034c0                fat_cache_clusterlist_update_start
+                0x800039c0       0x40 src/asf/avr32/services/fs/fat/fat.o
+                0x800039c0                fat_cache_clusterlist_update_start
  .text.fat_cache_clusterlist_update_select
-                0x80003500       0x68 src/asf/avr32/services/fs/fat/fat.o
-                0x80003500                fat_cache_clusterlist_update_select
+                0x80003a00       0x68 src/asf/avr32/services/fs/fat/fat.o
+                0x80003a00                fat_cache_clusterlist_update_select
  .text.fat_cache_clusterlist_update_finish
-                0x80003568       0x58 src/asf/avr32/services/fs/fat/fat.o
-                0x80003568                fat_cache_clusterlist_update_finish
+                0x80003a68       0x58 src/asf/avr32/services/fs/fat/fat.o
+                0x80003a68                fat_cache_clusterlist_update_finish
  .text.fat_cache_clusterlist_update_read
-                0x800035c0      0x124 src/asf/avr32/services/fs/fat/fat.o
-                0x800035c0                fat_cache_clusterlist_update_read
+                0x80003ac0      0x124 src/asf/avr32/services/fs/fat/fat.o
+                0x80003ac0                fat_cache_clusterlist_update_read
+ .text.fat_entry_is_dir
+                0x80003be4       0x18 src/asf/avr32/services/fs/fat/fat.o
+                0x80003be4                fat_entry_is_dir
  .text.fat_clear_entry_info_and_ptr
-                0x800036e4       0x3c src/asf/avr32/services/fs/fat/fat.o
-                0x800036e4                fat_clear_entry_info_and_ptr
+                0x80003bfc       0x3c src/asf/avr32/services/fs/fat/fat.o
+                0x80003bfc                fat_clear_entry_info_and_ptr
  .text.fat_check_eof_name
-                0x80003720       0x26 src/asf/avr32/services/fs/fat/fat.o
-                0x80003720                fat_check_eof_name
- *fill*         0x80003746        0x2 d703d703
+                0x80003c38       0x26 src/asf/avr32/services/fs/fat/fat.o
+                0x80003c38                fat_check_eof_name
+ *fill*         0x80003c5e        0x2 d703d703
  .text.fat_get_ptr_entry
-                0x80003748       0x18 src/asf/avr32/services/fs/fat/fat.o
-                0x80003748                fat_get_ptr_entry
+                0x80003c60       0x18 src/asf/avr32/services/fs/fat/fat.o
+                0x80003c60                fat_get_ptr_entry
  .text.fat_entry_longname
-                0x80003760      0x194 src/asf/avr32/services/fs/fat/fat.o
-                0x80003760                fat_entry_longname
+                0x80003c78      0x194 src/asf/avr32/services/fs/fat/fat.o
+                0x80003c78                fat_entry_longname
  .text.fat_entry_shortname
-                0x800038f4      0x108 src/asf/avr32/services/fs/fat/fat.o
-                0x800038f4                fat_entry_shortname
+                0x80003e0c      0x108 src/asf/avr32/services/fs/fat/fat.o
+                0x80003e0c                fat_entry_shortname
  .text.fat_get_entry_info
-                0x800039fc       0x48 src/asf/avr32/services/fs/fat/fat.o
-                0x800039fc                fat_get_entry_info
+                0x80003f14       0x48 src/asf/avr32/services/fs/fat/fat.o
+                0x80003f14                fat_get_entry_info
  .text.fat_entry_check
-                0x80003a44       0x5c src/asf/avr32/services/fs/fat/fat.o
-                0x80003a44                fat_entry_check
+                0x80003f5c       0x5c src/asf/avr32/services/fs/fat/fat.o
+                0x80003f5c                fat_entry_check
  .text.fat_cache_reset
-                0x80003aa0       0x18 src/asf/avr32/services/fs/fat/fat.o
-                0x80003aa0                fat_cache_reset
+                0x80003fb8       0x18 src/asf/avr32/services/fs/fat/fat.o
+                0x80003fb8                fat_cache_reset
  .text.fat_cache_mark_sector_as_dirty
-                0x80003ab8       0x10 src/asf/avr32/services/fs/fat/fat.o
-                0x80003ab8                fat_cache_mark_sector_as_dirty
+                0x80003fd0       0x10 src/asf/avr32/services/fs/fat/fat.o
+                0x80003fd0                fat_cache_mark_sector_as_dirty
+ .text.fat_write_entry_file
+                0x80003fe0       0x50 src/asf/avr32/services/fs/fat/fat.o
+                0x80003fe0                fat_write_entry_file
+ .text.fat_check_nav_access_file
+                0x80004030       0x78 src/asf/avr32/services/fs/fat/fat.o
+                0x80004030                fat_check_nav_access_file
  .text.fat_invert_nav
-                0x80003ac8       0xec src/asf/avr32/services/fs/fat/fat.o
-                0x80003ac8                fat_invert_nav
+                0x800040a8       0xec src/asf/avr32/services/fs/fat/fat.o
+                0x800040a8                fat_invert_nav
  .text.fat_cache_flush
-                0x80003bb4       0x54 src/asf/avr32/services/fs/fat/fat.o
-                0x80003bb4                fat_cache_flush
+                0x80004194       0x54 src/asf/avr32/services/fs/fat/fat.o
+                0x80004194                fat_cache_flush
  .text.fat_cache_clear
-                0x80003c08       0x18 src/asf/avr32/services/fs/fat/fat.o
-                0x80003c08                fat_cache_clear
+                0x800041e8       0x18 src/asf/avr32/services/fs/fat/fat.o
+                0x800041e8                fat_cache_clear
  .text.fat_cache_read_sector
-                0x80003c20       0x80 src/asf/avr32/services/fs/fat/fat.o
-                0x80003c20                fat_cache_read_sector
+                0x80004200       0x80 src/asf/avr32/services/fs/fat/fat.o
+                0x80004200                fat_cache_read_sector
  .text.fat_cluster_readnext
-                0x80003ca0       0x94 src/asf/avr32/services/fs/fat/fat.o
-                0x80003ca0                fat_cluster_readnext
+                0x80004280       0x94 src/asf/avr32/services/fs/fat/fat.o
+                0x80004280                fat_cluster_readnext
  .text.fat_cluster_val
-                0x80003d34      0x244 src/asf/avr32/services/fs/fat/fat.o
-                0x80003d34                fat_cluster_val
+                0x80004314      0x244 src/asf/avr32/services/fs/fat/fat.o
+                0x80004314                fat_cluster_val
  .text.fat_cluster_list
-                0x80003f78      0x2d8 src/asf/avr32/services/fs/fat/fat.o
-                0x80003f78                fat_cluster_list
+                0x80004558      0x2d8 src/asf/avr32/services/fs/fat/fat.o
+                0x80004558                fat_cluster_list
  .text.fat_read_dir
-                0x80004250       0x84 src/asf/avr32/services/fs/fat/fat.o
-                0x80004250                fat_read_dir
+                0x80004830       0x84 src/asf/avr32/services/fs/fat/fat.o
+                0x80004830                fat_read_dir
+ .text.fat_read_file
+                0x800048b4       0xdc src/asf/avr32/services/fs/fat/fat.o
+                0x800048b4                fat_read_file
+ .text.fat_write_file
+                0x80004990      0x108 src/asf/avr32/services/fs/fat/fat.o
+                0x80004990                fat_write_file
  .text.fat_check_device
-                0x800042d4       0xb8 src/asf/avr32/services/fs/fat/fat.o
-                0x800042d4                fat_check_device
+                0x80004a98       0xb8 src/asf/avr32/services/fs/fat/fat.o
+                0x80004a98                fat_check_device
  .text.fat_check_noopen
-                0x8000438c       0x3c src/asf/avr32/services/fs/fat/fat.o
-                0x8000438c                fat_check_noopen
+                0x80004b50       0x3c src/asf/avr32/services/fs/fat/fat.o
+                0x80004b50                fat_check_noopen
  .text.fat_check_mount
-                0x800043c8       0x38 src/asf/avr32/services/fs/fat/fat.o
-                0x800043c8                fat_check_mount
+                0x80004b8c       0x38 src/asf/avr32/services/fs/fat/fat.o
+                0x80004b8c                fat_check_mount
  .text.fat_check_mount_select
-                0x80004400       0x18 src/asf/avr32/services/fs/fat/fat.o
-                0x80004400                fat_check_mount_select
+                0x80004bc4       0x18 src/asf/avr32/services/fs/fat/fat.o
+                0x80004bc4                fat_check_mount_select
+ .text.fat_check_mount_select_open
+                0x80004bdc       0x24 src/asf/avr32/services/fs/fat/fat.o
+                0x80004bdc                fat_check_mount_select_open
+ .text.fat_check_mount_select_noopen
+                0x80004c00       0x24 src/asf/avr32/services/fs/fat/fat.o
+                0x80004c00                fat_check_mount_select_noopen
  .text.fat_check_mount_noopen
-                0x80004418       0x18 src/asf/avr32/services/fs/fat/fat.o
-                0x80004418                fat_check_mount_noopen
+                0x80004c24       0x18 src/asf/avr32/services/fs/fat/fat.o
+                0x80004c24                fat_check_mount_noopen
  .text.fat_translate_char_shortname
-                0x80004430       0x4c src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80004430                fat_translate_char_shortname
+                0x80004c3c       0x4c src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80004c3c                fat_translate_char_shortname
  .text.fat_clear_info_fat_mod
-                0x8000447c       0x18 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x8000447c                fat_clear_info_fat_mod
+                0x80004c88       0x18 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80004c88                fat_clear_info_fat_mod
  .text.fat_clear_cluster
-                0x80004494       0x74 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80004494                fat_clear_cluster
+                0x80004ca0       0x74 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80004ca0                fat_clear_cluster
  .text.fat_update_fat2
-                0x80004508       0x74 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80004508                fat_update_fat2
+                0x80004d14       0x74 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80004d14                fat_update_fat2
+ .text.fat_initialize_dir
+                0x80004d88       0x98 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80004d88                fat_initialize_dir
  .text.fat_create_long_name_entry
-                0x8000457c       0xd0 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x8000457c                fat_create_long_name_entry
+                0x80004e20       0xd0 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80004e20                fat_create_long_name_entry
+ .text.fat_delete_file
+                0x80004ef0       0x74 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80004ef0                fat_delete_file
  .text.fat_garbage_collector_entry
-                0x8000464c       0xc8 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x8000464c                fat_garbage_collector_entry
+                0x80004f64       0xc8 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80004f64                fat_garbage_collector_entry
  .text.fat_write_fat32_FSInfo
-                0x80004714       0xa0 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80004714                fat_write_fat32_FSInfo
+                0x8000502c       0xa0 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x8000502c                fat_write_fat32_FSInfo
  .text.fat_allocfreespace
-                0x800047b4      0x140 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x800047b4                fat_allocfreespace
+                0x800050cc      0x140 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x800050cc                fat_allocfreespace
  .text.fat_alloc_entry_free
-                0x800048f4       0xb0 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x800048f4                fat_alloc_entry_free
+                0x8000520c       0xb0 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x8000520c                fat_alloc_entry_free
  .text.fat_check_name
-                0x800049a4       0x74 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x800049a4                fat_check_name
+                0x800052bc       0x74 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x800052bc                fat_check_name
  .text.fat_create_short_entry_name
-                0x80004a18      0x1bc src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80004a18                fat_create_short_entry_name
+                0x80005330      0x1bc src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80005330                fat_create_short_entry_name
  .text.fat_entry_shortname_compare
-                0x80004bd4       0x58 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80004bd4                fat_entry_shortname_compare
+                0x800054ec       0x58 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x800054ec                fat_entry_shortname_compare
  .text.fat_find_short_entry_name
-                0x80004c2c       0x78 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80004c2c                fat_find_short_entry_name
+                0x80005544       0x78 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80005544                fat_find_short_entry_name
  .text.fat_create_entry_file_name
-                0x80004ca4       0xa8 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80004ca4                fat_create_entry_file_name
+                0x800055bc       0xa8 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x800055bc                fat_create_entry_file_name
  .text.fat_mount
-                0x80004d4c      0x2fc src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80004d4c                fat_mount
+                0x80005664      0x2fc src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80005664                fat_mount
+ .text.file_close
+                0x80005960       0x3c src/asf/avr32/services/fs/fat/file.o
+                0x80005960                file_close
+ .text.file_write_buf
+                0x8000599c      0x174 src/asf/avr32/services/fs/fat/file.o
+                0x8000599c                file_write_buf
+ .text.file_open
+                0x80005b10       0xa0 src/asf/avr32/services/fs/fat/file.o
+                0x80005b10                file_open
+ .text.nav_getindex
+                0x80005bb0       0x20 src/asf/avr32/services/fs/fat/navigation.o
+                0x80005bb0                nav_getindex
+ .text.nav_file_isdir
+                0x80005bd0        0xc src/asf/avr32/services/fs/fat/navigation.o
+                0x80005bd0                nav_file_isdir
  .text.nav_file_name
-                0x80005048       0xe4 src/asf/avr32/services/fs/fat/navigation.o
-                0x80005048                nav_file_name
+                0x80005bdc       0xe4 src/asf/avr32/services/fs/fat/navigation.o
+                0x80005bdc                nav_file_name
  .text.nav_filelist_set
-                0x8000512c      0x168 src/asf/avr32/services/fs/fat/navigation.o
-                0x8000512c                nav_filelist_set
+                0x80005cc0      0x168 src/asf/avr32/services/fs/fat/navigation.o
+                0x80005cc0                nav_filelist_set
  .text.nav_filelist_findname
-                0x80005294       0x30 src/asf/avr32/services/fs/fat/navigation.o
-                0x80005294                nav_filelist_findname
+                0x80005e28       0x30 src/asf/avr32/services/fs/fat/navigation.o
+                0x80005e28                nav_filelist_findname
  .text.nav_filelist_reset
-                0x800052c4       0x18 src/asf/avr32/services/fs/fat/navigation.o
-                0x800052c4                nav_filelist_reset
+                0x80005e58       0x18 src/asf/avr32/services/fs/fat/navigation.o
+                0x80005e58                nav_filelist_reset
  .text.nav_file_create
-                0x800052dc       0x6c src/asf/avr32/services/fs/fat/navigation.o
-                0x800052dc                nav_file_create
+                0x80005e70       0x6c src/asf/avr32/services/fs/fat/navigation.o
+                0x80005e70                nav_file_create
+ .text.nav_dir_gotoparent
+                0x80005edc       0xa0 src/asf/avr32/services/fs/fat/navigation.o
+                0x80005edc                nav_dir_gotoparent
+ .text.nav_dir_cd
+                0x80005f7c       0x40 src/asf/avr32/services/fs/fat/navigation.o
+                0x80005f7c                nav_dir_cd
+ .text.nav_file_del
+                0x80005fbc       0xac src/asf/avr32/services/fs/fat/navigation.o
+                0x80005fbc                nav_file_del
+ .text.nav_filelist_first
+                0x80006068       0x40 src/asf/avr32/services/fs/fat/navigation.o
+                0x80006068                nav_filelist_first
+ .text.nav_filelist_nb
+                0x800060a8       0x70 src/asf/avr32/services/fs/fat/navigation.o
+                0x800060a8                nav_filelist_nb
+ .text.nav_filelist_last
+                0x80006118       0x50 src/asf/avr32/services/fs/fat/navigation.o
+                0x80006118                nav_filelist_last
+ .text.nav_dir_make
+                0x80006168       0x90 src/asf/avr32/services/fs/fat/navigation.o
+                0x80006168                nav_dir_make
  .text.nav_partition_mount
-                0x80005348       0x3c src/asf/avr32/services/fs/fat/navigation.o
-                0x80005348                nav_partition_mount
+                0x800061f8       0x3c src/asf/avr32/services/fs/fat/navigation.o
+                0x800061f8                nav_partition_mount
+ .text.nav_dir_root
+                0x80006234        0xc src/asf/avr32/services/fs/fat/navigation.o
+                0x80006234                nav_dir_root
  .text.nav_drive_set
-                0x80005384       0x54 src/asf/avr32/services/fs/fat/navigation.o
-                0x80005384                nav_drive_set
+                0x80006240       0x54 src/asf/avr32/services/fs/fat/navigation.o
+                0x80006240                nav_drive_set
+ .text.nav_gotoindex
+                0x80006294       0x5c src/asf/avr32/services/fs/fat/navigation.o
+                0x80006294                nav_gotoindex
+ .text.nav_setcwd
+                0x800062f0      0x1c4 src/asf/avr32/services/fs/fat/navigation.o
+                0x800062f0                nav_setcwd
  .text.nav_drive_nb
-                0x800053d8        0xc src/asf/avr32/services/fs/fat/navigation.o
-                0x800053d8                nav_drive_nb
+                0x800064b4        0xc src/asf/avr32/services/fs/fat/navigation.o
+                0x800064b4                nav_drive_nb
  .text.nav_select
-                0x800053e4       0x48 src/asf/avr32/services/fs/fat/navigation.o
-                0x800053e4                nav_select
+                0x800064c0       0x48 src/asf/avr32/services/fs/fat/navigation.o
+                0x800064c0                nav_select
  .text.nav_reset
-                0x8000542c       0x6c src/asf/avr32/services/fs/fat/navigation.o
-                0x8000542c                nav_reset
- .text.print    0x80005498        0xc src/asf/avr32/utils/debug/print_funcs.o
-                0x80005498                print
+                0x80006508       0x6c src/asf/avr32/services/fs/fat/navigation.o
+                0x80006508                nav_reset
+ .text.print_char
+                0x80006574        0xc src/asf/avr32/utils/debug/print_funcs.o
+                0x80006574                print_char
+ .text.print_dbg_char
+                0x80006580       0x14 src/asf/avr32/utils/debug/print_funcs.o
+                0x80006580                print_dbg_char
+ .text.print    0x80006594        0xc src/asf/avr32/utils/debug/print_funcs.o
+                0x80006594                print
  .text.print_ulong
-                0x800054a4       0x48 src/asf/avr32/utils/debug/print_funcs.o
-                0x800054a4                print_ulong
+                0x800065a0       0x48 src/asf/avr32/utils/debug/print_funcs.o
+                0x800065a0                print_ulong
  .text.print_dbg_ulong
-                0x800054ec       0x14 src/asf/avr32/utils/debug/print_funcs.o
-                0x800054ec                print_dbg_ulong
+                0x800065e8       0x14 src/asf/avr32/utils/debug/print_funcs.o
+                0x800065e8                print_dbg_ulong
  .text.print_dbg
-                0x80005500       0x14 src/asf/avr32/utils/debug/print_funcs.o
-                0x80005500                print_dbg
+                0x800065fc       0x14 src/asf/avr32/utils/debug/print_funcs.o
+                0x800065fc                print_dbg
  .text.init_dbg_rs232_ex
-                0x80005514       0x40 src/asf/avr32/utils/debug/print_funcs.o
-                0x80005514                init_dbg_rs232_ex
+                0x80006610       0x40 src/asf/avr32/utils/debug/print_funcs.o
+                0x80006610                init_dbg_rs232_ex
  .text.init_dbg_rs232
-                0x80005554       0x14 src/asf/avr32/utils/debug/print_funcs.o
-                0x80005554                init_dbg_rs232
- .text._stext   0x80005568       0x4c src/asf/avr32/utils/startup/startup_uc3.o
+                0x80006650       0x14 src/asf/avr32/utils/debug/print_funcs.o
+                0x80006650                init_dbg_rs232
+ .text._stext   0x80006664       0x4c src/asf/avr32/utils/startup/startup_uc3.o
                                  0x50 (size before relaxing)
-                0x80005568                _stext
+                0x80006664                _stext
  .text.board_init
-                0x800055b4        0x2 src/asf/common/boards/user_board/init.o
-                0x800055b4                board_init
+                0x800066b0        0x2 src/asf/common/boards/user_board/init.o
+                0x800066b0                board_init
  .text.get_nb_lun
-                0x800055b6        0x2 src/asf/common/services/storage/ctrl_access/ctrl_access.o
-                0x800055b6                get_nb_lun
+                0x800066b2        0x2 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x800066b2                get_nb_lun
  .text.mem_test_unit_ready
-                0x800055b8       0x14 src/asf/common/services/storage/ctrl_access/ctrl_access.o
-                0x800055b8                mem_test_unit_ready
+                0x800066b4       0x14 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x800066b4                mem_test_unit_ready
  .text.mem_read_capacity
-                0x800055cc       0x18 src/asf/common/services/storage/ctrl_access/ctrl_access.o
-                0x800055cc                mem_read_capacity
+                0x800066c8       0x18 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x800066c8                mem_read_capacity
  .text.mem_sector_size
-                0x800055e4        0x6 src/asf/common/services/storage/ctrl_access/ctrl_access.o
-                0x800055e4                mem_sector_size
- *fill*         0x800055ea        0x2 d703d703
+                0x800066e0        0x6 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x800066e0                mem_sector_size
+ *fill*         0x800066e6        0x2 d703d703
  .text.mem_wr_protect
-                0x800055ec       0x14 src/asf/common/services/storage/ctrl_access/ctrl_access.o
-                0x800055ec                mem_wr_protect
+                0x800066e8       0x14 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x800066e8                mem_wr_protect
  .text.memory_2_ram
-                0x80005600       0x1c src/asf/common/services/storage/ctrl_access/ctrl_access.o
-                0x80005600                memory_2_ram
+                0x800066fc       0x1c src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x800066fc                memory_2_ram
  .text.ram_2_memory
-                0x8000561c       0x1c src/asf/common/services/storage/ctrl_access/ctrl_access.o
-                0x8000561c                ram_2_memory
+                0x80006718       0x1c src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x80006718                ram_2_memory
+ .text.TakePhoto
+                0x80006734       0x58 src/CustomDevices/OV7670.o
+                0x80006734                TakePhoto
+ .text.Photos_Ready
+                0x8000678c       0x60 src/CustomDevices/OV7670.o
+                0x8000678c                Photos_Ready
+ .text.FIFO_Init
+                0x800067ec      0x268 src/CustomDevices/OV7670.o
+                0x800067ec                FIFO_Init
+ .text.VSYNC0_Handler
+                0x80006a54       0x6c src/CustomDevices/OV7670.o
+ .text.VSYNC1_Handler
+                0x80006ac0       0x6c src/CustomDevices/OV7670.o
+ .text.Write_Reg
+                0x80006b2c       0x24 src/CustomDevices/OV7670.o
+                0x80006b2c                Write_Reg
+ .text.OV7670_Init
+                0x80006b50      0x2a0 src/CustomDevices/OV7670.o
+                0x80006b50                OV7670_Init
+ .text.PCA9542A_Chan_Sel
+                0x80006df0       0x24 src/CustomDevices/PCA9542A.o
+                0x80006df0                PCA9542A_Chan_Sel
+ .text.PCA9542A_Init
+                0x80006e14       0x38 src/CustomDevices/PCA9542A.o
+                0x80006e14                PCA9542A_Init
  .text.sd_mmc_resources_init
-                0x80005638       0x84 src/CustomDevices/SD_Card.o
-                0x80005638                sd_mmc_resources_init
- .text.main     0x800056bc      0x108 src/main.o
-                0x800056bc                main
- .text.memcmp   0x800057c4       0x26 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
-                0x800057c4                memcmp
- .text          0x800057ea      0x148 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcpy.o)
-                0x800057ea                memcpy
- .text.memset   0x80005932        0xe c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
-                0x80005932                memset
+                0x80006e4c       0x84 src/CustomDevices/SD_Card.o
+                0x80006e4c                sd_mmc_resources_init
+ .text.LED_Flash
+                0x80006ed0       0x80 src/main.o
+                0x80006ed0                LED_Flash
+ .text.Log_Write
+                0x80006f50       0x44 src/main.o
+                0x80006f50                Log_Write
+ .text.main     0x80006f94      0x4a4 src/main.o
+                0x80006f94                main
+ .text.memcmp   0x80007438       0x26 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+                0x80007438                memcmp
+ .text          0x8000745e      0x148 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcpy.o)
+                0x8000745e                memcpy
+ .text.memset   0x800075a6        0xe c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+                0x800075a6                memset
  *(.text.*personality*)
  *(.gnu.warning)
 
-.exception      0x80005a00      0x200
- .exception     0x80005a00      0x200 src/asf/avr32/drivers/intc/exception.o
-                0x80005a00                _evba
-                0x80005b04                _int0
-                0x80005b12                _int1
-                0x80005b20                _int2
-                0x80005b2e                _int3
+.exception      0x80007600      0x200
+ .exception     0x80007600      0x200 src/asf/avr32/drivers/intc/exception.o
+                0x80007600                _evba
+                0x80007704                _int0
+                0x80007712                _int1
+                0x80007720                _int2
+                0x8000772e                _int3
 
 .fini
  *(.fini)
-                0x80005c00                PROVIDE (__etext, .)
-                0x80005c00                PROVIDE (_etext, .)
-                0x80005c00                PROVIDE (etext, .)
+                0x80007800                PROVIDE (__etext, .)
+                0x80007800                PROVIDE (_etext, .)
+                0x80007800                PROVIDE (etext, .)
 
-.rodata         0x80005c00      0x2ec
+.rodata         0x80007800      0x754
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.gpio_enable_module_pin
-                0x80005c00       0x20 src/asf/avr32/drivers/gpio/gpio.o
+                0x80007800       0x20 src/asf/avr32/drivers/gpio/gpio.o
  .rodata._int_handler_table
-                0x80005c20      0x178 src/asf/avr32/drivers/intc/intc.o
+                0x80007820      0x178 src/asf/avr32/drivers/intc/intc.o
  .rodata.const_FSI_LeadSig
-                0x80005d98        0x4 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80005d98                const_FSI_LeadSig
+                0x80007998        0x4 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80007998                const_FSI_LeadSig
  .rodata.fs_s_tab_incorrect_char
-                0x80005d9c        0x8 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80005d9c                fs_s_tab_incorrect_char
+                0x8000799c        0x8 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x8000799c                fs_s_tab_incorrect_char
  .rodata.fs_s_execption_char
-                0x80005da4        0x8 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80005da4                fs_s_execption_char
+                0x800079a4        0x8 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x800079a4                fs_s_execption_char
  .rodata.const_FSI_StrucSig
-                0x80005dac        0x4 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80005dac                const_FSI_StrucSig
+                0x800079ac        0x4 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x800079ac                const_FSI_StrucSig
  .rodata.DBG_USART_GPIO_MAP.14756
-                0x80005db0       0x10 src/asf/avr32/utils/debug/print_funcs.o
+                0x800079b0       0x10 src/asf/avr32/utils/debug/print_funcs.o
  .rodata.lun_desc
-                0x80005dc0       0x1c src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x800079c0       0x1c src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .rodata.str1.4
-                0x80005ddc       0x17 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x800079dc       0x17 src/asf/common/services/storage/ctrl_access/ctrl_access.o
                                  0x18 (size before relaxing)
- *fill*         0x80005df3        0x1 00
- .rodata.C.60.17145
-                0x80005df4       0x10 src/CustomDevices/SD_Card.o
- .rodata.SD_MMC_SPI_GPIO_MAP.17143
-                0x80005e04       0x20 src/CustomDevices/SD_Card.o
+ *fill*         0x800079f3        0x1 00
  .rodata.str1.4
-                0x80005e24       0xc8 src/main.o
+                0x800079f4       0x2d src/CustomDevices/OV7670.o
+                                 0x30 (size before relaxing)
+ .rodata.default_settings
+                0x80007a21      0x14e src/CustomDevices/OV7670_Setup.o
+                0x80007a21                default_settings
+ *fill*         0x80007b6f        0x1 00
+ .rodata.C.60.17145
+                0x80007b70       0x10 src/CustomDevices/SD_Card.o
+ .rodata.SD_MMC_SPI_GPIO_MAP.17143
+                0x80007b80       0x20 src/CustomDevices/SD_Card.o
+ .rodata.str1.4
+                0x80007ba0      0x290 src/main.o
+                                0x294 (size before relaxing)
+ .rodata.C.57.17129
+                0x80007e30       0x10 src/main.o
+ .rodata.C.58.17130
+                0x80007e40       0x10 src/main.o
+ .rodata._ctype_
+                0x80007e50      0x104 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+                0x80007e50                _ctype_
 
 .rodata1
  *(.rodata1)
@@ -1921,10 +1866,10 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.gcc_except_table)
  *(.gcc_except_table.*)
 
-.dalign         0x80005eec        0x4
-                0x80005ef0                . = ALIGN (0x8)
- *fill*         0x80005eec        0x4 00
-                0x80005ef0                PROVIDE (_data_lma, .)
+.dalign         0x80007f54        0x4
+                0x80007f58                . = ALIGN (0x8)
+ *fill*         0x80007f54        0x4 00
+                0x80007f58                PROVIDE (_data_lma, .)
                 0x00000004                PROVIDE (_data, ORIGIN (CPUSRAM))
                 0x00000004                . = ORIGIN (CPUSRAM)
 
@@ -1983,7 +1928,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.got.plt)
  *(.got)
 
-.data           0x00000004        0x8 load address 0x80005ef0
+.data           0x00000004        0xc load address 0x80007f58
  *(.data .data.* .gnu.linkonce.d.*)
  .data.sd_mmc_spi_presence_status
                 0x00000004        0x1 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -1992,20 +1937,22 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .data.flashc_wait_until_ready
                 0x00000008        0x4 src/asf/avr32/drivers/flashc/flashc.o
                 0x00000008                flashc_wait_until_ready
+ .data.__ctype_ptr
+                0x0000000c        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+                0x0000000c                __ctype_ptr
  *(.gnu.linkonce.d.*personality*)
 
 .data1
  *(.data1)
 
-.balign         0x0000000c        0x4 load address 0x80005ef8
+.balign         0x00000010        0x0 load address 0x80007f64
                 0x00000010                . = ALIGN (0x8)
- *fill*         0x0000000c        0x4 00
                 0x00000010                _edata = .
                 0x00000010                _edata = .
                 0x00000010                PROVIDE (edata, .)
                 0x00000010                __bss_start = .
 
-.bss            0x00000010      0x728 load address 0x80005ef8
+.bss            0x00000010      0x7a0 load address 0x80007f64
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
  .bss.gl_ptr_mem
@@ -2114,49 +2061,74 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                 0x000001f0        0x4 src/asf/avr32/drivers/intc/intc.o
  .bss._int_line_handler_table_46
                 0x000001f4        0x4 src/asf/avr32/drivers/intc/intc.o
+ .bss.twim_inst
+                0x000001f8        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_rx_data
+                0x000001fc        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_rx_nb_bytes
+                0x00000200        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.transfer_status
+                0x00000204        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_tx_data
+                0x00000208        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_it_mask
+                0x0000020c        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_next
+                0x00000210        0x1 src/asf/avr32/drivers/twim/twim.o
+ *fill*         0x00000211        0x3 00
+ .bss.twim_package
+                0x00000214        0x4 src/asf/avr32/drivers/twim/twim.o
+ .bss.twim_tx_nb_bytes
+                0x00000218        0x4 src/asf/avr32/drivers/twim/twim.o
  *(COMMON)
- COMMON         0x000001f8      0x229 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
-                0x000001f8                data_mem
-                0x000003fc                capacity
-                0x00000404                capacity_mult
-                0x00000406                erase_group_size
-                0x00000408                sd_mmc_spi_last_block_address
-                0x0000040c                r2
-                0x0000040e                card_type
-                0x00000410                csd
-                0x00000420                r1
- *fill*         0x00000421        0x3 00
- COMMON         0x00000424      0x2f4 src/asf/avr32/services/fs/fat/fat.o
-                0x00000424                fs_gu32_addrsector
-                0x00000428                fs_g_nav_entry
-                0x00000438                fs_g_u16_pos_fat
-                0x0000043a                g_b_no_check_disk
-                0x0000043c                fs_g_cache_clusterlist
-                0x00000464                fs_g_u32_last_mod_fat
-                0x00000468                fs_g_sector
-                0x00000668                fs_g_nav
-                0x0000069c                fs_g_u32_first_mod_fat
-                0x000006a0                fs_g_navext_entry
-                0x000006b0                fs_g_navext_fast
-                0x000006b4                fs_g_nav_fast
-                0x000006b8                fs_g_status
-                0x000006b9                g_b_string_length
-                0x000006ba                fs_g_u8_current_cache
-                0x000006bc                fs_g_navext
-                0x000006f0                fs_g_sectorcache
-                0x00000704                g_b_unicode
-                0x00000708                fs_g_cluster
-                0x00000710                fs_g_seg
- COMMON         0x00000718       0x19 src/asf/avr32/services/fs/fat/navigation.o
-                0x00000718                g_segment_dest
-                0x00000724                g_segment_src
-                0x00000730                fs_g_u8_nav_selected
-                0x00000738                . = ALIGN (0x8)
- *fill*         0x00000731        0x7 00
-                0x00000738                . = ALIGN (0x8)
-                0x00000738                _end = .
-                0x00000738                PROVIDE (end, .)
-                0x00000738                __heap_start__ = ALIGN (0x8)
+ COMMON         0x0000021c      0x229 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
+                0x0000021c                data_mem
+                0x00000420                capacity
+                0x00000428                capacity_mult
+                0x0000042a                erase_group_size
+                0x0000042c                sd_mmc_spi_last_block_address
+                0x00000430                r2
+                0x00000432                card_type
+                0x00000434                csd
+                0x00000444                r1
+ *fill*         0x00000445        0x3 00
+ COMMON         0x00000448      0x2f4 src/asf/avr32/services/fs/fat/fat.o
+                0x00000448                fs_gu32_addrsector
+                0x0000044c                fs_g_nav_entry
+                0x0000045c                fs_g_u16_pos_fat
+                0x0000045e                g_b_no_check_disk
+                0x00000460                fs_g_cache_clusterlist
+                0x00000488                fs_g_u32_last_mod_fat
+                0x0000048c                fs_g_sector
+                0x0000068c                fs_g_nav
+                0x000006c0                fs_g_u32_first_mod_fat
+                0x000006c4                fs_g_navext_entry
+                0x000006d4                fs_g_navext_fast
+                0x000006d8                fs_g_nav_fast
+                0x000006dc                fs_g_status
+                0x000006dd                g_b_string_length
+                0x000006de                fs_g_u8_current_cache
+                0x000006e0                fs_g_navext
+                0x00000714                fs_g_sectorcache
+                0x00000728                g_b_unicode
+                0x0000072c                fs_g_cluster
+                0x00000734                fs_g_seg
+ COMMON         0x0000073c       0x19 src/asf/avr32/services/fs/fat/navigation.o
+                0x0000073c                g_segment_dest
+                0x00000748                g_segment_src
+                0x00000754                fs_g_u8_nav_selected
+ *fill*         0x00000755        0x3 00
+ COMMON         0x00000758       0x54 src/CustomDevices/MotorDriver.o
+                0x00000758                Motor_Cntrl
+                0x00000768                OV7670_Status
+                0x00000770                pwm_channel
+                0x00000790                pwm_opt
+                0x000007b0                . = ALIGN (0x8)
+ *fill*         0x000007ac        0x4 00
+                0x000007b0                . = ALIGN (0x8)
+                0x000007b0                _end = .
+                0x000007b0                PROVIDE (end, .)
+                0x000007b0                __heap_start__ = ALIGN (0x8)
                 0x0000f000                . = ((ORIGIN (CPUSRAM) + 0xfffc) - _stack_size)
                 0x0000f000                __heap_end__ = .
 
@@ -2183,6 +2155,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .comment       0x00000000       0x30 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
                                  0x31 (size before relaxing)
  .comment       0x00000000       0x31 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
+ .comment       0x00000000       0x31 src/asf/avr32/drivers/eic/eic.o
  .comment       0x00000000       0x31 src/asf/avr32/drivers/flashc/flashc.o
  .comment       0x00000000       0x31 src/asf/avr32/drivers/gpio/gpio.o
  .comment       0x00000000       0x31 src/asf/avr32/drivers/intc/intc.o
@@ -2190,15 +2163,22 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .comment       0x00000000       0x31 src/asf/avr32/drivers/pm/power_clocks_lib.o
  .comment       0x00000000       0x31 src/asf/avr32/drivers/scif/scif_uc3c.o
  .comment       0x00000000       0x31 src/asf/avr32/drivers/spi/spi.o
+ .comment       0x00000000       0x31 src/asf/avr32/drivers/twim/twim.o
  .comment       0x00000000       0x31 src/asf/avr32/drivers/usart/usart.o
  .comment       0x00000000       0x31 src/asf/avr32/services/fs/fat/fat.o
  .comment       0x00000000       0x31 src/asf/avr32/services/fs/fat/fat_unusual.o
+ .comment       0x00000000       0x31 src/asf/avr32/services/fs/fat/file.o
  .comment       0x00000000       0x31 src/asf/avr32/services/fs/fat/navigation.o
  .comment       0x00000000       0x31 src/asf/avr32/utils/debug/print_funcs.o
  .comment       0x00000000       0x31 src/asf/common/boards/user_board/init.o
  .comment       0x00000000       0x31 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .comment       0x00000000       0x31 src/CustomDevices/MotorDriver.o
+ .comment       0x00000000       0x31 src/CustomDevices/OV7670.o
+ .comment       0x00000000       0x31 src/CustomDevices/OV7670_Setup.o
+ .comment       0x00000000       0x31 src/CustomDevices/PCA9542A.o
  .comment       0x00000000       0x31 src/CustomDevices/SD_Card.o
  .comment       0x00000000       0x31 src/main.o
+ .comment       0x00000000       0x31 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
  .comment       0x00000000       0x31 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
  .comment       0x00000000       0x31 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
@@ -2214,287 +2194,381 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0xea0
+.debug_aranges  0x00000000     0x1128
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0xf0 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_aranges
                 0x000000f0       0x50 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
  .debug_aranges
-                0x00000140      0x220 src/asf/avr32/drivers/flashc/flashc.o
+                0x00000140       0x88 src/asf/avr32/drivers/eic/eic.o
  .debug_aranges
-                0x00000360      0x120 src/asf/avr32/drivers/gpio/gpio.o
+                0x000001c8      0x220 src/asf/avr32/drivers/flashc/flashc.o
  .debug_aranges
-                0x00000480       0x38 src/asf/avr32/drivers/intc/intc.o
+                0x000003e8      0x120 src/asf/avr32/drivers/gpio/gpio.o
  .debug_aranges
-                0x000004b8       0x50 src/asf/avr32/drivers/pm/pm_uc3c.o
+                0x00000508       0x38 src/asf/avr32/drivers/intc/intc.o
  .debug_aranges
-                0x00000508       0x40 src/asf/avr32/drivers/pm/power_clocks_lib.o
+                0x00000540       0x50 src/asf/avr32/drivers/pm/pm_uc3c.o
  .debug_aranges
-                0x00000548      0x168 src/asf/avr32/drivers/scif/scif_uc3c.o
+                0x00000590       0x40 src/asf/avr32/drivers/pm/power_clocks_lib.o
  .debug_aranges
-                0x000006b0       0xa8 src/asf/avr32/drivers/spi/spi.o
+                0x000005d0      0x168 src/asf/avr32/drivers/scif/scif_uc3c.o
  .debug_aranges
-                0x00000758       0xe0 src/asf/avr32/drivers/usart/usart.o
+                0x00000738       0xa8 src/asf/avr32/drivers/spi/spi.o
  .debug_aranges
-                0x00000838      0x160 src/asf/avr32/services/fs/fat/fat.o
+                0x000007e0       0x70 src/asf/avr32/drivers/twim/twim.o
  .debug_aranges
-                0x00000998      0x128 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x00000850       0xe0 src/asf/avr32/drivers/usart/usart.o
  .debug_aranges
-                0x00000ac0      0x218 src/asf/avr32/services/fs/fat/navigation.o
+                0x00000930      0x160 src/asf/avr32/services/fs/fat/fat.o
  .debug_aranges
-                0x00000cd8       0x88 src/asf/avr32/utils/debug/print_funcs.o
+                0x00000a90      0x128 src/asf/avr32/services/fs/fat/fat_unusual.o
  .debug_aranges
-                0x00000d60       0x20 src/asf/common/boards/user_board/init.o
+                0x00000bb8       0x98 src/asf/avr32/services/fs/fat/file.o
  .debug_aranges
-                0x00000d80       0x80 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x00000c50      0x218 src/asf/avr32/services/fs/fat/navigation.o
  .debug_aranges
-                0x00000e00       0x38 src/CustomDevices/SD_Card.o
+                0x00000e68       0x88 src/asf/avr32/utils/debug/print_funcs.o
  .debug_aranges
-                0x00000e38       0x28 src/main.o
+                0x00000ef0       0x20 src/asf/common/boards/user_board/init.o
  .debug_aranges
-                0x00000e60       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+                0x00000f10       0x80 src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_aranges
-                0x00000e80       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+                0x00000f90       0x50 src/CustomDevices/MotorDriver.o
+ .debug_aranges
+                0x00000fe0       0x68 src/CustomDevices/OV7670.o
+ .debug_aranges
+                0x00001048       0x30 src/CustomDevices/PCA9542A.o
+ .debug_aranges
+                0x00001078       0x38 src/CustomDevices/SD_Card.o
+ .debug_aranges
+                0x000010b0       0x38 src/main.o
+ .debug_aranges
+                0x000010e8       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_aranges
+                0x00001108       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
 .debug_pubnames
-                0x00000000     0x2cf2
+                0x00000000     0x3352
  *(.debug_pubnames)
  .debug_pubnames
                 0x00000000      0x3b1 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_pubnames
                 0x000003b1       0xe8 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
  .debug_pubnames
-                0x00000499      0x79d src/asf/avr32/drivers/flashc/flashc.o
+                0x00000499      0x186 src/asf/avr32/drivers/eic/eic.o
  .debug_pubnames
-                0x00000c36      0x3aa src/asf/avr32/drivers/gpio/gpio.o
+                0x0000061f      0x79d src/asf/avr32/drivers/flashc/flashc.o
  .debug_pubnames
-                0x00000fe0       0x62 src/asf/avr32/drivers/intc/intc.o
+                0x00000dbc      0x3aa src/asf/avr32/drivers/gpio/gpio.o
  .debug_pubnames
-                0x00001042       0xc3 src/asf/avr32/drivers/pm/pm_uc3c.o
+                0x00001166       0x62 src/asf/avr32/drivers/intc/intc.o
  .debug_pubnames
-                0x00001105       0x82 src/asf/avr32/drivers/pm/power_clocks_lib.o
+                0x000011c8       0xc3 src/asf/avr32/drivers/pm/pm_uc3c.o
  .debug_pubnames
-                0x00001187      0x3f6 src/asf/avr32/drivers/scif/scif_uc3c.o
+                0x0000128b       0x82 src/asf/avr32/drivers/pm/power_clocks_lib.o
  .debug_pubnames
-                0x0000157d      0x178 src/asf/avr32/drivers/spi/spi.o
+                0x0000130d      0x3f6 src/asf/avr32/drivers/scif/scif_uc3c.o
  .debug_pubnames
-                0x000016f5      0x227 src/asf/avr32/drivers/usart/usart.o
+                0x00001703      0x178 src/asf/avr32/drivers/spi/spi.o
  .debug_pubnames
-                0x0000191c      0x5a8 src/asf/avr32/services/fs/fat/fat.o
+                0x0000187b       0xd6 src/asf/avr32/drivers/twim/twim.o
  .debug_pubnames
-                0x00001ec4      0x480 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x00001951      0x227 src/asf/avr32/drivers/usart/usart.o
  .debug_pubnames
-                0x00002344      0x5d8 src/asf/avr32/services/fs/fat/navigation.o
+                0x00001b78      0x5a8 src/asf/avr32/services/fs/fat/fat.o
  .debug_pubnames
-                0x0000291c      0x10f src/asf/avr32/utils/debug/print_funcs.o
+                0x00002120      0x480 src/asf/avr32/services/fs/fat/fat_unusual.o
  .debug_pubnames
-                0x00002a2b       0x21 src/asf/common/boards/user_board/init.o
+                0x000025a0       0xf8 src/asf/avr32/services/fs/fat/file.o
  .debug_pubnames
-                0x00002a4c       0xfc src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x00002698      0x5d8 src/asf/avr32/services/fs/fat/navigation.o
  .debug_pubnames
-                0x00002b48       0xf4 src/CustomDevices/SD_Card.o
+                0x00002c70      0x10f src/asf/avr32/utils/debug/print_funcs.o
  .debug_pubnames
-                0x00002c3c       0x7c src/main.o
+                0x00002d7f       0x21 src/asf/common/boards/user_board/init.o
  .debug_pubnames
-                0x00002cb8       0x1d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+                0x00002da0       0xfc src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_pubnames
-                0x00002cd5       0x1d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+                0x00002e9c       0xd1 src/CustomDevices/MotorDriver.o
+ .debug_pubnames
+                0x00002f6d       0xdd src/CustomDevices/OV7670.o
+ .debug_pubnames
+                0x0000304a       0x65 src/CustomDevices/OV7670_Setup.o
+ .debug_pubnames
+                0x000030af       0xa9 src/CustomDevices/PCA9542A.o
+ .debug_pubnames
+                0x00003158       0xf4 src/CustomDevices/SD_Card.o
+ .debug_pubnames
+                0x0000324c       0x9e src/main.o
+ .debug_pubnames
+                0x000032ea       0x2e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+ .debug_pubnames
+                0x00003318       0x1d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_pubnames
+                0x00003335       0x1d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
-.debug_info     0x00000000    0x152d6
+.debug_info     0x00000000    0x1e22b
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x154b src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_info    0x0000154b      0x224 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
- .debug_info    0x0000176f     0x1cfb src/asf/avr32/drivers/flashc/flashc.o
- .debug_info    0x0000346a      0xf50 src/asf/avr32/drivers/gpio/gpio.o
- .debug_info    0x000043ba      0x836 src/asf/avr32/drivers/intc/intc.o
- .debug_info    0x00004bf0     0x1028 src/asf/avr32/drivers/pm/pm_uc3c.o
- .debug_info    0x00005c18      0x58f src/asf/avr32/drivers/pm/power_clocks_lib.o
- .debug_info    0x000061a7     0x1caa src/asf/avr32/drivers/scif/scif_uc3c.o
- .debug_info    0x00007e51     0x1309 src/asf/avr32/drivers/spi/spi.o
- .debug_info    0x0000915a     0x3166 src/asf/avr32/drivers/usart/usart.o
- .debug_info    0x0000c2c0      0xe72 src/asf/avr32/services/fs/fat/fat.o
- .debug_info    0x0000d132     0x1148 src/asf/avr32/services/fs/fat/fat_unusual.o
- .debug_info    0x0000e27a     0x1181 src/asf/avr32/services/fs/fat/navigation.o
- .debug_info    0x0000f3fb     0x2a1b src/asf/avr32/utils/debug/print_funcs.o
- .debug_info    0x00011e16       0xa6 src/asf/common/boards/user_board/init.o
- .debug_info    0x00011ebc      0x569 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_info    0x00012425     0x1944 src/CustomDevices/SD_Card.o
- .debug_info    0x00013d69     0x13bb src/main.o
- .debug_info    0x00015124       0xe5 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_info    0x00015209       0xcd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_info    0x0000176f     0x1964 src/asf/avr32/drivers/eic/eic.o
+ .debug_info    0x000030d3     0x1cfb src/asf/avr32/drivers/flashc/flashc.o
+ .debug_info    0x00004dce      0xf50 src/asf/avr32/drivers/gpio/gpio.o
+ .debug_info    0x00005d1e      0x836 src/asf/avr32/drivers/intc/intc.o
+ .debug_info    0x00006554     0x1028 src/asf/avr32/drivers/pm/pm_uc3c.o
+ .debug_info    0x0000757c      0x58f src/asf/avr32/drivers/pm/power_clocks_lib.o
+ .debug_info    0x00007b0b     0x1caa src/asf/avr32/drivers/scif/scif_uc3c.o
+ .debug_info    0x000097b5     0x1309 src/asf/avr32/drivers/spi/spi.o
+ .debug_info    0x0000aabe     0x120f src/asf/avr32/drivers/twim/twim.o
+ .debug_info    0x0000bccd     0x3166 src/asf/avr32/drivers/usart/usart.o
+ .debug_info    0x0000ee33      0xe72 src/asf/avr32/services/fs/fat/fat.o
+ .debug_info    0x0000fca5     0x1148 src/asf/avr32/services/fs/fat/fat_unusual.o
+ .debug_info    0x00010ded      0x6cc src/asf/avr32/services/fs/fat/file.o
+ .debug_info    0x000114b9     0x1181 src/asf/avr32/services/fs/fat/navigation.o
+ .debug_info    0x0001263a     0x2a1b src/asf/avr32/utils/debug/print_funcs.o
+ .debug_info    0x00015055       0xa6 src/asf/common/boards/user_board/init.o
+ .debug_info    0x000150fb      0x569 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_info    0x00015664     0x1382 src/CustomDevices/MotorDriver.o
+ .debug_info    0x000169e6     0x2ef4 src/CustomDevices/OV7670.o
+ .debug_info    0x000198da      0x5d5 src/CustomDevices/OV7670_Setup.o
+ .debug_info    0x00019eaf     0x11a9 src/CustomDevices/PCA9542A.o
+ .debug_info    0x0001b058     0x1944 src/CustomDevices/SD_Card.o
+ .debug_info    0x0001c99c     0x166c src/main.o
+ .debug_info    0x0001e008       0x71 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+ .debug_info    0x0001e079       0xe5 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_info    0x0001e15e       0xcd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
-.debug_abbrev   0x00000000     0x274f
+.debug_abbrev   0x00000000     0x36ed
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x2a4 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_abbrev  0x000002a4      0x145 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
- .debug_abbrev  0x000003e9      0x326 src/asf/avr32/drivers/flashc/flashc.o
- .debug_abbrev  0x0000070f      0x2f4 src/asf/avr32/drivers/gpio/gpio.o
- .debug_abbrev  0x00000a03      0x1f2 src/asf/avr32/drivers/intc/intc.o
- .debug_abbrev  0x00000bf5      0x1f0 src/asf/avr32/drivers/pm/pm_uc3c.o
- .debug_abbrev  0x00000de5      0x191 src/asf/avr32/drivers/pm/power_clocks_lib.o
- .debug_abbrev  0x00000f76      0x30c src/asf/avr32/drivers/scif/scif_uc3c.o
- .debug_abbrev  0x00001282      0x281 src/asf/avr32/drivers/spi/spi.o
- .debug_abbrev  0x00001503      0x32b src/asf/avr32/drivers/usart/usart.o
- .debug_abbrev  0x0000182e      0x270 src/asf/avr32/services/fs/fat/fat.o
- .debug_abbrev  0x00001a9e      0x20a src/asf/avr32/services/fs/fat/fat_unusual.o
- .debug_abbrev  0x00001ca8      0x22f src/asf/avr32/services/fs/fat/navigation.o
- .debug_abbrev  0x00001ed7      0x1a8 src/asf/avr32/utils/debug/print_funcs.o
- .debug_abbrev  0x0000207f       0x4c src/asf/common/boards/user_board/init.o
- .debug_abbrev  0x000020cb      0x176 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_abbrev  0x00002241      0x1b7 src/CustomDevices/SD_Card.o
- .debug_abbrev  0x000023f8      0x240 src/main.o
- .debug_abbrev  0x00002638       0x92 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_abbrev  0x000026ca       0x85 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_abbrev  0x000003e9      0x218 src/asf/avr32/drivers/eic/eic.o
+ .debug_abbrev  0x00000601      0x326 src/asf/avr32/drivers/flashc/flashc.o
+ .debug_abbrev  0x00000927      0x2f4 src/asf/avr32/drivers/gpio/gpio.o
+ .debug_abbrev  0x00000c1b      0x1f2 src/asf/avr32/drivers/intc/intc.o
+ .debug_abbrev  0x00000e0d      0x1f0 src/asf/avr32/drivers/pm/pm_uc3c.o
+ .debug_abbrev  0x00000ffd      0x191 src/asf/avr32/drivers/pm/power_clocks_lib.o
+ .debug_abbrev  0x0000118e      0x30c src/asf/avr32/drivers/scif/scif_uc3c.o
+ .debug_abbrev  0x0000149a      0x281 src/asf/avr32/drivers/spi/spi.o
+ .debug_abbrev  0x0000171b      0x282 src/asf/avr32/drivers/twim/twim.o
+ .debug_abbrev  0x0000199d      0x32b src/asf/avr32/drivers/usart/usart.o
+ .debug_abbrev  0x00001cc8      0x270 src/asf/avr32/services/fs/fat/fat.o
+ .debug_abbrev  0x00001f38      0x20a src/asf/avr32/services/fs/fat/fat_unusual.o
+ .debug_abbrev  0x00002142      0x207 src/asf/avr32/services/fs/fat/file.o
+ .debug_abbrev  0x00002349      0x22f src/asf/avr32/services/fs/fat/navigation.o
+ .debug_abbrev  0x00002578      0x1a8 src/asf/avr32/utils/debug/print_funcs.o
+ .debug_abbrev  0x00002720       0x4c src/asf/common/boards/user_board/init.o
+ .debug_abbrev  0x0000276c      0x176 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_abbrev  0x000028e2      0x253 src/CustomDevices/MotorDriver.o
+ .debug_abbrev  0x00002b35      0x332 src/CustomDevices/OV7670.o
+ .debug_abbrev  0x00002e67       0xfe src/CustomDevices/OV7670_Setup.o
+ .debug_abbrev  0x00002f65      0x18f src/CustomDevices/PCA9542A.o
+ .debug_abbrev  0x000030f4      0x1b7 src/CustomDevices/SD_Card.o
+ .debug_abbrev  0x000032ab      0x2d2 src/main.o
+ .debug_abbrev  0x0000357d       0x59 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+ .debug_abbrev  0x000035d6       0x92 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_abbrev  0x00003668       0x85 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
-.debug_line     0x00000000     0xcb5c
+.debug_line     0x00000000    0x12137
  *(.debug_line)
  .debug_line    0x00000000      0xbfe src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_line    0x00000bfe      0x929 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
- .debug_line    0x00001527      0xd01 src/asf/avr32/drivers/flashc/flashc.o
- .debug_line    0x00002228      0xa44 src/asf/avr32/drivers/gpio/gpio.o
- .debug_line    0x00002c6c      0x79b src/asf/avr32/drivers/intc/intc.o
- .debug_line    0x00003407      0x806 src/asf/avr32/drivers/pm/pm_uc3c.o
- .debug_line    0x00003c0d      0x87c src/asf/avr32/drivers/pm/power_clocks_lib.o
- .debug_line    0x00004489      0xaea src/asf/avr32/drivers/scif/scif_uc3c.o
- .debug_line    0x00004f73      0x8db src/asf/avr32/drivers/spi/spi.o
- .debug_line    0x0000584e      0xa20 src/asf/avr32/drivers/usart/usart.o
- .debug_line    0x0000626e      0xdb9 src/asf/avr32/services/fs/fat/fat.o
- .debug_line    0x00007027      0xed4 src/asf/avr32/services/fs/fat/fat_unusual.o
- .debug_line    0x00007efb      0xf4e src/asf/avr32/services/fs/fat/navigation.o
- .debug_line    0x00008e49      0x93b src/asf/avr32/utils/debug/print_funcs.o
- .debug_line    0x00009784      0xc96 src/asf/common/boards/user_board/init.o
- .debug_line    0x0000a41a      0x994 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_line    0x0000adae      0xd67 src/CustomDevices/SD_Card.o
- .debug_line    0x0000bb15      0xd49 src/main.o
- .debug_line    0x0000c85e      0x182 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_line    0x0000c9e0      0x17c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_line    0x00001527      0x8c8 src/asf/avr32/drivers/eic/eic.o
+ .debug_line    0x00001def      0xd01 src/asf/avr32/drivers/flashc/flashc.o
+ .debug_line    0x00002af0      0xa44 src/asf/avr32/drivers/gpio/gpio.o
+ .debug_line    0x00003534      0x79b src/asf/avr32/drivers/intc/intc.o
+ .debug_line    0x00003ccf      0x806 src/asf/avr32/drivers/pm/pm_uc3c.o
+ .debug_line    0x000044d5      0x87c src/asf/avr32/drivers/pm/power_clocks_lib.o
+ .debug_line    0x00004d51      0xaea src/asf/avr32/drivers/scif/scif_uc3c.o
+ .debug_line    0x0000583b      0x8db src/asf/avr32/drivers/spi/spi.o
+ .debug_line    0x00006116      0x9bd src/asf/avr32/drivers/twim/twim.o
+ .debug_line    0x00006ad3      0xa20 src/asf/avr32/drivers/usart/usart.o
+ .debug_line    0x000074f3      0xdb9 src/asf/avr32/services/fs/fat/fat.o
+ .debug_line    0x000082ac      0xed4 src/asf/avr32/services/fs/fat/fat_unusual.o
+ .debug_line    0x00009180      0xac1 src/asf/avr32/services/fs/fat/file.o
+ .debug_line    0x00009c41      0xf4e src/asf/avr32/services/fs/fat/navigation.o
+ .debug_line    0x0000ab8f      0x93b src/asf/avr32/utils/debug/print_funcs.o
+ .debug_line    0x0000b4ca      0xc96 src/asf/common/boards/user_board/init.o
+ .debug_line    0x0000c160      0x994 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_line    0x0000caf4      0xdd5 src/CustomDevices/MotorDriver.o
+ .debug_line    0x0000d8c9      0xf65 src/CustomDevices/OV7670.o
+ .debug_line    0x0000e82e      0xcec src/CustomDevices/OV7670_Setup.o
+ .debug_line    0x0000f51a      0xd20 src/CustomDevices/PCA9542A.o
+ .debug_line    0x0001023a      0xd67 src/CustomDevices/SD_Card.o
+ .debug_line    0x00010fa1      0xe20 src/main.o
+ .debug_line    0x00011dc1       0x78 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+ .debug_line    0x00011e39      0x182 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_line    0x00011fbb      0x17c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
-.debug_frame    0x00000000     0x29e4
+.debug_frame    0x00000000     0x3074
  *(.debug_frame)
  .debug_frame   0x00000000      0x364 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_frame   0x00000364       0xb4 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
- .debug_frame   0x00000418      0x6c0 src/asf/avr32/drivers/flashc/flashc.o
- .debug_frame   0x00000ad8      0x244 src/asf/avr32/drivers/gpio/gpio.o
- .debug_frame   0x00000d1c       0x64 src/asf/avr32/drivers/intc/intc.o
- .debug_frame   0x00000d80       0x90 src/asf/avr32/drivers/pm/pm_uc3c.o
- .debug_frame   0x00000e10       0xa4 src/asf/avr32/drivers/pm/power_clocks_lib.o
- .debug_frame   0x00000eb4      0x308 src/asf/avr32/drivers/scif/scif_uc3c.o
- .debug_frame   0x000011bc      0x168 src/asf/avr32/drivers/spi/spi.o
- .debug_frame   0x00001324      0x2ac src/asf/avr32/drivers/usart/usart.o
- .debug_frame   0x000015d0      0x434 src/asf/avr32/services/fs/fat/fat.o
- .debug_frame   0x00001a04      0x4fc src/asf/avr32/services/fs/fat/fat_unusual.o
- .debug_frame   0x00001f00      0x714 src/asf/avr32/services/fs/fat/navigation.o
- .debug_frame   0x00002614      0x17c src/asf/avr32/utils/debug/print_funcs.o
- .debug_frame   0x00002790       0x20 src/asf/common/boards/user_board/init.o
- .debug_frame   0x000027b0      0x128 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_frame   0x000028d8       0x80 src/CustomDevices/SD_Card.o
- .debug_frame   0x00002958       0x44 src/main.o
- .debug_frame   0x0000299c       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_frame   0x000029c4       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_frame   0x00000418      0x100 src/asf/avr32/drivers/eic/eic.o
+ .debug_frame   0x00000518      0x6c0 src/asf/avr32/drivers/flashc/flashc.o
+ .debug_frame   0x00000bd8      0x244 src/asf/avr32/drivers/gpio/gpio.o
+ .debug_frame   0x00000e1c       0x64 src/asf/avr32/drivers/intc/intc.o
+ .debug_frame   0x00000e80       0x90 src/asf/avr32/drivers/pm/pm_uc3c.o
+ .debug_frame   0x00000f10       0xa4 src/asf/avr32/drivers/pm/power_clocks_lib.o
+ .debug_frame   0x00000fb4      0x308 src/asf/avr32/drivers/scif/scif_uc3c.o
+ .debug_frame   0x000012bc      0x168 src/asf/avr32/drivers/spi/spi.o
+ .debug_frame   0x00001424      0x148 src/asf/avr32/drivers/twim/twim.o
+ .debug_frame   0x0000156c      0x2ac src/asf/avr32/drivers/usart/usart.o
+ .debug_frame   0x00001818      0x434 src/asf/avr32/services/fs/fat/fat.o
+ .debug_frame   0x00001c4c      0x4fc src/asf/avr32/services/fs/fat/fat_unusual.o
+ .debug_frame   0x00002148      0x1d8 src/asf/avr32/services/fs/fat/file.o
+ .debug_frame   0x00002320      0x714 src/asf/avr32/services/fs/fat/navigation.o
+ .debug_frame   0x00002a34      0x17c src/asf/avr32/utils/debug/print_funcs.o
+ .debug_frame   0x00002bb0       0x20 src/asf/common/boards/user_board/init.o
+ .debug_frame   0x00002bd0      0x128 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_frame   0x00002cf8       0xc0 src/CustomDevices/MotorDriver.o
+ .debug_frame   0x00002db8       0xfc src/CustomDevices/OV7670.o
+ .debug_frame   0x00002eb4       0x64 src/CustomDevices/PCA9542A.o
+ .debug_frame   0x00002f18       0x80 src/CustomDevices/SD_Card.o
+ .debug_frame   0x00002f98       0x94 src/main.o
+ .debug_frame   0x0000302c       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_frame   0x00003054       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x5fae
+.debug_str      0x00000000     0x6cee
  *(.debug_str)
  .debug_str     0x00000000      0x81e src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
                                 0x8c9 (size before relaxing)
  .debug_str     0x0000081e      0x150 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
                                 0x285 (size before relaxing)
- .debug_str     0x0000096e      0xac2 src/asf/avr32/drivers/flashc/flashc.o
+ .debug_str     0x0000096e      0x35d src/asf/avr32/drivers/eic/eic.o
+                                0x4a0 (size before relaxing)
+ .debug_str     0x00000ccb      0xabd src/asf/avr32/drivers/flashc/flashc.o
                                 0xc8e (size before relaxing)
- .debug_str     0x00001430      0x59a src/asf/avr32/drivers/gpio/gpio.o
+ .debug_str     0x00001788      0x59a src/asf/avr32/drivers/gpio/gpio.o
                                 0x6d5 (size before relaxing)
- .debug_str     0x000019ca      0x656 src/asf/avr32/drivers/intc/intc.o
+ .debug_str     0x00001d22      0x656 src/asf/avr32/drivers/intc/intc.o
                                 0x755 (size before relaxing)
- .debug_str     0x00002020      0x627 src/asf/avr32/drivers/pm/pm_uc3c.o
+ .debug_str     0x00002378      0x61c src/asf/avr32/drivers/pm/pm_uc3c.o
                                 0x794 (size before relaxing)
- .debug_str     0x00002647      0x376 src/asf/avr32/drivers/pm/power_clocks_lib.o
+ .debug_str     0x00002994      0x376 src/asf/avr32/drivers/pm/power_clocks_lib.o
                                 0x630 (size before relaxing)
- .debug_str     0x000029bd      0x8db src/asf/avr32/drivers/scif/scif_uc3c.o
+ .debug_str     0x00002d0a      0x8db src/asf/avr32/drivers/scif/scif_uc3c.o
                                 0xc42 (size before relaxing)
- .debug_str     0x00003298      0x19a src/asf/avr32/drivers/spi/spi.o
+ .debug_str     0x000035e5      0x19a src/asf/avr32/drivers/spi/spi.o
                                 0x653 (size before relaxing)
- .debug_str     0x00003432      0x8ff src/asf/avr32/drivers/usart/usart.o
+ .debug_str     0x0000377f      0x4f6 src/asf/avr32/drivers/twim/twim.o
+                                0x6d9 (size before relaxing)
+ .debug_str     0x00003c75      0x8f3 src/asf/avr32/drivers/usart/usart.o
                                 0xae1 (size before relaxing)
- .debug_str     0x00003d31      0x903 src/asf/avr32/services/fs/fat/fat.o
+ .debug_str     0x00004568      0x903 src/asf/avr32/services/fs/fat/fat.o
                                 0xab4 (size before relaxing)
- .debug_str     0x00004634      0x6a2 src/asf/avr32/services/fs/fat/fat_unusual.o
+ .debug_str     0x00004e6b      0x6a2 src/asf/avr32/services/fs/fat/fat_unusual.o
                                 0xae0 (size before relaxing)
- .debug_str     0x00004cd6      0x79b src/asf/avr32/services/fs/fat/navigation.o
+ .debug_str     0x0000550d      0x1c8 src/asf/avr32/services/fs/fat/file.o
+                                0x520 (size before relaxing)
+ .debug_str     0x000056d5      0x78b src/asf/avr32/services/fs/fat/navigation.o
                                 0xbbf (size before relaxing)
- .debug_str     0x00005471      0x120 src/asf/avr32/utils/debug/print_funcs.o
+ .debug_str     0x00005e60      0x120 src/asf/avr32/utils/debug/print_funcs.o
                                 0x820 (size before relaxing)
- .debug_str     0x00005591       0x36 src/asf/common/boards/user_board/init.o
+ .debug_str     0x00005f80       0x36 src/asf/common/boards/user_board/init.o
                                 0x118 (size before relaxing)
- .debug_str     0x000055c7      0x12e src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_str     0x00005fb6      0x12e src/asf/common/services/storage/ctrl_access/ctrl_access.o
                                 0x2db (size before relaxing)
- .debug_str     0x000056f5      0x450 src/CustomDevices/SD_Card.o
+ .debug_str     0x000060e4      0x62b src/CustomDevices/MotorDriver.o
+                                0x8bd (size before relaxing)
+ .debug_str     0x0000670f      0x1d0 src/CustomDevices/OV7670.o
+                                0xa15 (size before relaxing)
+ .debug_str     0x000068df       0x24 src/CustomDevices/OV7670_Setup.o
+                                0x381 (size before relaxing)
+ .debug_str     0x00006903       0x60 src/CustomDevices/PCA9542A.o
+                                0x68c (size before relaxing)
+ .debug_str     0x00006963      0x1e8 src/CustomDevices/SD_Card.o
                                 0x874 (size before relaxing)
- .debug_str     0x00005b45      0x3ab src/main.o
-                                0x7bd (size before relaxing)
- .debug_str     0x00005ef0       0x5f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_str     0x00006b4b       0x86 src/main.o
+                                0x846 (size before relaxing)
+ .debug_str     0x00006bd1       0x5f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+                                 0x7c (size before relaxing)
+ .debug_str     0x00006c30       0x5f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
                                  0xfb (size before relaxing)
- .debug_str     0x00005f4f       0x5f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_str     0x00006c8f       0x5f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
                                  0xfb (size before relaxing)
 
-.debug_loc      0x00000000     0x7188
+.debug_loc      0x00000000     0x83ca
  *(.debug_loc)
  .debug_loc     0x00000000      0x911 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_loc     0x00000911      0x131 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
- .debug_loc     0x00000a42     0x1137 src/asf/avr32/drivers/flashc/flashc.o
- .debug_loc     0x00001b79      0x3b4 src/asf/avr32/drivers/gpio/gpio.o
- .debug_loc     0x00001f2d       0xd3 src/asf/avr32/drivers/intc/intc.o
- .debug_loc     0x00002000      0x17f src/asf/avr32/drivers/pm/pm_uc3c.o
- .debug_loc     0x0000217f      0x31f src/asf/avr32/drivers/pm/power_clocks_lib.o
- .debug_loc     0x0000249e      0x4b4 src/asf/avr32/drivers/scif/scif_uc3c.o
- .debug_loc     0x00002952      0x3dc src/asf/avr32/drivers/spi/spi.o
- .debug_loc     0x00002d2e      0x9c5 src/asf/avr32/drivers/usart/usart.o
- .debug_loc     0x000036f3      0xbe2 src/asf/avr32/services/fs/fat/fat.o
- .debug_loc     0x000042d5     0x138b src/asf/avr32/services/fs/fat/fat_unusual.o
- .debug_loc     0x00005660     0x1210 src/asf/avr32/services/fs/fat/navigation.o
- .debug_loc     0x00006870      0x3bc src/asf/avr32/utils/debug/print_funcs.o
- .debug_loc     0x00006c2c      0x395 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_loc     0x00006fc1       0xe4 src/CustomDevices/SD_Card.o
- .debug_loc     0x000070a5       0xa6 src/main.o
- .debug_loc     0x0000714b       0x3d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_loc     0x00000a42       0x7e src/asf/avr32/drivers/eic/eic.o
+ .debug_loc     0x00000ac0     0x1137 src/asf/avr32/drivers/flashc/flashc.o
+ .debug_loc     0x00001bf7      0x3b4 src/asf/avr32/drivers/gpio/gpio.o
+ .debug_loc     0x00001fab       0xd3 src/asf/avr32/drivers/intc/intc.o
+ .debug_loc     0x0000207e      0x17f src/asf/avr32/drivers/pm/pm_uc3c.o
+ .debug_loc     0x000021fd      0x31f src/asf/avr32/drivers/pm/power_clocks_lib.o
+ .debug_loc     0x0000251c      0x4b4 src/asf/avr32/drivers/scif/scif_uc3c.o
+ .debug_loc     0x000029d0      0x3dc src/asf/avr32/drivers/spi/spi.o
+ .debug_loc     0x00002dac      0x496 src/asf/avr32/drivers/twim/twim.o
+ .debug_loc     0x00003242      0x9c5 src/asf/avr32/drivers/usart/usart.o
+ .debug_loc     0x00003c07      0xbe2 src/asf/avr32/services/fs/fat/fat.o
+ .debug_loc     0x000047e9     0x138b src/asf/avr32/services/fs/fat/fat_unusual.o
+ .debug_loc     0x00005b74      0x595 src/asf/avr32/services/fs/fat/file.o
+ .debug_loc     0x00006109     0x1210 src/asf/avr32/services/fs/fat/navigation.o
+ .debug_loc     0x00007319      0x3bc src/asf/avr32/utils/debug/print_funcs.o
+ .debug_loc     0x000076d5      0x395 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_loc     0x00007a6a      0x184 src/CustomDevices/MotorDriver.o
+ .debug_loc     0x00007bee      0x370 src/CustomDevices/OV7670.o
+ .debug_loc     0x00007f5e       0xc5 src/CustomDevices/PCA9542A.o
+ .debug_loc     0x00008023       0xe4 src/CustomDevices/SD_Card.o
+ .debug_loc     0x00008107      0x286 src/main.o
+ .debug_loc     0x0000838d       0x3d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
 
-.debug_macinfo  0x00000000  0x1753891
+.debug_macinfo  0x00000000  0x207e6e6
  *(.debug_macinfo)
  .debug_macinfo
                 0x00000000   0x14ba17 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_macinfo
                 0x0014ba17   0x14b8b7 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
  .debug_macinfo
-                0x002972ce   0x148f77 src/asf/avr32/drivers/flashc/flashc.o
+                0x002972ce   0x148faf src/asf/avr32/drivers/eic/eic.o
  .debug_macinfo
-                0x003e0245   0x148f25 src/asf/avr32/drivers/gpio/gpio.o
+                0x003e027d   0x148f77 src/asf/avr32/drivers/flashc/flashc.o
  .debug_macinfo
-                0x0052916a   0x148fd2 src/asf/avr32/drivers/intc/intc.o
+                0x005291f4   0x148f25 src/asf/avr32/drivers/gpio/gpio.o
  .debug_macinfo
-                0x0067213c   0x148e17 src/asf/avr32/drivers/pm/pm_uc3c.o
+                0x00672119   0x148fd2 src/asf/avr32/drivers/intc/intc.o
  .debug_macinfo
-                0x007baf53   0x1491af src/asf/avr32/drivers/pm/power_clocks_lib.o
+                0x007bb0eb   0x148e17 src/asf/avr32/drivers/pm/pm_uc3c.o
  .debug_macinfo
-                0x00904102   0x148e1d src/asf/avr32/drivers/scif/scif_uc3c.o
+                0x00903f02   0x1491af src/asf/avr32/drivers/pm/power_clocks_lib.o
  .debug_macinfo
-                0x00a4cf1f   0x148d73 src/asf/avr32/drivers/spi/spi.o
+                0x00a4d0b1   0x148e1d src/asf/avr32/drivers/scif/scif_uc3c.o
  .debug_macinfo
-                0x00b95c92   0x149136 src/asf/avr32/drivers/usart/usart.o
+                0x00b95ece   0x148d73 src/asf/avr32/drivers/spi/spi.o
  .debug_macinfo
-                0x00cdedc8   0x14cc6b src/asf/avr32/services/fs/fat/fat.o
+                0x00cdec41   0x14a48d src/asf/avr32/drivers/twim/twim.o
  .debug_macinfo
-                0x00e2ba33   0x14cc6c src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x00e290ce   0x149136 src/asf/avr32/drivers/usart/usart.o
  .debug_macinfo
-                0x00f7869f   0x14cf8a src/asf/avr32/services/fs/fat/navigation.o
+                0x00f72204   0x14cc6b src/asf/avr32/services/fs/fat/fat.o
  .debug_macinfo
-                0x010c5629   0x14ab0b src/asf/avr32/utils/debug/print_funcs.o
+                0x010bee6f   0x14cc6c src/asf/avr32/services/fs/fat/fat_unusual.o
  .debug_macinfo
-                0x01210134   0x151326 src/asf/common/boards/user_board/init.o
+                0x0120badb   0x14cd0d src/asf/avr32/services/fs/fat/file.o
  .debug_macinfo
-                0x0136145a   0x14cc7d src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x013587e8   0x14cf8a src/asf/avr32/services/fs/fat/navigation.o
  .debug_macinfo
-                0x014ae0d7   0x152b9d src/CustomDevices/SD_Card.o
+                0x014a5772   0x14ab0b src/asf/avr32/utils/debug/print_funcs.o
  .debug_macinfo
-                0x01600c74   0x152c1d src/main.o
+                0x015f027d   0x151326 src/asf/common/boards/user_board/init.o
+ .debug_macinfo
+                0x017415a3   0x14cc7d src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_macinfo
+                0x0188e220   0x152b43 src/CustomDevices/MotorDriver.o
+ .debug_macinfo
+                0x019e0d63   0x152b43 src/CustomDevices/OV7670.o
+ .debug_macinfo
+                0x01b338a6   0x152b43 src/CustomDevices/OV7670_Setup.o
+ .debug_macinfo
+                0x01c863e9   0x152b43 src/CustomDevices/PCA9542A.o
+ .debug_macinfo
+                0x01dd8f2c   0x152b9d src/CustomDevices/SD_Card.o
+ .debug_macinfo
+                0x01f2bac9   0x152c1d src/main.o
 
 .debug_weaknames
  *(.debug_weaknames)
@@ -2531,24 +2605,30 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.note.GNU-stack)
 OUTPUT(ColumbusTest.elf elf32-avr32)
 
-.debug_ranges   0x00000000      0xe78
+.debug_ranges   0x00000000     0x1328
  .debug_ranges  0x00000000       0xe8 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_ranges  0x000000e8       0x48 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
- .debug_ranges  0x00000130      0x218 src/asf/avr32/drivers/flashc/flashc.o
- .debug_ranges  0x00000348      0x118 src/asf/avr32/drivers/gpio/gpio.o
- .debug_ranges  0x00000460       0x48 src/asf/avr32/drivers/intc/intc.o
- .debug_ranges  0x000004a8       0x60 src/asf/avr32/drivers/pm/pm_uc3c.o
- .debug_ranges  0x00000508       0x38 src/asf/avr32/drivers/pm/power_clocks_lib.o
- .debug_ranges  0x00000540      0x160 src/asf/avr32/drivers/scif/scif_uc3c.o
- .debug_ranges  0x000006a0       0xa0 src/asf/avr32/drivers/spi/spi.o
- .debug_ranges  0x00000740       0xd8 src/asf/avr32/drivers/usart/usart.o
- .debug_ranges  0x00000818      0x158 src/asf/avr32/services/fs/fat/fat.o
- .debug_ranges  0x00000970      0x120 src/asf/avr32/services/fs/fat/fat_unusual.o
- .debug_ranges  0x00000a90      0x228 src/asf/avr32/services/fs/fat/navigation.o
- .debug_ranges  0x00000cb8       0x80 src/asf/avr32/utils/debug/print_funcs.o
- .debug_ranges  0x00000d38       0x18 src/asf/common/boards/user_board/init.o
- .debug_ranges  0x00000d50       0x78 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_ranges  0x00000dc8       0x30 src/CustomDevices/SD_Card.o
- .debug_ranges  0x00000df8       0x50 src/main.o
- .debug_ranges  0x00000e48       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_ranges  0x00000e60       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_ranges  0x00000130       0x80 src/asf/avr32/drivers/eic/eic.o
+ .debug_ranges  0x000001b0      0x218 src/asf/avr32/drivers/flashc/flashc.o
+ .debug_ranges  0x000003c8      0x118 src/asf/avr32/drivers/gpio/gpio.o
+ .debug_ranges  0x000004e0       0x48 src/asf/avr32/drivers/intc/intc.o
+ .debug_ranges  0x00000528       0x60 src/asf/avr32/drivers/pm/pm_uc3c.o
+ .debug_ranges  0x00000588       0x38 src/asf/avr32/drivers/pm/power_clocks_lib.o
+ .debug_ranges  0x000005c0      0x160 src/asf/avr32/drivers/scif/scif_uc3c.o
+ .debug_ranges  0x00000720       0xa0 src/asf/avr32/drivers/spi/spi.o
+ .debug_ranges  0x000007c0       0x68 src/asf/avr32/drivers/twim/twim.o
+ .debug_ranges  0x00000828       0xd8 src/asf/avr32/drivers/usart/usart.o
+ .debug_ranges  0x00000900      0x158 src/asf/avr32/services/fs/fat/fat.o
+ .debug_ranges  0x00000a58      0x120 src/asf/avr32/services/fs/fat/fat_unusual.o
+ .debug_ranges  0x00000b78       0x90 src/asf/avr32/services/fs/fat/file.o
+ .debug_ranges  0x00000c08      0x228 src/asf/avr32/services/fs/fat/navigation.o
+ .debug_ranges  0x00000e30       0x80 src/asf/avr32/utils/debug/print_funcs.o
+ .debug_ranges  0x00000eb0       0x18 src/asf/common/boards/user_board/init.o
+ .debug_ranges  0x00000ec8       0x78 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+ .debug_ranges  0x00000f40       0x48 src/CustomDevices/MotorDriver.o
+ .debug_ranges  0x00000f88      0x240 src/CustomDevices/OV7670.o
+ .debug_ranges  0x000011c8       0x28 src/CustomDevices/PCA9542A.o
+ .debug_ranges  0x000011f0       0x30 src/CustomDevices/SD_Card.o
+ .debug_ranges  0x00001220       0xd8 src/main.o
+ .debug_ranges  0x000012f8       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_ranges  0x00001310       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
