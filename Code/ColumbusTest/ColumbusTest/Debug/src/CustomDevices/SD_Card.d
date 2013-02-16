@@ -1,7 +1,6 @@
 src/CustomDevices/SD_Card.d src/CustomDevices/SD_Card.o \
  src/CustomDevices/SD_Card.o: ../src/CustomDevices/SD_Card.c \
  ../src/CustomDevices/CustomDevices.h ../src/CustomDevices/OV7670.h \
- ../src/CustomDevices/PCA9542A.h ../src/CustomDevices/MotorDriver.h \
  ../src/asf.h ../src/asf/avr32/drivers/acifa/acifa.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/io.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/uc3c0512c.h \
@@ -105,16 +104,13 @@ src/CustomDevices/SD_Card.d src/CustomDevices/SD_Card.o \
  ../src/asf/avr32/drivers/spi/spi.h ../src/asf/avr32/drivers/twim/twim.h \
  ../src/config/conf_twim.h ../src/asf/avr32/drivers/usart/usart.h \
  ../src/asf/avr32/utils/debug/print_funcs.h \
+ ../src/CustomDevices/PCA9542A.h ../src/CustomDevices/MotorDriver.h \
  ../src/CustomDevices/SD_Card.h ../src/config/conf_sd_mmc_spi.h \
  ../src/config/conf_access.h ../src/CustomDevices/dummy.h
 
 ../src/CustomDevices/CustomDevices.h:
 
 ../src/CustomDevices/OV7670.h:
-
-../src/CustomDevices/PCA9542A.h:
-
-../src/CustomDevices/MotorDriver.h:
 
 ../src/asf.h:
 
@@ -335,6 +331,10 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/asf/avr32/drivers/usart/usart.h:
 
 ../src/asf/avr32/utils/debug/print_funcs.h:
+
+../src/CustomDevices/PCA9542A.h:
+
+../src/CustomDevices/MotorDriver.h:
 
 ../src/CustomDevices/SD_Card.h:
 

@@ -320,14 +320,21 @@ int main (void)
 		print_dbg("\n\r");
 	}
 	
-	print_dbg("\n\rInitialising Camera 1");
-	
-	if(STATUS_OK == OV7670_Init())
+	print_dbg("\n\rInitialising Cameras");
+	OV7670_Init();
+	if(STATUS_OK == OV7670_Status.Error)
 	{
 		print_dbg("\n\rCamera Initialise Okay!");
 	}
 	else
 		print_dbg("\n\rCamara Initialise Fail.");
+		
+	print_dbg("\n\rTaking Photos");
+	//TakePhoto(CAMERA_LEFT);
+	//TakePhoto(CAMERA_RIGHT);
+	TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
+	while(Photos_Ready() == false)
+		;
 	print_dbg("\n\rTest Complete!");
 	// Insert application code here, after the board has been initialized.
 	while(1)

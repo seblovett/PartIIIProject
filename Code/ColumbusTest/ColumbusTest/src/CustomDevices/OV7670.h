@@ -8,7 +8,7 @@
 
 #ifndef OV7670_H_
 #define OV7670_H_
-
+#include <asf.h>
 //////////////////////////////////////////////////////////////////////////
 //	Constants
 //////////////////////////////////////////////////////////////////////////
@@ -18,8 +18,8 @@
 #define SETTINGS_LENGTH		167
 #define OV7670_ADDR			0x21
 
-#define CAMERA_LEFT			0
-#define CAMERA_RIGHT		1
+#define CAMERA_LEFT			1
+#define CAMERA_RIGHT		2
 
 #define CAMERA_LEFT_ERR		0x10
 #define CAMERA_RIGHT_ERR	0x20
@@ -28,11 +28,30 @@
 //////////////////////////////////////////////////////////////////////////
 const char default_settings[SETTINGS_LENGTH][2];
 
+typedef struct {
+	bool Error;
+	bool Camera_0_Found;
+	bool Camera_1_Found;
+	bool Camera_0_Error;
+	bool Camera_1_Error;
+	uint8_t VSYNC0_State;
+	uint8_t VSYNC1_State;
+	} OV7670_t ;
+
+OV7670_t OV7670_Status;
+
+#define IDLE			0
+#define TAKE_PHOTO		1
+#define TAKING_PHOTO	2
+#define TAKEN_PHOTO		3
+#define CAMERAS_BUSY	4
 //////////////////////////////////////////////////////////////////////////
 //	Methods
 //////////////////////////////////////////////////////////////////////////
-int OV7670_Init(void);							//Initialises Camera
+void OV7670_Init(void);							//Initialises Camera
 void FIFO_Init();
+int TakePhoto(uint8_t Cameras);
+bool Photos_Ready(void);
 //void FIFO_Reset(uint8_t CameraID);
 //////////////////////////////////////////////////////////////////////////
 //	Pins & Macros
@@ -79,7 +98,7 @@ void FIFO_Init();
 
 #define FIFO_1_RCLK_SET		{gpio_set_gpio_pin(FIFO_1_RCLK);}
 #define FIFO_1_nRRST_SET	{gpio_set_gpio_pin(FIFO_1_nRRST);}
-#define FIFO_1_WEN_SET		{gpio_set_gpio_pin(FIFO_1_WRST);}
+#define FIFO_1_WEN_SET		{gpio_set_gpio_pin(FIFO_1_WEN);}
 #define FIFO_1_WRST_SET		{gpio_set_gpio_pin(FIFO_1_WRST);}
 #define FIFO_1_nOE_SET		{gpio_set_gpio_pin(FIFO_1_nOE);}
 
