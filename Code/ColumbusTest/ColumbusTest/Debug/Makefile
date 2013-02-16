@@ -108,6 +108,7 @@ C_SRCS +=  \
 ../src/asf/common/services/clock/uc3c/pll.c \
 ../src/asf/common/services/clock/uc3c/sysclk.c \
 ../src/asf/common/services/storage/ctrl_access/ctrl_access.c \
+../src/CustomDevices/Bitmap.c \
 ../src/CustomDevices/MotorDriver.c \
 ../src/CustomDevices/OV7670.c \
 ../src/CustomDevices/OV7670_Setup.c \
@@ -155,6 +156,7 @@ src/asf/common/services/clock/uc3c/osc.o \
 src/asf/common/services/clock/uc3c/pll.o \
 src/asf/common/services/clock/uc3c/sysclk.o \
 src/asf/common/services/storage/ctrl_access/ctrl_access.o \
+src/CustomDevices/Bitmap.o \
 src/CustomDevices/MotorDriver.o \
 src/CustomDevices/OV7670.o \
 src/CustomDevices/OV7670_Setup.o \
@@ -193,6 +195,7 @@ src/asf/common/services/clock/uc3c/osc.o \
 src/asf/common/services/clock/uc3c/pll.o \
 src/asf/common/services/clock/uc3c/sysclk.o \
 src/asf/common/services/storage/ctrl_access/ctrl_access.o \
+src/CustomDevices/Bitmap.o \
 src/CustomDevices/MotorDriver.o \
 src/CustomDevices/OV7670.o \
 src/CustomDevices/OV7670_Setup.o \
@@ -228,6 +231,7 @@ src/asf/common/services/clock/uc3c/osc.d \
 src/asf/common/services/clock/uc3c/pll.d \
 src/asf/common/services/clock/uc3c/sysclk.d \
 src/asf/common/services/storage/ctrl_access/ctrl_access.d \
+src/CustomDevices/Bitmap.d \
 src/CustomDevices/MotorDriver.d \
 src/CustomDevices/OV7670.d \
 src/CustomDevices/OV7670_Setup.d \
@@ -263,6 +267,7 @@ src/asf/common/services/clock/uc3c/osc.d \
 src/asf/common/services/clock/uc3c/pll.d \
 src/asf/common/services/clock/uc3c/sysclk.d \
 src/asf/common/services/storage/ctrl_access/ctrl_access.d \
+src/CustomDevices/Bitmap.d \
 src/CustomDevices/MotorDriver.d \
 src/CustomDevices/OV7670.d \
 src/CustomDevices/OV7670_Setup.d \
@@ -280,6 +285,8 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
 
 
 

@@ -343,6 +343,8 @@ int main (void)
 	TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
 	while(Photos_Ready() == false)
 		;
+		
+	Store_Images();
 	print_dbg("\n\rTest Complete!");
 	// Insert application code here, after the board has been initialized.
 	while(1)

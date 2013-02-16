@@ -632,6 +632,9 @@
     <None Include="src\config\conf_twim.h">
       <SubType>compile</SubType>
     </None>
+    <Compile Include="src\CustomDevices\Bitmap.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\CustomDevices\CustomDevices.h">
       <SubType>compile</SubType>
     </Compile>

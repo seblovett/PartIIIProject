@@ -327,11 +327,26 @@ bool Photos_Ready(void)
 		return false;
 }
 
-
+#define ImageName	"Image0.bmp"
 void Store_Images()
 {
 	//make file
+	//delete file if it exits already
+	if(nav_filelist_findname((FS_STRING)ImageName, false))
+	{
+		nav_setcwd((FS_STRING)ImageName, true, false);
+		nav_file_del(false);
+		
+		nav_filelist_findname((FS_STRING)ImageName, false);
+	}
+	nav_file_create((FS_STRING)ImageName);//create file
+	file_open(FOPEN_MODE_APPEND);
+	//write bitmap headers
+	file_write_buf(BMPHeader, BMPHEADERSIZE);
+	file_write_buf(DIBHead, DIBHEADERSIZE);
 	//write bitmap header
 	//read and write image data
 	
+	
+	file_close();
 }

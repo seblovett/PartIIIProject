@@ -23,11 +23,16 @@
 
 #define CAMERA_LEFT_ERR		0x10
 #define CAMERA_RIGHT_ERR	0x20
+
+#define BMPHEADERSIZE	14
+#define DIBHEADERSIZE	124 //v5
+#define FILESIZE 153738
 //////////////////////////////////////////////////////////////////////////
 //	Globals
 //////////////////////////////////////////////////////////////////////////
 const char default_settings[SETTINGS_LENGTH][2];
-
+const uint8_t DIBHead[DIBHEADERSIZE];
+const uint8_t BMPHeader[BMPHEADERSIZE];
 typedef struct {
 	bool Error;
 	bool Camera_0_Found;
@@ -52,6 +57,7 @@ void OV7670_Init(void);							//Initialises Camera
 void FIFO_Init();
 int TakePhoto(uint8_t Cameras);
 bool Photos_Ready(void);
+void Store_Images();
 //void FIFO_Reset(uint8_t CameraID);
 //////////////////////////////////////////////////////////////////////////
 //	Pins & Macros
