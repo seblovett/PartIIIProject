@@ -27,7 +27,7 @@
 
 #define TWIM               (&AVR32_TWIM0)  //! TWIM Module Used
 
-#define TARGET_ADDRESS     0x05            //! Target's TWI address
+#define TARGET_ADDRESS     0x0            //! Target's TWI address
 #define TARGET_ADDR_LGT    3               //! Internal Address length
 #define VIRTUALMEM_ADDR    0x123456        //! Internal Address
 #define TWIM_MASTER_SPEED  50000           //! Speed of TWI
@@ -100,52 +100,20 @@ int main (void)
 		// Display an error message
 		print_dbg("Not initialized: Check if memory is ready...\r\n");
 	}
-	// Check if params are correct or mount needed.
-// 	if (nav_drive_get() >= nav_drive_nb() || first_ls)
-// 	{
-// 		first_ls = false;
-// 		// Reset navigators .
-// 		nav_reset();
-// 		// Use the last drive available as default.
-// 		nav_drive_set(nav_drive_nb() - 1);
-// 		// Mount it.
-// 		nav_partition_mount();
-// 	}
-// 	// Get the volume name
-// 	nav_dir_name((FS_STRING)str_buff, MAX_FILE_PATH_LENGTH);
-// 	// Display general informations (drive letter and current path)
-// 	print_dbg("\r\nVolume is ");
-// 	print_dbg_char('A' + nav_drive_get());
-// 	print_dbg(":\r\nDir name is ");
-// 	print_dbg(str_buff);
-// 	print(SHL_USART, CRLF);
-// 	// Try to sort items by folders
-// 	if (!nav_filelist_first(FS_DIR))
-// 	{
-// 		// Sort items by files
-// 		nav_filelist_first(FS_FILE);
-// 	}
-// 	// Display items informations
-// 	print_dbg("\tSize (Bytes)\tName\r\n");
-// 	// reset filelist before to start the listing
-// 	nav_filelist_reset();
-// 	// While an item can be found
-// 	while (nav_filelist_set(0, FS_FIND_NEXT))
-// 	{
-// 		// Get and display current item informations
-// 		print_dbg((nav_file_isdir()) ? "Dir\t" : "   \t");
-// 		print_dbg_ulong(SHL_USART, nav_file_lgt());
-// 		print_dbg(SHL_USART, "\t\t");
-// 		nav_file_name((FS_STRING)str_buff, MAX_FILE_PATH_LENGTH, FS_NAME_GET, true);
-// 		print_dbg(str_buff);
-// 		print_dbg(CRLF);
-// 	}
-// 	// Display the files number 
-// 	print_dbg_ulong(nav_filelist_nb(FS_FILE));
-// 	print_dbg("  Files\r\n");
-// 	// Display the folders number
-// 	print_dbg_ulong(nav_filelist_nb(FS_DIR));
-// 	print_dbg("  Dir\r\n");
+	nav_reset();
+	// Use the last drive available as default.
+	nav_drive_set(nav_drive_nb() - 1);
+	// Mount it.
+	nav_partition_mount();
+	nav_filelist_reset();
+	
+	print_dbg("\n\rCreating Log File.");
+	//char buff[20] = "log.txt";
+	if(nav_file_create((FS_STRING)LOG_FILE) == true)
+		print_dbg("\n\rSuccess!");
+	else
+		print_dbg("\n\rNot worked...");
+	return 0;
 	
 	
 	

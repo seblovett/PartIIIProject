@@ -73,7 +73,9 @@ src/asf/common/services/storage/ctrl_access/ctrl_access.d \
  ../src/asf/common/boards/user_board/user_board.h \
  ../src/config/conf_board.h \
  ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.h \
- ../src/asf/common/services/storage/ctrl_access/ctrl_access.h
+ ../src/asf/common/services/storage/ctrl_access/ctrl_access.h \
+ ../src/asf/avr32/services/fs/fat/fat.h \
+ ../src/asf/avr32/services/fs/fat/fs_com.h ../src/config/conf_explorer.h
 
 ../src/asf/avr32/utils/compiler.h:
 
@@ -220,3 +222,9 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.h:
 
 ../src/asf/common/services/storage/ctrl_access/ctrl_access.h:
+
+../src/asf/avr32/services/fs/fat/fat.h:
+
+../src/asf/avr32/services/fs/fat/fs_com.h:
+
+../src/config/conf_explorer.h:

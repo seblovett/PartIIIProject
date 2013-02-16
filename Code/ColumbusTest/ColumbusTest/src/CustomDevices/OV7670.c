@@ -79,7 +79,7 @@ unsigned char Write_Reg(unsigned char Register, unsigned char Data)
 	/*	I2C Traffic Generated:
 	 *	S | OV_7670 + W | A | RegID | A | Data | A | P |
 	 */
-	unsigned char Buff[2] = {Register, Data};
+	uint8_t Buff[2] = {Register, Data};
 	int status = twim_write(&AVR32_TWIM0, &Buff, 2, OV7670_ADDR, false);
 	return status;
 }
@@ -325,4 +325,13 @@ bool Photos_Ready(void)
 		return true;
 	else
 		return false;
+}
+
+
+void Store_Images()
+{
+	//make file
+	//write bitmap header
+	//read and write image data
+	
 }

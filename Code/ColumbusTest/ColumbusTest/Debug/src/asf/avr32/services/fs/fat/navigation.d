@@ -7,7 +7,8 @@ src/asf/avr32/services/fs/fat/navigation.d \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/newlib.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/config.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/machine/ieeefp.h \
- ../src/config/conf_explorer.h ../src/asf/avr32/utils/compiler.h \
+ ../src/asf/common/services/storage/ctrl_access/ctrl_access.h \
+ ../src/asf/avr32/utils/compiler.h \
  ../src/asf/avr32/utils/preprocessor/preprocessor.h \
  ../src/asf/avr32/utils/preprocessor/tpaste.h \
  ../src/asf/avr32/utils/preprocessor/stringz.h \
@@ -68,16 +69,16 @@ src/asf/avr32/services/fs/fat/navigation.d \
  ../src/asf/common/utils/interrupt.h \
  ../src/asf/common/utils/interrupt/interrupt_avr32.h \
  ../src/asf/avr32/utils/preprocessor/tpaste.h \
- ../src/asf/avr32/drivers/intc/intc.h \
+ ../src/asf/avr32/drivers/intc/intc.h ../src/config/conf_access.h \
+ ../src/asf/common/boards/board.h \
+ ../src/asf/common/boards/user_board/user_board.h \
+ ../src/config/conf_board.h \
+ ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.h \
+ ../src/config/conf_explorer.h \
  ../src/asf/avr32/services/fs/fat/navigation.h \
  ../src/asf/avr32/services/fs/fat/fs_com.h \
  ../src/asf/avr32/services/fs/fat/fat.h \
- ../src/asf/avr32/services/fs/fat/file.h \
- ../src/asf/common/services/storage/ctrl_access/ctrl_access.h \
- ../src/config/conf_access.h ../src/asf/common/boards/board.h \
- ../src/asf/common/boards/user_board/user_board.h \
- ../src/config/conf_board.h \
- ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.h
+ ../src/asf/avr32/services/fs/fat/file.h
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/ctype.h:
 
@@ -89,7 +90,7 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/machine/ieeefp.h:
 
-../src/config/conf_explorer.h:
+../src/asf/common/services/storage/ctrl_access/ctrl_access.h:
 
 ../src/asf/avr32/utils/compiler.h:
 
@@ -215,16 +216,6 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 
 ../src/asf/avr32/drivers/intc/intc.h:
 
-../src/asf/avr32/services/fs/fat/navigation.h:
-
-../src/asf/avr32/services/fs/fat/fs_com.h:
-
-../src/asf/avr32/services/fs/fat/fat.h:
-
-../src/asf/avr32/services/fs/fat/file.h:
-
-../src/asf/common/services/storage/ctrl_access/ctrl_access.h:
-
 ../src/config/conf_access.h:
 
 ../src/asf/common/boards/board.h:
@@ -234,3 +225,13 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/config/conf_board.h:
 
 ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.h:
+
+../src/config/conf_explorer.h:
+
+../src/asf/avr32/services/fs/fat/navigation.h:
+
+../src/asf/avr32/services/fs/fat/fs_com.h:
+
+../src/asf/avr32/services/fs/fat/fat.h:
+
+../src/asf/avr32/services/fs/fat/file.h:

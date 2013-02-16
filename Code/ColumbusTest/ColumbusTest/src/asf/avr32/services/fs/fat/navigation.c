@@ -47,11 +47,11 @@
 
 //_____  I N C L U D E S ___________________________________________________
 #include <ctype.h> // Use of toupper
-
+#include "ctrl_access.h"
 #include "conf_explorer.h"
 #include "navigation.h"
 #include "file.h"
-#include LIB_CTRLACCESS
+//#include LIB_CTRLACCESS
 
 
 //_____ M A C R O S ________________________________________________________

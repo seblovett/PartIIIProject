@@ -236,7 +236,7 @@
  */
 //! @{
 #if ACCESS_USB_ENABLED
-#define ACCESS_USB           true  //!< MEM <-> USB interface.
+#define ACCESS_USB           false  //!< MEM <-> USB interface.
 #else
 #define ACCESS_USB           false //!< MEM <-> USB interface.
 #endif
@@ -244,12 +244,12 @@
 #if ACCESS_MEM_TO_RAM_ENABLED
 #define ACCESS_MEM_TO_RAM    true  //!< MEM <-> RAM interface.
 #else
-#define ACCESS_MEM_TO_RAM    false //!< MEM <-> RAM interface.
+#define ACCESS_MEM_TO_RAM    true //!< MEM <-> RAM interface.
 #endif
 
-#define ACCESS_STREAM        false //!< Streaming MEM <-> MEM interface.
+#define ACCESS_STREAM        true //!< Streaming MEM <-> MEM interface.
 #define ACCESS_STREAM_RECORD false //!< Streaming MEM <-> MEM interface in record mode.
-#define ACCESS_MEM_TO_MEM    false //!< MEM <-> MEM interface.
+#define ACCESS_MEM_TO_MEM    true //!< MEM <-> MEM interface.
 #define ACCESS_CODEC         false //!< Codec interface.
 //! @}
 
