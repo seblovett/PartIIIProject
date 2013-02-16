@@ -20,12 +20,14 @@
 __attribute__((__interrupt__)) static void VSYNC0_Handler (void)
 {
 	print_dbg("\n\rVSYNC0 Detected!");
+	eic_clear_interrupt_line(&AVR32_EIC, VSYNC_0_LINE);
 	VSYNC_0_DISABLE_INTERRUPT;
 }
 
 __attribute__((__interrupt__)) static void VSYNC1_Handler (void)
 {
 	print_dbg("\n\rVSYNC1 Detected!");
+	eic_clear_interrupt_line(&AVR32_EIC, VSYNC_1_LINE);
 	VSYNC_1_DISABLE_INTERRUPT;
 }
 unsigned char Write_Reg(unsigned char Register, unsigned char Data)
@@ -97,25 +99,26 @@ int OV7670_Init()
 	eic_options.eic_edge = EIC_EDGE_FALLING_EDGE;
 	eic_options.eic_async = EIC_SYNCH_MODE;
 	eic_options.eic_line = VSYNC_1_LINE;
+	//eic_options.eic_line = VSYNC_0_LINE;
 	
 	Disable_global_interrupt();
 	gpio_enable_module_pin(VSYNC_1_PIN, VSYNC_1_FUNCTION);
-	//gpio_enable_module_pin(VSYNC_0_PIN, VSYNC_0_FUNCTION);
+	gpio_enable_module_pin(VSYNC_0_PIN, VSYNC_0_FUNCTION);
 	
 	gpio_enable_pin_pull_up(VSYNC_1_PIN); //Enable pull up as it is a low level interrupt
-	//gpio_enable_pin_pull_up(VSYNC_0_PIN);
+	gpio_enable_pin_pull_up(VSYNC_0_PIN);
 	//Initialise EIC
 	eic_init(&AVR32_EIC, &eic_options, 1);
-	//eic_options.eic_line = VSYNC_0_LINE;
-	//eic_init(&AVR32_EIC, &eic_options, 1);
+	eic_options.eic_line = VSYNC_0_LINE;
+	eic_init(&AVR32_EIC, &eic_options, 1);
 	
 	INTC_register_interrupt(&VSYNC1_Handler, AVR32_EIC_IRQ_1, AVR32_INTC_INT0);
-	//INTC_register_interrupt(&VSYNC0_Handler, AVR32_EIC_IRQ_1, AVR32_INTC_INT0);
+	INTC_register_interrupt(&VSYNC0_Handler, AVR32_EIC_IRQ_4, AVR32_INTC_INT0);
 	//Enable interrupt on VSYNC1
 	eic_enable_line(&AVR32_EIC, VSYNC_1_LINE);
-	//eic_enable_line(&AVR32_EIC, VSYNC_0_LINE);
+	eic_enable_line(&AVR32_EIC, (VSYNC_0_LINE));
 	VSYNC_1_ENABLE_INTERRUPT;
-	//VSYNC_0_ENABLE_INTERRUPT;
+	VSYNC_0_ENABLE_INTERRUPT;
 	
 	FIFO_Init();
 	Enable_global_interrupt();

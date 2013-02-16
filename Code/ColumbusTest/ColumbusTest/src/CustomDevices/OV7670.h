@@ -56,9 +56,9 @@ void FIFO_Init();
 #define VSYNC_1_ENABLE_INTERRUPT	{eic_enable_interrupt_line(&AVR32_EIC, VSYNC_1_LINE);}
 #define VSYNC_1_DISABLE_INTERRUPT	{eic_disable_interrupt_line(&AVR32_EIC, VSYNC_1_LINE);}
 	
-#define VSYNC_0_PIN					AVR32_EIC_EXTINT_0_0_PIN
-#define VSYNC_0_FUNCTION			AVR32_EIC_EXTINT_0_0_FUNCTION
-#define VSYNC_0_LINE				0
+#define VSYNC_0_PIN					AVR32_EIC_EXTINT_4_0_PIN
+#define VSYNC_0_FUNCTION			AVR32_EIC_EXTINT_4_0_FUNCTION
+#define VSYNC_0_LINE				4
 #define VSYNC_0_ENABLE_INTERRUPT	{eic_enable_interrupt_line(&AVR32_EIC, VSYNC_0_LINE);}
 #define VSYNC_0_DISABLE_INTERRUPT	{eic_disable_interrupt_line(&AVR32_EIC, VSYNC_0_LINE);}
 	
