@@ -82,6 +82,7 @@ src/CustomDevices/MotorDriver.d src/CustomDevices/MotorDriver.o \
  ../src/asf/common/services/clock/uc3c/genclk.h \
  ../src/asf/avr32/drivers/ebi/sdramc/sdramc.h \
  ../src/asf/avr32/components/memory/sdram/mt48lc16m16a2tg7e/mt48lc16m16a2tg7e.h \
+ ../src/asf/avr32/drivers/eic/eic.h \
  ../src/asf/avr32/services/fs/fat/fat.h \
  ../src/asf/avr32/services/fs/fat/fs_com.h ../src/config/conf_explorer.h \
  ../src/asf/avr32/services/fs/fat/file.h \
@@ -102,7 +103,9 @@ src/CustomDevices/MotorDriver.d src/CustomDevices/MotorDriver.o \
  ../src/asf/avr32/drivers/spi/spi.h ../src/asf/avr32/drivers/twim/twim.h \
  ../src/config/conf_twim.h ../src/asf/avr32/drivers/usart/usart.h \
  ../src/asf/avr32/utils/debug/print_funcs.h \
- ../src/CustomDevices/MotorDriver.h
+ ../src/CustomDevices/CustomDevices.h ../src/CustomDevices/OV7670.h \
+ ../src/CustomDevices/PCA9542A.h ../src/CustomDevices/MotorDriver.h \
+ ../src/CustomDevices/SD_Card.h
 
 ../src/asf.h:
 
@@ -274,6 +277,8 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 
 ../src/asf/avr32/components/memory/sdram/mt48lc16m16a2tg7e/mt48lc16m16a2tg7e.h:
 
+../src/asf/avr32/drivers/eic/eic.h:
+
 ../src/asf/avr32/services/fs/fat/fat.h:
 
 ../src/asf/avr32/services/fs/fat/fs_com.h:
@@ -322,4 +327,12 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 
 ../src/asf/avr32/utils/debug/print_funcs.h:
 
+../src/CustomDevices/CustomDevices.h:
+
+../src/CustomDevices/OV7670.h:
+
+../src/CustomDevices/PCA9542A.h:
+
 ../src/CustomDevices/MotorDriver.h:
+
+../src/CustomDevices/SD_Card.h:

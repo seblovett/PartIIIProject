@@ -13,6 +13,7 @@
         <options>
           <option id="avr32.components.memory.sdram.mt48lc16m16a2tg7e" value="Add" config="" content-id="Atmel.ASF" />
           <option id="avr32.components.memory.sd_mmc.sd_mmc_spi" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.acifa" value="Add" config="" content-id="Atmel.ASF" />
           <option id="avr32.drivers.gpio" value="Add" config="" content-id="Atmel.ASF" />
           <option id="avr32.drivers.pdca" value="Add" config="" content-id="Atmel.ASF" />
           <option id="avr32.drivers.pm" value="Add" config="" content-id="Atmel.ASF" />
@@ -24,7 +25,7 @@
           <option id="common.boards" value="Add" config="" content-id="Atmel.ASF" />
           <option id="common.services.delay" value="Add" config="" content-id="Atmel.ASF" />
           <option id="common.services.storage.ctrl_access" value="Add" config="" content-id="Atmel.ASF" />
-          <option id="avr32.drivers.acifa" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.eic" value="Add" config="" content-id="Atmel.ASF" />
         </options>
         <configurations>
           <configuration key="config.avr32.utils.trampoline" value="yes" default="yes" content-id="Atmel.ASF" />
@@ -115,6 +116,8 @@
           <file path="src/asf/avr32/drivers/pwm/pwm4.h" framework="" version="" source="avr32\drivers\pwm\pwm4.h" changed="False" content-id="Atmel.ASF" />
           <file path="src/asf/avr32/drivers/acifa/acifa.c" framework="" version="" source="avr32\drivers\acifa\acifa.c" changed="False" content-id="Atmel.ASF" />
           <file path="src/asf/avr32/drivers/acifa/acifa.h" framework="" version="" source="avr32\drivers\acifa\acifa.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/asf/avr32/drivers/eic/eic.c" framework="" version="" source="avr32\drivers\eic\eic.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/asf/avr32/drivers/eic/eic.h" framework="" version="" source="avr32\drivers\eic\eic.h" changed="False" content-id="Atmel.ASF" />
         </files>
         <documentation help="http://asf.atmel.com/docs/3.5.0/common.applications.user_application.user_board.uc3c/html/index.html" />
       </framework-data>
@@ -145,13 +148,13 @@
       </OverrideVtorValue>
       <Channel>
         <host>127.0.0.1</host>
-        <port>27351</port>
+        <port>18349</port>
         <ssl>False</ssl>
       </Channel>
       <ToolOptions>
         <InterfaceName>JTAG</InterfaceName>
         <InterfaceProperties>
-          <JtagDbgClock>250000</JtagDbgClock>
+          <JtagDbgClock>12000000</JtagDbgClock>
           <JtagProgClock>1000000</JtagProgClock>
           <IspClock>150000</IspClock>
           <JtagInChain>false</JtagInChain>
@@ -208,6 +211,7 @@
             <Value>../src/asf/avr32/drivers/twim</Value>
             <Value>../src/asf/avr32/drivers/pwm</Value>
             <Value>../src/asf/avr32/drivers/acifa</Value>
+            <Value>../src/asf/avr32/drivers/eic</Value>
           </ListValues>
         </avr32gcc.compiler.directories.IncludePaths>
         <avr32gcc.compiler.optimization.level>Optimize for size (-Os)</avr32gcc.compiler.optimization.level>
@@ -250,6 +254,7 @@
             <Value>../src/asf/avr32/drivers/twim</Value>
             <Value>../src/asf/avr32/drivers/pwm</Value>
             <Value>../src/asf/avr32/drivers/acifa</Value>
+            <Value>../src/asf/avr32/drivers/eic</Value>
           </ListValues>
         </avr32gcc.assembler.general.IncludePaths>
         <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USER_BOARD -mrelax -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED</avr32gcc.preprocessingassembler.general.AssemblerFlags>
@@ -283,6 +288,7 @@
             <Value>../src/asf/avr32/drivers/twim</Value>
             <Value>../src/asf/avr32/drivers/pwm</Value>
             <Value>../src/asf/avr32/drivers/acifa</Value>
+            <Value>../src/asf/avr32/drivers/eic</Value>
           </ListValues>
         </avr32gcc.preprocessingassembler.general.IncludePaths>
       </Avr32Gcc>
@@ -336,6 +342,7 @@
             <Value>../src/asf/avr32/drivers/twim</Value>
             <Value>../src/asf/avr32/drivers/pwm</Value>
             <Value>../src/asf/avr32/drivers/acifa</Value>
+            <Value>../src/asf/avr32/drivers/eic</Value>
           </ListValues>
         </avr32gcc.compiler.directories.IncludePaths>
         <avr32gcc.compiler.optimization.level>Optimize (-O1)</avr32gcc.compiler.optimization.level>
@@ -379,6 +386,7 @@
             <Value>../src/asf/avr32/drivers/twim</Value>
             <Value>../src/asf/avr32/drivers/pwm</Value>
             <Value>../src/asf/avr32/drivers/acifa</Value>
+            <Value>../src/asf/avr32/drivers/eic</Value>
           </ListValues>
         </avr32gcc.assembler.general.IncludePaths>
         <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USER_BOARD -mrelax -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED</avr32gcc.preprocessingassembler.general.AssemblerFlags>
@@ -412,6 +420,7 @@
             <Value>../src/asf/avr32/drivers/twim</Value>
             <Value>../src/asf/avr32/drivers/pwm</Value>
             <Value>../src/asf/avr32/drivers/acifa</Value>
+            <Value>../src/asf/avr32/drivers/eic</Value>
           </ListValues>
         </avr32gcc.preprocessingassembler.general.IncludePaths>
       </Avr32Gcc>
@@ -450,6 +459,12 @@
       <SubType>compile</SubType>
     </Compile>
     <None Include="src\asf\avr32\drivers\ebi\sdramc\sdramc.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\asf\avr32\drivers\eic\eic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\asf\avr32\drivers\eic\eic.h">
       <SubType>compile</SubType>
     </None>
     <Compile Include="src\asf\avr32\drivers\flashc\flashc.c">
@@ -617,6 +632,9 @@
     <None Include="src\config\conf_twim.h">
       <SubType>compile</SubType>
     </None>
+    <Compile Include="src\CustomDevices\CustomDevices.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\CustomDevices\dummy.h">
       <SubType>compile</SubType>
     </Compile>
@@ -624,6 +642,15 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\CustomDevices\MotorDriver.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\CustomDevices\OV7670.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\CustomDevices\OV7670.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\CustomDevices\OV7670_Setup.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\CustomDevices\PCA9542A.c">
@@ -709,6 +736,7 @@
     <Folder Include="src\asf\avr32\drivers\cpu\cycle_counter\" />
     <Folder Include="src\asf\avr32\drivers\ebi\" />
     <Folder Include="src\asf\avr32\drivers\ebi\sdramc\" />
+    <Folder Include="src\asf\avr32\drivers\eic\" />
     <Folder Include="src\asf\avr32\drivers\flashc\" />
     <Folder Include="src\asf\avr32\drivers\gpio\" />
     <Folder Include="src\asf\avr32\drivers\intc\" />

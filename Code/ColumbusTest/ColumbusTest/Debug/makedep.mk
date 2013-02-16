@@ -10,6 +10,8 @@ src\asf\avr32\drivers\acifa\acifa.c
 
 src\asf\avr32\drivers\ebi\sdramc\sdramc.c
 
+src\asf\avr32\drivers\eic\eic.c
+
 src\asf\avr32\drivers\flashc\flashc.c
 
 src\asf\avr32\drivers\gpio\gpio.c
@@ -59,6 +61,10 @@ src\asf\common\services\clock\uc3c\sysclk.c
 src\asf\common\services\storage\ctrl_access\ctrl_access.c
 
 src\CustomDevices\MotorDriver.c
+
+src\CustomDevices\OV7670.c
+
+src\CustomDevices\OV7670_Setup.c
 
 src\CustomDevices\PCA9542A.c
 

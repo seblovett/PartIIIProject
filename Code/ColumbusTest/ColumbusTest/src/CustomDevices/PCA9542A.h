@@ -24,5 +24,6 @@
 
 
 int PCA9542A_Init();
-int PCA9542A_Channel_Select(uint8_t Channel);
+//void PCA9542A_Channel_Select(uint8_t Channel);
+void PCA9542A_Chan_Sel(unsigned char Channel);
 #endif /* PCA9542A_H_ */

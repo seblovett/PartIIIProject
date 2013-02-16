@@ -84,6 +84,7 @@ src/asf/common/boards/user_board/init.d \
  ../src/asf/common/services/clock/uc3c/genclk.h \
  ../src/asf/avr32/drivers/ebi/sdramc/sdramc.h \
  ../src/asf/avr32/components/memory/sdram/mt48lc16m16a2tg7e/mt48lc16m16a2tg7e.h \
+ ../src/asf/avr32/drivers/eic/eic.h \
  ../src/asf/avr32/services/fs/fat/fat.h \
  ../src/asf/avr32/services/fs/fat/fs_com.h ../src/config/conf_explorer.h \
  ../src/asf/avr32/services/fs/fat/file.h \
@@ -274,6 +275,8 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/asf/avr32/drivers/ebi/sdramc/sdramc.h:
 
 ../src/asf/avr32/components/memory/sdram/mt48lc16m16a2tg7e/mt48lc16m16a2tg7e.h:
+
+../src/asf/avr32/drivers/eic/eic.h:
 
 ../src/asf/avr32/services/fs/fat/fat.h:
 

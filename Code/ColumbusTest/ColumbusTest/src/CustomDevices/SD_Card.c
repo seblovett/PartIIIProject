@@ -4,7 +4,15 @@
  * Created: 10/02/2013 17:11:58
  *  Author: hslovett
  */ 
-#include "SD_Card.h"
+//Camera
+/*#include "CustomDevices/OV7670.h"*/
+//I2C Mux
+/*#include "CustomDevices/PCA9542A.h"*/
+//MotorDriver
+/*#include "CustomDevices/MotorDriver.h"*/
+//SDCard
+/*#include "CustomDevices/SD_Card.h"*/
+#include "CustomDevices/CustomDevices.h"
 #include "conf_sd_mmc_spi.h"
 #include <asf.h>
 

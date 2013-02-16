@@ -67,19 +67,19 @@
 #define LED5_GPIO   AVR32_PIN_PB28
 #define LED6_GPIO   AVR32_PIN_PB29
 
-#define LED2_SET {gpio_set_gpio_pin(LED2_GPIO);}
-#define LED3_SET {gpio_set_gpio_pin(LED3_GPIO);}
-#define LED4_SET {gpio_set_gpio_pin(LED4_GPIO);}
-#define LED5_SET {gpio_set_gpio_pin(LED5_GPIO);}
-#define LED6_SET {gpio_set_gpio_pin(LED6_GPIO);}
-#define LEDMOTOR_SET {gpio_set_gpio_pin(LED_MOTOR);}
+#define LED2_SET		{gpio_set_gpio_pin(LED2_GPIO);}
+#define LED3_SET		{gpio_set_gpio_pin(LED3_GPIO);}
+#define LED4_SET		{gpio_set_gpio_pin(LED4_GPIO);}
+#define LED5_SET		{gpio_set_gpio_pin(LED5_GPIO);}
+#define LED6_SET		{gpio_set_gpio_pin(LED6_GPIO);}
+#define LEDMOTOR_SET	{gpio_set_gpio_pin(LED_MOTOR);}
 
-#define LED2_CLR {gpio_clr_gpio_pin(LED2_GPIO);}
-#define LED3_CLR {gpio_clr_gpio_pin(LED3_GPIO);}
-#define LED4_CLR {gpio_clr_gpio_pin(LED4_GPIO);}
-#define LED5_CLR {gpio_clr_gpio_pin(LED5_GPIO);}
-#define LED6_CLR {gpio_clr_gpio_pin(LED6_GPIO);}
-#define LEDMOTOR_CLR {gpio_clr_gpio_pin(LED_MOTOR);}
+#define LED2_CLR		{gpio_clr_gpio_pin(LED2_GPIO);}
+#define LED3_CLR		{gpio_clr_gpio_pin(LED3_GPIO);}
+#define LED4_CLR		{gpio_clr_gpio_pin(LED4_GPIO);}
+#define LED5_CLR		{gpio_clr_gpio_pin(LED5_GPIO);}
+#define LED6_CLR		{gpio_clr_gpio_pin(LED6_GPIO);}
+#define LEDMOTOR_CLR	{gpio_clr_gpio_pin(LED_MOTOR);}
 
 
 //Motors

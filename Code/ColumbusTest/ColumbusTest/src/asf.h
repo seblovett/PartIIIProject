@@ -68,6 +68,9 @@
 // From module: EBI SDRAM Controller
 #include <sdramc.h>
 
+// From module: EIC - External Interrupt Controller
+#include <eic.h>
+
 // From module: FAT file system
 #include <fat.h>
 #include <file.h>
