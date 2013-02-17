@@ -330,6 +330,7 @@ int main (void)
 	
 	print_dbg("\n\rInitialising Cameras");
 	OV7670_Init();
+	FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 	if(STATUS_OK == OV7670_Status.Error)
 	{
 		print_dbg("\n\rCamera Initialise Okay!");
@@ -343,9 +344,9 @@ int main (void)
 	TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
 	while(Photos_Ready() == false)
 		;
-	Store_Image_1();	
-	Store_Image_0();
-	
+
+	if(Store_Both_Images() == true)
+		print_dbg("\n\rImages Stored Successfully!");
 	print_dbg("\n\rTest Complete!");
 	// Insert application code here, after the board has been initialized.
 	while(1)

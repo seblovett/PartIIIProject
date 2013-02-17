@@ -1021,7 +1021,7 @@ Discarded input sections
  .debug_info    0x00000000     0x13d0 src/CustomDevices/MotorDriver.o
  .debug_line    0x00000000      0xdd5 src/CustomDevices/MotorDriver.o
  .debug_macinfo
-                0x00000000   0x152b83 src/CustomDevices/MotorDriver.o
+                0x00000000   0x152b85 src/CustomDevices/MotorDriver.o
  .text.Motors_Move
                 0x00000000        0x2 src/CustomDevices/MotorDriver.o
  .text.Motor_Stop
@@ -1036,9 +1036,9 @@ Discarded input sections
                 0x00000000       0x80 src/CustomDevices/MotorDriver.o
  .text.Motor_Init
                 0x00000000      0x144 src/CustomDevices/MotorDriver.o
- .rodata.C.57.17131
+ .rodata.C.57.17134
                 0x00000000       0x14 src/CustomDevices/MotorDriver.o
- .rodata.ACIFA_GPIO_MAP.17160
+ .rodata.ACIFA_GPIO_MAP.17163
                 0x00000000       0x20 src/CustomDevices/MotorDriver.o
  .debug_frame   0x00000000       0xc0 src/CustomDevices/MotorDriver.o
  .debug_loc     0x00000000      0x184 src/CustomDevices/MotorDriver.o
@@ -1052,8 +1052,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/CustomDevices/OV7670.o
  .data          0x00000000        0x0 src/CustomDevices/OV7670.o
  .bss           0x00000000        0x0 src/CustomDevices/OV7670.o
- .text.FIFO_Reset
-                0x00000000       0x74 src/CustomDevices/OV7670.o
  .text.Read_Reg
                 0x00000000       0x48 src/CustomDevices/OV7670.o
  .text          0x00000000        0x0 src/CustomDevices/OV7670_Setup.o
@@ -1262,7 +1260,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .plt
  *(.plt)
 
-.text           0x80002004     0x57fc
+.text           0x80002004     0x58b4
  *(.text .stub .text.* .gnu.linkonce.t.*)
  .text.sd_mmc_spi_get_capacity
                 0x80002004      0x11c src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -1768,118 +1766,124 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .text.Photos_Ready
                 0x8000678c       0x60 src/CustomDevices/OV7670.o
                 0x8000678c                Photos_Ready
+ .text.FIFO_Reset
+                0x800067ec       0x74 src/CustomDevices/OV7670.o
+                0x800067ec                FIFO_Reset
  .text.Store_Image_0
-                0x800067ec      0x108 src/CustomDevices/OV7670.o
-                0x800067ec                Store_Image_0
+                0x80006860      0x108 src/CustomDevices/OV7670.o
+                0x80006860                Store_Image_0
  .text.Store_Image_1
-                0x800068f4      0x134 src/CustomDevices/OV7670.o
-                0x800068f4                Store_Image_1
+                0x80006968      0x134 src/CustomDevices/OV7670.o
+                0x80006968                Store_Image_1
+ .text.Store_Both_Images
+                0x80006a9c       0x30 src/CustomDevices/OV7670.o
+                0x80006a9c                Store_Both_Images
  .text.FIFO_Init
-                0x80006a28      0x268 src/CustomDevices/OV7670.o
-                0x80006a28                FIFO_Init
+                0x80006acc      0x268 src/CustomDevices/OV7670.o
+                0x80006acc                FIFO_Init
  .text.VSYNC0_Handler
-                0x80006c90       0x6c src/CustomDevices/OV7670.o
+                0x80006d34       0x6c src/CustomDevices/OV7670.o
  .text.VSYNC1_Handler
-                0x80006cfc       0x6c src/CustomDevices/OV7670.o
+                0x80006da0       0x6c src/CustomDevices/OV7670.o
  .text.Write_Reg
-                0x80006d68       0x24 src/CustomDevices/OV7670.o
-                0x80006d68                Write_Reg
+                0x80006e0c       0x24 src/CustomDevices/OV7670.o
+                0x80006e0c                Write_Reg
  .text.OV7670_Init
-                0x80006d8c      0x2a0 src/CustomDevices/OV7670.o
-                0x80006d8c                OV7670_Init
+                0x80006e30      0x2a0 src/CustomDevices/OV7670.o
+                0x80006e30                OV7670_Init
  .text.PCA9542A_Chan_Sel
-                0x8000702c       0x24 src/CustomDevices/PCA9542A.o
-                0x8000702c                PCA9542A_Chan_Sel
+                0x800070d0       0x24 src/CustomDevices/PCA9542A.o
+                0x800070d0                PCA9542A_Chan_Sel
  .text.PCA9542A_Init
-                0x80007050       0x38 src/CustomDevices/PCA9542A.o
-                0x80007050                PCA9542A_Init
+                0x800070f4       0x38 src/CustomDevices/PCA9542A.o
+                0x800070f4                PCA9542A_Init
  .text.sd_mmc_resources_init
-                0x80007088       0x84 src/CustomDevices/SD_Card.o
-                0x80007088                sd_mmc_resources_init
+                0x8000712c       0x84 src/CustomDevices/SD_Card.o
+                0x8000712c                sd_mmc_resources_init
  .text.LED_Flash
-                0x8000710c       0x80 src/main.o
-                0x8000710c                LED_Flash
+                0x800071b0       0x80 src/main.o
+                0x800071b0                LED_Flash
  .text.Log_Write
-                0x8000718c       0x44 src/main.o
-                0x8000718c                Log_Write
- .text.main     0x800071d0      0x4b4 src/main.o
-                0x800071d0                main
- .text.memcmp   0x80007684       0x26 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
-                0x80007684                memcmp
- .text          0x800076aa      0x148 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcpy.o)
-                0x800076aa                memcpy
- .text.memset   0x800077f2        0xe c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
-                0x800077f2                memset
+                0x80007230       0x44 src/main.o
+                0x80007230                Log_Write
+ .text.main     0x80007274      0x4c8 src/main.o
+                0x80007274                main
+ .text.memcmp   0x8000773c       0x26 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+                0x8000773c                memcmp
+ .text          0x80007762      0x148 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcpy.o)
+                0x80007762                memcpy
+ .text.memset   0x800078aa        0xe c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+                0x800078aa                memset
  *(.text.*personality*)
  *(.gnu.warning)
 
-.exception      0x80007800      0x200
- .exception     0x80007800      0x200 src/asf/avr32/drivers/intc/exception.o
-                0x80007800                _evba
-                0x80007904                _int0
-                0x80007912                _int1
-                0x80007920                _int2
-                0x8000792e                _int3
+.exception      0x80007a00      0x200
+ .exception     0x80007a00      0x200 src/asf/avr32/drivers/intc/exception.o
+                0x80007a00                _evba
+                0x80007b04                _int0
+                0x80007b12                _int1
+                0x80007b20                _int2
+                0x80007b2e                _int3
 
 .fini
  *(.fini)
-                0x80007a00                PROVIDE (__etext, .)
-                0x80007a00                PROVIDE (_etext, .)
-                0x80007a00                PROVIDE (etext, .)
+                0x80007c00                PROVIDE (__etext, .)
+                0x80007c00                PROVIDE (_etext, .)
+                0x80007c00                PROVIDE (etext, .)
 
-.rodata         0x80007a00      0x830
+.rodata         0x80007c00      0x850
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.gpio_enable_module_pin
-                0x80007a00       0x20 src/asf/avr32/drivers/gpio/gpio.o
+                0x80007c00       0x20 src/asf/avr32/drivers/gpio/gpio.o
  .rodata._int_handler_table
-                0x80007a20      0x178 src/asf/avr32/drivers/intc/intc.o
+                0x80007c20      0x178 src/asf/avr32/drivers/intc/intc.o
  .rodata.const_FSI_LeadSig
-                0x80007b98        0x4 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80007b98                const_FSI_LeadSig
+                0x80007d98        0x4 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80007d98                const_FSI_LeadSig
  .rodata.fs_s_tab_incorrect_char
-                0x80007b9c        0x8 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80007b9c                fs_s_tab_incorrect_char
+                0x80007d9c        0x8 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80007d9c                fs_s_tab_incorrect_char
  .rodata.fs_s_execption_char
-                0x80007ba4        0x8 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80007ba4                fs_s_execption_char
+                0x80007da4        0x8 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80007da4                fs_s_execption_char
  .rodata.const_FSI_StrucSig
-                0x80007bac        0x4 src/asf/avr32/services/fs/fat/fat_unusual.o
-                0x80007bac                const_FSI_StrucSig
+                0x80007dac        0x4 src/asf/avr32/services/fs/fat/fat_unusual.o
+                0x80007dac                const_FSI_StrucSig
  .rodata.DBG_USART_GPIO_MAP.14756
-                0x80007bb0       0x10 src/asf/avr32/utils/debug/print_funcs.o
+                0x80007db0       0x10 src/asf/avr32/utils/debug/print_funcs.o
  .rodata.lun_desc
-                0x80007bc0       0x1c src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x80007dc0       0x1c src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .rodata.str1.4
-                0x80007bdc       0x17 src/asf/common/services/storage/ctrl_access/ctrl_access.o
+                0x80007ddc       0x17 src/asf/common/services/storage/ctrl_access/ctrl_access.o
                                  0x18 (size before relaxing)
- *fill*         0x80007bf3        0x1 00
+ *fill*         0x80007df3        0x1 00
  .rodata.BMPHeader
-                0x80007bf4       0x10 src/CustomDevices/Bitmap.o
-                0x80007bf4                BMPHeader
+                0x80007df4       0x10 src/CustomDevices/Bitmap.o
+                0x80007df4                BMPHeader
  .rodata.DIBHead
-                0x80007c04       0x7c src/CustomDevices/Bitmap.o
-                0x80007c04                DIBHead
+                0x80007e04       0x7c src/CustomDevices/Bitmap.o
+                0x80007e04                DIBHead
  .rodata.str1.4
-                0x80007c80       0x7d src/CustomDevices/OV7670.o
+                0x80007e80       0x7d src/CustomDevices/OV7670.o
                                  0x80 (size before relaxing)
  .rodata.default_settings
-                0x80007cfd      0x14e src/CustomDevices/OV7670_Setup.o
-                0x80007cfd                default_settings
- *fill*         0x80007e4b        0x1 00
- .rodata.C.60.17149
-                0x80007e4c       0x10 src/CustomDevices/SD_Card.o
- .rodata.SD_MMC_SPI_GPIO_MAP.17147
-                0x80007e5c       0x20 src/CustomDevices/SD_Card.o
+                0x80007efd      0x14e src/CustomDevices/OV7670_Setup.o
+                0x80007efd                default_settings
+ *fill*         0x8000804b        0x1 00
+ .rodata.C.60.17152
+                0x8000804c       0x10 src/CustomDevices/SD_Card.o
+ .rodata.SD_MMC_SPI_GPIO_MAP.17150
+                0x8000805c       0x20 src/CustomDevices/SD_Card.o
+ .rodata.C.58.17137
+                0x8000807c       0x10 src/main.o
  .rodata.str1.4
-                0x80007e7c      0x290 src/main.o
-                                0x294 (size before relaxing)
- .rodata.C.57.17133
-                0x8000810c       0x10 src/main.o
- .rodata.C.58.17134
-                0x8000811c       0x10 src/main.o
+                0x8000808c      0x2b0 src/main.o
+                                0x2b4 (size before relaxing)
+ .rodata.C.57.17136
+                0x8000833c       0x10 src/main.o
  .rodata._ctype_
-                0x8000812c      0x104 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
-                0x8000812c                _ctype_
+                0x8000834c      0x104 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+                0x8000834c                _ctype_
 
 .rodata1
  *(.rodata1)
@@ -1894,9 +1898,9 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.gcc_except_table)
  *(.gcc_except_table.*)
 
-.dalign         0x80008230        0x0
-                0x80008230                . = ALIGN (0x8)
-                0x80008230                PROVIDE (_data_lma, .)
+.dalign         0x80008450        0x0
+                0x80008450                . = ALIGN (0x8)
+                0x80008450                PROVIDE (_data_lma, .)
                 0x00000004                PROVIDE (_data, ORIGIN (CPUSRAM))
                 0x00000004                . = ORIGIN (CPUSRAM)
 
@@ -1955,7 +1959,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.got.plt)
  *(.got)
 
-.data           0x00000004        0xc load address 0x80008230
+.data           0x00000004        0xc load address 0x80008450
  *(.data .data.* .gnu.linkonce.d.*)
  .data.sd_mmc_spi_presence_status
                 0x00000004        0x1 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -1972,14 +1976,14 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .data1
  *(.data1)
 
-.balign         0x00000010        0x0 load address 0x8000823c
+.balign         0x00000010        0x0 load address 0x8000845c
                 0x00000010                . = ALIGN (0x8)
                 0x00000010                _edata = .
                 0x00000010                _edata = .
                 0x00000010                PROVIDE (edata, .)
                 0x00000010                __bss_start = .
 
-.bss            0x00000010      0x7a0 load address 0x8000823c
+.bss            0x00000010      0x7a0 load address 0x8000845c
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
  .bss.gl_ptr_mem
@@ -2221,7 +2225,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000     0x10e0
+.debug_aranges  0x00000000     0x10e8
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0xf0 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -2262,20 +2266,20 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_aranges
                 0x00000f10       0x80 src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_aranges
-                0x00000f90       0x70 src/CustomDevices/OV7670.o
+                0x00000f90       0x78 src/CustomDevices/OV7670.o
  .debug_aranges
-                0x00001000       0x30 src/CustomDevices/PCA9542A.o
+                0x00001008       0x30 src/CustomDevices/PCA9542A.o
  .debug_aranges
-                0x00001030       0x38 src/CustomDevices/SD_Card.o
+                0x00001038       0x38 src/CustomDevices/SD_Card.o
  .debug_aranges
-                0x00001068       0x38 src/main.o
+                0x00001070       0x38 src/main.o
  .debug_aranges
-                0x000010a0       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+                0x000010a8       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
  .debug_aranges
-                0x000010c0       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+                0x000010c8       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
 .debug_pubnames
-                0x00000000     0x3395
+                0x00000000     0x33ab
  *(.debug_pubnames)
  .debug_pubnames
                 0x00000000      0x3b1 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -2318,23 +2322,23 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_pubnames
                 0x00002e9c       0x7f src/CustomDevices/Bitmap.o
  .debug_pubnames
-                0x00002f1b      0x10a src/CustomDevices/OV7670.o
+                0x00002f1b      0x120 src/CustomDevices/OV7670.o
  .debug_pubnames
-                0x00003025       0x7f src/CustomDevices/OV7670_Setup.o
+                0x0000303b       0x7f src/CustomDevices/OV7670_Setup.o
  .debug_pubnames
-                0x000030a4       0xc3 src/CustomDevices/PCA9542A.o
+                0x000030ba       0xc3 src/CustomDevices/PCA9542A.o
  .debug_pubnames
-                0x00003167      0x10e src/CustomDevices/SD_Card.o
+                0x0000317d      0x10e src/CustomDevices/SD_Card.o
  .debug_pubnames
-                0x00003275       0xb8 src/main.o
+                0x0000328b       0xb8 src/main.o
  .debug_pubnames
-                0x0000332d       0x2e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+                0x00003343       0x2e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
  .debug_pubnames
-                0x0000335b       0x1d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+                0x00003371       0x1d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
  .debug_pubnames
-                0x00003378       0x1d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+                0x0000338e       0x1d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
-.debug_info     0x00000000    0x1dd97
+.debug_info     0x00000000    0x1ddb0
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x154b src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_info    0x0000154b      0x224 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -2356,16 +2360,16 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_info    0x00015055       0xa6 src/asf/common/boards/user_board/init.o
  .debug_info    0x000150fb      0x569 src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_info    0x00015664      0x623 src/CustomDevices/Bitmap.o
- .debug_info    0x00015c87     0x3687 src/CustomDevices/OV7670.o
- .debug_info    0x0001930e      0x623 src/CustomDevices/OV7670_Setup.o
- .debug_info    0x00019931     0x11f7 src/CustomDevices/PCA9542A.o
- .debug_info    0x0001ab28     0x1992 src/CustomDevices/SD_Card.o
- .debug_info    0x0001c4ba     0x16ba src/main.o
- .debug_info    0x0001db74       0x71 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .debug_info    0x0001dbe5       0xe5 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_info    0x0001dcca       0xcd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_info    0x00015c87     0x36a0 src/CustomDevices/OV7670.o
+ .debug_info    0x00019327      0x623 src/CustomDevices/OV7670_Setup.o
+ .debug_info    0x0001994a     0x11f7 src/CustomDevices/PCA9542A.o
+ .debug_info    0x0001ab41     0x1992 src/CustomDevices/SD_Card.o
+ .debug_info    0x0001c4d3     0x16ba src/main.o
+ .debug_info    0x0001db8d       0x71 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+ .debug_info    0x0001dbfe       0xe5 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_info    0x0001dce3       0xcd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
-.debug_abbrev   0x00000000     0x3634
+.debug_abbrev   0x00000000     0x3649
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x2a4 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_abbrev  0x000002a4      0x145 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -2387,16 +2391,16 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_abbrev  0x00002720       0x4c src/asf/common/boards/user_board/init.o
  .debug_abbrev  0x0000276c      0x176 src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_abbrev  0x000028e2       0xfe src/CustomDevices/Bitmap.o
- .debug_abbrev  0x000029e0      0x3ce src/CustomDevices/OV7670.o
- .debug_abbrev  0x00002dae       0xfe src/CustomDevices/OV7670_Setup.o
- .debug_abbrev  0x00002eac      0x18f src/CustomDevices/PCA9542A.o
- .debug_abbrev  0x0000303b      0x1b7 src/CustomDevices/SD_Card.o
- .debug_abbrev  0x000031f2      0x2d2 src/main.o
- .debug_abbrev  0x000034c4       0x59 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .debug_abbrev  0x0000351d       0x92 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_abbrev  0x000035af       0x85 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_abbrev  0x000029e0      0x3e3 src/CustomDevices/OV7670.o
+ .debug_abbrev  0x00002dc3       0xfe src/CustomDevices/OV7670_Setup.o
+ .debug_abbrev  0x00002ec1      0x18f src/CustomDevices/PCA9542A.o
+ .debug_abbrev  0x00003050      0x1b7 src/CustomDevices/SD_Card.o
+ .debug_abbrev  0x00003207      0x2d2 src/main.o
+ .debug_abbrev  0x000034d9       0x59 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+ .debug_abbrev  0x00003532       0x92 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_abbrev  0x000035c4       0x85 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
-.debug_line     0x00000000    0x120c9
+.debug_line     0x00000000    0x120e0
  *(.debug_line)
  .debug_line    0x00000000      0xbfe src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_line    0x00000bfe      0x929 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -2418,16 +2422,16 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_line    0x0000b4ca      0xc96 src/asf/common/boards/user_board/init.o
  .debug_line    0x0000c160      0x994 src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_line    0x0000caf4      0xce6 src/CustomDevices/Bitmap.o
- .debug_line    0x0000d7da      0xfe4 src/CustomDevices/OV7670.o
- .debug_line    0x0000e7be      0xcec src/CustomDevices/OV7670_Setup.o
- .debug_line    0x0000f4aa      0xd20 src/CustomDevices/PCA9542A.o
- .debug_line    0x000101ca      0xd67 src/CustomDevices/SD_Card.o
- .debug_line    0x00010f31      0xe22 src/main.o
- .debug_line    0x00011d53       0x78 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .debug_line    0x00011dcb      0x182 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_line    0x00011f4d      0x17c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_line    0x0000d7da      0xffa src/CustomDevices/OV7670.o
+ .debug_line    0x0000e7d4      0xcec src/CustomDevices/OV7670_Setup.o
+ .debug_line    0x0000f4c0      0xd20 src/CustomDevices/PCA9542A.o
+ .debug_line    0x000101e0      0xd67 src/CustomDevices/SD_Card.o
+ .debug_line    0x00010f47      0xe23 src/main.o
+ .debug_line    0x00011d6a       0x78 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+ .debug_line    0x00011de2      0x182 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_line    0x00011f64      0x17c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
-.debug_frame    0x00000000     0x300c
+.debug_frame    0x00000000     0x3024
  *(.debug_frame)
  .debug_frame   0x00000000      0x364 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_frame   0x00000364       0xb4 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -2448,14 +2452,14 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_frame   0x00002a34      0x17c src/asf/avr32/utils/debug/print_funcs.o
  .debug_frame   0x00002bb0       0x20 src/asf/common/boards/user_board/init.o
  .debug_frame   0x00002bd0      0x128 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_frame   0x00002cf8      0x154 src/CustomDevices/OV7670.o
- .debug_frame   0x00002e4c       0x64 src/CustomDevices/PCA9542A.o
- .debug_frame   0x00002eb0       0x80 src/CustomDevices/SD_Card.o
- .debug_frame   0x00002f30       0x94 src/main.o
- .debug_frame   0x00002fc4       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_frame   0x00002fec       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_frame   0x00002cf8      0x16c src/CustomDevices/OV7670.o
+ .debug_frame   0x00002e64       0x64 src/CustomDevices/PCA9542A.o
+ .debug_frame   0x00002ec8       0x80 src/CustomDevices/SD_Card.o
+ .debug_frame   0x00002f48       0x94 src/main.o
+ .debug_frame   0x00002fdc       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_frame   0x00003004       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x696f
+.debug_str      0x00000000     0x6981
  *(.debug_str)
  .debug_str     0x00000000      0x81e src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
                                 0x8c9 (size before relaxing)
@@ -2497,24 +2501,24 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                                 0x2db (size before relaxing)
  .debug_str     0x000060e9      0x298 src/CustomDevices/Bitmap.o
                                 0x38d (size before relaxing)
- .debug_str     0x00006381      0x1df src/CustomDevices/OV7670.o
-                                0xc82 (size before relaxing)
- .debug_str     0x00006560       0x24 src/CustomDevices/OV7670_Setup.o
+ .debug_str     0x00006381      0x1f1 src/CustomDevices/OV7670.o
+                                0xc94 (size before relaxing)
+ .debug_str     0x00006572       0x24 src/CustomDevices/OV7670_Setup.o
                                 0x393 (size before relaxing)
- .debug_str     0x00006584       0x60 src/CustomDevices/PCA9542A.o
+ .debug_str     0x00006596       0x60 src/CustomDevices/PCA9542A.o
                                 0x69e (size before relaxing)
- .debug_str     0x000065e4      0x1e8 src/CustomDevices/SD_Card.o
+ .debug_str     0x000065f6      0x1e8 src/CustomDevices/SD_Card.o
                                 0x886 (size before relaxing)
- .debug_str     0x000067cc       0x86 src/main.o
+ .debug_str     0x000067de       0x86 src/main.o
                                 0x858 (size before relaxing)
- .debug_str     0x00006852       0x5f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+ .debug_str     0x00006864       0x5f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
                                  0x7c (size before relaxing)
- .debug_str     0x000068b1       0x5f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_str     0x000068c3       0x5f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
                                  0xfb (size before relaxing)
- .debug_str     0x00006910       0x5f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_str     0x00006922       0x5f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
                                  0xfb (size before relaxing)
 
-.debug_loc      0x00000000     0x82bc
+.debug_loc      0x00000000     0x82db
  *(.debug_loc)
  .debug_loc     0x00000000      0x911 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_loc     0x00000911      0x131 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -2534,13 +2538,13 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_loc     0x00006109     0x1210 src/asf/avr32/services/fs/fat/navigation.o
  .debug_loc     0x00007319      0x3bc src/asf/avr32/utils/debug/print_funcs.o
  .debug_loc     0x000076d5      0x395 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_loc     0x00007a6a      0x3e6 src/CustomDevices/OV7670.o
- .debug_loc     0x00007e50       0xc5 src/CustomDevices/PCA9542A.o
- .debug_loc     0x00007f15       0xe4 src/CustomDevices/SD_Card.o
- .debug_loc     0x00007ff9      0x286 src/main.o
- .debug_loc     0x0000827f       0x3d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_loc     0x00007a6a      0x405 src/CustomDevices/OV7670.o
+ .debug_loc     0x00007e6f       0xc5 src/CustomDevices/PCA9542A.o
+ .debug_loc     0x00007f34       0xe4 src/CustomDevices/SD_Card.o
+ .debug_loc     0x00008018      0x286 src/main.o
+ .debug_loc     0x0000829e       0x3d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
 
-.debug_macinfo  0x00000000  0x207e89c
+.debug_macinfo  0x00000000  0x207e8a8
  *(.debug_macinfo)
  .debug_macinfo
                 0x00000000   0x14ba17 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -2581,17 +2585,17 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_macinfo
                 0x017415a3   0x14cc7d src/asf/common/services/storage/ctrl_access/ctrl_access.o
  .debug_macinfo
-                0x0188e220   0x152b83 src/CustomDevices/Bitmap.o
+                0x0188e220   0x152b85 src/CustomDevices/Bitmap.o
  .debug_macinfo
-                0x019e0da3   0x152bb9 src/CustomDevices/OV7670.o
+                0x019e0da5   0x152bbb src/CustomDevices/OV7670.o
  .debug_macinfo
-                0x01b3395c   0x152b83 src/CustomDevices/OV7670_Setup.o
+                0x01b33960   0x152b85 src/CustomDevices/OV7670_Setup.o
  .debug_macinfo
-                0x01c864df   0x152b83 src/CustomDevices/PCA9542A.o
+                0x01c864e5   0x152b85 src/CustomDevices/PCA9542A.o
  .debug_macinfo
-                0x01dd9062   0x152bdd src/CustomDevices/SD_Card.o
+                0x01dd906a   0x152bdf src/CustomDevices/SD_Card.o
  .debug_macinfo
-                0x01f2bc3f   0x152c5d src/main.o
+                0x01f2bc49   0x152c5f src/main.o
 
 .debug_weaknames
  *(.debug_weaknames)
@@ -2628,7 +2632,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.note.GNU-stack)
 OUTPUT(ColumbusTest.elf elf32-avr32)
 
-.debug_ranges   0x00000000     0x12e8
+.debug_ranges   0x00000000     0x12f0
  .debug_ranges  0x00000000       0xe8 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_ranges  0x000000e8       0x48 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
  .debug_ranges  0x00000130       0x80 src/asf/avr32/drivers/eic/eic.o
@@ -2648,9 +2652,9 @@ OUTPUT(ColumbusTest.elf elf32-avr32)
  .debug_ranges  0x00000e30       0x80 src/asf/avr32/utils/debug/print_funcs.o
  .debug_ranges  0x00000eb0       0x18 src/asf/common/boards/user_board/init.o
  .debug_ranges  0x00000ec8       0x78 src/asf/common/services/storage/ctrl_access/ctrl_access.o
- .debug_ranges  0x00000f40      0x248 src/CustomDevices/OV7670.o
- .debug_ranges  0x00001188       0x28 src/CustomDevices/PCA9542A.o
- .debug_ranges  0x000011b0       0x30 src/CustomDevices/SD_Card.o
- .debug_ranges  0x000011e0       0xd8 src/main.o
- .debug_ranges  0x000012b8       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_ranges  0x000012d0       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_ranges  0x00000f40      0x250 src/CustomDevices/OV7670.o
+ .debug_ranges  0x00001190       0x28 src/CustomDevices/PCA9542A.o
+ .debug_ranges  0x000011b8       0x30 src/CustomDevices/SD_Card.o
+ .debug_ranges  0x000011e8       0xd8 src/main.o
+ .debug_ranges  0x000012c0       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_ranges  0x000012d8       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)

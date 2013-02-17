@@ -330,6 +330,16 @@ bool Photos_Ready(void)
 #define Image0Name	"Image0.bmp"
 #define Image1Name	"Image1.bmp"
 
+bool Store_Both_Images()
+{
+	if(Photos_Ready() == false)
+		return false;
+	Store_Image_0();
+	FIFO_Reset(CAMERA_LEFT);
+	Store_Image_1();
+	FIFO_Reset(CAMERA_RIGHT);
+	return true;
+}
 void Store_Image_0()
 { 
 	int i,j;
