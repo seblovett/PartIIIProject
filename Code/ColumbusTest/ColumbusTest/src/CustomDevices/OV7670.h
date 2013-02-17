@@ -57,7 +57,8 @@ void OV7670_Init(void);							//Initialises Camera
 void FIFO_Init();
 int TakePhoto(uint8_t Cameras);
 bool Photos_Ready(void);
-void Store_Images();
+void Store_Image_0();
+void Store_Image_1();
 //void FIFO_Reset(uint8_t CameraID);
 //////////////////////////////////////////////////////////////////////////
 //	Pins & Macros

@@ -327,26 +327,104 @@ bool Photos_Ready(void)
 		return false;
 }
 
-#define ImageName	"Image0.bmp"
-void Store_Images()
-{
+#define Image0Name	"Image0.bmp"
+#define Image1Name	"Image1.bmp"
+
+void Store_Image_0()
+{ 
+	int i,j;
+	//Image0
 	//make file
 	//delete file if it exits already
-	if(nav_filelist_findname((FS_STRING)ImageName, false))
+	nav_filelist_reset();
+	if(nav_filelist_findname((FS_STRING)Image0Name, false))
 	{
-		nav_setcwd((FS_STRING)ImageName, true, false);
+		nav_setcwd((FS_STRING)Image0Name, true, false);
+		print_dbg("\n\rImage0.bmp File Exists");
 		nav_file_del(false);
-		
-		nav_filelist_findname((FS_STRING)ImageName, false);
 	}
-	nav_file_create((FS_STRING)ImageName);//create file
-	file_open(FOPEN_MODE_APPEND);
+	nav_file_create((FS_STRING)Image0Name);//create file
+	file_open(FOPEN_MODE_W);
 	//write bitmap headers
 	file_write_buf(BMPHeader, BMPHEADERSIZE);
 	file_write_buf(DIBHead, DIBHEADERSIZE);
-	//write bitmap header
+	
 	//read and write image data
+	//Image0
+	//reset read pointer
+	FIFO_0_nRRST_CLR;
+	FIFO_0_RCLK_SET;
+
+	FIFO_0_RCLK_CLR;
+	FIFO_0_nRRST_SET;
 	
+	//enable output
+	FIFO_0_nOE_CLR;
+	uint8_t buffer[WIDTH * 2];
 	
+	for(j = 0; j < HEIGHT; j++)
+	{
+		for(i = 0; i < WIDTH*2; i+=2)
+		{
+			FIFO_0_RCLK_SET;
+			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			FIFO_0_RCLK_CLR;
+			FIFO_0_RCLK_SET;
+			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			FIFO_0_RCLK_CLR;
+		}
+		file_write_buf(&buffer, WIDTH * 2);
+	}
+	FIFO_0_nOE_SET;
+	file_close();
+
+	
+}
+
+void Store_Image_1()
+{
+	int i, j;
+	uint8_t buffer[WIDTH * 2];
+	//make file
+	//delete file if it exits already
+	nav_filelist_reset();
+	if(nav_filelist_findname((FS_STRING)Image1Name, false))
+	{
+		nav_setcwd((FS_STRING)Image1Name, true, false);
+		print_dbg("\n\rImage1.bmp File Exists");
+		nav_file_del(false);
+	}
+	nav_file_create((FS_STRING)Image1Name);//create file
+	file_open(FOPEN_MODE_W);
+	//write bitmap headers
+	file_write_buf(BMPHeader, BMPHEADERSIZE);
+	file_write_buf(DIBHead, DIBHEADERSIZE);
+	//Image1
+	//reset read pointer
+	FIFO_1_nRRST_CLR;
+	FIFO_1_RCLK_SET;
+
+	FIFO_1_RCLK_CLR;
+	FIFO_1_nRRST_SET;
+	
+	//enable output
+	FIFO_1_nOE_CLR;
+	/*uint8_t buffer[WIDTH * 2];*/
+	
+	for(j = 0; j < HEIGHT; j++)
+	{
+		for(i = 0; i < WIDTH*2; i+=2)
+		{
+			FIFO_1_RCLK_SET;
+			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			FIFO_1_RCLK_CLR;
+			delay_us(1);
+			FIFO_1_RCLK_SET;
+			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			FIFO_1_RCLK_CLR;
+		}
+		file_write_buf(&buffer, WIDTH * 2);
+	}
+	FIFO_1_nOE_SET;//disable output
 	file_close();
 }

@@ -7,41 +7,39 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   1 .rela.got     00000000  80002004  80002004  00002404  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  2 .text         0000562c  80002004  80002004  00002404  2**2
+  2 .text         000057fc  80002004  80002004  00002404  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   3 .exception    00000200  80007800  80007800  00007c00  2**9
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  4 .rodata       000007ec  80007a00  80007a00  00007e00  2**2
+  4 .rodata       00000830  80007a00  80007a00  00007e00  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .dalign       00000004  800081ec  800081ec  000085ec  2**0
-                  ALLOC
-  6 .data         0000000c  00000004  800081f0  00008804  2**2
+  5 .data         0000000c  00000004  80008230  00008804  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .bss          000007a0  00000010  800081fc  00008810  2**2
+  6 .bss          000007a0  00000010  8000823c  00008810  2**2
                   ALLOC
-  8 .comment      00000030  00000000  00000000  00008810  2**0
+  7 .comment      00000030  00000000  00000000  00008810  2**0
                   CONTENTS, READONLY
-  9 .debug_aranges 000010d8  00000000  00000000  00008840  2**0
+  8 .debug_aranges 000010e0  00000000  00000000  00008840  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_pubnames 00003382  00000000  00000000  00009918  2**0
+  9 .debug_pubnames 00003395  00000000  00000000  00009920  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_info   0001d654  00000000  00000000  0000cc9a  2**0
+ 10 .debug_info   0001dd97  00000000  00000000  0000ccb5  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_abbrev 00003598  00000000  00000000  0002a2ee  2**0
+ 11 .debug_abbrev 00003634  00000000  00000000  0002aa4c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_line   00012052  00000000  00000000  0002d886  2**0
+ 12 .debug_line   000120c9  00000000  00000000  0002e080  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_frame  00002fc0  00000000  00000000  0003f8d8  2**2
+ 13 .debug_frame  0000300c  00000000  00000000  0004014c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_str    00006960  00000000  00000000  00042898  2**0
+ 14 .debug_str    0000696f  00000000  00000000  00043158  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_loc    00008265  00000000  00000000  000491f8  2**0
+ 15 .debug_loc    000082bc  00000000  00000000  00049ac7  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_macinfo 0207e87a  00000000  00000000  0005145d  2**0
+ 16 .debug_macinfo 0207e89c  00000000  00000000  00051d83  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .stack        00001000  0000f000  0000f000  00000400  2**0
+ 17 .stack        00001000  0000f000  0000f000  00000400  2**0
                   ALLOC
- 19 .debug_ranges 000012e0  00000000  00000000  020cfcd7  2**0
+ 18 .debug_ranges 000012e8  00000000  00000000  020d061f  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .reset:
@@ -6431,7 +6429,7 @@ void  fat_invert_nav( uint8_t u8_idnav )
 8000417c:	00 00       	add	r0,r0
 8000417e:	06 e0       	st.h	--r3,r0
 80004180:	80 00       	ld.sh	r0,r0[0x0]
-80004182:	74 da       	ld.w	r10,r10[0x34]
+80004182:	76 aa       	ld.w	r10,r11[0x28]
 80004184:	00 00       	add	r0,r0
 80004186:	04 4c       	or	r12,r2
 80004188:	00 00       	add	r0,r0
@@ -6517,7 +6515,7 @@ void  fat_cache_clear( void )
 800041f8:	00 00       	add	r0,r0
 800041fa:	04 8c       	andn	r12,r2
 800041fc:	80 00       	ld.sh	r0,r0[0x0]
-800041fe:	76 22       	ld.w	r2,r11[0x8]
+800041fe:	77 f2       	ld.w	r2,r11[0x7c]
 
 80004200 <fat_cache_read_sector>:
 //!   fs_g_nav.u8_lun      drive number to read
@@ -9368,11 +9366,11 @@ fat_garbage_collector_entry_endofdir:
 8000501c:	80 00       	ld.sh	r0,r0[0x0]
 8000501e:	3c 60       	mov	r0,-58
 80005020:	80 00       	ld.sh	r0,r0[0x0]
-80005022:	76 22       	ld.w	r2,r11[0x8]
+80005022:	77 f2       	ld.w	r2,r11[0x7c]
 80005024:	80 00       	ld.sh	r0,r0[0x0]
 80005026:	3f d0       	mov	r0,-3
 80005028:	80 00       	ld.sh	r0,r0[0x0]
-8000502a:	74 da       	ld.w	r10,r10[0x34]
+8000502a:	76 aa       	ld.w	r10,r11[0x28]
 
 8000502c <fat_write_fat32_FSInfo>:
 //!
@@ -9466,11 +9464,11 @@ bool  fat_write_fat32_FSInfo( uint32_t u32_nb_free_cluster )
 800050bc:	80 00       	ld.sh	r0,r0[0x0]
 800050be:	7b 98       	ld.w	r8,sp[0x64]
 800050c0:	80 00       	ld.sh	r0,r0[0x0]
-800050c2:	74 da       	ld.w	r10,r10[0x34]
+800050c2:	76 aa       	ld.w	r10,r11[0x28]
 800050c4:	80 00       	ld.sh	r0,r0[0x0]
 800050c6:	7b ac       	ld.w	r12,sp[0x68]
 800050c8:	80 00       	ld.sh	r0,r0[0x0]
-800050ca:	76 22       	ld.w	r2,r11[0x8]
+800050ca:	77 f2       	ld.w	r2,r11[0x7c]
 
 800050cc <fat_allocfreespace>:
 //!   fs_g_seg.u32_addr          Return the first cluster value of the new cluster list
@@ -10467,7 +10465,7 @@ bool  fat_entry_shortname_compare( FS_STRING short_name )
 8000553c:	00 00       	add	r0,r0
 8000553e:	06 dc       	st.w	--r3,r12
 80005540:	80 00       	ld.sh	r0,r0[0x0]
-80005542:	74 b4       	ld.w	r4,r10[0x2c]
+80005542:	76 84       	ld.w	r4,r11[0x20]
 
 80005544 <fat_find_short_entry_name>:
 //!
@@ -11604,7 +11602,7 @@ uint16_t   file_write_buf( uint8_t _MEM_TYPE_SLOW_ *buffer , uint16_t u16_buf_si
 80005b08:	00 00       	add	r0,r0
 80005b0a:	04 8c       	andn	r12,r2
 80005b0c:	80 00       	ld.sh	r0,r0[0x0]
-80005b0e:	74 da       	ld.w	r10,r10[0x34]
+80005b0e:	76 aa       	ld.w	r10,r11[0x28]
 
 80005b10 <file_open>:
 //!
@@ -14036,7 +14034,7 @@ void init_dbg_rs232(long pba_hz)
 80006692:	cf e3       	brcs	8000668e <udata_clear_loop>
 
 80006694 <udata_clear_loop_end>:
-80006694:	fe cf f6 8c 	sub	pc,pc,-2420
+80006694:	fe cf f4 c4 	sub	pc,pc,-2876
 80006698:	00 01       	add	r1,r0
 8000669a:	00 00       	add	r0,r0
 8000669c:	00 00       	add	r0,r0
@@ -14044,7 +14042,7 @@ void init_dbg_rs232(long pba_hz)
 800066a0:	00 00       	add	r0,r0
 800066a2:	00 10       	sub	r0,r0
 800066a4:	80 00       	ld.sh	r0,r0[0x0]
-800066a6:	81 f0       	st.w	r0[0x3c],r0
+800066a6:	82 30       	ld.sh	r0,r1[0x6]
 800066a8:	00 00       	add	r0,r0
 800066aa:	00 10       	sub	r0,r0
 800066ac:	00 00       	add	r0,r0
@@ -14378,2561 +14376,2929 @@ bool Photos_Ready(void)
 800067e8:	00 00       	add	r0,r0
 800067ea:	07 68       	ld.uh	r8,--r3
 
-800067ec <Store_Images>:
+800067ec <Store_Image_0>:
 
-#define ImageName	"Image0.bmp"
-void Store_Images()
-{
-800067ec:	eb cd 40 80 	pushm	r7,lr
+#define Image0Name	"Image0.bmp"
+#define Image1Name	"Image1.bmp"
+
+void Store_Image_0()
+{ 
+800067ec:	d4 31       	pushm	r0-r7,lr
+800067ee:	fa cd 02 80 	sub	sp,sp,640
+	int i,j;
+	//Image0
 	//make file
 	//delete file if it exits already
-	if(nav_filelist_findname((FS_STRING)ImageName, false))
-800067f0:	30 0b       	mov	r11,0
-800067f2:	49 2c       	lddpc	r12,80006838 <Store_Images+0x4c>
-800067f4:	f0 1f 00 12 	mcall	8000683c <Store_Images+0x50>
-800067f8:	c0 e0       	breq	80006814 <Store_Images+0x28>
+	nav_filelist_reset();
+800067f2:	f0 1f 00 32 	mcall	800068b8 <Store_Image_0+0xcc>
+	if(nav_filelist_findname((FS_STRING)Image0Name, false))
+800067f6:	30 0b       	mov	r11,0
+800067f8:	4b 1c       	lddpc	r12,800068bc <Store_Image_0+0xd0>
+800067fa:	f0 1f 00 32 	mcall	800068c0 <Store_Image_0+0xd4>
+800067fe:	c0 c0       	breq	80006816 <Store_Image_0+0x2a>
 	{
-		nav_setcwd((FS_STRING)ImageName, true, false);
-800067fa:	49 07       	lddpc	r7,80006838 <Store_Images+0x4c>
-800067fc:	30 0a       	mov	r10,0
-800067fe:	30 1b       	mov	r11,1
-80006800:	0e 9c       	mov	r12,r7
-80006802:	f0 1f 00 10 	mcall	80006840 <Store_Images+0x54>
+		nav_setcwd((FS_STRING)Image0Name, true, false);
+80006800:	30 0a       	mov	r10,0
+80006802:	30 1b       	mov	r11,1
+80006804:	4a ec       	lddpc	r12,800068bc <Store_Image_0+0xd0>
+80006806:	f0 1f 00 30 	mcall	800068c4 <Store_Image_0+0xd8>
+		print_dbg("\n\rImage0.bmp File Exists");
+8000680a:	4b 0c       	lddpc	r12,800068c8 <Store_Image_0+0xdc>
+8000680c:	f0 1f 00 30 	mcall	800068cc <Store_Image_0+0xe0>
 		nav_file_del(false);
-80006806:	30 0c       	mov	r12,0
-80006808:	f0 1f 00 0f 	mcall	80006844 <Store_Images+0x58>
-		
-		nav_filelist_findname((FS_STRING)ImageName, false);
-8000680c:	30 0b       	mov	r11,0
-8000680e:	0e 9c       	mov	r12,r7
-80006810:	f0 1f 00 0b 	mcall	8000683c <Store_Images+0x50>
+80006810:	30 0c       	mov	r12,0
+80006812:	f0 1f 00 30 	mcall	800068d0 <Store_Image_0+0xe4>
 	}
-	nav_file_create((FS_STRING)ImageName);//create file
-80006814:	48 9c       	lddpc	r12,80006838 <Store_Images+0x4c>
-80006816:	f0 1f 00 0d 	mcall	80006848 <Store_Images+0x5c>
-	file_open(FOPEN_MODE_APPEND);
-8000681a:	30 2c       	mov	r12,2
-8000681c:	f0 1f 00 0c 	mcall	8000684c <Store_Images+0x60>
+	nav_file_create((FS_STRING)Image0Name);//create file
+80006816:	4a ac       	lddpc	r12,800068bc <Store_Image_0+0xd0>
+80006818:	f0 1f 00 2f 	mcall	800068d4 <Store_Image_0+0xe8>
+	file_open(FOPEN_MODE_W);
+8000681c:	30 ec       	mov	r12,14
+8000681e:	f0 1f 00 2f 	mcall	800068d8 <Store_Image_0+0xec>
 	//write bitmap headers
 	file_write_buf(BMPHeader, BMPHEADERSIZE);
-80006820:	30 eb       	mov	r11,14
-80006822:	48 cc       	lddpc	r12,80006850 <Store_Images+0x64>
-80006824:	f0 1f 00 0c 	mcall	80006854 <Store_Images+0x68>
+80006822:	30 eb       	mov	r11,14
+80006824:	4a ec       	lddpc	r12,800068dc <Store_Image_0+0xf0>
+80006826:	f0 1f 00 2f 	mcall	800068e0 <Store_Image_0+0xf4>
 	file_write_buf(DIBHead, DIBHEADERSIZE);
-80006828:	37 cb       	mov	r11,124
-8000682a:	48 cc       	lddpc	r12,80006858 <Store_Images+0x6c>
-8000682c:	f0 1f 00 0a 	mcall	80006854 <Store_Images+0x68>
-	//write bitmap header
+8000682a:	37 cb       	mov	r11,124
+8000682c:	4a ec       	lddpc	r12,800068e4 <Store_Image_0+0xf8>
+8000682e:	f0 1f 00 2d 	mcall	800068e0 <Store_Image_0+0xf4>
+	
 	//read and write image data
-	
-	
-	file_close();
-80006830:	f0 1f 00 0b 	mcall	8000685c <Store_Images+0x70>
-80006834:	e3 cd 80 80 	ldm	sp++,r7,pc
-80006838:	80 00       	ld.sh	r0,r0[0x0]
-8000683a:	7c 80       	ld.w	r0,lr[0x20]
-8000683c:	80 00       	ld.sh	r0,r0[0x0]
-8000683e:	5e 28       	reths	r8
-80006840:	80 00       	ld.sh	r0,r0[0x0]
-80006842:	62 f0       	ld.w	r0,r1[0x3c]
-80006844:	80 00       	ld.sh	r0,r0[0x0]
-80006846:	5f bc       	srhi	r12
-80006848:	80 00       	ld.sh	r0,r0[0x0]
-8000684a:	5e 70       	retpl	r0
-8000684c:	80 00       	ld.sh	r0,r0[0x0]
-8000684e:	5b 10       	cp.w	r0,-15
-80006850:	80 00       	ld.sh	r0,r0[0x0]
-80006852:	7b f4       	ld.w	r4,sp[0x7c]
-80006854:	80 00       	ld.sh	r0,r0[0x0]
-80006856:	59 9c       	cp.w	r12,25
-80006858:	80 00       	ld.sh	r0,r0[0x0]
-8000685a:	7c 04       	ld.w	r4,lr[0x0]
-8000685c:	80 00       	ld.sh	r0,r0[0x0]
-8000685e:	59 60       	cp.w	r0,22
+	//Image0
+	//reset read pointer
+	FIFO_0_nRRST_CLR;
+80006832:	30 fc       	mov	r12,15
+80006834:	f0 1f 00 2d 	mcall	800068e8 <Store_Image_0+0xfc>
+	FIFO_0_RCLK_SET;
+80006838:	31 3c       	mov	r12,19
+8000683a:	f0 1f 00 2d 	mcall	800068ec <Store_Image_0+0x100>
 
-80006860 <FIFO_Init>:
+	FIFO_0_RCLK_CLR;
+8000683e:	31 3c       	mov	r12,19
+80006840:	f0 1f 00 2a 	mcall	800068e8 <Store_Image_0+0xfc>
+	FIFO_0_nRRST_SET;
+80006844:	30 fc       	mov	r12,15
+80006846:	f0 1f 00 2a 	mcall	800068ec <Store_Image_0+0x100>
+	
+	//enable output
+	FIFO_0_nOE_CLR;
+8000684a:	31 cc       	mov	r12,28
+8000684c:	f0 1f 00 27 	mcall	800068e8 <Store_Image_0+0xfc>
+80006850:	30 03       	mov	r3,0
+	uint8_t buffer[WIDTH * 2];
+	
+	for(j = 0; j < HEIGHT; j++)
+80006852:	fa c2 ff ff 	sub	r2,sp,-1
+}
+
+#define Image0Name	"Image0.bmp"
+#define Image1Name	"Image1.bmp"
+
+void Store_Image_0()
+80006856:	fa c4 fd 7f 	sub	r4,sp,-641
+	
+	for(j = 0; j < HEIGHT; j++)
+	{
+		for(i = 0; i < WIDTH*2; i+=2)
+		{
+			FIFO_0_RCLK_SET;
+8000685a:	31 36       	mov	r6,19
+			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+8000685c:	fe 75 20 00 	mov	r5,-57344
+			FIFO_0_RCLK_CLR;
+			FIFO_0_RCLK_SET;
+			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			FIFO_0_RCLK_CLR;
+		}
+		file_write_buf(&buffer, WIDTH * 2);
+80006860:	1a 91       	mov	r1,sp
+80006862:	e0 60 02 80 	mov	r0,640
+80006866:	c1 f8       	rjmp	800068a4 <Store_Image_0+0xb8>
+	
+	for(j = 0; j < HEIGHT; j++)
+	{
+		for(i = 0; i < WIDTH*2; i+=2)
+		{
+			FIFO_0_RCLK_SET;
+80006868:	0c 9c       	mov	r12,r6
+8000686a:	f0 1f 00 21 	mcall	800068ec <Store_Image_0+0x100>
+			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+8000686e:	ea f8 02 60 	ld.w	r8,r5[608]
+80006872:	ae 88       	st.b	r7[0x0],r8
+			FIFO_0_RCLK_CLR;
+80006874:	0c 9c       	mov	r12,r6
+80006876:	f0 1f 00 1d 	mcall	800068e8 <Store_Image_0+0xfc>
+			FIFO_0_RCLK_SET;
+8000687a:	0c 9c       	mov	r12,r6
+8000687c:	f0 1f 00 1c 	mcall	800068ec <Store_Image_0+0x100>
+			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+80006880:	ea f8 02 60 	ld.w	r8,r5[608]
+80006884:	ef 68 ff ff 	st.b	r7[-1],r8
+			FIFO_0_RCLK_CLR;
+80006888:	0c 9c       	mov	r12,r6
+8000688a:	f0 1f 00 18 	mcall	800068e8 <Store_Image_0+0xfc>
+8000688e:	2f e7       	sub	r7,-2
+	FIFO_0_nOE_CLR;
+	uint8_t buffer[WIDTH * 2];
+	
+	for(j = 0; j < HEIGHT; j++)
+	{
+		for(i = 0; i < WIDTH*2; i+=2)
+80006890:	08 37       	cp.w	r7,r4
+80006892:	ce b1       	brne	80006868 <Store_Image_0+0x7c>
+			FIFO_0_RCLK_CLR;
+			FIFO_0_RCLK_SET;
+			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			FIFO_0_RCLK_CLR;
+		}
+		file_write_buf(&buffer, WIDTH * 2);
+80006894:	00 9b       	mov	r11,r0
+80006896:	1a 9c       	mov	r12,sp
+80006898:	f0 1f 00 12 	mcall	800068e0 <Store_Image_0+0xf4>
+	
+	//enable output
+	FIFO_0_nOE_CLR;
+	uint8_t buffer[WIDTH * 2];
+	
+	for(j = 0; j < HEIGHT; j++)
+8000689c:	2f f3       	sub	r3,-1
+8000689e:	e0 43 00 f0 	cp.w	r3,240
+800068a2:	c0 30       	breq	800068a8 <Store_Image_0+0xbc>
+800068a4:	04 97       	mov	r7,r2
+800068a6:	ce 1b       	rjmp	80006868 <Store_Image_0+0x7c>
+			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			FIFO_0_RCLK_CLR;
+		}
+		file_write_buf(&buffer, WIDTH * 2);
+	}
+	FIFO_0_nOE_SET;
+800068a8:	31 cc       	mov	r12,28
+800068aa:	f0 1f 00 11 	mcall	800068ec <Store_Image_0+0x100>
+	file_close();
+800068ae:	f0 1f 00 11 	mcall	800068f0 <Store_Image_0+0x104>
+
+	
+}
+800068b2:	fe 3d fd 80 	sub	sp,-640
+800068b6:	d8 32       	popm	r0-r7,pc
+800068b8:	80 00       	ld.sh	r0,r0[0x0]
+800068ba:	5e 58       	retlt	r8
+800068bc:	80 00       	ld.sh	r0,r0[0x0]
+800068be:	7c 80       	ld.w	r0,lr[0x20]
+800068c0:	80 00       	ld.sh	r0,r0[0x0]
+800068c2:	5e 28       	reths	r8
+800068c4:	80 00       	ld.sh	r0,r0[0x0]
+800068c6:	62 f0       	ld.w	r0,r1[0x3c]
+800068c8:	80 00       	ld.sh	r0,r0[0x0]
+800068ca:	7c 8c       	ld.w	r12,lr[0x20]
+800068cc:	80 00       	ld.sh	r0,r0[0x0]
+800068ce:	65 fc       	ld.w	r12,r2[0x7c]
+800068d0:	80 00       	ld.sh	r0,r0[0x0]
+800068d2:	5f bc       	srhi	r12
+800068d4:	80 00       	ld.sh	r0,r0[0x0]
+800068d6:	5e 70       	retpl	r0
+800068d8:	80 00       	ld.sh	r0,r0[0x0]
+800068da:	5b 10       	cp.w	r0,-15
+800068dc:	80 00       	ld.sh	r0,r0[0x0]
+800068de:	7b f4       	ld.w	r4,sp[0x7c]
+800068e0:	80 00       	ld.sh	r0,r0[0x0]
+800068e2:	59 9c       	cp.w	r12,25
+800068e4:	80 00       	ld.sh	r0,r0[0x0]
+800068e6:	7c 04       	ld.w	r4,lr[0x0]
+800068e8:	80 00       	ld.sh	r0,r0[0x0]
+800068ea:	2f 92       	sub	r2,-7
+800068ec:	80 00       	ld.sh	r0,r0[0x0]
+800068ee:	2f 76       	sub	r6,-9
+800068f0:	80 00       	ld.sh	r0,r0[0x0]
+800068f2:	59 60       	cp.w	r0,22
+
+800068f4 <Store_Image_1>:
+
+void Store_Image_1()
+{
+800068f4:	d4 31       	pushm	r0-r7,lr
+800068f6:	fa cd 02 80 	sub	sp,sp,640
+	int i, j;
+	uint8_t buffer[WIDTH * 2];
+	//make file
+	//delete file if it exits already
+	nav_filelist_reset();
+800068fa:	f0 1f 00 3d 	mcall	800069ec <Store_Image_1+0xf8>
+	if(nav_filelist_findname((FS_STRING)Image1Name, false))
+800068fe:	30 0b       	mov	r11,0
+80006900:	4b cc       	lddpc	r12,800069f0 <Store_Image_1+0xfc>
+80006902:	f0 1f 00 3d 	mcall	800069f4 <Store_Image_1+0x100>
+80006906:	c0 c0       	breq	8000691e <Store_Image_1+0x2a>
+	{
+		nav_setcwd((FS_STRING)Image1Name, true, false);
+80006908:	30 0a       	mov	r10,0
+8000690a:	30 1b       	mov	r11,1
+8000690c:	4b 9c       	lddpc	r12,800069f0 <Store_Image_1+0xfc>
+8000690e:	f0 1f 00 3b 	mcall	800069f8 <Store_Image_1+0x104>
+		print_dbg("\n\rImage1.bmp File Exists");
+80006912:	4b bc       	lddpc	r12,800069fc <Store_Image_1+0x108>
+80006914:	f0 1f 00 3b 	mcall	80006a00 <Store_Image_1+0x10c>
+		nav_file_del(false);
+80006918:	30 0c       	mov	r12,0
+8000691a:	f0 1f 00 3b 	mcall	80006a04 <Store_Image_1+0x110>
+	}
+	nav_file_create((FS_STRING)Image1Name);//create file
+8000691e:	4b 5c       	lddpc	r12,800069f0 <Store_Image_1+0xfc>
+80006920:	f0 1f 00 3a 	mcall	80006a08 <Store_Image_1+0x114>
+	file_open(FOPEN_MODE_W);
+80006924:	30 ec       	mov	r12,14
+80006926:	f0 1f 00 3a 	mcall	80006a0c <Store_Image_1+0x118>
+	//write bitmap headers
+	file_write_buf(BMPHeader, BMPHEADERSIZE);
+8000692a:	30 eb       	mov	r11,14
+8000692c:	4b 9c       	lddpc	r12,80006a10 <Store_Image_1+0x11c>
+8000692e:	f0 1f 00 3a 	mcall	80006a14 <Store_Image_1+0x120>
+	file_write_buf(DIBHead, DIBHEADERSIZE);
+80006932:	37 cb       	mov	r11,124
+80006934:	4b 9c       	lddpc	r12,80006a18 <Store_Image_1+0x124>
+80006936:	f0 1f 00 38 	mcall	80006a14 <Store_Image_1+0x120>
+	//Image1
+	//reset read pointer
+	FIFO_1_nRRST_CLR;
+8000693a:	31 6c       	mov	r12,22
+8000693c:	f0 1f 00 38 	mcall	80006a1c <Store_Image_1+0x128>
+	FIFO_1_RCLK_SET;
+80006940:	31 7c       	mov	r12,23
+80006942:	f0 1f 00 38 	mcall	80006a20 <Store_Image_1+0x12c>
+
+	FIFO_1_RCLK_CLR;
+80006946:	31 7c       	mov	r12,23
+80006948:	f0 1f 00 35 	mcall	80006a1c <Store_Image_1+0x128>
+	FIFO_1_nRRST_SET;
+8000694c:	31 6c       	mov	r12,22
+8000694e:	f0 1f 00 35 	mcall	80006a20 <Store_Image_1+0x12c>
+	
+	//enable output
+	FIFO_1_nOE_CLR;
+80006952:	31 bc       	mov	r12,27
+80006954:	f0 1f 00 32 	mcall	80006a1c <Store_Image_1+0x128>
+80006958:	30 03       	mov	r3,0
+	/*uint8_t buffer[WIDTH * 2];*/
+	
+	for(j = 0; j < HEIGHT; j++)
+8000695a:	fa c2 ff ff 	sub	r2,sp,-1
+	file_close();
+
+	
+}
+
+void Store_Image_1()
+8000695e:	fa c4 fd 7f 	sub	r4,sp,-641
+	
+	for(j = 0; j < HEIGHT; j++)
+	{
+		for(i = 0; i < WIDTH*2; i+=2)
+		{
+			FIFO_1_RCLK_SET;
+80006962:	31 76       	mov	r6,23
+			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+80006964:	fe 75 20 00 	mov	r5,-57344
+			delay_us(1);
+			FIFO_1_RCLK_SET;
+			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			FIFO_1_RCLK_CLR;
+		}
+		file_write_buf(&buffer, WIDTH * 2);
+80006968:	1a 91       	mov	r1,sp
+8000696a:	e0 60 02 80 	mov	r0,640
+8000696e:	c2 78       	rjmp	800069bc <Store_Image_1+0xc8>
+	
+	for(j = 0; j < HEIGHT; j++)
+	{
+		for(i = 0; i < WIDTH*2; i+=2)
+		{
+			FIFO_1_RCLK_SET;
+80006970:	0c 9c       	mov	r12,r6
+80006972:	f0 1f 00 2c 	mcall	80006a20 <Store_Image_1+0x12c>
+			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+80006976:	ea f8 02 60 	ld.w	r8,r5[608]
+8000697a:	ae 88       	st.b	r7[0x0],r8
+			FIFO_1_RCLK_CLR;
+8000697c:	0c 9c       	mov	r12,r6
+8000697e:	f0 1f 00 28 	mcall	80006a1c <Store_Image_1+0x128>
+ * \param  delay:   (input) delay in CPU cycles before timeout.
+ * \param  cpu_time: (output) internal information used by the timer API.
+ */
+__always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
+{
+  cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
+80006982:	e1 b8 00 42 	mfsr	r8,0x108
+  cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
+80006986:	f0 ca ff f0 	sub	r10,r8,-16
+ *
+ * \return true if timeout occurred, otherwise false.
+ */
+__always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
+{
+  unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
+8000698a:	e1 b9 00 42 	mfsr	r9,0x108
+  // Test if the timeout as already occurred.
+  else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
+    return true;
+
+  // If the ending cycle count of this timeout is wrapped, ...
+  else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
+8000698e:	14 38       	cp.w	r8,r10
+80006990:	e0 88 00 08 	brls	800069a0 <Store_Image_1+0xac>
+  {
+    if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
+80006994:	12 38       	cp.w	r8,r9
+80006996:	fe 98 ff fa 	brls	8000698a <Store_Image_1+0x96>
+8000699a:	12 3a       	cp.w	r10,r9
+8000699c:	c1 a3       	brcs	800069d0 <Store_Image_1+0xdc>
+8000699e:	cf 6b       	rjmp	8000698a <Store_Image_1+0x96>
+    }
+    return false;
+  }
+  else
+  {
+    if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
+800069a0:	12 38       	cp.w	r8,r9
+800069a2:	e0 8b 00 17 	brhi	800069d0 <Store_Image_1+0xdc>
+800069a6:	12 3a       	cp.w	r10,r9
+800069a8:	c1 43       	brcs	800069d0 <Store_Image_1+0xdc>
+800069aa:	cf 0b       	rjmp	8000698a <Store_Image_1+0x96>
+			delay_us(1);
+			FIFO_1_RCLK_SET;
+			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			FIFO_1_RCLK_CLR;
+		}
+		file_write_buf(&buffer, WIDTH * 2);
+800069ac:	00 9b       	mov	r11,r0
+800069ae:	1a 9c       	mov	r12,sp
+800069b0:	f0 1f 00 19 	mcall	80006a14 <Store_Image_1+0x120>
+	
+	//enable output
+	FIFO_1_nOE_CLR;
+	/*uint8_t buffer[WIDTH * 2];*/
+	
+	for(j = 0; j < HEIGHT; j++)
+800069b4:	2f f3       	sub	r3,-1
+800069b6:	e0 43 00 f0 	cp.w	r3,240
+800069ba:	c0 30       	breq	800069c0 <Store_Image_1+0xcc>
+800069bc:	04 97       	mov	r7,r2
+800069be:	cd 9b       	rjmp	80006970 <Store_Image_1+0x7c>
+			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			FIFO_1_RCLK_CLR;
+		}
+		file_write_buf(&buffer, WIDTH * 2);
+	}
+	FIFO_1_nOE_SET;//disable output
+800069c0:	31 bc       	mov	r12,27
+800069c2:	f0 1f 00 18 	mcall	80006a20 <Store_Image_1+0x12c>
+	file_close();
+800069c6:	f0 1f 00 18 	mcall	80006a24 <Store_Image_1+0x130>
+800069ca:	fe 3d fd 80 	sub	sp,-640
+800069ce:	d8 32       	popm	r0-r7,pc
+		{
+			FIFO_1_RCLK_SET;
+			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			FIFO_1_RCLK_CLR;
+			delay_us(1);
+			FIFO_1_RCLK_SET;
+800069d0:	0c 9c       	mov	r12,r6
+800069d2:	f0 1f 00 14 	mcall	80006a20 <Store_Image_1+0x12c>
+			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+800069d6:	ea f8 02 60 	ld.w	r8,r5[608]
+800069da:	ef 68 ff ff 	st.b	r7[-1],r8
+			FIFO_1_RCLK_CLR;
+800069de:	0c 9c       	mov	r12,r6
+800069e0:	f0 1f 00 0f 	mcall	80006a1c <Store_Image_1+0x128>
+800069e4:	2f e7       	sub	r7,-2
+	FIFO_1_nOE_CLR;
+	/*uint8_t buffer[WIDTH * 2];*/
+	
+	for(j = 0; j < HEIGHT; j++)
+	{
+		for(i = 0; i < WIDTH*2; i+=2)
+800069e6:	08 37       	cp.w	r7,r4
+800069e8:	cc 41       	brne	80006970 <Store_Image_1+0x7c>
+800069ea:	ce 1b       	rjmp	800069ac <Store_Image_1+0xb8>
+800069ec:	80 00       	ld.sh	r0,r0[0x0]
+800069ee:	5e 58       	retlt	r8
+800069f0:	80 00       	ld.sh	r0,r0[0x0]
+800069f2:	7c a8       	ld.w	r8,lr[0x28]
+800069f4:	80 00       	ld.sh	r0,r0[0x0]
+800069f6:	5e 28       	reths	r8
+800069f8:	80 00       	ld.sh	r0,r0[0x0]
+800069fa:	62 f0       	ld.w	r0,r1[0x3c]
+800069fc:	80 00       	ld.sh	r0,r0[0x0]
+800069fe:	7c b4       	ld.w	r4,lr[0x2c]
+80006a00:	80 00       	ld.sh	r0,r0[0x0]
+80006a02:	65 fc       	ld.w	r12,r2[0x7c]
+80006a04:	80 00       	ld.sh	r0,r0[0x0]
+80006a06:	5f bc       	srhi	r12
+80006a08:	80 00       	ld.sh	r0,r0[0x0]
+80006a0a:	5e 70       	retpl	r0
+80006a0c:	80 00       	ld.sh	r0,r0[0x0]
+80006a0e:	5b 10       	cp.w	r0,-15
+80006a10:	80 00       	ld.sh	r0,r0[0x0]
+80006a12:	7b f4       	ld.w	r4,sp[0x7c]
+80006a14:	80 00       	ld.sh	r0,r0[0x0]
+80006a16:	59 9c       	cp.w	r12,25
+80006a18:	80 00       	ld.sh	r0,r0[0x0]
+80006a1a:	7c 04       	ld.w	r4,lr[0x0]
+80006a1c:	80 00       	ld.sh	r0,r0[0x0]
+80006a1e:	2f 92       	sub	r2,-7
+80006a20:	80 00       	ld.sh	r0,r0[0x0]
+80006a22:	2f 76       	sub	r6,-9
+80006a24:	80 00       	ld.sh	r0,r0[0x0]
+80006a26:	59 60       	cp.w	r0,22
+
+80006a28 <FIFO_Init>:
 	FIFO_Init();
 	Enable_global_interrupt();
 	
 }
 void FIFO_Init()
 {
-80006860:	d4 01       	pushm	lr
+80006a28:	d4 01       	pushm	lr
 	//Disable both outputs
 	FIFO_0_nOE_SET
-80006862:	31 cc       	mov	r12,28
-80006864:	f0 1f 00 97 	mcall	80006ac0 <FIFO_Init+0x260>
+80006a2a:	31 cc       	mov	r12,28
+80006a2c:	f0 1f 00 97 	mcall	80006c88 <FIFO_Init+0x260>
 	FIFO_1_nOE_SET
-80006868:	31 bc       	mov	r12,27
-8000686a:	f0 1f 00 96 	mcall	80006ac0 <FIFO_Init+0x260>
+80006a30:	31 bc       	mov	r12,27
+80006a32:	f0 1f 00 96 	mcall	80006c88 <FIFO_Init+0x260>
 	
 	//Reset Buffer 0
 	FIFO_0_WRST_CLR;
-8000686e:	31 5c       	mov	r12,21
-80006870:	f0 1f 00 95 	mcall	80006ac4 <FIFO_Init+0x264>
+80006a36:	31 5c       	mov	r12,21
+80006a38:	f0 1f 00 95 	mcall	80006c8c <FIFO_Init+0x264>
 	FIFO_0_RCLK_CLR;
-80006874:	31 3c       	mov	r12,19
-80006876:	f0 1f 00 94 	mcall	80006ac4 <FIFO_Init+0x264>
+80006a3c:	31 3c       	mov	r12,19
+80006a3e:	f0 1f 00 94 	mcall	80006c8c <FIFO_Init+0x264>
 	FIFO_0_nRRST_SET;
-8000687a:	30 fc       	mov	r12,15
-8000687c:	f0 1f 00 91 	mcall	80006ac0 <FIFO_Init+0x260>
+80006a42:	30 fc       	mov	r12,15
+80006a44:	f0 1f 00 91 	mcall	80006c88 <FIFO_Init+0x260>
 	FIFO_0_WEN_CLR;
-80006880:	31 4c       	mov	r12,20
-80006882:	f0 1f 00 91 	mcall	80006ac4 <FIFO_Init+0x264>
+80006a48:	31 4c       	mov	r12,20
+80006a4a:	f0 1f 00 91 	mcall	80006c8c <FIFO_Init+0x264>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006886:	e1 b8 00 42 	mfsr	r8,0x108
+80006a4e:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-8000688a:	f0 ca ff 60 	sub	r10,r8,-160
+80006a52:	f0 ca ff 60 	sub	r10,r8,-160
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-8000688e:	e1 b9 00 42 	mfsr	r9,0x108
+80006a56:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80006892:	14 38       	cp.w	r8,r10
-80006894:	e0 88 00 09 	brls	800068a6 <FIFO_Init+0x46>
+80006a5a:	14 38       	cp.w	r8,r10
+80006a5c:	e0 88 00 09 	brls	80006a6e <FIFO_Init+0x46>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-80006898:	12 38       	cp.w	r8,r9
-8000689a:	fe 98 ff fa 	brls	8000688e <FIFO_Init+0x2e>
-8000689e:	12 3a       	cp.w	r10,r9
-800068a0:	e0 83 00 ac 	brlo	800069f8 <FIFO_Init+0x198>
-800068a4:	cf 5b       	rjmp	8000688e <FIFO_Init+0x2e>
+80006a60:	12 38       	cp.w	r8,r9
+80006a62:	fe 98 ff fa 	brls	80006a56 <FIFO_Init+0x2e>
+80006a66:	12 3a       	cp.w	r10,r9
+80006a68:	e0 83 00 ac 	brlo	80006bc0 <FIFO_Init+0x198>
+80006a6c:	cf 5b       	rjmp	80006a56 <FIFO_Init+0x2e>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-800068a6:	12 38       	cp.w	r8,r9
-800068a8:	e0 8b 00 a8 	brhi	800069f8 <FIFO_Init+0x198>
-800068ac:	12 3a       	cp.w	r10,r9
-800068ae:	e0 83 00 a5 	brlo	800069f8 <FIFO_Init+0x198>
-800068b2:	ce eb       	rjmp	8000688e <FIFO_Init+0x2e>
+80006a6e:	12 38       	cp.w	r8,r9
+80006a70:	e0 8b 00 a8 	brhi	80006bc0 <FIFO_Init+0x198>
+80006a74:	12 3a       	cp.w	r10,r9
+80006a76:	e0 83 00 a5 	brlo	80006bc0 <FIFO_Init+0x198>
+80006a7a:	ce eb       	rjmp	80006a56 <FIFO_Init+0x2e>
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-800068b4:	e1 b9 00 42 	mfsr	r9,0x108
+80006a7c:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-800068b8:	14 38       	cp.w	r8,r10
-800068ba:	e0 88 00 09 	brls	800068cc <FIFO_Init+0x6c>
+80006a80:	14 38       	cp.w	r8,r10
+80006a82:	e0 88 00 09 	brls	80006a94 <FIFO_Init+0x6c>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-800068be:	12 38       	cp.w	r8,r9
-800068c0:	fe 98 ff fa 	brls	800068b4 <FIFO_Init+0x54>
-800068c4:	12 3a       	cp.w	r10,r9
-800068c6:	e0 83 00 a1 	brlo	80006a08 <FIFO_Init+0x1a8>
-800068ca:	cf 5b       	rjmp	800068b4 <FIFO_Init+0x54>
+80006a86:	12 38       	cp.w	r8,r9
+80006a88:	fe 98 ff fa 	brls	80006a7c <FIFO_Init+0x54>
+80006a8c:	12 3a       	cp.w	r10,r9
+80006a8e:	e0 83 00 a1 	brlo	80006bd0 <FIFO_Init+0x1a8>
+80006a92:	cf 5b       	rjmp	80006a7c <FIFO_Init+0x54>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-800068cc:	12 38       	cp.w	r8,r9
-800068ce:	e0 8b 00 9d 	brhi	80006a08 <FIFO_Init+0x1a8>
-800068d2:	12 3a       	cp.w	r10,r9
-800068d4:	e0 83 00 9a 	brlo	80006a08 <FIFO_Init+0x1a8>
-800068d8:	ce eb       	rjmp	800068b4 <FIFO_Init+0x54>
+80006a94:	12 38       	cp.w	r8,r9
+80006a96:	e0 8b 00 9d 	brhi	80006bd0 <FIFO_Init+0x1a8>
+80006a9a:	12 3a       	cp.w	r10,r9
+80006a9c:	e0 83 00 9a 	brlo	80006bd0 <FIFO_Init+0x1a8>
+80006aa0:	ce eb       	rjmp	80006a7c <FIFO_Init+0x54>
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-800068da:	e1 b9 00 42 	mfsr	r9,0x108
+80006aa2:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-800068de:	14 38       	cp.w	r8,r10
-800068e0:	e0 88 00 09 	brls	800068f2 <FIFO_Init+0x92>
+80006aa6:	14 38       	cp.w	r8,r10
+80006aa8:	e0 88 00 09 	brls	80006aba <FIFO_Init+0x92>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-800068e4:	12 38       	cp.w	r8,r9
-800068e6:	fe 98 ff fa 	brls	800068da <FIFO_Init+0x7a>
-800068ea:	12 3a       	cp.w	r10,r9
-800068ec:	e0 83 00 99 	brlo	80006a1e <FIFO_Init+0x1be>
-800068f0:	cf 5b       	rjmp	800068da <FIFO_Init+0x7a>
+80006aac:	12 38       	cp.w	r8,r9
+80006aae:	fe 98 ff fa 	brls	80006aa2 <FIFO_Init+0x7a>
+80006ab2:	12 3a       	cp.w	r10,r9
+80006ab4:	e0 83 00 99 	brlo	80006be6 <FIFO_Init+0x1be>
+80006ab8:	cf 5b       	rjmp	80006aa2 <FIFO_Init+0x7a>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-800068f2:	12 38       	cp.w	r8,r9
-800068f4:	e0 8b 00 95 	brhi	80006a1e <FIFO_Init+0x1be>
-800068f8:	12 3a       	cp.w	r10,r9
-800068fa:	e0 83 00 92 	brlo	80006a1e <FIFO_Init+0x1be>
-800068fe:	ce eb       	rjmp	800068da <FIFO_Init+0x7a>
+80006aba:	12 38       	cp.w	r8,r9
+80006abc:	e0 8b 00 95 	brhi	80006be6 <FIFO_Init+0x1be>
+80006ac0:	12 3a       	cp.w	r10,r9
+80006ac2:	e0 83 00 92 	brlo	80006be6 <FIFO_Init+0x1be>
+80006ac6:	ce eb       	rjmp	80006aa2 <FIFO_Init+0x7a>
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80006900:	e1 b9 00 42 	mfsr	r9,0x108
+80006ac8:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80006904:	14 38       	cp.w	r8,r10
-80006906:	e0 88 00 09 	brls	80006918 <FIFO_Init+0xb8>
+80006acc:	14 38       	cp.w	r8,r10
+80006ace:	e0 88 00 09 	brls	80006ae0 <FIFO_Init+0xb8>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-8000690a:	12 38       	cp.w	r8,r9
-8000690c:	fe 98 ff fa 	brls	80006900 <FIFO_Init+0xa0>
-80006910:	12 3a       	cp.w	r10,r9
-80006912:	e0 83 00 8e 	brlo	80006a2e <FIFO_Init+0x1ce>
-80006916:	cf 5b       	rjmp	80006900 <FIFO_Init+0xa0>
+80006ad2:	12 38       	cp.w	r8,r9
+80006ad4:	fe 98 ff fa 	brls	80006ac8 <FIFO_Init+0xa0>
+80006ad8:	12 3a       	cp.w	r10,r9
+80006ada:	e0 83 00 8e 	brlo	80006bf6 <FIFO_Init+0x1ce>
+80006ade:	cf 5b       	rjmp	80006ac8 <FIFO_Init+0xa0>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-80006918:	12 38       	cp.w	r8,r9
-8000691a:	e0 8b 00 8a 	brhi	80006a2e <FIFO_Init+0x1ce>
-8000691e:	12 3a       	cp.w	r10,r9
-80006920:	e0 83 00 87 	brlo	80006a2e <FIFO_Init+0x1ce>
-80006924:	ce eb       	rjmp	80006900 <FIFO_Init+0xa0>
+80006ae0:	12 38       	cp.w	r8,r9
+80006ae2:	e0 8b 00 8a 	brhi	80006bf6 <FIFO_Init+0x1ce>
+80006ae6:	12 3a       	cp.w	r10,r9
+80006ae8:	e0 83 00 87 	brlo	80006bf6 <FIFO_Init+0x1ce>
+80006aec:	ce eb       	rjmp	80006ac8 <FIFO_Init+0xa0>
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80006926:	e1 b9 00 42 	mfsr	r9,0x108
+80006aee:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-8000692a:	14 38       	cp.w	r8,r10
-8000692c:	e0 88 00 09 	brls	8000693e <FIFO_Init+0xde>
+80006af2:	14 38       	cp.w	r8,r10
+80006af4:	e0 88 00 09 	brls	80006b06 <FIFO_Init+0xde>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-80006930:	12 38       	cp.w	r8,r9
-80006932:	fe 98 ff fa 	brls	80006926 <FIFO_Init+0xc6>
-80006936:	12 3a       	cp.w	r10,r9
-80006938:	e0 83 00 86 	brlo	80006a44 <FIFO_Init+0x1e4>
-8000693c:	cf 5b       	rjmp	80006926 <FIFO_Init+0xc6>
+80006af8:	12 38       	cp.w	r8,r9
+80006afa:	fe 98 ff fa 	brls	80006aee <FIFO_Init+0xc6>
+80006afe:	12 3a       	cp.w	r10,r9
+80006b00:	e0 83 00 86 	brlo	80006c0c <FIFO_Init+0x1e4>
+80006b04:	cf 5b       	rjmp	80006aee <FIFO_Init+0xc6>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-8000693e:	12 38       	cp.w	r8,r9
-80006940:	e0 8b 00 82 	brhi	80006a44 <FIFO_Init+0x1e4>
-80006944:	12 3a       	cp.w	r10,r9
-80006946:	c7 f3       	brcs	80006a44 <FIFO_Init+0x1e4>
-80006948:	ce fb       	rjmp	80006926 <FIFO_Init+0xc6>
+80006b06:	12 38       	cp.w	r8,r9
+80006b08:	e0 8b 00 82 	brhi	80006c0c <FIFO_Init+0x1e4>
+80006b0c:	12 3a       	cp.w	r10,r9
+80006b0e:	c7 f3       	brcs	80006c0c <FIFO_Init+0x1e4>
+80006b10:	ce fb       	rjmp	80006aee <FIFO_Init+0xc6>
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-8000694a:	e1 b9 00 42 	mfsr	r9,0x108
+80006b12:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-8000694e:	14 38       	cp.w	r8,r10
-80006950:	e0 88 00 09 	brls	80006962 <FIFO_Init+0x102>
+80006b16:	14 38       	cp.w	r8,r10
+80006b18:	e0 88 00 09 	brls	80006b2a <FIFO_Init+0x102>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-80006954:	12 38       	cp.w	r8,r9
-80006956:	fe 98 ff fa 	brls	8000694a <FIFO_Init+0xea>
-8000695a:	12 3a       	cp.w	r10,r9
-8000695c:	e0 83 00 88 	brlo	80006a6c <FIFO_Init+0x20c>
-80006960:	cf 5b       	rjmp	8000694a <FIFO_Init+0xea>
+80006b1c:	12 38       	cp.w	r8,r9
+80006b1e:	fe 98 ff fa 	brls	80006b12 <FIFO_Init+0xea>
+80006b22:	12 3a       	cp.w	r10,r9
+80006b24:	e0 83 00 88 	brlo	80006c34 <FIFO_Init+0x20c>
+80006b28:	cf 5b       	rjmp	80006b12 <FIFO_Init+0xea>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-80006962:	12 38       	cp.w	r8,r9
-80006964:	e0 8b 00 84 	brhi	80006a6c <FIFO_Init+0x20c>
-80006968:	12 3a       	cp.w	r10,r9
-8000696a:	e0 83 00 81 	brlo	80006a6c <FIFO_Init+0x20c>
-8000696e:	ce eb       	rjmp	8000694a <FIFO_Init+0xea>
+80006b2a:	12 38       	cp.w	r8,r9
+80006b2c:	e0 8b 00 84 	brhi	80006c34 <FIFO_Init+0x20c>
+80006b30:	12 3a       	cp.w	r10,r9
+80006b32:	e0 83 00 81 	brlo	80006c34 <FIFO_Init+0x20c>
+80006b36:	ce eb       	rjmp	80006b12 <FIFO_Init+0xea>
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80006970:	e1 b9 00 42 	mfsr	r9,0x108
+80006b38:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80006974:	14 38       	cp.w	r8,r10
-80006976:	e0 88 00 08 	brls	80006986 <FIFO_Init+0x126>
+80006b3c:	14 38       	cp.w	r8,r10
+80006b3e:	e0 88 00 08 	brls	80006b4e <FIFO_Init+0x126>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-8000697a:	12 38       	cp.w	r8,r9
-8000697c:	fe 98 ff fa 	brls	80006970 <FIFO_Init+0x110>
-80006980:	12 3a       	cp.w	r10,r9
-80006982:	c7 d3       	brcs	80006a7c <FIFO_Init+0x21c>
-80006984:	cf 6b       	rjmp	80006970 <FIFO_Init+0x110>
+80006b42:	12 38       	cp.w	r8,r9
+80006b44:	fe 98 ff fa 	brls	80006b38 <FIFO_Init+0x110>
+80006b48:	12 3a       	cp.w	r10,r9
+80006b4a:	c7 d3       	brcs	80006c44 <FIFO_Init+0x21c>
+80006b4c:	cf 6b       	rjmp	80006b38 <FIFO_Init+0x110>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-80006986:	12 38       	cp.w	r8,r9
-80006988:	e0 8b 00 7a 	brhi	80006a7c <FIFO_Init+0x21c>
-8000698c:	12 3a       	cp.w	r10,r9
-8000698e:	c7 73       	brcs	80006a7c <FIFO_Init+0x21c>
-80006990:	cf 0b       	rjmp	80006970 <FIFO_Init+0x110>
+80006b4e:	12 38       	cp.w	r8,r9
+80006b50:	e0 8b 00 7a 	brhi	80006c44 <FIFO_Init+0x21c>
+80006b54:	12 3a       	cp.w	r10,r9
+80006b56:	c7 73       	brcs	80006c44 <FIFO_Init+0x21c>
+80006b58:	cf 0b       	rjmp	80006b38 <FIFO_Init+0x110>
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80006992:	e1 b9 00 42 	mfsr	r9,0x108
+80006b5a:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80006996:	14 38       	cp.w	r8,r10
-80006998:	e0 88 00 08 	brls	800069a8 <FIFO_Init+0x148>
+80006b5e:	14 38       	cp.w	r8,r10
+80006b60:	e0 88 00 08 	brls	80006b70 <FIFO_Init+0x148>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-8000699c:	12 38       	cp.w	r8,r9
-8000699e:	fe 98 ff fa 	brls	80006992 <FIFO_Init+0x132>
-800069a2:	12 3a       	cp.w	r10,r9
-800069a4:	c7 73       	brcs	80006a92 <FIFO_Init+0x232>
-800069a6:	cf 6b       	rjmp	80006992 <FIFO_Init+0x132>
+80006b64:	12 38       	cp.w	r8,r9
+80006b66:	fe 98 ff fa 	brls	80006b5a <FIFO_Init+0x132>
+80006b6a:	12 3a       	cp.w	r10,r9
+80006b6c:	c7 73       	brcs	80006c5a <FIFO_Init+0x232>
+80006b6e:	cf 6b       	rjmp	80006b5a <FIFO_Init+0x132>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-800069a8:	12 38       	cp.w	r8,r9
-800069aa:	e0 8b 00 74 	brhi	80006a92 <FIFO_Init+0x232>
-800069ae:	12 3a       	cp.w	r10,r9
-800069b0:	c7 13       	brcs	80006a92 <FIFO_Init+0x232>
-800069b2:	cf 0b       	rjmp	80006992 <FIFO_Init+0x132>
+80006b70:	12 38       	cp.w	r8,r9
+80006b72:	e0 8b 00 74 	brhi	80006c5a <FIFO_Init+0x232>
+80006b76:	12 3a       	cp.w	r10,r9
+80006b78:	c7 13       	brcs	80006c5a <FIFO_Init+0x232>
+80006b7a:	cf 0b       	rjmp	80006b5a <FIFO_Init+0x132>
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-800069b4:	e1 b9 00 42 	mfsr	r9,0x108
+80006b7c:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-800069b8:	14 38       	cp.w	r8,r10
-800069ba:	e0 88 00 08 	brls	800069ca <FIFO_Init+0x16a>
+80006b80:	14 38       	cp.w	r8,r10
+80006b82:	e0 88 00 08 	brls	80006b92 <FIFO_Init+0x16a>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-800069be:	12 38       	cp.w	r8,r9
-800069c0:	fe 98 ff fa 	brls	800069b4 <FIFO_Init+0x154>
-800069c4:	12 3a       	cp.w	r10,r9
-800069c6:	c6 e3       	brcs	80006aa2 <FIFO_Init+0x242>
-800069c8:	cf 6b       	rjmp	800069b4 <FIFO_Init+0x154>
+80006b86:	12 38       	cp.w	r8,r9
+80006b88:	fe 98 ff fa 	brls	80006b7c <FIFO_Init+0x154>
+80006b8c:	12 3a       	cp.w	r10,r9
+80006b8e:	c6 e3       	brcs	80006c6a <FIFO_Init+0x242>
+80006b90:	cf 6b       	rjmp	80006b7c <FIFO_Init+0x154>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-800069ca:	12 38       	cp.w	r8,r9
-800069cc:	e0 8b 00 6b 	brhi	80006aa2 <FIFO_Init+0x242>
-800069d0:	12 3a       	cp.w	r10,r9
-800069d2:	c6 83       	brcs	80006aa2 <FIFO_Init+0x242>
-800069d4:	cf 0b       	rjmp	800069b4 <FIFO_Init+0x154>
+80006b92:	12 38       	cp.w	r8,r9
+80006b94:	e0 8b 00 6b 	brhi	80006c6a <FIFO_Init+0x242>
+80006b98:	12 3a       	cp.w	r10,r9
+80006b9a:	c6 83       	brcs	80006c6a <FIFO_Init+0x242>
+80006b9c:	cf 0b       	rjmp	80006b7c <FIFO_Init+0x154>
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-800069d6:	e1 b9 00 42 	mfsr	r9,0x108
+80006b9e:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-800069da:	14 38       	cp.w	r8,r10
-800069dc:	e0 88 00 08 	brls	800069ec <FIFO_Init+0x18c>
+80006ba2:	14 38       	cp.w	r8,r10
+80006ba4:	e0 88 00 08 	brls	80006bb4 <FIFO_Init+0x18c>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-800069e0:	12 38       	cp.w	r8,r9
-800069e2:	fe 98 ff fa 	brls	800069d6 <FIFO_Init+0x176>
-800069e6:	12 3a       	cp.w	r10,r9
-800069e8:	c6 83       	brcs	80006ab8 <FIFO_Init+0x258>
-800069ea:	cf 6b       	rjmp	800069d6 <FIFO_Init+0x176>
+80006ba8:	12 38       	cp.w	r8,r9
+80006baa:	fe 98 ff fa 	brls	80006b9e <FIFO_Init+0x176>
+80006bae:	12 3a       	cp.w	r10,r9
+80006bb0:	c6 83       	brcs	80006c80 <FIFO_Init+0x258>
+80006bb2:	cf 6b       	rjmp	80006b9e <FIFO_Init+0x176>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-800069ec:	12 38       	cp.w	r8,r9
-800069ee:	e0 8b 00 65 	brhi	80006ab8 <FIFO_Init+0x258>
-800069f2:	12 3a       	cp.w	r10,r9
-800069f4:	c6 23       	brcs	80006ab8 <FIFO_Init+0x258>
-800069f6:	cf 0b       	rjmp	800069d6 <FIFO_Init+0x176>
+80006bb4:	12 38       	cp.w	r8,r9
+80006bb6:	e0 8b 00 65 	brhi	80006c80 <FIFO_Init+0x258>
+80006bba:	12 3a       	cp.w	r10,r9
+80006bbc:	c6 23       	brcs	80006c80 <FIFO_Init+0x258>
+80006bbe:	cf 0b       	rjmp	80006b9e <FIFO_Init+0x176>
 	delay_us(10);
 	FIFO_0_RCLK_SET;
-800069f8:	31 3c       	mov	r12,19
-800069fa:	f0 1f 00 32 	mcall	80006ac0 <FIFO_Init+0x260>
+80006bc0:	31 3c       	mov	r12,19
+80006bc2:	f0 1f 00 32 	mcall	80006c88 <FIFO_Init+0x260>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-800069fe:	e1 b8 00 42 	mfsr	r8,0x108
+80006bc6:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006a02:	f0 ca ff 60 	sub	r10,r8,-160
-80006a06:	c5 7b       	rjmp	800068b4 <FIFO_Init+0x54>
+80006bca:	f0 ca ff 60 	sub	r10,r8,-160
+80006bce:	c5 7b       	rjmp	80006a7c <FIFO_Init+0x54>
 	delay_us(10);
 	FIFO_0_RCLK_CLR;
-80006a08:	31 3c       	mov	r12,19
-80006a0a:	f0 1f 00 2f 	mcall	80006ac4 <FIFO_Init+0x264>
+80006bd0:	31 3c       	mov	r12,19
+80006bd2:	f0 1f 00 2f 	mcall	80006c8c <FIFO_Init+0x264>
 	FIFO_0_nRRST_CLR;
-80006a0e:	30 fc       	mov	r12,15
-80006a10:	f0 1f 00 2d 	mcall	80006ac4 <FIFO_Init+0x264>
+80006bd6:	30 fc       	mov	r12,15
+80006bd8:	f0 1f 00 2d 	mcall	80006c8c <FIFO_Init+0x264>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006a14:	e1 b8 00 42 	mfsr	r8,0x108
+80006bdc:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006a18:	f0 ca ff 60 	sub	r10,r8,-160
-80006a1c:	c5 fb       	rjmp	800068da <FIFO_Init+0x7a>
+80006be0:	f0 ca ff 60 	sub	r10,r8,-160
+80006be4:	c5 fb       	rjmp	80006aa2 <FIFO_Init+0x7a>
 	delay_us(10);
 	FIFO_0_RCLK_SET;
-80006a1e:	31 3c       	mov	r12,19
-80006a20:	f0 1f 00 28 	mcall	80006ac0 <FIFO_Init+0x260>
+80006be6:	31 3c       	mov	r12,19
+80006be8:	f0 1f 00 28 	mcall	80006c88 <FIFO_Init+0x260>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006a24:	e1 b8 00 42 	mfsr	r8,0x108
+80006bec:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006a28:	f0 ca ff 60 	sub	r10,r8,-160
-80006a2c:	c6 ab       	rjmp	80006900 <FIFO_Init+0xa0>
+80006bf0:	f0 ca ff 60 	sub	r10,r8,-160
+80006bf4:	c6 ab       	rjmp	80006ac8 <FIFO_Init+0xa0>
 	delay_us(10);
 	FIFO_0_RCLK_CLR;
-80006a2e:	31 3c       	mov	r12,19
-80006a30:	f0 1f 00 25 	mcall	80006ac4 <FIFO_Init+0x264>
+80006bf6:	31 3c       	mov	r12,19
+80006bf8:	f0 1f 00 25 	mcall	80006c8c <FIFO_Init+0x264>
 	FIFO_0_nRRST_SET;
-80006a34:	30 fc       	mov	r12,15
-80006a36:	f0 1f 00 23 	mcall	80006ac0 <FIFO_Init+0x260>
+80006bfc:	30 fc       	mov	r12,15
+80006bfe:	f0 1f 00 23 	mcall	80006c88 <FIFO_Init+0x260>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006a3a:	e1 b8 00 42 	mfsr	r8,0x108
+80006c02:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006a3e:	f0 ca ff 60 	sub	r10,r8,-160
-80006a42:	c7 2b       	rjmp	80006926 <FIFO_Init+0xc6>
+80006c06:	f0 ca ff 60 	sub	r10,r8,-160
+80006c0a:	c7 2b       	rjmp	80006aee <FIFO_Init+0xc6>
 	delay_us(10);
 	FIFO_0_WRST_SET;
-80006a44:	31 5c       	mov	r12,21
-80006a46:	f0 1f 00 1f 	mcall	80006ac0 <FIFO_Init+0x260>
+80006c0c:	31 5c       	mov	r12,21
+80006c0e:	f0 1f 00 1f 	mcall	80006c88 <FIFO_Init+0x260>
 	
 	//Reset Buffer 1
 	FIFO_1_WRST_CLR;
-80006a4a:	31 9c       	mov	r12,25
-80006a4c:	f0 1f 00 1e 	mcall	80006ac4 <FIFO_Init+0x264>
+80006c12:	31 9c       	mov	r12,25
+80006c14:	f0 1f 00 1e 	mcall	80006c8c <FIFO_Init+0x264>
 	FIFO_1_RCLK_CLR;
-80006a50:	31 7c       	mov	r12,23
-80006a52:	f0 1f 00 1d 	mcall	80006ac4 <FIFO_Init+0x264>
+80006c18:	31 7c       	mov	r12,23
+80006c1a:	f0 1f 00 1d 	mcall	80006c8c <FIFO_Init+0x264>
 	FIFO_1_nRRST_SET;
-80006a56:	31 6c       	mov	r12,22
-80006a58:	f0 1f 00 1a 	mcall	80006ac0 <FIFO_Init+0x260>
+80006c1e:	31 6c       	mov	r12,22
+80006c20:	f0 1f 00 1a 	mcall	80006c88 <FIFO_Init+0x260>
 	FIFO_1_WEN_CLR;
-80006a5c:	31 8c       	mov	r12,24
-80006a5e:	f0 1f 00 1a 	mcall	80006ac4 <FIFO_Init+0x264>
+80006c24:	31 8c       	mov	r12,24
+80006c26:	f0 1f 00 1a 	mcall	80006c8c <FIFO_Init+0x264>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006a62:	e1 b8 00 42 	mfsr	r8,0x108
+80006c2a:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006a66:	f0 ca ff 60 	sub	r10,r8,-160
-80006a6a:	c7 0b       	rjmp	8000694a <FIFO_Init+0xea>
+80006c2e:	f0 ca ff 60 	sub	r10,r8,-160
+80006c32:	c7 0b       	rjmp	80006b12 <FIFO_Init+0xea>
 	delay_us(10);
 	FIFO_1_RCLK_SET;
-80006a6c:	31 7c       	mov	r12,23
-80006a6e:	f0 1f 00 15 	mcall	80006ac0 <FIFO_Init+0x260>
+80006c34:	31 7c       	mov	r12,23
+80006c36:	f0 1f 00 15 	mcall	80006c88 <FIFO_Init+0x260>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006a72:	e1 b8 00 42 	mfsr	r8,0x108
+80006c3a:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006a76:	f0 ca ff 60 	sub	r10,r8,-160
-80006a7a:	c7 bb       	rjmp	80006970 <FIFO_Init+0x110>
+80006c3e:	f0 ca ff 60 	sub	r10,r8,-160
+80006c42:	c7 bb       	rjmp	80006b38 <FIFO_Init+0x110>
 	delay_us(10);
 	FIFO_0_RCLK_CLR;
-80006a7c:	31 3c       	mov	r12,19
-80006a7e:	f0 1f 00 12 	mcall	80006ac4 <FIFO_Init+0x264>
+80006c44:	31 3c       	mov	r12,19
+80006c46:	f0 1f 00 12 	mcall	80006c8c <FIFO_Init+0x264>
 	FIFO_1_nRRST_CLR;
-80006a82:	31 6c       	mov	r12,22
-80006a84:	f0 1f 00 10 	mcall	80006ac4 <FIFO_Init+0x264>
+80006c4a:	31 6c       	mov	r12,22
+80006c4c:	f0 1f 00 10 	mcall	80006c8c <FIFO_Init+0x264>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006a88:	e1 b8 00 42 	mfsr	r8,0x108
+80006c50:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006a8c:	f0 ca ff 60 	sub	r10,r8,-160
-80006a90:	c8 1b       	rjmp	80006992 <FIFO_Init+0x132>
+80006c54:	f0 ca ff 60 	sub	r10,r8,-160
+80006c58:	c8 1b       	rjmp	80006b5a <FIFO_Init+0x132>
 	delay_us(10);
 	FIFO_1_RCLK_SET;
-80006a92:	31 7c       	mov	r12,23
-80006a94:	f0 1f 00 0b 	mcall	80006ac0 <FIFO_Init+0x260>
+80006c5a:	31 7c       	mov	r12,23
+80006c5c:	f0 1f 00 0b 	mcall	80006c88 <FIFO_Init+0x260>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006a98:	e1 b8 00 42 	mfsr	r8,0x108
+80006c60:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006a9c:	f0 ca ff 60 	sub	r10,r8,-160
-80006aa0:	c8 ab       	rjmp	800069b4 <FIFO_Init+0x154>
+80006c64:	f0 ca ff 60 	sub	r10,r8,-160
+80006c68:	c8 ab       	rjmp	80006b7c <FIFO_Init+0x154>
 	delay_us(10);
 	FIFO_1_RCLK_CLR;
-80006aa2:	31 7c       	mov	r12,23
-80006aa4:	f0 1f 00 08 	mcall	80006ac4 <FIFO_Init+0x264>
+80006c6a:	31 7c       	mov	r12,23
+80006c6c:	f0 1f 00 08 	mcall	80006c8c <FIFO_Init+0x264>
 	FIFO_1_nRRST_SET;
-80006aa8:	31 6c       	mov	r12,22
-80006aaa:	f0 1f 00 06 	mcall	80006ac0 <FIFO_Init+0x260>
+80006c70:	31 6c       	mov	r12,22
+80006c72:	f0 1f 00 06 	mcall	80006c88 <FIFO_Init+0x260>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006aae:	e1 b8 00 42 	mfsr	r8,0x108
+80006c76:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006ab2:	f0 ca ff 60 	sub	r10,r8,-160
-80006ab6:	c9 0b       	rjmp	800069d6 <FIFO_Init+0x176>
+80006c7a:	f0 ca ff 60 	sub	r10,r8,-160
+80006c7e:	c9 0b       	rjmp	80006b9e <FIFO_Init+0x176>
 	delay_us(10);
 	FIFO_1_WRST_SET;
-80006ab8:	31 9c       	mov	r12,25
-80006aba:	f0 1f 00 02 	mcall	80006ac0 <FIFO_Init+0x260>
+80006c80:	31 9c       	mov	r12,25
+80006c82:	f0 1f 00 02 	mcall	80006c88 <FIFO_Init+0x260>
 }
-80006abe:	d8 02       	popm	pc
-80006ac0:	80 00       	ld.sh	r0,r0[0x0]
-80006ac2:	2f 76       	sub	r6,-9
-80006ac4:	80 00       	ld.sh	r0,r0[0x0]
-80006ac6:	2f 92       	sub	r2,-7
+80006c86:	d8 02       	popm	pc
+80006c88:	80 00       	ld.sh	r0,r0[0x0]
+80006c8a:	2f 76       	sub	r6,-9
+80006c8c:	80 00       	ld.sh	r0,r0[0x0]
+80006c8e:	2f 92       	sub	r2,-7
 
-80006ac8 <VSYNC0_Handler>:
+80006c90 <VSYNC0_Handler>:
 // /*#include "CustomDevices/MotorDriver.h"*/
 // SDCard
 // #include "CustomDevices/SD_Card.h"
 
 __attribute__((__interrupt__)) static void VSYNC0_Handler (void)
 {
-80006ac8:	d4 01       	pushm	lr
+80006c90:	d4 01       	pushm	lr
 	//print_dbg("\n\rVSYNC0 Detected!");
 	eic_clear_interrupt_line(&AVR32_EIC, VSYNC_0_LINE);
-80006aca:	30 4b       	mov	r11,4
-80006acc:	fe 7c 14 00 	mov	r12,-60416
-80006ad0:	f0 1f 00 15 	mcall	80006b24 <VSYNC0_Handler+0x5c>
+80006c92:	30 4b       	mov	r11,4
+80006c94:	fe 7c 14 00 	mov	r12,-60416
+80006c98:	f0 1f 00 15 	mcall	80006cec <VSYNC0_Handler+0x5c>
 	//VSYNC_0_DISABLE_INTERRUPT;
 	switch(OV7670_Status.VSYNC0_State)
-80006ad4:	49 58       	lddpc	r8,80006b28 <VSYNC0_Handler+0x60>
-80006ad6:	11 d8       	ld.ub	r8,r8[0x5]
-80006ad8:	30 29       	mov	r9,2
-80006ada:	f2 08 18 00 	cp.b	r8,r9
-80006ade:	c1 00       	breq	80006afe <VSYNC0_Handler+0x36>
-80006ae0:	30 39       	mov	r9,3
-80006ae2:	f2 08 18 00 	cp.b	r8,r9
-80006ae6:	c1 30       	breq	80006b0c <VSYNC0_Handler+0x44>
-80006ae8:	30 19       	mov	r9,1
-80006aea:	f2 08 18 00 	cp.b	r8,r9
-80006aee:	c1 31       	brne	80006b14 <VSYNC0_Handler+0x4c>
+80006c9c:	49 58       	lddpc	r8,80006cf0 <VSYNC0_Handler+0x60>
+80006c9e:	11 d8       	ld.ub	r8,r8[0x5]
+80006ca0:	30 29       	mov	r9,2
+80006ca2:	f2 08 18 00 	cp.b	r8,r9
+80006ca6:	c1 00       	breq	80006cc6 <VSYNC0_Handler+0x36>
+80006ca8:	30 39       	mov	r9,3
+80006caa:	f2 08 18 00 	cp.b	r8,r9
+80006cae:	c1 30       	breq	80006cd4 <VSYNC0_Handler+0x44>
+80006cb0:	30 19       	mov	r9,1
+80006cb2:	f2 08 18 00 	cp.b	r8,r9
+80006cb6:	c1 31       	brne	80006cdc <VSYNC0_Handler+0x4c>
 	{
 		case(TAKE_PHOTO):
 			FIFO_0_WEN_SET;
-80006af0:	31 4c       	mov	r12,20
-80006af2:	f0 1f 00 0f 	mcall	80006b2c <VSYNC0_Handler+0x64>
+80006cb8:	31 4c       	mov	r12,20
+80006cba:	f0 1f 00 0f 	mcall	80006cf4 <VSYNC0_Handler+0x64>
 			OV7670_Status.VSYNC0_State = TAKING_PHOTO;
-80006af6:	30 29       	mov	r9,2
-80006af8:	48 c8       	lddpc	r8,80006b28 <VSYNC0_Handler+0x60>
-80006afa:	b0 d9       	st.b	r8[0x5],r9
+80006cbe:	30 29       	mov	r9,2
+80006cc0:	48 c8       	lddpc	r8,80006cf0 <VSYNC0_Handler+0x60>
+80006cc2:	b0 d9       	st.b	r8[0x5],r9
 			break;
-80006afc:	c1 28       	rjmp	80006b20 <VSYNC0_Handler+0x58>
+80006cc4:	c1 28       	rjmp	80006ce8 <VSYNC0_Handler+0x58>
 			
 		case(TAKING_PHOTO):
 			FIFO_0_WEN_CLR;
-80006afe:	31 4c       	mov	r12,20
-80006b00:	f0 1f 00 0c 	mcall	80006b30 <VSYNC0_Handler+0x68>
+80006cc6:	31 4c       	mov	r12,20
+80006cc8:	f0 1f 00 0c 	mcall	80006cf8 <VSYNC0_Handler+0x68>
 			OV7670_Status.VSYNC0_State = TAKEN_PHOTO;
-80006b04:	30 39       	mov	r9,3
-80006b06:	48 98       	lddpc	r8,80006b28 <VSYNC0_Handler+0x60>
-80006b08:	b0 d9       	st.b	r8[0x5],r9
+80006ccc:	30 39       	mov	r9,3
+80006cce:	48 98       	lddpc	r8,80006cf0 <VSYNC0_Handler+0x60>
+80006cd0:	b0 d9       	st.b	r8[0x5],r9
 			break;
-80006b0a:	c0 b8       	rjmp	80006b20 <VSYNC0_Handler+0x58>
+80006cd2:	c0 b8       	rjmp	80006ce8 <VSYNC0_Handler+0x58>
 		
 		case (TAKEN_PHOTO):
 			FIFO_0_WEN_CLR;
-80006b0c:	31 4c       	mov	r12,20
-80006b0e:	f0 1f 00 09 	mcall	80006b30 <VSYNC0_Handler+0x68>
+80006cd4:	31 4c       	mov	r12,20
+80006cd6:	f0 1f 00 09 	mcall	80006cf8 <VSYNC0_Handler+0x68>
 			break;
-80006b12:	c0 78       	rjmp	80006b20 <VSYNC0_Handler+0x58>
+80006cda:	c0 78       	rjmp	80006ce8 <VSYNC0_Handler+0x58>
 			
 		case(IDLE):
 		default:
 			FIFO_0_WEN_CLR;
-80006b14:	31 4c       	mov	r12,20
-80006b16:	f0 1f 00 07 	mcall	80006b30 <VSYNC0_Handler+0x68>
+80006cdc:	31 4c       	mov	r12,20
+80006cde:	f0 1f 00 07 	mcall	80006cf8 <VSYNC0_Handler+0x68>
 			OV7670_Status.VSYNC0_State = IDLE;
-80006b1a:	30 09       	mov	r9,0
-80006b1c:	48 38       	lddpc	r8,80006b28 <VSYNC0_Handler+0x60>
-80006b1e:	b0 d9       	st.b	r8[0x5],r9
+80006ce2:	30 09       	mov	r9,0
+80006ce4:	48 38       	lddpc	r8,80006cf0 <VSYNC0_Handler+0x60>
+80006ce6:	b0 d9       	st.b	r8[0x5],r9
 			break;
 	}
 }
-80006b20:	d4 02       	popm	lr
-80006b22:	d6 03       	rete
-80006b24:	80 00       	ld.sh	r0,r0[0x0]
-80006b26:	2d b4       	sub	r4,-37
-80006b28:	00 00       	add	r0,r0
-80006b2a:	07 68       	ld.uh	r8,--r3
-80006b2c:	80 00       	ld.sh	r0,r0[0x0]
-80006b2e:	2f 76       	sub	r6,-9
-80006b30:	80 00       	ld.sh	r0,r0[0x0]
-80006b32:	2f 92       	sub	r2,-7
+80006ce8:	d4 02       	popm	lr
+80006cea:	d6 03       	rete
+80006cec:	80 00       	ld.sh	r0,r0[0x0]
+80006cee:	2d b4       	sub	r4,-37
+80006cf0:	00 00       	add	r0,r0
+80006cf2:	07 68       	ld.uh	r8,--r3
+80006cf4:	80 00       	ld.sh	r0,r0[0x0]
+80006cf6:	2f 76       	sub	r6,-9
+80006cf8:	80 00       	ld.sh	r0,r0[0x0]
+80006cfa:	2f 92       	sub	r2,-7
 
-80006b34 <VSYNC1_Handler>:
+80006cfc <VSYNC1_Handler>:
 
 __attribute__((__interrupt__)) static void VSYNC1_Handler (void)
 {
-80006b34:	d4 01       	pushm	lr
+80006cfc:	d4 01       	pushm	lr
 	//print_dbg("\n\rVSYNC1 Detected!");
 	eic_clear_interrupt_line(&AVR32_EIC, VSYNC_1_LINE);
-80006b36:	30 1b       	mov	r11,1
-80006b38:	fe 7c 14 00 	mov	r12,-60416
-80006b3c:	f0 1f 00 15 	mcall	80006b90 <VSYNC1_Handler+0x5c>
+80006cfe:	30 1b       	mov	r11,1
+80006d00:	fe 7c 14 00 	mov	r12,-60416
+80006d04:	f0 1f 00 15 	mcall	80006d58 <VSYNC1_Handler+0x5c>
 	//VSYNC_1_DISABLE_INTERRUPT;
 		switch(OV7670_Status.VSYNC1_State)
-80006b40:	49 58       	lddpc	r8,80006b94 <VSYNC1_Handler+0x60>
-80006b42:	11 e8       	ld.ub	r8,r8[0x6]
-80006b44:	30 29       	mov	r9,2
-80006b46:	f2 08 18 00 	cp.b	r8,r9
-80006b4a:	c1 00       	breq	80006b6a <VSYNC1_Handler+0x36>
-80006b4c:	30 39       	mov	r9,3
-80006b4e:	f2 08 18 00 	cp.b	r8,r9
-80006b52:	c1 30       	breq	80006b78 <VSYNC1_Handler+0x44>
-80006b54:	30 19       	mov	r9,1
-80006b56:	f2 08 18 00 	cp.b	r8,r9
-80006b5a:	c1 31       	brne	80006b80 <VSYNC1_Handler+0x4c>
+80006d08:	49 58       	lddpc	r8,80006d5c <VSYNC1_Handler+0x60>
+80006d0a:	11 e8       	ld.ub	r8,r8[0x6]
+80006d0c:	30 29       	mov	r9,2
+80006d0e:	f2 08 18 00 	cp.b	r8,r9
+80006d12:	c1 00       	breq	80006d32 <VSYNC1_Handler+0x36>
+80006d14:	30 39       	mov	r9,3
+80006d16:	f2 08 18 00 	cp.b	r8,r9
+80006d1a:	c1 30       	breq	80006d40 <VSYNC1_Handler+0x44>
+80006d1c:	30 19       	mov	r9,1
+80006d1e:	f2 08 18 00 	cp.b	r8,r9
+80006d22:	c1 31       	brne	80006d48 <VSYNC1_Handler+0x4c>
 		{
 			case(TAKE_PHOTO):
 			FIFO_1_WEN_SET;
-80006b5c:	31 8c       	mov	r12,24
-80006b5e:	f0 1f 00 0f 	mcall	80006b98 <VSYNC1_Handler+0x64>
+80006d24:	31 8c       	mov	r12,24
+80006d26:	f0 1f 00 0f 	mcall	80006d60 <VSYNC1_Handler+0x64>
 			OV7670_Status.VSYNC1_State = TAKING_PHOTO;
-80006b62:	30 29       	mov	r9,2
-80006b64:	48 c8       	lddpc	r8,80006b94 <VSYNC1_Handler+0x60>
-80006b66:	b0 e9       	st.b	r8[0x6],r9
+80006d2a:	30 29       	mov	r9,2
+80006d2c:	48 c8       	lddpc	r8,80006d5c <VSYNC1_Handler+0x60>
+80006d2e:	b0 e9       	st.b	r8[0x6],r9
 			break;
-80006b68:	c1 28       	rjmp	80006b8c <VSYNC1_Handler+0x58>
+80006d30:	c1 28       	rjmp	80006d54 <VSYNC1_Handler+0x58>
 			
 			case(TAKING_PHOTO):
 			FIFO_1_WEN_CLR;
-80006b6a:	31 8c       	mov	r12,24
-80006b6c:	f0 1f 00 0c 	mcall	80006b9c <VSYNC1_Handler+0x68>
+80006d32:	31 8c       	mov	r12,24
+80006d34:	f0 1f 00 0c 	mcall	80006d64 <VSYNC1_Handler+0x68>
 			OV7670_Status.VSYNC1_State = TAKEN_PHOTO;
-80006b70:	30 39       	mov	r9,3
-80006b72:	48 98       	lddpc	r8,80006b94 <VSYNC1_Handler+0x60>
-80006b74:	b0 e9       	st.b	r8[0x6],r9
+80006d38:	30 39       	mov	r9,3
+80006d3a:	48 98       	lddpc	r8,80006d5c <VSYNC1_Handler+0x60>
+80006d3c:	b0 e9       	st.b	r8[0x6],r9
 			break;
-80006b76:	c0 b8       	rjmp	80006b8c <VSYNC1_Handler+0x58>
+80006d3e:	c0 b8       	rjmp	80006d54 <VSYNC1_Handler+0x58>
 			
 			case (TAKEN_PHOTO):
 			FIFO_1_WEN_CLR;
-80006b78:	31 8c       	mov	r12,24
-80006b7a:	f0 1f 00 09 	mcall	80006b9c <VSYNC1_Handler+0x68>
+80006d40:	31 8c       	mov	r12,24
+80006d42:	f0 1f 00 09 	mcall	80006d64 <VSYNC1_Handler+0x68>
 			break;
-80006b7e:	c0 78       	rjmp	80006b8c <VSYNC1_Handler+0x58>
+80006d46:	c0 78       	rjmp	80006d54 <VSYNC1_Handler+0x58>
 			
 			case(IDLE):
 			default:
 			FIFO_1_WEN_CLR;
-80006b80:	31 8c       	mov	r12,24
-80006b82:	f0 1f 00 07 	mcall	80006b9c <VSYNC1_Handler+0x68>
+80006d48:	31 8c       	mov	r12,24
+80006d4a:	f0 1f 00 07 	mcall	80006d64 <VSYNC1_Handler+0x68>
 			OV7670_Status.VSYNC1_State = IDLE;
-80006b86:	30 09       	mov	r9,0
-80006b88:	48 38       	lddpc	r8,80006b94 <VSYNC1_Handler+0x60>
-80006b8a:	b0 e9       	st.b	r8[0x6],r9
+80006d4e:	30 09       	mov	r9,0
+80006d50:	48 38       	lddpc	r8,80006d5c <VSYNC1_Handler+0x60>
+80006d52:	b0 e9       	st.b	r8[0x6],r9
 			break;
 		}
 }
-80006b8c:	d4 02       	popm	lr
-80006b8e:	d6 03       	rete
-80006b90:	80 00       	ld.sh	r0,r0[0x0]
-80006b92:	2d b4       	sub	r4,-37
-80006b94:	00 00       	add	r0,r0
-80006b96:	07 68       	ld.uh	r8,--r3
-80006b98:	80 00       	ld.sh	r0,r0[0x0]
-80006b9a:	2f 76       	sub	r6,-9
-80006b9c:	80 00       	ld.sh	r0,r0[0x0]
-80006b9e:	2f 92       	sub	r2,-7
+80006d54:	d4 02       	popm	lr
+80006d56:	d6 03       	rete
+80006d58:	80 00       	ld.sh	r0,r0[0x0]
+80006d5a:	2d b4       	sub	r4,-37
+80006d5c:	00 00       	add	r0,r0
+80006d5e:	07 68       	ld.uh	r8,--r3
+80006d60:	80 00       	ld.sh	r0,r0[0x0]
+80006d62:	2f 76       	sub	r6,-9
+80006d64:	80 00       	ld.sh	r0,r0[0x0]
+80006d66:	2f 92       	sub	r2,-7
 
-80006ba0 <Write_Reg>:
+80006d68 <Write_Reg>:
 unsigned char Write_Reg(unsigned char Register, unsigned char Data)
 {
-80006ba0:	d4 01       	pushm	lr
-80006ba2:	20 1d       	sub	sp,4
+80006d68:	d4 01       	pushm	lr
+80006d6a:	20 1d       	sub	sp,4
 	/*	I2C Traffic Generated:
 	 *	S | OV_7670 + W | A | RegID | A | Data | A | P |
 	 */
 	uint8_t Buff[2] = {Register, Data};
-80006ba4:	ba 8c       	st.b	sp[0x0],r12
-80006ba6:	ba 9b       	st.b	sp[0x1],r11
+80006d6c:	ba 8c       	st.b	sp[0x0],r12
+80006d6e:	ba 9b       	st.b	sp[0x1],r11
 	int status = twim_write(&AVR32_TWIM0, &Buff, 2, OV7670_ADDR, false);
-80006ba8:	30 08       	mov	r8,0
-80006baa:	32 19       	mov	r9,33
-80006bac:	30 2a       	mov	r10,2
-80006bae:	1a 9b       	mov	r11,sp
-80006bb0:	fe 7c 38 00 	mov	r12,-51200
-80006bb4:	f0 1f 00 03 	mcall	80006bc0 <Write_Reg+0x20>
+80006d70:	30 08       	mov	r8,0
+80006d72:	32 19       	mov	r9,33
+80006d74:	30 2a       	mov	r10,2
+80006d76:	1a 9b       	mov	r11,sp
+80006d78:	fe 7c 38 00 	mov	r12,-51200
+80006d7c:	f0 1f 00 03 	mcall	80006d88 <Write_Reg+0x20>
 	return status;
 }
-80006bb8:	5c 5c       	castu.b	r12
-80006bba:	2f fd       	sub	sp,-4
-80006bbc:	d8 02       	popm	pc
-80006bbe:	00 00       	add	r0,r0
-80006bc0:	80 00       	ld.sh	r0,r0[0x0]
-80006bc2:	35 a0       	mov	r0,90
+80006d80:	5c 5c       	castu.b	r12
+80006d82:	2f fd       	sub	sp,-4
+80006d84:	d8 02       	popm	pc
+80006d86:	00 00       	add	r0,r0
+80006d88:	80 00       	ld.sh	r0,r0[0x0]
+80006d8a:	35 a0       	mov	r0,90
 
-80006bc4 <OV7670_Init>:
+80006d8c <OV7670_Init>:
 	
 	return status;
 	
 }
 void OV7670_Init()
 {
-80006bc4:	eb cd 40 c0 	pushm	r6-r7,lr
-80006bc8:	20 2d       	sub	sp,8
+80006d8c:	eb cd 40 c0 	pushm	r6-r7,lr
+80006d90:	20 2d       	sub	sp,8
 	
 	//Check Cameras Exist
 	PCA9542A_Chan_Sel(I2C_CHANNEL_0);
-80006bca:	30 4c       	mov	r12,4
-80006bcc:	f0 1f 00 95 	mcall	80006e20 <OV7670_Init+0x25c>
+80006d92:	30 4c       	mov	r12,4
+80006d94:	f0 1f 00 95 	mcall	80006fe8 <OV7670_Init+0x25c>
 	if (twim_probe(&AVR32_TWIM0, OV7670_ADDR) == STATUS_OK)
-80006bd0:	32 1b       	mov	r11,33
-80006bd2:	fe 7c 38 00 	mov	r12,-51200
-80006bd6:	f0 1f 00 94 	mcall	80006e24 <OV7670_Init+0x260>
-80006bda:	c0 61       	brne	80006be6 <OV7670_Init+0x22>
+80006d98:	32 1b       	mov	r11,33
+80006d9a:	fe 7c 38 00 	mov	r12,-51200
+80006d9e:	f0 1f 00 94 	mcall	80006fec <OV7670_Init+0x260>
+80006da2:	c0 61       	brne	80006dae <OV7670_Init+0x22>
 		OV7670_Status.Camera_0_Found = true;
-80006bdc:	30 19       	mov	r9,1
-80006bde:	fe f8 02 4a 	ld.w	r8,pc[586]
-80006be2:	b0 99       	st.b	r8[0x1],r9
-80006be4:	c0 58       	rjmp	80006bee <OV7670_Init+0x2a>
+80006da4:	30 19       	mov	r9,1
+80006da6:	fe f8 02 4a 	ld.w	r8,pc[586]
+80006daa:	b0 99       	st.b	r8[0x1],r9
+80006dac:	c0 58       	rjmp	80006db6 <OV7670_Init+0x2a>
 	else
 		OV7670_Status.Camera_0_Found = false;
-80006be6:	30 09       	mov	r9,0
-80006be8:	fe f8 02 40 	ld.w	r8,pc[576]
-80006bec:	b0 99       	st.b	r8[0x1],r9
+80006dae:	30 09       	mov	r9,0
+80006db0:	fe f8 02 40 	ld.w	r8,pc[576]
+80006db4:	b0 99       	st.b	r8[0x1],r9
 		
 	PCA9542A_Chan_Sel(I2C_CHANNEL_1);
-80006bee:	30 5c       	mov	r12,5
-80006bf0:	f0 1f 00 8c 	mcall	80006e20 <OV7670_Init+0x25c>
+80006db6:	30 5c       	mov	r12,5
+80006db8:	f0 1f 00 8c 	mcall	80006fe8 <OV7670_Init+0x25c>
 	if (twim_probe(&AVR32_TWIM0, OV7670_ADDR) == STATUS_OK)
-80006bf4:	32 1b       	mov	r11,33
-80006bf6:	fe 7c 38 00 	mov	r12,-51200
-80006bfa:	f0 1f 00 8b 	mcall	80006e24 <OV7670_Init+0x260>
-80006bfe:	c0 61       	brne	80006c0a <OV7670_Init+0x46>
+80006dbc:	32 1b       	mov	r11,33
+80006dbe:	fe 7c 38 00 	mov	r12,-51200
+80006dc2:	f0 1f 00 8b 	mcall	80006fec <OV7670_Init+0x260>
+80006dc6:	c0 61       	brne	80006dd2 <OV7670_Init+0x46>
 		OV7670_Status.Camera_1_Found = true;
-80006c00:	30 19       	mov	r9,1
-80006c02:	fe f8 02 26 	ld.w	r8,pc[550]
-80006c06:	b0 a9       	st.b	r8[0x2],r9
-80006c08:	c0 58       	rjmp	80006c12 <OV7670_Init+0x4e>
+80006dc8:	30 19       	mov	r9,1
+80006dca:	fe f8 02 26 	ld.w	r8,pc[550]
+80006dce:	b0 a9       	st.b	r8[0x2],r9
+80006dd0:	c0 58       	rjmp	80006dda <OV7670_Init+0x4e>
 	else
 		OV7670_Status.Camera_1_Found = false;
-80006c0a:	30 09       	mov	r9,0
-80006c0c:	fe f8 02 1c 	ld.w	r8,pc[540]
-80006c10:	b0 a9       	st.b	r8[0x2],r9
+80006dd2:	30 09       	mov	r9,0
+80006dd4:	fe f8 02 1c 	ld.w	r8,pc[540]
+80006dd8:	b0 a9       	st.b	r8[0x2],r9
 		
 	
 	//Iniialise Cameras
 	if(OV7670_Status.Camera_0_Found)
-80006c12:	fe f8 02 16 	ld.w	r8,pc[534]
-80006c16:	11 99       	ld.ub	r9,r8[0x1]
-80006c18:	30 08       	mov	r8,0
-80006c1a:	f0 09 18 00 	cp.b	r9,r8
-80006c1e:	c5 40       	breq	80006cc6 <OV7670_Init+0x102>
+80006dda:	fe f8 02 16 	ld.w	r8,pc[534]
+80006dde:	11 99       	ld.ub	r9,r8[0x1]
+80006de0:	30 08       	mov	r8,0
+80006de2:	f0 09 18 00 	cp.b	r9,r8
+80006de6:	c5 40       	breq	80006e8e <OV7670_Init+0x102>
 	{
 		PCA9542A_Chan_Sel(I2C_CHANNEL_0);
-80006c20:	30 4c       	mov	r12,4
-80006c22:	f0 1f 00 80 	mcall	80006e20 <OV7670_Init+0x25c>
+80006de8:	30 4c       	mov	r12,4
+80006dea:	f0 1f 00 80 	mcall	80006fe8 <OV7670_Init+0x25c>
 		//Reset Camera
 		if(STATUS_OK != Write_Reg(OV_COM7, 0x80))
-80006c26:	e0 6b 00 80 	mov	r11,128
-80006c2a:	31 2c       	mov	r12,18
-80006c2c:	f0 1f 00 80 	mcall	80006e2c <OV7670_Init+0x268>
-80006c30:	c0 90       	breq	80006c42 <OV7670_Init+0x7e>
+80006dee:	e0 6b 00 80 	mov	r11,128
+80006df2:	31 2c       	mov	r12,18
+80006df4:	f0 1f 00 80 	mcall	80006ff4 <OV7670_Init+0x268>
+80006df8:	c0 90       	breq	80006e0a <OV7670_Init+0x7e>
 		{
 			print_dbg("\n\rCamera Reset Fail");
-80006c32:	fe fc 01 fe 	ld.w	r12,pc[510]
-80006c36:	f0 1f 00 80 	mcall	80006e34 <OV7670_Init+0x270>
+80006dfa:	fe fc 01 fe 	ld.w	r12,pc[510]
+80006dfe:	f0 1f 00 80 	mcall	80006ffc <OV7670_Init+0x270>
 			OV7670_Status.Camera_0_Error = true;
-80006c3a:	4f c8       	lddpc	r8,80006e28 <OV7670_Init+0x264>
-80006c3c:	30 19       	mov	r9,1
-80006c3e:	b0 b9       	st.b	r8[0x3],r9
+80006e02:	4f c8       	lddpc	r8,80006ff0 <OV7670_Init+0x264>
+80006e04:	30 19       	mov	r9,1
+80006e06:	b0 b9       	st.b	r8[0x3],r9
 			OV7670_Status.Error = true;
-80006c40:	b0 89       	st.b	r8[0x0],r9
+80006e08:	b0 89       	st.b	r8[0x0],r9
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006c42:	e1 b8 00 42 	mfsr	r8,0x108
+80006e0a:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006c46:	e2 69 71 00 	mov	r9,160000
-80006c4a:	f0 09 00 0a 	add	r10,r8,r9
+80006e0e:	e2 69 71 00 	mov	r9,160000
+80006e12:	f0 09 00 0a 	add	r10,r8,r9
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80006c4e:	e1 b9 00 42 	mfsr	r9,0x108
+80006e16:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80006c52:	14 38       	cp.w	r8,r10
-80006c54:	e0 88 00 08 	brls	80006c64 <OV7670_Init+0xa0>
+80006e1a:	14 38       	cp.w	r8,r10
+80006e1c:	e0 88 00 08 	brls	80006e2c <OV7670_Init+0xa0>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-80006c58:	12 38       	cp.w	r8,r9
-80006c5a:	fe 98 ff fa 	brls	80006c4e <OV7670_Init+0x8a>
-80006c5e:	12 3a       	cp.w	r10,r9
-80006c60:	c0 53       	brcs	80006c6a <OV7670_Init+0xa6>
-80006c62:	cf 6b       	rjmp	80006c4e <OV7670_Init+0x8a>
+80006e20:	12 38       	cp.w	r8,r9
+80006e22:	fe 98 ff fa 	brls	80006e16 <OV7670_Init+0x8a>
+80006e26:	12 3a       	cp.w	r10,r9
+80006e28:	c0 53       	brcs	80006e32 <OV7670_Init+0xa6>
+80006e2a:	cf 6b       	rjmp	80006e16 <OV7670_Init+0x8a>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-80006c64:	12 38       	cp.w	r8,r9
-80006c66:	e0 88 00 08 	brls	80006c76 <OV7670_Init+0xb2>
-80006c6a:	4f 46       	lddpc	r6,80006e38 <OV7670_Init+0x274>
-80006c6c:	ec c7 ff ff 	sub	r7,r6,-1
+80006e2c:	12 38       	cp.w	r8,r9
+80006e2e:	e0 88 00 08 	brls	80006e3e <OV7670_Init+0xb2>
+80006e32:	4f 46       	lddpc	r6,80007000 <OV7670_Init+0x274>
+80006e34:	ec c7 ff ff 	sub	r7,r6,-1
 	*Data = Buff[0];
 	
 	return status;
 	
 }
 void OV7670_Init()
-80006c70:	ec c6 fe b1 	sub	r6,r6,-335
-80006c74:	c0 48       	rjmp	80006c7c <OV7670_Init+0xb8>
-80006c76:	12 3a       	cp.w	r10,r9
-80006c78:	cf 93       	brcs	80006c6a <OV7670_Init+0xa6>
-80006c7a:	ce ab       	rjmp	80006c4e <OV7670_Init+0x8a>
+80006e38:	ec c6 fe b1 	sub	r6,r6,-335
+80006e3c:	c0 48       	rjmp	80006e44 <OV7670_Init+0xb8>
+80006e3e:	12 3a       	cp.w	r10,r9
+80006e40:	cf 93       	brcs	80006e32 <OV7670_Init+0xa6>
+80006e42:	ce ab       	rjmp	80006e16 <OV7670_Init+0x8a>
 			//return FAIL;
 		}
 		delay_ms(10); //wait for Camera to reset
 		for (int i = 0; i < SETTINGS_LENGTH; i++)
 		{
 			if(STATUS_OK != Write_Reg(default_settings[i][0], default_settings[i][1]))
-80006c7c:	0f 8b       	ld.ub	r11,r7[0x0]
-80006c7e:	ef 3c ff ff 	ld.ub	r12,r7[-1]
-80006c82:	f0 1f 00 6b 	mcall	80006e2c <OV7670_Init+0x268>
-80006c86:	c0 90       	breq	80006c98 <OV7670_Init+0xd4>
+80006e44:	0f 8b       	ld.ub	r11,r7[0x0]
+80006e46:	ef 3c ff ff 	ld.ub	r12,r7[-1]
+80006e4a:	f0 1f 00 6b 	mcall	80006ff4 <OV7670_Init+0x268>
+80006e4e:	c0 90       	breq	80006e60 <OV7670_Init+0xd4>
 			{
 				print_dbg("\n\rCamera Initialise Fail");
-80006c88:	4e dc       	lddpc	r12,80006e3c <OV7670_Init+0x278>
-80006c8a:	f0 1f 00 6b 	mcall	80006e34 <OV7670_Init+0x270>
+80006e50:	4e dc       	lddpc	r12,80007004 <OV7670_Init+0x278>
+80006e52:	f0 1f 00 6b 	mcall	80006ffc <OV7670_Init+0x270>
 				//return FAIL;
 				OV7670_Status.Camera_0_Error = true;	
-80006c8e:	4e 78       	lddpc	r8,80006e28 <OV7670_Init+0x264>
-80006c90:	30 19       	mov	r9,1
-80006c92:	b0 b9       	st.b	r8[0x3],r9
+80006e56:	4e 78       	lddpc	r8,80006ff0 <OV7670_Init+0x264>
+80006e58:	30 19       	mov	r9,1
+80006e5a:	b0 b9       	st.b	r8[0x3],r9
 				OV7670_Status.Error = true;	
-80006c94:	b0 89       	st.b	r8[0x0],r9
+80006e5c:	b0 89       	st.b	r8[0x0],r9
 				break;
-80006c96:	c1 88       	rjmp	80006cc6 <OV7670_Init+0x102>
+80006e5e:	c1 88       	rjmp	80006e8e <OV7670_Init+0x102>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006c98:	e1 b8 00 42 	mfsr	r8,0x108
+80006e60:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006c9c:	f0 ca c1 80 	sub	r10,r8,-16000
+80006e64:	f0 ca c1 80 	sub	r10,r8,-16000
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80006ca0:	e1 b9 00 42 	mfsr	r9,0x108
+80006e68:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80006ca4:	14 38       	cp.w	r8,r10
-80006ca6:	e0 88 00 09 	brls	80006cb8 <OV7670_Init+0xf4>
+80006e6c:	14 38       	cp.w	r8,r10
+80006e6e:	e0 88 00 09 	brls	80006e80 <OV7670_Init+0xf4>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-80006caa:	12 38       	cp.w	r8,r9
-80006cac:	fe 98 ff fa 	brls	80006ca0 <OV7670_Init+0xdc>
-80006cb0:	12 3a       	cp.w	r10,r9
-80006cb2:	e0 83 00 ae 	brlo	80006e0e <OV7670_Init+0x24a>
-80006cb6:	cf 5b       	rjmp	80006ca0 <OV7670_Init+0xdc>
+80006e72:	12 38       	cp.w	r8,r9
+80006e74:	fe 98 ff fa 	brls	80006e68 <OV7670_Init+0xdc>
+80006e78:	12 3a       	cp.w	r10,r9
+80006e7a:	e0 83 00 ae 	brlo	80006fd6 <OV7670_Init+0x24a>
+80006e7e:	cf 5b       	rjmp	80006e68 <OV7670_Init+0xdc>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-80006cb8:	12 38       	cp.w	r8,r9
-80006cba:	e0 8b 00 aa 	brhi	80006e0e <OV7670_Init+0x24a>
-80006cbe:	12 3a       	cp.w	r10,r9
-80006cc0:	e0 83 00 a7 	brlo	80006e0e <OV7670_Init+0x24a>
-80006cc4:	ce eb       	rjmp	80006ca0 <OV7670_Init+0xdc>
+80006e80:	12 38       	cp.w	r8,r9
+80006e82:	e0 8b 00 aa 	brhi	80006fd6 <OV7670_Init+0x24a>
+80006e86:	12 3a       	cp.w	r10,r9
+80006e88:	e0 83 00 a7 	brlo	80006fd6 <OV7670_Init+0x24a>
+80006e8c:	ce eb       	rjmp	80006e68 <OV7670_Init+0xdc>
 			}
 			delay_ms(1);
 		}	
 	}
 	if(OV7670_Status.Camera_1_Found)
-80006cc6:	4d 98       	lddpc	r8,80006e28 <OV7670_Init+0x264>
-80006cc8:	11 a9       	ld.ub	r9,r8[0x2]
-80006cca:	30 08       	mov	r8,0
-80006ccc:	f0 09 18 00 	cp.b	r9,r8
-80006cd0:	c5 10       	breq	80006d72 <OV7670_Init+0x1ae>
+80006e8e:	4d 98       	lddpc	r8,80006ff0 <OV7670_Init+0x264>
+80006e90:	11 a9       	ld.ub	r9,r8[0x2]
+80006e92:	30 08       	mov	r8,0
+80006e94:	f0 09 18 00 	cp.b	r9,r8
+80006e98:	c5 10       	breq	80006f3a <OV7670_Init+0x1ae>
 	{
 		PCA9542A_Chan_Sel(I2C_CHANNEL_1);
-80006cd2:	30 5c       	mov	r12,5
-80006cd4:	f0 1f 00 53 	mcall	80006e20 <OV7670_Init+0x25c>
+80006e9a:	30 5c       	mov	r12,5
+80006e9c:	f0 1f 00 53 	mcall	80006fe8 <OV7670_Init+0x25c>
 
 		//Reset Camera
 		if(STATUS_OK != Write_Reg(OV_COM7, 0x80))
-80006cd8:	e0 6b 00 80 	mov	r11,128
-80006cdc:	31 2c       	mov	r12,18
-80006cde:	f0 1f 00 54 	mcall	80006e2c <OV7670_Init+0x268>
-80006ce2:	c0 80       	breq	80006cf2 <OV7670_Init+0x12e>
+80006ea0:	e0 6b 00 80 	mov	r11,128
+80006ea4:	31 2c       	mov	r12,18
+80006ea6:	f0 1f 00 54 	mcall	80006ff4 <OV7670_Init+0x268>
+80006eaa:	c0 80       	breq	80006eba <OV7670_Init+0x12e>
 		{
 			print_dbg("\n\rCamera Reset Fail");
-80006ce4:	4d 3c       	lddpc	r12,80006e30 <OV7670_Init+0x26c>
-80006ce6:	f0 1f 00 54 	mcall	80006e34 <OV7670_Init+0x270>
+80006eac:	4d 3c       	lddpc	r12,80006ff8 <OV7670_Init+0x26c>
+80006eae:	f0 1f 00 54 	mcall	80006ffc <OV7670_Init+0x270>
 			OV7670_Status.Camera_1_Error = true;
-80006cea:	4d 08       	lddpc	r8,80006e28 <OV7670_Init+0x264>
-80006cec:	30 19       	mov	r9,1
-80006cee:	b0 c9       	st.b	r8[0x4],r9
+80006eb2:	4d 08       	lddpc	r8,80006ff0 <OV7670_Init+0x264>
+80006eb4:	30 19       	mov	r9,1
+80006eb6:	b0 c9       	st.b	r8[0x4],r9
 			OV7670_Status.Error = true;
-80006cf0:	b0 89       	st.b	r8[0x0],r9
+80006eb8:	b0 89       	st.b	r8[0x0],r9
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006cf2:	e1 b8 00 42 	mfsr	r8,0x108
+80006eba:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006cf6:	e2 69 71 00 	mov	r9,160000
-80006cfa:	f0 09 00 0a 	add	r10,r8,r9
+80006ebe:	e2 69 71 00 	mov	r9,160000
+80006ec2:	f0 09 00 0a 	add	r10,r8,r9
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80006cfe:	e1 b9 00 42 	mfsr	r9,0x108
+80006ec6:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80006d02:	14 38       	cp.w	r8,r10
-80006d04:	e0 88 00 08 	brls	80006d14 <OV7670_Init+0x150>
+80006eca:	14 38       	cp.w	r8,r10
+80006ecc:	e0 88 00 08 	brls	80006edc <OV7670_Init+0x150>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-80006d08:	12 38       	cp.w	r8,r9
-80006d0a:	fe 98 ff fa 	brls	80006cfe <OV7670_Init+0x13a>
-80006d0e:	12 3a       	cp.w	r10,r9
-80006d10:	c0 53       	brcs	80006d1a <OV7670_Init+0x156>
-80006d12:	cf 6b       	rjmp	80006cfe <OV7670_Init+0x13a>
+80006ed0:	12 38       	cp.w	r8,r9
+80006ed2:	fe 98 ff fa 	brls	80006ec6 <OV7670_Init+0x13a>
+80006ed6:	12 3a       	cp.w	r10,r9
+80006ed8:	c0 53       	brcs	80006ee2 <OV7670_Init+0x156>
+80006eda:	cf 6b       	rjmp	80006ec6 <OV7670_Init+0x13a>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-80006d14:	12 38       	cp.w	r8,r9
-80006d16:	e0 88 00 08 	brls	80006d26 <OV7670_Init+0x162>
-80006d1a:	4c 86       	lddpc	r6,80006e38 <OV7670_Init+0x274>
-80006d1c:	ec c7 ff ff 	sub	r7,r6,-1
+80006edc:	12 38       	cp.w	r8,r9
+80006ede:	e0 88 00 08 	brls	80006eee <OV7670_Init+0x162>
+80006ee2:	4c 86       	lddpc	r6,80007000 <OV7670_Init+0x274>
+80006ee4:	ec c7 ff ff 	sub	r7,r6,-1
 	*Data = Buff[0];
 	
 	return status;
 	
 }
 void OV7670_Init()
-80006d20:	ec c6 fe b1 	sub	r6,r6,-335
-80006d24:	c0 48       	rjmp	80006d2c <OV7670_Init+0x168>
-80006d26:	12 3a       	cp.w	r10,r9
-80006d28:	cf 93       	brcs	80006d1a <OV7670_Init+0x156>
-80006d2a:	ce ab       	rjmp	80006cfe <OV7670_Init+0x13a>
+80006ee8:	ec c6 fe b1 	sub	r6,r6,-335
+80006eec:	c0 48       	rjmp	80006ef4 <OV7670_Init+0x168>
+80006eee:	12 3a       	cp.w	r10,r9
+80006ef0:	cf 93       	brcs	80006ee2 <OV7670_Init+0x156>
+80006ef2:	ce ab       	rjmp	80006ec6 <OV7670_Init+0x13a>
 			//return FAIL;
 		}
 		delay_ms(10); //wait for Camera to reset
 		for (int i = 0; i < SETTINGS_LENGTH; i++)
 		{
 			if(STATUS_OK != Write_Reg(default_settings[i][0], default_settings[i][1]))
-80006d2c:	0f 8b       	ld.ub	r11,r7[0x0]
-80006d2e:	ef 3c ff ff 	ld.ub	r12,r7[-1]
-80006d32:	f0 1f 00 3f 	mcall	80006e2c <OV7670_Init+0x268>
-80006d36:	c0 90       	breq	80006d48 <OV7670_Init+0x184>
+80006ef4:	0f 8b       	ld.ub	r11,r7[0x0]
+80006ef6:	ef 3c ff ff 	ld.ub	r12,r7[-1]
+80006efa:	f0 1f 00 3f 	mcall	80006ff4 <OV7670_Init+0x268>
+80006efe:	c0 90       	breq	80006f10 <OV7670_Init+0x184>
 			{
 				print_dbg("\n\rCamera Initialise Fail");
-80006d38:	4c 1c       	lddpc	r12,80006e3c <OV7670_Init+0x278>
-80006d3a:	f0 1f 00 3f 	mcall	80006e34 <OV7670_Init+0x270>
+80006f00:	4c 1c       	lddpc	r12,80007004 <OV7670_Init+0x278>
+80006f02:	f0 1f 00 3f 	mcall	80006ffc <OV7670_Init+0x270>
 				//return FAIL;
 				OV7670_Status.Camera_1_Error = true;
-80006d3e:	4b b8       	lddpc	r8,80006e28 <OV7670_Init+0x264>
-80006d40:	30 19       	mov	r9,1
-80006d42:	b0 c9       	st.b	r8[0x4],r9
+80006f06:	4b b8       	lddpc	r8,80006ff0 <OV7670_Init+0x264>
+80006f08:	30 19       	mov	r9,1
+80006f0a:	b0 c9       	st.b	r8[0x4],r9
 				OV7670_Status.Error = true;				
-80006d44:	b0 89       	st.b	r8[0x0],r9
+80006f0c:	b0 89       	st.b	r8[0x0],r9
 				break;
-80006d46:	c1 68       	rjmp	80006d72 <OV7670_Init+0x1ae>
+80006f0e:	c1 68       	rjmp	80006f3a <OV7670_Init+0x1ae>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006d48:	e1 b8 00 42 	mfsr	r8,0x108
+80006f10:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006d4c:	f0 ca c1 80 	sub	r10,r8,-16000
+80006f14:	f0 ca c1 80 	sub	r10,r8,-16000
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80006d50:	e1 b9 00 42 	mfsr	r9,0x108
+80006f18:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80006d54:	14 38       	cp.w	r8,r10
-80006d56:	e0 88 00 08 	brls	80006d66 <OV7670_Init+0x1a2>
+80006f1c:	14 38       	cp.w	r8,r10
+80006f1e:	e0 88 00 08 	brls	80006f2e <OV7670_Init+0x1a2>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-80006d5a:	12 38       	cp.w	r8,r9
-80006d5c:	fe 98 ff fa 	brls	80006d50 <OV7670_Init+0x18c>
-80006d60:	12 3a       	cp.w	r10,r9
-80006d62:	c5 b3       	brcs	80006e18 <OV7670_Init+0x254>
-80006d64:	cf 6b       	rjmp	80006d50 <OV7670_Init+0x18c>
+80006f22:	12 38       	cp.w	r8,r9
+80006f24:	fe 98 ff fa 	brls	80006f18 <OV7670_Init+0x18c>
+80006f28:	12 3a       	cp.w	r10,r9
+80006f2a:	c5 b3       	brcs	80006fe0 <OV7670_Init+0x254>
+80006f2c:	cf 6b       	rjmp	80006f18 <OV7670_Init+0x18c>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-80006d66:	12 38       	cp.w	r8,r9
-80006d68:	e0 8b 00 58 	brhi	80006e18 <OV7670_Init+0x254>
-80006d6c:	12 3a       	cp.w	r10,r9
-80006d6e:	c5 53       	brcs	80006e18 <OV7670_Init+0x254>
-80006d70:	cf 0b       	rjmp	80006d50 <OV7670_Init+0x18c>
+80006f2e:	12 38       	cp.w	r8,r9
+80006f30:	e0 8b 00 58 	brhi	80006fe0 <OV7670_Init+0x254>
+80006f34:	12 3a       	cp.w	r10,r9
+80006f36:	c5 53       	brcs	80006fe0 <OV7670_Init+0x254>
+80006f38:	cf 0b       	rjmp	80006f18 <OV7670_Init+0x18c>
 			}
 			delay_ms(1);
 		}
 	}
 	PCA9542A_Chan_Sel(NO_SELECT);
-80006d72:	30 0c       	mov	r12,0
-80006d74:	f0 1f 00 2b 	mcall	80006e20 <OV7670_Init+0x25c>
+80006f3a:	30 0c       	mov	r12,0
+80006f3c:	f0 1f 00 2b 	mcall	80006fe8 <OV7670_Init+0x25c>
 	
 	//Initialise VSYNC Interrupts
 	eic_options_t eic_options;
 	eic_options.eic_mode = EIC_MODE_EDGE_TRIGGERED;
-80006d78:	30 08       	mov	r8,0
-80006d7a:	ba b8       	st.b	sp[0x3],r8
+80006f40:	30 08       	mov	r8,0
+80006f42:	ba b8       	st.b	sp[0x3],r8
 	eic_options.eic_edge = EIC_EDGE_FALLING_EDGE;
-80006d7c:	ba c8       	st.b	sp[0x4],r8
+80006f44:	ba c8       	st.b	sp[0x4],r8
 	eic_options.eic_async = EIC_SYNCH_MODE;
-80006d7e:	ba f8       	st.b	sp[0x7],r8
+80006f46:	ba f8       	st.b	sp[0x7],r8
 	eic_options.eic_line = VSYNC_1_LINE;
-80006d80:	30 18       	mov	r8,1
-80006d82:	ba a8       	st.b	sp[0x2],r8
+80006f48:	30 18       	mov	r8,1
+80006f4a:	ba a8       	st.b	sp[0x2],r8
 	//eic_options.eic_line = VSYNC_0_LINE;
 	
 	Disable_global_interrupt();
-80006d84:	d3 03       	ssrf	0x10
+80006f4c:	d3 03       	ssrf	0x10
 	gpio_enable_module_pin(VSYNC_1_PIN, VSYNC_1_FUNCTION);
-80006d86:	30 1b       	mov	r11,1
-80006d88:	31 ac       	mov	r12,26
-80006d8a:	f0 1f 00 2e 	mcall	80006e40 <OV7670_Init+0x27c>
+80006f4e:	30 1b       	mov	r11,1
+80006f50:	31 ac       	mov	r12,26
+80006f52:	f0 1f 00 2e 	mcall	80007008 <OV7670_Init+0x27c>
 	gpio_enable_module_pin(VSYNC_0_PIN, VSYNC_0_FUNCTION);
-80006d8e:	30 1b       	mov	r11,1
-80006d90:	30 ac       	mov	r12,10
-80006d92:	f0 1f 00 2c 	mcall	80006e40 <OV7670_Init+0x27c>
+80006f56:	30 1b       	mov	r11,1
+80006f58:	30 ac       	mov	r12,10
+80006f5a:	f0 1f 00 2c 	mcall	80007008 <OV7670_Init+0x27c>
 	
 	gpio_enable_pin_pull_up(VSYNC_1_PIN); //Enable pull up as it is a low level interrupt
-80006d96:	31 ac       	mov	r12,26
-80006d98:	f0 1f 00 2b 	mcall	80006e44 <OV7670_Init+0x280>
+80006f5e:	31 ac       	mov	r12,26
+80006f60:	f0 1f 00 2b 	mcall	8000700c <OV7670_Init+0x280>
 	gpio_enable_pin_pull_up(VSYNC_0_PIN);
-80006d9c:	30 ac       	mov	r12,10
-80006d9e:	f0 1f 00 2a 	mcall	80006e44 <OV7670_Init+0x280>
+80006f64:	30 ac       	mov	r12,10
+80006f66:	f0 1f 00 2a 	mcall	8000700c <OV7670_Init+0x280>
 	//Initialise EIC
 	eic_init(&AVR32_EIC, &eic_options, 1);
-80006da2:	fa c7 ff fe 	sub	r7,sp,-2
-80006da6:	30 1a       	mov	r10,1
-80006da8:	0e 9b       	mov	r11,r7
-80006daa:	fe 7c 14 00 	mov	r12,-60416
-80006dae:	f0 1f 00 27 	mcall	80006e48 <OV7670_Init+0x284>
+80006f6a:	fa c7 ff fe 	sub	r7,sp,-2
+80006f6e:	30 1a       	mov	r10,1
+80006f70:	0e 9b       	mov	r11,r7
+80006f72:	fe 7c 14 00 	mov	r12,-60416
+80006f76:	f0 1f 00 27 	mcall	80007010 <OV7670_Init+0x284>
 	eic_options.eic_line = VSYNC_0_LINE;
-80006db2:	30 48       	mov	r8,4
-80006db4:	ba a8       	st.b	sp[0x2],r8
+80006f7a:	30 48       	mov	r8,4
+80006f7c:	ba a8       	st.b	sp[0x2],r8
 	eic_init(&AVR32_EIC, &eic_options, 1);
-80006db6:	30 1a       	mov	r10,1
-80006db8:	0e 9b       	mov	r11,r7
-80006dba:	fe 7c 14 00 	mov	r12,-60416
-80006dbe:	f0 1f 00 23 	mcall	80006e48 <OV7670_Init+0x284>
+80006f7e:	30 1a       	mov	r10,1
+80006f80:	0e 9b       	mov	r11,r7
+80006f82:	fe 7c 14 00 	mov	r12,-60416
+80006f86:	f0 1f 00 23 	mcall	80007010 <OV7670_Init+0x284>
 	
 	INTC_register_interrupt(&VSYNC1_Handler, AVR32_EIC_IRQ_1, AVR32_INTC_INT0);
-80006dc2:	30 0a       	mov	r10,0
-80006dc4:	e0 6b 01 e0 	mov	r11,480
-80006dc8:	4a 1c       	lddpc	r12,80006e4c <OV7670_Init+0x288>
-80006dca:	f0 1f 00 22 	mcall	80006e50 <OV7670_Init+0x28c>
+80006f8a:	30 0a       	mov	r10,0
+80006f8c:	e0 6b 01 e0 	mov	r11,480
+80006f90:	4a 1c       	lddpc	r12,80007014 <OV7670_Init+0x288>
+80006f92:	f0 1f 00 22 	mcall	80007018 <OV7670_Init+0x28c>
 	INTC_register_interrupt(&VSYNC0_Handler, AVR32_EIC_IRQ_4, AVR32_INTC_INT0);
-80006dce:	30 0a       	mov	r10,0
-80006dd0:	e0 6b 01 e3 	mov	r11,483
-80006dd4:	4a 0c       	lddpc	r12,80006e54 <OV7670_Init+0x290>
-80006dd6:	f0 1f 00 1f 	mcall	80006e50 <OV7670_Init+0x28c>
+80006f96:	30 0a       	mov	r10,0
+80006f98:	e0 6b 01 e3 	mov	r11,483
+80006f9c:	4a 0c       	lddpc	r12,8000701c <OV7670_Init+0x290>
+80006f9e:	f0 1f 00 1f 	mcall	80007018 <OV7670_Init+0x28c>
 	//Enable interrupt on VSYNC1
 	eic_enable_line(&AVR32_EIC, VSYNC_1_LINE);
-80006dda:	30 1b       	mov	r11,1
-80006ddc:	fe 7c 14 00 	mov	r12,-60416
-80006de0:	f0 1f 00 1e 	mcall	80006e58 <OV7670_Init+0x294>
+80006fa2:	30 1b       	mov	r11,1
+80006fa4:	fe 7c 14 00 	mov	r12,-60416
+80006fa8:	f0 1f 00 1e 	mcall	80007020 <OV7670_Init+0x294>
 	eic_enable_line(&AVR32_EIC, (VSYNC_0_LINE));
-80006de4:	30 4b       	mov	r11,4
-80006de6:	fe 7c 14 00 	mov	r12,-60416
-80006dea:	f0 1f 00 1c 	mcall	80006e58 <OV7670_Init+0x294>
+80006fac:	30 4b       	mov	r11,4
+80006fae:	fe 7c 14 00 	mov	r12,-60416
+80006fb2:	f0 1f 00 1c 	mcall	80007020 <OV7670_Init+0x294>
  	VSYNC_1_ENABLE_INTERRUPT;
-80006dee:	30 1b       	mov	r11,1
-80006df0:	fe 7c 14 00 	mov	r12,-60416
-80006df4:	f0 1f 00 1a 	mcall	80006e5c <OV7670_Init+0x298>
+80006fb6:	30 1b       	mov	r11,1
+80006fb8:	fe 7c 14 00 	mov	r12,-60416
+80006fbc:	f0 1f 00 1a 	mcall	80007024 <OV7670_Init+0x298>
  	VSYNC_0_ENABLE_INTERRUPT;
-80006df8:	30 4b       	mov	r11,4
-80006dfa:	fe 7c 14 00 	mov	r12,-60416
-80006dfe:	f0 1f 00 18 	mcall	80006e5c <OV7670_Init+0x298>
+80006fc0:	30 4b       	mov	r11,4
+80006fc2:	fe 7c 14 00 	mov	r12,-60416
+80006fc6:	f0 1f 00 18 	mcall	80007024 <OV7670_Init+0x298>
 	
 	FIFO_Init();
-80006e02:	f0 1f 00 18 	mcall	80006e60 <OV7670_Init+0x29c>
+80006fca:	f0 1f 00 18 	mcall	80007028 <OV7670_Init+0x29c>
 	Enable_global_interrupt();
-80006e06:	d5 03       	csrf	0x10
+80006fce:	d5 03       	csrf	0x10
 	
 }
-80006e08:	2f ed       	sub	sp,-8
-80006e0a:	e3 cd 80 c0 	ldm	sp++,r6-r7,pc
-80006e0e:	2f e7       	sub	r7,-2
+80006fd0:	2f ed       	sub	sp,-8
+80006fd2:	e3 cd 80 c0 	ldm	sp++,r6-r7,pc
+80006fd6:	2f e7       	sub	r7,-2
 			OV7670_Status.Camera_0_Error = true;
 			OV7670_Status.Error = true;
 			//return FAIL;
 		}
 		delay_ms(10); //wait for Camera to reset
 		for (int i = 0; i < SETTINGS_LENGTH; i++)
-80006e10:	0c 37       	cp.w	r7,r6
-80006e12:	fe 91 ff 35 	brne	80006c7c <OV7670_Init+0xb8>
-80006e16:	c5 8b       	rjmp	80006cc6 <OV7670_Init+0x102>
-80006e18:	2f e7       	sub	r7,-2
+80006fd8:	0c 37       	cp.w	r7,r6
+80006fda:	fe 91 ff 35 	brne	80006e44 <OV7670_Init+0xb8>
+80006fde:	c5 8b       	rjmp	80006e8e <OV7670_Init+0x102>
+80006fe0:	2f e7       	sub	r7,-2
 			OV7670_Status.Camera_1_Error = true;
 			OV7670_Status.Error = true;
 			//return FAIL;
 		}
 		delay_ms(10); //wait for Camera to reset
 		for (int i = 0; i < SETTINGS_LENGTH; i++)
-80006e1a:	0c 37       	cp.w	r7,r6
-80006e1c:	c8 81       	brne	80006d2c <OV7670_Init+0x168>
-80006e1e:	ca ab       	rjmp	80006d72 <OV7670_Init+0x1ae>
-80006e20:	80 00       	ld.sh	r0,r0[0x0]
-80006e22:	6e 64       	ld.w	r4,r7[0x18]
-80006e24:	80 00       	ld.sh	r0,r0[0x0]
-80006e26:	36 54       	mov	r4,101
-80006e28:	00 00       	add	r0,r0
-80006e2a:	07 68       	ld.uh	r8,--r3
-80006e2c:	80 00       	ld.sh	r0,r0[0x0]
-80006e2e:	6b a0       	ld.w	r0,r5[0x68]
-80006e30:	80 00       	ld.sh	r0,r0[0x0]
-80006e32:	7c 8c       	ld.w	r12,lr[0x20]
-80006e34:	80 00       	ld.sh	r0,r0[0x0]
-80006e36:	65 fc       	ld.w	r12,r2[0x7c]
-80006e38:	80 00       	ld.sh	r0,r0[0x0]
-80006e3a:	7c b9       	ld.w	r9,lr[0x2c]
-80006e3c:	80 00       	ld.sh	r0,r0[0x0]
-80006e3e:	7c a0       	ld.w	r0,lr[0x28]
-80006e40:	80 00       	ld.sh	r0,r0[0x0]
-80006e42:	2e 98       	sub	r8,-23
-80006e44:	80 00       	ld.sh	r0,r0[0x0]
-80006e46:	2f 5c       	sub	r12,-11
-80006e48:	80 00       	ld.sh	r0,r0[0x0]
-80006e4a:	2c d0       	sub	r0,-51
-80006e4c:	80 00       	ld.sh	r0,r0[0x0]
-80006e4e:	6b 34       	ld.w	r4,r5[0x4c]
-80006e50:	80 00       	ld.sh	r0,r0[0x0]
-80006e52:	2f b0       	sub	r0,-5
-80006e54:	80 00       	ld.sh	r0,r0[0x0]
-80006e56:	6a c8       	ld.w	r8,r5[0x30]
-80006e58:	80 00       	ld.sh	r0,r0[0x0]
-80006e5a:	2d a0       	sub	r0,-38
-80006e5c:	80 00       	ld.sh	r0,r0[0x0]
-80006e5e:	2d aa       	sub	r10,-38
-80006e60:	80 00       	ld.sh	r0,r0[0x0]
-80006e62:	68 60       	ld.w	r0,r4[0x18]
+80006fe2:	0c 37       	cp.w	r7,r6
+80006fe4:	c8 81       	brne	80006ef4 <OV7670_Init+0x168>
+80006fe6:	ca ab       	rjmp	80006f3a <OV7670_Init+0x1ae>
+80006fe8:	80 00       	ld.sh	r0,r0[0x0]
+80006fea:	70 2c       	ld.w	r12,r8[0x8]
+80006fec:	80 00       	ld.sh	r0,r0[0x0]
+80006fee:	36 54       	mov	r4,101
+80006ff0:	00 00       	add	r0,r0
+80006ff2:	07 68       	ld.uh	r8,--r3
+80006ff4:	80 00       	ld.sh	r0,r0[0x0]
+80006ff6:	6d 68       	ld.w	r8,r6[0x58]
+80006ff8:	80 00       	ld.sh	r0,r0[0x0]
+80006ffa:	7c d0       	ld.w	r0,lr[0x34]
+80006ffc:	80 00       	ld.sh	r0,r0[0x0]
+80006ffe:	65 fc       	ld.w	r12,r2[0x7c]
+80007000:	80 00       	ld.sh	r0,r0[0x0]
+80007002:	7c fd       	ld.w	sp,lr[0x3c]
+80007004:	80 00       	ld.sh	r0,r0[0x0]
+80007006:	7c e4       	ld.w	r4,lr[0x38]
+80007008:	80 00       	ld.sh	r0,r0[0x0]
+8000700a:	2e 98       	sub	r8,-23
+8000700c:	80 00       	ld.sh	r0,r0[0x0]
+8000700e:	2f 5c       	sub	r12,-11
+80007010:	80 00       	ld.sh	r0,r0[0x0]
+80007012:	2c d0       	sub	r0,-51
+80007014:	80 00       	ld.sh	r0,r0[0x0]
+80007016:	6c fc       	ld.w	r12,r6[0x3c]
+80007018:	80 00       	ld.sh	r0,r0[0x0]
+8000701a:	2f b0       	sub	r0,-5
+8000701c:	80 00       	ld.sh	r0,r0[0x0]
+8000701e:	6c 90       	ld.w	r0,r6[0x24]
+80007020:	80 00       	ld.sh	r0,r0[0x0]
+80007022:	2d a0       	sub	r0,-38
+80007024:	80 00       	ld.sh	r0,r0[0x0]
+80007026:	2d aa       	sub	r10,-38
+80007028:	80 00       	ld.sh	r0,r0[0x0]
+8000702a:	6a 28       	ld.w	r8,r5[0x8]
 
-80006e64 <PCA9542A_Chan_Sel>:
+8000702c <PCA9542A_Chan_Sel>:
 	status = twim_write(&AVR32_TWIM0, &buff, 1, PCA9542A_ADDR, false);
 	//return status;
 }
 
 void PCA9542A_Chan_Sel(unsigned char Channel)
 {
-80006e64:	d4 01       	pushm	lr
-80006e66:	20 1d       	sub	sp,4
+8000702c:	d4 01       	pushm	lr
+8000702e:	20 1d       	sub	sp,4
 	int status = 0;
 	char buff[2] = {Channel, 0};
-80006e68:	ba 8c       	st.b	sp[0x0],r12
-80006e6a:	30 08       	mov	r8,0
-80006e6c:	ba 98       	st.b	sp[0x1],r8
+80007030:	ba 8c       	st.b	sp[0x0],r12
+80007032:	30 08       	mov	r8,0
+80007034:	ba 98       	st.b	sp[0x1],r8
 	status = twim_write(&AVR32_TWIM0, &buff, 1, PCA9542A_ADDR, false);
-80006e6e:	30 08       	mov	r8,0
-80006e70:	37 49       	mov	r9,116
-80006e72:	30 1a       	mov	r10,1
-80006e74:	1a 9b       	mov	r11,sp
-80006e76:	fe 7c 38 00 	mov	r12,-51200
-80006e7a:	f0 1f 00 03 	mcall	80006e84 <PCA9542A_Chan_Sel+0x20>
-80006e7e:	2f fd       	sub	sp,-4
-80006e80:	d8 02       	popm	pc
-80006e82:	00 00       	add	r0,r0
-80006e84:	80 00       	ld.sh	r0,r0[0x0]
-80006e86:	35 a0       	mov	r0,90
+80007036:	30 08       	mov	r8,0
+80007038:	37 49       	mov	r9,116
+8000703a:	30 1a       	mov	r10,1
+8000703c:	1a 9b       	mov	r11,sp
+8000703e:	fe 7c 38 00 	mov	r12,-51200
+80007042:	f0 1f 00 03 	mcall	8000704c <PCA9542A_Chan_Sel+0x20>
+80007046:	2f fd       	sub	sp,-4
+80007048:	d8 02       	popm	pc
+8000704a:	00 00       	add	r0,r0
+8000704c:	80 00       	ld.sh	r0,r0[0x0]
+8000704e:	35 a0       	mov	r0,90
 
-80006e88 <PCA9542A_Init>:
+80007050 <PCA9542A_Init>:
 /*#include "CustomDevices/MotorDriver.h"*/
 //SDCard
 /*#include "CustomDevices/SD_Card.h"*/
 
 int PCA9542A_Init()
 {
-80006e88:	d4 01       	pushm	lr
-80006e8a:	20 1d       	sub	sp,4
+80007050:	d4 01       	pushm	lr
+80007052:	20 1d       	sub	sp,4
 	int status = twim_probe(&AVR32_TWIM0, PCA9542A_ADDR);
-80006e8c:	37 4b       	mov	r11,116
-80006e8e:	fe 7c 38 00 	mov	r12,-51200
-80006e92:	f0 1f 00 0a 	mcall	80006eb8 <PCA9542A_Init+0x30>
+80007054:	37 4b       	mov	r11,116
+80007056:	fe 7c 38 00 	mov	r12,-51200
+8000705a:	f0 1f 00 0a 	mcall	80007080 <PCA9542A_Init+0x30>
 	if (status != STATUS_OK)
-80006e96:	c0 30       	breq	80006e9c <PCA9542A_Init+0x14>
-80006e98:	30 2c       	mov	r12,2
-80006e9a:	c0 c8       	rjmp	80006eb2 <PCA9542A_Init+0x2a>
+8000705e:	c0 30       	breq	80007064 <PCA9542A_Init+0x14>
+80007060:	30 2c       	mov	r12,2
+80007062:	c0 c8       	rjmp	8000707a <PCA9542A_Init+0x2a>
 		return DEVICE_NOT_FOUND;
 	char buff[2] = {NO_SELECT, 0};
-80006e9c:	30 08       	mov	r8,0
-80006e9e:	ba 88       	st.b	sp[0x0],r8
-80006ea0:	ba 98       	st.b	sp[0x1],r8
+80007064:	30 08       	mov	r8,0
+80007066:	ba 88       	st.b	sp[0x0],r8
+80007068:	ba 98       	st.b	sp[0x1],r8
 	status = twim_write(&AVR32_TWIM0, &buff, 1, PCA9542A_ADDR, false);
-80006ea2:	30 08       	mov	r8,0
-80006ea4:	37 49       	mov	r9,116
-80006ea6:	30 1a       	mov	r10,1
-80006ea8:	1a 9b       	mov	r11,sp
-80006eaa:	fe 7c 38 00 	mov	r12,-51200
-80006eae:	f0 1f 00 04 	mcall	80006ebc <PCA9542A_Init+0x34>
+8000706a:	30 08       	mov	r8,0
+8000706c:	37 49       	mov	r9,116
+8000706e:	30 1a       	mov	r10,1
+80007070:	1a 9b       	mov	r11,sp
+80007072:	fe 7c 38 00 	mov	r12,-51200
+80007076:	f0 1f 00 04 	mcall	80007084 <PCA9542A_Init+0x34>
 	
 	return status;
 }
-80006eb2:	2f fd       	sub	sp,-4
-80006eb4:	d8 02       	popm	pc
-80006eb6:	00 00       	add	r0,r0
-80006eb8:	80 00       	ld.sh	r0,r0[0x0]
-80006eba:	36 54       	mov	r4,101
-80006ebc:	80 00       	ld.sh	r0,r0[0x0]
-80006ebe:	35 a0       	mov	r0,90
+8000707a:	2f fd       	sub	sp,-4
+8000707c:	d8 02       	popm	pc
+8000707e:	00 00       	add	r0,r0
+80007080:	80 00       	ld.sh	r0,r0[0x0]
+80007082:	36 54       	mov	r4,101
+80007084:	80 00       	ld.sh	r0,r0[0x0]
+80007086:	35 a0       	mov	r0,90
 
-80006ec0 <sd_mmc_resources_init>:
+80007088 <sd_mmc_resources_init>:
 }
 
 /*! \brief Initializes SD/MMC resources: GPIO, SPI and SD/MMC.
  */
 void sd_mmc_resources_init(void)
 {
-80006ec0:	eb cd 40 80 	pushm	r7,lr
-80006ec4:	20 4d       	sub	sp,16
+80007088:	eb cd 40 80 	pushm	r7,lr
+8000708c:	20 4d       	sub	sp,16
     .spck_delay   = 0,
     .trans_delay  = 0,
     .stay_act     = 1,
     .spi_mode     = 0,
     .modfdis      = 1
   };
-80006ec6:	49 98       	lddpc	r8,80006f28 <sd_mmc_resources_init+0x68>
-80006ec8:	1a 97       	mov	r7,sp
-80006eca:	70 09       	ld.w	r9,r8[0x0]
-80006ecc:	50 09       	stdsp	sp[0x0],r9
-80006ece:	70 19       	ld.w	r9,r8[0x4]
-80006ed0:	50 19       	stdsp	sp[0x4],r9
-80006ed2:	70 29       	ld.w	r9,r8[0x8]
-80006ed4:	50 29       	stdsp	sp[0x8],r9
-80006ed6:	70 38       	ld.w	r8,r8[0xc]
-80006ed8:	50 38       	stdsp	sp[0xc],r8
+8000708e:	49 98       	lddpc	r8,800070f0 <sd_mmc_resources_init+0x68>
+80007090:	1a 97       	mov	r7,sp
+80007092:	70 09       	ld.w	r9,r8[0x0]
+80007094:	50 09       	stdsp	sp[0x0],r9
+80007096:	70 19       	ld.w	r9,r8[0x4]
+80007098:	50 19       	stdsp	sp[0x4],r9
+8000709a:	70 29       	ld.w	r9,r8[0x8]
+8000709c:	50 29       	stdsp	sp[0x8],r9
+8000709e:	70 38       	ld.w	r8,r8[0xc]
+800070a0:	50 38       	stdsp	sp[0xc],r8
 
   // Assign I/Os to SPI.
   gpio_enable_module(SD_MMC_SPI_GPIO_MAP,
-80006eda:	30 4b       	mov	r11,4
-80006edc:	49 4c       	lddpc	r12,80006f2c <sd_mmc_resources_init+0x6c>
-80006ede:	f0 1f 00 15 	mcall	80006f30 <sd_mmc_resources_init+0x70>
+800070a2:	30 4b       	mov	r11,4
+800070a4:	49 4c       	lddpc	r12,800070f4 <sd_mmc_resources_init+0x6c>
+800070a6:	f0 1f 00 15 	mcall	800070f8 <sd_mmc_resources_init+0x70>
                      sizeof(SD_MMC_SPI_GPIO_MAP) / sizeof(SD_MMC_SPI_GPIO_MAP[0]));
 
   // Initialize as master.
   spi_initMaster(SD_MMC_SPI, &spiOptions);
-80006ee2:	1a 9b       	mov	r11,sp
-80006ee4:	fe 7c 34 00 	mov	r12,-52224
-80006ee8:	f0 1f 00 13 	mcall	80006f34 <sd_mmc_resources_init+0x74>
+800070aa:	1a 9b       	mov	r11,sp
+800070ac:	fe 7c 34 00 	mov	r12,-52224
+800070b0:	f0 1f 00 13 	mcall	800070fc <sd_mmc_resources_init+0x74>
 
   // Set SPI selection mode: variable_ps, pcs_decode, delay.
   spi_selectionMode(SD_MMC_SPI, 0, 0, 0);
-80006eec:	30 09       	mov	r9,0
-80006eee:	12 9a       	mov	r10,r9
-80006ef0:	12 9b       	mov	r11,r9
-80006ef2:	fe 7c 34 00 	mov	r12,-52224
-80006ef6:	f0 1f 00 11 	mcall	80006f38 <sd_mmc_resources_init+0x78>
+800070b4:	30 09       	mov	r9,0
+800070b6:	12 9a       	mov	r10,r9
+800070b8:	12 9b       	mov	r11,r9
+800070ba:	fe 7c 34 00 	mov	r12,-52224
+800070be:	f0 1f 00 11 	mcall	80007100 <sd_mmc_resources_init+0x78>
 
   // Enable SPI module.
   spi_enable(SD_MMC_SPI);
-80006efa:	fe 7c 34 00 	mov	r12,-52224
-80006efe:	f0 1f 00 10 	mcall	80006f3c <sd_mmc_resources_init+0x7c>
+800070c2:	fe 7c 34 00 	mov	r12,-52224
+800070c6:	f0 1f 00 10 	mcall	80007104 <sd_mmc_resources_init+0x7c>
 
   // Initialize SD/MMC driver with SPI clock (PBA).
   sd_mmc_spi_init(spiOptions, PBA_HZ);
-80006f02:	20 4d       	sub	sp,16
-80006f04:	6e 08       	ld.w	r8,r7[0x0]
-80006f06:	50 08       	stdsp	sp[0x0],r8
-80006f08:	6e 18       	ld.w	r8,r7[0x4]
-80006f0a:	50 18       	stdsp	sp[0x4],r8
-80006f0c:	6e 28       	ld.w	r8,r7[0x8]
-80006f0e:	50 28       	stdsp	sp[0x8],r8
-80006f10:	6e 38       	ld.w	r8,r7[0xc]
-80006f12:	50 38       	stdsp	sp[0xc],r8
-80006f14:	e0 6c 24 00 	mov	r12,9216
-80006f18:	ea 1c 00 f4 	orh	r12,0xf4
-80006f1c:	f0 1f 00 09 	mcall	80006f40 <sd_mmc_resources_init+0x80>
-80006f20:	2f cd       	sub	sp,-16
+800070ca:	20 4d       	sub	sp,16
+800070cc:	6e 08       	ld.w	r8,r7[0x0]
+800070ce:	50 08       	stdsp	sp[0x0],r8
+800070d0:	6e 18       	ld.w	r8,r7[0x4]
+800070d2:	50 18       	stdsp	sp[0x4],r8
+800070d4:	6e 28       	ld.w	r8,r7[0x8]
+800070d6:	50 28       	stdsp	sp[0x8],r8
+800070d8:	6e 38       	ld.w	r8,r7[0xc]
+800070da:	50 38       	stdsp	sp[0xc],r8
+800070dc:	e0 6c 24 00 	mov	r12,9216
+800070e0:	ea 1c 00 f4 	orh	r12,0xf4
+800070e4:	f0 1f 00 09 	mcall	80007108 <sd_mmc_resources_init+0x80>
+800070e8:	2f cd       	sub	sp,-16
 }
-80006f22:	2f cd       	sub	sp,-16
-80006f24:	e3 cd 80 80 	ldm	sp++,r7,pc
-80006f28:	80 00       	ld.sh	r0,r0[0x0]
-80006f2a:	7e 08       	ld.w	r8,pc[0x0]
-80006f2c:	80 00       	ld.sh	r0,r0[0x0]
-80006f2e:	7e 18       	ld.w	r8,pc[0x4]
-80006f30:	80 00       	ld.sh	r0,r0[0x0]
-80006f32:	2f 2c       	sub	r12,-14
-80006f34:	80 00       	ld.sh	r0,r0[0x0]
-80006f36:	32 4c       	mov	r12,36
-80006f38:	80 00       	ld.sh	r0,r0[0x0]
-80006f3a:	32 84       	mov	r4,40
-80006f3c:	80 00       	ld.sh	r0,r0[0x0]
-80006f3e:	33 ec       	mov	r12,62
-80006f40:	80 00       	ld.sh	r0,r0[0x0]
-80006f42:	2b 10       	sub	r0,-79
+800070ea:	2f cd       	sub	sp,-16
+800070ec:	e3 cd 80 80 	ldm	sp++,r7,pc
+800070f0:	80 00       	ld.sh	r0,r0[0x0]
+800070f2:	7e 4c       	ld.w	r12,pc[0x10]
+800070f4:	80 00       	ld.sh	r0,r0[0x0]
+800070f6:	7e 5c       	ld.w	r12,pc[0x14]
+800070f8:	80 00       	ld.sh	r0,r0[0x0]
+800070fa:	2f 2c       	sub	r12,-14
+800070fc:	80 00       	ld.sh	r0,r0[0x0]
+800070fe:	32 4c       	mov	r12,36
+80007100:	80 00       	ld.sh	r0,r0[0x0]
+80007102:	32 84       	mov	r4,40
+80007104:	80 00       	ld.sh	r0,r0[0x0]
+80007106:	33 ec       	mov	r12,62
+80007108:	80 00       	ld.sh	r0,r0[0x0]
+8000710a:	2b 10       	sub	r0,-79
 
-80006f44 <LED_Flash>:
+8000710c <LED_Flash>:
 
 #define LOG_FILE "log.txt"
 
 
 void LED_Flash()
 {
-80006f44:	d4 01       	pushm	lr
+8000710c:	d4 01       	pushm	lr
 	LED2_SET;
-80006f46:	33 1c       	mov	r12,49
-80006f48:	f0 1f 00 1d 	mcall	80006fbc <LED_Flash+0x78>
+8000710e:	33 1c       	mov	r12,49
+80007110:	f0 1f 00 1d 	mcall	80007184 <LED_Flash+0x78>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006f4c:	e1 b8 00 42 	mfsr	r8,0x108
+80007114:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006f50:	e0 6a 24 00 	mov	r10,9216
-80006f54:	ea 1a 00 f4 	orh	r10,0xf4
-80006f58:	f0 0a 00 0a 	add	r10,r8,r10
+80007118:	e0 6a 24 00 	mov	r10,9216
+8000711c:	ea 1a 00 f4 	orh	r10,0xf4
+80007120:	f0 0a 00 0a 	add	r10,r8,r10
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80006f5c:	e1 b9 00 42 	mfsr	r9,0x108
+80007124:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80006f60:	14 38       	cp.w	r8,r10
-80006f62:	e0 88 00 08 	brls	80006f72 <LED_Flash+0x2e>
+80007128:	14 38       	cp.w	r8,r10
+8000712a:	e0 88 00 08 	brls	8000713a <LED_Flash+0x2e>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-80006f66:	12 38       	cp.w	r8,r9
-80006f68:	fe 98 ff fa 	brls	80006f5c <LED_Flash+0x18>
-80006f6c:	12 3a       	cp.w	r10,r9
-80006f6e:	c1 93       	brcs	80006fa0 <LED_Flash+0x5c>
-80006f70:	cf 6b       	rjmp	80006f5c <LED_Flash+0x18>
+8000712e:	12 38       	cp.w	r8,r9
+80007130:	fe 98 ff fa 	brls	80007124 <LED_Flash+0x18>
+80007134:	12 3a       	cp.w	r10,r9
+80007136:	c1 93       	brcs	80007168 <LED_Flash+0x5c>
+80007138:	cf 6b       	rjmp	80007124 <LED_Flash+0x18>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-80006f72:	12 38       	cp.w	r8,r9
-80006f74:	e0 8b 00 16 	brhi	80006fa0 <LED_Flash+0x5c>
-80006f78:	12 3a       	cp.w	r10,r9
-80006f7a:	c1 33       	brcs	80006fa0 <LED_Flash+0x5c>
-80006f7c:	cf 0b       	rjmp	80006f5c <LED_Flash+0x18>
+8000713a:	12 38       	cp.w	r8,r9
+8000713c:	e0 8b 00 16 	brhi	80007168 <LED_Flash+0x5c>
+80007140:	12 3a       	cp.w	r10,r9
+80007142:	c1 33       	brcs	80007168 <LED_Flash+0x5c>
+80007144:	cf 0b       	rjmp	80007124 <LED_Flash+0x18>
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80006f7e:	e1 b9 00 42 	mfsr	r9,0x108
+80007146:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80006f82:	14 38       	cp.w	r8,r10
-80006f84:	e0 88 00 08 	brls	80006f94 <LED_Flash+0x50>
+8000714a:	14 38       	cp.w	r8,r10
+8000714c:	e0 88 00 08 	brls	8000715c <LED_Flash+0x50>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-80006f88:	12 38       	cp.w	r8,r9
-80006f8a:	fe 98 ff fa 	brls	80006f7e <LED_Flash+0x3a>
-80006f8e:	12 3a       	cp.w	r10,r9
-80006f90:	c1 43       	brcs	80006fb8 <LED_Flash+0x74>
-80006f92:	cf 6b       	rjmp	80006f7e <LED_Flash+0x3a>
+80007150:	12 38       	cp.w	r8,r9
+80007152:	fe 98 ff fa 	brls	80007146 <LED_Flash+0x3a>
+80007156:	12 3a       	cp.w	r10,r9
+80007158:	c1 43       	brcs	80007180 <LED_Flash+0x74>
+8000715a:	cf 6b       	rjmp	80007146 <LED_Flash+0x3a>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-80006f94:	12 38       	cp.w	r8,r9
-80006f96:	e0 8b 00 11 	brhi	80006fb8 <LED_Flash+0x74>
-80006f9a:	12 3a       	cp.w	r10,r9
-80006f9c:	c0 e3       	brcs	80006fb8 <LED_Flash+0x74>
-80006f9e:	cf 0b       	rjmp	80006f7e <LED_Flash+0x3a>
+8000715c:	12 38       	cp.w	r8,r9
+8000715e:	e0 8b 00 11 	brhi	80007180 <LED_Flash+0x74>
+80007162:	12 3a       	cp.w	r10,r9
+80007164:	c0 e3       	brcs	80007180 <LED_Flash+0x74>
+80007166:	cf 0b       	rjmp	80007146 <LED_Flash+0x3a>
 	delay_s(1);
 	LED2_CLR;
-80006fa0:	33 1c       	mov	r12,49
-80006fa2:	f0 1f 00 08 	mcall	80006fc0 <LED_Flash+0x7c>
+80007168:	33 1c       	mov	r12,49
+8000716a:	f0 1f 00 08 	mcall	80007188 <LED_Flash+0x7c>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80006fa6:	e1 b8 00 42 	mfsr	r8,0x108
+8000716e:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80006faa:	e0 6a 24 00 	mov	r10,9216
-80006fae:	ea 1a 00 f4 	orh	r10,0xf4
-80006fb2:	f0 0a 00 0a 	add	r10,r8,r10
-80006fb6:	ce 4b       	rjmp	80006f7e <LED_Flash+0x3a>
-80006fb8:	d8 02       	popm	pc
-80006fba:	00 00       	add	r0,r0
-80006fbc:	80 00       	ld.sh	r0,r0[0x0]
-80006fbe:	2f 76       	sub	r6,-9
-80006fc0:	80 00       	ld.sh	r0,r0[0x0]
-80006fc2:	2f 92       	sub	r2,-7
+80007172:	e0 6a 24 00 	mov	r10,9216
+80007176:	ea 1a 00 f4 	orh	r10,0xf4
+8000717a:	f0 0a 00 0a 	add	r10,r8,r10
+8000717e:	ce 4b       	rjmp	80007146 <LED_Flash+0x3a>
+80007180:	d8 02       	popm	pc
+80007182:	00 00       	add	r0,r0
+80007184:	80 00       	ld.sh	r0,r0[0x0]
+80007186:	2f 76       	sub	r6,-9
+80007188:	80 00       	ld.sh	r0,r0[0x0]
+8000718a:	2f 92       	sub	r2,-7
 
-80006fc4 <Log_Write>:
+8000718c <Log_Write>:
 }
 
 #define TOGGLE LED_Flash
 
 void Log_Write(char *buff, int length) 
 {
-80006fc4:	eb cd 40 c0 	pushm	r6-r7,lr
-80006fc8:	18 96       	mov	r6,r12
-80006fca:	16 97       	mov	r7,r11
+8000718c:	eb cd 40 c0 	pushm	r6-r7,lr
+80007190:	18 96       	mov	r6,r12
+80007192:	16 97       	mov	r7,r11
 	nav_setcwd((FS_STRING)LOG_FILE, true, false);
-80006fcc:	30 0a       	mov	r10,0
-80006fce:	30 1b       	mov	r11,1
-80006fd0:	48 9c       	lddpc	r12,80006ff4 <Log_Write+0x30>
-80006fd2:	f0 1f 00 0a 	mcall	80006ff8 <Log_Write+0x34>
+80007194:	30 0a       	mov	r10,0
+80007196:	30 1b       	mov	r11,1
+80007198:	48 9c       	lddpc	r12,800071bc <Log_Write+0x30>
+8000719a:	f0 1f 00 0a 	mcall	800071c0 <Log_Write+0x34>
 	file_open(FOPEN_MODE_APPEND);
-80006fd6:	30 2c       	mov	r12,2
-80006fd8:	f0 1f 00 09 	mcall	80006ffc <Log_Write+0x38>
+8000719e:	30 2c       	mov	r12,2
+800071a0:	f0 1f 00 09 	mcall	800071c4 <Log_Write+0x38>
 	if(length == -1)
-80006fdc:	5b f7       	cp.w	r7,-1
-80006fde:	f9 b7 00 04 	moveq	r7,4
+800071a4:	5b f7       	cp.w	r7,-1
+800071a6:	f9 b7 00 04 	moveq	r7,4
 		length = sizeof(buff);
 	file_write_buf(buff, length);
-80006fe2:	0e 9b       	mov	r11,r7
-80006fe4:	5c 7b       	castu.h	r11
-80006fe6:	0c 9c       	mov	r12,r6
-80006fe8:	f0 1f 00 06 	mcall	80007000 <Log_Write+0x3c>
+800071aa:	0e 9b       	mov	r11,r7
+800071ac:	5c 7b       	castu.h	r11
+800071ae:	0c 9c       	mov	r12,r6
+800071b0:	f0 1f 00 06 	mcall	800071c8 <Log_Write+0x3c>
 	file_close();
-80006fec:	f0 1f 00 06 	mcall	80007004 <Log_Write+0x40>
+800071b4:	f0 1f 00 06 	mcall	800071cc <Log_Write+0x40>
 }
-80006ff0:	e3 cd 80 c0 	ldm	sp++,r6-r7,pc
-80006ff4:	80 00       	ld.sh	r0,r0[0x0]
-80006ff6:	7e 48       	ld.w	r8,pc[0x10]
-80006ff8:	80 00       	ld.sh	r0,r0[0x0]
-80006ffa:	62 f0       	ld.w	r0,r1[0x3c]
-80006ffc:	80 00       	ld.sh	r0,r0[0x0]
-80006ffe:	5b 10       	cp.w	r0,-15
-80007000:	80 00       	ld.sh	r0,r0[0x0]
-80007002:	59 9c       	cp.w	r12,25
-80007004:	80 00       	ld.sh	r0,r0[0x0]
-80007006:	59 60       	cp.w	r0,22
+800071b8:	e3 cd 80 c0 	ldm	sp++,r6-r7,pc
+800071bc:	80 00       	ld.sh	r0,r0[0x0]
+800071be:	7e 7c       	ld.w	r12,pc[0x1c]
+800071c0:	80 00       	ld.sh	r0,r0[0x0]
+800071c2:	62 f0       	ld.w	r0,r1[0x3c]
+800071c4:	80 00       	ld.sh	r0,r0[0x0]
+800071c6:	5b 10       	cp.w	r0,-15
+800071c8:	80 00       	ld.sh	r0,r0[0x0]
+800071ca:	59 9c       	cp.w	r12,25
+800071cc:	80 00       	ld.sh	r0,r0[0x0]
+800071ce:	59 60       	cp.w	r0,22
 
-80007008 <main>:
+800071d0 <main>:
 
 	// Transmit the resulting string with the given USART.
 	Log_Write(tmp + i, -1);
 }
 int main (void)
 {
-80007008:	d4 31       	pushm	r0-r7,lr
-8000700a:	20 9d       	sub	sp,36
+800071d0:	d4 31       	pushm	r0-r7,lr
+800071d2:	20 9d       	sub	sp,36
 	unsigned long sdram_size, progress_inc, i, j, tmp, noErrors = 0;
 	volatile unsigned long *sdram = SDRAM;
 	uint32_t VarTemp;
 	board_init();
-8000700c:	f0 1f 00 ea 	mcall	800073b4 <main+0x3ac>
+800071d4:	f0 1f 00 eb 	mcall	80007580 <main+0x3b0>
 	pcl_switch_to_osc(PCL_OSC0, FOSC0, OSC0_STARTUP);
-80007010:	30 3a       	mov	r10,3
-80007012:	e0 6b 24 00 	mov	r11,9216
-80007016:	ea 1b 00 f4 	orh	r11,0xf4
-8000701a:	30 0c       	mov	r12,0
-8000701c:	f0 1f 00 e7 	mcall	800073b8 <main+0x3b0>
+800071d8:	30 3a       	mov	r10,3
+800071da:	e0 6b 24 00 	mov	r11,9216
+800071de:	ea 1b 00 f4 	orh	r11,0xf4
+800071e2:	30 0c       	mov	r12,0
+800071e4:	f0 1f 00 e8 	mcall	80007584 <main+0x3b4>
 	init_dbg_rs232(FOSC0);
-80007020:	e0 6c 24 00 	mov	r12,9216
-80007024:	ea 1c 00 f4 	orh	r12,0xf4
-80007028:	f0 1f 00 e5 	mcall	800073bc <main+0x3b4>
+800071e8:	e0 6c 24 00 	mov	r12,9216
+800071ec:	ea 1c 00 f4 	orh	r12,0xf4
+800071f0:	f0 1f 00 e6 	mcall	80007588 <main+0x3b8>
 	print_dbg("\x0C");
-8000702c:	fe fc 03 94 	ld.w	r12,pc[916]
-80007030:	f0 1f 00 e5 	mcall	800073c4 <main+0x3bc>
+800071f4:	fe fc 03 98 	ld.w	r12,pc[920]
+800071f8:	f0 1f 00 e6 	mcall	80007590 <main+0x3c0>
 	print_dbg("Columbus Board Tester\n\n\r");
-80007034:	fe fc 03 94 	ld.w	r12,pc[916]
-80007038:	f0 1f 00 e3 	mcall	800073c4 <main+0x3bc>
+800071fc:	fe fc 03 98 	ld.w	r12,pc[920]
+80007200:	f0 1f 00 e4 	mcall	80007590 <main+0x3c0>
 	sd_mmc_resources_init();
-8000703c:	f0 1f 00 e4 	mcall	800073cc <main+0x3c4>
+80007204:	f0 1f 00 e5 	mcall	80007598 <main+0x3c8>
 	//sd_mmc_resources_init();
 	print_dbg("\n\n\rSD Card Memory Test:\n\r");
-80007040:	fe fc 03 90 	ld.w	r12,pc[912]
-80007044:	f0 1f 00 e0 	mcall	800073c4 <main+0x3bc>
+80007208:	fe fc 03 94 	ld.w	r12,pc[916]
+8000720c:	f0 1f 00 e1 	mcall	80007590 <main+0x3c0>
 	// Test if the memory is ready - using the control access memory abstraction layer (/SERVICES/MEMORY/CTRL_ACCESS/)
 	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
-80007048:	30 0c       	mov	r12,0
-8000704a:	f0 1f 00 e3 	mcall	800073d4 <main+0x3cc>
-8000704e:	c1 71       	brne	8000707c <main+0x74>
+80007210:	30 0c       	mov	r12,0
+80007212:	f0 1f 00 e4 	mcall	800075a0 <main+0x3d0>
+80007216:	c1 71       	brne	80007244 <main+0x74>
 	{
 		// Get and display the capacity
 		mem_read_capacity(LUN_ID_SD_MMC_SPI_MEM, &VarTemp);
-80007050:	fa cb ff e0 	sub	r11,sp,-32
-80007054:	f0 1f 00 e1 	mcall	800073d8 <main+0x3d0>
+80007218:	fa cb ff e0 	sub	r11,sp,-32
+8000721c:	f0 1f 00 e2 	mcall	800075a4 <main+0x3d4>
 		print_dbg("OK:\t");
-80007058:	fe fc 03 84 	ld.w	r12,pc[900]
-8000705c:	f0 1f 00 da 	mcall	800073c4 <main+0x3bc>
+80007220:	fe fc 03 88 	ld.w	r12,pc[904]
+80007224:	f0 1f 00 db 	mcall	80007590 <main+0x3c0>
 		print_dbg_ulong((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
-80007060:	40 8c       	lddsp	r12,sp[0x20]
-80007062:	2f fc       	sub	r12,-1
-80007064:	ab 9c       	lsr	r12,0xb
-80007066:	f0 1f 00 df 	mcall	800073e0 <main+0x3d8>
+80007228:	40 8c       	lddsp	r12,sp[0x20]
+8000722a:	2f fc       	sub	r12,-1
+8000722c:	ab 9c       	lsr	r12,0xb
+8000722e:	f0 1f 00 e0 	mcall	800075ac <main+0x3dc>
 		print_dbg("MB\r\n");
-8000706a:	fe fc 03 7a 	ld.w	r12,pc[890]
-8000706e:	f0 1f 00 d6 	mcall	800073c4 <main+0x3bc>
+80007232:	fe fc 03 7e 	ld.w	r12,pc[894]
+80007236:	f0 1f 00 d7 	mcall	80007590 <main+0x3c0>
 		print_dbg("SD Card Okay.\n\r");
-80007072:	fe fc 03 76 	ld.w	r12,pc[886]
-80007076:	f0 1f 00 d4 	mcall	800073c4 <main+0x3bc>
-8000707a:	c0 58       	rjmp	80007084 <main+0x7c>
+8000723a:	fe fc 03 7a 	ld.w	r12,pc[890]
+8000723e:	f0 1f 00 d5 	mcall	80007590 <main+0x3c0>
+80007242:	c0 58       	rjmp	8000724c <main+0x7c>
 	}
 	else
 	{
 		// Display an error message
 		print_dbg("Not initialized: Check if memory is ready...\r\n");
-8000707c:	fe fc 03 70 	ld.w	r12,pc[880]
-80007080:	f0 1f 00 d1 	mcall	800073c4 <main+0x3bc>
+80007244:	fe fc 03 74 	ld.w	r12,pc[884]
+80007248:	f0 1f 00 d2 	mcall	80007590 <main+0x3c0>
 	}
 	nav_reset();
-80007084:	f0 1f 00 db 	mcall	800073f0 <main+0x3e8>
+8000724c:	f0 1f 00 dc 	mcall	800075bc <main+0x3ec>
 	// Use the last drive available as default.
 	nav_drive_set(nav_drive_nb() - 1);
-80007088:	f0 1f 00 db 	mcall	800073f4 <main+0x3ec>
-8000708c:	20 1c       	sub	r12,1
-8000708e:	5c 5c       	castu.b	r12
-80007090:	f0 1f 00 da 	mcall	800073f8 <main+0x3f0>
+80007250:	f0 1f 00 dc 	mcall	800075c0 <main+0x3f0>
+80007254:	20 1c       	sub	r12,1
+80007256:	5c 5c       	castu.b	r12
+80007258:	f0 1f 00 db 	mcall	800075c4 <main+0x3f4>
 	// Mount it.
 	nav_partition_mount();
-80007094:	f0 1f 00 da 	mcall	800073fc <main+0x3f4>
+8000725c:	f0 1f 00 db 	mcall	800075c8 <main+0x3f8>
 	nav_filelist_reset();
-80007098:	f0 1f 00 da 	mcall	80007400 <main+0x3f8>
+80007260:	f0 1f 00 db 	mcall	800075cc <main+0x3fc>
 	if(nav_filelist_findname((FS_STRING)LOG_FILE, false))
-8000709c:	30 0b       	mov	r11,0
-8000709e:	fe fc 03 66 	ld.w	r12,pc[870]
-800070a2:	f0 1f 00 da 	mcall	80007408 <main+0x400>
-800070a6:	c1 d0       	breq	800070e0 <main+0xd8>
+80007264:	30 0b       	mov	r11,0
+80007266:	fe fc 03 6a 	ld.w	r12,pc[874]
+8000726a:	f0 1f 00 db 	mcall	800075d4 <main+0x404>
+8000726e:	c1 d0       	breq	800072a8 <main+0xd8>
 	{
 		print_dbg("\n\rLog File Already Exists\n\rAttempting to delete...");	
-800070a8:	fe fc 03 64 	ld.w	r12,pc[868]
-800070ac:	f0 1f 00 c6 	mcall	800073c4 <main+0x3bc>
+80007270:	fe fc 03 68 	ld.w	r12,pc[872]
+80007274:	f0 1f 00 c7 	mcall	80007590 <main+0x3c0>
 		nav_setcwd((FS_STRING)LOG_FILE, true, false);
-800070b0:	fe f7 03 54 	ld.w	r7,pc[852]
-800070b4:	30 0a       	mov	r10,0
-800070b6:	30 1b       	mov	r11,1
-800070b8:	0e 9c       	mov	r12,r7
-800070ba:	f0 1f 00 d6 	mcall	80007410 <main+0x408>
+80007278:	fe f7 03 58 	ld.w	r7,pc[856]
+8000727c:	30 0a       	mov	r10,0
+8000727e:	30 1b       	mov	r11,1
+80007280:	0e 9c       	mov	r12,r7
+80007282:	f0 1f 00 d7 	mcall	800075dc <main+0x40c>
 		nav_file_del(false);
-800070be:	30 0c       	mov	r12,0
-800070c0:	f0 1f 00 d5 	mcall	80007414 <main+0x40c>
+80007286:	30 0c       	mov	r12,0
+80007288:	f0 1f 00 d6 	mcall	800075e0 <main+0x410>
 		
 		if(nav_filelist_findname((FS_STRING)LOG_FILE, false))
-800070c4:	30 0b       	mov	r11,0
-800070c6:	0e 9c       	mov	r12,r7
-800070c8:	f0 1f 00 d0 	mcall	80007408 <main+0x400>
-800070cc:	c0 60       	breq	800070d8 <main+0xd0>
+8000728c:	30 0b       	mov	r11,0
+8000728e:	0e 9c       	mov	r12,r7
+80007290:	f0 1f 00 d1 	mcall	800075d4 <main+0x404>
+80007294:	c0 60       	breq	800072a0 <main+0xd0>
 			print_dbg("\n\rLog File Still Exists...");
-800070ce:	fe fc 03 4a 	ld.w	r12,pc[842]
-800070d2:	f0 1f 00 bd 	mcall	800073c4 <main+0x3bc>
-800070d6:	c0 58       	rjmp	800070e0 <main+0xd8>
+80007296:	fe fc 03 4e 	ld.w	r12,pc[846]
+8000729a:	f0 1f 00 be 	mcall	80007590 <main+0x3c0>
+8000729e:	c0 58       	rjmp	800072a8 <main+0xd8>
 		else
 			print_dbg("\n\rLog File Deleted!");
-800070d8:	fe fc 03 44 	ld.w	r12,pc[836]
-800070dc:	f0 1f 00 ba 	mcall	800073c4 <main+0x3bc>
+800072a0:	fe fc 03 48 	ld.w	r12,pc[840]
+800072a4:	f0 1f 00 bb 	mcall	80007590 <main+0x3c0>
 	}
 	
 	
 	print_dbg("\n\rCreating Log File.");
-800070e0:	fe fc 03 40 	ld.w	r12,pc[832]
-800070e4:	f0 1f 00 b8 	mcall	800073c4 <main+0x3bc>
+800072a8:	fe fc 03 44 	ld.w	r12,pc[836]
+800072ac:	f0 1f 00 b9 	mcall	80007590 <main+0x3c0>
 	//char buff[20] = "log.txt";
 	if(nav_file_create((FS_STRING)LOG_FILE) == true)
-800070e8:	fe fc 03 1c 	ld.w	r12,pc[796]
-800070ec:	f0 1f 00 ce 	mcall	80007424 <main+0x41c>
-800070f0:	c0 60       	breq	800070fc <main+0xf4>
+800072b0:	fe fc 03 20 	ld.w	r12,pc[800]
+800072b4:	f0 1f 00 cf 	mcall	800075f0 <main+0x420>
+800072b8:	c0 60       	breq	800072c4 <main+0xf4>
 		print_dbg("\n\rSuccess!");
-800070f2:	fe fc 03 36 	ld.w	r12,pc[822]
-800070f6:	f0 1f 00 b4 	mcall	800073c4 <main+0x3bc>
-800070fa:	c0 58       	rjmp	80007104 <main+0xfc>
+800072ba:	fe fc 03 3a 	ld.w	r12,pc[826]
+800072be:	f0 1f 00 b5 	mcall	80007590 <main+0x3c0>
+800072c2:	c0 58       	rjmp	800072cc <main+0xfc>
 	else
 		print_dbg("\n\rNot worked...");
-800070fc:	fe fc 03 30 	ld.w	r12,pc[816]
-80007100:	f0 1f 00 b1 	mcall	800073c4 <main+0x3bc>
+800072c4:	fe fc 03 34 	ld.w	r12,pc[820]
+800072c8:	f0 1f 00 b2 	mcall	80007590 <main+0x3c0>
 	
 	print_dbg("\n\rWriting to log file.");
-80007104:	fe fc 03 2c 	ld.w	r12,pc[812]
-80007108:	f0 1f 00 af 	mcall	800073c4 <main+0x3bc>
+800072cc:	fe fc 03 30 	ld.w	r12,pc[816]
+800072d0:	f0 1f 00 b0 	mcall	80007590 <main+0x3c0>
 	
 	Log_Write("Columbus Tester:\n\r", -1);
-8000710c:	3f fb       	mov	r11,-1
-8000710e:	fe fc 03 26 	ld.w	r12,pc[806]
-80007112:	f0 1f 00 ca 	mcall	80007438 <main+0x430>
+800072d4:	3f fb       	mov	r11,-1
+800072d6:	fe fc 03 2a 	ld.w	r12,pc[810]
+800072da:	f0 1f 00 cb 	mcall	80007604 <main+0x434>
 
 
 	print_dbg("\n\rLED Test:\n\rAll LEDS on;");
-80007116:	fe fc 03 26 	ld.w	r12,pc[806]
-8000711a:	f0 1f 00 ab 	mcall	800073c4 <main+0x3bc>
+800072de:	fe fc 03 2a 	ld.w	r12,pc[810]
+800072e2:	f0 1f 00 ac 	mcall	80007590 <main+0x3c0>
 	LEDMOTOR_SET;
-8000711e:	32 cc       	mov	r12,44
-80007120:	f0 1f 00 c8 	mcall	80007440 <main+0x438>
+800072e6:	32 cc       	mov	r12,44
+800072e8:	f0 1f 00 c9 	mcall	8000760c <main+0x43c>
 	LED2_SET;
-80007124:	33 1c       	mov	r12,49
-80007126:	f0 1f 00 c7 	mcall	80007440 <main+0x438>
+800072ec:	33 1c       	mov	r12,49
+800072ee:	f0 1f 00 c8 	mcall	8000760c <main+0x43c>
 	LED3_SET;
-8000712a:	33 2c       	mov	r12,50
-8000712c:	f0 1f 00 c5 	mcall	80007440 <main+0x438>
+800072f2:	33 2c       	mov	r12,50
+800072f4:	f0 1f 00 c6 	mcall	8000760c <main+0x43c>
 	LED4_SET;
-80007130:	33 bc       	mov	r12,59
-80007132:	f0 1f 00 c4 	mcall	80007440 <main+0x438>
+800072f8:	33 bc       	mov	r12,59
+800072fa:	f0 1f 00 c5 	mcall	8000760c <main+0x43c>
 	LED5_SET;
-80007136:	33 cc       	mov	r12,60
-80007138:	f0 1f 00 c2 	mcall	80007440 <main+0x438>
+800072fe:	33 cc       	mov	r12,60
+80007300:	f0 1f 00 c3 	mcall	8000760c <main+0x43c>
 	LED6_SET;
-8000713c:	33 dc       	mov	r12,61
-8000713e:	f0 1f 00 c1 	mcall	80007440 <main+0x438>
+80007304:	33 dc       	mov	r12,61
+80007306:	f0 1f 00 c2 	mcall	8000760c <main+0x43c>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80007142:	e1 b8 00 42 	mfsr	r8,0x108
+8000730a:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80007146:	e0 6a 24 00 	mov	r10,9216
-8000714a:	ea 1a 00 f4 	orh	r10,0xf4
-8000714e:	f0 0a 00 0a 	add	r10,r8,r10
+8000730e:	e0 6a 24 00 	mov	r10,9216
+80007312:	ea 1a 00 f4 	orh	r10,0xf4
+80007316:	f0 0a 00 0a 	add	r10,r8,r10
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80007152:	e1 b9 00 42 	mfsr	r9,0x108
+8000731a:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-80007156:	14 38       	cp.w	r8,r10
-80007158:	e0 88 00 09 	brls	8000716a <main+0x162>
+8000731e:	14 38       	cp.w	r8,r10
+80007320:	e0 88 00 09 	brls	80007332 <main+0x162>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-8000715c:	12 38       	cp.w	r8,r9
-8000715e:	fe 98 ff fa 	brls	80007152 <main+0x14a>
-80007162:	12 3a       	cp.w	r10,r9
-80007164:	e0 83 00 d3 	brlo	8000730a <main+0x302>
-80007168:	cf 5b       	rjmp	80007152 <main+0x14a>
+80007324:	12 38       	cp.w	r8,r9
+80007326:	fe 98 ff fa 	brls	8000731a <main+0x14a>
+8000732a:	12 3a       	cp.w	r10,r9
+8000732c:	e0 83 00 d5 	brlo	800074d6 <main+0x306>
+80007330:	cf 5b       	rjmp	8000731a <main+0x14a>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-8000716a:	12 38       	cp.w	r8,r9
-8000716c:	e0 8b 00 cf 	brhi	8000730a <main+0x302>
-80007170:	12 3a       	cp.w	r10,r9
-80007172:	e0 83 00 cc 	brlo	8000730a <main+0x302>
-80007176:	ce eb       	rjmp	80007152 <main+0x14a>
+80007332:	12 38       	cp.w	r8,r9
+80007334:	e0 8b 00 d1 	brhi	800074d6 <main+0x306>
+80007338:	12 3a       	cp.w	r10,r9
+8000733a:	e0 83 00 ce 	brlo	800074d6 <main+0x306>
+8000733e:	ce eb       	rjmp	8000731a <main+0x14a>
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-80007178:	e1 b9 00 42 	mfsr	r9,0x108
+80007340:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-8000717c:	14 38       	cp.w	r8,r10
-8000717e:	e0 88 00 09 	brls	80007190 <main+0x188>
+80007344:	14 38       	cp.w	r8,r10
+80007346:	e0 88 00 09 	brls	80007358 <main+0x188>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-80007182:	12 38       	cp.w	r8,r9
-80007184:	fe 98 ff fa 	brls	80007178 <main+0x170>
-80007188:	12 3a       	cp.w	r10,r9
-8000718a:	e0 83 00 de 	brlo	80007346 <main+0x33e>
-8000718e:	cf 5b       	rjmp	80007178 <main+0x170>
+8000734a:	12 38       	cp.w	r8,r9
+8000734c:	fe 98 ff fa 	brls	80007340 <main+0x170>
+80007350:	12 3a       	cp.w	r10,r9
+80007352:	e0 83 00 e0 	brlo	80007512 <main+0x342>
+80007356:	cf 5b       	rjmp	80007340 <main+0x170>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-80007190:	12 38       	cp.w	r8,r9
-80007192:	e0 8b 00 da 	brhi	80007346 <main+0x33e>
-80007196:	12 3a       	cp.w	r10,r9
-80007198:	e0 83 00 d7 	brlo	80007346 <main+0x33e>
-8000719c:	ce eb       	rjmp	80007178 <main+0x170>
-8000719e:	0c 97       	mov	r7,r6
+80007358:	12 38       	cp.w	r8,r9
+8000735a:	e0 8b 00 dc 	brhi	80007512 <main+0x342>
+8000735e:	12 3a       	cp.w	r10,r9
+80007360:	e0 83 00 d9 	brlo	80007512 <main+0x342>
+80007364:	ce eb       	rjmp	80007340 <main+0x170>
+80007366:	0c 97       	mov	r7,r6
 	print_dbg("Scanning all Channels\n\r");
 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
 		print_dbg_ulong(i);
-800071a0:	00 9c       	mov	r12,r0
-800071a2:	f0 1f 00 90 	mcall	800073e0 <main+0x3d8>
+80007368:	00 9c       	mov	r12,r0
+8000736a:	f0 1f 00 91 	mcall	800075ac <main+0x3dc>
 		print_dbg_char(' ');
-800071a6:	0a 9c       	mov	r12,r5
-800071a8:	f0 1f 00 a7 	mcall	80007444 <main+0x43c>
-800071ac:	ee c4 ff f0 	sub	r4,r7,-16
+8000736e:	0a 9c       	mov	r12,r5
+80007370:	f0 1f 00 a8 	mcall	80007610 <main+0x440>
+80007374:	ee c4 ff f0 	sub	r4,r7,-16
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
-800071b0:	ee c6 ff ff 	sub	r6,r7,-1
-800071b4:	0e 9b       	mov	r11,r7
-800071b6:	06 9c       	mov	r12,r3
-800071b8:	f0 1f 00 a4 	mcall	80007448 <main+0x440>
+80007378:	ee c6 ff ff 	sub	r6,r7,-1
+8000737c:	0e 9b       	mov	r11,r7
+8000737e:	06 9c       	mov	r12,r3
+80007380:	f0 1f 00 a5 	mcall	80007614 <main+0x444>
 			if(status == STATUS_OK)
-800071bc:	c0 51       	brne	800071c6 <main+0x1be>
+80007384:	c0 51       	brne	8000738e <main+0x1be>
 			{
 				print_dbg_char('A');
-800071be:	02 9c       	mov	r12,r1
-800071c0:	f0 1f 00 a1 	mcall	80007444 <main+0x43c>
-800071c4:	c0 48       	rjmp	800071cc <main+0x1c4>
+80007386:	02 9c       	mov	r12,r1
+80007388:	f0 1f 00 a2 	mcall	80007610 <main+0x440>
+8000738c:	c0 48       	rjmp	80007394 <main+0x1c4>
 			}
 			else
 			{
 				print_dbg_char('-');
-800071c6:	04 9c       	mov	r12,r2
-800071c8:	f0 1f 00 9f 	mcall	80007444 <main+0x43c>
+8000738e:	04 9c       	mov	r12,r2
+80007390:	f0 1f 00 a0 	mcall	80007610 <main+0x440>
 			}
 			print_dbg_char(' ');
-800071cc:	0a 9c       	mov	r12,r5
-800071ce:	f0 1f 00 9e 	mcall	80007444 <main+0x43c>
+80007394:	0a 9c       	mov	r12,r5
+80007396:	f0 1f 00 9f 	mcall	80007610 <main+0x440>
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
 		print_dbg_ulong(i);
 		print_dbg_char(' ');
 		for(j = 0; j < 16; j++)
-800071d2:	08 36       	cp.w	r6,r4
-800071d4:	c0 30       	breq	800071da <main+0x1d2>
-800071d6:	0c 97       	mov	r7,r6
-800071d8:	ce cb       	rjmp	800071b0 <main+0x1a8>
+8000739a:	08 36       	cp.w	r6,r4
+8000739c:	c0 30       	breq	800073a2 <main+0x1d2>
+8000739e:	0c 97       	mov	r7,r6
+800073a0:	ce cb       	rjmp	80007378 <main+0x1a8>
 			{
 				print_dbg_char('-');
 			}
 			print_dbg_char(' ');
 		}
 		print_dbg("\n\r");
-800071da:	fe fc 02 72 	ld.w	r12,pc[626]
-800071de:	f0 1f 00 7a 	mcall	800073c4 <main+0x3bc>
+800073a2:	fe fc 02 76 	ld.w	r12,pc[630]
+800073a6:	f0 1f 00 7b 	mcall	80007590 <main+0x3c0>
 	PCA9542A_Init();
 	
 	print_dbg("Scanning all Channels\n\r");
 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
 	tmp = 0;
 	for(i = 0; i < 8; i++)
-800071e2:	2f f0       	sub	r0,-1
-800071e4:	58 80       	cp.w	r0,8
-800071e6:	cd c1       	brne	8000719e <main+0x196>
+800073aa:	2f f0       	sub	r0,-1
+800073ac:	58 80       	cp.w	r0,8
+800073ae:	cd c1       	brne	80007366 <main+0x196>
 // 	Motors_Reset();//reset the motors to test them
 	
 	
 	
 	//Channel 0
 	PCA9542A_Chan_Sel(I2C_CHANNEL_0);
-800071e8:	30 4c       	mov	r12,4
-800071ea:	f0 1f 00 9a 	mcall	80007450 <main+0x448>
+800073b0:	30 4c       	mov	r12,4
+800073b2:	f0 1f 00 9b 	mcall	8000761c <main+0x44c>
 	print_dbg("\n\rScanning Channel 0\n\r");
-800071ee:	fe fc 02 66 	ld.w	r12,pc[614]
-800071f2:	f0 1f 00 75 	mcall	800073c4 <main+0x3bc>
+800073b6:	fe fc 02 6a 	ld.w	r12,pc[618]
+800073ba:	f0 1f 00 76 	mcall	80007590 <main+0x3c0>
 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
-800071f6:	fe fc 02 62 	ld.w	r12,pc[610]
-800071fa:	f0 1f 00 73 	mcall	800073c4 <main+0x3bc>
-800071fe:	30 07       	mov	r7,0
-80007200:	0e 90       	mov	r0,r7
+800073be:	fe fc 02 66 	ld.w	r12,pc[614]
+800073c2:	f0 1f 00 74 	mcall	80007590 <main+0x3c0>
+800073c6:	30 07       	mov	r7,0
+800073c8:	0e 90       	mov	r0,r7
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
 		print_dbg_ulong(i);
 		print_dbg_char(' ');
-80007202:	32 05       	mov	r5,32
+800073ca:	32 05       	mov	r5,32
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
-80007204:	fe 73 38 00 	mov	r3,-51200
+800073cc:	fe 73 38 00 	mov	r3,-51200
 			{
 				print_dbg_char('A');
 			}
 			else
 			{
 				print_dbg_char('-');
-80007208:	32 d2       	mov	r2,45
+800073d0:	32 d2       	mov	r2,45
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
 			if(status == STATUS_OK)
 			{
 				print_dbg_char('A');
-8000720a:	34 11       	mov	r1,65
+800073d2:	34 11       	mov	r1,65
 	print_dbg("\n\rScanning Channel 0\n\r");
 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
 		print_dbg_ulong(i);
-8000720c:	00 9c       	mov	r12,r0
-8000720e:	f0 1f 00 75 	mcall	800073e0 <main+0x3d8>
+800073d4:	00 9c       	mov	r12,r0
+800073d6:	f0 1f 00 76 	mcall	800075ac <main+0x3dc>
 		print_dbg_char(' ');
-80007212:	0a 9c       	mov	r12,r5
-80007214:	f0 1f 00 8c 	mcall	80007444 <main+0x43c>
-80007218:	ee c4 ff f0 	sub	r4,r7,-16
+800073da:	0a 9c       	mov	r12,r5
+800073dc:	f0 1f 00 8d 	mcall	80007610 <main+0x440>
+800073e0:	ee c4 ff f0 	sub	r4,r7,-16
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
-8000721c:	ee c6 ff ff 	sub	r6,r7,-1
-80007220:	0e 9b       	mov	r11,r7
-80007222:	06 9c       	mov	r12,r3
-80007224:	f0 1f 00 89 	mcall	80007448 <main+0x440>
+800073e4:	ee c6 ff ff 	sub	r6,r7,-1
+800073e8:	0e 9b       	mov	r11,r7
+800073ea:	06 9c       	mov	r12,r3
+800073ec:	f0 1f 00 8a 	mcall	80007614 <main+0x444>
 			if(status == STATUS_OK)
-80007228:	c0 51       	brne	80007232 <main+0x22a>
+800073f0:	c0 51       	brne	800073fa <main+0x22a>
 			{
 				print_dbg_char('A');
-8000722a:	02 9c       	mov	r12,r1
-8000722c:	f0 1f 00 86 	mcall	80007444 <main+0x43c>
-80007230:	c0 48       	rjmp	80007238 <main+0x230>
+800073f2:	02 9c       	mov	r12,r1
+800073f4:	f0 1f 00 87 	mcall	80007610 <main+0x440>
+800073f8:	c0 48       	rjmp	80007400 <main+0x230>
 			}
 			else
 			{
 				print_dbg_char('-');
-80007232:	04 9c       	mov	r12,r2
-80007234:	f0 1f 00 84 	mcall	80007444 <main+0x43c>
+800073fa:	04 9c       	mov	r12,r2
+800073fc:	f0 1f 00 85 	mcall	80007610 <main+0x440>
 			}
 			print_dbg_char(' ');
-80007238:	0a 9c       	mov	r12,r5
-8000723a:	f0 1f 00 83 	mcall	80007444 <main+0x43c>
+80007400:	0a 9c       	mov	r12,r5
+80007402:	f0 1f 00 84 	mcall	80007610 <main+0x440>
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
 		print_dbg_ulong(i);
 		print_dbg_char(' ');
 		for(j = 0; j < 16; j++)
-8000723e:	08 36       	cp.w	r6,r4
-80007240:	c0 30       	breq	80007246 <main+0x23e>
-80007242:	0c 97       	mov	r7,r6
-80007244:	ce cb       	rjmp	8000721c <main+0x214>
+80007406:	08 36       	cp.w	r6,r4
+80007408:	c0 30       	breq	8000740e <main+0x23e>
+8000740a:	0c 97       	mov	r7,r6
+8000740c:	ce cb       	rjmp	800073e4 <main+0x214>
 			{
 				print_dbg_char('-');
 			}
 			print_dbg_char(' ');
 		}
 		print_dbg("\n\r");
-80007246:	fe fc 02 06 	ld.w	r12,pc[518]
-8000724a:	f0 1f 00 5f 	mcall	800073c4 <main+0x3bc>
+8000740e:	fe fc 02 0a 	ld.w	r12,pc[522]
+80007412:	f0 1f 00 60 	mcall	80007590 <main+0x3c0>
 	//Channel 0
 	PCA9542A_Chan_Sel(I2C_CHANNEL_0);
 	print_dbg("\n\rScanning Channel 0\n\r");
 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
 	tmp = 0;
 	for(i = 0; i < 8; i++)
-8000724e:	2f f0       	sub	r0,-1
-80007250:	58 80       	cp.w	r0,8
-80007252:	c0 30       	breq	80007258 <main+0x250>
-80007254:	0c 97       	mov	r7,r6
-80007256:	cd bb       	rjmp	8000720c <main+0x204>
+80007416:	2f f0       	sub	r0,-1
+80007418:	58 80       	cp.w	r0,8
+8000741a:	c0 30       	breq	80007420 <main+0x250>
+8000741c:	0c 97       	mov	r7,r6
+8000741e:	cd bb       	rjmp	800073d4 <main+0x204>
 		}
 		print_dbg("\n\r");
 	}
 	
 	//Channel 1
 	PCA9542A_Chan_Sel(I2C_CHANNEL_1);
-80007258:	30 5c       	mov	r12,5
-8000725a:	f0 1f 00 7e 	mcall	80007450 <main+0x448>
+80007420:	30 5c       	mov	r12,5
+80007422:	f0 1f 00 7f 	mcall	8000761c <main+0x44c>
 	print_dbg("\n\rScanning Channel 1\n\r");
-8000725e:	fe fc 01 fe 	ld.w	r12,pc[510]
-80007262:	f0 1f 00 59 	mcall	800073c4 <main+0x3bc>
+80007426:	fe fc 02 02 	ld.w	r12,pc[514]
+8000742a:	f0 1f 00 5a 	mcall	80007590 <main+0x3c0>
 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
-80007266:	4f dc       	lddpc	r12,80007458 <main+0x450>
-80007268:	f0 1f 00 57 	mcall	800073c4 <main+0x3bc>
-8000726c:	30 07       	mov	r7,0
-8000726e:	0e 90       	mov	r0,r7
+8000742e:	4f ec       	lddpc	r12,80007624 <main+0x454>
+80007430:	f0 1f 00 58 	mcall	80007590 <main+0x3c0>
+80007434:	30 07       	mov	r7,0
+80007436:	0e 90       	mov	r0,r7
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
 		print_dbg_ulong(i);
 		print_dbg_char(' ');
-80007270:	32 05       	mov	r5,32
+80007438:	32 05       	mov	r5,32
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
-80007272:	fe 73 38 00 	mov	r3,-51200
+8000743a:	fe 73 38 00 	mov	r3,-51200
 			{
 				print_dbg_char('A');
 			}
 			else
 			{
 				print_dbg_char('-');
-80007276:	32 d2       	mov	r2,45
+8000743e:	32 d2       	mov	r2,45
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
 			if(status == STATUS_OK)
 			{
 				print_dbg_char('A');
-80007278:	34 11       	mov	r1,65
+80007440:	34 11       	mov	r1,65
 	print_dbg("\n\rScanning Channel 1\n\r");
 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
 		print_dbg_ulong(i);
-8000727a:	00 9c       	mov	r12,r0
-8000727c:	f0 1f 00 59 	mcall	800073e0 <main+0x3d8>
+80007442:	00 9c       	mov	r12,r0
+80007444:	f0 1f 00 5a 	mcall	800075ac <main+0x3dc>
 		print_dbg_char(' ');
-80007280:	0a 9c       	mov	r12,r5
-80007282:	f0 1f 00 71 	mcall	80007444 <main+0x43c>
-80007286:	ee c4 ff f0 	sub	r4,r7,-16
+80007448:	0a 9c       	mov	r12,r5
+8000744a:	f0 1f 00 72 	mcall	80007610 <main+0x440>
+8000744e:	ee c4 ff f0 	sub	r4,r7,-16
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
-8000728a:	ee c6 ff ff 	sub	r6,r7,-1
-8000728e:	0e 9b       	mov	r11,r7
-80007290:	06 9c       	mov	r12,r3
-80007292:	f0 1f 00 6e 	mcall	80007448 <main+0x440>
+80007452:	ee c6 ff ff 	sub	r6,r7,-1
+80007456:	0e 9b       	mov	r11,r7
+80007458:	06 9c       	mov	r12,r3
+8000745a:	f0 1f 00 6f 	mcall	80007614 <main+0x444>
 			if(status == STATUS_OK)
-80007296:	c0 51       	brne	800072a0 <main+0x298>
+8000745e:	c0 51       	brne	80007468 <main+0x298>
 			{
 				print_dbg_char('A');
-80007298:	02 9c       	mov	r12,r1
-8000729a:	f0 1f 00 6b 	mcall	80007444 <main+0x43c>
-8000729e:	c0 48       	rjmp	800072a6 <main+0x29e>
+80007460:	02 9c       	mov	r12,r1
+80007462:	f0 1f 00 6c 	mcall	80007610 <main+0x440>
+80007466:	c0 48       	rjmp	8000746e <main+0x29e>
 			}
 			else
 			{
 				print_dbg_char('-');
-800072a0:	04 9c       	mov	r12,r2
-800072a2:	f0 1f 00 69 	mcall	80007444 <main+0x43c>
+80007468:	04 9c       	mov	r12,r2
+8000746a:	f0 1f 00 6a 	mcall	80007610 <main+0x440>
 			}
 			print_dbg_char(' ');
-800072a6:	0a 9c       	mov	r12,r5
-800072a8:	f0 1f 00 67 	mcall	80007444 <main+0x43c>
+8000746e:	0a 9c       	mov	r12,r5
+80007470:	f0 1f 00 68 	mcall	80007610 <main+0x440>
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
 		print_dbg_ulong(i);
 		print_dbg_char(' ');
 		for(j = 0; j < 16; j++)
-800072ac:	08 36       	cp.w	r6,r4
-800072ae:	c0 30       	breq	800072b4 <main+0x2ac>
-800072b0:	0c 97       	mov	r7,r6
-800072b2:	ce cb       	rjmp	8000728a <main+0x282>
+80007474:	08 36       	cp.w	r6,r4
+80007476:	c0 30       	breq	8000747c <main+0x2ac>
+80007478:	0c 97       	mov	r7,r6
+8000747a:	ce cb       	rjmp	80007452 <main+0x282>
 			{
 				print_dbg_char('-');
 			}
 			print_dbg_char(' ');
 		}
 		print_dbg("\n\r");
-800072b4:	4e 6c       	lddpc	r12,8000744c <main+0x444>
-800072b6:	f0 1f 00 44 	mcall	800073c4 <main+0x3bc>
+8000747c:	4e 7c       	lddpc	r12,80007618 <main+0x448>
+8000747e:	f0 1f 00 45 	mcall	80007590 <main+0x3c0>
 	//Channel 1
 	PCA9542A_Chan_Sel(I2C_CHANNEL_1);
 	print_dbg("\n\rScanning Channel 1\n\r");
 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
 	tmp = 0;
 	for(i = 0; i < 8; i++)
-800072ba:	2f f0       	sub	r0,-1
-800072bc:	58 80       	cp.w	r0,8
-800072be:	c0 30       	breq	800072c4 <main+0x2bc>
-800072c0:	0c 97       	mov	r7,r6
-800072c2:	cd cb       	rjmp	8000727a <main+0x272>
+80007482:	2f f0       	sub	r0,-1
+80007484:	58 80       	cp.w	r0,8
+80007486:	c0 30       	breq	8000748c <main+0x2bc>
+80007488:	0c 97       	mov	r7,r6
+8000748a:	cd cb       	rjmp	80007442 <main+0x272>
 			print_dbg_char(' ');
 		}
 		print_dbg("\n\r");
 	}
 	
 	print_dbg("\n\rInitialising Cameras");
-800072c4:	4e 7c       	lddpc	r12,80007460 <main+0x458>
-800072c6:	f0 1f 00 40 	mcall	800073c4 <main+0x3bc>
+8000748c:	4e 8c       	lddpc	r12,8000762c <main+0x45c>
+8000748e:	f0 1f 00 41 	mcall	80007590 <main+0x3c0>
 	OV7670_Init();
-800072ca:	f0 1f 00 67 	mcall	80007464 <main+0x45c>
+80007492:	f0 1f 00 68 	mcall	80007630 <main+0x460>
 	if(STATUS_OK == OV7670_Status.Error)
-800072ce:	4e 78       	lddpc	r8,80007468 <main+0x460>
-800072d0:	11 89       	ld.ub	r9,r8[0x0]
-800072d2:	30 08       	mov	r8,0
-800072d4:	f0 09 18 00 	cp.b	r9,r8
-800072d8:	c0 51       	brne	800072e2 <main+0x2da>
+80007496:	4e 88       	lddpc	r8,80007634 <main+0x464>
+80007498:	11 89       	ld.ub	r9,r8[0x0]
+8000749a:	30 08       	mov	r8,0
+8000749c:	f0 09 18 00 	cp.b	r9,r8
+800074a0:	c0 51       	brne	800074aa <main+0x2da>
 	{
 		print_dbg("\n\rCamera Initialise Okay!");
-800072da:	4e 5c       	lddpc	r12,8000746c <main+0x464>
-800072dc:	f0 1f 00 3a 	mcall	800073c4 <main+0x3bc>
-800072e0:	c0 48       	rjmp	800072e8 <main+0x2e0>
+800074a2:	4e 6c       	lddpc	r12,80007638 <main+0x468>
+800074a4:	f0 1f 00 3b 	mcall	80007590 <main+0x3c0>
+800074a8:	c0 48       	rjmp	800074b0 <main+0x2e0>
 	}
 	else
 		print_dbg("\n\rCamara Initialise Fail.");
-800072e2:	4e 4c       	lddpc	r12,80007470 <main+0x468>
-800072e4:	f0 1f 00 38 	mcall	800073c4 <main+0x3bc>
+800074aa:	4e 5c       	lddpc	r12,8000763c <main+0x46c>
+800074ac:	f0 1f 00 39 	mcall	80007590 <main+0x3c0>
 		
 	print_dbg("\n\rTaking Photos");
-800072e8:	4e 3c       	lddpc	r12,80007474 <main+0x46c>
-800072ea:	f0 1f 00 37 	mcall	800073c4 <main+0x3bc>
+800074b0:	4e 4c       	lddpc	r12,80007640 <main+0x470>
+800074b2:	f0 1f 00 38 	mcall	80007590 <main+0x3c0>
 	//TakePhoto(CAMERA_LEFT);
 	//TakePhoto(CAMERA_RIGHT);
 	TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
-800072ee:	30 3c       	mov	r12,3
-800072f0:	f0 1f 00 62 	mcall	80007478 <main+0x470>
+800074b6:	30 3c       	mov	r12,3
+800074b8:	f0 1f 00 63 	mcall	80007644 <main+0x474>
 	while(Photos_Ready() == false)
-800072f4:	f0 1f 00 62 	mcall	8000747c <main+0x474>
-800072f8:	cf e0       	breq	800072f4 <main+0x2ec>
+800074bc:	f0 1f 00 63 	mcall	80007648 <main+0x478>
+800074c0:	cf e0       	breq	800074bc <main+0x2ec>
 		;
-		
-	Store_Images();
-800072fa:	f0 1f 00 62 	mcall	80007480 <main+0x478>
+	Store_Image_1();	
+800074c2:	f0 1f 00 63 	mcall	8000764c <main+0x47c>
+	Store_Image_0();
+800074c6:	f0 1f 00 63 	mcall	80007650 <main+0x480>
+	
 	print_dbg("\n\rTest Complete!");
-800072fe:	4e 2c       	lddpc	r12,80007484 <main+0x47c>
-80007300:	f0 1f 00 31 	mcall	800073c4 <main+0x3bc>
+800074ca:	4e 3c       	lddpc	r12,80007654 <main+0x484>
+800074cc:	f0 1f 00 31 	mcall	80007590 <main+0x3c0>
 	// Insert application code here, after the board has been initialized.
 	while(1)
 	{
 		TOGGLE();
-80007304:	f0 1f 00 61 	mcall	80007488 <main+0x480>
-80007308:	cf eb       	rjmp	80007304 <main+0x2fc>
+800074d0:	f0 1f 00 62 	mcall	80007658 <main+0x488>
+800074d4:	cf eb       	rjmp	800074d0 <main+0x300>
 	LED3_SET;
 	LED4_SET;
 	LED5_SET;
 	LED6_SET;
 	delay_s(1);
 	print_dbg("\n\rAll LEDS off;");
-8000730a:	4e 1c       	lddpc	r12,8000748c <main+0x484>
-8000730c:	f0 1f 00 2e 	mcall	800073c4 <main+0x3bc>
+800074d6:	4e 2c       	lddpc	r12,8000765c <main+0x48c>
+800074d8:	f0 1f 00 2e 	mcall	80007590 <main+0x3c0>
 	LEDMOTOR_CLR;
-80007310:	32 cc       	mov	r12,44
-80007312:	f0 1f 00 60 	mcall	80007490 <main+0x488>
+800074dc:	32 cc       	mov	r12,44
+800074de:	f0 1f 00 61 	mcall	80007660 <main+0x490>
 	LED2_CLR;
-80007316:	33 1c       	mov	r12,49
-80007318:	f0 1f 00 5e 	mcall	80007490 <main+0x488>
+800074e2:	33 1c       	mov	r12,49
+800074e4:	f0 1f 00 5f 	mcall	80007660 <main+0x490>
 	LED3_CLR;
-8000731c:	33 2c       	mov	r12,50
-8000731e:	f0 1f 00 5d 	mcall	80007490 <main+0x488>
+800074e8:	33 2c       	mov	r12,50
+800074ea:	f0 1f 00 5e 	mcall	80007660 <main+0x490>
 	LED4_CLR;
-80007322:	33 bc       	mov	r12,59
-80007324:	f0 1f 00 5b 	mcall	80007490 <main+0x488>
+800074ee:	33 bc       	mov	r12,59
+800074f0:	f0 1f 00 5c 	mcall	80007660 <main+0x490>
 	LED5_CLR;
-80007328:	33 cc       	mov	r12,60
-8000732a:	f0 1f 00 5a 	mcall	80007490 <main+0x488>
+800074f4:	33 cc       	mov	r12,60
+800074f6:	f0 1f 00 5b 	mcall	80007660 <main+0x490>
 	LED6_CLR;
-8000732e:	33 dc       	mov	r12,61
-80007330:	f0 1f 00 58 	mcall	80007490 <main+0x488>
+800074fa:	33 dc       	mov	r12,61
+800074fc:	f0 1f 00 59 	mcall	80007660 <main+0x490>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-80007334:	e1 b8 00 42 	mfsr	r8,0x108
+80007500:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-80007338:	e0 6a 24 00 	mov	r10,9216
-8000733c:	ea 1a 00 f4 	orh	r10,0xf4
-80007340:	f0 0a 00 0a 	add	r10,r8,r10
-80007344:	c1 ab       	rjmp	80007178 <main+0x170>
+80007504:	e0 6a 24 00 	mov	r10,9216
+80007508:	ea 1a 00 f4 	orh	r10,0xf4
+8000750c:	f0 0a 00 0a 	add	r10,r8,r10
+80007510:	c1 8b       	rjmp	80007340 <main+0x170>
 // 	print_dbg_ulong(sdram[1]);
 // 	
 // 	
 // 
 // 
  	print_dbg("\n\n\rTWI Test:\n\r");
-80007346:	4d 47       	lddpc	r7,80007494 <main+0x48c>
-80007348:	0e 9c       	mov	r12,r7
-8000734a:	f0 1f 00 1f 	mcall	800073c4 <main+0x3bc>
+80007512:	4d 57       	lddpc	r7,80007664 <main+0x494>
+80007514:	0e 9c       	mov	r12,r7
+80007516:	f0 1f 00 1f 	mcall	80007590 <main+0x3c0>
 	Log_Write("\n\n\rTWI Test:\n\r", 14);
-8000734e:	30 eb       	mov	r11,14
-80007350:	0e 9c       	mov	r12,r7
-80007352:	f0 1f 00 3a 	mcall	80007438 <main+0x430>
+8000751a:	30 eb       	mov	r11,14
+8000751c:	0e 9c       	mov	r12,r7
+8000751e:	f0 1f 00 3a 	mcall	80007604 <main+0x434>
 	* \endinternal
 	*/
 	const gpio_map_t TWIM_GPIO_MAP = {
 	{AVR32_TWIMS0_TWCK_0_0_PIN, AVR32_TWIMS0_TWCK_0_0_FUNCTION},
 	{AVR32_TWIMS0_TWD_0_0_PIN, AVR32_TWIMS0_TWD_0_0_FUNCTION}
 	};
-80007356:	4d 18       	lddpc	r8,80007498 <main+0x490>
-80007358:	fa cc ff f0 	sub	r12,sp,-16
-8000735c:	70 09       	ld.w	r9,r8[0x0]
-8000735e:	99 09       	st.w	r12[0x0],r9
-80007360:	70 19       	ld.w	r9,r8[0x4]
-80007362:	99 19       	st.w	r12[0x4],r9
-80007364:	70 29       	ld.w	r9,r8[0x8]
-80007366:	99 29       	st.w	r12[0x8],r9
-80007368:	70 38       	ld.w	r8,r8[0xc]
-8000736a:	99 38       	st.w	r12[0xc],r8
+80007522:	4d 28       	lddpc	r8,80007668 <main+0x498>
+80007524:	fa cc ff f0 	sub	r12,sp,-16
+80007528:	70 09       	ld.w	r9,r8[0x0]
+8000752a:	99 09       	st.w	r12[0x0],r9
+8000752c:	70 19       	ld.w	r9,r8[0x4]
+8000752e:	99 19       	st.w	r12[0x4],r9
+80007530:	70 29       	ld.w	r9,r8[0x8]
+80007532:	99 29       	st.w	r12[0x8],r9
+80007534:	70 38       	ld.w	r8,r8[0xc]
+80007536:	99 38       	st.w	r12[0xc],r8
 	const twi_options_t TWIM_OPTIONS = {
 		.pba_hz = FOSC0,
 		.speed = TWIM_MASTER_SPEED,
 		.chip = TARGET_ADDRESS,
 		.smbus = false,
 	};
-8000736c:	4c c8       	lddpc	r8,8000749c <main+0x494>
-8000736e:	70 09       	ld.w	r9,r8[0x0]
-80007370:	50 09       	stdsp	sp[0x0],r9
-80007372:	70 19       	ld.w	r9,r8[0x4]
-80007374:	50 19       	stdsp	sp[0x4],r9
-80007376:	70 29       	ld.w	r9,r8[0x8]
-80007378:	50 29       	stdsp	sp[0x8],r9
-8000737a:	70 38       	ld.w	r8,r8[0xc]
-8000737c:	50 38       	stdsp	sp[0xc],r8
+80007538:	4c d8       	lddpc	r8,8000766c <main+0x49c>
+8000753a:	70 09       	ld.w	r9,r8[0x0]
+8000753c:	50 09       	stdsp	sp[0x0],r9
+8000753e:	70 19       	ld.w	r9,r8[0x4]
+80007540:	50 19       	stdsp	sp[0x4],r9
+80007542:	70 29       	ld.w	r9,r8[0x8]
+80007544:	50 29       	stdsp	sp[0x8],r9
+80007546:	70 38       	ld.w	r8,r8[0xc]
+80007548:	50 38       	stdsp	sp[0xc],r8
 	// TWIM gpio pins configuration
 	gpio_enable_module (TWIM_GPIO_MAP,
-8000737e:	30 2b       	mov	r11,2
-80007380:	f0 1f 00 48 	mcall	800074a0 <main+0x498>
+8000754a:	30 2b       	mov	r11,2
+8000754c:	f0 1f 00 49 	mcall	80007670 <main+0x4a0>
 			sizeof (TWIM_GPIO_MAP) / sizeof (TWIM_GPIO_MAP[0]));
 	
 	// Initialize as master.
 	status = twim_master_init (TWIM, &TWIM_OPTIONS);
-80007384:	1a 9b       	mov	r11,sp
-80007386:	fe 7c 38 00 	mov	r12,-51200
-8000738a:	f0 1f 00 47 	mcall	800074a4 <main+0x49c>
+80007550:	1a 9b       	mov	r11,sp
+80007552:	fe 7c 38 00 	mov	r12,-51200
+80007556:	f0 1f 00 48 	mcall	80007674 <main+0x4a4>
 // 
 // 
  	print_dbg("\n\n\rTWI Test:\n\r");
 	Log_Write("\n\n\rTWI Test:\n\r", 14);
  	twim_init();
 	print_dbg("\n\rInitialising the I2C Mux");
-8000738e:	4c 7c       	lddpc	r12,800074a8 <main+0x4a0>
-80007390:	f0 1f 00 0d 	mcall	800073c4 <main+0x3bc>
+8000755a:	4c 8c       	lddpc	r12,80007678 <main+0x4a8>
+8000755c:	f0 1f 00 0d 	mcall	80007590 <main+0x3c0>
 	PCA9542A_Init();
-80007394:	f0 1f 00 46 	mcall	800074ac <main+0x4a4>
+80007560:	f0 1f 00 47 	mcall	8000767c <main+0x4ac>
 	
 	print_dbg("Scanning all Channels\n\r");
-80007398:	4c 6c       	lddpc	r12,800074b0 <main+0x4a8>
-8000739a:	f0 1f 00 0b 	mcall	800073c4 <main+0x3bc>
+80007564:	4c 7c       	lddpc	r12,80007680 <main+0x4b0>
+80007566:	f0 1f 00 0b 	mcall	80007590 <main+0x3c0>
 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
-8000739e:	4a fc       	lddpc	r12,80007458 <main+0x450>
-800073a0:	f0 1f 00 09 	mcall	800073c4 <main+0x3bc>
-800073a4:	30 07       	mov	r7,0
-800073a6:	0e 90       	mov	r0,r7
+8000756a:	4a fc       	lddpc	r12,80007624 <main+0x454>
+8000756c:	f0 1f 00 09 	mcall	80007590 <main+0x3c0>
+80007570:	30 07       	mov	r7,0
+80007572:	0e 90       	mov	r0,r7
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
 		print_dbg_ulong(i);
 		print_dbg_char(' ');
-800073a8:	32 05       	mov	r5,32
+80007574:	32 05       	mov	r5,32
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
-800073aa:	fe 73 38 00 	mov	r3,-51200
+80007576:	fe 73 38 00 	mov	r3,-51200
 			{
 				print_dbg_char('A');
 			}
 			else
 			{
 				print_dbg_char('-');
-800073ae:	32 d2       	mov	r2,45
+8000757a:	32 d2       	mov	r2,45
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
 			if(status == STATUS_OK)
 			{
 				print_dbg_char('A');
-800073b0:	34 11       	mov	r1,65
-800073b2:	cf 7a       	rjmp	800071a0 <main+0x198>
-800073b4:	80 00       	ld.sh	r0,r0[0x0]
-800073b6:	66 b0       	ld.w	r0,r3[0x2c]
-800073b8:	80 00       	ld.sh	r0,r0[0x0]
-800073ba:	30 88       	mov	r8,8
-800073bc:	80 00       	ld.sh	r0,r0[0x0]
-800073be:	66 50       	ld.w	r0,r3[0x14]
-800073c0:	80 00       	ld.sh	r0,r0[0x0]
-800073c2:	7e 50       	ld.w	r0,pc[0x14]
-800073c4:	80 00       	ld.sh	r0,r0[0x0]
-800073c6:	65 fc       	ld.w	r12,r2[0x7c]
-800073c8:	80 00       	ld.sh	r0,r0[0x0]
-800073ca:	7e 54       	ld.w	r4,pc[0x14]
-800073cc:	80 00       	ld.sh	r0,r0[0x0]
-800073ce:	6e c0       	ld.w	r0,r7[0x30]
-800073d0:	80 00       	ld.sh	r0,r0[0x0]
-800073d2:	7e 70       	ld.w	r0,pc[0x1c]
-800073d4:	80 00       	ld.sh	r0,r0[0x0]
-800073d6:	66 b4       	ld.w	r4,r3[0x2c]
-800073d8:	80 00       	ld.sh	r0,r0[0x0]
-800073da:	66 c8       	ld.w	r8,r3[0x30]
-800073dc:	80 00       	ld.sh	r0,r0[0x0]
-800073de:	7e 8c       	ld.w	r12,pc[0x20]
-800073e0:	80 00       	ld.sh	r0,r0[0x0]
-800073e2:	65 e8       	ld.w	r8,r2[0x78]
-800073e4:	80 00       	ld.sh	r0,r0[0x0]
-800073e6:	7e 94       	ld.w	r4,pc[0x24]
-800073e8:	80 00       	ld.sh	r0,r0[0x0]
-800073ea:	7e 9c       	ld.w	r12,pc[0x24]
-800073ec:	80 00       	ld.sh	r0,r0[0x0]
-800073ee:	7e ac       	ld.w	r12,pc[0x28]
-800073f0:	80 00       	ld.sh	r0,r0[0x0]
-800073f2:	65 08       	ld.w	r8,r2[0x40]
-800073f4:	80 00       	ld.sh	r0,r0[0x0]
-800073f6:	64 b4       	ld.w	r4,r2[0x2c]
-800073f8:	80 00       	ld.sh	r0,r0[0x0]
-800073fa:	62 40       	ld.w	r0,r1[0x10]
-800073fc:	80 00       	ld.sh	r0,r0[0x0]
-800073fe:	61 f8       	ld.w	r8,r0[0x7c]
-80007400:	80 00       	ld.sh	r0,r0[0x0]
-80007402:	5e 58       	retlt	r8
-80007404:	80 00       	ld.sh	r0,r0[0x0]
-80007406:	7e 48       	ld.w	r8,pc[0x10]
-80007408:	80 00       	ld.sh	r0,r0[0x0]
-8000740a:	5e 28       	reths	r8
-8000740c:	80 00       	ld.sh	r0,r0[0x0]
-8000740e:	7e dc       	ld.w	r12,pc[0x34]
-80007410:	80 00       	ld.sh	r0,r0[0x0]
-80007412:	62 f0       	ld.w	r0,r1[0x3c]
-80007414:	80 00       	ld.sh	r0,r0[0x0]
-80007416:	5f bc       	srhi	r12
-80007418:	80 00       	ld.sh	r0,r0[0x0]
-8000741a:	7f 10       	ld.w	r0,pc[0x44]
-8000741c:	80 00       	ld.sh	r0,r0[0x0]
-8000741e:	7f 2c       	ld.w	r12,pc[0x48]
-80007420:	80 00       	ld.sh	r0,r0[0x0]
-80007422:	7f 40       	ld.w	r0,pc[0x50]
-80007424:	80 00       	ld.sh	r0,r0[0x0]
-80007426:	5e 70       	retpl	r0
-80007428:	80 00       	ld.sh	r0,r0[0x0]
-8000742a:	7f 58       	ld.w	r8,pc[0x54]
-8000742c:	80 00       	ld.sh	r0,r0[0x0]
-8000742e:	7f 64       	ld.w	r4,pc[0x58]
-80007430:	80 00       	ld.sh	r0,r0[0x0]
-80007432:	7f 74       	ld.w	r4,pc[0x5c]
-80007434:	80 00       	ld.sh	r0,r0[0x0]
-80007436:	7f 8c       	ld.w	r12,pc[0x60]
-80007438:	80 00       	ld.sh	r0,r0[0x0]
-8000743a:	6f c4       	ld.w	r4,r7[0x70]
-8000743c:	80 00       	ld.sh	r0,r0[0x0]
-8000743e:	7f a0       	ld.w	r0,pc[0x68]
-80007440:	80 00       	ld.sh	r0,r0[0x0]
-80007442:	2f 76       	sub	r6,-9
-80007444:	80 00       	ld.sh	r0,r0[0x0]
-80007446:	65 80       	ld.w	r0,r2[0x60]
-80007448:	80 00       	ld.sh	r0,r0[0x0]
-8000744a:	36 54       	mov	r4,101
-8000744c:	80 00       	ld.sh	r0,r0[0x0]
-8000744e:	7f d0       	ld.w	r0,pc[0x74]
-80007450:	80 00       	ld.sh	r0,r0[0x0]
-80007452:	6e 64       	ld.w	r4,r7[0x18]
-80007454:	80 00       	ld.sh	r0,r0[0x0]
-80007456:	7f bc       	ld.w	r12,pc[0x6c]
-80007458:	80 00       	ld.sh	r0,r0[0x0]
-8000745a:	7f d4       	ld.w	r4,pc[0x74]
-8000745c:	80 00       	ld.sh	r0,r0[0x0]
-8000745e:	7f f8       	ld.w	r8,pc[0x7c]
-80007460:	80 00       	ld.sh	r0,r0[0x0]
-80007462:	80 10       	ld.sh	r0,r0[0x2]
-80007464:	80 00       	ld.sh	r0,r0[0x0]
-80007466:	6b c4       	ld.w	r4,r5[0x70]
-80007468:	00 00       	add	r0,r0
-8000746a:	07 68       	ld.uh	r8,--r3
-8000746c:	80 00       	ld.sh	r0,r0[0x0]
-8000746e:	80 28       	ld.sh	r8,r0[0x4]
-80007470:	80 00       	ld.sh	r0,r0[0x0]
-80007472:	80 44       	ld.sh	r4,r0[0x8]
-80007474:	80 00       	ld.sh	r0,r0[0x0]
-80007476:	80 60       	ld.sh	r0,r0[0xc]
-80007478:	80 00       	ld.sh	r0,r0[0x0]
-8000747a:	67 34       	ld.w	r4,r3[0x4c]
-8000747c:	80 00       	ld.sh	r0,r0[0x0]
-8000747e:	67 8c       	ld.w	r12,r3[0x60]
-80007480:	80 00       	ld.sh	r0,r0[0x0]
-80007482:	67 ec       	ld.w	r12,r3[0x78]
-80007484:	80 00       	ld.sh	r0,r0[0x0]
-80007486:	80 70       	ld.sh	r0,r0[0xe]
-80007488:	80 00       	ld.sh	r0,r0[0x0]
-8000748a:	6f 44       	ld.w	r4,r7[0x50]
-8000748c:	80 00       	ld.sh	r0,r0[0x0]
-8000748e:	80 84       	ld.uh	r4,r0[0x0]
-80007490:	80 00       	ld.sh	r0,r0[0x0]
-80007492:	2f 92       	sub	r2,-7
-80007494:	80 00       	ld.sh	r0,r0[0x0]
-80007496:	80 94       	ld.uh	r4,r0[0x2]
-80007498:	80 00       	ld.sh	r0,r0[0x0]
-8000749a:	7e 38       	ld.w	r8,pc[0xc]
-8000749c:	80 00       	ld.sh	r0,r0[0x0]
-8000749e:	80 d8       	ld.uh	r8,r0[0xa]
-800074a0:	80 00       	ld.sh	r0,r0[0x0]
-800074a2:	2f 2c       	sub	r12,-14
-800074a4:	80 00       	ld.sh	r0,r0[0x0]
-800074a6:	36 70       	mov	r0,103
-800074a8:	80 00       	ld.sh	r0,r0[0x0]
-800074aa:	80 a4       	ld.uh	r4,r0[0x4]
-800074ac:	80 00       	ld.sh	r0,r0[0x0]
-800074ae:	6e 88       	ld.w	r8,r7[0x20]
-800074b0:	80 00       	ld.sh	r0,r0[0x0]
-800074b2:	80 c0       	ld.uh	r0,r0[0x8]
+8000757c:	34 11       	mov	r1,65
+8000757e:	cf 5a       	rjmp	80007368 <main+0x198>
+80007580:	80 00       	ld.sh	r0,r0[0x0]
+80007582:	66 b0       	ld.w	r0,r3[0x2c]
+80007584:	80 00       	ld.sh	r0,r0[0x0]
+80007586:	30 88       	mov	r8,8
+80007588:	80 00       	ld.sh	r0,r0[0x0]
+8000758a:	66 50       	ld.w	r0,r3[0x14]
+8000758c:	80 00       	ld.sh	r0,r0[0x0]
+8000758e:	7e 84       	ld.w	r4,pc[0x20]
+80007590:	80 00       	ld.sh	r0,r0[0x0]
+80007592:	65 fc       	ld.w	r12,r2[0x7c]
+80007594:	80 00       	ld.sh	r0,r0[0x0]
+80007596:	7e 88       	ld.w	r8,pc[0x20]
+80007598:	80 00       	ld.sh	r0,r0[0x0]
+8000759a:	70 88       	ld.w	r8,r8[0x20]
+8000759c:	80 00       	ld.sh	r0,r0[0x0]
+8000759e:	7e a4       	ld.w	r4,pc[0x28]
+800075a0:	80 00       	ld.sh	r0,r0[0x0]
+800075a2:	66 b4       	ld.w	r4,r3[0x2c]
+800075a4:	80 00       	ld.sh	r0,r0[0x0]
+800075a6:	66 c8       	ld.w	r8,r3[0x30]
+800075a8:	80 00       	ld.sh	r0,r0[0x0]
+800075aa:	7e c0       	ld.w	r0,pc[0x30]
+800075ac:	80 00       	ld.sh	r0,r0[0x0]
+800075ae:	65 e8       	ld.w	r8,r2[0x78]
+800075b0:	80 00       	ld.sh	r0,r0[0x0]
+800075b2:	7e c8       	ld.w	r8,pc[0x30]
+800075b4:	80 00       	ld.sh	r0,r0[0x0]
+800075b6:	7e d0       	ld.w	r0,pc[0x34]
+800075b8:	80 00       	ld.sh	r0,r0[0x0]
+800075ba:	7e e0       	ld.w	r0,pc[0x38]
+800075bc:	80 00       	ld.sh	r0,r0[0x0]
+800075be:	65 08       	ld.w	r8,r2[0x40]
+800075c0:	80 00       	ld.sh	r0,r0[0x0]
+800075c2:	64 b4       	ld.w	r4,r2[0x2c]
+800075c4:	80 00       	ld.sh	r0,r0[0x0]
+800075c6:	62 40       	ld.w	r0,r1[0x10]
+800075c8:	80 00       	ld.sh	r0,r0[0x0]
+800075ca:	61 f8       	ld.w	r8,r0[0x7c]
+800075cc:	80 00       	ld.sh	r0,r0[0x0]
+800075ce:	5e 58       	retlt	r8
+800075d0:	80 00       	ld.sh	r0,r0[0x0]
+800075d2:	7e 7c       	ld.w	r12,pc[0x1c]
+800075d4:	80 00       	ld.sh	r0,r0[0x0]
+800075d6:	5e 28       	reths	r8
+800075d8:	80 00       	ld.sh	r0,r0[0x0]
+800075da:	7f 10       	ld.w	r0,pc[0x44]
+800075dc:	80 00       	ld.sh	r0,r0[0x0]
+800075de:	62 f0       	ld.w	r0,r1[0x3c]
+800075e0:	80 00       	ld.sh	r0,r0[0x0]
+800075e2:	5f bc       	srhi	r12
+800075e4:	80 00       	ld.sh	r0,r0[0x0]
+800075e6:	7f 44       	ld.w	r4,pc[0x50]
+800075e8:	80 00       	ld.sh	r0,r0[0x0]
+800075ea:	7f 60       	ld.w	r0,pc[0x58]
+800075ec:	80 00       	ld.sh	r0,r0[0x0]
+800075ee:	7f 74       	ld.w	r4,pc[0x5c]
+800075f0:	80 00       	ld.sh	r0,r0[0x0]
+800075f2:	5e 70       	retpl	r0
+800075f4:	80 00       	ld.sh	r0,r0[0x0]
+800075f6:	7f 8c       	ld.w	r12,pc[0x60]
+800075f8:	80 00       	ld.sh	r0,r0[0x0]
+800075fa:	7f 98       	ld.w	r8,pc[0x64]
+800075fc:	80 00       	ld.sh	r0,r0[0x0]
+800075fe:	7f a8       	ld.w	r8,pc[0x68]
+80007600:	80 00       	ld.sh	r0,r0[0x0]
+80007602:	7f c0       	ld.w	r0,pc[0x70]
+80007604:	80 00       	ld.sh	r0,r0[0x0]
+80007606:	71 8c       	ld.w	r12,r8[0x60]
+80007608:	80 00       	ld.sh	r0,r0[0x0]
+8000760a:	7f d4       	ld.w	r4,pc[0x74]
+8000760c:	80 00       	ld.sh	r0,r0[0x0]
+8000760e:	2f 76       	sub	r6,-9
+80007610:	80 00       	ld.sh	r0,r0[0x0]
+80007612:	65 80       	ld.w	r0,r2[0x60]
+80007614:	80 00       	ld.sh	r0,r0[0x0]
+80007616:	36 54       	mov	r4,101
+80007618:	80 00       	ld.sh	r0,r0[0x0]
+8000761a:	80 04       	ld.sh	r4,r0[0x0]
+8000761c:	80 00       	ld.sh	r0,r0[0x0]
+8000761e:	70 2c       	ld.w	r12,r8[0x8]
+80007620:	80 00       	ld.sh	r0,r0[0x0]
+80007622:	7f f0       	ld.w	r0,pc[0x7c]
+80007624:	80 00       	ld.sh	r0,r0[0x0]
+80007626:	80 08       	ld.sh	r8,r0[0x0]
+80007628:	80 00       	ld.sh	r0,r0[0x0]
+8000762a:	80 2c       	ld.sh	r12,r0[0x4]
+8000762c:	80 00       	ld.sh	r0,r0[0x0]
+8000762e:	80 44       	ld.sh	r4,r0[0x8]
+80007630:	80 00       	ld.sh	r0,r0[0x0]
+80007632:	6d 8c       	ld.w	r12,r6[0x60]
+80007634:	00 00       	add	r0,r0
+80007636:	07 68       	ld.uh	r8,--r3
+80007638:	80 00       	ld.sh	r0,r0[0x0]
+8000763a:	80 5c       	ld.sh	r12,r0[0xa]
+8000763c:	80 00       	ld.sh	r0,r0[0x0]
+8000763e:	80 78       	ld.sh	r8,r0[0xe]
+80007640:	80 00       	ld.sh	r0,r0[0x0]
+80007642:	80 94       	ld.uh	r4,r0[0x2]
+80007644:	80 00       	ld.sh	r0,r0[0x0]
+80007646:	67 34       	ld.w	r4,r3[0x4c]
+80007648:	80 00       	ld.sh	r0,r0[0x0]
+8000764a:	67 8c       	ld.w	r12,r3[0x60]
+8000764c:	80 00       	ld.sh	r0,r0[0x0]
+8000764e:	68 f4       	ld.w	r4,r4[0x3c]
+80007650:	80 00       	ld.sh	r0,r0[0x0]
+80007652:	67 ec       	ld.w	r12,r3[0x78]
+80007654:	80 00       	ld.sh	r0,r0[0x0]
+80007656:	80 a4       	ld.uh	r4,r0[0x4]
+80007658:	80 00       	ld.sh	r0,r0[0x0]
+8000765a:	71 0c       	ld.w	r12,r8[0x40]
+8000765c:	80 00       	ld.sh	r0,r0[0x0]
+8000765e:	80 b8       	ld.uh	r8,r0[0x6]
+80007660:	80 00       	ld.sh	r0,r0[0x0]
+80007662:	2f 92       	sub	r2,-7
+80007664:	80 00       	ld.sh	r0,r0[0x0]
+80007666:	80 c8       	ld.uh	r8,r0[0x8]
+80007668:	80 00       	ld.sh	r0,r0[0x0]
+8000766a:	81 0c       	st.w	r0[0x0],r12
+8000766c:	80 00       	ld.sh	r0,r0[0x0]
+8000766e:	81 1c       	st.w	r0[0x4],r12
+80007670:	80 00       	ld.sh	r0,r0[0x0]
+80007672:	2f 2c       	sub	r12,-14
+80007674:	80 00       	ld.sh	r0,r0[0x0]
+80007676:	36 70       	mov	r0,103
+80007678:	80 00       	ld.sh	r0,r0[0x0]
+8000767a:	80 d8       	ld.uh	r8,r0[0xa]
+8000767c:	80 00       	ld.sh	r0,r0[0x0]
+8000767e:	70 50       	ld.w	r0,r8[0x14]
+80007680:	80 00       	ld.sh	r0,r0[0x0]
+80007682:	80 f4       	ld.uh	r4,r0[0xe]
 
-800074b4 <memcmp>:
-800074b4:	d4 01       	pushm	lr
-800074b6:	30 08       	mov	r8,0
-800074b8:	c0 d8       	rjmp	800074d2 <memcmp+0x1e>
-800074ba:	f8 08 07 0e 	ld.ub	lr,r12[r8]
-800074be:	f6 08 07 09 	ld.ub	r9,r11[r8]
-800074c2:	20 1a       	sub	r10,1
-800074c4:	2f f8       	sub	r8,-1
-800074c6:	f2 0e 18 00 	cp.b	lr,r9
-800074ca:	c0 40       	breq	800074d2 <memcmp+0x1e>
-800074cc:	fc 09 01 0c 	sub	r12,lr,r9
-800074d0:	d8 02       	popm	pc
-800074d2:	58 0a       	cp.w	r10,0
-800074d4:	cf 31       	brne	800074ba <memcmp+0x6>
-800074d6:	14 9c       	mov	r12,r10
-800074d8:	d8 02       	popm	pc
+80007684 <memcmp>:
+80007684:	d4 01       	pushm	lr
+80007686:	30 08       	mov	r8,0
+80007688:	c0 d8       	rjmp	800076a2 <memcmp+0x1e>
+8000768a:	f8 08 07 0e 	ld.ub	lr,r12[r8]
+8000768e:	f6 08 07 09 	ld.ub	r9,r11[r8]
+80007692:	20 1a       	sub	r10,1
+80007694:	2f f8       	sub	r8,-1
+80007696:	f2 0e 18 00 	cp.b	lr,r9
+8000769a:	c0 40       	breq	800076a2 <memcmp+0x1e>
+8000769c:	fc 09 01 0c 	sub	r12,lr,r9
+800076a0:	d8 02       	popm	pc
+800076a2:	58 0a       	cp.w	r10,0
+800076a4:	cf 31       	brne	8000768a <memcmp+0x6>
+800076a6:	14 9c       	mov	r12,r10
+800076a8:	d8 02       	popm	pc
 
-800074da <memcpy>:
-800074da:	58 8a       	cp.w	r10,8
-800074dc:	c2 f5       	brlt	8000753a <memcpy+0x60>
-800074de:	f9 eb 10 09 	or	r9,r12,r11
-800074e2:	e2 19 00 03 	andl	r9,0x3,COH
-800074e6:	e0 81 00 97 	brne	80007614 <memcpy+0x13a>
-800074ea:	e0 4a 00 20 	cp.w	r10,32
-800074ee:	c3 b4       	brge	80007564 <memcpy+0x8a>
-800074f0:	f4 08 14 02 	asr	r8,r10,0x2
-800074f4:	f0 09 11 08 	rsub	r9,r8,8
-800074f8:	fe 09 00 2f 	add	pc,pc,r9<<0x2
-800074fc:	76 69       	ld.w	r9,r11[0x18]
-800074fe:	99 69       	st.w	r12[0x18],r9
-80007500:	76 59       	ld.w	r9,r11[0x14]
-80007502:	99 59       	st.w	r12[0x14],r9
-80007504:	76 49       	ld.w	r9,r11[0x10]
-80007506:	99 49       	st.w	r12[0x10],r9
-80007508:	76 39       	ld.w	r9,r11[0xc]
-8000750a:	99 39       	st.w	r12[0xc],r9
-8000750c:	76 29       	ld.w	r9,r11[0x8]
-8000750e:	99 29       	st.w	r12[0x8],r9
-80007510:	76 19       	ld.w	r9,r11[0x4]
-80007512:	99 19       	st.w	r12[0x4],r9
-80007514:	76 09       	ld.w	r9,r11[0x0]
-80007516:	99 09       	st.w	r12[0x0],r9
-80007518:	f6 08 00 2b 	add	r11,r11,r8<<0x2
-8000751c:	f8 08 00 28 	add	r8,r12,r8<<0x2
-80007520:	e0 1a 00 03 	andl	r10,0x3
-80007524:	f4 0a 11 04 	rsub	r10,r10,4
-80007528:	fe 0a 00 2f 	add	pc,pc,r10<<0x2
-8000752c:	17 a9       	ld.ub	r9,r11[0x2]
-8000752e:	b0 a9       	st.b	r8[0x2],r9
-80007530:	17 99       	ld.ub	r9,r11[0x1]
-80007532:	b0 99       	st.b	r8[0x1],r9
-80007534:	17 89       	ld.ub	r9,r11[0x0]
-80007536:	b0 89       	st.b	r8[0x0],r9
-80007538:	5e fc       	retal	r12
-8000753a:	f4 0a 11 09 	rsub	r10,r10,9
-8000753e:	fe 0a 00 2f 	add	pc,pc,r10<<0x2
-80007542:	17 f9       	ld.ub	r9,r11[0x7]
-80007544:	b8 f9       	st.b	r12[0x7],r9
-80007546:	17 e9       	ld.ub	r9,r11[0x6]
-80007548:	b8 e9       	st.b	r12[0x6],r9
-8000754a:	17 d9       	ld.ub	r9,r11[0x5]
-8000754c:	b8 d9       	st.b	r12[0x5],r9
-8000754e:	17 c9       	ld.ub	r9,r11[0x4]
-80007550:	b8 c9       	st.b	r12[0x4],r9
-80007552:	17 b9       	ld.ub	r9,r11[0x3]
-80007554:	b8 b9       	st.b	r12[0x3],r9
-80007556:	17 a9       	ld.ub	r9,r11[0x2]
-80007558:	b8 a9       	st.b	r12[0x2],r9
-8000755a:	17 99       	ld.ub	r9,r11[0x1]
-8000755c:	b8 99       	st.b	r12[0x1],r9
-8000755e:	17 89       	ld.ub	r9,r11[0x0]
-80007560:	b8 89       	st.b	r12[0x0],r9
-80007562:	5e fc       	retal	r12
-80007564:	eb cd 40 c0 	pushm	r6-r7,lr
-80007568:	18 99       	mov	r9,r12
-8000756a:	22 0a       	sub	r10,32
-8000756c:	b7 07       	ld.d	r6,r11++
-8000756e:	b3 26       	st.d	r9++,r6
-80007570:	b7 07       	ld.d	r6,r11++
-80007572:	b3 26       	st.d	r9++,r6
-80007574:	b7 07       	ld.d	r6,r11++
-80007576:	b3 26       	st.d	r9++,r6
-80007578:	b7 07       	ld.d	r6,r11++
-8000757a:	b3 26       	st.d	r9++,r6
-8000757c:	22 0a       	sub	r10,32
-8000757e:	cf 74       	brge	8000756c <memcpy+0x92>
-80007580:	2f 0a       	sub	r10,-16
-80007582:	c0 65       	brlt	8000758e <memcpy+0xb4>
-80007584:	b7 07       	ld.d	r6,r11++
-80007586:	b3 26       	st.d	r9++,r6
-80007588:	b7 07       	ld.d	r6,r11++
-8000758a:	b3 26       	st.d	r9++,r6
-8000758c:	21 0a       	sub	r10,16
-8000758e:	5c 3a       	neg	r10
-80007590:	fe 0a 00 3f 	add	pc,pc,r10<<0x3
-80007594:	d7 03       	nop
-80007596:	d7 03       	nop
-80007598:	f7 36 00 0e 	ld.ub	r6,r11[14]
-8000759c:	f3 66 00 0e 	st.b	r9[14],r6
-800075a0:	f7 36 00 0d 	ld.ub	r6,r11[13]
-800075a4:	f3 66 00 0d 	st.b	r9[13],r6
-800075a8:	f7 36 00 0c 	ld.ub	r6,r11[12]
-800075ac:	f3 66 00 0c 	st.b	r9[12],r6
-800075b0:	f7 36 00 0b 	ld.ub	r6,r11[11]
-800075b4:	f3 66 00 0b 	st.b	r9[11],r6
-800075b8:	f7 36 00 0a 	ld.ub	r6,r11[10]
-800075bc:	f3 66 00 0a 	st.b	r9[10],r6
-800075c0:	f7 36 00 09 	ld.ub	r6,r11[9]
-800075c4:	f3 66 00 09 	st.b	r9[9],r6
-800075c8:	f7 36 00 08 	ld.ub	r6,r11[8]
-800075cc:	f3 66 00 08 	st.b	r9[8],r6
-800075d0:	f7 36 00 07 	ld.ub	r6,r11[7]
-800075d4:	f3 66 00 07 	st.b	r9[7],r6
-800075d8:	f7 36 00 06 	ld.ub	r6,r11[6]
-800075dc:	f3 66 00 06 	st.b	r9[6],r6
-800075e0:	f7 36 00 05 	ld.ub	r6,r11[5]
-800075e4:	f3 66 00 05 	st.b	r9[5],r6
-800075e8:	f7 36 00 04 	ld.ub	r6,r11[4]
-800075ec:	f3 66 00 04 	st.b	r9[4],r6
-800075f0:	f7 36 00 03 	ld.ub	r6,r11[3]
-800075f4:	f3 66 00 03 	st.b	r9[3],r6
-800075f8:	f7 36 00 02 	ld.ub	r6,r11[2]
-800075fc:	f3 66 00 02 	st.b	r9[2],r6
-80007600:	f7 36 00 01 	ld.ub	r6,r11[1]
-80007604:	f3 66 00 01 	st.b	r9[1],r6
-80007608:	f7 36 00 00 	ld.ub	r6,r11[0]
-8000760c:	f3 66 00 00 	st.b	r9[0],r6
-80007610:	e3 cd 80 c0 	ldm	sp++,r6-r7,pc
-80007614:	20 1a       	sub	r10,1
-80007616:	f6 0a 07 09 	ld.ub	r9,r11[r10]
-8000761a:	f8 0a 0b 09 	st.b	r12[r10],r9
-8000761e:	cf b1       	brne	80007614 <memcpy+0x13a>
-80007620:	5e fc       	retal	r12
+800076aa <memcpy>:
+800076aa:	58 8a       	cp.w	r10,8
+800076ac:	c2 f5       	brlt	8000770a <memcpy+0x60>
+800076ae:	f9 eb 10 09 	or	r9,r12,r11
+800076b2:	e2 19 00 03 	andl	r9,0x3,COH
+800076b6:	e0 81 00 97 	brne	800077e4 <memcpy+0x13a>
+800076ba:	e0 4a 00 20 	cp.w	r10,32
+800076be:	c3 b4       	brge	80007734 <memcpy+0x8a>
+800076c0:	f4 08 14 02 	asr	r8,r10,0x2
+800076c4:	f0 09 11 08 	rsub	r9,r8,8
+800076c8:	fe 09 00 2f 	add	pc,pc,r9<<0x2
+800076cc:	76 69       	ld.w	r9,r11[0x18]
+800076ce:	99 69       	st.w	r12[0x18],r9
+800076d0:	76 59       	ld.w	r9,r11[0x14]
+800076d2:	99 59       	st.w	r12[0x14],r9
+800076d4:	76 49       	ld.w	r9,r11[0x10]
+800076d6:	99 49       	st.w	r12[0x10],r9
+800076d8:	76 39       	ld.w	r9,r11[0xc]
+800076da:	99 39       	st.w	r12[0xc],r9
+800076dc:	76 29       	ld.w	r9,r11[0x8]
+800076de:	99 29       	st.w	r12[0x8],r9
+800076e0:	76 19       	ld.w	r9,r11[0x4]
+800076e2:	99 19       	st.w	r12[0x4],r9
+800076e4:	76 09       	ld.w	r9,r11[0x0]
+800076e6:	99 09       	st.w	r12[0x0],r9
+800076e8:	f6 08 00 2b 	add	r11,r11,r8<<0x2
+800076ec:	f8 08 00 28 	add	r8,r12,r8<<0x2
+800076f0:	e0 1a 00 03 	andl	r10,0x3
+800076f4:	f4 0a 11 04 	rsub	r10,r10,4
+800076f8:	fe 0a 00 2f 	add	pc,pc,r10<<0x2
+800076fc:	17 a9       	ld.ub	r9,r11[0x2]
+800076fe:	b0 a9       	st.b	r8[0x2],r9
+80007700:	17 99       	ld.ub	r9,r11[0x1]
+80007702:	b0 99       	st.b	r8[0x1],r9
+80007704:	17 89       	ld.ub	r9,r11[0x0]
+80007706:	b0 89       	st.b	r8[0x0],r9
+80007708:	5e fc       	retal	r12
+8000770a:	f4 0a 11 09 	rsub	r10,r10,9
+8000770e:	fe 0a 00 2f 	add	pc,pc,r10<<0x2
+80007712:	17 f9       	ld.ub	r9,r11[0x7]
+80007714:	b8 f9       	st.b	r12[0x7],r9
+80007716:	17 e9       	ld.ub	r9,r11[0x6]
+80007718:	b8 e9       	st.b	r12[0x6],r9
+8000771a:	17 d9       	ld.ub	r9,r11[0x5]
+8000771c:	b8 d9       	st.b	r12[0x5],r9
+8000771e:	17 c9       	ld.ub	r9,r11[0x4]
+80007720:	b8 c9       	st.b	r12[0x4],r9
+80007722:	17 b9       	ld.ub	r9,r11[0x3]
+80007724:	b8 b9       	st.b	r12[0x3],r9
+80007726:	17 a9       	ld.ub	r9,r11[0x2]
+80007728:	b8 a9       	st.b	r12[0x2],r9
+8000772a:	17 99       	ld.ub	r9,r11[0x1]
+8000772c:	b8 99       	st.b	r12[0x1],r9
+8000772e:	17 89       	ld.ub	r9,r11[0x0]
+80007730:	b8 89       	st.b	r12[0x0],r9
+80007732:	5e fc       	retal	r12
+80007734:	eb cd 40 c0 	pushm	r6-r7,lr
+80007738:	18 99       	mov	r9,r12
+8000773a:	22 0a       	sub	r10,32
+8000773c:	b7 07       	ld.d	r6,r11++
+8000773e:	b3 26       	st.d	r9++,r6
+80007740:	b7 07       	ld.d	r6,r11++
+80007742:	b3 26       	st.d	r9++,r6
+80007744:	b7 07       	ld.d	r6,r11++
+80007746:	b3 26       	st.d	r9++,r6
+80007748:	b7 07       	ld.d	r6,r11++
+8000774a:	b3 26       	st.d	r9++,r6
+8000774c:	22 0a       	sub	r10,32
+8000774e:	cf 74       	brge	8000773c <memcpy+0x92>
+80007750:	2f 0a       	sub	r10,-16
+80007752:	c0 65       	brlt	8000775e <memcpy+0xb4>
+80007754:	b7 07       	ld.d	r6,r11++
+80007756:	b3 26       	st.d	r9++,r6
+80007758:	b7 07       	ld.d	r6,r11++
+8000775a:	b3 26       	st.d	r9++,r6
+8000775c:	21 0a       	sub	r10,16
+8000775e:	5c 3a       	neg	r10
+80007760:	fe 0a 00 3f 	add	pc,pc,r10<<0x3
+80007764:	d7 03       	nop
+80007766:	d7 03       	nop
+80007768:	f7 36 00 0e 	ld.ub	r6,r11[14]
+8000776c:	f3 66 00 0e 	st.b	r9[14],r6
+80007770:	f7 36 00 0d 	ld.ub	r6,r11[13]
+80007774:	f3 66 00 0d 	st.b	r9[13],r6
+80007778:	f7 36 00 0c 	ld.ub	r6,r11[12]
+8000777c:	f3 66 00 0c 	st.b	r9[12],r6
+80007780:	f7 36 00 0b 	ld.ub	r6,r11[11]
+80007784:	f3 66 00 0b 	st.b	r9[11],r6
+80007788:	f7 36 00 0a 	ld.ub	r6,r11[10]
+8000778c:	f3 66 00 0a 	st.b	r9[10],r6
+80007790:	f7 36 00 09 	ld.ub	r6,r11[9]
+80007794:	f3 66 00 09 	st.b	r9[9],r6
+80007798:	f7 36 00 08 	ld.ub	r6,r11[8]
+8000779c:	f3 66 00 08 	st.b	r9[8],r6
+800077a0:	f7 36 00 07 	ld.ub	r6,r11[7]
+800077a4:	f3 66 00 07 	st.b	r9[7],r6
+800077a8:	f7 36 00 06 	ld.ub	r6,r11[6]
+800077ac:	f3 66 00 06 	st.b	r9[6],r6
+800077b0:	f7 36 00 05 	ld.ub	r6,r11[5]
+800077b4:	f3 66 00 05 	st.b	r9[5],r6
+800077b8:	f7 36 00 04 	ld.ub	r6,r11[4]
+800077bc:	f3 66 00 04 	st.b	r9[4],r6
+800077c0:	f7 36 00 03 	ld.ub	r6,r11[3]
+800077c4:	f3 66 00 03 	st.b	r9[3],r6
+800077c8:	f7 36 00 02 	ld.ub	r6,r11[2]
+800077cc:	f3 66 00 02 	st.b	r9[2],r6
+800077d0:	f7 36 00 01 	ld.ub	r6,r11[1]
+800077d4:	f3 66 00 01 	st.b	r9[1],r6
+800077d8:	f7 36 00 00 	ld.ub	r6,r11[0]
+800077dc:	f3 66 00 00 	st.b	r9[0],r6
+800077e0:	e3 cd 80 c0 	ldm	sp++,r6-r7,pc
+800077e4:	20 1a       	sub	r10,1
+800077e6:	f6 0a 07 09 	ld.ub	r9,r11[r10]
+800077ea:	f8 0a 0b 09 	st.b	r12[r10],r9
+800077ee:	cf b1       	brne	800077e4 <memcpy+0x13a>
+800077f0:	5e fc       	retal	r12
 
-80007622 <memset>:
-80007622:	18 98       	mov	r8,r12
-80007624:	c0 38       	rjmp	8000762a <memset+0x8>
-80007626:	10 cb       	st.b	r8++,r11
-80007628:	20 1a       	sub	r10,1
-8000762a:	58 0a       	cp.w	r10,0
-8000762c:	cf d1       	brne	80007626 <memset+0x4>
-8000762e:	5e fc       	retal	r12
+800077f2 <memset>:
+800077f2:	18 98       	mov	r8,r12
+800077f4:	c0 38       	rjmp	800077fa <memset+0x8>
+800077f6:	10 cb       	st.b	r8++,r11
+800077f8:	20 1a       	sub	r10,1
+800077fa:	58 0a       	cp.w	r10,0
+800077fc:	cf d1       	brne	800077f6 <memset+0x4>
+800077fe:	5e fc       	retal	r12
 
 Disassembly of section .exception:
 

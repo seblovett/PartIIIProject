@@ -18,7 +18,7 @@ const char default_settings[SETTINGS_LENGTH][2]=
 {OV_VSTRT, 0x02},
 {OV_VSTOP, 0x7b},//0x7a,
 {OV_VREF, 0x06},//0x0a,
-{OV_COM3, 0x00},
+{OV_COM3, 0x00}, //MSB and LSB swapped
 {OV_COM14, 0x00},//
 {OV_SCALING_XSC, 0x00},
 {OV_SCALING_YSC, 0x00},
