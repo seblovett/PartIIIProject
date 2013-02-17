@@ -8,6 +8,7 @@
 
 #include <asf.h>
 #include "CustomDevices/CustomDevices.h"
+#include "stdio.h"
 // Camera
 // #include "CustomDevices/OV7670.h"
 // I2C Mux
@@ -327,8 +328,7 @@ bool Photos_Ready(void)
 		return false;
 }
 
-#define Image0Name	"Image0.bmp"
-#define Image1Name	"Image1.bmp"
+
 
 bool Store_Both_Images()
 {
@@ -346,14 +346,26 @@ void Store_Image_0()
 	//Image0
 	//make file
 	//delete file if it exits already
-	nav_filelist_reset();
-	if(nav_filelist_findname((FS_STRING)Image0Name, false))
+	char Filename_buff[15];
+	i = 0;
+	while(1)
 	{
-		nav_setcwd((FS_STRING)Image0Name, true, false);
-		print_dbg("\n\rImage0.bmp File Exists");
-		nav_file_del(false);
-	}
-	nav_file_create((FS_STRING)Image0Name);//create file
+		nav_filelist_reset();
+		sprintf(&Filename_buff, Image0Name, i++);
+		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
+		{
+			//nav_setcwd((FS_STRING)Image0Name, true, false);
+// 			print_dbg("\n\r File Exists");
+// 			print_dbg(&Filename_buff);
+			//nav_file_del(false);
+		}
+		else
+		{
+			break;
+		}
+	}	
+	nav_file_create((FS_STRING)Filename_buff);//create file
+	
 	file_open(FOPEN_MODE_W);
 	//write bitmap headers
 	file_write_buf(BMPHeader, BMPHEADERSIZE);
@@ -395,16 +407,25 @@ void Store_Image_1()
 {
 	int i, j;
 	uint8_t buffer[WIDTH * 2];
+	char Filename_buff[15];
 	//make file
 	//delete file if it exits already
 	nav_filelist_reset();
-	if(nav_filelist_findname((FS_STRING)Image1Name, false))
+	while(1)
 	{
-		nav_setcwd((FS_STRING)Image1Name, true, false);
-		print_dbg("\n\rImage1.bmp File Exists");
-		nav_file_del(false);
-	}
-	nav_file_create((FS_STRING)Image1Name);//create file
+		sprintf(&Filename_buff, Image1Name, i++);
+		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
+		{
+			//nav_setcwd((FS_STRING)Image1Name, true, false);
+			//print_dbg("\n\rImage1.bmp File Exists");
+			//nav_file_del(false);
+		}
+		else
+		{
+			break;
+		}
+	}	
+	nav_file_create((FS_STRING)Filename_buff);//create file
 	file_open(FOPEN_MODE_W);
 	//write bitmap headers
 	file_write_buf(BMPHeader, BMPHEADERSIZE);
