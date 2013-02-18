@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  16 .debug_str    000097f5  00000000  00000000  00073aa0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_loc    000108dd  00000000  00000000  0007d295  2**0
+ 17 .debug_loc    000108f3  00000000  00000000  0007d295  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_macinfo 0246477a  00000000  00000000  0008db72  2**0
+ 18 .debug_macinfo 0246477a  00000000  00000000  0008db88  2**0
                   CONTENTS, READONLY, DEBUGGING
  19 .stack        00001000  0000f000  0000f000  00000400  2**0
                   ALLOC
- 20 .debug_ranges 00001db8  00000000  00000000  024f22ec  2**0
+ 20 .debug_ranges 00001db8  00000000  00000000  024f2302  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .reset:
@@ -16292,222 +16292,222 @@ void Store_Image_1()
 {
 80007220:	d4 31       	pushm	r0-r7,lr
 80007222:	fa cd 02 90 	sub	sp,sp,656
-	int i, j;
 	uint8_t buffer[WIDTH * 2];
 	char Filename_buff[15];
+	i = 0;
 	//make file
 	//delete file if it exits already
 	nav_filelist_reset();
 80007226:	f0 1f 00 3f 	mcall	80007320 <Store_Image_1+0x100>
+8000722a:	30 08       	mov	r8,0
 	while(1)
 	{
 		sprintf(&Filename_buff, Image1Name, i++);
-8000722a:	4b f4       	lddpc	r4,80007324 <Store_Image_1+0x104>
-8000722c:	1a 95       	mov	r5,sp
+8000722c:	4b e5       	lddpc	r5,80007324 <Store_Image_1+0x104>
+8000722e:	1a 97       	mov	r7,sp
 		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
-8000722e:	30 03       	mov	r3,0
+80007230:	10 94       	mov	r4,r8
 	//make file
 	//delete file if it exits already
 	nav_filelist_reset();
 	while(1)
 	{
 		sprintf(&Filename_buff, Image1Name, i++);
-80007230:	ee c6 ff ff 	sub	r6,r7,-1
-80007234:	1a d7       	st.w	--sp,r7
-80007236:	08 9b       	mov	r11,r4
-80007238:	0a 9c       	mov	r12,r5
-8000723a:	f0 1f 00 3c 	mcall	80007328 <Store_Image_1+0x108>
+80007232:	f0 c6 ff ff 	sub	r6,r8,-1
+80007236:	1a d8       	st.w	--sp,r8
+80007238:	0a 9b       	mov	r11,r5
+8000723a:	0e 9c       	mov	r12,r7
+8000723c:	f0 1f 00 3b 	mcall	80007328 <Store_Image_1+0x108>
 		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
-8000723e:	06 9b       	mov	r11,r3
-80007240:	0a 9c       	mov	r12,r5
-80007242:	f0 1f 00 3b 	mcall	8000732c <Store_Image_1+0x10c>
-80007246:	0c 97       	mov	r7,r6
-80007248:	2f fd       	sub	sp,-4
-8000724a:	58 0c       	cp.w	r12,0
-8000724c:	cf 21       	brne	80007230 <Store_Image_1+0x10>
+80007240:	08 9b       	mov	r11,r4
+80007242:	0e 9c       	mov	r12,r7
+80007244:	f0 1f 00 3a 	mcall	8000732c <Store_Image_1+0x10c>
+80007248:	0c 98       	mov	r8,r6
+8000724a:	2f fd       	sub	sp,-4
+8000724c:	58 0c       	cp.w	r12,0
+8000724e:	cf 21       	brne	80007232 <Store_Image_1+0x12>
 		else
 		{
 			break;
 		}
 	}	
 	nav_file_create((FS_STRING)Filename_buff);//create file
-8000724e:	1a 9c       	mov	r12,sp
-80007250:	f0 1f 00 38 	mcall	80007330 <Store_Image_1+0x110>
+80007250:	1a 9c       	mov	r12,sp
+80007252:	f0 1f 00 38 	mcall	80007330 <Store_Image_1+0x110>
 	file_open(FOPEN_MODE_W);
-80007254:	30 ec       	mov	r12,14
-80007256:	f0 1f 00 38 	mcall	80007334 <Store_Image_1+0x114>
+80007256:	30 ec       	mov	r12,14
+80007258:	f0 1f 00 37 	mcall	80007334 <Store_Image_1+0x114>
 	//write bitmap headers
 	file_write_buf(BMPHeader, BMPHEADERSIZE);
-8000725a:	30 eb       	mov	r11,14
-8000725c:	4b 7c       	lddpc	r12,80007338 <Store_Image_1+0x118>
-8000725e:	f0 1f 00 38 	mcall	8000733c <Store_Image_1+0x11c>
+8000725c:	30 eb       	mov	r11,14
+8000725e:	4b 7c       	lddpc	r12,80007338 <Store_Image_1+0x118>
+80007260:	f0 1f 00 37 	mcall	8000733c <Store_Image_1+0x11c>
 	file_write_buf(DIBHead, DIBHEADERSIZE);
-80007262:	37 cb       	mov	r11,124
-80007264:	4b 7c       	lddpc	r12,80007340 <Store_Image_1+0x120>
-80007266:	f0 1f 00 36 	mcall	8000733c <Store_Image_1+0x11c>
+80007264:	37 cb       	mov	r11,124
+80007266:	4b 7c       	lddpc	r12,80007340 <Store_Image_1+0x120>
+80007268:	f0 1f 00 35 	mcall	8000733c <Store_Image_1+0x11c>
 	//Image1
 	//reset read pointer
 	FIFO_1_nRRST_CLR;
-8000726a:	31 6c       	mov	r12,22
-8000726c:	f0 1f 00 36 	mcall	80007344 <Store_Image_1+0x124>
+8000726c:	31 6c       	mov	r12,22
+8000726e:	f0 1f 00 36 	mcall	80007344 <Store_Image_1+0x124>
 	FIFO_1_RCLK_SET;
-80007270:	31 7c       	mov	r12,23
-80007272:	f0 1f 00 36 	mcall	80007348 <Store_Image_1+0x128>
+80007272:	31 7c       	mov	r12,23
+80007274:	f0 1f 00 35 	mcall	80007348 <Store_Image_1+0x128>
 
 	FIFO_1_RCLK_CLR;
-80007276:	31 7c       	mov	r12,23
-80007278:	f0 1f 00 33 	mcall	80007344 <Store_Image_1+0x124>
+80007278:	31 7c       	mov	r12,23
+8000727a:	f0 1f 00 33 	mcall	80007344 <Store_Image_1+0x124>
 	FIFO_1_nRRST_SET;
-8000727c:	31 6c       	mov	r12,22
-8000727e:	f0 1f 00 33 	mcall	80007348 <Store_Image_1+0x128>
+8000727e:	31 6c       	mov	r12,22
+80007280:	f0 1f 00 32 	mcall	80007348 <Store_Image_1+0x128>
 	
 	//enable output
 	FIFO_1_nOE_CLR;
-80007282:	31 bc       	mov	r12,27
-80007284:	f0 1f 00 30 	mcall	80007344 <Store_Image_1+0x124>
-80007288:	30 03       	mov	r3,0
+80007284:	31 bc       	mov	r12,27
+80007286:	f0 1f 00 30 	mcall	80007344 <Store_Image_1+0x124>
+8000728a:	30 03       	mov	r3,0
 	/*uint8_t buffer[WIDTH * 2];*/
 	
 	for(j = 0; j < HEIGHT; j++)
-8000728a:	fa c2 ff ef 	sub	r2,sp,-17
+8000728c:	fa c2 ff ef 	sub	r2,sp,-17
 	file_close();
 
 	
 }
 
 void Store_Image_1()
-8000728e:	fa c4 fd 6f 	sub	r4,sp,-657
+80007290:	fa c4 fd 6f 	sub	r4,sp,-657
 	
 	for(j = 0; j < HEIGHT; j++)
 	{
 		for(i = 0; i < WIDTH*2; i+=2)
 		{
 			FIFO_1_RCLK_SET;
-80007292:	31 76       	mov	r6,23
+80007294:	31 76       	mov	r6,23
 			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-80007294:	fe 75 20 00 	mov	r5,-57344
+80007296:	fe 75 20 00 	mov	r5,-57344
 			delay_us(1);
 			FIFO_1_RCLK_SET;
 			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
 			FIFO_1_RCLK_CLR;
 		}
 		file_write_buf(&buffer, WIDTH * 2);
-80007298:	fa c1 ff f0 	sub	r1,sp,-16
-8000729c:	e0 60 02 80 	mov	r0,640
-800072a0:	c2 78       	rjmp	800072ee <Store_Image_1+0xce>
+8000729a:	fa c1 ff f0 	sub	r1,sp,-16
+8000729e:	e0 60 02 80 	mov	r0,640
+800072a2:	c2 78       	rjmp	800072f0 <Store_Image_1+0xd0>
 	
 	for(j = 0; j < HEIGHT; j++)
 	{
 		for(i = 0; i < WIDTH*2; i+=2)
 		{
 			FIFO_1_RCLK_SET;
-800072a2:	0c 9c       	mov	r12,r6
-800072a4:	f0 1f 00 29 	mcall	80007348 <Store_Image_1+0x128>
+800072a4:	0c 9c       	mov	r12,r6
+800072a6:	f0 1f 00 29 	mcall	80007348 <Store_Image_1+0x128>
 			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-800072a8:	ea f8 02 60 	ld.w	r8,r5[608]
-800072ac:	ae 88       	st.b	r7[0x0],r8
+800072aa:	ea f8 02 60 	ld.w	r8,r5[608]
+800072ae:	ae 88       	st.b	r7[0x0],r8
 			FIFO_1_RCLK_CLR;
-800072ae:	0c 9c       	mov	r12,r6
-800072b0:	f0 1f 00 25 	mcall	80007344 <Store_Image_1+0x124>
+800072b0:	0c 9c       	mov	r12,r6
+800072b2:	f0 1f 00 25 	mcall	80007344 <Store_Image_1+0x124>
  * \param  delay:   (input) delay in CPU cycles before timeout.
  * \param  cpu_time: (output) internal information used by the timer API.
  */
 __always_inline static void cpu_set_timeout(unsigned long delay, t_cpu_time *cpu_time)
 {
   cpu_time->delay_start_cycle = Get_system_register(AVR32_COUNT);
-800072b4:	e1 b8 00 42 	mfsr	r8,0x108
+800072b6:	e1 b8 00 42 	mfsr	r8,0x108
   cpu_time->delay_end_cycle   = cpu_time->delay_start_cycle + delay;
-800072b8:	f0 ca ff f0 	sub	r10,r8,-16
+800072ba:	f0 ca ff f0 	sub	r10,r8,-16
  *
  * \return true if timeout occurred, otherwise false.
  */
 __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 {
   unsigned long current_cycle_count = Get_system_register(AVR32_COUNT);
-800072bc:	e1 b9 00 42 	mfsr	r9,0x108
+800072be:	e1 b9 00 42 	mfsr	r9,0x108
   // Test if the timeout as already occurred.
   else if (cpu_time->timer_state == CPU_TIMER_STATE_REACHED)
     return true;
 
   // If the ending cycle count of this timeout is wrapped, ...
   else if (cpu_time->delay_start_cycle > cpu_time->delay_end_cycle)
-800072c0:	14 38       	cp.w	r8,r10
-800072c2:	e0 88 00 08 	brls	800072d2 <Store_Image_1+0xb2>
+800072c2:	14 38       	cp.w	r8,r10
+800072c4:	e0 88 00 08 	brls	800072d4 <Store_Image_1+0xb4>
   {
     if (current_cycle_count < cpu_time->delay_start_cycle && current_cycle_count > cpu_time->delay_end_cycle)
-800072c6:	12 38       	cp.w	r8,r9
-800072c8:	fe 98 ff fa 	brls	800072bc <Store_Image_1+0x9c>
-800072cc:	12 3a       	cp.w	r10,r9
-800072ce:	c1 a3       	brcs	80007302 <Store_Image_1+0xe2>
-800072d0:	cf 6b       	rjmp	800072bc <Store_Image_1+0x9c>
+800072c8:	12 38       	cp.w	r8,r9
+800072ca:	fe 98 ff fa 	brls	800072be <Store_Image_1+0x9e>
+800072ce:	12 3a       	cp.w	r10,r9
+800072d0:	c1 a3       	brcs	80007304 <Store_Image_1+0xe4>
+800072d2:	cf 6b       	rjmp	800072be <Store_Image_1+0x9e>
     }
     return false;
   }
   else
   {
     if (current_cycle_count < cpu_time->delay_start_cycle || current_cycle_count > cpu_time->delay_end_cycle)
-800072d2:	12 38       	cp.w	r8,r9
-800072d4:	e0 8b 00 17 	brhi	80007302 <Store_Image_1+0xe2>
-800072d8:	12 3a       	cp.w	r10,r9
-800072da:	c1 43       	brcs	80007302 <Store_Image_1+0xe2>
-800072dc:	cf 0b       	rjmp	800072bc <Store_Image_1+0x9c>
+800072d4:	12 38       	cp.w	r8,r9
+800072d6:	e0 8b 00 17 	brhi	80007304 <Store_Image_1+0xe4>
+800072da:	12 3a       	cp.w	r10,r9
+800072dc:	c1 43       	brcs	80007304 <Store_Image_1+0xe4>
+800072de:	cf 0b       	rjmp	800072be <Store_Image_1+0x9e>
 			delay_us(1);
 			FIFO_1_RCLK_SET;
 			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
 			FIFO_1_RCLK_CLR;
 		}
 		file_write_buf(&buffer, WIDTH * 2);
-800072de:	00 9b       	mov	r11,r0
-800072e0:	02 9c       	mov	r12,r1
-800072e2:	f0 1f 00 17 	mcall	8000733c <Store_Image_1+0x11c>
+800072e0:	00 9b       	mov	r11,r0
+800072e2:	02 9c       	mov	r12,r1
+800072e4:	f0 1f 00 16 	mcall	8000733c <Store_Image_1+0x11c>
 	
 	//enable output
 	FIFO_1_nOE_CLR;
 	/*uint8_t buffer[WIDTH * 2];*/
 	
 	for(j = 0; j < HEIGHT; j++)
-800072e6:	2f f3       	sub	r3,-1
-800072e8:	e0 43 00 f0 	cp.w	r3,240
-800072ec:	c0 30       	breq	800072f2 <Store_Image_1+0xd2>
-800072ee:	04 97       	mov	r7,r2
-800072f0:	cd 9b       	rjmp	800072a2 <Store_Image_1+0x82>
+800072e8:	2f f3       	sub	r3,-1
+800072ea:	e0 43 00 f0 	cp.w	r3,240
+800072ee:	c0 30       	breq	800072f4 <Store_Image_1+0xd4>
+800072f0:	04 97       	mov	r7,r2
+800072f2:	cd 9b       	rjmp	800072a4 <Store_Image_1+0x84>
 			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
 			FIFO_1_RCLK_CLR;
 		}
 		file_write_buf(&buffer, WIDTH * 2);
 	}
 	FIFO_1_nOE_SET;//disable output
-800072f2:	31 bc       	mov	r12,27
-800072f4:	f0 1f 00 15 	mcall	80007348 <Store_Image_1+0x128>
+800072f4:	31 bc       	mov	r12,27
+800072f6:	f0 1f 00 15 	mcall	80007348 <Store_Image_1+0x128>
 	file_close();
-800072f8:	f0 1f 00 15 	mcall	8000734c <Store_Image_1+0x12c>
-800072fc:	fe 3d fd 70 	sub	sp,-656
-80007300:	d8 32       	popm	r0-r7,pc
+800072fa:	f0 1f 00 15 	mcall	8000734c <Store_Image_1+0x12c>
+800072fe:	fe 3d fd 70 	sub	sp,-656
+80007302:	d8 32       	popm	r0-r7,pc
 		{
 			FIFO_1_RCLK_SET;
 			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
 			FIFO_1_RCLK_CLR;
 			delay_us(1);
 			FIFO_1_RCLK_SET;
-80007302:	0c 9c       	mov	r12,r6
-80007304:	f0 1f 00 11 	mcall	80007348 <Store_Image_1+0x128>
+80007304:	0c 9c       	mov	r12,r6
+80007306:	f0 1f 00 11 	mcall	80007348 <Store_Image_1+0x128>
 			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-80007308:	ea f8 02 60 	ld.w	r8,r5[608]
-8000730c:	ef 68 ff ff 	st.b	r7[-1],r8
+8000730a:	ea f8 02 60 	ld.w	r8,r5[608]
+8000730e:	ef 68 ff ff 	st.b	r7[-1],r8
 			FIFO_1_RCLK_CLR;
-80007310:	0c 9c       	mov	r12,r6
-80007312:	f0 1f 00 0d 	mcall	80007344 <Store_Image_1+0x124>
-80007316:	2f e7       	sub	r7,-2
+80007312:	0c 9c       	mov	r12,r6
+80007314:	f0 1f 00 0c 	mcall	80007344 <Store_Image_1+0x124>
+80007318:	2f e7       	sub	r7,-2
 	FIFO_1_nOE_CLR;
 	/*uint8_t buffer[WIDTH * 2];*/
 	
 	for(j = 0; j < HEIGHT; j++)
 	{
 		for(i = 0; i < WIDTH*2; i+=2)
-80007318:	08 37       	cp.w	r7,r4
-8000731a:	cc 41       	brne	800072a2 <Store_Image_1+0x82>
-8000731c:	ce 1b       	rjmp	800072de <Store_Image_1+0xbe>
-8000731e:	00 00       	add	r0,r0
+8000731a:	08 37       	cp.w	r7,r4
+8000731c:	cc 41       	brne	800072a4 <Store_Image_1+0x84>
+8000731e:	ce 1b       	rjmp	800072e0 <Store_Image_1+0xc0>
 80007320:	80 00       	ld.sh	r0,r0[0x0]
 80007322:	63 bc       	ld.w	r12,r1[0x6c]
 80007324:	80 00       	ld.sh	r0,r0[0x0]

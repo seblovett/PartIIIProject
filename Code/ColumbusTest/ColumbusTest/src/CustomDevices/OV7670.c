@@ -410,6 +410,7 @@ void Store_Image_1()
 	int i, j;
 	uint8_t buffer[WIDTH * 2];
 	char Filename_buff[15];
+	i = 0;
 	//make file
 	//delete file if it exits already
 	nav_filelist_reset();
