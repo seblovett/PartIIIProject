@@ -176,73 +176,73 @@ int main (void)
 	LED6_CLR;
 	delay_s(1);
 	
-// 	print_dbg("\n\n\rSDRAM Test:");
-// 	sdram_size = SDRAM_SIZE >> 2;
-// 	print_dbg("\n\rSDRAM size: ");
-// 	print_dbg_ulong(SDRAM_SIZE >> 20);
-// 	print_dbg(" MB\r\n");
-// 	sdramc_init(FOSC0);
-// 	print_dbg("SDRAM initialized\r\n");
-// 	// Determine the increment of SDRAM word address requiring an update of the
-// 	// printed progression status.
-// 	progress_inc = (sdram_size + 50) / 100;
-// 	// Fill the SDRAM with the test pattern.
-// 	for (i = 0, j = 0; i < sdram_size; i++)
-// 	{
-// 		if (i == j * progress_inc)
-// 		{
-// 			//LED_Toggle(LED_SDRAM_WRITE);
-// 			print_dbg("\rFilling SDRAM with test pattern: ");
-// 			print_dbg_ulong(j++);
-// 			print_dbg_char('%');
-// 		}
-// 		sdram[i] = i;
-// 		
-// 	}
-// 	print_dbg("\rSDRAM filled with test pattern       \r\n");
-// 	// Recover the test pattern from the SDRAM and verify it.
-// 	for (i = 0, j = 0; i < sdram_size; i++)
-// 	{
-// 		
-// 		if (i == j * progress_inc)
-// 		{
-// 			print_dbg("\rRecovering test pattern from SDRAM: ");
-// 			print_dbg_ulong(j++);
-// 			print_dbg_char('%');
-// 		}
-// 		tmp = sdram[i];
-// 		if (tmp != i)//failed
-// 		{
-// 			noErrors++;
-// 		}
-// 
-// 	}
-// 	print_dbg("\rSDRAM tested: ");
-// 	print_dbg_ulong(noErrors);
-// 	print_dbg(" corrupted word(s)       \r\n");
-// 	if (noErrors)
-// 	{
-// 			LED3_SET;
-// 	}
-// 	else
-// 	{
-// 			LED2_SET;
-// 	}
-// 	
-// 	
-// 	for(i = 0; i < 10; i++)
-// 	{
-// 		sdram[i] = i;
-// 		print_dbg("\n\rWritten data: ");
-// 		print_dbg_ulong(i);
-// 		print_dbg("\n\rRead data: ");
-// 		print_dbg_ulong(sdram[i]);
-// 	}
-// 	print_dbg("\n\rRead data from address 1: ");
-// 	print_dbg_ulong(sdram[1]);
-// 	
-// 	
-// 
+	print_dbg("\n\n\rSDRAM Test:");
+	sdram_size = SDRAM_SIZE >> 2;
+	print_dbg("\n\rSDRAM size: ");
+	print_dbg_ulong(SDRAM_SIZE >> 20);
+	print_dbg(" MB\r\n");
+	sdramc_init(FOSC0);
+	print_dbg("SDRAM initialized\r\n");
+	// Determine the increment of SDRAM word address requiring an update of the
+	// printed progression status.
+	progress_inc = (sdram_size + 50) / 100;
+	// Fill the SDRAM with the test pattern.
+	for (i = 0, j = 0; i < sdram_size; i++)
+	{
+		if (i == j * progress_inc)
+		{
+			//LED_Toggle(LED_SDRAM_WRITE);
+			print_dbg("\rFilling SDRAM with test pattern: ");
+			print_dbg_ulong(j++);
+			print_dbg_char('%');
+		}
+		sdram[i] = i;
+		
+	}
+	print_dbg("\rSDRAM filled with test pattern       \r\n");
+	// Recover the test pattern from the SDRAM and verify it.
+	for (i = 0, j = 0; i < sdram_size; i++)
+	{
+		
+		if (i == j * progress_inc)
+		{
+			print_dbg("\rRecovering test pattern from SDRAM: ");
+			print_dbg_ulong(j++);
+			print_dbg_char('%');
+		}
+		tmp = sdram[i];
+		if (tmp != i)//failed
+		{
+			noErrors++;
+		}
+
+	}
+	print_dbg("\rSDRAM tested: ");
+	print_dbg_ulong(noErrors);
+	print_dbg(" corrupted word(s)       \r\n");
+	if (noErrors)
+	{
+			LED3_SET;
+	}
+	else
+	{
+			LED2_SET;
+	}
+	
+	
+	for(i = 0; i < 10; i++)
+	{
+		sdram[i] = i;
+		print_dbg("\n\rWritten data: ");
+		print_dbg_ulong(i);
+		print_dbg("\n\rRead data: ");
+		print_dbg_ulong(sdram[i]);
+	}
+	print_dbg("\n\rRead data from address 1: ");
+	print_dbg_ulong(sdram[1]);
+	
+	
+
 // 
  	print_dbg("\n\n\rTWI Test:\n\r");
 	Log_Write("\n\n\rTWI Test:\n\r", 14);
