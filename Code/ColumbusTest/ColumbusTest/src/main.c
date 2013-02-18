@@ -110,7 +110,8 @@ int main (void)
 	print_dbg("\x0C");
 	print_dbg("Columbus Board Tester\n\n\r");
 	sd_mmc_resources_init();
-	//sd_mmc_resources_init();
+	INTC_init_interrupts();
+	
 	print_dbg("\n\n\rSD Card Memory Test:\n\r");
 	// Test if the memory is ready - using the control access memory abstraction layer (/SERVICES/MEMORY/CTRL_ACCESS/)
 	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
@@ -272,10 +273,11 @@ int main (void)
 		print_dbg("\n\r");
 	}
 // 	
-//  	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
+//   	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
 //  	Motor_Init();
 // 	Motors_Reset();//reset the motors to test them
-	
+// 	while(Motors_Moving() == true)
+//		;//wait for the motors to finish moving
 	
 	
 	//Channel 0
@@ -347,6 +349,13 @@ int main (void)
 
 	if(Store_Both_Images() == true)
 		print_dbg("\n\rImages Stored Successfully!");
+		
+	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
+ 	Motor_Init();
+	Motors_Reset();//reset the motors to test them
+	while(Motors_Moving() == true)
+		;//wait for the motors to finish moving
+		
 	print_dbg("\n\rTest Complete!");
 	// Insert application code here, after the board has been initialized.
 	while(1)

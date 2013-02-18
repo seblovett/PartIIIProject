@@ -41,6 +41,7 @@ __attribute__((__interrupt__)) static void VSYNC0_Handler (void)
 			
 		case(IDLE):
 		default:
+			VSYNC_0_DISABLE_INTERRUPT;
 			FIFO_0_WEN_CLR;
 			OV7670_Status.VSYNC0_State = IDLE;
 			break;
@@ -70,6 +71,7 @@ __attribute__((__interrupt__)) static void VSYNC1_Handler (void)
 			
 			case(IDLE):
 			default:
+			VSYNC_1_DISABLE_INTERRUPT;
 			FIFO_1_WEN_CLR;
 			OV7670_Status.VSYNC1_State = IDLE;
 			break;
@@ -273,8 +275,8 @@ void FIFO_Reset(uint8_t CameraID)
 
 int TakePhoto(uint8_t Cameras)
 {
-// 	VSYNC_0_ENABLE_INTERRUPT;
-// 	VSYNC_1_ENABLE_INTERRUPT;
+	VSYNC_0_ENABLE_INTERRUPT;
+	VSYNC_1_ENABLE_INTERRUPT;
 	//Only want to take pictures on cameras found
 	if(((OV7670_Status.VSYNC0_State != IDLE) || !OV7670_Status.Camera_0_Found) && ((OV7670_Status.VSYNC1_State != IDLE) || !OV7670_Status.Camera_1_Found))
 		return CAMERAS_BUSY; //wait for cameras to be idle if they are found

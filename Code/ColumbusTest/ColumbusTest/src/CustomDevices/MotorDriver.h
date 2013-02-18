@@ -43,5 +43,6 @@ void Analogue_Comparator_Init();
 void Motor_Start(int Motors);
 void Motors_Reset(void);
 void Motor_Stop(int Motors);
+bool Motors_Moving();
 /*static void ACInterruptHandler(void);*/
 #endif /* MOTORDRIVER_H_ */

@@ -163,10 +163,10 @@ __attribute__((__interrupt__)) static void ACInterruptHandler(void)
 		Motor_Cntrl.Right_Count --;
 	}
 	int temp = 0;
-	if(Motor_Cntrl.Left_Count == 0) //if we have reached the end of the movement on left wheel
+	if(Motor_Cntrl.Left_Count <= 0) //if we have reached the end of the movement on left wheel
 		temp |= MOTOR_L;
 	
-	if(Motor_Cntrl.Right_Count == 0)
+	if(Motor_Cntrl.Right_Count <= 0)
 		temp |= MOTOR_R;
 		
 	Motor_Stop(temp); //Stop the Right Motor
@@ -185,7 +185,7 @@ void Analogue_Comparator_Init()
 	//Make it an interrupt
 	Disable_global_interrupt();
 	
-	INTC_init_interrupts();
+	//INTC_init_interrupts();
 	
 	acifa_configure(&AVR32_ACIFA1,
 	ACIFA_COMP_SELA,
@@ -218,6 +218,7 @@ void Analogue_Comparator_Init()
 	acifa_enable_interrupt(&AVR32_ACIFA1, 3);//Enable ACBINT and ACAINT
 	acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELA);
 	acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELB);
+
 	acifa_start(&AVR32_ACIFA1, (ACIFA_COMP_SELA|ACIFA_COMP_SELB));
 	
 	
@@ -302,4 +303,22 @@ void Motors_Reset(void)
 	Motor_Cntrl.Right_State = FORWARD;
 	Motor_Cntrl.Right_Count = 1;
 	Motor_Start(MOTOR_L | MOTOR_R);
+}
+
+bool Motors_Moving()
+{
+	if(Motor_Cntrl.Left_State != STOP)
+	{
+		if(Motor_Cntrl.Right_State != STOP)
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+	else
+	{
+		return false;
+	}
+	
 }
