@@ -336,10 +336,13 @@ bool Store_Both_Images()
 {
 	if(Photos_Ready() == false)
 		return false;
-	Store_Image_0();
-	FIFO_Reset(CAMERA_LEFT);
+	
 	Store_Image_1();
 	FIFO_Reset(CAMERA_RIGHT);
+	
+	Store_Image_0();
+	FIFO_Reset(CAMERA_LEFT);
+	
 	return true;
 }
 void Store_Image_0()
