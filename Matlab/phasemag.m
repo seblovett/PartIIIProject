@@ -11,6 +11,7 @@ end
 
 FT = fft2(Image);
 %ift = ifft2(FT);
+FT = fftshift(FT);
 mod = abs(FT);
 arg = angle(FT);
 

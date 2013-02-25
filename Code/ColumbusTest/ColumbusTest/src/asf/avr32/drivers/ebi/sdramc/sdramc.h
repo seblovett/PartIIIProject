@@ -129,7 +129,7 @@
 
 //! Pointer to SDRAM.
 //#if UC3C
-#define SDRAM           ((void *)AVR32_EBI_CS0_ADDRESS)
+#define SDRAM           ((void *)AVR32_EBI_CS1_0_ADDRESS)
 // #else
 // #define SDRAM           ((void *)AVR32_EBI_CS1_ADDRESS)
 // #endif

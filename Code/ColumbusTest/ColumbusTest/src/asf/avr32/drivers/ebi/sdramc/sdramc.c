@@ -193,7 +193,7 @@ static void sdramc_enable_muxed_pins(void)
     {AVR32_EBI_SDWE_PIN,            AVR32_EBI_SDWE_FUNCTION           },
     {AVR32_EBI_CAS_PIN,             AVR32_EBI_CAS_FUNCTION            },
     {AVR32_EBI_RAS_PIN,             AVR32_EBI_RAS_FUNCTION            },
-    {AVR32_EBI_NCS_0_PIN,             AVR32_EBI_NCS_0_FUNCTION            },
+    {AVR32_EBI_NCS_1_PIN,             AVR32_EBI_NCS_1_FUNCTION            },
 
     // Enable clock-related pins.
     {AVR32_EBI_SDCK_PIN,            AVR32_EBI_SDCK_FUNCTION           },
@@ -219,7 +219,7 @@ void sdramc_init(unsigned long hsb_hz)
   // Put the multiplexed MCU pins used for the SDRAM under control of the SDRAMC.
   sdramc_enable_muxed_pins();
 
-  // Enable SDRAM mode for CS1. //changed for CS0
+  // Enable SDRAM mode for CS1. 
 #if (defined AVR32_HMATRIX)
   AVR32_HMATRIX.sfr[AVR32_EBI_HMATRIX_NR] |= 1 << AVR32_EBI_SDRAM_CS;
   AVR32_HMATRIX.sfr[AVR32_EBI_HMATRIX_NR];
