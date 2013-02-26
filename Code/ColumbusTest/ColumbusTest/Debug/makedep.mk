@@ -36,6 +36,8 @@ src\asf\avr32\drivers\twim\twim.c
 
 src\asf\avr32\drivers\usart\usart.c
 
+src\asf\avr32\drivers\usbc\usbc_device.c
+
 src\asf\avr32\services\fs\fat\fat.c
 
 src\asf\avr32\services\fs\fat\fat_unusual.c
@@ -58,7 +60,21 @@ src\asf\common\services\clock\uc3c\pll.c
 
 src\asf\common\services\clock\uc3c\sysclk.c
 
+src\asf\common\services\sleepmgr\uc3\sleepmgr.c
+
 src\asf\common\services\storage\ctrl_access\ctrl_access.c
+
+src\asf\common\services\usb\class\cdc\device\udi_cdc.c
+
+src\asf\common\services\usb\class\cdc\device\udi_cdc_desc.c
+
+src\asf\common\services\usb\udc\udc.c
+
+src\asf\common\utils\stdio\read.c
+
+src\asf\common\utils\stdio\stdio_usb\stdio_usb.c
+
+src\asf\common\utils\stdio\write.c
 
 src\CustomDevices\Bitmap.c
 

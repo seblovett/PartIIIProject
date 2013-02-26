@@ -115,6 +115,10 @@
 // From module: SPI - Serial Peripheral Interface
 #include <spi.h>
 
+// From module: Sleep manager - UC3 implementation
+#include <sleepmgr.h>
+#include <uc3/sleepmgr.h>
+
 // From module: System Clock Control - UC3 C implementation
 #include <sysclk.h>
 
@@ -126,5 +130,21 @@
 
 // From module: USART Debug strings
 #include <print_funcs.h>
+
+// From module: USB - Universial Serial Bus driver (with sleep manager)
+#include <usbc_device.h>
+
+// From module: USB CDC Protocol
+#include <usb_protocol_cdc.h>
+
+// From module: USB Device CDC (Single Interface Device)
+#include <udi_cdc.h>
+
+// From module: USB Device CDC Standard I/O (stdio) - AVR implementation
+#include <stdio_usb.h>
+
+// From module: USB Device Stack Core (Common API)
+#include <udc.h>
+#include <udd.h>
 
 #endif // ASF_H

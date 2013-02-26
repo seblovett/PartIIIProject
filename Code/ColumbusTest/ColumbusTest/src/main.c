@@ -24,6 +24,7 @@
 #include "fat.h"
 #include "file.h"
 #include "navigation.h"
+#include <stdio_usb.h>
 
 #define TWIM               (&AVR32_TWIM0)  //! TWIM Module Used
 
@@ -106,27 +107,60 @@ int main (void)
 	uint32_t VarTemp;
 	board_init();
 	pcl_switch_to_osc(PCL_OSC0, FOSC0, OSC0_STARTUP);
-	init_dbg_rs232(FOSC0);
-	print_dbg("\x0C");
-	print_dbg("Columbus Board Tester\n\n\r");
+	
+	// Initialize interrupt vector table support.
+	//irq_initialize_vectors();
+
+	// Enable interrupts
 	sd_mmc_resources_init();
 	INTC_init_interrupts();
+	stdio_usb_init();
+	twim_init();
+	PCA9542A_Init();
+	sdramc_init(FOSC0);
+	OV7670_Init();
+	Motor_Init();
+	Enable_global_interrupt();
+	/* Call a local utility routine to initialize C-Library Standard I/O over
+	 * a USB CDC protocol. Tunable parameters in a conf_usb.h file must be
+	 * supplied to configure the USB device correctly.
+	 */
+	//stdio_usb_init();
+	uint8_t ch;
+	
+	while (true) {
+
+		scanf("%c",&ch); // get one input character
+
+		if (ch) {
+			printf("%c",ch); // echo to output
+		}
+		if(ch == 13)
+			break;
+	}
+	//init_dbg_rs232(FOSC0);
+	printf("\xC");
+	printf("Columbus Board Tester\n\n\r");
+// 	sd_mmc_resources_init();
+// 	INTC_init_interrupts();
 // 	
-	print_dbg("\n\n\rSD Card Memory Test:\n\r");
+	
+	printf("\n\n\rSD Card Memory Test:\n\r");
 	// Test if the memory is ready - using the control access memory abstraction layer (/SERVICES/MEMORY/CTRL_ACCESS/)
 	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
 	{
 		// Get and display the capacity
 		mem_read_capacity(LUN_ID_SD_MMC_SPI_MEM, &VarTemp);
-		print_dbg("OK:\t");
-		print_dbg_ulong((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
-		print_dbg("MB\r\n");
-		print_dbg("SD Card Okay.\n\r");
+		printf("OK:\t");
+		//printf_ulong((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
+		i = ((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
+		printf("%dMB\r\n", i);
+		printf("SD Card Okay.\n\r");
 	}
 	else
 	{
 		// Display an error message
-		print_dbg("Not initialized: Check if memory is ready...\r\n");
+		printf("Not initialized: Check if memory is ready...\r\n");
 	}
 	nav_reset();
 	// Use the last drive available as default.
@@ -136,30 +170,30 @@ int main (void)
 	nav_filelist_reset();
 	if(nav_filelist_findname((FS_STRING)LOG_FILE, false))
 	{
-		print_dbg("\n\rLog File Already Exists\n\rAttempting to delete...");	
+		printf("\n\rLog File Already Exists\n\rAttempting to delete...");	
 		nav_setcwd((FS_STRING)LOG_FILE, true, false);
 		nav_file_del(false);
 		
 		if(nav_filelist_findname((FS_STRING)LOG_FILE, false))
-			print_dbg("\n\rLog File Still Exists...");
+			printf("\n\rLog File Still Exists...");
 		else
-			print_dbg("\n\rLog File Deleted!");
+			printf("\n\rLog File Deleted!");
 	}
 	
 	
-	print_dbg("\n\rCreating Log File.");
+	printf("\n\rCreating Log File.");
 	//char buff[20] = "log.txt";
 	if(nav_file_create((FS_STRING)LOG_FILE) == true)
-		print_dbg("\n\rSuccess!");
+		printf("\n\rSuccess!");
 	else
-		print_dbg("\n\rNot worked...");
+		printf("\n\rNot worked...");
 	
-	print_dbg("\n\rWriting to log file.");
+	printf("\n\rWriting to log file.");
 	
 	Log_Write("Columbus Tester:\n\r", -1);
 
 
-	print_dbg("\n\rLED Test:\n\rAll LEDS on;");
+	printf("\n\rLED Test:\n\rAll LEDS on;");
 	LEDMOTOR_SET;
 	LED2_SET;
 	LED3_SET;
@@ -167,7 +201,7 @@ int main (void)
 	LED5_SET;
 	LED6_SET;
 	delay_s(1);
-	print_dbg("\n\rAll LEDS off;");
+	printf("\n\rAll LEDS off;");
 	LEDMOTOR_CLR;
 	LED2_CLR;
 	LED3_CLR;
@@ -176,14 +210,14 @@ int main (void)
 	LED6_CLR;
 	delay_s(1);
 	
-	print_dbg("\n\n\rSDRAM Test:");
+	printf("\n\n\rSDRAM Test:");
 	sdram_size = SDRAM_SIZE >> 2;
-	print_dbg("\n\rSDRAM size: ");
-	print_dbg_ulong(SDRAM_SIZE >> 20);
-	print_dbg(" MB\r\n");
-	print_dbg_ulong(sdram_size);
-	sdramc_init(FOSC0);
-	print_dbg("\n\rSDRAM initialized\r\n");
+	printf("\n\rSDRAM size: %d", SDRAM_SIZE >> 20);
+//	printflong(SDRAM_SIZE >> 20);
+	printf(" MB\r\n");
+//	printf_ulong(sdram_size);
+	//sdramc_init(FOSC0);
+	printf("\n\rSDRAM initialized\r\n");
 	
 
 	// Determine the increment of SDRAM word address requiring an update of the
@@ -195,14 +229,14 @@ int main (void)
 		if (i == j * progress_inc)
 		{
 			//LED_Toggle(LED_SDRAM_WRITE);
-			print_dbg("\rFilling SDRAM with test pattern: ");
-			print_dbg_ulong(j++);
-			print_dbg_char('%');
+			printf("\rFilling SDRAM with test pattern: %d\%", j++);
+			//printf_ulong(j++);
+			//printf_char('%');
 		}
 		sdram[i] = i;
 		
 	}
-	print_dbg("\rSDRAM filled with test pattern       \r\n");
+	printf("\rSDRAM filled with test pattern       \r\n");
 	// Recover the test pattern from the SDRAM and verify it.
 	
 	for (i = 0, j = 0; i < sdram_size; i++)
@@ -210,9 +244,9 @@ int main (void)
 		
 		if (i == j * progress_inc)
 		{
-			print_dbg("\rRecovering test pattern from SDRAM: ");
-			print_dbg_ulong(j++);
-			print_dbg_char('%');
+			printf("\rRecovering test pattern from SDRAM: %d\%", j++);
+// 			print_dbg_ulong(j++);
+// 			print_dbg_char('%');
 		}
 		tmp = sdram[i];
 		if (tmp != i)//failed
@@ -220,9 +254,9 @@ int main (void)
 			noErrors++;
 		}
 	}
-	print_dbg("\rSDRAM tested: ");
+	printf("\rSDRAM tested: ");
 	print_dbg_ulong(noErrors);
-	print_dbg(" corrupted word(s)       \r\n");
+	printf(" corrupted word(s)       \r\n");
 	if (noErrors)
 	{
 			LED3_SET;
@@ -232,118 +266,111 @@ int main (void)
 			LED2_SET;
 	}
 
- 	print_dbg("\n\n\rTWI Test:\n\r");
+ 	printf("\n\n\rTWI Test:\n\r");
 	Log_Write("\n\n\rTWI Test:\n\r", 14);
- 	twim_init();
-	print_dbg("\n\rInitialising the I2C Mux");
-	PCA9542A_Init();
+//  	twim_init();
+// 	printf("\n\rInitialising the I2C Mux");
+// 	PCA9542A_Init();
 	
-	print_dbg("Scanning all Channels\n\r");
-	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+	printf("Scanning all Channels\n\r");
+	printf("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
-		print_dbg_ulong(i);
-		print_dbg_char(' ');
+		printf("%d ", i);
+		//printf_char(' ');
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
 			if(status == STATUS_OK)
 			{
-				print_dbg_char('A');
+				printf("A");
 			}
 			else
 			{
-				print_dbg_char('-');
+				printf("-");
 			}
-			print_dbg_char(' ');
+			printf(" ");
 		}
-		print_dbg("\n\r");
+		printf("\n\r");
 	}
-	
-  	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
- 	Motor_Init();
-	Motors_Reset();//reset the motors to test them
-	while(Motors_Moving() == true)
-		;//wait for the motors to finish moving
 	
 	
 	//Channel 0
 	PCA9542A_Chan_Sel(I2C_CHANNEL_0);
-	print_dbg("\n\rScanning Channel 0\n\r");
-	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+	printf("\n\rScanning Channel 0\n\r");
+	printf("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
-		print_dbg_ulong(i);
-		print_dbg_char(' ');
+		printf("%d ", i);
+		//printf_char(' ');
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
 			if(status == STATUS_OK)
 			{
-				print_dbg_char('A');
+				printf("A");
 			}
 			else
 			{
-				print_dbg_char('-');
+				printf("-");
 			}
-			print_dbg_char(' ');
+			printf(" ");
 		}
-		print_dbg("\n\r");
+		printf("\n\r");
 	}
-	
+		
 	//Channel 1
 	PCA9542A_Chan_Sel(I2C_CHANNEL_1);
-	print_dbg("\n\rScanning Channel 1\n\r");
-	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+	printf("\n\rScanning Channel 1\n\r");
+	printf("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
 	tmp = 0;
 	for(i = 0; i < 8; i++)
 	{
-		print_dbg_ulong(i);
-		print_dbg_char(' ');
+		printf("%d ", i);
+		//printf_char(' ');
 		for(j = 0; j < 16; j++)
 		{
 			int status = twim_probe(TWIM, tmp++);
 			if(status == STATUS_OK)
 			{
-				print_dbg_char('A');
+				printf("A");
 			}
 			else
 			{
-				print_dbg_char('-');
+				printf("-");
 			}
-			print_dbg_char(' ');
+			printf(" ");
 		}
-		print_dbg("\n\r");
+		printf("\n\r");
 	}
-	
-	print_dbg("\n\rInitialising Cameras");
-	OV7670_Init();
+		
+	printf("\n\rInitialising Cameras");
 	FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 	if(STATUS_OK == OV7670_Status.Error)
 	{
-		print_dbg("\n\rCamera Initialise Okay!");
+		printf("\n\rCamera Initialise Okay!");
 	}
 	else
-		print_dbg("\n\rCamara Initialise Fail.");
+		printf("\n\rCamara Initialise Fail.");
 		
-	print_dbg("\n\rTaking Photos");
+	printf("\n\rTaking Photos");
 
 	TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
 	while(Photos_Ready() == false)
 		;
 
 	if(Store_Both_Images() == true)
-		print_dbg("\n\rImages Stored Successfully!");
+		printf("\n\rImages Stored Successfully!");
 		
-	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
+	printf("\n\rMotor Testing:\n\rMotor Initialised");
  	Motor_Init();
 	Motors_Reset();//reset the motors to test them
 	while(Motors_Moving() == true)
 		;//wait for the motors to finish moving
 		
-	print_dbg("\n\rTest Complete!");
+	printf("\n\rTest Complete!");
 	// Insert application code here, after the board has been initialized.
 	while(1)
 	{

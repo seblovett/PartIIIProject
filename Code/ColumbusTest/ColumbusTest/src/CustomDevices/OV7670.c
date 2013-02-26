@@ -202,7 +202,7 @@ void OV7670_Init()
  	VSYNC_0_ENABLE_INTERRUPT;
 	
 	FIFO_Init();
-	Enable_global_interrupt();
+	//Enable_global_interrupt();
 	
 }
 void FIFO_Init()
