@@ -109,72 +109,72 @@ int main (void)
 	init_dbg_rs232(FOSC0);
 	print_dbg("\x0C");
 	print_dbg("Columbus Board Tester\n\n\r");
-// 	sd_mmc_resources_init();
-// 	INTC_init_interrupts();
+	sd_mmc_resources_init();
+	INTC_init_interrupts();
 // 	
 	print_dbg("\n\n\rSD Card Memory Test:\n\r");
 	// Test if the memory is ready - using the control access memory abstraction layer (/SERVICES/MEMORY/CTRL_ACCESS/)
-// 	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
-// 	{
-// 		// Get and display the capacity
-// 		mem_read_capacity(LUN_ID_SD_MMC_SPI_MEM, &VarTemp);
-// 		print_dbg("OK:\t");
-// 		print_dbg_ulong((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
-// 		print_dbg("MB\r\n");
-// 		print_dbg("SD Card Okay.\n\r");
-// 	}
-// 	else
-// 	{
+	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
+	{
+		// Get and display the capacity
+		mem_read_capacity(LUN_ID_SD_MMC_SPI_MEM, &VarTemp);
+		print_dbg("OK:\t");
+		print_dbg_ulong((VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR));
+		print_dbg("MB\r\n");
+		print_dbg("SD Card Okay.\n\r");
+	}
+	else
+	{
 		// Display an error message
-// 		print_dbg("Not initialized: Check if memory is ready...\r\n");
-// 	}
-// 	nav_reset();
+		print_dbg("Not initialized: Check if memory is ready...\r\n");
+	}
+	nav_reset();
 	// Use the last drive available as default.
-/*	nav_drive_set(nav_drive_nb() - 1);*/
+	nav_drive_set(nav_drive_nb() - 1);
 	// Mount it.
-// 	nav_partition_mount();
-// 	nav_filelist_reset();
-// 	if(nav_filelist_findname((FS_STRING)LOG_FILE, false))
-// 	{
-// 		print_dbg("\n\rLog File Already Exists\n\rAttempting to delete...");	
-// 		nav_setcwd((FS_STRING)LOG_FILE, true, false);
-// 		nav_file_del(false);
-// 		
-// 		if(nav_filelist_findname((FS_STRING)LOG_FILE, false))
-// 			print_dbg("\n\rLog File Still Exists...");
-// 		else
-// 			print_dbg("\n\rLog File Deleted!");
-// 	}
-// 	
-// 	
-// 	print_dbg("\n\rCreating Log File.");
-// 	//char buff[20] = "log.txt";
-// 	if(nav_file_create((FS_STRING)LOG_FILE) == true)
-// 		print_dbg("\n\rSuccess!");
-// 	else
-// 		print_dbg("\n\rNot worked...");
-// 	
-// 	print_dbg("\n\rWriting to log file.");
+	nav_partition_mount();
+	nav_filelist_reset();
+	if(nav_filelist_findname((FS_STRING)LOG_FILE, false))
+	{
+		print_dbg("\n\rLog File Already Exists\n\rAttempting to delete...");	
+		nav_setcwd((FS_STRING)LOG_FILE, true, false);
+		nav_file_del(false);
+		
+		if(nav_filelist_findname((FS_STRING)LOG_FILE, false))
+			print_dbg("\n\rLog File Still Exists...");
+		else
+			print_dbg("\n\rLog File Deleted!");
+	}
 	
-/*	Log_Write("Columbus Tester:\n\r", -1);*/
+	
+	print_dbg("\n\rCreating Log File.");
+	//char buff[20] = "log.txt";
+	if(nav_file_create((FS_STRING)LOG_FILE) == true)
+		print_dbg("\n\rSuccess!");
+	else
+		print_dbg("\n\rNot worked...");
+	
+	print_dbg("\n\rWriting to log file.");
+	
+	Log_Write("Columbus Tester:\n\r", -1);
 
 
-// 	print_dbg("\n\rLED Test:\n\rAll LEDS on;");
-// 	LEDMOTOR_SET;
-// 	LED2_SET;
-// 	LED3_SET;
-// 	LED4_SET;
-// 	LED5_SET;
-// 	LED6_SET;
-// 	delay_s(1);
-// 	print_dbg("\n\rAll LEDS off;");
-// 	LEDMOTOR_CLR;
-// 	LED2_CLR;
-// 	LED3_CLR;
-// 	LED4_CLR;
-// 	LED5_CLR;
-// 	LED6_CLR;
-// 	delay_s(1);
+	print_dbg("\n\rLED Test:\n\rAll LEDS on;");
+	LEDMOTOR_SET;
+	LED2_SET;
+	LED3_SET;
+	LED4_SET;
+	LED5_SET;
+	LED6_SET;
+	delay_s(1);
+	print_dbg("\n\rAll LEDS off;");
+	LEDMOTOR_CLR;
+	LED2_CLR;
+	LED3_CLR;
+	LED4_CLR;
+	LED5_CLR;
+	LED6_CLR;
+	delay_s(1);
 	
 	print_dbg("\n\n\rSDRAM Test:");
 	sdram_size = SDRAM_SIZE >> 2;
@@ -184,7 +184,8 @@ int main (void)
 	print_dbg_ulong(sdram_size);
 	sdramc_init(FOSC0);
 	print_dbg("\n\rSDRAM initialized\r\n");
-	delay_s(1);
+	
+
 	// Determine the increment of SDRAM word address requiring an update of the
 	// printed progression status.
 	progress_inc = (sdram_size + 50) / 100;
@@ -218,13 +219,6 @@ int main (void)
 		{
 			noErrors++;
 		}
-		if(i < 11)
-		{
-			print_dbg("\n\rWritten data: ");
-			print_dbg_ulong(i);
-			print_dbg("  Read data: ");
-			print_dbg_ulong(tmp);
-		}
 	}
 	print_dbg("\rSDRAM tested: ");
 	print_dbg_ulong(noErrors);
@@ -237,157 +231,120 @@ int main (void)
 	{
 			LED2_SET;
 	}
+
+ 	print_dbg("\n\n\rTWI Test:\n\r");
+	Log_Write("\n\n\rTWI Test:\n\r", 14);
+ 	twim_init();
+	print_dbg("\n\rInitialising the I2C Mux");
+	PCA9542A_Init();
 	
-	
-	for(j=0, i = 0; i < 20; i++)
+	print_dbg("Scanning all Channels\n\r");
+	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+	tmp = 0;
+	for(i = 0; i < 8; i++)
 	{
-		sdram[i] = i;
-		print_dbg("\n\rWritten data: ");
 		print_dbg_ulong(i);
-		print_dbg("  Read data: ");
-		print_dbg_ulong(sdram[i]);
+		print_dbg_char(' ');
+		for(j = 0; j < 16; j++)
+		{
+			int status = twim_probe(TWIM, tmp++);
+			if(status == STATUS_OK)
+			{
+				print_dbg_char('A');
+			}
+			else
+			{
+				print_dbg_char('-');
+			}
+			print_dbg_char(' ');
+		}
+		print_dbg("\n\r");
 	}
-	print_dbg("\n\rRead data from address 1: ");
-	print_dbg_ulong(sdram[1]);
 	
-	print_dbg("\n\rWait 10 seconds");
-	for(i = 0; i < 10; i++){
-		delay_s(1);
-		print_dbg_char('.');
-	}		
-	
-	for(j=0, i = 0; i < 20; i++)
-	{
-//		sdram[i] = i;
-		print_dbg("\n\rWritten data: ");
-		print_dbg_ulong(i);
-		print_dbg("  Read data: ");
-		print_dbg_ulong(sdram[i]);
-	}
-	print_dbg("\n\rRead data from address 1: ");
-	print_dbg_ulong(sdram[1]);
-// 	
-// 	print_dbg("\n\rWriting 16384 to sdram[1] and reading back:");
-// 	sdram[1] = 16384;
-// 	sdram[1] = 16384;
-// 	print_dbg_ulong(sdram[1]);
-// 	
-// 	print_dbg("\n\rReading sdram[1024]: ");
-// 	print_dbg_ulong(sdram[1024]);
-// 
-//  	print_dbg("\n\n\rTWI Test:\n\r");
-// 	Log_Write("\n\n\rTWI Test:\n\r", 14);
-//  	twim_init();
-// 	print_dbg("\n\rInitialising the I2C Mux");
-// 	PCA9542A_Init();
-// 	
-// 	print_dbg("Scanning all Channels\n\r");
-// 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
-// 	tmp = 0;
-// 	for(i = 0; i < 8; i++)
-// 	{
-// 		print_dbg_ulong(i);
-// 		print_dbg_char(' ');
-// 		for(j = 0; j < 16; j++)
-// 		{
-// 			int status = twim_probe(TWIM, tmp++);
-// 			if(status == STATUS_OK)
-// 			{
-// 				print_dbg_char('A');
-// 			}
-// 			else
-// 			{
-// 				print_dbg_char('-');
-// 			}
-// 			print_dbg_char(' ');
-// 		}
-// 		print_dbg("\n\r");
-// 	}
-// 	
-//   	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
-//  	Motor_Init();
-// 	Motors_Reset();//reset the motors to test them
-// 	while(Motors_Moving() == true)
-//		;//wait for the motors to finish moving
+  	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
+ 	Motor_Init();
+	Motors_Reset();//reset the motors to test them
+	while(Motors_Moving() == true)
+		;//wait for the motors to finish moving
 	
 	
 	//Channel 0
-// 	PCA9542A_Chan_Sel(I2C_CHANNEL_0);
-// 	print_dbg("\n\rScanning Channel 0\n\r");
-// 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
-// 	tmp = 0;
-// 	for(i = 0; i < 8; i++)
-// 	{
-// 		print_dbg_ulong(i);
-// 		print_dbg_char(' ');
-// 		for(j = 0; j < 16; j++)
-// 		{
-// 			int status = twim_probe(TWIM, tmp++);
-// 			if(status == STATUS_OK)
-// 			{
-// 				print_dbg_char('A');
-// 			}
-// 			else
-// 			{
-// 				print_dbg_char('-');
-// 			}
-// 			print_dbg_char(' ');
-// 		}
-// 		print_dbg("\n\r");
-// 	}
-// 	
-// 	//Channel 1
-// 	PCA9542A_Chan_Sel(I2C_CHANNEL_1);
-// 	print_dbg("\n\rScanning Channel 1\n\r");
-// 	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
-// 	tmp = 0;
-// 	for(i = 0; i < 8; i++)
-// 	{
-// 		print_dbg_ulong(i);
-// 		print_dbg_char(' ');
-// 		for(j = 0; j < 16; j++)
-// 		{
-// 			int status = twim_probe(TWIM, tmp++);
-// 			if(status == STATUS_OK)
-// 			{
-// 				print_dbg_char('A');
-// 			}
-// 			else
-// 			{
-// 				print_dbg_char('-');
-// 			}
-// 			print_dbg_char(' ');
-// 		}
-// 		print_dbg("\n\r");
-// 	}
-// 	
-// 	print_dbg("\n\rInitialising Cameras");
-// 	OV7670_Init();
-// 	FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
-// 	if(STATUS_OK == OV7670_Status.Error)
-// 	{
-// 		print_dbg("\n\rCamera Initialise Okay!");
-// 	}
-// 	else
-// 		print_dbg("\n\rCamara Initialise Fail.");
-// 		
-// 	print_dbg("\n\rTaking Photos");
+	PCA9542A_Chan_Sel(I2C_CHANNEL_0);
+	print_dbg("\n\rScanning Channel 0\n\r");
+	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+	tmp = 0;
+	for(i = 0; i < 8; i++)
+	{
+		print_dbg_ulong(i);
+		print_dbg_char(' ');
+		for(j = 0; j < 16; j++)
+		{
+			int status = twim_probe(TWIM, tmp++);
+			if(status == STATUS_OK)
+			{
+				print_dbg_char('A');
+			}
+			else
+			{
+				print_dbg_char('-');
+			}
+			print_dbg_char(' ');
+		}
+		print_dbg("\n\r");
+	}
+	
+	//Channel 1
+	PCA9542A_Chan_Sel(I2C_CHANNEL_1);
+	print_dbg("\n\rScanning Channel 1\n\r");
+	print_dbg("h 0 1 2 3 4 5 6 7 8 9 A B C D E F\n\r");
+	tmp = 0;
+	for(i = 0; i < 8; i++)
+	{
+		print_dbg_ulong(i);
+		print_dbg_char(' ');
+		for(j = 0; j < 16; j++)
+		{
+			int status = twim_probe(TWIM, tmp++);
+			if(status == STATUS_OK)
+			{
+				print_dbg_char('A');
+			}
+			else
+			{
+				print_dbg_char('-');
+			}
+			print_dbg_char(' ');
+		}
+		print_dbg("\n\r");
+	}
+	
+	print_dbg("\n\rInitialising Cameras");
+	OV7670_Init();
+	FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
+	if(STATUS_OK == OV7670_Status.Error)
+	{
+		print_dbg("\n\rCamera Initialise Okay!");
+	}
+	else
+		print_dbg("\n\rCamara Initialise Fail.");
+		
+	print_dbg("\n\rTaking Photos");
 
-// 	TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
-// 	while(Photos_Ready() == false)
-// 		;
-// 
-// 	if(Store_Both_Images() == true)
-// 		print_dbg("\n\rImages Stored Successfully!");
-// 		
-// 	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
-//  	Motor_Init();
-// 	Motors_Reset();//reset the motors to test them
-// 	while(Motors_Moving() == true)
-// 		;//wait for the motors to finish moving
-// 		
-// 	print_dbg("\n\rTest Complete!");
-// 	// Insert application code here, after the board has been initialized.
+	TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
+	while(Photos_Ready() == false)
+		;
+
+	if(Store_Both_Images() == true)
+		print_dbg("\n\rImages Stored Successfully!");
+		
+	print_dbg("\n\rMotor Testing:\n\rMotor Initialised");
+ 	Motor_Init();
+	Motors_Reset();//reset the motors to test them
+	while(Motors_Moving() == true)
+		;//wait for the motors to finish moving
+		
+	print_dbg("\n\rTest Complete!");
+	// Insert application code here, after the board has been initialized.
 	while(1)
 	{
 		TOGGLE();

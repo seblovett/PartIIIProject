@@ -76,7 +76,7 @@
 
 //! The minimal write recovery time for this SDRAM (0 to 15 SDRAM cycles).
 //! Unit: ns.
-#define SDRAM_TWR                       14
+#define SDRAM_TWR                       15
 
 //! The minimal row cycle time for this SDRAM (0 to 15 SDRAM cycles).
 //! ACTIVE-to-ACTIVE command delay.
