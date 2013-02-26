@@ -109,7 +109,7 @@ int main (void)
 	pcl_switch_to_osc(PCL_OSC0, FOSC0, OSC0_STARTUP);
 	
 	// Initialize interrupt vector table support.
-	//irq_initialize_vectors();
+	irq_initialize_vectors();
 
 	// Enable interrupts
 	sd_mmc_resources_init();
@@ -345,8 +345,9 @@ int main (void)
 		}
 		printf("\n\r");
 	}
-		
+
 	printf("\n\rInitialising Cameras");
+	OV7670_Init();
 	FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 	if(STATUS_OK == OV7670_Status.Error)
 	{

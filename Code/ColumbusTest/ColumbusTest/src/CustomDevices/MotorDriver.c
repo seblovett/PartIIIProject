@@ -183,7 +183,7 @@ void Analogue_Comparator_Init()
 	
 	gpio_enable_module(ACIFA_GPIO_MAP, sizeof(ACIFA_GPIO_MAP) / sizeof(ACIFA_GPIO_MAP[0]));
 	//Make it an interrupt
-	Disable_global_interrupt();
+//	Disable_global_interrupt();
 	
 	//INTC_init_interrupts();
 	
@@ -226,7 +226,7 @@ void Analogue_Comparator_Init()
 	
 	INTC_register_interrupt(&ACInterruptHandler,AVR32_ACIFA1_IRQ ,AVR32_INTC_INT0);
 	
-	Enable_global_interrupt();
+//	Enable_global_interrupt();
 }
 void Motor_Start(int Motors)
 {

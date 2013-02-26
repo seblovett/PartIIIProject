@@ -182,7 +182,7 @@ void OV7670_Init()
 	eic_options.eic_line = VSYNC_1_LINE;
 	//eic_options.eic_line = VSYNC_0_LINE;
 	
-	Disable_global_interrupt();
+	//Disable_global_interrupt();
 	gpio_enable_module_pin(VSYNC_1_PIN, VSYNC_1_FUNCTION);
 	gpio_enable_module_pin(VSYNC_0_PIN, VSYNC_0_FUNCTION);
 	
@@ -198,8 +198,8 @@ void OV7670_Init()
 	//Enable interrupt on VSYNC1
 	eic_enable_line(&AVR32_EIC, VSYNC_1_LINE);
 	eic_enable_line(&AVR32_EIC, (VSYNC_0_LINE));
- 	VSYNC_1_ENABLE_INTERRUPT;
- 	VSYNC_0_ENABLE_INTERRUPT;
+ //	VSYNC_1_ENABLE_INTERRUPT;
+ //	VSYNC_0_ENABLE_INTERRUPT;
 	
 	FIFO_Init();
 	//Enable_global_interrupt();
@@ -275,8 +275,7 @@ void FIFO_Reset(uint8_t CameraID)
 
 int TakePhoto(uint8_t Cameras)
 {
-	VSYNC_0_ENABLE_INTERRUPT;
-	VSYNC_1_ENABLE_INTERRUPT;
+	
 	//Only want to take pictures on cameras found
 	if(((OV7670_Status.VSYNC0_State != IDLE) || !OV7670_Status.Camera_0_Found) && ((OV7670_Status.VSYNC1_State != IDLE) || !OV7670_Status.Camera_1_Found))
 		return CAMERAS_BUSY; //wait for cameras to be idle if they are found
@@ -286,7 +285,8 @@ int TakePhoto(uint8_t Cameras)
 		
 	if(Cameras & CAMERA_RIGHT)
 		OV7670_Status.VSYNC1_State = TAKE_PHOTO;
-	
+	VSYNC_0_ENABLE_INTERRUPT;
+	VSYNC_1_ENABLE_INTERRUPT;
 	return TAKING_PHOTO;
 	
 }
