@@ -1,0 +1,3093 @@
+
+ColumbusTest.elf:     file format elf32-avr32
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .reset        00002004  80000000  80000000  00000400  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .rela.got     00000000  80002004  80002004  00002404  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .text         00001b6e  80002004  80002004  00002404  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .exception    00000200  80003c00  80003c00  00004000  2**9
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  4 .rodata       00000370  80003e00  80003e00  00004200  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .data         00000008  00000004  80004170  00004804  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .balign       00000004  0000000c  80004178  0000480c  2**0
+                  ALLOC
+  7 .bss          00000450  00000010  80004178  00004810  2**2
+                  ALLOC
+  8 .comment      00000030  00000000  00000000  0000480c  2**0
+                  CONTENTS, READONLY
+  9 .debug_aranges 00000020  00000000  00000000  0000483c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_pubnames 0000001d  00000000  00000000  0000485c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_info   000000cd  00000000  00000000  00004879  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_abbrev 00000085  00000000  00000000  00004946  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_line   0000017c  00000000  00000000  000049cb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_frame  00001e70  00000000  00000000  00004b48  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_str    000000c2  00000000  00000000  000069b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 16 .stack        00001000  0000f000  0000f000  00000400  2**0
+                  ALLOC
+ 17 .debug_ranges 00000018  00000000  00000000  00006a7a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .reset:
+
+80000000 <_trampoline>:
+80000000:	e0 8f 10 00 	bral	80002000 <program_start>
+	...
+
+80002000 <program_start>:
+80002000:	fe cf e9 fc 	sub	pc,pc,-5636
+
+Disassembly of section .text:
+
+80002004 <sd_mmc_spi_get_capacity>:
+80002004:	d4 21       	pushm	r4-r7,lr
+80002006:	4b e9       	lddpc	r9,800020fc <sd_mmc_spi_get_capacity+0xf8>
+80002008:	4b e8       	lddpc	r8,80002100 <sd_mmc_spi_get_capacity+0xfc>
+8000200a:	13 8e       	ld.ub	lr,r9[0x0]
+8000200c:	11 da       	ld.ub	r10,r8[0x5]
+8000200e:	f1 35 00 08 	ld.ub	r5,r8[8]
+80002012:	f1 37 00 09 	ld.ub	r7,r8[9]
+80002016:	11 f6       	ld.ub	r6,r8[0x7]
+80002018:	4b bc       	lddpc	r12,80002104 <sd_mmc_spi_get_capacity+0x100>
+8000201a:	4b cb       	lddpc	r11,80002108 <sd_mmc_spi_get_capacity+0x104>
+8000201c:	4b c9       	lddpc	r9,8000210c <sd_mmc_spi_get_capacity+0x108>
+8000201e:	30 34       	mov	r4,3
+80002020:	e8 0e 18 00 	cp.b	lr,r4
+80002024:	c1 f1       	brne	80002062 <sd_mmc_spi_get_capacity+0x5e>
+80002026:	ef e5 10 87 	or	r7,r7,r5<<0x8
+8000202a:	eb d6 c0 06 	bfextu	r5,r6,0x0,0x6
+8000202e:	ef e5 11 05 	or	r5,r7,r5<<0x10
+80002032:	2f f5       	sub	r5,-1
+80002034:	ea 08 16 0d 	lsr	r8,r5,0xd
+80002038:	b3 75       	lsl	r5,0x13
+8000203a:	10 97       	mov	r7,r8
+8000203c:	0a 96       	mov	r6,r5
+8000203e:	f8 e7 00 00 	st.d	r12[0],r6
+80002042:	f1 d8 c0 09 	bfextu	r8,r8,0x0,0x9
+80002046:	b6 08       	st.h	r11[0x0],r8
+80002048:	f8 e6 00 00 	ld.d	r6,r12[0]
+8000204c:	96 0a       	ld.sh	r10,r11[0x0]
+8000204e:	0c 98       	mov	r8,r6
+80002050:	b7 7a       	lsl	r10,0x17
+80002052:	a9 98       	lsr	r8,0x9
+80002054:	0e 95       	mov	r5,r7
+80002056:	f1 e5 11 78 	or	r8,r8,r5<<0x17
+8000205a:	20 18       	sub	r8,1
+8000205c:	14 08       	add	r8,r10
+8000205e:	93 08       	st.w	r9[0x0],r8
+80002060:	c3 b8       	rjmp	800020d6 <sd_mmc_spi_get_capacity+0xd2>
+80002062:	a7 85       	lsr	r5,0x6
+80002064:	11 e4       	ld.ub	r4,r8[0x6]
+80002066:	ea 06 00 26 	add	r6,r5,r6<<0x2
+8000206a:	f1 38 00 0a 	ld.ub	r8,r8[10]
+8000206e:	f0 05 16 07 	lsr	r5,r8,0x7
+80002072:	ef d7 c0 02 	bfextu	r7,r7,0x0,0x2
+80002076:	e9 d4 c0 02 	bfextu	r4,r4,0x0,0x2
+8000207a:	ea 07 00 17 	add	r7,r5,r7<<0x1
+8000207e:	ab 64       	lsl	r4,0xa
+80002080:	2f e7       	sub	r7,-2
+80002082:	08 06       	add	r6,r4
+80002084:	f5 da c0 04 	bfextu	r10,r10,0x0,0x4
+80002088:	2f f6       	sub	r6,-1
+8000208a:	ec 07 09 47 	lsl	r7,r6,r7
+8000208e:	20 17       	sub	r7,1
+80002090:	93 07       	st.w	r9[0x0],r7
+80002092:	72 05       	ld.w	r5,r9[0x0]
+80002094:	2f f5       	sub	r5,-1
+80002096:	ea 0a 09 45 	lsl	r5,r5,r10
+8000209a:	0a 96       	mov	r6,r5
+8000209c:	30 05       	mov	r5,0
+8000209e:	0a 97       	mov	r7,r5
+800020a0:	f8 e7 00 00 	st.d	r12[0],r6
+800020a4:	30 0c       	mov	r12,0
+800020a6:	b6 0c       	st.h	r11[0x0],r12
+800020a8:	30 9b       	mov	r11,9
+800020aa:	f6 0a 18 00 	cp.b	r10,r11
+800020ae:	e0 88 00 07 	brls	800020bc <sd_mmc_spi_get_capacity+0xb8>
+800020b2:	72 0b       	ld.w	r11,r9[0x0]
+800020b4:	20 9a       	sub	r10,9
+800020b6:	f6 0a 09 4a 	lsl	r10,r11,r10
+800020ba:	93 0a       	st.w	r9[0x0],r10
+800020bc:	58 0e       	cp.w	lr,0
+800020be:	c0 c1       	brne	800020d6 <sd_mmc_spi_get_capacity+0xd2>
+800020c0:	f5 d8 c0 02 	bfextu	r10,r8,0x0,0x2
+800020c4:	48 f9       	lddpc	r9,80002100 <sd_mmc_spi_get_capacity+0xfc>
+800020c6:	f1 d8 c0 45 	bfextu	r8,r8,0x2,0x5
+800020ca:	f3 39 00 0b 	ld.ub	r9,r9[11]
+800020ce:	a5 99       	lsr	r9,0x5
+800020d0:	f3 ea 10 39 	or	r9,r9,r10<<0x3
+800020d4:	c0 c8       	rjmp	800020ec <sd_mmc_spi_get_capacity+0xe8>
+800020d6:	48 b9       	lddpc	r9,80002100 <sd_mmc_spi_get_capacity+0xfc>
+800020d8:	f3 3a 00 0b 	ld.ub	r10,r9[11]
+800020dc:	f3 38 00 0a 	ld.ub	r8,r9[10]
+800020e0:	a7 9a       	lsr	r10,0x7
+800020e2:	f1 d8 c0 06 	bfextu	r8,r8,0x0,0x6
+800020e6:	30 09       	mov	r9,0
+800020e8:	f4 08 00 18 	add	r8,r10,r8<<0x1
+800020ec:	2f f9       	sub	r9,-1
+800020ee:	2f f8       	sub	r8,-1
+800020f0:	48 8a       	lddpc	r10,80002110 <sd_mmc_spi_get_capacity+0x10c>
+800020f2:	f2 08 02 48 	mul	r8,r9,r8
+800020f6:	b4 08       	st.h	r10[0x0],r8
+800020f8:	d8 22       	popm	r4-r7,pc
+800020fa:	d7 03       	nop
+800020fc:	00 00       	add	r0,r0
+800020fe:	04 0e       	add	lr,r2
+80002100:	00 00       	add	r0,r0
+80002102:	04 10       	sub	r0,r2
+80002104:	00 00       	add	r0,r0
+80002106:	03 fc       	ld.ub	r12,r1[0x7]
+80002108:	00 00       	add	r0,r0
+8000210a:	04 04       	add	r4,r2
+8000210c:	00 00       	add	r0,r0
+8000210e:	04 08       	add	r8,r2
+80002110:	00 00       	add	r0,r0
+80002112:	04 06       	add	r6,r2
+
+80002114 <sd_mmc_spi_write_close>:
+80002114:	5e fc       	retal	r12
+80002116:	d7 03       	nop
+
+80002118 <sd_mmc_spi_send_and_read>:
+80002118:	d4 01       	pushm	lr
+8000211a:	20 1d       	sub	sp,4
+8000211c:	18 9b       	mov	r11,r12
+8000211e:	fe 7c 34 00 	mov	r12,-52224
+80002122:	e0 a0 09 54 	rcall	800033ca <spi_write>
+80002126:	fa cb ff fe 	sub	r11,sp,-2
+8000212a:	fe 7c 34 00 	mov	r12,-52224
+8000212e:	e0 a0 09 5c 	rcall	800033e6 <spi_read>
+80002132:	58 1c       	cp.w	r12,1
+80002134:	c0 41       	brne	8000213c <sd_mmc_spi_send_and_read+0x24>
+80002136:	e0 6c 00 ff 	mov	r12,255
+8000213a:	c0 28       	rjmp	8000213e <sd_mmc_spi_send_and_read+0x26>
+8000213c:	1b bc       	ld.ub	r12,sp[0x3]
+8000213e:	2f fd       	sub	sp,-4
+80002140:	d8 02       	popm	pc
+80002142:	d7 03       	nop
+
+80002144 <sd_mmc_spi_wait_not_busy>:
+80002144:	d4 21       	pushm	r4-r7,lr
+80002146:	30 0b       	mov	r11,0
+80002148:	fe 7c 34 00 	mov	r12,-52224
+8000214c:	48 f5       	lddpc	r5,80002188 <sd_mmc_spi_wait_not_busy+0x44>
+8000214e:	e0 a0 08 b0 	rcall	800032ae <spi_selectChip>
+80002152:	3f f6       	mov	r6,-1
+80002154:	30 07       	mov	r7,0
+80002156:	c0 b8       	rjmp	8000216c <sd_mmc_spi_wait_not_busy+0x28>
+80002158:	2f f7       	sub	r7,-1
+8000215a:	e2 57 0d 40 	cp.w	r7,200000
+8000215e:	c0 71       	brne	8000216c <sd_mmc_spi_wait_not_busy+0x28>
+80002160:	30 0b       	mov	r11,0
+80002162:	fe 7c 34 00 	mov	r12,-52224
+80002166:	e0 a0 08 cc 	rcall	800032fe <spi_unselectChip>
+8000216a:	d8 2a       	popm	r4-r7,pc,r12=0
+8000216c:	e0 6c 00 ff 	mov	r12,255
+80002170:	cd 4f       	rcall	80002118 <sd_mmc_spi_send_and_read>
+80002172:	aa 8c       	st.b	r5[0x0],r12
+80002174:	ec 0c 18 00 	cp.b	r12,r6
+80002178:	cf 01       	brne	80002158 <sd_mmc_spi_wait_not_busy+0x14>
+8000217a:	30 0b       	mov	r11,0
+8000217c:	fe 7c 34 00 	mov	r12,-52224
+80002180:	e0 a0 08 bf 	rcall	800032fe <spi_unselectChip>
+80002184:	da 2a       	popm	r4-r7,pc,r12=1
+80002186:	d7 03       	nop
+80002188:	00 00       	add	r0,r0
+8000218a:	04 20       	rsub	r0,r2
+
+8000218c <sd_mmc_spi_write_open>:
+8000218c:	d4 01       	pushm	lr
+8000218e:	48 38       	lddpc	r8,80002198 <sd_mmc_spi_write_open+0xc>
+80002190:	a9 7c       	lsl	r12,0x9
+80002192:	91 0c       	st.w	r8[0x0],r12
+80002194:	cd 8f       	rcall	80002144 <sd_mmc_spi_wait_not_busy>
+80002196:	d8 02       	popm	pc
+80002198:	00 00       	add	r0,r0
+8000219a:	00 10       	sub	r0,r0
+
+8000219c <sd_mmc_spi_read_close>:
+8000219c:	d4 01       	pushm	lr
+8000219e:	cd 3f       	rcall	80002144 <sd_mmc_spi_wait_not_busy>
+800021a0:	d8 02       	popm	pc
+800021a2:	d7 03       	nop
+
+800021a4 <sd_mmc_spi_read_open>:
+800021a4:	d4 01       	pushm	lr
+800021a6:	48 38       	lddpc	r8,800021b0 <sd_mmc_spi_read_open+0xc>
+800021a8:	a9 7c       	lsl	r12,0x9
+800021aa:	91 0c       	st.w	r8[0x0],r12
+800021ac:	cc cf       	rcall	80002144 <sd_mmc_spi_wait_not_busy>
+800021ae:	d8 02       	popm	pc
+800021b0:	00 00       	add	r0,r0
+800021b2:	00 10       	sub	r0,r0
+
+800021b4 <sd_mmc_spi_command>:
+800021b4:	d4 21       	pushm	r4-r7,lr
+800021b6:	16 97       	mov	r7,r11
+800021b8:	18 96       	mov	r6,r12
+800021ba:	e0 6b 00 ff 	mov	r11,255
+800021be:	fe 7c 34 00 	mov	r12,-52224
+800021c2:	e0 a0 09 04 	rcall	800033ca <spi_write>
+800021c6:	fe 7c 34 00 	mov	r12,-52224
+800021ca:	0c 9b       	mov	r11,r6
+800021cc:	a7 ab       	sbr	r11,0x6
+800021ce:	5c 5b       	castu.b	r11
+800021d0:	e0 a0 08 fd 	rcall	800033ca <spi_write>
+800021d4:	ee 0b 16 18 	lsr	r11,r7,0x18
+800021d8:	fe 7c 34 00 	mov	r12,-52224
+800021dc:	e0 a0 08 f7 	rcall	800033ca <spi_write>
+800021e0:	ee 0b 16 10 	lsr	r11,r7,0x10
+800021e4:	fe 7c 34 00 	mov	r12,-52224
+800021e8:	e0 a0 08 f1 	rcall	800033ca <spi_write>
+800021ec:	f7 d7 c1 10 	bfextu	r11,r7,0x8,0x10
+800021f0:	fe 7c 34 00 	mov	r12,-52224
+800021f4:	e0 a0 08 eb 	rcall	800033ca <spi_write>
+800021f8:	0e 9b       	mov	r11,r7
+800021fa:	fe 7c 34 00 	mov	r12,-52224
+800021fe:	5c 7b       	castu.h	r11
+80002200:	e0 a0 08 e5 	rcall	800033ca <spi_write>
+80002204:	30 08       	mov	r8,0
+80002206:	f0 06 18 00 	cp.b	r6,r8
+8000220a:	c0 60       	breq	80002216 <sd_mmc_spi_command+0x62>
+8000220c:	30 88       	mov	r8,8
+8000220e:	f0 06 18 00 	cp.b	r6,r8
+80002212:	c0 81       	brne	80002222 <sd_mmc_spi_command+0x6e>
+80002214:	c0 48       	rjmp	8000221c <sd_mmc_spi_command+0x68>
+80002216:	e0 6b 00 95 	mov	r11,149
+8000221a:	c0 68       	rjmp	80002226 <sd_mmc_spi_command+0x72>
+8000221c:	e0 6b 00 87 	mov	r11,135
+80002220:	c0 38       	rjmp	80002226 <sd_mmc_spi_command+0x72>
+80002222:	e0 6b 00 ff 	mov	r11,255
+80002226:	fe 7c 34 00 	mov	r12,-52224
+8000222a:	e0 a0 08 d0 	rcall	800033ca <spi_write>
+8000222e:	48 b8       	lddpc	r8,80002258 <sd_mmc_spi_command+0xa4>
+80002230:	3f f5       	mov	r5,-1
+80002232:	10 94       	mov	r4,r8
+80002234:	b0 85       	st.b	r8[0x0],r5
+80002236:	30 07       	mov	r7,0
+80002238:	30 b6       	mov	r6,11
+8000223a:	c0 68       	rjmp	80002246 <sd_mmc_spi_command+0x92>
+8000223c:	2f f7       	sub	r7,-1
+8000223e:	5c 57       	castu.b	r7
+80002240:	ec 07 18 00 	cp.b	r7,r6
+80002244:	c0 80       	breq	80002254 <sd_mmc_spi_command+0xa0>
+80002246:	e0 6c 00 ff 	mov	r12,255
+8000224a:	c6 7f       	rcall	80002118 <sd_mmc_spi_send_and_read>
+8000224c:	a8 8c       	st.b	r4[0x0],r12
+8000224e:	ea 0c 18 00 	cp.b	r12,r5
+80002252:	cf 50       	breq	8000223c <sd_mmc_spi_command+0x88>
+80002254:	d8 22       	popm	r4-r7,pc
+80002256:	d7 03       	nop
+80002258:	00 00       	add	r0,r0
+8000225a:	04 20       	rsub	r0,r2
+
+8000225c <sd_mmc_spi_send_command>:
+8000225c:	d4 21       	pushm	r4-r7,lr
+8000225e:	18 97       	mov	r7,r12
+80002260:	16 96       	mov	r6,r11
+80002262:	fe 7c 34 00 	mov	r12,-52224
+80002266:	30 0b       	mov	r11,0
+80002268:	e0 a0 08 23 	rcall	800032ae <spi_selectChip>
+8000226c:	0c 9b       	mov	r11,r6
+8000226e:	0e 9c       	mov	r12,r7
+80002270:	ca 2f       	rcall	800021b4 <sd_mmc_spi_command>
+80002272:	30 0b       	mov	r11,0
+80002274:	48 47       	lddpc	r7,80002284 <sd_mmc_spi_send_command+0x28>
+80002276:	ae 8c       	st.b	r7[0x0],r12
+80002278:	fe 7c 34 00 	mov	r12,-52224
+8000227c:	e0 a0 08 41 	rcall	800032fe <spi_unselectChip>
+80002280:	0f 8c       	ld.ub	r12,r7[0x0]
+80002282:	d8 22       	popm	r4-r7,pc
+80002284:	00 00       	add	r0,r0
+80002286:	04 20       	rsub	r0,r2
+
+80002288 <sd_mmc_spi_check_presence>:
+80002288:	d4 21       	pushm	r4-r7,lr
+8000228a:	49 57       	lddpc	r7,800022dc <sd_mmc_spi_check_presence+0x54>
+8000228c:	30 06       	mov	r6,0
+8000228e:	0f 88       	ld.ub	r8,r7[0x0]
+80002290:	ec 08 18 00 	cp.b	r8,r6
+80002294:	c1 91       	brne	800022c6 <sd_mmc_spi_check_presence+0x3e>
+80002296:	30 07       	mov	r7,0
+80002298:	49 24       	lddpc	r4,800022e0 <sd_mmc_spi_check_presence+0x58>
+8000229a:	30 15       	mov	r5,1
+8000229c:	30 b6       	mov	r6,11
+8000229e:	c0 c8       	rjmp	800022b6 <sd_mmc_spi_check_presence+0x2e>
+800022a0:	e0 6b 00 ff 	mov	r11,255
+800022a4:	fe 7c 34 00 	mov	r12,-52224
+800022a8:	e0 a0 08 91 	rcall	800033ca <spi_write>
+800022ac:	2f f7       	sub	r7,-1
+800022ae:	5c 87       	casts.h	r7
+800022b0:	ec 07 19 00 	cp.h	r7,r6
+800022b4:	c1 10       	breq	800022d6 <sd_mmc_spi_check_presence+0x4e>
+800022b6:	30 0b       	mov	r11,0
+800022b8:	16 9c       	mov	r12,r11
+800022ba:	cd 1f       	rcall	8000225c <sd_mmc_spi_send_command>
+800022bc:	a8 8c       	st.b	r4[0x0],r12
+800022be:	ea 0c 18 00 	cp.b	r12,r5
+800022c2:	ce f1       	brne	800022a0 <sd_mmc_spi_check_presence+0x18>
+800022c4:	c0 a8       	rjmp	800022d8 <sd_mmc_spi_check_presence+0x50>
+800022c6:	30 0b       	mov	r11,0
+800022c8:	33 bc       	mov	r12,59
+800022ca:	cc 9f       	rcall	8000225c <sd_mmc_spi_send_command>
+800022cc:	48 58       	lddpc	r8,800022e0 <sd_mmc_spi_check_presence+0x58>
+800022ce:	b0 8c       	st.b	r8[0x0],r12
+800022d0:	58 0c       	cp.w	r12,0
+800022d2:	c0 30       	breq	800022d8 <sd_mmc_spi_check_presence+0x50>
+800022d4:	ae 86       	st.b	r7[0x0],r6
+800022d6:	d8 2a       	popm	r4-r7,pc,r12=0
+800022d8:	da 2a       	popm	r4-r7,pc,r12=1
+800022da:	d7 03       	nop
+800022dc:	00 00       	add	r0,r0
+800022de:	00 28       	rsub	r8,r0
+800022e0:	00 00       	add	r0,r0
+800022e2:	04 20       	rsub	r0,r2
+
+800022e4 <sd_mmc_spi_write_sector_from_ram>:
+800022e4:	d4 21       	pushm	r4-r7,lr
+800022e6:	18 97       	mov	r7,r12
+800022e8:	c2 ef       	rcall	80002144 <sd_mmc_spi_wait_not_busy>
+800022ea:	c7 80       	breq	800023da <sd_mmc_spi_write_sector_from_ram+0xf6>
+800022ec:	30 0b       	mov	r11,0
+800022ee:	fe 7c 34 00 	mov	r12,-52224
+800022f2:	e0 a0 07 de 	rcall	800032ae <spi_selectChip>
+800022f6:	4b a8       	lddpc	r8,800023dc <sd_mmc_spi_write_sector_from_ram+0xf8>
+800022f8:	4b a6       	lddpc	r6,800023e0 <sd_mmc_spi_write_sector_from_ram+0xfc>
+800022fa:	11 8a       	ld.ub	r10,r8[0x0]
+800022fc:	30 39       	mov	r9,3
+800022fe:	4b a8       	lddpc	r8,800023e4 <sd_mmc_spi_write_sector_from_ram+0x100>
+80002300:	f2 0a 18 00 	cp.b	r10,r9
+80002304:	c0 41       	brne	8000230c <sd_mmc_spi_write_sector_from_ram+0x28>
+80002306:	70 0b       	ld.w	r11,r8[0x0]
+80002308:	a9 9b       	lsr	r11,0x9
+8000230a:	c0 28       	rjmp	8000230e <sd_mmc_spi_write_sector_from_ram+0x2a>
+8000230c:	70 0b       	ld.w	r11,r8[0x0]
+8000230e:	31 8c       	mov	r12,24
+80002310:	c5 2f       	rcall	800021b4 <sd_mmc_spi_command>
+80002312:	4b 48       	lddpc	r8,800023e0 <sd_mmc_spi_write_sector_from_ram+0xfc>
+80002314:	ac 8c       	st.b	r6[0x0],r12
+80002316:	11 89       	ld.ub	r9,r8[0x0]
+80002318:	30 08       	mov	r8,0
+8000231a:	f0 09 18 00 	cp.b	r9,r8
+8000231e:	c3 71       	brne	8000238c <sd_mmc_spi_write_sector_from_ram+0xa8>
+80002320:	e0 6b 00 ff 	mov	r11,255
+80002324:	fe 7c 34 00 	mov	r12,-52224
+80002328:	e0 a0 08 51 	rcall	800033ca <spi_write>
+8000232c:	e0 6b 00 fe 	mov	r11,254
+80002330:	fe 7c 34 00 	mov	r12,-52224
+80002334:	ee c6 fe 00 	sub	r6,r7,-512
+80002338:	e0 a0 08 49 	rcall	800033ca <spi_write>
+8000233c:	0f 3b       	ld.ub	r11,r7++
+8000233e:	fe 7c 34 00 	mov	r12,-52224
+80002342:	e0 a0 08 44 	rcall	800033ca <spi_write>
+80002346:	0c 37       	cp.w	r7,r6
+80002348:	cf a1       	brne	8000233c <sd_mmc_spi_write_sector_from_ram+0x58>
+8000234a:	e0 6b 00 ff 	mov	r11,255
+8000234e:	fe 7c 34 00 	mov	r12,-52224
+80002352:	e0 a0 08 3c 	rcall	800033ca <spi_write>
+80002356:	e0 6b 00 ff 	mov	r11,255
+8000235a:	fe 7c 34 00 	mov	r12,-52224
+8000235e:	e0 a0 08 36 	rcall	800033ca <spi_write>
+80002362:	e0 6c 00 ff 	mov	r12,255
+80002366:	cd 9e       	rcall	80002118 <sd_mmc_spi_send_and_read>
+80002368:	49 e8       	lddpc	r8,800023e0 <sd_mmc_spi_write_sector_from_ram+0xfc>
+8000236a:	b0 8c       	st.b	r8[0x0],r12
+8000236c:	f9 dc c0 05 	bfextu	r12,r12,0x0,0x5
+80002370:	58 5c       	cp.w	r12,5
+80002372:	c1 30       	breq	80002398 <sd_mmc_spi_write_sector_from_ram+0xb4>
+80002374:	e0 6b 00 ff 	mov	r11,255
+80002378:	fe 7c 34 00 	mov	r12,-52224
+8000237c:	e0 a0 08 27 	rcall	800033ca <spi_write>
+80002380:	e0 6b 00 ff 	mov	r11,255
+80002384:	fe 7c 34 00 	mov	r12,-52224
+80002388:	e0 a0 08 21 	rcall	800033ca <spi_write>
+8000238c:	30 0b       	mov	r11,0
+8000238e:	fe 7c 34 00 	mov	r12,-52224
+80002392:	e0 a0 07 b6 	rcall	800032fe <spi_unselectChip>
+80002396:	d8 2a       	popm	r4-r7,pc,r12=0
+80002398:	e0 6b 00 ff 	mov	r11,255
+8000239c:	fe 7c 34 00 	mov	r12,-52224
+800023a0:	e0 a0 08 15 	rcall	800033ca <spi_write>
+800023a4:	e0 6b 00 ff 	mov	r11,255
+800023a8:	fe 7c 34 00 	mov	r12,-52224
+800023ac:	e0 a0 08 0f 	rcall	800033ca <spi_write>
+800023b0:	30 0b       	mov	r11,0
+800023b2:	fe 7c 34 00 	mov	r12,-52224
+800023b6:	e0 a0 07 a4 	rcall	800032fe <spi_unselectChip>
+800023ba:	48 b8       	lddpc	r8,800023e4 <sd_mmc_spi_write_sector_from_ram+0x100>
+800023bc:	30 07       	mov	r7,0
+800023be:	70 09       	ld.w	r9,r8[0x0]
+800023c0:	30 a6       	mov	r6,10
+800023c2:	f2 c9 fe 00 	sub	r9,r9,-512
+800023c6:	91 09       	st.w	r8[0x0],r9
+800023c8:	c0 68       	rjmp	800023d4 <sd_mmc_spi_write_sector_from_ram+0xf0>
+800023ca:	2f f7       	sub	r7,-1
+800023cc:	5c 87       	casts.h	r7
+800023ce:	ec 07 19 00 	cp.h	r7,r6
+800023d2:	c0 40       	breq	800023da <sd_mmc_spi_write_sector_from_ram+0xf6>
+800023d4:	cb 8e       	rcall	80002144 <sd_mmc_spi_wait_not_busy>
+800023d6:	cf a0       	breq	800023ca <sd_mmc_spi_write_sector_from_ram+0xe6>
+800023d8:	da 2a       	popm	r4-r7,pc,r12=1
+800023da:	d8 2a       	popm	r4-r7,pc,r12=0
+800023dc:	00 00       	add	r0,r0
+800023de:	04 0e       	add	lr,r2
+800023e0:	00 00       	add	r0,r0
+800023e2:	04 20       	rsub	r0,r2
+800023e4:	00 00       	add	r0,r0
+800023e6:	00 10       	sub	r0,r0
+
+800023e8 <sd_mmc_spi_check_hc>:
+800023e8:	d4 21       	pushm	r4-r7,lr
+800023ea:	ca de       	rcall	80002144 <sd_mmc_spi_wait_not_busy>
+800023ec:	c1 20       	breq	80002410 <sd_mmc_spi_check_hc+0x28>
+800023ee:	30 0b       	mov	r11,0
+800023f0:	fe 7c 34 00 	mov	r12,-52224
+800023f4:	e0 a0 07 5d 	rcall	800032ae <spi_selectChip>
+800023f8:	30 0b       	mov	r11,0
+800023fa:	49 37       	lddpc	r7,80002444 <sd_mmc_spi_check_hc+0x5c>
+800023fc:	33 ac       	mov	r12,58
+800023fe:	cd be       	rcall	800021b4 <sd_mmc_spi_command>
+80002400:	ae 8c       	st.b	r7[0x0],r12
+80002402:	18 95       	mov	r5,r12
+80002404:	c0 70       	breq	80002412 <sd_mmc_spi_check_hc+0x2a>
+80002406:	30 0b       	mov	r11,0
+80002408:	fe 7c 34 00 	mov	r12,-52224
+8000240c:	e0 a0 07 79 	rcall	800032fe <spi_unselectChip>
+80002410:	dc 2a       	popm	r4-r7,pc,r12=-1
+80002412:	e0 6c 00 ff 	mov	r12,255
+80002416:	c8 1e       	rcall	80002118 <sd_mmc_spi_send_and_read>
+80002418:	18 96       	mov	r6,r12
+8000241a:	e0 6c 00 ff 	mov	r12,255
+8000241e:	c7 de       	rcall	80002118 <sd_mmc_spi_send_and_read>
+80002420:	ae 8c       	st.b	r7[0x0],r12
+80002422:	e0 6c 00 ff 	mov	r12,255
+80002426:	c7 9e       	rcall	80002118 <sd_mmc_spi_send_and_read>
+80002428:	ae 8c       	st.b	r7[0x0],r12
+8000242a:	e0 6c 00 ff 	mov	r12,255
+8000242e:	c7 5e       	rcall	80002118 <sd_mmc_spi_send_and_read>
+80002430:	0a 9b       	mov	r11,r5
+80002432:	ae 8c       	st.b	r7[0x0],r12
+80002434:	fe 7c 34 00 	mov	r12,-52224
+80002438:	e0 a0 07 63 	rcall	800032fe <spi_unselectChip>
+8000243c:	f9 d6 c0 c1 	bfextu	r12,r6,0x6,0x1
+80002440:	d8 22       	popm	r4-r7,pc
+80002442:	d7 03       	nop
+80002444:	00 00       	add	r0,r0
+80002446:	04 20       	rsub	r0,r2
+
+80002448 <sd_mmc_spi_get_if>:
+80002448:	d4 21       	pushm	r4-r7,lr
+8000244a:	c7 de       	rcall	80002144 <sd_mmc_spi_wait_not_busy>
+8000244c:	c3 20       	breq	800024b0 <sd_mmc_spi_get_if+0x68>
+8000244e:	30 0b       	mov	r11,0
+80002450:	fe 7c 34 00 	mov	r12,-52224
+80002454:	e0 a0 07 2d 	rcall	800032ae <spi_selectChip>
+80002458:	e0 6b 01 aa 	mov	r11,426
+8000245c:	49 97       	lddpc	r7,800024c0 <sd_mmc_spi_get_if+0x78>
+8000245e:	30 8c       	mov	r12,8
+80002460:	ca ae       	rcall	800021b4 <sd_mmc_spi_command>
+80002462:	ae 8c       	st.b	r7[0x0],r12
+80002464:	18 96       	mov	r6,r12
+80002466:	e2 16 00 04 	andl	r6,0x4,COH
+8000246a:	c0 70       	breq	80002478 <sd_mmc_spi_get_if+0x30>
+8000246c:	30 0b       	mov	r11,0
+8000246e:	fe 7c 34 00 	mov	r12,-52224
+80002472:	e0 a0 07 46 	rcall	800032fe <spi_unselectChip>
+80002476:	d8 2a       	popm	r4-r7,pc,r12=0
+80002478:	e0 6c 00 ff 	mov	r12,255
+8000247c:	c4 ee       	rcall	80002118 <sd_mmc_spi_send_and_read>
+8000247e:	ae 8c       	st.b	r7[0x0],r12
+80002480:	e0 6c 00 ff 	mov	r12,255
+80002484:	c4 ae       	rcall	80002118 <sd_mmc_spi_send_and_read>
+80002486:	ae 8c       	st.b	r7[0x0],r12
+80002488:	e0 6c 00 ff 	mov	r12,255
+8000248c:	c4 6e       	rcall	80002118 <sd_mmc_spi_send_and_read>
+8000248e:	ae 8c       	st.b	r7[0x0],r12
+80002490:	f7 dc c0 01 	bfextu	r11,r12,0x0,0x1
+80002494:	c0 a0       	breq	800024a8 <sd_mmc_spi_get_if+0x60>
+80002496:	e0 6c 00 ff 	mov	r12,255
+8000249a:	c3 fe       	rcall	80002118 <sd_mmc_spi_send_and_read>
+8000249c:	ae 8c       	st.b	r7[0x0],r12
+8000249e:	3a a8       	mov	r8,-86
+800024a0:	f0 0c 18 00 	cp.b	r12,r8
+800024a4:	c0 70       	breq	800024b2 <sd_mmc_spi_get_if+0x6a>
+800024a6:	0c 9b       	mov	r11,r6
+800024a8:	fe 7c 34 00 	mov	r12,-52224
+800024ac:	e0 a0 07 29 	rcall	800032fe <spi_unselectChip>
+800024b0:	dc 2a       	popm	r4-r7,pc,r12=-1
+800024b2:	0c 9b       	mov	r11,r6
+800024b4:	fe 7c 34 00 	mov	r12,-52224
+800024b8:	e0 a0 07 23 	rcall	800032fe <spi_unselectChip>
+800024bc:	da 2a       	popm	r4-r7,pc,r12=1
+800024be:	d7 03       	nop
+800024c0:	00 00       	add	r0,r0
+800024c2:	04 20       	rsub	r0,r2
+
+800024c4 <sd_mmc_spi_read_sector_to_ram>:
+800024c4:	d4 21       	pushm	r4-r7,lr
+800024c6:	20 1d       	sub	sp,4
+800024c8:	18 95       	mov	r5,r12
+800024ca:	c3 de       	rcall	80002144 <sd_mmc_spi_wait_not_busy>
+800024cc:	c7 90       	breq	800025be <sd_mmc_spi_read_sector_to_ram+0xfa>
+800024ce:	30 0b       	mov	r11,0
+800024d0:	fe 7c 34 00 	mov	r12,-52224
+800024d4:	e0 a0 06 ed 	rcall	800032ae <spi_selectChip>
+800024d8:	4b b8       	lddpc	r8,800025c4 <sd_mmc_spi_read_sector_to_ram+0x100>
+800024da:	4b c6       	lddpc	r6,800025c8 <sd_mmc_spi_read_sector_to_ram+0x104>
+800024dc:	11 8a       	ld.ub	r10,r8[0x0]
+800024de:	30 39       	mov	r9,3
+800024e0:	4b b8       	lddpc	r8,800025cc <sd_mmc_spi_read_sector_to_ram+0x108>
+800024e2:	f2 0a 18 00 	cp.b	r10,r9
+800024e6:	c0 41       	brne	800024ee <sd_mmc_spi_read_sector_to_ram+0x2a>
+800024e8:	70 0b       	ld.w	r11,r8[0x0]
+800024ea:	a9 9b       	lsr	r11,0x9
+800024ec:	c0 28       	rjmp	800024f0 <sd_mmc_spi_read_sector_to_ram+0x2c>
+800024ee:	70 0b       	ld.w	r11,r8[0x0]
+800024f0:	31 1c       	mov	r12,17
+800024f2:	c6 1e       	rcall	800021b4 <sd_mmc_spi_command>
+800024f4:	ac 8c       	st.b	r6[0x0],r12
+800024f6:	4b 54       	lddpc	r4,800025c8 <sd_mmc_spi_read_sector_to_ram+0x104>
+800024f8:	30 08       	mov	r8,0
+800024fa:	09 89       	ld.ub	r9,r4[0x0]
+800024fc:	f0 09 18 00 	cp.b	r9,r8
+80002500:	c0 c0       	breq	80002518 <sd_mmc_spi_read_sector_to_ram+0x54>
+80002502:	c2 08       	rjmp	80002542 <sd_mmc_spi_read_sector_to_ram+0x7e>
+80002504:	20 17       	sub	r7,1
+80002506:	5c 87       	casts.h	r7
+80002508:	c0 b1       	brne	8000251e <sd_mmc_spi_read_sector_to_ram+0x5a>
+8000250a:	0e 9b       	mov	r11,r7
+8000250c:	fe 7c 34 00 	mov	r12,-52224
+80002510:	e0 a0 06 f7 	rcall	800032fe <spi_unselectChip>
+80002514:	0e 9c       	mov	r12,r7
+80002516:	c5 48       	rjmp	800025be <sd_mmc_spi_read_sector_to_ram+0xfa>
+80002518:	e0 67 75 30 	mov	r7,30000
+8000251c:	3f f6       	mov	r6,-1
+8000251e:	e0 6c 00 ff 	mov	r12,255
+80002522:	fe b0 fd fb 	rcall	80002118 <sd_mmc_spi_send_and_read>
+80002526:	a8 8c       	st.b	r4[0x0],r12
+80002528:	ec 0c 18 00 	cp.b	r12,r6
+8000252c:	ce c0       	breq	80002504 <sd_mmc_spi_read_sector_to_ram+0x40>
+8000252e:	3f e8       	mov	r8,-2
+80002530:	f0 0c 18 00 	cp.b	r12,r8
+80002534:	c0 e0       	breq	80002550 <sd_mmc_spi_read_sector_to_ram+0x8c>
+80002536:	e0 6b 00 ff 	mov	r11,255
+8000253a:	fe 7c 34 00 	mov	r12,-52224
+8000253e:	e0 a0 07 46 	rcall	800033ca <spi_write>
+80002542:	30 0b       	mov	r11,0
+80002544:	fe 7c 34 00 	mov	r12,-52224
+80002548:	e0 a0 06 db 	rcall	800032fe <spi_unselectChip>
+8000254c:	30 0c       	mov	r12,0
+8000254e:	c3 88       	rjmp	800025be <sd_mmc_spi_read_sector_to_ram+0xfa>
+80002550:	0a 97       	mov	r7,r5
+80002552:	fa c5 ff fe 	sub	r5,sp,-2
+80002556:	ee c6 fe 00 	sub	r6,r7,-512
+8000255a:	e0 6b 00 ff 	mov	r11,255
+8000255e:	fe 7c 34 00 	mov	r12,-52224
+80002562:	e0 a0 07 34 	rcall	800033ca <spi_write>
+80002566:	0a 9b       	mov	r11,r5
+80002568:	fe 7c 34 00 	mov	r12,-52224
+8000256c:	e0 a0 07 3d 	rcall	800033e6 <spi_read>
+80002570:	9a 18       	ld.sh	r8,sp[0x2]
+80002572:	0e c8       	st.b	r7++,r8
+80002574:	0c 37       	cp.w	r7,r6
+80002576:	cf 21       	brne	8000255a <sd_mmc_spi_read_sector_to_ram+0x96>
+80002578:	49 58       	lddpc	r8,800025cc <sd_mmc_spi_read_sector_to_ram+0x108>
+8000257a:	70 09       	ld.w	r9,r8[0x0]
+8000257c:	f2 c9 fe 00 	sub	r9,r9,-512
+80002580:	e0 6b 00 ff 	mov	r11,255
+80002584:	91 09       	st.w	r8[0x0],r9
+80002586:	fe 7c 34 00 	mov	r12,-52224
+8000258a:	e0 a0 07 20 	rcall	800033ca <spi_write>
+8000258e:	e0 6b 00 ff 	mov	r11,255
+80002592:	fe 7c 34 00 	mov	r12,-52224
+80002596:	e0 a0 07 1a 	rcall	800033ca <spi_write>
+8000259a:	e0 6b 00 ff 	mov	r11,255
+8000259e:	fe 7c 34 00 	mov	r12,-52224
+800025a2:	e0 a0 07 14 	rcall	800033ca <spi_write>
+800025a6:	e0 6b 00 ff 	mov	r11,255
+800025aa:	fe 7c 34 00 	mov	r12,-52224
+800025ae:	e0 a0 07 0e 	rcall	800033ca <spi_write>
+800025b2:	30 0b       	mov	r11,0
+800025b4:	fe 7c 34 00 	mov	r12,-52224
+800025b8:	e0 a0 06 a3 	rcall	800032fe <spi_unselectChip>
+800025bc:	30 1c       	mov	r12,1
+800025be:	2f fd       	sub	sp,-4
+800025c0:	d8 22       	popm	r4-r7,pc
+800025c2:	d7 03       	nop
+800025c4:	00 00       	add	r0,r0
+800025c6:	04 0e       	add	lr,r2
+800025c8:	00 00       	add	r0,r0
+800025ca:	04 20       	rsub	r0,r2
+800025cc:	00 00       	add	r0,r0
+800025ce:	00 10       	sub	r0,r0
+
+800025d0 <sd_mmc_spi_get_csd>:
+800025d0:	d4 31       	pushm	r0-r7,lr
+800025d2:	20 1d       	sub	sp,4
+800025d4:	18 95       	mov	r5,r12
+800025d6:	fe b0 fd b7 	rcall	80002144 <sd_mmc_spi_wait_not_busy>
+800025da:	c5 a0       	breq	8000268e <sd_mmc_spi_get_csd+0xbe>
+800025dc:	30 0b       	mov	r11,0
+800025de:	fe 7c 34 00 	mov	r12,-52224
+800025e2:	e0 a0 06 66 	rcall	800032ae <spi_selectChip>
+800025e6:	30 0b       	mov	r11,0
+800025e8:	30 9c       	mov	r12,9
+800025ea:	4a b3       	lddpc	r3,80002694 <sd_mmc_spi_get_csd+0xc4>
+800025ec:	fe b0 fd e4 	rcall	800021b4 <sd_mmc_spi_command>
+800025f0:	a6 8c       	st.b	r3[0x0],r12
+800025f2:	c0 51       	brne	800025fc <sd_mmc_spi_get_csd+0x2c>
+800025f4:	18 97       	mov	r7,r12
+800025f6:	3f e4       	mov	r4,-2
+800025f8:	30 96       	mov	r6,9
+800025fa:	c1 68       	rjmp	80002626 <sd_mmc_spi_get_csd+0x56>
+800025fc:	30 0b       	mov	r11,0
+800025fe:	fe 7c 34 00 	mov	r12,-52224
+80002602:	e0 a0 06 7e 	rcall	800032fe <spi_unselectChip>
+80002606:	30 09       	mov	r9,0
+80002608:	4a 48       	lddpc	r8,80002698 <sd_mmc_spi_get_csd+0xc8>
+8000260a:	b0 89       	st.b	r8[0x0],r9
+8000260c:	c0 98       	rjmp	8000261e <sd_mmc_spi_get_csd+0x4e>
+8000260e:	ec 07 18 00 	cp.b	r7,r6
+80002612:	c0 81       	brne	80002622 <sd_mmc_spi_get_csd+0x52>
+80002614:	30 0b       	mov	r11,0
+80002616:	fe 7c 34 00 	mov	r12,-52224
+8000261a:	e0 a0 06 72 	rcall	800032fe <spi_unselectChip>
+8000261e:	30 0c       	mov	r12,0
+80002620:	c3 78       	rjmp	8000268e <sd_mmc_spi_get_csd+0xbe>
+80002622:	2f f7       	sub	r7,-1
+80002624:	5c 57       	castu.b	r7
+80002626:	e0 6c 00 ff 	mov	r12,255
+8000262a:	fe b0 fd 77 	rcall	80002118 <sd_mmc_spi_send_and_read>
+8000262e:	a6 8c       	st.b	r3[0x0],r12
+80002630:	e8 0c 18 00 	cp.b	r12,r4
+80002634:	ce d1       	brne	8000260e <sd_mmc_spi_get_csd+0x3e>
+80002636:	30 07       	mov	r7,0
+80002638:	fa c6 ff fe 	sub	r6,sp,-2
+8000263c:	e0 6b 00 ff 	mov	r11,255
+80002640:	fe 7c 34 00 	mov	r12,-52224
+80002644:	e0 a0 06 c3 	rcall	800033ca <spi_write>
+80002648:	0c 9b       	mov	r11,r6
+8000264a:	fe 7c 34 00 	mov	r12,-52224
+8000264e:	e0 a0 06 cc 	rcall	800033e6 <spi_read>
+80002652:	9a 18       	ld.sh	r8,sp[0x2]
+80002654:	ea 07 0b 08 	st.b	r5[r7],r8
+80002658:	2f f7       	sub	r7,-1
+8000265a:	59 07       	cp.w	r7,16
+8000265c:	cf 01       	brne	8000263c <sd_mmc_spi_get_csd+0x6c>
+8000265e:	e0 6b 00 ff 	mov	r11,255
+80002662:	fe 7c 34 00 	mov	r12,-52224
+80002666:	e0 a0 06 b2 	rcall	800033ca <spi_write>
+8000266a:	e0 6b 00 ff 	mov	r11,255
+8000266e:	fe 7c 34 00 	mov	r12,-52224
+80002672:	e0 a0 06 ac 	rcall	800033ca <spi_write>
+80002676:	e0 6b 00 ff 	mov	r11,255
+8000267a:	fe 7c 34 00 	mov	r12,-52224
+8000267e:	e0 a0 06 a6 	rcall	800033ca <spi_write>
+80002682:	30 0b       	mov	r11,0
+80002684:	fe 7c 34 00 	mov	r12,-52224
+80002688:	e0 a0 06 3b 	rcall	800032fe <spi_unselectChip>
+8000268c:	30 1c       	mov	r12,1
+8000268e:	2f fd       	sub	sp,-4
+80002690:	d8 32       	popm	r0-r7,pc
+80002692:	d7 03       	nop
+80002694:	00 00       	add	r0,r0
+80002696:	04 20       	rsub	r0,r2
+80002698:	00 00       	add	r0,r0
+8000269a:	00 28       	rsub	r8,r0
+
+8000269c <sd_mmc_spi_internal_init>:
+8000269c:	d4 31       	pushm	r0-r7,lr
+8000269e:	4c 88       	lddpc	r8,800027bc <sd_mmc_spi_internal_init+0x120>
+800026a0:	e6 69 1a 80 	mov	r9,400000
+800026a4:	10 9b       	mov	r11,r8
+800026a6:	91 19       	st.w	r8[0x4],r9
+800026a8:	4c 68       	lddpc	r8,800027c0 <sd_mmc_spi_internal_init+0x124>
+800026aa:	fe 7c 34 00 	mov	r12,-52224
+800026ae:	70 0a       	ld.w	r10,r8[0x0]
+800026b0:	e0 a0 06 3a 	rcall	80003324 <spi_setupChipReg>
+800026b4:	30 0b       	mov	r11,0
+800026b6:	fe 7c 34 00 	mov	r12,-52224
+800026ba:	e0 a0 05 fa 	rcall	800032ae <spi_selectChip>
+800026be:	30 07       	mov	r7,0
+800026c0:	2f f7       	sub	r7,-1
+800026c2:	e0 6b 00 ff 	mov	r11,255
+800026c6:	fe 7c 34 00 	mov	r12,-52224
+800026ca:	e0 a0 06 80 	rcall	800033ca <spi_write>
+800026ce:	58 a7       	cp.w	r7,10
+800026d0:	cf 81       	brne	800026c0 <sd_mmc_spi_internal_init+0x24>
+800026d2:	30 0b       	mov	r11,0
+800026d4:	fe 7c 34 00 	mov	r12,-52224
+800026d8:	e0 a0 06 13 	rcall	800032fe <spi_unselectChip>
+800026dc:	4b a9       	lddpc	r9,800027c4 <sd_mmc_spi_internal_init+0x128>
+800026de:	30 08       	mov	r8,0
+800026e0:	30 06       	mov	r6,0
+800026e2:	b2 88       	st.b	r9[0x0],r8
+800026e4:	4b 94       	lddpc	r4,800027c8 <sd_mmc_spi_internal_init+0x12c>
+800026e6:	4b a9       	lddpc	r9,800027cc <sd_mmc_spi_internal_init+0x130>
+800026e8:	36 52       	mov	r2,101
+800026ea:	b2 88       	st.b	r9[0x0],r8
+800026ec:	30 13       	mov	r3,1
+800026ee:	30 0b       	mov	r11,0
+800026f0:	16 9c       	mov	r12,r11
+800026f2:	fe b0 fd b5 	rcall	8000225c <sd_mmc_spi_send_command>
+800026f6:	e0 6b 00 ff 	mov	r11,255
+800026fa:	a8 8c       	st.b	r4[0x0],r12
+800026fc:	2f f6       	sub	r6,-1
+800026fe:	fe 7c 34 00 	mov	r12,-52224
+80002702:	5c 86       	casts.h	r6
+80002704:	e0 a0 06 63 	rcall	800033ca <spi_write>
+80002708:	4b 07       	lddpc	r7,800027c8 <sd_mmc_spi_internal_init+0x12c>
+8000270a:	e4 06 19 00 	cp.h	r6,r2
+8000270e:	e0 80 00 c5 	breq	80002898 <sd_mmc_spi_internal_init+0x1fc>
+80002712:	09 85       	ld.ub	r5,r4[0x0]
+80002714:	e6 05 18 00 	cp.b	r5,r3
+80002718:	ce b1       	brne	800026ee <sd_mmc_spi_internal_init+0x52>
+8000271a:	c9 7e       	rcall	80002448 <sd_mmc_spi_get_if>
+8000271c:	5b fc       	cp.w	r12,-1
+8000271e:	e0 80 00 bd 	breq	80002898 <sd_mmc_spi_internal_init+0x1fc>
+80002722:	58 1c       	cp.w	r12,1
+80002724:	c0 51       	brne	8000272e <sd_mmc_spi_internal_init+0x92>
+80002726:	30 29       	mov	r9,2
+80002728:	4a 98       	lddpc	r8,800027cc <sd_mmc_spi_internal_init+0x130>
+8000272a:	b0 89       	st.b	r8[0x0],r9
+8000272c:	c3 88       	rjmp	8000279c <sd_mmc_spi_internal_init+0x100>
+8000272e:	30 0b       	mov	r11,0
+80002730:	33 7c       	mov	r12,55
+80002732:	fe b0 fd 95 	rcall	8000225c <sd_mmc_spi_send_command>
+80002736:	e0 6b 00 ff 	mov	r11,255
+8000273a:	ae 8c       	st.b	r7[0x0],r12
+8000273c:	fe 7c 34 00 	mov	r12,-52224
+80002740:	e0 a0 06 45 	rcall	800033ca <spi_write>
+80002744:	30 0b       	mov	r11,0
+80002746:	32 9c       	mov	r12,41
+80002748:	fe b0 fd 8a 	rcall	8000225c <sd_mmc_spi_send_command>
+8000274c:	e0 6b 00 ff 	mov	r11,255
+80002750:	ae 8c       	st.b	r7[0x0],r12
+80002752:	fe 7c 34 00 	mov	r12,-52224
+80002756:	e0 a0 06 3a 	rcall	800033ca <spi_write>
+8000275a:	0f 88       	ld.ub	r8,r7[0x0]
+8000275c:	49 c9       	lddpc	r9,800027cc <sd_mmc_spi_internal_init+0x130>
+8000275e:	e2 18 00 fe 	andl	r8,0xfe,COH
+80002762:	c0 31       	brne	80002768 <sd_mmc_spi_internal_init+0xcc>
+80002764:	b2 85       	st.b	r9[0x0],r5
+80002766:	c1 b8       	rjmp	8000279c <sd_mmc_spi_internal_init+0x100>
+80002768:	30 08       	mov	r8,0
+8000276a:	30 06       	mov	r6,0
+8000276c:	b2 88       	st.b	r9[0x0],r8
+8000276e:	36 54       	mov	r4,101
+80002770:	30 15       	mov	r5,1
+80002772:	30 0b       	mov	r11,0
+80002774:	16 9c       	mov	r12,r11
+80002776:	fe b0 fd 73 	rcall	8000225c <sd_mmc_spi_send_command>
+8000277a:	e0 6b 00 ff 	mov	r11,255
+8000277e:	ae 8c       	st.b	r7[0x0],r12
+80002780:	2f f6       	sub	r6,-1
+80002782:	fe 7c 34 00 	mov	r12,-52224
+80002786:	5c 86       	casts.h	r6
+80002788:	e0 a0 06 21 	rcall	800033ca <spi_write>
+8000278c:	e8 06 19 00 	cp.h	r6,r4
+80002790:	e0 80 00 84 	breq	80002898 <sd_mmc_spi_internal_init+0x1fc>
+80002794:	0f 88       	ld.ub	r8,r7[0x0]
+80002796:	ea 08 18 00 	cp.b	r8,r5
+8000279a:	ce c1       	brne	80002772 <sd_mmc_spi_internal_init+0xd6>
+8000279c:	30 06       	mov	r6,0
+8000279e:	48 c4       	lddpc	r4,800027cc <sd_mmc_spi_internal_init+0x130>
+800027a0:	30 15       	mov	r5,1
+800027a2:	48 a7       	lddpc	r7,800027c8 <sd_mmc_spi_internal_init+0x12c>
+800027a4:	09 88       	ld.ub	r8,r4[0x0]
+800027a6:	ea 08 18 00 	cp.b	r8,r5
+800027aa:	c1 30       	breq	800027d0 <sd_mmc_spi_internal_init+0x134>
+800027ac:	30 0b       	mov	r11,0
+800027ae:	30 1c       	mov	r12,1
+800027b0:	c1 d3       	brcs	800027ea <sd_mmc_spi_internal_init+0x14e>
+800027b2:	30 29       	mov	r9,2
+800027b4:	f2 08 18 00 	cp.b	r8,r9
+800027b8:	c2 21       	brne	800027fc <sd_mmc_spi_internal_init+0x160>
+800027ba:	c1 18       	rjmp	800027dc <sd_mmc_spi_internal_init+0x140>
+800027bc:	00 00       	add	r0,r0
+800027be:	00 14       	sub	r4,r0
+800027c0:	00 00       	add	r0,r0
+800027c2:	00 24       	rsub	r4,r0
+800027c4:	00 00       	add	r0,r0
+800027c6:	00 28       	rsub	r8,r0
+800027c8:	00 00       	add	r0,r0
+800027ca:	04 20       	rsub	r0,r2
+800027cc:	00 00       	add	r0,r0
+800027ce:	04 0e       	add	lr,r2
+800027d0:	30 0b       	mov	r11,0
+800027d2:	33 7c       	mov	r12,55
+800027d4:	fe b0 fd 44 	rcall	8000225c <sd_mmc_spi_send_command>
+800027d8:	30 0b       	mov	r11,0
+800027da:	c0 78       	rjmp	800027e8 <sd_mmc_spi_internal_init+0x14c>
+800027dc:	30 0b       	mov	r11,0
+800027de:	33 7c       	mov	r12,55
+800027e0:	fe b0 fd 3e 	rcall	8000225c <sd_mmc_spi_send_command>
+800027e4:	fc 1b 40 00 	movh	r11,0x4000
+800027e8:	32 9c       	mov	r12,41
+800027ea:	fe b0 fd 39 	rcall	8000225c <sd_mmc_spi_send_command>
+800027ee:	e0 6b 00 ff 	mov	r11,255
+800027f2:	ae 8c       	st.b	r7[0x0],r12
+800027f4:	fe 7c 34 00 	mov	r12,-52224
+800027f8:	e0 a0 05 e9 	rcall	800033ca <spi_write>
+800027fc:	2f f6       	sub	r6,-1
+800027fe:	fe 78 c3 50 	mov	r8,-15536
+80002802:	5c 86       	casts.h	r6
+80002804:	f0 06 19 00 	cp.h	r6,r8
+80002808:	c4 80       	breq	80002898 <sd_mmc_spi_internal_init+0x1fc>
+8000280a:	0f 89       	ld.ub	r9,r7[0x0]
+8000280c:	30 08       	mov	r8,0
+8000280e:	f0 09 18 00 	cp.b	r9,r8
+80002812:	cc 91       	brne	800027a4 <sd_mmc_spi_internal_init+0x108>
+80002814:	4a 27       	lddpc	r7,8000289c <sd_mmc_spi_internal_init+0x200>
+80002816:	30 28       	mov	r8,2
+80002818:	0f 89       	ld.ub	r9,r7[0x0]
+8000281a:	f0 09 18 00 	cp.b	r9,r8
+8000281e:	c0 a1       	brne	80002832 <sd_mmc_spi_internal_init+0x196>
+80002820:	fe b0 fd e4 	rcall	800023e8 <sd_mmc_spi_check_hc>
+80002824:	5b fc       	cp.w	r12,-1
+80002826:	c3 90       	breq	80002898 <sd_mmc_spi_internal_init+0x1fc>
+80002828:	58 1c       	cp.w	r12,1
+8000282a:	f9 b8 00 03 	moveq	r8,3
+8000282e:	ef f8 0e 00 	st.beq	r7[0x0],r8
+80002832:	30 0b       	mov	r11,0
+80002834:	33 bc       	mov	r12,59
+80002836:	fe b0 fd 13 	rcall	8000225c <sd_mmc_spi_send_command>
+8000283a:	e0 6b 00 ff 	mov	r11,255
+8000283e:	49 97       	lddpc	r7,800028a0 <sd_mmc_spi_internal_init+0x204>
+80002840:	ae 8c       	st.b	r7[0x0],r12
+80002842:	fe 7c 34 00 	mov	r12,-52224
+80002846:	e0 a0 05 c2 	rcall	800033ca <spi_write>
+8000284a:	e0 6b 02 00 	mov	r11,512
+8000284e:	31 0c       	mov	r12,16
+80002850:	fe b0 fd 06 	rcall	8000225c <sd_mmc_spi_send_command>
+80002854:	e0 6b 00 ff 	mov	r11,255
+80002858:	ae 8c       	st.b	r7[0x0],r12
+8000285a:	fe 7c 34 00 	mov	r12,-52224
+8000285e:	e0 a0 05 b6 	rcall	800033ca <spi_write>
+80002862:	0f 89       	ld.ub	r9,r7[0x0]
+80002864:	30 08       	mov	r8,0
+80002866:	f0 09 18 00 	cp.b	r9,r8
+8000286a:	c1 71       	brne	80002898 <sd_mmc_spi_internal_init+0x1fc>
+8000286c:	48 ec       	lddpc	r12,800028a4 <sd_mmc_spi_internal_init+0x208>
+8000286e:	cb 1e       	rcall	800025d0 <sd_mmc_spi_get_csd>
+80002870:	c1 40       	breq	80002898 <sd_mmc_spi_internal_init+0x1fc>
+80002872:	fe b0 fb c9 	rcall	80002004 <sd_mmc_spi_get_capacity>
+80002876:	48 d8       	lddpc	r8,800028a8 <sd_mmc_spi_internal_init+0x20c>
+80002878:	48 d9       	lddpc	r9,800028ac <sd_mmc_spi_internal_init+0x210>
+8000287a:	10 9b       	mov	r11,r8
+8000287c:	30 1a       	mov	r10,1
+8000287e:	b2 8a       	st.b	r9[0x0],r10
+80002880:	e0 69 1b 00 	mov	r9,6912
+80002884:	ea 19 00 b7 	orh	r9,0xb7
+80002888:	91 19       	st.w	r8[0x4],r9
+8000288a:	48 a8       	lddpc	r8,800028b0 <sd_mmc_spi_internal_init+0x214>
+8000288c:	fe 7c 34 00 	mov	r12,-52224
+80002890:	70 0a       	ld.w	r10,r8[0x0]
+80002892:	e0 a0 05 49 	rcall	80003324 <spi_setupChipReg>
+80002896:	da 3a       	popm	r0-r7,pc,r12=1
+80002898:	d8 3a       	popm	r0-r7,pc,r12=0
+8000289a:	d7 03       	nop
+8000289c:	00 00       	add	r0,r0
+8000289e:	04 0e       	add	lr,r2
+800028a0:	00 00       	add	r0,r0
+800028a2:	04 20       	rsub	r0,r2
+800028a4:	00 00       	add	r0,r0
+800028a6:	04 10       	sub	r0,r2
+800028a8:	00 00       	add	r0,r0
+800028aa:	00 14       	sub	r4,r0
+800028ac:	00 00       	add	r0,r0
+800028ae:	00 28       	rsub	r8,r0
+800028b0:	00 00       	add	r0,r0
+800028b2:	00 24       	rsub	r4,r0
+
+800028b4 <sd_mmc_spi_mem_check>:
+800028b4:	d4 01       	pushm	lr
+800028b6:	fe b0 fc e9 	rcall	80002288 <sd_mmc_spi_check_presence>
+800028ba:	c0 90       	breq	800028cc <sd_mmc_spi_mem_check+0x18>
+800028bc:	48 58       	lddpc	r8,800028d0 <sd_mmc_spi_mem_check+0x1c>
+800028be:	11 89       	ld.ub	r9,r8[0x0]
+800028c0:	30 08       	mov	r8,0
+800028c2:	f0 09 18 00 	cp.b	r9,r8
+800028c6:	c0 20       	breq	800028ca <sd_mmc_spi_mem_check+0x16>
+800028c8:	da 0a       	popm	pc,r12=1
+800028ca:	ce 9e       	rcall	8000269c <sd_mmc_spi_internal_init>
+800028cc:	d8 02       	popm	pc
+800028ce:	d7 03       	nop
+800028d0:	00 00       	add	r0,r0
+800028d2:	00 28       	rsub	r8,r0
+
+800028d4 <sd_mmc_spi_init>:
+800028d4:	d4 21       	pushm	r4-r7,lr
+800028d6:	fa c4 ff ec 	sub	r4,sp,-20
+800028da:	68 39       	ld.w	r9,r4[0xc]
+800028dc:	48 68       	lddpc	r8,800028f4 <sd_mmc_spi_init+0x20>
+800028de:	91 39       	st.w	r8[0xc],r9
+800028e0:	48 69       	lddpc	r9,800028f8 <sd_mmc_spi_init+0x24>
+800028e2:	93 0c       	st.w	r9[0x0],r12
+800028e4:	68 09       	ld.w	r9,r4[0x0]
+800028e6:	91 09       	st.w	r8[0x0],r9
+800028e8:	68 19       	ld.w	r9,r4[0x4]
+800028ea:	91 19       	st.w	r8[0x4],r9
+800028ec:	68 29       	ld.w	r9,r4[0x8]
+800028ee:	91 29       	st.w	r8[0x8],r9
+800028f0:	cd 6e       	rcall	8000269c <sd_mmc_spi_internal_init>
+800028f2:	d8 22       	popm	r4-r7,pc
+800028f4:	00 00       	add	r0,r0
+800028f6:	00 14       	sub	r4,r0
+800028f8:	00 00       	add	r0,r0
+800028fa:	00 24       	rsub	r4,r0
+
+800028fc <sd_mmc_spi_wr_protect>:
+800028fc:	5e fd       	retal	0
+
+800028fe <sd_mmc_spi_removal>:
+800028fe:	5e fd       	retal	0
+
+80002900 <sd_mmc_spi_test_unit_ready>:
+80002900:	d4 21       	pushm	r4-r7,lr
+80002902:	49 37       	lddpc	r7,8000294c <sd_mmc_spi_test_unit_ready+0x4c>
+80002904:	30 16       	mov	r6,1
+80002906:	0f 88       	ld.ub	r8,r7[0x0]
+80002908:	ec 08 18 00 	cp.b	r8,r6
+8000290c:	c0 e0       	breq	80002928 <sd_mmc_spi_test_unit_ready+0x28>
+8000290e:	c0 63       	brcs	8000291a <sd_mmc_spi_test_unit_ready+0x1a>
+80002910:	30 29       	mov	r9,2
+80002912:	f2 08 18 00 	cp.b	r8,r9
+80002916:	c1 61       	brne	80002942 <sd_mmc_spi_test_unit_ready+0x42>
+80002918:	c1 18       	rjmp	8000293a <sd_mmc_spi_test_unit_ready+0x3a>
+8000291a:	30 09       	mov	r9,0
+8000291c:	48 d8       	lddpc	r8,80002950 <sd_mmc_spi_test_unit_ready+0x50>
+8000291e:	b0 89       	st.b	r8[0x0],r9
+80002920:	cc af       	rcall	800028b4 <sd_mmc_spi_mem_check>
+80002922:	c0 e0       	breq	8000293e <sd_mmc_spi_test_unit_ready+0x3e>
+80002924:	ae 86       	st.b	r7[0x0],r6
+80002926:	c0 88       	rjmp	80002936 <sd_mmc_spi_test_unit_ready+0x36>
+80002928:	cc 6f       	rcall	800028b4 <sd_mmc_spi_mem_check>
+8000292a:	c0 20       	breq	8000292e <sd_mmc_spi_test_unit_ready+0x2e>
+8000292c:	d8 2a       	popm	r4-r7,pc,r12=0
+8000292e:	30 28       	mov	r8,2
+80002930:	ae 88       	st.b	r7[0x0],r8
+80002932:	48 88       	lddpc	r8,80002950 <sd_mmc_spi_test_unit_ready+0x50>
+80002934:	b0 8c       	st.b	r8[0x0],r12
+80002936:	30 3c       	mov	r12,3
+80002938:	d8 22       	popm	r4-r7,pc
+8000293a:	30 08       	mov	r8,0
+8000293c:	ae 88       	st.b	r7[0x0],r8
+8000293e:	30 2c       	mov	r12,2
+80002940:	d8 22       	popm	r4-r7,pc
+80002942:	30 08       	mov	r8,0
+80002944:	30 3c       	mov	r12,3
+80002946:	ae 88       	st.b	r7[0x0],r8
+80002948:	d8 22       	popm	r4-r7,pc
+8000294a:	d7 03       	nop
+8000294c:	00 00       	add	r0,r0
+8000294e:	00 04       	add	r4,r0
+80002950:	00 00       	add	r0,r0
+80002952:	00 28       	rsub	r8,r0
+
+80002954 <sd_mmc_spi_mem_init>:
+80002954:	d4 01       	pushm	lr
+80002956:	ca 3e       	rcall	8000269c <sd_mmc_spi_internal_init>
+80002958:	d8 02       	popm	pc
+8000295a:	d7 03       	nop
+
+8000295c <sd_mmc_spi_ram_2_mem>:
+8000295c:	d4 21       	pushm	r4-r7,lr
+8000295e:	18 97       	mov	r7,r12
+80002960:	16 96       	mov	r6,r11
+80002962:	fe b0 fc 93 	rcall	80002288 <sd_mmc_spi_check_presence>
+80002966:	48 e8       	lddpc	r8,8000299c <sd_mmc_spi_ram_2_mem+0x40>
+80002968:	11 89       	ld.ub	r9,r8[0x0]
+8000296a:	30 08       	mov	r8,0
+8000296c:	f0 09 18 00 	cp.b	r9,r8
+80002970:	c0 21       	brne	80002974 <sd_mmc_spi_ram_2_mem+0x18>
+80002972:	cf 1f       	rcall	80002954 <sd_mmc_spi_mem_init>
+80002974:	48 a8       	lddpc	r8,8000299c <sd_mmc_spi_ram_2_mem+0x40>
+80002976:	11 89       	ld.ub	r9,r8[0x0]
+80002978:	30 08       	mov	r8,0
+8000297a:	f0 09 18 00 	cp.b	r9,r8
+8000297e:	c0 a0       	breq	80002992 <sd_mmc_spi_ram_2_mem+0x36>
+80002980:	0e 9c       	mov	r12,r7
+80002982:	fe b0 fc 05 	rcall	8000218c <sd_mmc_spi_write_open>
+80002986:	0c 9c       	mov	r12,r6
+80002988:	fe b0 fc ae 	rcall	800022e4 <sd_mmc_spi_write_sector_from_ram>
+8000298c:	c0 51       	brne	80002996 <sd_mmc_spi_ram_2_mem+0x3a>
+8000298e:	fe b0 fb c3 	rcall	80002114 <sd_mmc_spi_write_close>
+80002992:	30 2c       	mov	r12,2
+80002994:	d8 22       	popm	r4-r7,pc
+80002996:	fe b0 fb bf 	rcall	80002114 <sd_mmc_spi_write_close>
+8000299a:	d8 2a       	popm	r4-r7,pc,r12=0
+8000299c:	00 00       	add	r0,r0
+8000299e:	00 28       	rsub	r8,r0
+
+800029a0 <sd_mmc_spi_mem_2_ram>:
+800029a0:	d4 21       	pushm	r4-r7,lr
+800029a2:	18 97       	mov	r7,r12
+800029a4:	16 96       	mov	r6,r11
+800029a6:	fe b0 fc 71 	rcall	80002288 <sd_mmc_spi_check_presence>
+800029aa:	49 08       	lddpc	r8,800029e8 <sd_mmc_spi_mem_2_ram+0x48>
+800029ac:	11 89       	ld.ub	r9,r8[0x0]
+800029ae:	30 08       	mov	r8,0
+800029b0:	f0 09 18 00 	cp.b	r9,r8
+800029b4:	c0 21       	brne	800029b8 <sd_mmc_spi_mem_2_ram+0x18>
+800029b6:	cc ff       	rcall	80002954 <sd_mmc_spi_mem_init>
+800029b8:	48 c8       	lddpc	r8,800029e8 <sd_mmc_spi_mem_2_ram+0x48>
+800029ba:	11 89       	ld.ub	r9,r8[0x0]
+800029bc:	30 08       	mov	r8,0
+800029be:	f0 09 18 00 	cp.b	r9,r8
+800029c2:	c0 31       	brne	800029c8 <sd_mmc_spi_mem_2_ram+0x28>
+800029c4:	30 2c       	mov	r12,2
+800029c6:	d8 22       	popm	r4-r7,pc
+800029c8:	0e 9c       	mov	r12,r7
+800029ca:	fe b0 fb ed 	rcall	800021a4 <sd_mmc_spi_read_open>
+800029ce:	c0 b0       	breq	800029e4 <sd_mmc_spi_mem_2_ram+0x44>
+800029d0:	0c 9c       	mov	r12,r6
+800029d2:	fe b0 fd 79 	rcall	800024c4 <sd_mmc_spi_read_sector_to_ram>
+800029d6:	c0 70       	breq	800029e4 <sd_mmc_spi_mem_2_ram+0x44>
+800029d8:	fe b0 fb e2 	rcall	8000219c <sd_mmc_spi_read_close>
+800029dc:	ec 1c 00 01 	eorl	r12,0x1
+800029e0:	5c 5c       	castu.b	r12
+800029e2:	d8 22       	popm	r4-r7,pc
+800029e4:	da 2a       	popm	r4-r7,pc,r12=1
+800029e6:	d7 03       	nop
+800029e8:	00 00       	add	r0,r0
+800029ea:	00 28       	rsub	r8,r0
+
+800029ec <sd_mmc_spi_read_capacity>:
+800029ec:	d4 21       	pushm	r4-r7,lr
+800029ee:	48 c8       	lddpc	r8,80002a1c <sd_mmc_spi_read_capacity+0x30>
+800029f0:	18 97       	mov	r7,r12
+800029f2:	11 89       	ld.ub	r9,r8[0x0]
+800029f4:	30 08       	mov	r8,0
+800029f6:	f0 09 18 00 	cp.b	r9,r8
+800029fa:	c0 21       	brne	800029fe <sd_mmc_spi_read_capacity+0x12>
+800029fc:	ca cf       	rcall	80002954 <sd_mmc_spi_mem_init>
+800029fe:	48 88       	lddpc	r8,80002a1c <sd_mmc_spi_read_capacity+0x30>
+80002a00:	11 89       	ld.ub	r9,r8[0x0]
+80002a02:	30 08       	mov	r8,0
+80002a04:	f0 09 18 00 	cp.b	r9,r8
+80002a08:	c0 31       	brne	80002a0e <sd_mmc_spi_read_capacity+0x22>
+80002a0a:	30 2c       	mov	r12,2
+80002a0c:	d8 22       	popm	r4-r7,pc
+80002a0e:	48 58       	lddpc	r8,80002a20 <sd_mmc_spi_read_capacity+0x34>
+80002a10:	30 0c       	mov	r12,0
+80002a12:	70 08       	ld.w	r8,r8[0x0]
+80002a14:	2f f8       	sub	r8,-1
+80002a16:	8f 08       	st.w	r7[0x0],r8
+80002a18:	d8 22       	popm	r4-r7,pc
+80002a1a:	d7 03       	nop
+80002a1c:	00 00       	add	r0,r0
+80002a1e:	00 28       	rsub	r8,r0
+80002a20:	00 00       	add	r0,r0
+80002a22:	04 08       	add	r8,r2
+
+80002a24 <acifa_configure>:
+80002a24:	d4 01       	pushm	lr
+80002a26:	30 1e       	mov	lr,1
+80002a28:	b1 69       	lsl	r9,0x10
+80002a2a:	a9 6a       	lsl	r10,0x8
+80002a2c:	fc 0b 18 00 	cp.b	r11,lr
+80002a30:	c0 81       	brne	80002a40 <acifa_configure+0x1c>
+80002a32:	e6 19 00 0f 	andh	r9,0xf,COH
+80002a36:	e2 1a 0f 00 	andl	r10,0xf00,COH
+80002a3a:	14 49       	or	r9,r10
+80002a3c:	99 09       	st.w	r12[0x0],r9
+80002a3e:	c0 78       	rjmp	80002a4c <acifa_configure+0x28>
+80002a40:	e6 19 00 0f 	andh	r9,0xf,COH
+80002a44:	e2 1a 0f 00 	andl	r10,0xf00,COH
+80002a48:	14 49       	or	r9,r10
+80002a4a:	99 19       	st.w	r12[0x4],r9
+80002a4c:	e0 79 86 a0 	mov	r9,100000
+80002a50:	f0 09 0d 08 	divu	r8,r8,r9
+80002a54:	99 98       	st.w	r12[0x24],r8
+80002a56:	d8 02       	popm	pc
+
+80002a58 <acifa_start>:
+80002a58:	30 18       	mov	r8,1
+80002a5a:	f0 0b 18 00 	cp.b	r11,r8
+80002a5e:	c0 81       	brne	80002a6e <acifa_start+0x16>
+80002a60:	30 98       	mov	r8,9
+80002a62:	99 78       	st.w	r12[0x1c],r8
+80002a64:	79 08       	ld.w	r8,r12[0x40]
+80002a66:	ed b8 00 18 	bld	r8,0x18
+80002a6a:	cf d1       	brne	80002a64 <acifa_start+0xc>
+80002a6c:	5e fc       	retal	r12
+80002a6e:	30 28       	mov	r8,2
+80002a70:	f0 0b 18 00 	cp.b	r11,r8
+80002a74:	c0 81       	brne	80002a84 <acifa_start+0x2c>
+80002a76:	31 28       	mov	r8,18
+80002a78:	99 78       	st.w	r12[0x1c],r8
+80002a7a:	79 08       	ld.w	r8,r12[0x40]
+80002a7c:	ed b8 00 19 	bld	r8,0x19
+80002a80:	cf d1       	brne	80002a7a <acifa_start+0x22>
+80002a82:	5e fc       	retal	r12
+80002a84:	31 b8       	mov	r8,27
+80002a86:	99 78       	st.w	r12[0x1c],r8
+80002a88:	79 08       	ld.w	r8,r12[0x40]
+80002a8a:	ed b8 00 18 	bld	r8,0x18
+80002a8e:	cf d1       	brne	80002a88 <acifa_start+0x30>
+80002a90:	79 08       	ld.w	r8,r12[0x40]
+80002a92:	ed b8 00 19 	bld	r8,0x19
+80002a96:	cf d1       	brne	80002a90 <acifa_start+0x38>
+80002a98:	5e fc       	retal	r12
+
+80002a9a <acifa_is_aca_inp_higher>:
+80002a9a:	79 0c       	ld.w	r12,r12[0x40]
+80002a9c:	f9 dc c2 01 	bfextu	r12,r12,0x10,0x1
+80002aa0:	5e fc       	retal	r12
+
+80002aa2 <acifa_is_acb_inp_higher>:
+80002aa2:	79 0c       	ld.w	r12,r12[0x40]
+80002aa4:	f9 dc c2 21 	bfextu	r12,r12,0x11,0x1
+80002aa8:	5e fc       	retal	r12
+
+80002aaa <acifa_enable_interrupt_toggle>:
+80002aaa:	30 18       	mov	r8,1
+80002aac:	f0 0b 18 00 	cp.b	r11,r8
+80002ab0:	c0 71       	brne	80002abe <acifa_enable_interrupt_toggle+0x14>
+80002ab2:	78 08       	ld.w	r8,r12[0x0]
+80002ab4:	30 29       	mov	r9,2
+80002ab6:	f1 d9 d0 02 	bfins	r8,r9,0x0,0x2
+80002aba:	99 08       	st.w	r12[0x0],r8
+80002abc:	5e fc       	retal	r12
+80002abe:	30 28       	mov	r8,2
+80002ac0:	f0 0b 18 00 	cp.b	r11,r8
+80002ac4:	5e 1c       	retne	r12
+80002ac6:	78 18       	ld.w	r8,r12[0x4]
+80002ac8:	30 29       	mov	r9,2
+80002aca:	f1 d9 d0 02 	bfins	r8,r9,0x0,0x2
+80002ace:	99 18       	st.w	r12[0x4],r8
+80002ad0:	5e fc       	retal	r12
+
+80002ad2 <acifa_enable_interrupt>:
+80002ad2:	99 ab       	st.w	r12[0x28],r11
+80002ad4:	5e fc       	retal	r12
+
+80002ad6 <flashc_default_wait_until_ready>:
+80002ad6:	fe 69 00 00 	mov	r9,-131072
+80002ada:	30 08       	mov	r8,0
+80002adc:	72 2a       	ld.w	r10,r9[0x8]
+80002ade:	f5 da c0 01 	bfextu	r10,r10,0x0,0x1
+80002ae2:	f0 0a 18 00 	cp.b	r10,r8
+80002ae6:	cf b0       	breq	80002adc <flashc_default_wait_until_ready+0x6>
+80002ae8:	5e fc       	retal	r12
+80002aea:	d7 03       	nop
+
+80002aec <flashc_issue_command>:
+80002aec:	d4 21       	pushm	r4-r7,lr
+80002aee:	48 f8       	lddpc	r8,80002b28 <flashc_issue_command+0x3c>
+80002af0:	18 97       	mov	r7,r12
+80002af2:	70 08       	ld.w	r8,r8[0x0]
+80002af4:	16 96       	mov	r6,r11
+80002af6:	5d 18       	icall	r8
+80002af8:	fe 68 00 00 	mov	r8,-131072
+80002afc:	70 18       	ld.w	r8,r8[0x4]
+80002afe:	f1 d7 d0 06 	bfins	r8,r7,0x0,0x6
+80002b02:	58 06       	cp.w	r6,0
+80002b04:	c0 35       	brlt	80002b0a <flashc_issue_command+0x1e>
+80002b06:	f1 d6 d1 10 	bfins	r8,r6,0x8,0x10
+80002b0a:	fe 69 00 00 	mov	r9,-131072
+80002b0e:	3a 5a       	mov	r10,-91
+80002b10:	f1 da d3 08 	bfins	r8,r10,0x18,0x8
+80002b14:	93 18       	st.w	r9[0x4],r8
+80002b16:	72 28       	ld.w	r8,r9[0x8]
+80002b18:	48 59       	lddpc	r9,80002b2c <flashc_issue_command+0x40>
+80002b1a:	e2 18 00 0c 	andl	r8,0xc,COH
+80002b1e:	93 08       	st.w	r9[0x0],r8
+80002b20:	48 28       	lddpc	r8,80002b28 <flashc_issue_command+0x3c>
+80002b22:	70 08       	ld.w	r8,r8[0x0]
+80002b24:	5d 18       	icall	r8
+80002b26:	d8 22       	popm	r4-r7,pc
+80002b28:	00 00       	add	r0,r0
+80002b2a:	00 08       	add	r8,r0
+80002b2c:	00 00       	add	r0,r0
+80002b2e:	00 2c       	rsub	r12,r0
+
+80002b30 <flashc_set_flash_waitstate_and_readmode>:
+80002b30:	d4 01       	pushm	lr
+80002b32:	e0 68 8a 40 	mov	r8,35392
+80002b36:	ea 18 01 f7 	orh	r8,0x1f7
+80002b3a:	10 3c       	cp.w	r12,r8
+80002b3c:	e0 88 00 13 	brls	80002b62 <flashc_set_flash_waitstate_and_readmode+0x32>
+80002b40:	fe 68 00 00 	mov	r8,-131072
+80002b44:	30 1a       	mov	r10,1
+80002b46:	70 09       	ld.w	r9,r8[0x0]
+80002b48:	f3 da d0 c1 	bfins	r9,r10,0x6,0x1
+80002b4c:	91 09       	st.w	r8[0x0],r9
+80002b4e:	e0 68 14 80 	mov	r8,5248
+80002b52:	ea 18 03 ef 	orh	r8,0x3ef
+80002b56:	10 3c       	cp.w	r12,r8
+80002b58:	e0 88 00 0c 	brls	80002b70 <flashc_set_flash_waitstate_and_readmode+0x40>
+80002b5c:	3f fb       	mov	r11,-1
+80002b5e:	31 0c       	mov	r12,16
+80002b60:	c0 a8       	rjmp	80002b74 <flashc_set_flash_waitstate_and_readmode+0x44>
+80002b62:	fe 68 00 00 	mov	r8,-131072
+80002b66:	30 0a       	mov	r10,0
+80002b68:	70 09       	ld.w	r9,r8[0x0]
+80002b6a:	f3 da d0 c1 	bfins	r9,r10,0x6,0x1
+80002b6e:	91 09       	st.w	r8[0x0],r9
+80002b70:	3f fb       	mov	r11,-1
+80002b72:	31 1c       	mov	r12,17
+80002b74:	cb cf       	rcall	80002aec <flashc_issue_command>
+80002b76:	d8 02       	popm	pc
+
+80002b78 <gpio_enable_module_pin>:
+80002b78:	f8 08 16 05 	lsr	r8,r12,0x5
+80002b7c:	a9 78       	lsl	r8,0x9
+80002b7e:	e0 28 e0 00 	sub	r8,57344
+80002b82:	58 7b       	cp.w	r11,7
+80002b84:	e0 8b 00 07 	brhi	80002b92 <gpio_enable_module_pin+0x1a>
+80002b88:	f3 dc c0 05 	bfextu	r9,r12,0x0,0x5
+80002b8c:	49 ba       	lddpc	r10,80002bf8 <gpio_enable_module_pin+0x80>
+80002b8e:	f4 0b 03 2f 	ld.w	pc,r10[r11<<0x2]
+80002b92:	5e ff       	retal	1
+80002b94:	30 1a       	mov	r10,1
+80002b96:	f4 09 09 49 	lsl	r9,r10,r9
+80002b9a:	91 69       	st.w	r8[0x18],r9
+80002b9c:	c0 58       	rjmp	80002ba6 <gpio_enable_module_pin+0x2e>
+80002b9e:	30 1a       	mov	r10,1
+80002ba0:	f4 09 09 49 	lsl	r9,r10,r9
+80002ba4:	91 59       	st.w	r8[0x14],r9
+80002ba6:	91 a9       	st.w	r8[0x28],r9
+80002ba8:	91 e9       	st.w	r8[0x38],r9
+80002baa:	c2 28       	rjmp	80002bee <gpio_enable_module_pin+0x76>
+80002bac:	30 1a       	mov	r10,1
+80002bae:	f4 09 09 49 	lsl	r9,r10,r9
+80002bb2:	91 69       	st.w	r8[0x18],r9
+80002bb4:	c0 58       	rjmp	80002bbe <gpio_enable_module_pin+0x46>
+80002bb6:	30 1a       	mov	r10,1
+80002bb8:	f4 09 09 49 	lsl	r9,r10,r9
+80002bbc:	91 59       	st.w	r8[0x14],r9
+80002bbe:	91 99       	st.w	r8[0x24],r9
+80002bc0:	cf 4b       	rjmp	80002ba8 <gpio_enable_module_pin+0x30>
+80002bc2:	30 1a       	mov	r10,1
+80002bc4:	f4 09 09 49 	lsl	r9,r10,r9
+80002bc8:	91 69       	st.w	r8[0x18],r9
+80002bca:	c0 58       	rjmp	80002bd4 <gpio_enable_module_pin+0x5c>
+80002bcc:	30 1a       	mov	r10,1
+80002bce:	f4 09 09 49 	lsl	r9,r10,r9
+80002bd2:	91 59       	st.w	r8[0x14],r9
+80002bd4:	91 a9       	st.w	r8[0x28],r9
+80002bd6:	c0 b8       	rjmp	80002bec <gpio_enable_module_pin+0x74>
+80002bd8:	30 1a       	mov	r10,1
+80002bda:	f4 09 09 49 	lsl	r9,r10,r9
+80002bde:	91 69       	st.w	r8[0x18],r9
+80002be0:	c0 58       	rjmp	80002bea <gpio_enable_module_pin+0x72>
+80002be2:	30 1a       	mov	r10,1
+80002be4:	f4 09 09 49 	lsl	r9,r10,r9
+80002be8:	91 59       	st.w	r8[0x14],r9
+80002bea:	91 99       	st.w	r8[0x24],r9
+80002bec:	91 d9       	st.w	r8[0x34],r9
+80002bee:	30 19       	mov	r9,1
+80002bf0:	f2 0c 09 4c 	lsl	r12,r9,r12
+80002bf4:	91 2c       	st.w	r8[0x8],r12
+80002bf6:	5e fd       	retal	0
+80002bf8:	80 00       	ld.sh	r0,r0[0x0]
+80002bfa:	3e 00       	mov	r0,-32
+
+80002bfc <gpio_enable_module>:
+80002bfc:	d4 21       	pushm	r4-r7,lr
+80002bfe:	30 07       	mov	r7,0
+80002c00:	18 96       	mov	r6,r12
+80002c02:	16 94       	mov	r4,r11
+80002c04:	0e 95       	mov	r5,r7
+80002c06:	c0 78       	rjmp	80002c14 <gpio_enable_module+0x18>
+80002c08:	6c 1b       	ld.w	r11,r6[0x4]
+80002c0a:	6c 0c       	ld.w	r12,r6[0x0]
+80002c0c:	2f f5       	sub	r5,-1
+80002c0e:	cb 5f       	rcall	80002b78 <gpio_enable_module_pin>
+80002c10:	2f 86       	sub	r6,-8
+80002c12:	18 47       	or	r7,r12
+80002c14:	08 35       	cp.w	r5,r4
+80002c16:	cf 93       	brcs	80002c08 <gpio_enable_module+0xc>
+80002c18:	0e 9c       	mov	r12,r7
+80002c1a:	d8 22       	popm	r4-r7,pc
+
+80002c1c <gpio_set_gpio_pin>:
+80002c1c:	30 18       	mov	r8,1
+80002c1e:	f0 0c 09 48 	lsl	r8,r8,r12
+80002c22:	a5 9c       	lsr	r12,0x5
+80002c24:	a9 7c       	lsl	r12,0x9
+80002c26:	e0 2c e0 00 	sub	r12,57344
+80002c2a:	f9 48 00 54 	st.w	r12[84],r8
+80002c2e:	f9 48 00 44 	st.w	r12[68],r8
+80002c32:	99 18       	st.w	r12[0x4],r8
+80002c34:	5e fc       	retal	r12
+
+80002c36 <gpio_clr_gpio_pin>:
+80002c36:	30 18       	mov	r8,1
+80002c38:	f0 0c 09 48 	lsl	r8,r8,r12
+80002c3c:	a5 9c       	lsr	r12,0x5
+80002c3e:	a9 7c       	lsl	r12,0x9
+80002c40:	e0 2c e0 00 	sub	r12,57344
+80002c44:	f9 48 00 58 	st.w	r12[88],r8
+80002c48:	f9 48 00 44 	st.w	r12[68],r8
+80002c4c:	99 18       	st.w	r12[0x4],r8
+80002c4e:	5e fc       	retal	r12
+
+80002c50 <_unhandled_interrupt>:
+80002c50:	c0 08       	rjmp	80002c50 <_unhandled_interrupt>
+80002c52:	d7 03       	nop
+
+80002c54 <INTC_register_interrupt>:
+80002c54:	f3 db c0 05 	bfextu	r9,r11,0x0,0x5
+80002c58:	49 a8       	lddpc	r8,80002cc0 <INTC_register_interrupt+0x6c>
+80002c5a:	a5 9b       	lsr	r11,0x5
+80002c5c:	f0 0b 00 38 	add	r8,r8,r11<<0x3
+80002c60:	70 18       	ld.w	r8,r8[0x4]
+80002c62:	f0 09 09 2c 	st.w	r8[r9<<0x2],r12
+80002c66:	58 0a       	cp.w	r10,0
+80002c68:	c0 c1       	brne	80002c80 <INTC_register_interrupt+0x2c>
+80002c6a:	fe 78 00 00 	mov	r8,-65536
+80002c6e:	fe c9 f0 6e 	sub	r9,pc,-3986
+80002c72:	fe ca ef 6e 	sub	r10,pc,-4242
+80002c76:	f4 09 01 09 	sub	r9,r10,r9
+80002c7a:	f0 0b 09 29 	st.w	r8[r11<<0x2],r9
+80002c7e:	5e fc       	retal	r12
+80002c80:	58 1a       	cp.w	r10,1
+80002c82:	c0 91       	brne	80002c94 <INTC_register_interrupt+0x40>
+80002c84:	fe c8 f0 84 	sub	r8,pc,-3964
+80002c88:	fe c9 ef 76 	sub	r9,pc,-4234
+80002c8c:	f2 08 01 08 	sub	r8,r9,r8
+80002c90:	bf a8       	sbr	r8,0x1e
+80002c92:	c1 18       	rjmp	80002cb4 <INTC_register_interrupt+0x60>
+80002c94:	fe c8 f0 94 	sub	r8,pc,-3948
+80002c98:	58 2a       	cp.w	r10,2
+80002c9a:	c0 71       	brne	80002ca8 <INTC_register_interrupt+0x54>
+80002c9c:	fe c9 ef 7c 	sub	r9,pc,-4228
+80002ca0:	f2 08 01 08 	sub	r8,r9,r8
+80002ca4:	bf b8       	sbr	r8,0x1f
+80002ca6:	c0 78       	rjmp	80002cb4 <INTC_register_interrupt+0x60>
+80002ca8:	fe c9 ef 7a 	sub	r9,pc,-4230
+80002cac:	f2 08 01 08 	sub	r8,r9,r8
+80002cb0:	ea 18 c0 00 	orh	r8,0xc000
+80002cb4:	fe 79 00 00 	mov	r9,-65536
+80002cb8:	f2 0b 09 28 	st.w	r9[r11<<0x2],r8
+80002cbc:	5e fc       	retal	r12
+80002cbe:	d7 03       	nop
+80002cc0:	80 00       	ld.sh	r0,r0[0x0]
+80002cc2:	3e 20       	mov	r0,-30
+
+80002cc4 <INTC_init_interrupts>:
+80002cc4:	d4 21       	pushm	r4-r7,lr
+80002cc6:	fe c8 f0 c6 	sub	r8,pc,-3898
+80002cca:	e3 b8 00 01 	mtsr	0x4,r8
+80002cce:	fe ce ef ca 	sub	lr,pc,-4150
+80002cd2:	48 e9       	lddpc	r9,80002d08 <INTC_init_interrupts+0x44>
+80002cd4:	10 1e       	sub	lr,r8
+80002cd6:	fe cc 00 86 	sub	r12,pc,134
+80002cda:	30 08       	mov	r8,0
+80002cdc:	fe 7b 00 00 	mov	r11,-65536
+80002ce0:	c0 f8       	rjmp	80002cfe <INTC_init_interrupts+0x3a>
+80002ce2:	72 16       	ld.w	r6,r9[0x4]
+80002ce4:	ec 0a 00 26 	add	r6,r6,r10<<0x2
+80002ce8:	2f fa       	sub	r10,-1
+80002cea:	8d 0c       	st.w	r6[0x0],r12
+80002cec:	0e 3a       	cp.w	r10,r7
+80002cee:	cf a3       	brcs	80002ce2 <INTC_init_interrupts+0x1e>
+80002cf0:	f6 08 09 2e 	st.w	r11[r8<<0x2],lr
+80002cf4:	2f 89       	sub	r9,-8
+80002cf6:	2f f8       	sub	r8,-1
+80002cf8:	e0 48 00 2f 	cp.w	r8,47
+80002cfc:	c0 40       	breq	80002d04 <INTC_init_interrupts+0x40>
+80002cfe:	72 07       	ld.w	r7,r9[0x0]
+80002d00:	30 0a       	mov	r10,0
+80002d02:	cf 5b       	rjmp	80002cec <INTC_init_interrupts+0x28>
+80002d04:	d8 22       	popm	r4-r7,pc
+80002d06:	d7 03       	nop
+80002d08:	80 00       	ld.sh	r0,r0[0x0]
+80002d0a:	3e 20       	mov	r0,-30
+
+80002d0c <_get_interrupt_handler>:
+80002d0c:	e0 68 00 83 	mov	r8,131
+80002d10:	fe 79 00 00 	mov	r9,-65536
+80002d14:	f0 0c 01 0c 	sub	r12,r8,r12
+80002d18:	f2 0c 03 28 	ld.w	r8,r9[r12<<0x2]
+80002d1c:	f0 ca ff c0 	sub	r10,r8,-64
+80002d20:	f2 0a 03 2c 	ld.w	r12,r9[r10<<0x2]
+80002d24:	58 0c       	cp.w	r12,0
+80002d26:	5e 0c       	reteq	r12
+80002d28:	48 69       	lddpc	r9,80002d40 <_get_interrupt_handler+0x34>
+80002d2a:	f8 0c 12 00 	clz	r12,r12
+80002d2e:	f2 08 00 38 	add	r8,r9,r8<<0x3
+80002d32:	f8 0c 11 1f 	rsub	r12,r12,31
+80002d36:	70 18       	ld.w	r8,r8[0x4]
+80002d38:	f0 0c 03 2c 	ld.w	r12,r8[r12<<0x2]
+80002d3c:	5e fc       	retal	r12
+80002d3e:	d7 03       	nop
+80002d40:	80 00       	ld.sh	r0,r0[0x0]
+80002d42:	3e 20       	mov	r0,-30
+
+80002d44 <pm_set_mclk_source>:
+80002d44:	e1 b8 00 00 	mfsr	r8,0x0
+80002d48:	d3 03       	ssrf	0x10
+80002d4a:	fe 79 04 00 	mov	r9,-64512
+80002d4e:	fc 1a aa 00 	movh	r10,0xaa00
+80002d52:	f3 4a 00 58 	st.w	r9[88],r10
+80002d56:	93 0c       	st.w	r9[0x0],r12
+80002d58:	ed b8 00 10 	bld	r8,0x10
+80002d5c:	c0 20       	breq	80002d60 <pm_set_mclk_source+0x1c>
+80002d5e:	d5 03       	csrf	0x10
+80002d60:	5e fd       	retal	0
+80002d62:	d7 03       	nop
+
+80002d64 <pcl_switch_to_osc>:
+80002d64:	d4 21       	pushm	r4-r7,lr
+80002d66:	14 95       	mov	r5,r10
+80002d68:	18 97       	mov	r7,r12
+80002d6a:	16 96       	mov	r6,r11
+80002d6c:	58 0c       	cp.w	r12,0
+80002d6e:	c0 40       	breq	80002d76 <pcl_switch_to_osc+0x12>
+80002d70:	fe 7c d8 f0 	mov	r12,-10000
+80002d74:	d8 22       	popm	r4-r7,pc
+80002d76:	cf 0d       	rcall	80003156 <scif_configure_osc_crystalmode>
+80002d78:	0a 9b       	mov	r11,r5
+80002d7a:	30 1a       	mov	r10,1
+80002d7c:	0e 9c       	mov	r12,r7
+80002d7e:	ca 8d       	rcall	800030ce <scif_enable_osc>
+80002d80:	0c 9c       	mov	r12,r6
+80002d82:	cd 7e       	rcall	80002b30 <flashc_set_flash_waitstate_and_readmode>
+80002d84:	30 1c       	mov	r12,1
+80002d86:	cd ff       	rcall	80002d44 <pm_set_mclk_source>
+80002d88:	0e 9c       	mov	r12,r7
+80002d8a:	d8 22       	popm	r4-r7,pc
+
+80002d8c <pwm_write_protect_sw_unlock>:
+80002d8c:	58 2c       	cp.w	r12,2
+80002d8e:	c1 c0       	breq	80002dc6 <pwm_write_protect_sw_unlock+0x3a>
+80002d90:	e0 89 00 07 	brgt	80002d9e <pwm_write_protect_sw_unlock+0x12>
+80002d94:	58 0c       	cp.w	r12,0
+80002d96:	c0 a0       	breq	80002daa <pwm_write_protect_sw_unlock+0x1e>
+80002d98:	58 1c       	cp.w	r12,1
+80002d9a:	c3 81       	brne	80002e0a <pwm_write_protect_sw_unlock+0x7e>
+80002d9c:	c0 e8       	rjmp	80002db8 <pwm_write_protect_sw_unlock+0x2c>
+80002d9e:	58 4c       	cp.w	r12,4
+80002da0:	c2 10       	breq	80002de2 <pwm_write_protect_sw_unlock+0x56>
+80002da2:	c1 95       	brlt	80002dd4 <pwm_write_protect_sw_unlock+0x48>
+80002da4:	58 5c       	cp.w	r12,5
+80002da6:	c3 21       	brne	80002e0a <pwm_write_protect_sw_unlock+0x7e>
+80002da8:	c2 48       	rjmp	80002df0 <pwm_write_protect_sw_unlock+0x64>
+80002daa:	fe 78 4c 00 	mov	r8,-46080
+80002dae:	e0 69 4d 04 	mov	r9,19716
+80002db2:	ea 19 50 57 	orh	r9,0x5057
+80002db6:	c2 38       	rjmp	80002dfc <pwm_write_protect_sw_unlock+0x70>
+80002db8:	fe 78 4c 00 	mov	r8,-46080
+80002dbc:	e0 69 4d 08 	mov	r9,19720
+80002dc0:	ea 19 50 57 	orh	r9,0x5057
+80002dc4:	c1 c8       	rjmp	80002dfc <pwm_write_protect_sw_unlock+0x70>
+80002dc6:	fe 78 4c 00 	mov	r8,-46080
+80002dca:	e0 69 4d 10 	mov	r9,19728
+80002dce:	ea 19 50 57 	orh	r9,0x5057
+80002dd2:	c1 58       	rjmp	80002dfc <pwm_write_protect_sw_unlock+0x70>
+80002dd4:	fe 78 4c 00 	mov	r8,-46080
+80002dd8:	e0 69 4d 20 	mov	r9,19744
+80002ddc:	ea 19 50 57 	orh	r9,0x5057
+80002de0:	c0 e8       	rjmp	80002dfc <pwm_write_protect_sw_unlock+0x70>
+80002de2:	fe 78 4c 00 	mov	r8,-46080
+80002de6:	e0 69 4d 40 	mov	r9,19776
+80002dea:	ea 19 50 57 	orh	r9,0x5057
+80002dee:	c0 78       	rjmp	80002dfc <pwm_write_protect_sw_unlock+0x70>
+80002df0:	fe 78 4c 00 	mov	r8,-46080
+80002df4:	e0 69 4d 80 	mov	r9,19840
+80002df8:	ea 19 50 57 	orh	r9,0x5057
+80002dfc:	f1 49 00 e4 	st.w	r8[228],r9
+80002e00:	f0 f8 00 e8 	ld.w	r8,r8[232]
+80002e04:	58 08       	cp.w	r8,0
+80002e06:	c0 20       	breq	80002e0a <pwm_write_protect_sw_unlock+0x7e>
+80002e08:	5e fe       	retal	-1
+80002e0a:	5e fd       	retal	0
+
+80002e0c <pwm_channel_init>:
+80002e0c:	58 0b       	cp.w	r11,0
+80002e0e:	c1 c0       	breq	80002e46 <pwm_channel_init+0x3a>
+80002e10:	58 4c       	cp.w	r12,4
+80002e12:	e0 8b 00 1a 	brhi	80002e46 <pwm_channel_init+0x3a>
+80002e16:	76 09       	ld.w	r9,r11[0x0]
+80002e18:	f8 08 15 05 	lsl	r8,r12,0x5
+80002e1c:	e0 28 b2 00 	sub	r8,45568
+80002e20:	91 09       	st.w	r8[0x0],r9
+80002e22:	a5 7c       	lsl	r12,0x5
+80002e24:	76 19       	ld.w	r9,r11[0x4]
+80002e26:	fe 7a 4e 04 	mov	r10,-45564
+80002e2a:	f8 0a 00 08 	add	r8,r12,r10
+80002e2e:	91 09       	st.w	r8[0x0],r9
+80002e30:	fe 7a 4e 0c 	mov	r10,-45556
+80002e34:	76 39       	ld.w	r9,r11[0xc]
+80002e36:	f8 0a 00 08 	add	r8,r12,r10
+80002e3a:	e0 2c b1 e8 	sub	r12,45544
+80002e3e:	91 09       	st.w	r8[0x0],r9
+80002e40:	76 68       	ld.w	r8,r11[0x18]
+80002e42:	99 08       	st.w	r12[0x0],r8
+80002e44:	5e fd       	retal	0
+80002e46:	5e ff       	retal	1
+
+80002e48 <pwm_start_channels>:
+80002e48:	18 98       	mov	r8,r12
+80002e4a:	e0 1c ff e0 	andl	r12,0xffe0
+80002e4e:	c0 20       	breq	80002e52 <pwm_start_channels+0xa>
+80002e50:	5e ff       	retal	1
+80002e52:	fe 79 4c 00 	mov	r9,-46080
+80002e56:	93 18       	st.w	r9[0x4],r8
+80002e58:	5e fc       	retal	r12
+
+80002e5a <pwm_stop_channels>:
+80002e5a:	18 98       	mov	r8,r12
+80002e5c:	e0 1c ff e0 	andl	r12,0xffe0
+80002e60:	c0 20       	breq	80002e64 <pwm_stop_channels+0xa>
+80002e62:	5e ff       	retal	1
+80002e64:	fe 79 4c 00 	mov	r9,-46080
+80002e68:	93 28       	st.w	r9[0x8],r8
+80002e6a:	5e fc       	retal	r12
+
+80002e6c <pwm_update_period_value>:
+80002e6c:	fe 78 4c 00 	mov	r8,-46080
+80002e70:	91 bc       	st.w	r8[0x2c],r12
+80002e72:	5e fd       	retal	0
+
+80002e74 <pwm_init>:
+80002e74:	d4 21       	pushm	r4-r7,lr
+80002e76:	18 97       	mov	r7,r12
+80002e78:	e1 b6 00 00 	mfsr	r6,0x0
+80002e7c:	58 0c       	cp.w	r12,0
+80002e7e:	c0 21       	brne	80002e82 <pwm_init+0xe>
+80002e80:	da 2a       	popm	r4-r7,pc,r12=1
+80002e82:	30 0c       	mov	r12,0
+80002e84:	c8 4f       	rcall	80002d8c <pwm_write_protect_sw_unlock>
+80002e86:	30 1c       	mov	r12,1
+80002e88:	c8 2f       	rcall	80002d8c <pwm_write_protect_sw_unlock>
+80002e8a:	30 2c       	mov	r12,2
+80002e8c:	c8 0f       	rcall	80002d8c <pwm_write_protect_sw_unlock>
+80002e8e:	ee 16 00 01 	eorh	r6,0x1
+80002e92:	30 3c       	mov	r12,3
+80002e94:	ed d6 c2 01 	bfextu	r6,r6,0x10,0x1
+80002e98:	c7 af       	rcall	80002d8c <pwm_write_protect_sw_unlock>
+80002e9a:	58 06       	cp.w	r6,0
+80002e9c:	c0 20       	breq	80002ea0 <pwm_init+0x2c>
+80002e9e:	d3 03       	ssrf	0x10
+80002ea0:	31 f9       	mov	r9,31
+80002ea2:	fe 78 4c 00 	mov	r8,-46080
+80002ea6:	91 59       	st.w	r8[0x14],r9
+80002ea8:	30 09       	mov	r9,0
+80002eaa:	ef 3a 00 14 	ld.ub	r10,r7[20]
+80002eae:	f2 0a 18 00 	cp.b	r10,r9
+80002eb2:	c0 50       	breq	80002ebc <pwm_init+0x48>
+80002eb4:	70 59       	ld.w	r9,r8[0x14]
+80002eb6:	ea 19 00 1f 	orh	r9,0x1f
+80002eba:	91 59       	st.w	r8[0x14],r9
+80002ebc:	fe 78 4c 00 	mov	r8,-46080
+80002ec0:	70 79       	ld.w	r9,r8[0x1c]
+80002ec2:	ef 3a 00 15 	ld.ub	r10,r7[21]
+80002ec6:	30 09       	mov	r9,0
+80002ec8:	f2 0a 18 00 	cp.b	r10,r9
+80002ecc:	c1 00       	breq	80002eec <pwm_init+0x78>
+80002ece:	30 99       	mov	r9,9
+80002ed0:	91 e9       	st.w	r8[0x38],r9
+80002ed2:	30 29       	mov	r9,2
+80002ed4:	ef 3a 00 16 	ld.ub	r10,r7[22]
+80002ed8:	f2 0a 18 00 	cp.b	r10,r9
+80002edc:	c0 51       	brne	80002ee6 <pwm_init+0x72>
+80002ede:	70 e9       	ld.w	r9,r8[0x38]
+80002ee0:	e8 19 00 06 	orl	r9,0x6
+80002ee4:	91 e9       	st.w	r8[0x38],r9
+80002ee6:	fe 78 4c 00 	mov	r8,-46080
+80002eea:	71 08       	ld.w	r8,r8[0x40]
+80002eec:	58 06       	cp.w	r6,0
+80002eee:	c0 20       	breq	80002ef2 <pwm_init+0x7e>
+80002ef0:	d5 03       	csrf	0x10
+80002ef2:	6e 0a       	ld.w	r10,r7[0x0]
+80002ef4:	6e 39       	ld.w	r9,r7[0xc]
+80002ef6:	a9 69       	lsl	r9,0x8
+80002ef8:	f3 ea 11 09 	or	r9,r9,r10<<0x10
+80002efc:	6e 1a       	ld.w	r10,r7[0x4]
+80002efe:	14 49       	or	r9,r10
+80002f00:	6e 2a       	ld.w	r10,r7[0x8]
+80002f02:	fe 78 4c 00 	mov	r8,-46080
+80002f06:	f3 ea 11 89 	or	r9,r9,r10<<0x18
+80002f0a:	6e 4a       	ld.w	r10,r7[0x10]
+80002f0c:	f3 ea 11 f9 	or	r9,r9,r10<<0x1f
+80002f10:	91 09       	st.w	r8[0x0],r9
+80002f12:	70 89       	ld.w	r9,r8[0x20]
+80002f14:	ef 3a 00 16 	ld.ub	r10,r7[22]
+80002f18:	f3 da d2 02 	bfins	r9,r10,0x10,0x2
+80002f1c:	91 89       	st.w	r8[0x20],r9
+80002f1e:	70 89       	ld.w	r9,r8[0x20]
+80002f20:	ef 3a 00 17 	ld.ub	r10,r7[23]
+80002f24:	f5 e9 10 09 	or	r9,r10,r9
+80002f28:	91 89       	st.w	r8[0x20],r9
+80002f2a:	70 89       	ld.w	r9,r8[0x20]
+80002f2c:	ef 3a 00 18 	ld.ub	r10,r7[24]
+80002f30:	f3 ea 10 19 	or	r9,r9,r10<<0x1
+80002f34:	91 89       	st.w	r8[0x20],r9
+80002f36:	70 89       	ld.w	r9,r8[0x20]
+80002f38:	ef 3a 00 19 	ld.ub	r10,r7[25]
+80002f3c:	f3 ea 10 29 	or	r9,r9,r10<<0x2
+80002f40:	91 89       	st.w	r8[0x20],r9
+80002f42:	30 0c       	mov	r12,0
+80002f44:	ef 3a 00 1a 	ld.ub	r10,r7[26]
+80002f48:	70 89       	ld.w	r9,r8[0x20]
+80002f4a:	f3 ea 10 39 	or	r9,r9,r10<<0x3
+80002f4e:	91 89       	st.w	r8[0x20],r9
+80002f50:	d8 22       	popm	r4-r7,pc
+80002f52:	d7 03       	nop
+
+80002f54 <scif_wait_for_pll_locked>:
+80002f54:	58 0c       	cp.w	r12,0
+80002f56:	c0 81       	brne	80002f66 <scif_wait_for_pll_locked+0x12>
+80002f58:	fe 79 08 00 	mov	r9,-63488
+80002f5c:	72 58       	ld.w	r8,r9[0x14]
+80002f5e:	ed b8 00 04 	bld	r8,0x4
+80002f62:	cf d1       	brne	80002f5c <scif_wait_for_pll_locked+0x8>
+80002f64:	c0 78       	rjmp	80002f72 <scif_wait_for_pll_locked+0x1e>
+80002f66:	fe 79 08 00 	mov	r9,-63488
+80002f6a:	72 58       	ld.w	r8,r9[0x14]
+80002f6c:	ed b8 00 05 	bld	r8,0x5
+80002f70:	cf d1       	brne	80002f6a <scif_wait_for_pll_locked+0x16>
+80002f72:	5e fd       	retal	0
+
+80002f74 <scif_gc_setup>:
+80002f74:	d4 21       	pushm	r4-r7,lr
+80002f76:	fe 78 08 00 	mov	r8,-63488
+80002f7a:	f8 ce ff e7 	sub	lr,r12,-25
+80002f7e:	f0 0e 03 27 	ld.w	r7,r8[lr<<0x2]
+80002f82:	ef d7 c0 01 	bfextu	r7,r7,0x0,0x1
+80002f86:	c1 40       	breq	80002fae <scif_gc_setup+0x3a>
+80002f88:	f0 0e 03 27 	ld.w	r7,r8[lr<<0x2]
+80002f8c:	10 95       	mov	r5,r8
+80002f8e:	a1 c7       	cbr	r7,0x0
+80002f90:	1c 96       	mov	r6,lr
+80002f92:	f0 0e 09 27 	st.w	r8[lr<<0x2],r7
+80002f96:	e0 78 86 a0 	mov	r8,100000
+80002f9a:	c0 48       	rjmp	80002fa2 <scif_gc_setup+0x2e>
+80002f9c:	20 18       	sub	r8,1
+80002f9e:	c0 21       	brne	80002fa2 <scif_gc_setup+0x2e>
+80002fa0:	dc 2a       	popm	r4-r7,pc,r12=-1
+80002fa2:	ea 06 03 2e 	ld.w	lr,r5[r6<<0x2]
+80002fa6:	fd de c0 01 	bfextu	lr,lr,0x0,0x1
+80002faa:	cf 91       	brne	80002f9c <scif_gc_setup+0x28>
+80002fac:	30 17       	mov	r7,1
+80002fae:	a1 99       	lsr	r9,0x1
+80002fb0:	a1 7a       	lsl	r10,0x1
+80002fb2:	a9 6b       	lsl	r11,0x8
+80002fb4:	e2 1a 00 02 	andl	r10,0x2,COH
+80002fb8:	e2 1b 0f 00 	andl	r11,0xf00,COH
+80002fbc:	20 19       	sub	r9,1
+80002fbe:	f5 eb 10 0b 	or	r11,r10,r11
+80002fc2:	f8 ce ff e7 	sub	lr,r12,-25
+80002fc6:	b1 69       	lsl	r9,0x10
+80002fc8:	fe 78 08 00 	mov	r8,-63488
+80002fcc:	e6 19 00 ff 	andh	r9,0xff,COH
+80002fd0:	f7 e9 10 09 	or	r9,r11,r9
+80002fd4:	f0 0e 09 29 	st.w	r8[lr<<0x2],r9
+80002fd8:	58 07       	cp.w	r7,0
+80002fda:	c0 31       	brne	80002fe0 <scif_gc_setup+0x6c>
+80002fdc:	0e 9c       	mov	r12,r7
+80002fde:	d8 22       	popm	r4-r7,pc
+80002fe0:	f0 0e 03 29 	ld.w	r9,r8[lr<<0x2]
+80002fe4:	30 0c       	mov	r12,0
+80002fe6:	a1 a9       	sbr	r9,0x0
+80002fe8:	f0 0e 09 29 	st.w	r8[lr<<0x2],r9
+80002fec:	d8 22       	popm	r4-r7,pc
+
+80002fee <scif_gc_enable>:
+80002fee:	2e 7c       	sub	r12,-25
+80002ff0:	fe 78 08 00 	mov	r8,-63488
+80002ff4:	f0 0c 03 29 	ld.w	r9,r8[r12<<0x2]
+80002ff8:	ed b9 00 00 	bld	r9,0x0
+80002ffc:	c0 60       	breq	80003008 <scif_gc_enable+0x1a>
+80002ffe:	f0 0c 03 29 	ld.w	r9,r8[r12<<0x2]
+80003002:	a1 a9       	sbr	r9,0x0
+80003004:	f0 0c 09 29 	st.w	r8[r12<<0x2],r9
+80003008:	5e fd       	retal	0
+
+8000300a <scif_pll_enable>:
+8000300a:	20 2d       	sub	sp,8
+8000300c:	fa c8 ff f8 	sub	r8,sp,-8
+80003010:	f8 ca ff f9 	sub	r10,r12,-7
+80003014:	fe 79 08 00 	mov	r9,-63488
+80003018:	f0 0c 00 2c 	add	r12,r8,r12<<0x2
+8000301c:	30 1b       	mov	r11,1
+8000301e:	f2 0a 03 28 	ld.w	r8,r9[r10<<0x2]
+80003022:	f1 db d0 01 	bfins	r8,r11,0x0,0x1
+80003026:	f9 48 ff f8 	st.w	r12[-8],r8
+8000302a:	e1 b8 00 00 	mfsr	r8,0x0
+8000302e:	d3 03       	ssrf	0x10
+80003030:	f4 0b 15 02 	lsl	r11,r10,0x2
+80003034:	ea 1b aa 00 	orh	r11,0xaa00
+80003038:	93 6b       	st.w	r9[0x18],r11
+8000303a:	f8 fb ff f8 	ld.w	r11,r12[-8]
+8000303e:	f2 0a 09 2b 	st.w	r9[r10<<0x2],r11
+80003042:	ed b8 00 10 	bld	r8,0x10
+80003046:	c0 20       	breq	8000304a <scif_pll_enable+0x40>
+80003048:	d5 03       	csrf	0x10
+8000304a:	2f ed       	sub	sp,-8
+8000304c:	5e fd       	retal	0
+
+8000304e <scif_pll_setup>:
+8000304e:	d4 21       	pushm	r4-r7,lr
+80003050:	20 2d       	sub	sp,8
+80003052:	fa c8 ff f8 	sub	r8,sp,-8
+80003056:	f8 c9 ff f9 	sub	r9,r12,-7
+8000305a:	f0 0c 00 2c 	add	r12,r8,r12<<0x2
+8000305e:	fe 78 08 00 	mov	r8,-63488
+80003062:	f0 09 03 2a 	ld.w	r10,r8[r9<<0x2]
+80003066:	f9 4a ff f8 	st.w	r12[-8],r10
+8000306a:	f7 3e 00 10 	ld.ub	lr,r11[16]
+8000306e:	f5 de d0 22 	bfins	r10,lr,0x1,0x2
+80003072:	f9 4a ff f8 	st.w	r12[-8],r10
+80003076:	17 a7       	ld.ub	r7,r11[0x2]
+80003078:	17 9e       	ld.ub	lr,r11[0x1]
+8000307a:	a3 6e       	lsl	lr,0x2
+8000307c:	fd e7 10 1e 	or	lr,lr,r7<<0x1
+80003080:	17 87       	ld.ub	r7,r11[0x0]
+80003082:	0e 4e       	or	lr,r7
+80003084:	f5 de d0 63 	bfins	r10,lr,0x3,0x3
+80003088:	f9 4a ff f8 	st.w	r12[-8],r10
+8000308c:	76 2e       	ld.w	lr,r11[0x8]
+8000308e:	f5 de d1 04 	bfins	r10,lr,0x8,0x4
+80003092:	f9 4a ff f8 	st.w	r12[-8],r10
+80003096:	76 1e       	ld.w	lr,r11[0x4]
+80003098:	f5 de d2 04 	bfins	r10,lr,0x10,0x4
+8000309c:	f9 4a ff f8 	st.w	r12[-8],r10
+800030a0:	76 3b       	ld.w	r11,r11[0xc]
+800030a2:	f5 db d3 06 	bfins	r10,r11,0x18,0x6
+800030a6:	f9 4a ff f8 	st.w	r12[-8],r10
+800030aa:	e1 ba 00 00 	mfsr	r10,0x0
+800030ae:	d3 03       	ssrf	0x10
+800030b0:	f2 0b 15 02 	lsl	r11,r9,0x2
+800030b4:	ea 1b aa 00 	orh	r11,0xaa00
+800030b8:	91 6b       	st.w	r8[0x18],r11
+800030ba:	f8 fb ff f8 	ld.w	r11,r12[-8]
+800030be:	f0 09 09 2b 	st.w	r8[r9<<0x2],r11
+800030c2:	ed ba 00 10 	bld	r10,0x10
+800030c6:	c0 20       	breq	800030ca <scif_pll_setup+0x7c>
+800030c8:	d5 03       	csrf	0x10
+800030ca:	2f ed       	sub	sp,-8
+800030cc:	d8 2a       	popm	r4-r7,pc,r12=0
+
+800030ce <scif_enable_osc>:
+800030ce:	d4 21       	pushm	r4-r7,lr
+800030d0:	20 2d       	sub	sp,8
+800030d2:	fa c8 ff f8 	sub	r8,sp,-8
+800030d6:	f8 c9 ff f7 	sub	r9,r12,-9
+800030da:	f0 0c 00 2e 	add	lr,r8,r12<<0x2
+800030de:	fe 78 08 00 	mov	r8,-63488
+800030e2:	f0 09 03 27 	ld.w	r7,r8[r9<<0x2]
+800030e6:	ef db d1 04 	bfins	r7,r11,0x8,0x4
+800030ea:	30 1b       	mov	r11,1
+800030ec:	ef db d2 01 	bfins	r7,r11,0x10,0x1
+800030f0:	fd 47 ff f8 	st.w	lr[-8],r7
+800030f4:	e1 bb 00 00 	mfsr	r11,0x0
+800030f8:	d3 03       	ssrf	0x10
+800030fa:	f2 07 15 02 	lsl	r7,r9,0x2
+800030fe:	ea 17 aa 00 	orh	r7,0xaa00
+80003102:	91 67       	st.w	r8[0x18],r7
+80003104:	fc fe ff f8 	ld.w	lr,lr[-8]
+80003108:	f0 09 09 2e 	st.w	r8[r9<<0x2],lr
+8000310c:	ed bb 00 10 	bld	r11,0x10
+80003110:	c0 20       	breq	80003114 <scif_enable_osc+0x46>
+80003112:	d5 03       	csrf	0x10
+80003114:	58 0a       	cp.w	r10,0
+80003116:	c1 d0       	breq	80003150 <scif_enable_osc+0x82>
+80003118:	58 0c       	cp.w	r12,0
+8000311a:	c0 60       	breq	80003126 <scif_enable_osc+0x58>
+8000311c:	e0 78 86 a0 	mov	r8,100000
+80003120:	fe 7a 08 00 	mov	r10,-63488
+80003124:	c0 f8       	rjmp	80003142 <scif_enable_osc+0x74>
+80003126:	e0 78 86 a0 	mov	r8,100000
+8000312a:	fe 79 08 00 	mov	r9,-63488
+8000312e:	c0 38       	rjmp	80003134 <scif_enable_osc+0x66>
+80003130:	20 18       	sub	r8,1
+80003132:	c0 d0       	breq	8000314c <scif_enable_osc+0x7e>
+80003134:	72 5a       	ld.w	r10,r9[0x14]
+80003136:	ed ba 00 00 	bld	r10,0x0
+8000313a:	cf b1       	brne	80003130 <scif_enable_osc+0x62>
+8000313c:	c0 a8       	rjmp	80003150 <scif_enable_osc+0x82>
+8000313e:	20 18       	sub	r8,1
+80003140:	c0 60       	breq	8000314c <scif_enable_osc+0x7e>
+80003142:	74 59       	ld.w	r9,r10[0x14]
+80003144:	ed b9 00 01 	bld	r9,0x1
+80003148:	cf b1       	brne	8000313e <scif_enable_osc+0x70>
+8000314a:	c0 38       	rjmp	80003150 <scif_enable_osc+0x82>
+8000314c:	3f fc       	mov	r12,-1
+8000314e:	c0 28       	rjmp	80003152 <scif_enable_osc+0x84>
+80003150:	30 0c       	mov	r12,0
+80003152:	2f ed       	sub	sp,-8
+80003154:	d8 22       	popm	r4-r7,pc
+
+80003156 <scif_configure_osc_crystalmode>:
+80003156:	58 0c       	cp.w	r12,0
+80003158:	c3 01       	brne	800031b8 <scif_configure_osc_crystalmode+0x62>
+8000315a:	fe 78 08 00 	mov	r8,-63488
+8000315e:	70 99       	ld.w	r9,r8[0x24]
+80003160:	e0 68 84 7f 	mov	r8,33919
+80003164:	ea 18 00 1e 	orh	r8,0x1e
+80003168:	10 3b       	cp.w	r11,r8
+8000316a:	e0 88 00 14 	brls	80003192 <scif_configure_osc_crystalmode+0x3c>
+8000316e:	e0 68 96 7f 	mov	r8,38527
+80003172:	ea 18 00 98 	orh	r8,0x98
+80003176:	10 3b       	cp.w	r11,r8
+80003178:	e0 8b 00 04 	brhi	80003180 <scif_configure_osc_crystalmode+0x2a>
+8000317c:	30 1c       	mov	r12,1
+8000317e:	c0 a8       	rjmp	80003192 <scif_configure_osc_crystalmode+0x3c>
+80003180:	e0 68 24 00 	mov	r8,9216
+80003184:	ea 18 00 f4 	orh	r8,0xf4
+80003188:	10 3b       	cp.w	r11,r8
+8000318a:	f9 bc 03 02 	movlo	r12,2
+8000318e:	f9 bc 02 03 	movhs	r12,3
+80003192:	30 18       	mov	r8,1
+80003194:	f3 d8 d0 01 	bfins	r9,r8,0x0,0x1
+80003198:	f3 dc d0 22 	bfins	r9,r12,0x1,0x2
+8000319c:	e1 b8 00 00 	mfsr	r8,0x0
+800031a0:	d3 03       	ssrf	0x10
+800031a2:	fe 7a 08 00 	mov	r10,-63488
+800031a6:	32 4b       	mov	r11,36
+800031a8:	ea 1b aa 00 	orh	r11,0xaa00
+800031ac:	95 6b       	st.w	r10[0x18],r11
+800031ae:	95 99       	st.w	r10[0x24],r9
+800031b0:	ed b8 00 10 	bld	r8,0x10
+800031b4:	c3 30       	breq	8000321a <scif_configure_osc_crystalmode+0xc4>
+800031b6:	c3 18       	rjmp	80003218 <scif_configure_osc_crystalmode+0xc2>
+800031b8:	fe 78 08 00 	mov	r8,-63488
+800031bc:	70 a9       	ld.w	r9,r8[0x28]
+800031be:	e0 68 84 7f 	mov	r8,33919
+800031c2:	ea 18 00 1e 	orh	r8,0x1e
+800031c6:	10 3b       	cp.w	r11,r8
+800031c8:	e0 8b 00 04 	brhi	800031d0 <scif_configure_osc_crystalmode+0x7a>
+800031cc:	30 0b       	mov	r11,0
+800031ce:	c1 38       	rjmp	800031f4 <scif_configure_osc_crystalmode+0x9e>
+800031d0:	e0 68 96 7f 	mov	r8,38527
+800031d4:	ea 18 00 98 	orh	r8,0x98
+800031d8:	10 3b       	cp.w	r11,r8
+800031da:	e0 8b 00 04 	brhi	800031e2 <scif_configure_osc_crystalmode+0x8c>
+800031de:	30 1b       	mov	r11,1
+800031e0:	c0 a8       	rjmp	800031f4 <scif_configure_osc_crystalmode+0x9e>
+800031e2:	e0 68 24 00 	mov	r8,9216
+800031e6:	ea 18 00 f4 	orh	r8,0xf4
+800031ea:	10 3b       	cp.w	r11,r8
+800031ec:	f9 bb 03 02 	movlo	r11,2
+800031f0:	f9 bb 02 03 	movhs	r11,3
+800031f4:	30 18       	mov	r8,1
+800031f6:	f3 d8 d0 01 	bfins	r9,r8,0x0,0x1
+800031fa:	f3 db d0 22 	bfins	r9,r11,0x1,0x2
+800031fe:	e1 b8 00 00 	mfsr	r8,0x0
+80003202:	d3 03       	ssrf	0x10
+80003204:	fe 7a 08 00 	mov	r10,-63488
+80003208:	32 8b       	mov	r11,40
+8000320a:	ea 1b aa 00 	orh	r11,0xaa00
+8000320e:	95 6b       	st.w	r10[0x18],r11
+80003210:	95 a9       	st.w	r10[0x28],r9
+80003212:	ed b8 00 10 	bld	r8,0x10
+80003216:	c0 20       	breq	8000321a <scif_configure_osc_crystalmode+0xc4>
+80003218:	d5 03       	csrf	0x10
+8000321a:	5e fd       	retal	0
+
+8000321c <getBaudDiv>:
+8000321c:	f8 c8 00 01 	sub	r8,r12,1
+80003220:	f0 0b 00 0b 	add	r11,r8,r11
+80003224:	f6 0c 0d 0a 	divu	r10,r11,r12
+80003228:	14 9c       	mov	r12,r10
+8000322a:	f4 c8 00 01 	sub	r8,r10,1
+8000322e:	e0 48 00 fe 	cp.w	r8,254
+80003232:	e0 88 00 03 	brls	80003238 <getBaudDiv+0x1c>
+80003236:	5e fe       	retal	-1
+80003238:	5c 8c       	casts.h	r12
+8000323a:	5e fc       	retal	r12
+
+8000323c <spi_initMaster>:
+8000323c:	d4 01       	pushm	lr
+8000323e:	30 19       	mov	r9,1
+80003240:	18 98       	mov	r8,r12
+80003242:	f7 3b 00 0d 	ld.ub	r11,r11[13]
+80003246:	f2 0b 18 00 	cp.b	r11,r9
+8000324a:	e0 88 00 04 	brls	80003252 <spi_initMaster+0x16>
+8000324e:	30 2c       	mov	r12,2
+80003250:	d8 02       	popm	pc
+80003252:	30 0a       	mov	r10,0
+80003254:	e0 69 00 80 	mov	r9,128
+80003258:	99 09       	st.w	r12[0x0],r9
+8000325a:	30 1e       	mov	lr,1
+8000325c:	70 19       	ld.w	r9,r8[0x4]
+8000325e:	14 9c       	mov	r12,r10
+80003260:	f3 de d0 01 	bfins	r9,lr,0x0,0x1
+80003264:	f3 db d0 81 	bfins	r9,r11,0x4,0x1
+80003268:	f3 da d0 e1 	bfins	r9,r10,0x7,0x1
+8000326c:	30 fa       	mov	r10,15
+8000326e:	f3 da d2 04 	bfins	r9,r10,0x10,0x4
+80003272:	91 19       	st.w	r8[0x4],r9
+80003274:	d8 02       	popm	pc
+
+80003276 <spi_selectionMode>:
+80003276:	d4 21       	pushm	r4-r7,lr
+80003278:	30 1e       	mov	lr,1
+8000327a:	30 18       	mov	r8,1
+8000327c:	f4 0e 18 00 	cp.b	lr,r10
+80003280:	f9 be 02 00 	movhs	lr,0
+80003284:	f6 08 18 00 	cp.b	r8,r11
+80003288:	f9 b8 02 00 	movhs	r8,0
+8000328c:	30 07       	mov	r7,0
+8000328e:	fd e8 10 08 	or	r8,lr,r8
+80003292:	ee 08 18 00 	cp.b	r8,r7
+80003296:	c0 30       	breq	8000329c <spi_selectionMode+0x26>
+80003298:	30 2c       	mov	r12,2
+8000329a:	d8 22       	popm	r4-r7,pc
+8000329c:	78 18       	ld.w	r8,r12[0x4]
+8000329e:	f1 db d0 21 	bfins	r8,r11,0x1,0x1
+800032a2:	f1 da d0 41 	bfins	r8,r10,0x2,0x1
+800032a6:	f1 d9 d3 08 	bfins	r8,r9,0x18,0x8
+800032aa:	99 18       	st.w	r12[0x4],r8
+800032ac:	d8 2a       	popm	r4-r7,pc,r12=0
+
+800032ae <spi_selectChip>:
+800032ae:	78 19       	ld.w	r9,r12[0x4]
+800032b0:	18 98       	mov	r8,r12
+800032b2:	ea 19 00 0f 	orh	r9,0xf
+800032b6:	99 19       	st.w	r12[0x4],r9
+800032b8:	78 1c       	ld.w	r12,r12[0x4]
+800032ba:	e2 1c 00 04 	andl	r12,0x4,COH
+800032be:	c1 00       	breq	800032de <spi_selectChip+0x30>
+800032c0:	30 e9       	mov	r9,14
+800032c2:	f2 0b 18 00 	cp.b	r11,r9
+800032c6:	e0 8b 00 1a 	brhi	800032fa <spi_selectChip+0x4c>
+800032ca:	70 19       	ld.w	r9,r8[0x4]
+800032cc:	b1 6b       	lsl	r11,0x10
+800032ce:	30 0c       	mov	r12,0
+800032d0:	ea 1b ff f0 	orh	r11,0xfff0
+800032d4:	e8 1b ff ff 	orl	r11,0xffff
+800032d8:	12 6b       	and	r11,r9
+800032da:	91 1b       	st.w	r8[0x4],r11
+800032dc:	5e fc       	retal	r12
+800032de:	30 39       	mov	r9,3
+800032e0:	f2 0b 18 00 	cp.b	r11,r9
+800032e4:	e0 8b 00 0b 	brhi	800032fa <spi_selectChip+0x4c>
+800032e8:	70 19       	ld.w	r9,r8[0x4]
+800032ea:	2f 0b       	sub	r11,-16
+800032ec:	30 1a       	mov	r10,1
+800032ee:	f4 0b 09 4b 	lsl	r11,r10,r11
+800032f2:	5c db       	com	r11
+800032f4:	12 6b       	and	r11,r9
+800032f6:	91 1b       	st.w	r8[0x4],r11
+800032f8:	5e fc       	retal	r12
+800032fa:	30 2c       	mov	r12,2
+800032fc:	5e fc       	retal	r12
+
+800032fe <spi_unselectChip>:
+800032fe:	e0 68 3a 98 	mov	r8,15000
+80003302:	c0 58       	rjmp	8000330c <spi_unselectChip+0xe>
+80003304:	58 08       	cp.w	r8,0
+80003306:	c0 21       	brne	8000330a <spi_unselectChip+0xc>
+80003308:	5e ff       	retal	1
+8000330a:	20 18       	sub	r8,1
+8000330c:	78 49       	ld.w	r9,r12[0x10]
+8000330e:	ed b9 00 09 	bld	r9,0x9
+80003312:	cf 91       	brne	80003304 <spi_unselectChip+0x6>
+80003314:	78 18       	ld.w	r8,r12[0x4]
+80003316:	ea 18 00 0f 	orh	r8,0xf
+8000331a:	99 18       	st.w	r12[0x4],r8
+8000331c:	fc 18 01 00 	movh	r8,0x100
+80003320:	99 08       	st.w	r12[0x0],r8
+80003322:	5e fd       	retal	0
+
+80003324 <spi_setupChipReg>:
+80003324:	d4 31       	pushm	r0-r7,lr
+80003326:	30 32       	mov	r2,3
+80003328:	16 97       	mov	r7,r11
+8000332a:	18 96       	mov	r6,r12
+8000332c:	f7 34 00 0c 	ld.ub	r4,r11[12]
+80003330:	e4 04 18 00 	cp.b	r4,r2
+80003334:	e0 8b 00 46 	brhi	800033c0 <spi_setupChipReg+0x9c>
+80003338:	f7 31 00 0b 	ld.ub	r1,r11[11]
+8000333c:	30 15       	mov	r5,1
+8000333e:	ea 01 18 00 	cp.b	r1,r5
+80003342:	e0 8b 00 3f 	brhi	800033c0 <spi_setupChipReg+0x9c>
+80003346:	f7 33 00 08 	ld.ub	r3,r11[8]
+8000334a:	30 78       	mov	r8,7
+8000334c:	f0 03 18 00 	cp.b	r3,r8
+80003350:	e0 88 00 38 	brls	800033c0 <spi_setupChipReg+0x9c>
+80003354:	31 08       	mov	r8,16
+80003356:	f0 03 18 00 	cp.b	r3,r8
+8000335a:	e0 8b 00 33 	brhi	800033c0 <spi_setupChipReg+0x9c>
+8000335e:	14 9b       	mov	r11,r10
+80003360:	6e 1c       	ld.w	r12,r7[0x4]
+80003362:	c5 df       	rcall	8000321c <getBaudDiv>
+80003364:	c2 e5       	brlt	800033c0 <spi_setupChipReg+0x9c>
+80003366:	08 9a       	mov	r10,r4
+80003368:	ec 1a 00 01 	eorl	r10,0x1
+8000336c:	30 08       	mov	r8,0
+8000336e:	a1 94       	lsr	r4,0x1
+80003370:	f1 d4 d0 01 	bfins	r8,r4,0x0,0x1
+80003374:	f1 da d0 21 	bfins	r8,r10,0x1,0x1
+80003378:	ef 3a 00 09 	ld.ub	r10,r7[9]
+8000337c:	20 83       	sub	r3,8
+8000337e:	f1 d1 d0 61 	bfins	r8,r1,0x3,0x1
+80003382:	0f 89       	ld.ub	r9,r7[0x0]
+80003384:	f1 d3 d0 84 	bfins	r8,r3,0x4,0x4
+80003388:	f1 dc d1 08 	bfins	r8,r12,0x8,0x8
+8000338c:	f1 da d2 08 	bfins	r8,r10,0x10,0x8
+80003390:	ef 3a 00 0a 	ld.ub	r10,r7[10]
+80003394:	f1 da d3 08 	bfins	r8,r10,0x18,0x8
+80003398:	ea 09 18 00 	cp.b	r9,r5
+8000339c:	c0 c0       	breq	800033b4 <spi_setupChipReg+0x90>
+8000339e:	c0 93       	brcs	800033b0 <spi_setupChipReg+0x8c>
+800033a0:	30 2a       	mov	r10,2
+800033a2:	f4 09 18 00 	cp.b	r9,r10
+800033a6:	c0 90       	breq	800033b8 <spi_setupChipReg+0x94>
+800033a8:	e4 09 18 00 	cp.b	r9,r2
+800033ac:	c0 a1       	brne	800033c0 <spi_setupChipReg+0x9c>
+800033ae:	c0 78       	rjmp	800033bc <spi_setupChipReg+0x98>
+800033b0:	8d c8       	st.w	r6[0x30],r8
+800033b2:	c0 68       	rjmp	800033be <spi_setupChipReg+0x9a>
+800033b4:	8d d8       	st.w	r6[0x34],r8
+800033b6:	c0 48       	rjmp	800033be <spi_setupChipReg+0x9a>
+800033b8:	8d e8       	st.w	r6[0x38],r8
+800033ba:	c0 28       	rjmp	800033be <spi_setupChipReg+0x9a>
+800033bc:	8d f8       	st.w	r6[0x3c],r8
+800033be:	d8 3a       	popm	r0-r7,pc,r12=0
+800033c0:	30 2c       	mov	r12,2
+800033c2:	d8 32       	popm	r0-r7,pc
+
+800033c4 <spi_enable>:
+800033c4:	30 18       	mov	r8,1
+800033c6:	99 08       	st.w	r12[0x0],r8
+800033c8:	5e fc       	retal	r12
+
+800033ca <spi_write>:
+800033ca:	e0 68 3a 98 	mov	r8,15000
+800033ce:	c0 58       	rjmp	800033d8 <spi_write+0xe>
+800033d0:	58 08       	cp.w	r8,0
+800033d2:	c0 21       	brne	800033d6 <spi_write+0xc>
+800033d4:	5e ff       	retal	1
+800033d6:	20 18       	sub	r8,1
+800033d8:	78 49       	ld.w	r9,r12[0x10]
+800033da:	ed b9 00 01 	bld	r9,0x1
+800033de:	cf 91       	brne	800033d0 <spi_write+0x6>
+800033e0:	5c 7b       	castu.h	r11
+800033e2:	99 3b       	st.w	r12[0xc],r11
+800033e4:	5e fd       	retal	0
+
+800033e6 <spi_read>:
+800033e6:	e0 68 3a 98 	mov	r8,15000
+800033ea:	c0 58       	rjmp	800033f4 <spi_read+0xe>
+800033ec:	58 08       	cp.w	r8,0
+800033ee:	c0 21       	brne	800033f2 <spi_read+0xc>
+800033f0:	5e ff       	retal	1
+800033f2:	20 18       	sub	r8,1
+800033f4:	78 49       	ld.w	r9,r12[0x10]
+800033f6:	e2 19 02 01 	andl	r9,0x201,COH
+800033fa:	e0 49 02 01 	cp.w	r9,513
+800033fe:	cf 71       	brne	800033ec <spi_read+0x6>
+80003400:	78 28       	ld.w	r8,r12[0x8]
+80003402:	30 0c       	mov	r12,0
+80003404:	b6 08       	st.h	r11[0x0],r8
+80003406:	5e fc       	retal	r12
+
+80003408 <usart_set_async_baudrate>:
+80003408:	d4 01       	pushm	lr
+8000340a:	f6 0e 15 04 	lsl	lr,r11,0x4
+8000340e:	1c 3a       	cp.w	r10,lr
+80003410:	f9 be 02 10 	movhs	lr,16
+80003414:	f9 be 03 08 	movlo	lr,8
+80003418:	fc 0b 02 4b 	mul	r11,lr,r11
+8000341c:	f6 08 16 01 	lsr	r8,r11,0x1
+80003420:	f0 0a 00 3a 	add	r10,r8,r10<<0x3
+80003424:	f4 0b 0d 0a 	divu	r10,r10,r11
+80003428:	f4 09 16 03 	lsr	r9,r10,0x3
+8000342c:	f2 c8 00 01 	sub	r8,r9,1
+80003430:	e0 48 ff fe 	cp.w	r8,65534
+80003434:	e0 88 00 03 	brls	8000343a <usart_set_async_baudrate+0x32>
+80003438:	da 0a       	popm	pc,r12=1
+8000343a:	78 18       	ld.w	r8,r12[0x4]
+8000343c:	e8 6b 00 00 	mov	r11,524288
+80003440:	e4 18 ff f7 	andh	r8,0xfff7
+80003444:	e0 18 fe cf 	andl	r8,0xfecf
+80003448:	59 0e       	cp.w	lr,16
+8000344a:	f6 0e 17 10 	movne	lr,r11
+8000344e:	f9 be 00 00 	moveq	lr,0
+80003452:	fd e8 10 08 	or	r8,lr,r8
+80003456:	99 18       	st.w	r12[0x4],r8
+80003458:	f5 da c0 03 	bfextu	r10,r10,0x0,0x3
+8000345c:	f3 ea 11 09 	or	r9,r9,r10<<0x10
+80003460:	99 89       	st.w	r12[0x20],r9
+80003462:	d8 0a       	popm	pc,r12=0
+
+80003464 <usart_write_line>:
+80003464:	c0 e8       	rjmp	80003480 <usart_write_line+0x1c>
+80003466:	e0 68 27 10 	mov	r8,10000
+8000346a:	20 18       	sub	r8,1
+8000346c:	5b f8       	cp.w	r8,-1
+8000346e:	c0 80       	breq	8000347e <usart_write_line+0x1a>
+80003470:	78 59       	ld.w	r9,r12[0x14]
+80003472:	ed b9 00 01 	bld	r9,0x1
+80003476:	cf a1       	brne	8000346a <usart_write_line+0x6>
+80003478:	f5 da c0 09 	bfextu	r10,r10,0x0,0x9
+8000347c:	99 7a       	st.w	r12[0x1c],r10
+8000347e:	2f fb       	sub	r11,-1
+80003480:	17 8a       	ld.ub	r10,r11[0x0]
+80003482:	58 0a       	cp.w	r10,0
+80003484:	cf 11       	brne	80003466 <usart_write_line+0x2>
+80003486:	5e fc       	retal	r12
+
+80003488 <usart_reset>:
+80003488:	e1 b8 00 00 	mfsr	r8,0x0
+8000348c:	ee 18 00 01 	eorh	r8,0x1
+80003490:	f1 d8 c2 01 	bfextu	r8,r8,0x10,0x1
+80003494:	c0 20       	breq	80003498 <usart_reset+0x10>
+80003496:	d3 03       	ssrf	0x10
+80003498:	3f f9       	mov	r9,-1
+8000349a:	99 39       	st.w	r12[0xc],r9
+8000349c:	78 59       	ld.w	r9,r12[0x14]
+8000349e:	58 08       	cp.w	r8,0
+800034a0:	c0 20       	breq	800034a4 <usart_reset+0x1c>
+800034a2:	d5 03       	csrf	0x10
+800034a4:	30 08       	mov	r8,0
+800034a6:	99 18       	st.w	r12[0x4],r8
+800034a8:	99 98       	st.w	r12[0x24],r8
+800034aa:	99 a8       	st.w	r12[0x28],r8
+800034ac:	ea 68 61 0c 	mov	r8,680204
+800034b0:	99 08       	st.w	r12[0x0],r8
+800034b2:	5e fc       	retal	r12
+
+800034b4 <usart_init_rs232>:
+800034b4:	d4 21       	pushm	r4-r7,lr
+800034b6:	20 1d       	sub	sp,4
+800034b8:	50 0a       	stdsp	sp[0x0],r10
+800034ba:	16 96       	mov	r6,r11
+800034bc:	18 97       	mov	r7,r12
+800034be:	ce 5f       	rcall	80003488 <usart_reset>
+800034c0:	40 0a       	lddsp	r10,sp[0x0]
+800034c2:	58 06       	cp.w	r6,0
+800034c4:	c5 40       	breq	8000356c <usart_init_rs232+0xb8>
+800034c6:	0d c8       	ld.ub	r8,r6[0x4]
+800034c8:	30 49       	mov	r9,4
+800034ca:	f2 08 18 00 	cp.b	r8,r9
+800034ce:	e0 88 00 4f 	brls	8000356c <usart_init_rs232+0xb8>
+800034d2:	30 95       	mov	r5,9
+800034d4:	ea 08 18 00 	cp.b	r8,r5
+800034d8:	e0 8b 00 4a 	brhi	8000356c <usart_init_rs232+0xb8>
+800034dc:	0d d9       	ld.ub	r9,r6[0x5]
+800034de:	30 78       	mov	r8,7
+800034e0:	f0 09 18 00 	cp.b	r9,r8
+800034e4:	e0 8b 00 44 	brhi	8000356c <usart_init_rs232+0xb8>
+800034e8:	8c 39       	ld.sh	r9,r6[0x6]
+800034ea:	e0 68 01 01 	mov	r8,257
+800034ee:	f0 09 19 00 	cp.h	r9,r8
+800034f2:	e0 8b 00 3d 	brhi	8000356c <usart_init_rs232+0xb8>
+800034f6:	ed 39 00 08 	ld.ub	r9,r6[8]
+800034fa:	30 38       	mov	r8,3
+800034fc:	f0 09 18 00 	cp.b	r9,r8
+80003500:	e0 8b 00 36 	brhi	8000356c <usart_init_rs232+0xb8>
+80003504:	6c 0b       	ld.w	r11,r6[0x0]
+80003506:	0e 9c       	mov	r12,r7
+80003508:	c8 0f       	rcall	80003408 <usart_set_async_baudrate>
+8000350a:	58 1c       	cp.w	r12,1
+8000350c:	c3 00       	breq	8000356c <usart_init_rs232+0xb8>
+8000350e:	0d c8       	ld.ub	r8,r6[0x4]
+80003510:	ea 08 18 00 	cp.b	r8,r5
+80003514:	c0 41       	brne	8000351c <usart_init_rs232+0x68>
+80003516:	6e 18       	ld.w	r8,r7[0x4]
+80003518:	b1 b8       	sbr	r8,0x11
+8000351a:	c0 58       	rjmp	80003524 <usart_init_rs232+0x70>
+8000351c:	20 58       	sub	r8,5
+8000351e:	6e 19       	ld.w	r9,r7[0x4]
+80003520:	f3 e8 10 68 	or	r8,r9,r8<<0x6
+80003524:	8f 18       	st.w	r7[0x4],r8
+80003526:	6e 19       	ld.w	r9,r7[0x4]
+80003528:	ed 3a 00 08 	ld.ub	r10,r6[8]
+8000352c:	0d d8       	ld.ub	r8,r6[0x5]
+8000352e:	a9 78       	lsl	r8,0x9
+80003530:	f1 ea 10 e8 	or	r8,r8,r10<<0xe
+80003534:	12 48       	or	r8,r9
+80003536:	8f 18       	st.w	r7[0x4],r8
+80003538:	30 2a       	mov	r10,2
+8000353a:	8c 38       	ld.sh	r8,r6[0x6]
+8000353c:	f3 d8 c0 10 	bfextu	r9,r8,0x0,0x10
+80003540:	f4 08 19 00 	cp.h	r8,r10
+80003544:	e0 88 00 08 	brls	80003554 <usart_init_rs232+0xa0>
+80003548:	6e 18       	ld.w	r8,r7[0x4]
+8000354a:	ad b8       	sbr	r8,0xd
+8000354c:	8f 18       	st.w	r7[0x4],r8
+8000354e:	20 29       	sub	r9,2
+80003550:	8f a9       	st.w	r7[0x28],r9
+80003552:	c0 58       	rjmp	8000355c <usart_init_rs232+0xa8>
+80003554:	6e 18       	ld.w	r8,r7[0x4]
+80003556:	f1 e9 10 c9 	or	r9,r8,r9<<0xc
+8000355a:	8f 19       	st.w	r7[0x4],r9
+8000355c:	6e 18       	ld.w	r8,r7[0x4]
+8000355e:	e0 18 ff f0 	andl	r8,0xfff0
+80003562:	8f 18       	st.w	r7[0x4],r8
+80003564:	30 0c       	mov	r12,0
+80003566:	35 08       	mov	r8,80
+80003568:	8f 08       	st.w	r7[0x0],r8
+8000356a:	c0 28       	rjmp	8000356e <usart_init_rs232+0xba>
+8000356c:	30 1c       	mov	r12,1
+8000356e:	2f fd       	sub	sp,-4
+80003570:	d8 22       	popm	r4-r7,pc
+80003572:	d7 03       	nop
+
+80003574 <print>:
+80003574:	d4 01       	pushm	lr
+80003576:	c7 7f       	rcall	80003464 <usart_write_line>
+80003578:	d8 02       	popm	pc
+8000357a:	d7 03       	nop
+
+8000357c <print_ulong>:
+8000357c:	d4 21       	pushm	r4-r7,lr
+8000357e:	20 3d       	sub	sp,12
+80003580:	30 08       	mov	r8,0
+80003582:	1a 99       	mov	r9,sp
+80003584:	fb 68 00 0a 	st.b	sp[10],r8
+80003588:	30 a8       	mov	r8,10
+8000358a:	10 9a       	mov	r10,r8
+8000358c:	f6 0a 0d 06 	divu	r6,r11,r10
+80003590:	20 18       	sub	r8,1
+80003592:	0e 9b       	mov	r11,r7
+80003594:	2d 0b       	sub	r11,-48
+80003596:	f2 08 0b 0b 	st.b	r9[r8],r11
+8000359a:	0c 9b       	mov	r11,r6
+8000359c:	58 06       	cp.w	r6,0
+8000359e:	cf 71       	brne	8000358c <print_ulong+0x10>
+800035a0:	f2 08 00 0b 	add	r11,r9,r8
+800035a4:	ce 8f       	rcall	80003574 <print>
+800035a6:	2f dd       	sub	sp,-12
+800035a8:	d8 22       	popm	r4-r7,pc
+800035aa:	d7 03       	nop
+
+800035ac <print_dbg_ulong>:
+800035ac:	d4 01       	pushm	lr
+800035ae:	18 9b       	mov	r11,r12
+800035b0:	fe 7c 2c 00 	mov	r12,-54272
+800035b4:	ce 4f       	rcall	8000357c <print_ulong>
+800035b6:	d8 02       	popm	pc
+
+800035b8 <print_dbg>:
+800035b8:	d4 01       	pushm	lr
+800035ba:	18 9b       	mov	r11,r12
+800035bc:	fe 7c 2c 00 	mov	r12,-54272
+800035c0:	cd af       	rcall	80003574 <print>
+800035c2:	d8 02       	popm	pc
+
+800035c4 <init_dbg_rs232_ex>:
+800035c4:	d4 21       	pushm	r4-r7,lr
+800035c6:	20 3d       	sub	sp,12
+800035c8:	30 08       	mov	r8,0
+800035ca:	fb 68 00 08 	st.b	sp[8],r8
+800035ce:	ba 38       	st.h	sp[0x6],r8
+800035d0:	30 88       	mov	r8,8
+800035d2:	ba c8       	st.b	sp[0x4],r8
+800035d4:	30 48       	mov	r8,4
+800035d6:	16 97       	mov	r7,r11
+800035d8:	50 0c       	stdsp	sp[0x0],r12
+800035da:	30 2b       	mov	r11,2
+800035dc:	ba d8       	st.b	sp[0x5],r8
+800035de:	48 6c       	lddpc	r12,800035f4 <init_dbg_rs232_ex+0x30>
+800035e0:	fe b0 fb 0e 	rcall	80002bfc <gpio_enable_module>
+800035e4:	0e 9a       	mov	r10,r7
+800035e6:	1a 9b       	mov	r11,sp
+800035e8:	fe 7c 2c 00 	mov	r12,-54272
+800035ec:	c6 4f       	rcall	800034b4 <usart_init_rs232>
+800035ee:	2f dd       	sub	sp,-12
+800035f0:	d8 22       	popm	r4-r7,pc
+800035f2:	d7 03       	nop
+800035f4:	80 00       	ld.sh	r0,r0[0x0]
+800035f6:	3f 98       	mov	r8,-7
+
+800035f8 <init_dbg_rs232>:
+800035f8:	d4 01       	pushm	lr
+800035fa:	18 9b       	mov	r11,r12
+800035fc:	e0 6c e1 00 	mov	r12,57600
+80003600:	ce 2f       	rcall	800035c4 <init_dbg_rs232_ex>
+80003602:	d8 02       	popm	pc
+
+80003604 <_stext>:
+80003604:	48 dd       	lddpc	sp,80003638 <udata_clear_loop_end+0x4>
+80003606:	fe c0 fa 06 	sub	r0,pc,-1530
+8000360a:	e3 b0 00 01 	mtsr	0x4,r0
+8000360e:	d5 53       	csrf	0x15
+80003610:	48 b0       	lddpc	r0,8000363c <udata_clear_loop_end+0x8>
+80003612:	48 c1       	lddpc	r1,80003640 <udata_clear_loop_end+0xc>
+80003614:	02 30       	cp.w	r0,r1
+80003616:	c0 62       	brcc	80003622 <idata_load_loop_end>
+80003618:	48 b2       	lddpc	r2,80003644 <udata_clear_loop_end+0x10>
+
+8000361a <idata_load_loop>:
+8000361a:	a5 05       	ld.d	r4,r2++
+8000361c:	a1 24       	st.d	r0++,r4
+8000361e:	02 30       	cp.w	r0,r1
+80003620:	cf d3       	brcs	8000361a <idata_load_loop>
+
+80003622 <idata_load_loop_end>:
+80003622:	48 a0       	lddpc	r0,80003648 <udata_clear_loop_end+0x14>
+80003624:	48 a1       	lddpc	r1,8000364c <udata_clear_loop_end+0x18>
+80003626:	02 30       	cp.w	r0,r1
+80003628:	c0 62       	brcc	80003634 <udata_clear_loop_end>
+8000362a:	30 02       	mov	r2,0
+8000362c:	30 03       	mov	r3,0
+
+8000362e <udata_clear_loop>:
+8000362e:	a1 22       	st.d	r0++,r2
+80003630:	02 30       	cp.w	r0,r1
+80003632:	cf e3       	brcs	8000362e <udata_clear_loop>
+
+80003634 <udata_clear_loop_end>:
+80003634:	fe cf fc 74 	sub	pc,pc,-908
+80003638:	00 01       	add	r1,r0
+8000363a:	00 00       	add	r0,r0
+8000363c:	00 00       	add	r0,r0
+8000363e:	00 04       	add	r4,r0
+80003640:	00 00       	add	r0,r0
+80003642:	00 10       	sub	r0,r0
+80003644:	80 00       	ld.sh	r0,r0[0x0]
+80003646:	41 70       	lddsp	r0,sp[0x5c]
+80003648:	00 00       	add	r0,r0
+8000364a:	00 10       	sub	r0,r0
+8000364c:	00 00       	add	r0,r0
+8000364e:	04 60       	and	r0,r2
+
+80003650 <board_init>:
+80003650:	5e fc       	retal	r12
+80003652:	d7 03       	nop
+
+80003654 <mem_test_unit_ready>:
+80003654:	d4 01       	pushm	lr
+80003656:	58 0c       	cp.w	r12,0
+80003658:	c0 20       	breq	8000365c <mem_test_unit_ready+0x8>
+8000365a:	da 0a       	popm	pc,r12=1
+8000365c:	48 28       	lddpc	r8,80003664 <mem_test_unit_ready+0x10>
+8000365e:	70 0c       	ld.w	r12,r8[0x0]
+80003660:	5d 1c       	icall	r12
+80003662:	d8 02       	popm	pc
+80003664:	80 00       	ld.sh	r0,r0[0x0]
+80003666:	3f a8       	mov	r8,-6
+
+80003668 <mem_read_capacity>:
+80003668:	d4 01       	pushm	lr
+8000366a:	58 0c       	cp.w	r12,0
+8000366c:	c0 20       	breq	80003670 <mem_read_capacity+0x8>
+8000366e:	da 0a       	popm	pc,r12=1
+80003670:	16 9c       	mov	r12,r11
+80003672:	48 38       	lddpc	r8,8000367c <mem_read_capacity+0x14>
+80003674:	70 18       	ld.w	r8,r8[0x4]
+80003676:	5d 18       	icall	r8
+80003678:	d8 02       	popm	pc
+8000367a:	d7 03       	nop
+8000367c:	80 00       	ld.sh	r0,r0[0x0]
+8000367e:	3f a8       	mov	r8,-6
+
+80003680 <Analogue_Comparator_Init>:
+80003680:	d4 01       	pushm	lr
+80003682:	30 4b       	mov	r11,4
+80003684:	49 ac       	lddpc	r12,800036ec <Analogue_Comparator_Init+0x6c>
+80003686:	fe b0 fa bb 	rcall	80002bfc <gpio_enable_module>
+8000368a:	d3 03       	ssrf	0x10
+8000368c:	fe b0 fb 1c 	rcall	80002cc4 <INTC_init_interrupts>
+80003690:	30 19       	mov	r9,1
+80003692:	e0 68 24 00 	mov	r8,9216
+80003696:	ea 18 00 f4 	orh	r8,0xf4
+8000369a:	12 9a       	mov	r10,r9
+8000369c:	12 9b       	mov	r11,r9
+8000369e:	fe 7c 64 00 	mov	r12,-39936
+800036a2:	fe b0 f9 c1 	rcall	80002a24 <acifa_configure>
+800036a6:	e0 68 24 00 	mov	r8,9216
+800036aa:	ea 18 00 f4 	orh	r8,0xf4
+800036ae:	30 19       	mov	r9,1
+800036b0:	30 3a       	mov	r10,3
+800036b2:	30 2b       	mov	r11,2
+800036b4:	fe 7c 64 00 	mov	r12,-39936
+800036b8:	fe b0 f9 b6 	rcall	80002a24 <acifa_configure>
+800036bc:	30 3b       	mov	r11,3
+800036be:	fe 7c 64 00 	mov	r12,-39936
+800036c2:	fe b0 fa 08 	rcall	80002ad2 <acifa_enable_interrupt>
+800036c6:	30 1b       	mov	r11,1
+800036c8:	fe 7c 64 00 	mov	r12,-39936
+800036cc:	fe b0 f9 ef 	rcall	80002aaa <acifa_enable_interrupt_toggle>
+800036d0:	30 3b       	mov	r11,3
+800036d2:	fe 7c 64 00 	mov	r12,-39936
+800036d6:	fe b0 f9 c1 	rcall	80002a58 <acifa_start>
+800036da:	30 0a       	mov	r10,0
+800036dc:	e0 6b 04 c0 	mov	r11,1216
+800036e0:	fe cc ff f0 	sub	r12,pc,-16
+800036e4:	fe b0 fa b8 	rcall	80002c54 <INTC_register_interrupt>
+800036e8:	d5 03       	csrf	0x10
+800036ea:	d8 02       	popm	pc
+800036ec:	80 00       	ld.sh	r0,r0[0x0]
+800036ee:	3f dc       	mov	r12,-3
+
+800036f0 <ACInterruptHandler>:
+800036f0:	d4 01       	pushm	lr
+800036f2:	fe 7c 64 00 	mov	r12,-39936
+800036f6:	fe b0 f9 d6 	rcall	80002aa2 <acifa_is_acb_inp_higher>
+800036fa:	c0 50       	breq	80003704 <ACInterruptHandler+0x14>
+800036fc:	33 cc       	mov	r12,60
+800036fe:	fe b0 fa 8f 	rcall	80002c1c <gpio_set_gpio_pin>
+80003702:	c0 48       	rjmp	8000370a <ACInterruptHandler+0x1a>
+80003704:	33 cc       	mov	r12,60
+80003706:	fe b0 fa 98 	rcall	80002c36 <gpio_clr_gpio_pin>
+8000370a:	fe 7c 64 00 	mov	r12,-39936
+8000370e:	fe b0 f9 c6 	rcall	80002a9a <acifa_is_aca_inp_higher>
+80003712:	c0 50       	breq	8000371c <ACInterruptHandler+0x2c>
+80003714:	33 dc       	mov	r12,61
+80003716:	fe b0 fa 83 	rcall	80002c1c <gpio_set_gpio_pin>
+8000371a:	c0 48       	rjmp	80003722 <ACInterruptHandler+0x32>
+8000371c:	33 dc       	mov	r12,61
+8000371e:	fe b0 fa 8c 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003722:	d4 02       	popm	lr
+80003724:	d6 03       	rete
+80003726:	d7 03       	nop
+
+80003728 <Stop_Motor>:
+80003728:	d4 21       	pushm	r4-r7,lr
+8000372a:	18 97       	mov	r7,r12
+8000372c:	ed bc 00 00 	bld	r12,0x0
+80003730:	c0 41       	brne	80003738 <Stop_Motor+0x10>
+80003732:	30 2c       	mov	r12,2
+80003734:	fe b0 fb 93 	rcall	80002e5a <pwm_stop_channels>
+80003738:	e2 17 00 02 	andl	r7,0x2,COH
+8000373c:	c0 40       	breq	80003744 <Stop_Motor+0x1c>
+8000373e:	30 4c       	mov	r12,4
+80003740:	fe b0 fb 8d 	rcall	80002e5a <pwm_stop_channels>
+80003744:	d8 22       	popm	r4-r7,pc
+80003746:	d7 03       	nop
+
+80003748 <Start_Motor>:
+80003748:	d4 21       	pushm	r4-r7,lr
+8000374a:	18 97       	mov	r7,r12
+8000374c:	ed bc 00 00 	bld	r12,0x0
+80003750:	c0 41       	brne	80003758 <Start_Motor+0x10>
+80003752:	30 2c       	mov	r12,2
+80003754:	fe b0 fb 7a 	rcall	80002e48 <pwm_start_channels>
+80003758:	e2 17 00 02 	andl	r7,0x2,COH
+8000375c:	c0 40       	breq	80003764 <Start_Motor+0x1c>
+8000375e:	30 4c       	mov	r12,4
+80003760:	fe b0 fb 74 	rcall	80002e48 <pwm_start_channels>
+80003764:	d8 22       	popm	r4-r7,pc
+80003766:	d7 03       	nop
+
+80003768 <Motor_Go>:
+80003768:	d4 21       	pushm	r4-r7,lr
+8000376a:	18 97       	mov	r7,r12
+8000376c:	32 cc       	mov	r12,44
+8000376e:	fe b0 fa 57 	rcall	80002c1c <gpio_set_gpio_pin>
+80003772:	58 37       	cp.w	r7,3
+80003774:	c3 30       	breq	800037da <Motor_Go+0x72>
+80003776:	58 67       	cp.w	r7,6
+80003778:	c0 40       	breq	80003780 <Motor_Go+0x18>
+8000377a:	58 27       	cp.w	r7,2
+8000377c:	c4 11       	brne	800037fe <Motor_Go+0x96>
+8000377e:	c1 98       	rjmp	800037b0 <Motor_Go+0x48>
+80003780:	32 8c       	mov	r12,40
+80003782:	fe b0 fa 5a 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003786:	33 0c       	mov	r12,48
+80003788:	fe b0 fa 57 	rcall	80002c36 <gpio_clr_gpio_pin>
+8000378c:	32 9c       	mov	r12,41
+8000378e:	fe b0 fa 54 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003792:	32 ac       	mov	r12,42
+80003794:	fe b0 fa 51 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003798:	32 fc       	mov	r12,47
+8000379a:	fe b0 fa 4e 	rcall	80002c36 <gpio_clr_gpio_pin>
+8000379e:	32 ec       	mov	r12,46
+800037a0:	fe b0 fa 4b 	rcall	80002c36 <gpio_clr_gpio_pin>
+800037a4:	30 3c       	mov	r12,3
+800037a6:	cc 1f       	rcall	80003728 <Stop_Motor>
+800037a8:	32 cc       	mov	r12,44
+800037aa:	fe b0 fa 46 	rcall	80002c36 <gpio_clr_gpio_pin>
+800037ae:	d8 22       	popm	r4-r7,pc
+800037b0:	32 9c       	mov	r12,41
+800037b2:	fe b0 fa 35 	rcall	80002c1c <gpio_set_gpio_pin>
+800037b6:	32 fc       	mov	r12,47
+800037b8:	fe b0 fa 32 	rcall	80002c1c <gpio_set_gpio_pin>
+800037bc:	32 ac       	mov	r12,42
+800037be:	fe b0 fa 3c 	rcall	80002c36 <gpio_clr_gpio_pin>
+800037c2:	32 ec       	mov	r12,46
+800037c4:	fe b0 fa 39 	rcall	80002c36 <gpio_clr_gpio_pin>
+800037c8:	30 3c       	mov	r12,3
+800037ca:	cb ff       	rcall	80003748 <Start_Motor>
+800037cc:	32 8c       	mov	r12,40
+800037ce:	fe b0 fa 27 	rcall	80002c1c <gpio_set_gpio_pin>
+800037d2:	33 0c       	mov	r12,48
+800037d4:	fe b0 fa 24 	rcall	80002c1c <gpio_set_gpio_pin>
+800037d8:	d8 22       	popm	r4-r7,pc
+800037da:	32 9c       	mov	r12,41
+800037dc:	fe b0 fa 2d 	rcall	80002c36 <gpio_clr_gpio_pin>
+800037e0:	32 fc       	mov	r12,47
+800037e2:	fe b0 fa 2a 	rcall	80002c36 <gpio_clr_gpio_pin>
+800037e6:	32 ac       	mov	r12,42
+800037e8:	fe b0 fa 1a 	rcall	80002c1c <gpio_set_gpio_pin>
+800037ec:	32 ec       	mov	r12,46
+800037ee:	fe b0 fa 17 	rcall	80002c1c <gpio_set_gpio_pin>
+800037f2:	32 8c       	mov	r12,40
+800037f4:	fe b0 fa 14 	rcall	80002c1c <gpio_set_gpio_pin>
+800037f8:	33 0c       	mov	r12,48
+800037fa:	fe b0 fa 11 	rcall	80002c1c <gpio_set_gpio_pin>
+800037fe:	d8 22       	popm	r4-r7,pc
+
+80003800 <Motor_Init>:
+80003800:	d4 21       	pushm	r4-r7,lr
+80003802:	20 dd       	sub	sp,52
+80003804:	32 9c       	mov	r12,41
+80003806:	fe b0 fa 18 	rcall	80002c36 <gpio_clr_gpio_pin>
+8000380a:	32 ac       	mov	r12,42
+8000380c:	fe b0 fa 15 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003810:	32 fc       	mov	r12,47
+80003812:	fe b0 fa 12 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003816:	32 ec       	mov	r12,46
+80003818:	fe b0 fa 0f 	rcall	80002c36 <gpio_clr_gpio_pin>
+8000381c:	32 0a       	mov	r10,32
+8000381e:	1a 97       	mov	r7,sp
+80003820:	30 0b       	mov	r11,0
+80003822:	1a 9c       	mov	r12,sp
+80003824:	ca 0d       	rcall	80003b64 <memset>
+80003826:	4a f9       	lddpc	r9,800038e0 <Motor_Init+0xe0>
+80003828:	72 4a       	ld.w	r10,r9[0x10]
+8000382a:	fa c8 ff e0 	sub	r8,sp,-32
+8000382e:	91 4a       	st.w	r8[0x10],r10
+80003830:	72 0a       	ld.w	r10,r9[0x0]
+80003832:	91 0a       	st.w	r8[0x0],r10
+80003834:	72 1a       	ld.w	r10,r9[0x4]
+80003836:	91 1a       	st.w	r8[0x4],r10
+80003838:	72 2a       	ld.w	r10,r9[0x8]
+8000383a:	91 2a       	st.w	r8[0x8],r10
+8000383c:	72 39       	ld.w	r9,r9[0xc]
+8000383e:	10 9b       	mov	r11,r8
+80003840:	91 39       	st.w	r8[0xc],r9
+80003842:	30 0c       	mov	r12,0
+80003844:	fe b0 fc 05 	rcall	8000304e <scif_pll_setup>
+80003848:	30 0c       	mov	r12,0
+8000384a:	fe b0 fb e0 	rcall	8000300a <scif_pll_enable>
+8000384e:	30 0c       	mov	r12,0
+80003850:	fe b0 fb 82 	rcall	80002f54 <scif_wait_for_pll_locked>
+80003854:	30 09       	mov	r9,0
+80003856:	30 5b       	mov	r11,5
+80003858:	12 9a       	mov	r10,r9
+8000385a:	30 4c       	mov	r12,4
+8000385c:	fe b0 fb 8c 	rcall	80002f74 <scif_gc_setup>
+80003860:	30 4c       	mov	r12,4
+80003862:	fe b0 fb c6 	rcall	80002fee <scif_gc_enable>
+80003866:	30 2b       	mov	r11,2
+80003868:	32 bc       	mov	r12,43
+8000386a:	fe b0 f9 87 	rcall	80002b78 <gpio_enable_module_pin>
+8000386e:	30 2b       	mov	r11,2
+80003870:	32 dc       	mov	r12,45
+80003872:	fe b0 f9 83 	rcall	80002b78 <gpio_enable_module_pin>
+80003876:	49 c8       	lddpc	r8,800038e4 <Motor_Init+0xe4>
+80003878:	30 19       	mov	r9,1
+8000387a:	30 06       	mov	r6,0
+8000387c:	f1 69 00 15 	st.b	r8[21],r9
+80003880:	91 16       	st.w	r8[0x4],r6
+80003882:	91 06       	st.w	r8[0x0],r6
+80003884:	91 36       	st.w	r8[0xc],r6
+80003886:	91 26       	st.w	r8[0x8],r6
+80003888:	f1 66 00 14 	st.b	r8[20],r6
+8000388c:	f1 66 00 16 	st.b	r8[22],r6
+80003890:	f1 66 00 17 	st.b	r8[23],r6
+80003894:	f1 66 00 18 	st.b	r8[24],r6
+80003898:	f1 66 00 19 	st.b	r8[25],r6
+8000389c:	f1 66 00 1a 	st.b	r8[26],r6
+800038a0:	10 9c       	mov	r12,r8
+800038a2:	30 15       	mov	r5,1
+800038a4:	91 45       	st.w	r8[0x10],r5
+800038a6:	fe b0 fa e7 	rcall	80002e74 <pwm_init>
+800038aa:	30 ac       	mov	r12,10
+800038ac:	fe b0 fa e0 	rcall	80002e6c <pwm_update_period_value>
+800038b0:	40 08       	lddsp	r8,sp[0x0]
+800038b2:	e4 18 ff f8 	andh	r8,0xfff8
+800038b6:	e0 18 fa ff 	andl	r8,0xfaff
+800038ba:	a9 b8       	sbr	r8,0x9
+800038bc:	f1 d6 d0 04 	bfins	r8,r6,0x0,0x4
+800038c0:	50 08       	stdsp	sp[0x0],r8
+800038c2:	36 48       	mov	r8,100
+800038c4:	50 18       	stdsp	sp[0x4],r8
+800038c6:	e0 68 00 c8 	mov	r8,200
+800038ca:	1a 9b       	mov	r11,sp
+800038cc:	0a 9c       	mov	r12,r5
+800038ce:	50 38       	stdsp	sp[0xc],r8
+800038d0:	fe b0 fa 9e 	rcall	80002e0c <pwm_channel_init>
+800038d4:	1a 9b       	mov	r11,sp
+800038d6:	30 2c       	mov	r12,2
+800038d8:	fe b0 fa 9a 	rcall	80002e0c <pwm_channel_init>
+800038dc:	2f 3d       	sub	sp,-52
+800038de:	d8 22       	popm	r4-r7,pc
+800038e0:	80 00       	ld.sh	r0,r0[0x0]
+800038e2:	3f fc       	mov	r12,-1
+800038e4:	00 00       	add	r0,r0
+800038e6:	04 44       	or	r4,r2
+
+800038e8 <sd_mmc_resources_init>:
+800038e8:	d4 21       	pushm	r4-r7,lr
+800038ea:	20 4d       	sub	sp,16
+800038ec:	49 88       	lddpc	r8,8000394c <sd_mmc_resources_init+0x64>
+800038ee:	70 39       	ld.w	r9,r8[0xc]
+800038f0:	50 39       	stdsp	sp[0xc],r9
+800038f2:	70 09       	ld.w	r9,r8[0x0]
+800038f4:	50 09       	stdsp	sp[0x0],r9
+800038f6:	70 19       	ld.w	r9,r8[0x4]
+800038f8:	50 19       	stdsp	sp[0x4],r9
+800038fa:	70 28       	ld.w	r8,r8[0x8]
+800038fc:	1a 97       	mov	r7,sp
+800038fe:	50 28       	stdsp	sp[0x8],r8
+80003900:	30 4b       	mov	r11,4
+80003902:	49 4c       	lddpc	r12,80003950 <sd_mmc_resources_init+0x68>
+80003904:	fe b0 f9 7c 	rcall	80002bfc <gpio_enable_module>
+80003908:	1a 9b       	mov	r11,sp
+8000390a:	fe 7c 34 00 	mov	r12,-52224
+8000390e:	fe b0 fc 97 	rcall	8000323c <spi_initMaster>
+80003912:	30 09       	mov	r9,0
+80003914:	fe 7c 34 00 	mov	r12,-52224
+80003918:	12 9a       	mov	r10,r9
+8000391a:	12 9b       	mov	r11,r9
+8000391c:	fe b0 fc ad 	rcall	80003276 <spi_selectionMode>
+80003920:	fe 7c 34 00 	mov	r12,-52224
+80003924:	fe b0 fd 50 	rcall	800033c4 <spi_enable>
+80003928:	6e 38       	ld.w	r8,r7[0xc]
+8000392a:	20 4d       	sub	sp,16
+8000392c:	50 38       	stdsp	sp[0xc],r8
+8000392e:	6e 08       	ld.w	r8,r7[0x0]
+80003930:	50 08       	stdsp	sp[0x0],r8
+80003932:	6e 18       	ld.w	r8,r7[0x4]
+80003934:	50 18       	stdsp	sp[0x4],r8
+80003936:	6e 28       	ld.w	r8,r7[0x8]
+80003938:	e0 6c 24 00 	mov	r12,9216
+8000393c:	ea 1c 00 f4 	orh	r12,0xf4
+80003940:	50 28       	stdsp	sp[0x8],r8
+80003942:	fe b0 f7 c9 	rcall	800028d4 <sd_mmc_spi_init>
+80003946:	2f cd       	sub	sp,-16
+80003948:	2f cd       	sub	sp,-16
+8000394a:	d8 22       	popm	r4-r7,pc
+8000394c:	80 00       	ld.sh	r0,r0[0x0]
+8000394e:	40 10       	lddsp	r0,sp[0x4]
+80003950:	80 00       	ld.sh	r0,r0[0x0]
+80003952:	40 20       	lddsp	r0,sp[0x8]
+
+80003954 <LED_Flash>:
+80003954:	d4 01       	pushm	lr
+80003956:	33 1c       	mov	r12,49
+80003958:	fe b0 f9 62 	rcall	80002c1c <gpio_set_gpio_pin>
+8000395c:	e1 b8 00 42 	mfsr	r8,0x108
+80003960:	e0 6a 24 00 	mov	r10,9216
+80003964:	ea 1a 00 f4 	orh	r10,0xf4
+80003968:	f0 0a 00 0a 	add	r10,r8,r10
+8000396c:	e1 b9 00 42 	mfsr	r9,0x108
+80003970:	14 38       	cp.w	r8,r10
+80003972:	e0 88 00 05 	brls	8000397c <LED_Flash+0x28>
+80003976:	10 39       	cp.w	r9,r8
+80003978:	cf a2       	brcc	8000396c <LED_Flash+0x18>
+8000397a:	c0 38       	rjmp	80003980 <LED_Flash+0x2c>
+8000397c:	10 39       	cp.w	r9,r8
+8000397e:	c1 33       	brcs	800039a4 <LED_Flash+0x50>
+80003980:	14 39       	cp.w	r9,r10
+80003982:	e0 8b 00 11 	brhi	800039a4 <LED_Flash+0x50>
+80003986:	cf 3b       	rjmp	8000396c <LED_Flash+0x18>
+80003988:	e1 b9 00 42 	mfsr	r9,0x108
+8000398c:	14 38       	cp.w	r8,r10
+8000398e:	e0 88 00 05 	brls	80003998 <LED_Flash+0x44>
+80003992:	10 39       	cp.w	r9,r8
+80003994:	cf a2       	brcc	80003988 <LED_Flash+0x34>
+80003996:	c0 38       	rjmp	8000399c <LED_Flash+0x48>
+80003998:	10 39       	cp.w	r9,r8
+8000399a:	c1 13       	brcs	800039bc <LED_Flash+0x68>
+8000399c:	14 39       	cp.w	r9,r10
+8000399e:	e0 8b 00 0f 	brhi	800039bc <LED_Flash+0x68>
+800039a2:	cf 3b       	rjmp	80003988 <LED_Flash+0x34>
+800039a4:	33 1c       	mov	r12,49
+800039a6:	fe b0 f9 48 	rcall	80002c36 <gpio_clr_gpio_pin>
+800039aa:	e1 b8 00 42 	mfsr	r8,0x108
+800039ae:	e0 6a 24 00 	mov	r10,9216
+800039b2:	ea 1a 00 f4 	orh	r10,0xf4
+800039b6:	f0 0a 00 0a 	add	r10,r8,r10
+800039ba:	ce 7b       	rjmp	80003988 <LED_Flash+0x34>
+800039bc:	d8 02       	popm	pc
+800039be:	d7 03       	nop
+
+800039c0 <main>:
+800039c0:	d4 01       	pushm	lr
+800039c2:	20 1d       	sub	sp,4
+800039c4:	c4 6e       	rcall	80003650 <board_init>
+800039c6:	30 3a       	mov	r10,3
+800039c8:	e0 6b 24 00 	mov	r11,9216
+800039cc:	ea 1b 00 f4 	orh	r11,0xf4
+800039d0:	30 0c       	mov	r12,0
+800039d2:	fe b0 f9 c9 	rcall	80002d64 <pcl_switch_to_osc>
+800039d6:	e0 6c 24 00 	mov	r12,9216
+800039da:	ea 1c 00 f4 	orh	r12,0xf4
+800039de:	c0 de       	rcall	800035f8 <init_dbg_rs232>
+800039e0:	4b 3c       	lddpc	r12,80003aac <main+0xec>
+800039e2:	fe b0 fd eb 	rcall	800035b8 <print_dbg>
+800039e6:	4b 3c       	lddpc	r12,80003ab0 <main+0xf0>
+800039e8:	fe b0 fd e8 	rcall	800035b8 <print_dbg>
+800039ec:	c7 ef       	rcall	800038e8 <sd_mmc_resources_init>
+800039ee:	4b 2c       	lddpc	r12,80003ab4 <main+0xf4>
+800039f0:	fe b0 fd e4 	rcall	800035b8 <print_dbg>
+800039f4:	30 0c       	mov	r12,0
+800039f6:	c2 fe       	rcall	80003654 <mem_test_unit_ready>
+800039f8:	c1 01       	brne	80003a18 <main+0x58>
+800039fa:	1a 9b       	mov	r11,sp
+800039fc:	c3 6e       	rcall	80003668 <mem_read_capacity>
+800039fe:	4a fc       	lddpc	r12,80003ab8 <main+0xf8>
+80003a00:	fe b0 fd dc 	rcall	800035b8 <print_dbg>
+80003a04:	40 0c       	lddsp	r12,sp[0x0]
+80003a06:	2f fc       	sub	r12,-1
+80003a08:	ab 9c       	lsr	r12,0xb
+80003a0a:	fe b0 fd d1 	rcall	800035ac <print_dbg_ulong>
+80003a0e:	4a cc       	lddpc	r12,80003abc <main+0xfc>
+80003a10:	fe b0 fd d4 	rcall	800035b8 <print_dbg>
+80003a14:	4a bc       	lddpc	r12,80003ac0 <main+0x100>
+80003a16:	c0 28       	rjmp	80003a1a <main+0x5a>
+80003a18:	4a bc       	lddpc	r12,80003ac4 <main+0x104>
+80003a1a:	fe b0 fd cf 	rcall	800035b8 <print_dbg>
+80003a1e:	4a bc       	lddpc	r12,80003ac8 <main+0x108>
+80003a20:	fe b0 fd cc 	rcall	800035b8 <print_dbg>
+80003a24:	32 cc       	mov	r12,44
+80003a26:	fe b0 f8 fb 	rcall	80002c1c <gpio_set_gpio_pin>
+80003a2a:	33 1c       	mov	r12,49
+80003a2c:	fe b0 f8 f8 	rcall	80002c1c <gpio_set_gpio_pin>
+80003a30:	33 2c       	mov	r12,50
+80003a32:	fe b0 f8 f5 	rcall	80002c1c <gpio_set_gpio_pin>
+80003a36:	33 bc       	mov	r12,59
+80003a38:	fe b0 f8 f2 	rcall	80002c1c <gpio_set_gpio_pin>
+80003a3c:	33 cc       	mov	r12,60
+80003a3e:	fe b0 f8 ef 	rcall	80002c1c <gpio_set_gpio_pin>
+80003a42:	33 dc       	mov	r12,61
+80003a44:	fe b0 f8 ec 	rcall	80002c1c <gpio_set_gpio_pin>
+80003a48:	e1 b8 00 42 	mfsr	r8,0x108
+80003a4c:	e0 6a 24 00 	mov	r10,9216
+80003a50:	ea 1a 00 f4 	orh	r10,0xf4
+80003a54:	f0 0a 00 0a 	add	r10,r8,r10
+80003a58:	e1 b9 00 42 	mfsr	r9,0x108
+80003a5c:	14 38       	cp.w	r8,r10
+80003a5e:	e0 88 00 05 	brls	80003a68 <main+0xa8>
+80003a62:	10 39       	cp.w	r9,r8
+80003a64:	cf a2       	brcc	80003a58 <main+0x98>
+80003a66:	c0 38       	rjmp	80003a6c <main+0xac>
+80003a68:	10 39       	cp.w	r9,r8
+80003a6a:	c3 33       	brcs	80003ad0 <main+0x110>
+80003a6c:	14 39       	cp.w	r9,r10
+80003a6e:	e0 8b 00 31 	brhi	80003ad0 <main+0x110>
+80003a72:	cf 3b       	rjmp	80003a58 <main+0x98>
+80003a74:	e1 b9 00 42 	mfsr	r9,0x108
+80003a78:	14 38       	cp.w	r8,r10
+80003a7a:	e0 88 00 05 	brls	80003a84 <main+0xc4>
+80003a7e:	10 39       	cp.w	r9,r8
+80003a80:	cf a2       	brcc	80003a74 <main+0xb4>
+80003a82:	c0 38       	rjmp	80003a88 <main+0xc8>
+80003a84:	10 39       	cp.w	r9,r8
+80003a86:	c4 33       	brcs	80003b0c <main+0x14c>
+80003a88:	14 39       	cp.w	r9,r10
+80003a8a:	e0 8b 00 41 	brhi	80003b0c <main+0x14c>
+80003a8e:	cf 3b       	rjmp	80003a74 <main+0xb4>
+80003a90:	e1 b9 00 42 	mfsr	r9,0x108
+80003a94:	14 38       	cp.w	r8,r10
+80003a96:	e0 88 00 05 	brls	80003aa0 <main+0xe0>
+80003a9a:	10 39       	cp.w	r9,r8
+80003a9c:	cf a2       	brcc	80003a90 <main+0xd0>
+80003a9e:	c0 38       	rjmp	80003aa4 <main+0xe4>
+80003aa0:	10 39       	cp.w	r9,r8
+80003aa2:	c4 73       	brcs	80003b30 <main+0x170>
+80003aa4:	14 39       	cp.w	r9,r10
+80003aa6:	e0 8b 00 45 	brhi	80003b30 <main+0x170>
+80003aaa:	cf 3b       	rjmp	80003a90 <main+0xd0>
+80003aac:	80 00       	ld.sh	r0,r0[0x0]
+80003aae:	40 40       	lddsp	r0,sp[0x10]
+80003ab0:	80 00       	ld.sh	r0,r0[0x0]
+80003ab2:	40 44       	lddsp	r4,sp[0x10]
+80003ab4:	80 00       	ld.sh	r0,r0[0x0]
+80003ab6:	40 60       	lddsp	r0,sp[0x18]
+80003ab8:	80 00       	ld.sh	r0,r0[0x0]
+80003aba:	40 7c       	lddsp	r12,sp[0x1c]
+80003abc:	80 00       	ld.sh	r0,r0[0x0]
+80003abe:	40 84       	lddsp	r4,sp[0x20]
+80003ac0:	80 00       	ld.sh	r0,r0[0x0]
+80003ac2:	40 8c       	lddsp	r12,sp[0x20]
+80003ac4:	80 00       	ld.sh	r0,r0[0x0]
+80003ac6:	40 9c       	lddsp	r12,sp[0x24]
+80003ac8:	80 00       	ld.sh	r0,r0[0x0]
+80003aca:	40 cc       	lddsp	r12,sp[0x30]
+80003acc:	c4 4f       	rcall	80003954 <LED_Flash>
+80003ace:	cf fb       	rjmp	80003acc <main+0x10c>
+80003ad0:	49 fc       	lddpc	r12,80003b4c <main+0x18c>
+80003ad2:	fe b0 fd 73 	rcall	800035b8 <print_dbg>
+80003ad6:	32 cc       	mov	r12,44
+80003ad8:	fe b0 f8 af 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003adc:	33 1c       	mov	r12,49
+80003ade:	fe b0 f8 ac 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003ae2:	33 2c       	mov	r12,50
+80003ae4:	fe b0 f8 a9 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003ae8:	33 bc       	mov	r12,59
+80003aea:	fe b0 f8 a6 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003aee:	33 cc       	mov	r12,60
+80003af0:	fe b0 f8 a3 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003af4:	33 dc       	mov	r12,61
+80003af6:	fe b0 f8 a0 	rcall	80002c36 <gpio_clr_gpio_pin>
+80003afa:	e1 b8 00 42 	mfsr	r8,0x108
+80003afe:	e0 6a 24 00 	mov	r10,9216
+80003b02:	ea 1a 00 f4 	orh	r10,0xf4
+80003b06:	f0 0a 00 0a 	add	r10,r8,r10
+80003b0a:	cb 5b       	rjmp	80003a74 <main+0xb4>
+80003b0c:	49 1c       	lddpc	r12,80003b50 <main+0x190>
+80003b0e:	fe b0 fd 55 	rcall	800035b8 <print_dbg>
+80003b12:	c7 7e       	rcall	80003800 <Motor_Init>
+80003b14:	49 0c       	lddpc	r12,80003b54 <main+0x194>
+80003b16:	fe b0 fd 51 	rcall	800035b8 <print_dbg>
+80003b1a:	30 2c       	mov	r12,2
+80003b1c:	c2 6e       	rcall	80003768 <Motor_Go>
+80003b1e:	e1 b8 00 42 	mfsr	r8,0x108
+80003b22:	e0 6a 48 00 	mov	r10,18432
+80003b26:	ea 1a 01 e8 	orh	r10,0x1e8
+80003b2a:	f0 0a 00 0a 	add	r10,r8,r10
+80003b2e:	cb 1b       	rjmp	80003a90 <main+0xd0>
+80003b30:	48 ac       	lddpc	r12,80003b58 <main+0x198>
+80003b32:	fe b0 fd 43 	rcall	800035b8 <print_dbg>
+80003b36:	30 6c       	mov	r12,6
+80003b38:	c1 8e       	rcall	80003768 <Motor_Go>
+80003b3a:	48 9c       	lddpc	r12,80003b5c <main+0x19c>
+80003b3c:	fe b0 fd 3e 	rcall	800035b8 <print_dbg>
+80003b40:	fe b0 fd a0 	rcall	80003680 <Analogue_Comparator_Init>
+80003b44:	48 7c       	lddpc	r12,80003b60 <main+0x1a0>
+80003b46:	fe b0 fd 39 	rcall	800035b8 <print_dbg>
+80003b4a:	cc 1b       	rjmp	80003acc <main+0x10c>
+80003b4c:	80 00       	ld.sh	r0,r0[0x0]
+80003b4e:	40 e4       	lddsp	r4,sp[0x38]
+80003b50:	80 00       	ld.sh	r0,r0[0x0]
+80003b52:	40 f4       	lddsp	r4,sp[0x3c]
+80003b54:	80 00       	ld.sh	r0,r0[0x0]
+80003b56:	41 18       	lddsp	r8,sp[0x44]
+80003b58:	80 00       	ld.sh	r0,r0[0x0]
+80003b5a:	41 2c       	lddsp	r12,sp[0x48]
+80003b5c:	80 00       	ld.sh	r0,r0[0x0]
+80003b5e:	41 3c       	lddsp	r12,sp[0x4c]
+80003b60:	80 00       	ld.sh	r0,r0[0x0]
+80003b62:	41 5c       	lddsp	r12,sp[0x54]
+
+80003b64 <memset>:
+80003b64:	18 98       	mov	r8,r12
+80003b66:	c0 38       	rjmp	80003b6c <memset+0x8>
+80003b68:	10 cb       	st.b	r8++,r11
+80003b6a:	20 1a       	sub	r10,1
+80003b6c:	58 0a       	cp.w	r10,0
+80003b6e:	cf d1       	brne	80003b68 <memset+0x4>
+80003b70:	5e fc       	retal	r12
+
+Disassembly of section .exception:
+
+80003c00 <_evba>:
+80003c00:	c0 08       	rjmp	80003c00 <_evba>
+	...
+
+80003c04 <_handle_TLB_Multiple_Hit>:
+80003c04:	c0 08       	rjmp	80003c04 <_handle_TLB_Multiple_Hit>
+	...
+
+80003c08 <_handle_Bus_Error_Data_Fetch>:
+80003c08:	c0 08       	rjmp	80003c08 <_handle_Bus_Error_Data_Fetch>
+	...
+
+80003c0c <_handle_Bus_Error_Instruction_Fetch>:
+80003c0c:	c0 08       	rjmp	80003c0c <_handle_Bus_Error_Instruction_Fetch>
+	...
+
+80003c10 <_handle_NMI>:
+80003c10:	c0 08       	rjmp	80003c10 <_handle_NMI>
+	...
+
+80003c14 <_handle_Instruction_Address>:
+80003c14:	c0 08       	rjmp	80003c14 <_handle_Instruction_Address>
+	...
+
+80003c18 <_handle_ITLB_Protection>:
+80003c18:	c0 08       	rjmp	80003c18 <_handle_ITLB_Protection>
+	...
+
+80003c1c <_handle_Breakpoint>:
+80003c1c:	c0 08       	rjmp	80003c1c <_handle_Breakpoint>
+	...
+
+80003c20 <_handle_Illegal_Opcode>:
+80003c20:	c0 08       	rjmp	80003c20 <_handle_Illegal_Opcode>
+	...
+
+80003c24 <_handle_Unimplemented_Instruction>:
+80003c24:	c0 08       	rjmp	80003c24 <_handle_Unimplemented_Instruction>
+	...
+
+80003c28 <_handle_Privilege_Violation>:
+80003c28:	c0 08       	rjmp	80003c28 <_handle_Privilege_Violation>
+	...
+
+80003c2c <_handle_Floating_Point>:
+80003c2c:	c0 08       	rjmp	80003c2c <_handle_Floating_Point>
+	...
+
+80003c30 <_handle_Coprocessor_Absent>:
+80003c30:	c0 08       	rjmp	80003c30 <_handle_Coprocessor_Absent>
+	...
+
+80003c34 <_handle_Data_Address_Read>:
+80003c34:	c0 08       	rjmp	80003c34 <_handle_Data_Address_Read>
+	...
+
+80003c38 <_handle_Data_Address_Write>:
+80003c38:	c0 08       	rjmp	80003c38 <_handle_Data_Address_Write>
+	...
+
+80003c3c <_handle_DTLB_Protection_Read>:
+80003c3c:	c0 08       	rjmp	80003c3c <_handle_DTLB_Protection_Read>
+	...
+
+80003c40 <_handle_DTLB_Protection_Write>:
+80003c40:	c0 08       	rjmp	80003c40 <_handle_DTLB_Protection_Write>
+	...
+
+80003c44 <_handle_DTLB_Modified>:
+80003c44:	c0 08       	rjmp	80003c44 <_handle_DTLB_Modified>
+	...
+
+80003c50 <_handle_ITLB_Miss>:
+80003c50:	c0 08       	rjmp	80003c50 <_handle_ITLB_Miss>
+	...
+
+80003c60 <_handle_DTLB_Miss_Read>:
+80003c60:	c0 08       	rjmp	80003c60 <_handle_DTLB_Miss_Read>
+	...
+
+80003c70 <_handle_DTLB_Miss_Write>:
+80003c70:	c0 08       	rjmp	80003c70 <_handle_DTLB_Miss_Write>
+	...
+
+80003d00 <_handle_Supervisor_Call>:
+80003d00:	c0 08       	rjmp	80003d00 <_handle_Supervisor_Call>
+80003d02:	d7 03       	nop
+
+80003d04 <_int0>:
+80003d04:	30 0c       	mov	r12,0
+80003d06:	fe b0 f8 03 	rcall	80002d0c <_get_interrupt_handler>
+80003d0a:	58 0c       	cp.w	r12,0
+80003d0c:	f8 0f 17 10 	movne	pc,r12
+80003d10:	d6 03       	rete
+
+80003d12 <_int1>:
+80003d12:	30 1c       	mov	r12,1
+80003d14:	fe b0 f7 fc 	rcall	80002d0c <_get_interrupt_handler>
+80003d18:	58 0c       	cp.w	r12,0
+80003d1a:	f8 0f 17 10 	movne	pc,r12
+80003d1e:	d6 03       	rete
+
+80003d20 <_int2>:
+80003d20:	30 2c       	mov	r12,2
+80003d22:	fe b0 f7 f5 	rcall	80002d0c <_get_interrupt_handler>
+80003d26:	58 0c       	cp.w	r12,0
+80003d28:	f8 0f 17 10 	movne	pc,r12
+80003d2c:	d6 03       	rete
+
+80003d2e <_int3>:
+80003d2e:	30 3c       	mov	r12,3
+80003d30:	fe b0 f7 ee 	rcall	80002d0c <_get_interrupt_handler>
+80003d34:	58 0c       	cp.w	r12,0
+80003d36:	f8 0f 17 10 	movne	pc,r12
+80003d3a:	d6 03       	rete
+80003d3c:	d7 03       	nop
+80003d3e:	d7 03       	nop
+80003d40:	d7 03       	nop
+80003d42:	d7 03       	nop
+80003d44:	d7 03       	nop
+80003d46:	d7 03       	nop
+80003d48:	d7 03       	nop
+80003d4a:	d7 03       	nop
+80003d4c:	d7 03       	nop
+80003d4e:	d7 03       	nop
+80003d50:	d7 03       	nop
+80003d52:	d7 03       	nop
+80003d54:	d7 03       	nop
+80003d56:	d7 03       	nop
+80003d58:	d7 03       	nop
+80003d5a:	d7 03       	nop
+80003d5c:	d7 03       	nop
+80003d5e:	d7 03       	nop
+80003d60:	d7 03       	nop
+80003d62:	d7 03       	nop
+80003d64:	d7 03       	nop
+80003d66:	d7 03       	nop
+80003d68:	d7 03       	nop
+80003d6a:	d7 03       	nop
+80003d6c:	d7 03       	nop
+80003d6e:	d7 03       	nop
+80003d70:	d7 03       	nop
+80003d72:	d7 03       	nop
+80003d74:	d7 03       	nop
+80003d76:	d7 03       	nop
+80003d78:	d7 03       	nop
+80003d7a:	d7 03       	nop
+80003d7c:	d7 03       	nop
+80003d7e:	d7 03       	nop
+80003d80:	d7 03       	nop
+80003d82:	d7 03       	nop
+80003d84:	d7 03       	nop
+80003d86:	d7 03       	nop
+80003d88:	d7 03       	nop
+80003d8a:	d7 03       	nop
+80003d8c:	d7 03       	nop
+80003d8e:	d7 03       	nop
+80003d90:	d7 03       	nop
+80003d92:	d7 03       	nop
+80003d94:	d7 03       	nop
+80003d96:	d7 03       	nop
+80003d98:	d7 03       	nop
+80003d9a:	d7 03       	nop
+80003d9c:	d7 03       	nop
+80003d9e:	d7 03       	nop
+80003da0:	d7 03       	nop
+80003da2:	d7 03       	nop
+80003da4:	d7 03       	nop
+80003da6:	d7 03       	nop
+80003da8:	d7 03       	nop
+80003daa:	d7 03       	nop
+80003dac:	d7 03       	nop
+80003dae:	d7 03       	nop
+80003db0:	d7 03       	nop
+80003db2:	d7 03       	nop
+80003db4:	d7 03       	nop
+80003db6:	d7 03       	nop
+80003db8:	d7 03       	nop
+80003dba:	d7 03       	nop
+80003dbc:	d7 03       	nop
+80003dbe:	d7 03       	nop
+80003dc0:	d7 03       	nop
+80003dc2:	d7 03       	nop
+80003dc4:	d7 03       	nop
+80003dc6:	d7 03       	nop
+80003dc8:	d7 03       	nop
+80003dca:	d7 03       	nop
+80003dcc:	d7 03       	nop
+80003dce:	d7 03       	nop
+80003dd0:	d7 03       	nop
+80003dd2:	d7 03       	nop
+80003dd4:	d7 03       	nop
+80003dd6:	d7 03       	nop
+80003dd8:	d7 03       	nop
+80003dda:	d7 03       	nop
+80003ddc:	d7 03       	nop
+80003dde:	d7 03       	nop
+80003de0:	d7 03       	nop
+80003de2:	d7 03       	nop
+80003de4:	d7 03       	nop
+80003de6:	d7 03       	nop
+80003de8:	d7 03       	nop
+80003dea:	d7 03       	nop
+80003dec:	d7 03       	nop
+80003dee:	d7 03       	nop
+80003df0:	d7 03       	nop
+80003df2:	d7 03       	nop
+80003df4:	d7 03       	nop
+80003df6:	d7 03       	nop
+80003df8:	d7 03       	nop
+80003dfa:	d7 03       	nop
+80003dfc:	d7 03       	nop
+80003dfe:	d7 03       	nop
