@@ -275,8 +275,7 @@ void FIFO_Reset(uint8_t CameraID)
 
 int TakePhoto(uint8_t Cameras)
 {
-	VSYNC_0_ENABLE_INTERRUPT;
-	VSYNC_1_ENABLE_INTERRUPT;
+	
 	//Only want to take pictures on cameras found
 	if(((OV7670_Status.VSYNC0_State != IDLE) || !OV7670_Status.Camera_0_Found) && ((OV7670_Status.VSYNC1_State != IDLE) || !OV7670_Status.Camera_1_Found))
 		return CAMERAS_BUSY; //wait for cameras to be idle if they are found
@@ -286,6 +285,9 @@ int TakePhoto(uint8_t Cameras)
 		
 	if(Cameras & CAMERA_RIGHT)
 		OV7670_Status.VSYNC1_State = TAKE_PHOTO;
+	
+	VSYNC_0_ENABLE_INTERRUPT;
+	VSYNC_1_ENABLE_INTERRUPT;
 	
 	return TAKING_PHOTO;
 	
