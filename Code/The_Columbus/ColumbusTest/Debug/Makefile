@@ -114,6 +114,7 @@ C_SRCS +=  \
 ../src/CustomDevices/OV7670_Setup.c \
 ../src/CustomDevices/PCA9542A.c \
 ../src/CustomDevices/SD_Card.c \
+../src/CustomDevices/TWI.c \
 ../src/main.c
 
 
@@ -162,6 +163,7 @@ src/CustomDevices/OV7670.o \
 src/CustomDevices/OV7670_Setup.o \
 src/CustomDevices/PCA9542A.o \
 src/CustomDevices/SD_Card.o \
+src/CustomDevices/TWI.o \
 src/main.o
 
 
@@ -201,6 +203,7 @@ src/CustomDevices/OV7670.o \
 src/CustomDevices/OV7670_Setup.o \
 src/CustomDevices/PCA9542A.o \
 src/CustomDevices/SD_Card.o \
+src/CustomDevices/TWI.o \
 src/main.o
 
 
@@ -237,6 +240,7 @@ src/CustomDevices/OV7670.d \
 src/CustomDevices/OV7670_Setup.d \
 src/CustomDevices/PCA9542A.d \
 src/CustomDevices/SD_Card.d \
+src/CustomDevices/TWI.d \
 src/main.d
 
 
@@ -273,6 +277,7 @@ src/CustomDevices/OV7670.d \
 src/CustomDevices/OV7670_Setup.d \
 src/CustomDevices/PCA9542A.d \
 src/CustomDevices/SD_Card.d \
+src/CustomDevices/TWI.d \
 src/main.d
 
 
@@ -285,6 +290,8 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
 
 
 

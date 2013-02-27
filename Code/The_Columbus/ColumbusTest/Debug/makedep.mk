@@ -72,5 +72,7 @@ src\CustomDevices\PCA9542A.c
 
 src\CustomDevices\SD_Card.c
 
+src\CustomDevices\TWI.c
+
 src\main.c
 

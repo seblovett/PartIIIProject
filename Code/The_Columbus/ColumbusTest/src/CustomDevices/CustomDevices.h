@@ -18,5 +18,7 @@
 //SDCard
 #include "CustomDevices/SD_Card.h"
 
+//TWI Methods
+void twim_init (void);
 
 #endif /* CUSTOMDEVICES_H_ */

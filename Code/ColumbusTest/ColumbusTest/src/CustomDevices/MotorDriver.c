@@ -70,10 +70,10 @@ void Motor_Init()
 	MR_IN1_CLR;
 	MR_IN2_CLR;
 	
-	Motor_Cntrl.Left_Count = 0;
-	Motor_Cntrl.Right_Count = 0;
-	Motor_Cntrl.Left_State = STOP;
-	Motor_Cntrl.Right_State = STOP;
+	Motor_Control.Left_Count = 0;
+	Motor_Control.Right_Count = 0;
+	Motor_Control.Left_State = STOP;
+	Motor_Control.Right_State = STOP;
 
 	avr32_pwm_channel_t pwm_channel = {{0}, // cmr
 											{0}, // cdty
@@ -148,7 +148,7 @@ __attribute__((__interrupt__)) static void ACInterruptHandler(void)
 	else
 	{
 		LED5_CLR;
-		Motor_Cntrl.Left_Count --;
+		Motor_Control.Left_Count --;
 	}
 	
 	if (acifa_is_aca_inp_higher(&AVR32_ACIFA1))
@@ -160,13 +160,13 @@ __attribute__((__interrupt__)) static void ACInterruptHandler(void)
 	else
 	{
 		LED6_CLR;
-		Motor_Cntrl.Right_Count --;
+		Motor_Control.Right_Count --;
 	}
 	int temp = 0;
-	if(Motor_Cntrl.Left_Count <= 0) //if we have reached the end of the movement on left wheel
+	if(Motor_Control.Left_Count <= 0) //if we have reached the end of the movement on left wheel
 		temp |= MOTOR_L;
 	
-	if(Motor_Cntrl.Right_Count <= 0)
+	if(Motor_Control.Right_Count <= 0)
 		temp |= MOTOR_R;
 		
 	Motor_Stop(temp); //Stop the Right Motor
@@ -232,12 +232,12 @@ void Motor_Start(int Motors)
 {
 	if(Motors & MOTOR_L)
 	{
-		if(Motor_Cntrl.Left_State == FORWARD)
+		if(Motor_Control.Left_State == FORWARD)
 		{
 			ML_IN1_SET;
 			ML_IN2_CLR;
 		}
-		else if (Motor_Cntrl.Left_State == BACKWARD)
+		else if (Motor_Control.Left_State == BACKWARD)
 		{
 			ML_IN1_CLR;
 			ML_IN2_SET;
@@ -254,12 +254,12 @@ void Motor_Start(int Motors)
 	
 	if(Motors & MOTOR_R)
 	{
-		if(Motor_Cntrl.Right_State == FORWARD)
+		if(Motor_Control.Right_State == FORWARD)
 		{
 			MR_IN1_SET;
 			MR_IN2_CLR;
 		}
-		else if (Motor_Cntrl.Right_State == BACKWARD)
+		else if (Motor_Control.Right_State == BACKWARD)
 		{
 			MR_IN1_CLR;
 			MR_IN2_SET;
@@ -280,14 +280,14 @@ void Motor_Stop(int Motors)
 	if(Motors & MOTOR_L)
 	{
 		ML_STANDBY;
-		Motor_Cntrl.Left_State = STOP;
+		Motor_Control.Left_State = STOP;
 		pwm_stop_channels((1 << MOTOR_L)); //Start PWM Channel on M0 line
 	}
 	
 	if(Motors & MOTOR_R)
 	{
 		MR_STANDBY;
-		Motor_Cntrl.Right_State = STOP;
+		Motor_Control.Right_State = STOP;
 		pwm_stop_channels((1 << MOTOR_R));
 	}
 }
@@ -298,18 +298,18 @@ void Motors_Move(float x_metres, float y_metres)
 
 void Motors_Reset(void)
 {
-	Motor_Cntrl.Left_State = FORWARD;
-	Motor_Cntrl.Left_Count = 1;
-	Motor_Cntrl.Right_State = FORWARD;
-	Motor_Cntrl.Right_Count = 1;
+	Motor_Control.Left_State = FORWARD;
+	Motor_Control.Left_Count = 1;
+	Motor_Control.Right_State = FORWARD;
+	Motor_Control.Right_Count = 1;
 	Motor_Start(MOTOR_L | MOTOR_R);
 }
 
 bool Motors_Moving()
 {
-	if(Motor_Cntrl.Left_State != STOP)
+	if(Motor_Control.Left_State != STOP)
 	{
-		if(Motor_Cntrl.Right_State != STOP)
+		if(Motor_Control.Right_State != STOP)
 		{
 			return true;
 		}

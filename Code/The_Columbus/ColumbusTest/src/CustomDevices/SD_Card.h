@@ -10,7 +10,11 @@
 #define SD_CARD_H_
 
 
-
+typedef struct {
+	uint8_t Status;
+	uint32_t Memory_size;
+	} SD_Status_t;
+SD_Status_t SD_Status;
 
 void local_pdca_init(void);
 void sd_mmc_resources_init(void);

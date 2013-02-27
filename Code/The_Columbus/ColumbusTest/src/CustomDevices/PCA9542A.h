@@ -15,6 +15,7 @@
 #define PCA9542A_ADDR (0x70 | (A2 << 2) | (A1 << 1) | A0)
 
 #define NO_SELECT		0x00
+#define ERROR			0x01
 #define I2C_CHANNEL_0	0x04
 #define I2C_CHANNEL_1	0x05
 
@@ -22,7 +23,12 @@
 #define SUCCESS		0
 #define DEVICE_NOT_FOUND	2
 
+typedef struct {
+	uint8_t Status;
+	uint8_t ChannelSelected;
+	} PCA9542A_t;
 
+PCA9542A_t PCA9542A_Status;
 int PCA9542A_Init();
 //void PCA9542A_Channel_Select(uint8_t Channel);
 void PCA9542A_Chan_Sel(unsigned char Channel);

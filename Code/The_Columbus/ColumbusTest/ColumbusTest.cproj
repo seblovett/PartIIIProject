@@ -668,6 +668,9 @@
     <Compile Include="src\CustomDevices\SD_Card.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\CustomDevices\TWI.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\main.c">
       <SubType>compile</SubType>
     </Compile>

@@ -30,12 +30,12 @@ typedef struct {
 	int Right_State;
 	int Left_Count;
 	int Right_Count;
-	} Motor_Control;
+	} Motor_Control_t;
 
 //Globals
 pwm_opt_t pwm_opt;                // PWM option config.
 avr32_pwm_channel_t pwm_channel;
-Motor_Control Motor_Cntrl;
+Motor_Control_t Motor_Control;
 
 void Motor_Init();
 void Motor_Go();
