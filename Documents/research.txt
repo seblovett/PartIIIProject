@@ -26,3 +26,5 @@ http://www.bmva.org/bmvc/1998/pdf/p125.pdf
 http://www.mathworks.co.uk/products/demos/image/cross_correlation/imreg.html
 http://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1064&context=ecetr
 http://www.kurims.kyoto-u.ac.jp/~ooura/fft.html
+
+http://www.atmel.com/Images/doc32121.pdf
