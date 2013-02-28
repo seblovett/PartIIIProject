@@ -34,7 +34,7 @@ const char default_settings[SETTINGS_LENGTH][2];
 const uint8_t DIBHead[DIBHEADERSIZE];
 const uint8_t BMPHeader[BMPHEADERSIZE];
 typedef struct {
-	bool Error;
+	uint8_t Status;
 	bool Camera_0_Found;
 	bool Camera_1_Found;
 	bool Camera_0_Error;

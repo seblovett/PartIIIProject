@@ -71,6 +71,10 @@ src/asf/common/boards/user_board/init.d \
  ../src/asf/avr32/drivers/intc/intc.h \
  ../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h \
  ../src/asf/avr32/utils/status_codes.h \
+ ../src/asf/thirdparty/dlmalloc/dlmalloc.h ../src/config/conf_dlmalloc.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/types.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/machine/types.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/features.h \
  ../src/asf/common/services/delay/delay.h \
  ../src/asf/common/services/clock/sysclk.h ../src/config/conf_clock.h \
  ../src/asf/common/services/clock/uc3c/sysclk.h \
@@ -104,7 +108,10 @@ src/asf/common/boards/user_board/init.d \
  ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.h \
  ../src/asf/avr32/drivers/spi/spi.h ../src/asf/avr32/drivers/twim/twim.h \
  ../src/config/conf_twim.h ../src/asf/avr32/drivers/usart/usart.h \
- ../src/asf/avr32/utils/debug/print_funcs.h
+ ../src/asf/avr32/utils/debug/print_funcs.h \
+ ../src/CustomDevices/CustomDevices.h ../src/CustomDevices/OV7670.h \
+ ../src/CustomDevices/PCA9542A.h ../src/CustomDevices/MotorDriver.h \
+ ../src/CustomDevices/SD_Card.h
 
 ../src/asf.h:
 
@@ -246,6 +253,16 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 
 ../src/asf/avr32/utils/status_codes.h:
 
+../src/asf/thirdparty/dlmalloc/dlmalloc.h:
+
+../src/config/conf_dlmalloc.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/types.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/machine/types.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/features.h:
+
 ../src/asf/common/services/delay/delay.h:
 
 ../src/asf/common/services/clock/sysclk.h:
@@ -325,3 +342,13 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/asf/avr32/drivers/usart/usart.h:
 
 ../src/asf/avr32/utils/debug/print_funcs.h:
+
+../src/CustomDevices/CustomDevices.h:
+
+../src/CustomDevices/OV7670.h:
+
+../src/CustomDevices/PCA9542A.h:
+
+../src/CustomDevices/MotorDriver.h:
+
+../src/CustomDevices/SD_Card.h:

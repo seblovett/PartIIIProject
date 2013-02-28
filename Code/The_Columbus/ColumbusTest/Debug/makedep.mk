@@ -60,6 +60,10 @@ src\asf\common\services\clock\uc3c\sysclk.c
 
 src\asf\common\services\storage\ctrl_access\ctrl_access.c
 
+src\asf\thirdparty\dlmalloc\dlmalloc.c
+
+src\asf\thirdparty\dlmalloc\dlsbrk.c
+
 src\CustomDevices\Bitmap.c
 
 src\CustomDevices\MotorDriver.c

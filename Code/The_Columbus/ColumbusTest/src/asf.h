@@ -62,6 +62,9 @@
 #include <compiler.h>
 #include <status_codes.h>
 
+// From module: DLMALLOC - Dynamic memory allocation
+#include <dlmalloc.h>
+
 // From module: Delay routines
 #include <delay.h>
 

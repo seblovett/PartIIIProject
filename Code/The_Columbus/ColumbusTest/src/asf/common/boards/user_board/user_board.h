@@ -32,6 +32,8 @@
 
 // External oscillator startup time
 //#define BOARD_XOSC_STARTUP_US  500000
-
+#define SDRAM_START_ADDRESS 0xD0000000
+#define MEM_SPACE_SIZE 0x400000
+#define LOG_FILE "log.txt"
 
 #endif // USER_BOARD_H

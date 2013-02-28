@@ -18,7 +18,20 @@
 //SDCard
 #include "CustomDevices/SD_Card.h"
 
+typedef struct {
+	int Status;
+	SD_Status_t *SD_Card;
+	Motor_Control_t *Motors;
+	OV7670_t *Cameras;
+	PCA9542A_t *I2CMux;
+} Columbus_Status_t;
+
+#define SD_ERR		0x1
+#define CAM_ERR		0x2
+#define I2CMux_ERR	0x4
+mspace sdram_msp;
+Columbus_Status_t Columbus_Status;
 //TWI Methods
 void twim_init (void);
-
+void System_Test();
 #endif /* CUSTOMDEVICES_H_ */
