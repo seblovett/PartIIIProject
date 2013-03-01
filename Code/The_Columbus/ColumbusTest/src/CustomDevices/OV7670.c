@@ -413,10 +413,15 @@ void Store_Image_0()
 void Store_Image_1()
 {
 	int i, j;
-	uint8_t buffer[WIDTH * 2];
+	//uint8_t buffer[WIDTH * 2];
 	char Filename_buff[15];
-// 	uint8_t *Buffer_ram;
-// 	Buffer_ram = mspace_malloc(sdram_msp, WIDTH * HEIGHT * 2);
+ 	uint8_t *Buffer_ram;
+ 	Buffer_ram = mspace_malloc(sdram_msp, WIDTH * 2);
+	 if(Buffer_ram == NULL)
+	 {
+		 print_dbg("\n\rBuffer allocation fail.\n\r");
+		 return;
+	 }
 	i = 0;
 	//make file
 	//delete file if it exits already
@@ -457,23 +462,18 @@ void Store_Image_1()
 		for(i = 0; i < WIDTH*2; i+=2)
 		{
 			FIFO_1_RCLK_SET;
-			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			Buffer_ram[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
 			FIFO_1_RCLK_CLR;
 			delay_us(1);
 			FIFO_1_RCLK_SET;
-			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			Buffer_ram[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
 			FIFO_1_RCLK_CLR;
 		}
-		file_write_buf(&buffer, WIDTH * 2);
+		file_write_buf(Buffer_ram, WIDTH * 2);
 	}
-// 	for (i = 0; i < 10; i++)
-// 	{
-// 			FIFO_1_RCLK_SET;
-// 			Buffer_ram[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-// 			FIFO_1_RCLK_CLR;		
-// 	}
-// 		file_write_buf(&Buffer_ram, HEIGHT * WIDTH * 2);
+	
 	FIFO_1_nOE_SET;//disable output
 	file_close();
+	mspace_free(sdram_msp, Buffer_ram);
 /*	mspace_free(sdram_msp, Buffer_ram);*/
 }

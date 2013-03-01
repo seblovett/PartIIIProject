@@ -19,10 +19,64 @@
 
 
 
+//REF : http://www.chris.com/ASCII/index.php?art=transportation/nautical 
+#define ASCII_SHIP "              |    |    | \n\r \
+            )_)  )_)  )_) \n\r \
+           )___))___))___)\\  \n\r\
+           )____)____)_____)\\\\ \n\r \
+         _____|____|____|____\\\\\\__ \n\r \
+---------\\                   /--------- \n\r \
+  ^^^^^ ^^^^^^^^^^^^^^^^^^^^^ \n\r \
+    ^^^^      ^^^^     ^^^    ^^\n\r \
+         ^^^^      ^^^\n\r"
+#define PROMPT "\n\r$>"
+#define SIGNAL_FILE "signal.bin"
 
+void Get_Line( char * WorkingBuffer ) 
+{
+	int c = 0;
+	
+	while(c != 13)
+	{
+		c = usart_getchar(DBG_USART);
+		*(WorkingBuffer) = c; 
+		WorkingBuffer++;
+		print_dbg_char(c);
+	}
+	usart_putchar(DBG_USART, 0x10);
+}
 
-
-
+int ReadSignal( int * WorkingBuffer ) 
+{
+	bool status_b;
+	int Status;
+	char c = 0;
+	if(Columbus_Status.SD_Card->Status != STATUS_OK)
+		return ERR_IO_ERROR;
+	nav_filelist_reset();
+	nav_setcwd((FS_STRING)SIGNAL_FILE, false, false);
+	status_b = file_open(FOPEN_MODE_R);
+	if(status_b == false)
+	{
+		print_dbg("File Open Error");
+		return ERR_IO_ERROR;
+	}
+	
+	
+	//Status = file_read_buf(WorkingBuffer, 16);
+	for(Status = 0; Status < 16; Status++)
+	{
+		print_dbg("\n\r Read from file: ");
+		c = file_getc();
+		print_dbg_char(c);
+		
+		WorkingBuffer[Status] = c;
+		print_dbg("  Working Buff = ");
+		print_dbg_char(WorkingBuffer[Status]);
+	}
+	file_close();
+	return STATUS_OK;
+}
 
 void Log_Write(char *buff, int length) 
 {
@@ -53,71 +107,93 @@ int main (void)
 {
 	unsigned long i, j, tmp = 0;
 	volatile unsigned long *sdram = SDRAM;
-//	uint32_t VarTemp;
-//	mspace sdram_msp;
-	//uint8_t *some_space_in_sdram;
+	char CommandBuffer[16];
+	int *WorkingBuffer;
 	Columbus_Status.SD_Card = &SD_Status;
 	Columbus_Status.Cameras = &OV7670_Status;
 	Columbus_Status.I2CMux = &PCA9542A;
 	Columbus_Status.SD_Card = &SD_Status;
 	board_init();
+	print_dbg("\n\r");
+	print_dbg(ASCII_SHIP);
 	System_Test();
-// 	
-//	print_dbg("\n\n\rSD Card Memory Test:\n\r");
-	// Test if the memory is ready - using the control access memory abstraction layer (/SERVICES/MEMORY/CTRL_ACCESS/)
-// 	if (mem_test_unit_ready(LUN_ID_SD_MMC_SPI_MEM) == CTRL_GOOD)
-// 	{
-// 		SD_Status.Status = STATUS_OK;
-// 		// Get and display the capacity
-// 		mem_read_capacity(LUN_ID_SD_MMC_SPI_MEM, &VarTemp);
-// /*		print_dbg("OK:\t");*/
-// 		SD_Status.Memory_size = (VarTemp + 1) >> (20 - FS_SHIFT_B_TO_SECTOR);
-// // 		print_dbg_ulong(Columbus_Status.SD_Card->Memory_size);
-// // 		print_dbg("MB\r\n");
-// // 		print_dbg("SD Card Okay.\n\r");
-// 		nav_reset();
-// 		// Use the last drive available as default.
-// 		nav_drive_set(nav_drive_nb() - 1);
-// 		// Mount it.
-// 		nav_partition_mount();
-// 		nav_filelist_reset();
-// 		if(nav_filelist_findname((FS_STRING)LOG_FILE, false))
-// 		{
-// 			//print_dbg("\n\rLog File Already Exists\n\rAttempting to delete...");	
-// 			nav_setcwd((FS_STRING)LOG_FILE, true, false);
-// 			nav_file_del(false);
-// 		}
-// 
-// 		if(nav_file_create((FS_STRING)LOG_FILE) == false)
-// 			SD_Status.Status = ERR_IO_ERROR;//print_dbg("\n\rNot worked...");
-// 	
-// 		Log_Write("Columbus Tester:\n\r", -1);
-// 		}
-// 	else
-// 	{
-// 		SD_Status.Status = ERR_IO_ERROR;
-// 	}
+
 	
 	//print_dbg("\n\rResetting Motors.");
 	
-	Motors_Reset();
-	while(Motors_Moving() == true)
-		;
-
-// 	FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
-// 	print_dbg("\n\rTaking Photos");
-// 	TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
-// 	while(Photos_Ready() == false)
+// 	Motors_Reset();
+// 	while(Motors_Moving() == true)
 // 		;
-// 
-// 	if(Store_Both_Images() == true)
-// 		print_dbg("\n\rImages Stored Successfully!");
+
+
 
 	print_dbg("\n\rColumbus Ready!");
 	// Insert application code here, after the board has been initialized.
 	while(1)
 	{
+		print_dbg(PROMPT);
+		Get_Line(CommandBuffer);
+		print_dbg("\n\r$");
+		//print_dbg(WorkingBuffer);
+		switch(CommandBuffer[0])
+		{
+			case 'F':
+				switch(CommandBuffer[1])
+				{
+					case 'F':
+						switch(CommandBuffer[2])
+						{
+							case 'T':
+								print_dbg("= Fast Fourier Transform...");
+								break;
+								
+							default:
+								print_dbg("= Command Not Recognised");
+								break;
+						}
+						break;
+					
+					default:
+						print_dbg("= Command Not Recognised");
+						break;
+				}
+				break;
+				
+			case 'R':
+				WorkingBuffer = mspace_malloc(sdram_msp, 16);
+				print_dbg("Reading in signal.bin");
+				ReadSignal(WorkingBuffer);
+				break;
+			case 'r':
+				
+				print_dbg("Working Buffer:");
+				for(i = 0; i < 16; i++)
+				{
+					print_dbg_ulong(WorkingBuffer[i]);
+					print_dbg("\n\r");
+				}				
+				break; 
+			case 'P'://take a photo
+					FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
+					print_dbg("\n\rTaking Photos");
+					TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
+					while(Photos_Ready() == false)
+						;
 
-
+					if(Store_Both_Images() == true)
+						print_dbg("\n\rImages Stored Successfully!");
+					break;
+// 			case 't':
+// 				WorkingBuffer = mspace_malloc(sdram_msp, 16);
+// 				for(i = 0; i < 16; i++)
+// 				{
+// 					WorkingBuffer[i] = ('A' + i);
+// 					print_dbg_char(WorkingBuffer[i]);
+// 				}
+// 				mspace_free(sdram_msp, WorkingBuffer);
+// 				break;
+			default:
+				print_dbg("= Command Not Recognised");
+		}
 	}
 }
