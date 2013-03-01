@@ -9,6 +9,7 @@
  * Include header files for all drivers that have been imported from
  * Atmel Software Framework (ASF).
  */
+
 #include <asf.h>
 #include <conf_board.h>
 #include "CustomDevices/CustomDevices.h"
@@ -16,9 +17,9 @@
 #include "fat.h"
 #include "file.h"
 #include "navigation.h"
+#include "fastmath.h"
 
-
-
+//#define DSP32_FORMAT 4
 //REF : http://www.chris.com/ASCII/index.php?art=transportation/nautical 
 #define ASCII_SHIP "              |    |    | \n\r \
             )_)  )_)  )_) \n\r \
@@ -78,6 +79,25 @@ int ReadSignal( int * WorkingBuffer )
 	return STATUS_OK;
 }
 
+void FFT( int * WorkingBuffer ) 
+{
+	int i =0;
+	double a;
+	A_ALIGNED dsp32_complex_t vect1[16];
+	A_ALIGNED dsp32_t vect2[16];
+// 	for(i = 0; i < 16; i++)
+// 	{
+// 		vect2[i] = DSP32_Q (WorkingBuffer[i]);
+// 	}
+	dsp32_trans_realcomplexfft(vect1, vect2, 4);
+	dsp32_vect_complex_abs(vect2, vect1, 16);
+	for(i = 0; i < 16; i++)
+	{
+		WorkingBuffer[i] = vect2[i];
+	}
+	
+}
+
 void Log_Write(char *buff, int length) 
 {
 	nav_setcwd((FS_STRING)LOG_FILE, true, false);
@@ -91,7 +111,7 @@ void Log_Write_ulong(unsigned long n)
 {
 	char tmp[11];
 	int i = sizeof(tmp) - 1;
-
+	
 	// Convert the given number to an ASCII decimal representation.
 	tmp[i] = '\0';
 	do
@@ -145,6 +165,7 @@ int main (void)
 						{
 							case 'T':
 								print_dbg("= Fast Fourier Transform...");
+								FFT(WorkingBuffer);
 								break;
 								
 							default:
@@ -183,6 +204,17 @@ int main (void)
 					if(Store_Both_Images() == true)
 						print_dbg("\n\rImages Stored Successfully!");
 					break;
+			case '1':
+				i = DSP32_Q(1.0);
+				print_dbg_ulong(i);
+				break;
+			
+			case 'c':
+				for(i = 0; i < 16; i++)
+				{
+					WorkingBuffer[i] = DSP32_Q (WorkingBuffer[i]);
+				}
+				break;
 // 			case 't':
 // 				WorkingBuffer = mspace_malloc(sdram_msp, 16);
 // 				for(i = 0; i < 16; i++)

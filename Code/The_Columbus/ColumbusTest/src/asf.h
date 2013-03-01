@@ -65,6 +65,9 @@
 // From module: DLMALLOC - Dynamic memory allocation
 #include <dlmalloc.h>
 
+// From module: DSP - Digital signal processing library
+#include <dsp.h>
+
 // From module: Delay routines
 #include <delay.h>
 

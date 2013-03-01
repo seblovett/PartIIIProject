@@ -27,6 +27,7 @@
     <option id="common.services.delay" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.storage.ctrl_access" value="Add" config="" content-id="Atmel.ASF" />
     <option id="avr32.services.storage.dlmalloc" value="Add" config="" content-id="Atmel.ASF" />
+    <option id="avr32.utils.libs.dsplib" value="Add" config="speed" content-id="Atmel.ASF" />
   </options>
   <configurations>
     <configuration key="config.avr32.utils.trampoline" value="yes" default="yes" content-id="Atmel.ASF" />
@@ -124,6 +125,8 @@
     <file path="src/asf/thirdparty/dlmalloc/docsrc/documentation.h" framework="" version="" source="thirdparty\dlmalloc\docsrc\documentation.h" changed="False" content-id="Atmel.ASF" />
     <file path="src/asf/thirdparty/dlmalloc/dlmalloc.h" framework="" version="" source="thirdparty\dlmalloc\dlmalloc.h" changed="False" content-id="Atmel.ASF" />
     <file path="src/config/conf_dlmalloc.h" framework="" version="" source="thirdparty\dlmalloc\module_config\conf_dlmalloc.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc/libdsp-at32ucr3fp-dspspeed_opt.a" framework="" version="" source="avr32\utils\libs\dsplib\at32ucr3fp\gcc\libdsp-at32ucr3fp-dspspeed_opt.a" changed="False" content-id="Atmel.ASF" />
+    <file path="src/asf/avr32/utils/libs/dsplib/include/dsp.h" framework="" version="" source="avr32\utils\libs\dsplib\include\dsp.h" changed="False" content-id="Atmel.ASF" />
   </files>
   <documentation help="http://asf.atmel.com/docs/3.5.0/common.applications.user_application.user_board.uc3c/html/index.html" />
 </framework-data>
@@ -219,6 +222,7 @@
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
       <Value>../src/asf/thirdparty/dlmalloc</Value>
+      <Value>../src/asf/avr32/utils/libs/dsplib/include</Value>
     </ListValues>
   </avr32gcc.compiler.directories.IncludePaths>
   <avr32gcc.compiler.optimization.level>Optimize for size (-Os)</avr32gcc.compiler.optimization.level>
@@ -228,6 +232,16 @@
   <avr32gcc.compiler.miscellaneous.OtherFlags>-Werror-implicit-function-declaration -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -mno-cond-exec-before-reload -mrelax -std=gnu99</avr32gcc.compiler.miscellaneous.OtherFlags>
   <avr32gcc.linker.general.DoNotUseStandardStartFiles>True</avr32gcc.linker.general.DoNotUseStandardStartFiles>
   <avr32gcc.linker.general.DoNotUseDefaultLibraries />
+  <avr32gcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>dsp-at32ucr3fp-dspspeed_opt</Value>
+    </ListValues>
+  </avr32gcc.linker.libraries.Libraries>
+  <avr32gcc.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc</Value>
+    </ListValues>
+  </avr32gcc.linker.libraries.LibrarySearchPaths>
   <avr32gcc.linker.optimization.GarbageCollectUnusedSections>True</avr32gcc.linker.optimization.GarbageCollectUnusedSections>
   <avr32gcc.linker.miscellaneous.LinkerFlags>-Wl,--relax -Wl,-e,_trampoline</avr32gcc.linker.miscellaneous.LinkerFlags>
   <avr32gcc.assembler.general.AssemblerFlags>-mrelax</avr32gcc.assembler.general.AssemblerFlags>
@@ -263,6 +277,7 @@
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
       <Value>../src/asf/thirdparty/dlmalloc</Value>
+      <Value>../src/asf/avr32/utils/libs/dsplib/include</Value>
     </ListValues>
   </avr32gcc.assembler.general.IncludePaths>
   <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USER_BOARD -mrelax -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED</avr32gcc.preprocessingassembler.general.AssemblerFlags>
@@ -298,6 +313,7 @@
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
       <Value>../src/asf/thirdparty/dlmalloc</Value>
+      <Value>../src/asf/avr32/utils/libs/dsplib/include</Value>
     </ListValues>
   </avr32gcc.preprocessingassembler.general.IncludePaths>
 </Avr32Gcc>
@@ -353,6 +369,7 @@
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
       <Value>../src/asf/thirdparty/dlmalloc</Value>
+      <Value>../src/asf/avr32/utils/libs/dsplib/include</Value>
     </ListValues>
   </avr32gcc.compiler.directories.IncludePaths>
   <avr32gcc.compiler.optimization.level>Optimize (-O1)</avr32gcc.compiler.optimization.level>
@@ -363,6 +380,16 @@
   <avr32gcc.compiler.miscellaneous.OtherFlags>-Werror-implicit-function-declaration -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -mno-cond-exec-before-reload -mrelax -std=gnu99</avr32gcc.compiler.miscellaneous.OtherFlags>
   <avr32gcc.linker.general.DoNotUseStandardStartFiles>True</avr32gcc.linker.general.DoNotUseStandardStartFiles>
   <avr32gcc.linker.general.DoNotUseDefaultLibraries />
+  <avr32gcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>dsp-at32ucr3fp-dspspeed_opt</Value>
+    </ListValues>
+  </avr32gcc.linker.libraries.Libraries>
+  <avr32gcc.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc</Value>
+    </ListValues>
+  </avr32gcc.linker.libraries.LibrarySearchPaths>
   <avr32gcc.linker.optimization.GarbageCollectUnusedSections>True</avr32gcc.linker.optimization.GarbageCollectUnusedSections>
   <avr32gcc.linker.miscellaneous.LinkerFlags>-Wl,--relax -Wl,-e,_trampoline</avr32gcc.linker.miscellaneous.LinkerFlags>
   <avr32gcc.assembler.general.AssemblerFlags>-mrelax</avr32gcc.assembler.general.AssemblerFlags>
@@ -398,6 +425,7 @@
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
       <Value>../src/asf/thirdparty/dlmalloc</Value>
+      <Value>../src/asf/avr32/utils/libs/dsplib/include</Value>
     </ListValues>
   </avr32gcc.assembler.general.IncludePaths>
   <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USER_BOARD -mrelax -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED</avr32gcc.preprocessingassembler.general.AssemblerFlags>
@@ -433,6 +461,7 @@
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
       <Value>../src/asf/thirdparty/dlmalloc</Value>
+      <Value>../src/asf/avr32/utils/libs/dsplib/include</Value>
     </ListValues>
   </avr32gcc.preprocessingassembler.general.IncludePaths>
 </Avr32Gcc>
@@ -578,6 +607,9 @@
     <None Include="src\asf\avr32\utils\debug\print_funcs.h">
       <SubType>compile</SubType>
     </None>
+    <None Include="src\asf\avr32\utils\libs\dsplib\include\dsp.h">
+      <SubType>compile</SubType>
+    </None>
     <Compile Include="src\asf\avr32\utils\startup\startup_uc3.S">
       <SubType>compile</SubType>
     </Compile>
@@ -587,6 +619,9 @@
     <Compile Include="src\asf\common\boards\user_board\init.c">
       <SubType>compile</SubType>
     </Compile>
+    <None Include="src\asf\avr32\utils\libs\dsplib\at32ucr3fp\gcc\libdsp-at32ucr3fp-dspspeed_opt.a">
+      <SubType>compile</SubType>
+    </None>
     <None Include="src\asf\common\services\clock\genclk.h">
       <SubType>compile</SubType>
     </None>
@@ -786,6 +821,11 @@
     <Folder Include="src\asf\avr32\utils\" />
     <Folder Include="src\asf\avr32\utils\debug\" />
     <Folder Include="src\asf\avr32\utils\header_files\" />
+    <Folder Include="src\asf\avr32\utils\libs\" />
+    <Folder Include="src\asf\avr32\utils\libs\dsplib\" />
+    <Folder Include="src\asf\avr32\utils\libs\dsplib\at32ucr3fp\" />
+    <Folder Include="src\asf\avr32\utils\libs\dsplib\at32ucr3fp\gcc\" />
+    <Folder Include="src\asf\avr32\utils\libs\dsplib\include\" />
     <Folder Include="src\asf\avr32\utils\preprocessor\" />
     <Folder Include="src\asf\avr32\utils\startup\" />
     <Folder Include="src\asf\common\" />
