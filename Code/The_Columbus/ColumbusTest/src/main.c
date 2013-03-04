@@ -33,6 +33,8 @@
 #define PROMPT "\n\r$>"
 #define SIGNAL_FILE "signal.bin"
 
+#define FFT_SIZE	16
+#define FFT_LOG2	4
 void Get_Line( char * WorkingBuffer ) 
 {
 	int c = 0;
@@ -65,7 +67,7 @@ int ReadSignal( int * WorkingBuffer )
 	
 	
 	//Status = file_read_buf(WorkingBuffer, 16);
-	for(Status = 0; Status < 16; Status++)
+	for(Status = 0; Status < FFT_SIZE; Status++)
 	{
 		print_dbg("\n\r Read from file: ");
 		c = file_getc();
@@ -83,19 +85,34 @@ void FFT( int * WorkingBuffer )
 {
 	int i =0;
 	double a;
-	A_ALIGNED dsp32_complex_t vect1[16];
-	A_ALIGNED dsp32_t vect2[16];
-// 	for(i = 0; i < 16; i++)
-// 	{
-// 		vect2[i] = DSP32_Q (WorkingBuffer[i]);
-// 	}
-	dsp32_trans_realcomplexfft(vect1, vect2, 4);
-	dsp32_vect_complex_abs(vect2, vect1, 16);
-	for(i = 0; i < 16; i++)
+	A_ALIGNED dsp32_complex_t vect1[FFT_SIZE];
+	A_ALIGNED dsp32_t vect2[FFT_SIZE];
+	for(i = 0; i < FFT_SIZE; i++)
+	{
+		vect2[i] = WorkingBuffer[i];
+	}
+	dsp32_trans_realcomplexfft(vect1, vect2, FFT_LOG2);
+	dsp32_vect_complex_abs(vect2, vect1, FFT_SIZE);
+	for(i = 0; i < FFT_SIZE; i++)
 	{
 		WorkingBuffer[i] = vect2[i];
 	}
 	
+}
+#define BUFFER_FILENAME		"Buffer.bin"
+void SaveBuff( int * WorkingBuffer ) 
+{
+	//If the file exists, delete it
+	if(nav_filelist_findname((FS_STRING)BUFFER_FILENAME, false))
+	{
+		nav_setcwd((FS_STRING)BUFFER_FILENAME, false, false);
+		nav_file_del(false);
+	}
+	nav_file_create((FS_STRING)BUFFER_FILENAME);
+	nav_setcwd((FS_STRING)BUFFER_FILENAME, false, true);
+	file_open(FOPEN_MODE_APPEND);
+	file_write_buf(WorkingBuffer, sizeof(WorkingBuffer));
+	file_close();
 }
 
 void Log_Write(char *buff, int length) 
@@ -144,7 +161,24 @@ int main (void)
 // 	Motors_Reset();
 // 	while(Motors_Moving() == true)
 // 		;
-
+	if(Columbus_Status.Status != STATUS_OK)
+	{
+		while(1)
+		{	
+			LED2_SET;
+			LED3_SET;
+			LED4_SET;
+			LED5_SET;
+			LED6_SET;
+			delay_ms(500);
+			LED2_CLR;
+			LED3_CLR;
+			LED4_CLR;
+			LED5_CLR;
+			LED6_CLR;
+			delay_ms(500);
+		}//inifinte loop
+	}
 
 
 	print_dbg("\n\rColumbus Ready!");
@@ -181,14 +215,14 @@ int main (void)
 				break;
 				
 			case 'R':
-				WorkingBuffer = mspace_malloc(sdram_msp, 16);
+				WorkingBuffer = mspace_malloc(sdram_msp, FFT_SIZE);
 				print_dbg("Reading in signal.bin");
 				ReadSignal(WorkingBuffer);
 				break;
 			case 'r':
 				
-				print_dbg("Working Buffer:");
-				for(i = 0; i < 16; i++)
+				print_dbg("Working Buffer:\n\r");
+				for(i = 0; i < FFT_SIZE; i++)
 				{
 					print_dbg_ulong(WorkingBuffer[i]);
 					print_dbg("\n\r");
@@ -210,10 +244,13 @@ int main (void)
 				break;
 			
 			case 'c':
-				for(i = 0; i < 16; i++)
+				for(i = 0; i < FFT_SIZE; i++)
 				{
 					WorkingBuffer[i] = DSP32_Q (WorkingBuffer[i]);
 				}
+				break;
+			case 's'://save the working buffer
+				SaveBuff(WorkingBuffer);
 				break;
 // 			case 't':
 // 				WorkingBuffer = mspace_malloc(sdram_msp, 16);

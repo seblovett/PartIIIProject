@@ -23,11 +23,11 @@
     <option id="avr32.drivers.twim" value="Add" config="" content-id="Atmel.ASF" />
     <option id="avr32.services.fs.fat" value="Add" config="" content-id="Atmel.ASF" />
     <option id="avr32.utils.print_funcs" value="Add" config="" content-id="Atmel.ASF" />
+    <option id="avr32.utils.libs.dsplib" value="Add" config="speed" content-id="Atmel.ASF" />
     <option id="common.boards" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.delay" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.storage.ctrl_access" value="Add" config="" content-id="Atmel.ASF" />
     <option id="avr32.services.storage.dlmalloc" value="Add" config="" content-id="Atmel.ASF" />
-    <option id="avr32.utils.libs.dsplib" value="Add" config="speed" content-id="Atmel.ASF" />
   </options>
   <configurations>
     <configuration key="config.avr32.utils.trampoline" value="yes" default="yes" content-id="Atmel.ASF" />
@@ -125,8 +125,8 @@
     <file path="src/asf/thirdparty/dlmalloc/docsrc/documentation.h" framework="" version="" source="thirdparty\dlmalloc\docsrc\documentation.h" changed="False" content-id="Atmel.ASF" />
     <file path="src/asf/thirdparty/dlmalloc/dlmalloc.h" framework="" version="" source="thirdparty\dlmalloc\dlmalloc.h" changed="False" content-id="Atmel.ASF" />
     <file path="src/config/conf_dlmalloc.h" framework="" version="" source="thirdparty\dlmalloc\module_config\conf_dlmalloc.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc/libdsp-at32ucr3fp-dspspeed_opt.a" framework="" version="" source="avr32\utils\libs\dsplib\at32ucr3fp\gcc\libdsp-at32ucr3fp-dspspeed_opt.a" changed="False" content-id="Atmel.ASF" />
     <file path="src/asf/avr32/utils/libs/dsplib/include/dsp.h" framework="" version="" source="avr32\utils\libs\dsplib\include\dsp.h" changed="False" content-id="Atmel.ASF" />
+    <file path="src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc/libdsp-at32ucr3fp-dspspeed_opt.a" framework="" version="" source="avr32\utils\libs\dsplib\at32ucr3fp\gcc\libdsp-at32ucr3fp-dspspeed_opt.a" changed="False" content-id="Atmel.ASF" />
   </files>
   <documentation help="http://asf.atmel.com/docs/3.5.0/common.applications.user_application.user_board.uc3c/html/index.html" />
 </framework-data>
@@ -157,7 +157,7 @@
       </OverrideVtorValue>
       <Channel>
         <host>127.0.0.1</host>
-        <port>19213</port>
+        <port>13656</port>
         <ssl>False</ssl>
       </Channel>
       <ToolOptions>
@@ -607,6 +607,9 @@
     <None Include="src\asf\avr32\utils\debug\print_funcs.h">
       <SubType>compile</SubType>
     </None>
+    <None Include="src\asf\avr32\utils\libs\dsplib\at32ucr3fp\gcc\libdsp-at32ucr3fp-dspspeed_opt.a">
+      <SubType>compile</SubType>
+    </None>
     <None Include="src\asf\avr32\utils\libs\dsplib\include\dsp.h">
       <SubType>compile</SubType>
     </None>
@@ -619,9 +622,6 @@
     <Compile Include="src\asf\common\boards\user_board\init.c">
       <SubType>compile</SubType>
     </Compile>
-    <None Include="src\asf\avr32\utils\libs\dsplib\at32ucr3fp\gcc\libdsp-at32ucr3fp-dspspeed_opt.a">
-      <SubType>compile</SubType>
-    </None>
     <None Include="src\asf\common\services\clock\genclk.h">
       <SubType>compile</SubType>
     </None>
