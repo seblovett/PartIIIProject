@@ -9,7 +9,7 @@
  * Include header files for all drivers that have been imported from
  * Atmel Software Framework (ASF).
  */
-
+#define DSP32_FORMAT 24
 #include <asf.h>
 #include <conf_board.h>
 #include "CustomDevices/CustomDevices.h"
@@ -33,8 +33,8 @@
 #define PROMPT "\n\r$>"
 #define SIGNAL_FILE "signal.bin"
 
-#define FFT_SIZE	16
-#define FFT_LOG2	4
+#define FFT_SIZE	64
+#define FFT_LOG2	6
 void Get_Line( char * WorkingBuffer ) 
 {
 	int c = 0;
@@ -111,7 +111,7 @@ void SaveBuff( int * WorkingBuffer )
 	nav_file_create((FS_STRING)BUFFER_FILENAME);
 	nav_setcwd((FS_STRING)BUFFER_FILENAME, false, true);
 	file_open(FOPEN_MODE_APPEND);
-	file_write_buf(WorkingBuffer, sizeof(WorkingBuffer));
+	file_write_buf(WorkingBuffer, FFT_SIZE * 4);
 	file_close();
 }
 
@@ -145,7 +145,7 @@ int main (void)
 	unsigned long i, j, tmp = 0;
 	volatile unsigned long *sdram = SDRAM;
 	char CommandBuffer[16];
-	int *WorkingBuffer;
+	int *WorkingBuffer = NULL;
 	Columbus_Status.SD_Card = &SD_Status;
 	Columbus_Status.Cameras = &OV7670_Status;
 	Columbus_Status.I2CMux = &PCA9542A;
@@ -220,7 +220,11 @@ int main (void)
 				ReadSignal(WorkingBuffer);
 				break;
 			case 'r':
-				
+				if (WorkingBuffer == NULL)
+				{
+					print_dbg("\n\rWorking Buffer Not Initialised");
+					break;
+				}
 				print_dbg("Working Buffer:\n\r");
 				for(i = 0; i < FFT_SIZE; i++)
 				{
