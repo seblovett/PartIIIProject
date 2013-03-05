@@ -32,7 +32,7 @@
          ^^^^      ^^^\n\r"
 #define PROMPT "\n\r$>"
 #define SIGNAL_FILE "signal.bin"
-
+#define HELP	"\n\rColumbus Prompt Help:\n\rR : Reads contents of signal.bin. Integers, Big Endian\n\rr : displays the contents of the working buffer\n\rs : saves the working buffer\n\rc : converts the working buffer from integer to fixed point\n\rFFT : computes the FFT of the working buffer. Returns magnitude.\n\r"
 #define FFT_SIZE	64
 #define FFT_LOG2	6
 void Get_Line( char * WorkingBuffer ) 
@@ -52,7 +52,7 @@ void Get_Line( char * WorkingBuffer )
 int ReadSignal( int * WorkingBuffer ) 
 {
 	bool status_b;
-	int Status;
+	int Status, temp;
 	char c = 0;
 	if(Columbus_Status.SD_Card->Status != STATUS_OK)
 		return ERR_IO_ERROR;
@@ -69,13 +69,19 @@ int ReadSignal( int * WorkingBuffer )
 	//Status = file_read_buf(WorkingBuffer, 16);
 	for(Status = 0; Status < FFT_SIZE; Status++)
 	{
-		print_dbg("\n\r Read from file: ");
-		c = file_getc();
-		print_dbg_char(c);
+//		print_dbg("\n\r Read from file: ");
+		c = 0;
+		temp = 0;
+		temp |= file_getc() << 24;
+		temp |= file_getc() << 16;
+		temp |= file_getc() << 8;
+		temp |= file_getc();	
 		
-		WorkingBuffer[Status] = c;
-		print_dbg("  Working Buff = ");
-		print_dbg_char(WorkingBuffer[Status]);
+//		print_dbg_char(c);
+		
+		WorkingBuffer[Status] = temp;
+// 		print_dbg("  Working Buff = ");
+// 		print_dbg_char(WorkingBuffer[Status]);
 	}
 	file_close();
 	return STATUS_OK;
@@ -191,6 +197,9 @@ int main (void)
 		//print_dbg(WorkingBuffer);
 		switch(CommandBuffer[0])
 		{
+			case '?':
+				print_dbg(HELP);
+				break;
 			case 'F':
 				switch(CommandBuffer[1])
 				{
@@ -225,12 +234,13 @@ int main (void)
 					print_dbg("\n\rWorking Buffer Not Initialised");
 					break;
 				}
-				print_dbg("Working Buffer:\n\r");
+				print_dbg("Working Buffer:\n\r[");
 				for(i = 0; i < FFT_SIZE; i++)
 				{
 					print_dbg_ulong(WorkingBuffer[i]);
-					print_dbg("\n\r");
+					print_dbg(", ");
 				}				
+				print_dbg("\b\b]\n\r");
 				break; 
 			case 'P'://take a photo
 					FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
