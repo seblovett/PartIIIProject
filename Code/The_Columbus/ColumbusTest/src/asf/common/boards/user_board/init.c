@@ -85,11 +85,12 @@ void System_Test()
 		Columbus_Status.Status |= SD_ERR;
 		print_dbg("\n\rSD Card Error!");
 	}	
-// 	if(OV7670_Status.Status != STATUS_OK)
-// 	{
-// 		Columbus_Status.Status |= CAM_ERR;
-// 		print_dbg("\n\rCamera Error(s)!");
-// 	}	
+	if(OV7670_Status.Status != STATUS_OK)
+	{
+		Columbus_Status.Status |= CAM_ERR;
+		print_dbg("\n\rCamera Error(s): ");
+		print_dbg_ulong(OV7670_Status.Status);
+	}	
 	if(PCA9542A.Status != STATUS_OK)
 	{
 		Columbus_Status.Status |= I2CMux_ERR;
