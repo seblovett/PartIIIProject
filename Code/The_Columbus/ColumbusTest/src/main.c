@@ -266,7 +266,7 @@ int main (void)
 			case 'C':
 				for(i = 0; i < FFT_SIZE * FFT_SIZE; i++)
 				{
-					WorkingBuffer[i] = DSP32_Q (WorkingBuffer[i]);
+					WorkingBuffer[i] = DSP16_Q (WorkingBuffer[i]);
 				}
 				break;
 			case 's'://save the working buffer

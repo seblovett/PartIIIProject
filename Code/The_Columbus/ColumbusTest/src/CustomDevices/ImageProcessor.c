@@ -64,51 +64,71 @@ int FFT2D( int *Signal )
 	int i, j = 0;
 	int Ptr; 
 	Ptr = 0;
-	A_ALIGNED dsp32_complex_t Input_C_1D[FFT_SIZE];
-	A_ALIGNED dsp32_complex_t Result_C_1D[FFT_SIZE];
-	A_ALIGNED dsp32_complex_t Result_C_2D[FFT_SIZE*FFT_SIZE];
-	A_ALIGNED dsp32_t Input_R_1D[FFT_SIZE];
+	A_ALIGNED dsp16_complex_t Input_C_1D[FFT_SIZE];
+	A_ALIGNED dsp16_complex_t Result_C_1D[FFT_SIZE];
+	A_ALIGNED dsp16_complex_t Result_C_2D[FFT_SIZE*FFT_SIZE];
+	A_ALIGNED dsp16_t Input_R_1D[FFT_SIZE];
 	
 	//Stage 1 - FFT Real values from Signal. Store VERTICALLY in Result_2D
 	for(i = 0; i < FFT_SIZE; i ++) //for each row
 	{
+//		print_dbg("\n\rInput to FFT: \n\r[");
 		for(j = 0; j < FFT_SIZE; j++)
 		{
 			Input_R_1D[j] = Signal[Ptr++]; //copy the data across
+//			print_dbg_ulong(Input_R_1D[j]);
+//			print_dbg(", ");
 		}
+//		print_dbg("\b\b]");
 		//Do the FFT
-		dsp32_trans_realcomplexfft(Result_C_1D, Input_R_1D, log_2(FFT_SIZE));
+		dsp16_trans_realcomplexfft(Result_C_1D, Input_R_1D, log_2(FFT_SIZE));
 		//Copy data into 2D reult TRANSPOSED
+//		print_dbg("\n\rOutput of FFT:\n\r[");
 		for(j = 0; j < FFT_SIZE; j++)
 		{
-			Result_C_2D[i + (j * FFT_SIZE)].imag = Result_C_1D[j].imag;
-			Result_C_2D[i + (j * FFT_SIZE)].real = Result_C_1D[j].real;
+			Result_C_2D[i + (j * FFT_SIZE)].imag = Result_C_1D[j].imag * FFT_SIZE;//scale back up
+			Result_C_2D[i + (j * FFT_SIZE)].real = Result_C_1D[j].real * FFT_SIZE;
+//			print_dbg_ulong(Result_C_2D[i + (j * FFT_SIZE)].real);
+//			print_dbg(" + j");
+//			print_dbg_ulong(Result_C_2D[i + (j * FFT_SIZE)].imag);
+//			print_dbg(" , ");
 		}
+//		print_dbg("\b\b]");
 	}
 	//Stage 2 - FFT Complex Values from Result_2D, put back into Rows
 
 	for(i = 0; i < FFT_SIZE; i++)//for each row
 	{
+//		print_dbg("\n\rInput to FFT: \n\r[");
 		for(j = 0; j < FFT_SIZE; j++)//copy the data across
 		{
 			Input_C_1D[j].imag = Result_C_2D[j + i * FFT_SIZE].imag;
 			Input_C_1D[j].real = Result_C_2D[j + i * FFT_SIZE].real;
+// 			print_dbg_ulong(Input_C_1D[j].real);
+// 			print_dbg(" + j");
+// 			print_dbg_ulong(Input_C_1D[j].imag);
+// 			print_dbg(" , ");
 		}
+//		print_dbg("\b\b]");
 		//Do Fourier
-		dsp32_trans_realcomplexfft(Result_C_1D, Input_C_1D, log_2(FFT_SIZE));
+		dsp16_trans_complexfft(Result_C_1D, Input_C_1D, log_2(FFT_SIZE));
 		//Copy back
+		
+// 		print_dbg("\n\rOutput to FFT: \n\r[");
 // 		for(j = 0; j < FFT_SIZE; j++)//copy the data across
 // 		{
-// 			Result_C_2D[j + i * FFT_SIZE]->imag = Input_C_1D[j].imag;
-// 			Result_C_2D[j + i * FFT_SIZE]->real = Input_C_1D[j].real;
+// 			print_dbg_ulong(Result_C_1D[j].real);
+// 			print_dbg(" + j");
+// 			print_dbg_ulong(Result_C_1D[j].imag);
+// 			print_dbg(" , ");
 // 		}
-
+// 		print_dbg("\b\b]");
 		//Calculate Abs and put back into Signal TRANSPOSED
-		dsp32_vect_complex_abs(Input_R_1D, Result_C_1D, FFT_SIZE);
+		dsp16_vect_complex_abs(Input_R_1D, Result_C_1D, FFT_SIZE);
 		
 		for(j = 0; j < FFT_SIZE; j++)
 		{
-			Signal[i + (j*FFT_SIZE)] = Input_R_1D[j];
+			Signal[i + (j*FFT_SIZE)] = Input_R_1D[j] * FFT_SIZE;
 		}
 	}
 	//Stage 3 - Transpose Result_2D while returning abs values into Signal
