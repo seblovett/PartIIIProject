@@ -141,3 +141,121 @@ void local_pdca_init(void)
   INTC_register_interrupt(&pdca_int_handler, AVR32_PDCA_IRQ_0, AVR32_INTC_INT1);  // pdca_channel_spi1_RX = 0
 
 }
+
+#define BUFFER_FILENAME		"Buffer.bin"
+void SaveBuff( int * WorkingBuffer , int size) 
+{
+	//If the file exists, delete it
+	if(nav_filelist_findname((FS_STRING)BUFFER_FILENAME, false))
+	{
+		nav_setcwd((FS_STRING)BUFFER_FILENAME, false, false);
+		nav_file_del(false);
+	}
+	nav_file_create((FS_STRING)BUFFER_FILENAME);
+	nav_setcwd((FS_STRING)BUFFER_FILENAME, false, true);
+	file_open(FOPEN_MODE_APPEND);
+	file_write_buf(WorkingBuffer, size * sizeof(WorkingBuffer));
+	file_close();
+}
+
+void Log_Write(char *buff, int length) 
+{
+	nav_setcwd((FS_STRING)LOG_FILE, true, false);
+	file_open(FOPEN_MODE_APPEND);
+	if(length == -1)
+		length = sizeof(buff);
+	file_write_buf(buff, length);
+	file_close();
+}
+void Log_Write_ulong(unsigned long n)
+{
+	char tmp[11];
+	int i = sizeof(tmp) - 1;
+	
+	// Convert the given number to an ASCII decimal representation.
+	tmp[i] = '\0';
+	do
+	{
+	tmp[--i] = '0' + n % 10;
+	n /= 10;
+	} while (n);
+
+	// Transmit the resulting string with the given USART.
+	Log_Write(tmp + i, -1);
+}
+
+int ReadSignal( int * WorkingBuffer ) 
+{
+	bool status_b;
+	int Status, temp;
+	char c = 0;
+	if(Columbus_Status.SD_Card->Status != STATUS_OK)
+		return ERR_IO_ERROR;
+	nav_filelist_reset();
+	nav_setcwd((FS_STRING)SIGNAL_FILE, false, false);
+	status_b = file_open(FOPEN_MODE_R);
+	if(status_b == false)
+	{
+		print_dbg("File Open Error");
+		return ERR_IO_ERROR;
+	}
+	
+	
+	//Status = file_read_buf(WorkingBuffer, 16);
+	for(Status = 0; Status < FFT_SIZE; Status++)
+	{
+//		print_dbg("\n\r Read from file: ");
+		c = 0;
+		temp = 0;
+		temp |= file_getc() << 24;
+		temp |= file_getc() << 16;
+		temp |= file_getc() << 8;
+		temp |= file_getc();	
+		
+//		print_dbg_char(c);
+		
+		WorkingBuffer[Status] = temp;
+// 		print_dbg("  Working Buff = ");
+// 		print_dbg_char(WorkingBuffer[Status]);
+	}
+	file_close();
+	return STATUS_OK;
+}
+
+int Read2DSignal( int * WorkingBuffer )
+{
+	bool status_b;
+	int Status, temp;
+	char c = 0;
+	if(Columbus_Status.SD_Card->Status != STATUS_OK)
+	return ERR_IO_ERROR;
+	nav_filelist_reset();
+	nav_setcwd((FS_STRING)TWOD_SIGNAL_FILE, false, false);
+	status_b = file_open(FOPEN_MODE_R);
+	if(status_b == false)
+	{
+		print_dbg("File Open Error");
+		return ERR_IO_ERROR;
+	}
+	
+	
+	//Status = file_read_buf(WorkingBuffer, 16);
+	for(Status = 0; Status < FFT_SIZE * FFT_SIZE; Status++)
+	{
+		//		print_dbg("\n\r Read from file: ");
+		c = 0;
+		temp = 0;
+		temp |= file_getc() << 24;
+		temp |= file_getc() << 16;
+		temp |= file_getc() << 8;
+		temp |= file_getc();
+		
+		//		print_dbg_char(c);
+		
+		WorkingBuffer[Status] = temp;
+		// 		print_dbg("  Working Buff = ");
+		// 		print_dbg_char(WorkingBuffer[Status]);
+	}
+	file_close();
+	return STATUS_OK;
+}

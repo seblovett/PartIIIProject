@@ -53,10 +53,11 @@ int FFT1D( int *Signal)
 	dsp16_vect_complex_abs(vect2, vect1, FFT_SIZE);
 	for(i = 0; i < FFT_SIZE; i++)
 	{
-		Signal[i] = vect2[i];
+		Signal[i] = vect2[i] * FFT_SIZE;
 	}
 // 	mspace_free(sdram_msp, vect1);
 // 	mspace_free(sdram_msp, vect2);
+	return Signal;
 }
 
 int FFT2D( int *Signal )
@@ -131,6 +132,5 @@ int FFT2D( int *Signal )
 			Signal[i + (j*FFT_SIZE)] = Input_R_1D[j] * FFT_SIZE;
 		}
 	}
-	//Stage 3 - Transpose Result_2D while returning abs values into Signal
-
+	return Signal;
 }
