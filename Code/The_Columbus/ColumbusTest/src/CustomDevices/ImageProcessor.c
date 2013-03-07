@@ -43,14 +43,14 @@ int FFT1D( int *Signal)
 
 	//Defined Sizes
 
-	A_ALIGNED dsp32_complex_t vect1[FFT_SIZE];
-	A_ALIGNED dsp32_t vect2[FFT_SIZE];
+	A_ALIGNED dsp16_complex_t vect1[FFT_SIZE];
+	A_ALIGNED dsp16_t vect2[FFT_SIZE];
 	for(i = 0; i < FFT_SIZE; i++)
 	{
 		vect2[i] = Signal[i];
 	}
-	dsp32_trans_realcomplexfft(vect1, vect2, log_2(FFT_SIZE));
-	dsp32_vect_complex_abs(vect2, vect1, FFT_SIZE);
+	dsp16_trans_realcomplexfft(vect1, vect2, log_2(FFT_SIZE));
+	dsp16_vect_complex_abs(vect2, vect1, FFT_SIZE);
 	for(i = 0; i < FFT_SIZE; i++)
 	{
 		Signal[i] = vect2[i];
