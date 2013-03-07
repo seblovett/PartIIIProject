@@ -32,7 +32,7 @@ typedef struct {
 #define CAM_ERR		0x2
 #define I2CMux_ERR	0x4
 
-#define FFT_SIZE 64
+#define FFT_SIZE 16
 
 mspace sdram_msp;
 Columbus_Status_t Columbus_Status;

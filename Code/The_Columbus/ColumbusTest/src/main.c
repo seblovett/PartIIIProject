@@ -19,7 +19,6 @@
 #include "navigation.h"
 #include "fastmath.h"
 
-//#define DSP32_FORMAT 4
 //REF : http://www.chris.com/ASCII/index.php?art=transportation/nautical 
 #define ASCII_SHIP "              |    |    | \n\r \
             )_)  )_)  )_) \n\r \
@@ -85,7 +84,44 @@ int ReadSignal( int * WorkingBuffer )
 	file_close();
 	return STATUS_OK;
 }
-
+#define  TWOD_SIGNAL_FILE "signal2d.bin"
+int Read2DSignal( int * WorkingBuffer )
+{
+	bool status_b;
+	int Status, temp;
+	char c = 0;
+	if(Columbus_Status.SD_Card->Status != STATUS_OK)
+	return ERR_IO_ERROR;
+	nav_filelist_reset();
+	nav_setcwd((FS_STRING)TWOD_SIGNAL_FILE, false, false);
+	status_b = file_open(FOPEN_MODE_R);
+	if(status_b == false)
+	{
+		print_dbg("File Open Error");
+		return ERR_IO_ERROR;
+	}
+	
+	
+	//Status = file_read_buf(WorkingBuffer, 16);
+	for(Status = 0; Status < FFT_SIZE * FFT_SIZE; Status++)
+	{
+		//		print_dbg("\n\r Read from file: ");
+		c = 0;
+		temp = 0;
+		temp |= file_getc() << 24;
+		temp |= file_getc() << 16;
+		temp |= file_getc() << 8;
+		temp |= file_getc();
+		
+		//		print_dbg_char(c);
+		
+		WorkingBuffer[Status] = temp;
+		// 		print_dbg("  Working Buff = ");
+		// 		print_dbg_char(WorkingBuffer[Status]);
+	}
+	file_close();
+	return STATUS_OK;
+}
 
 #define BUFFER_FILENAME		"Buffer.bin"
 void SaveBuff( int * WorkingBuffer ) 
@@ -184,7 +220,7 @@ int main (void)
 				break;
 
 			case '1'://1d FFT (w/ memallocs)
-				print_dbg("\n\r1D FFT;");
+				print_dbg("\r1D FFT;");
 				FFT1D(WorkingBuffer);
 				break;
 			case 'R':
@@ -208,7 +244,7 @@ int main (void)
 				break; 
 			case 'P'://take a photo
 					FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
-					print_dbg("\n\rTaking Photos");
+					print_dbg("\rTaking Photos");
 					TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
 					while(Photos_Ready() == false)
 						;
@@ -227,6 +263,12 @@ int main (void)
 					WorkingBuffer[i] = DSP32_Q (WorkingBuffer[i]);
 				}
 				break;
+			case 'C':
+				for(i = 0; i < FFT_SIZE * FFT_SIZE; i++)
+				{
+					WorkingBuffer[i] = DSP32_Q (WorkingBuffer[i]);
+				}
+				break;
 			case 's'://save the working buffer
 				SaveBuff(WorkingBuffer);
 				break;
@@ -236,17 +278,31 @@ int main (void)
 				print_dbg("\n\r");
 				print_dbg_ulong(i);
 				break;
-// 			case 't':
-// 				WorkingBuffer = mspace_malloc(sdram_msp, 16);
-// 				for(i = 0; i < 16; i++)
-// 				{
-// 					WorkingBuffer[i] = ('A' + i);
-// 					print_dbg_char(WorkingBuffer[i]);
-// 				}
-// 				mspace_free(sdram_msp, WorkingBuffer);
-// 				break;
+			case '2':
+				print_dbg("\rFFT2D;");
+				FFT2D(WorkingBuffer);
+				break;
+			case 'T':
+				print_dbg("\rReading in 2D Signal");
+				WorkingBuffer = mspace_malloc(sdram_msp, FFT_SIZE * FFT_SIZE);
+				Read2DSignal(WorkingBuffer);
+				break;
+			case 't':
+				print_dbg("\n\r[[");
+				for(i = 0; i < FFT_SIZE ; i ++)
+				{
+					for (j = 0; j < FFT_SIZE; j ++)
+					{
+						print_dbg_ulong(WorkingBuffer[i*FFT_SIZE + j]);
+						print_dbg(" ,");
+					}
+					print_dbg("\b]\n\r");
+				}
+				print_dbg("\b]\n\r");
+				break;
 			default:
 				print_dbg("= Command Not Recognised");
+				break;
 		}
 	}
 }

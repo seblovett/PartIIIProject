@@ -18,6 +18,6 @@ int LoadImage(char *Filename);
 int SaveImage(char *Filename);
 
 int FFT1D(int *Signal);
-int FFT2D(int *Signal, int size);
+int FFT2D(int *Signal);
 int log_2(int i);
 #endif /* IMAGEPROCESSOR_H_ */
