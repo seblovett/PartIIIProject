@@ -31,6 +31,9 @@ typedef struct {
 #define SD_ERR		0x1
 #define CAM_ERR		0x2
 #define I2CMux_ERR	0x4
+
+#define FFT_SIZE 64
+
 mspace sdram_msp;
 Columbus_Status_t Columbus_Status;
 //TWI Methods

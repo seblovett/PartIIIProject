@@ -7,7 +7,7 @@
     <Name>$(MSBuildProjectName)</Name>
     <AssemblyName>$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>$(MSBuildProjectName)</RootNamespace>
-    <AsfVersion>2.9.0</AsfVersion>
+    <AsfVersion>2.11.1</AsfVersion>
     <AsfFrameworkConfig>
       <framework-data>
         <options>

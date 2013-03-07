@@ -33,8 +33,7 @@
 #define PROMPT "\n\r$>"
 #define SIGNAL_FILE "signal.bin"
 #define HELP	"\n\rColumbus Prompt Help:\n\rR : Reads contents of signal.bin. Integers, Big Endian\n\rr : displays the contents of the working buffer\n\rs : saves the working buffer\n\rc : converts the working buffer from integer to fixed point\n\rFFT : computes the FFT of the working buffer. Returns magnitude.\n\r"
-#define FFT_SIZE	64
-#define FFT_LOG2	6
+
 void Get_Line( char * WorkingBuffer ) 
 {
 	int c = 0;
@@ -87,24 +86,7 @@ int ReadSignal( int * WorkingBuffer )
 	return STATUS_OK;
 }
 
-void FFT( int * WorkingBuffer ) 
-{
-	int i =0;
-	double a;
-	A_ALIGNED dsp32_complex_t vect1[FFT_SIZE];
-	A_ALIGNED dsp32_t vect2[FFT_SIZE];
-	for(i = 0; i < FFT_SIZE; i++)
-	{
-		vect2[i] = WorkingBuffer[i];
-	}
-	dsp32_trans_realcomplexfft(vect1, vect2, FFT_LOG2);
-	dsp32_vect_complex_abs(vect2, vect1, FFT_SIZE);
-	for(i = 0; i < FFT_SIZE; i++)
-	{
-		WorkingBuffer[i] = vect2[i];
-	}
-	
-}
+
 #define BUFFER_FILENAME		"Buffer.bin"
 void SaveBuff( int * WorkingBuffer ) 
 {
@@ -193,36 +175,18 @@ int main (void)
 	{
 		print_dbg(PROMPT);
 		Get_Line(CommandBuffer);
-		print_dbg("\n\r$");
+		//print_dbg("\n\r$");
 		//print_dbg(WorkingBuffer);
 		switch(CommandBuffer[0])
 		{
 			case '?':
 				print_dbg(HELP);
 				break;
-			case 'F':
-				switch(CommandBuffer[1])
-				{
-					case 'F':
-						switch(CommandBuffer[2])
-						{
-							case 'T':
-								print_dbg("= Fast Fourier Transform...");
-								FFT(WorkingBuffer);
-								break;
-								
-							default:
-								print_dbg("= Command Not Recognised");
-								break;
-						}
-						break;
-					
-					default:
-						print_dbg("= Command Not Recognised");
-						break;
-				}
+
+			case '1'://1d FFT (w/ memallocs)
+				print_dbg("\n\r1D FFT;");
+				FFT1D(WorkingBuffer);
 				break;
-				
 			case 'R':
 				WorkingBuffer = mspace_malloc(sdram_msp, FFT_SIZE);
 				print_dbg("Reading in signal.bin");
@@ -252,10 +216,10 @@ int main (void)
 					if(Store_Both_Images() == true)
 						print_dbg("\n\rImages Stored Successfully!");
 					break;
-			case '1':
-				i = DSP32_Q(1.0);
-				print_dbg_ulong(i);
-				break;
+// 			case '1':
+// 				i = DSP32_Q(1.0);
+// 				print_dbg_ulong(i);
+// 				break;
 			
 			case 'c':
 				for(i = 0; i < FFT_SIZE; i++)
@@ -265,6 +229,12 @@ int main (void)
 				break;
 			case 's'://save the working buffer
 				SaveBuff(WorkingBuffer);
+				break;
+			case 'l':
+				i = atoi(CommandBuffer + 2);
+				i = log_2(i);
+				print_dbg("\n\r");
+				print_dbg_ulong(i);
 				break;
 // 			case 't':
 // 				WorkingBuffer = mspace_malloc(sdram_msp, 16);

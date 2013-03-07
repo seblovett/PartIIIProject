@@ -113,7 +113,7 @@ src/CustomDevices/TWI.d src/CustomDevices/TWI.o src/CustomDevices/TWI.o: \
  ../src/config/conf_twim.h ../src/asf/avr32/drivers/usart/usart.h \
  ../src/asf/avr32/utils/debug/print_funcs.h \
  ../src/CustomDevices/PCA9542A.h ../src/CustomDevices/MotorDriver.h \
- ../src/CustomDevices/SD_Card.h
+ ../src/CustomDevices/SD_Card.h ../src/CustomDevices/ImageProcessor.h
 
 ../src/CustomDevices/CustomDevices.h:
 
@@ -362,3 +362,5 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/CustomDevices/MotorDriver.h:
 
 ../src/CustomDevices/SD_Card.h:
+
+../src/CustomDevices/ImageProcessor.h:
