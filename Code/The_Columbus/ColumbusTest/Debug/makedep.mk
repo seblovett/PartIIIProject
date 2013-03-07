@@ -66,6 +66,8 @@ src\asf\thirdparty\dlmalloc\dlsbrk.c
 
 src\CustomDevices\Bitmap.c
 
+src\CustomDevices\ImageProcessor.c
+
 src\CustomDevices\MotorDriver.c
 
 src\CustomDevices\OV7670.c

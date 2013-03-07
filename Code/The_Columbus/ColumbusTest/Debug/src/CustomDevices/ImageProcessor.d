@@ -1,6 +1,7 @@
-src/asf/avr32/drivers/gpio/gpio.d src/asf/avr32/drivers/gpio/gpio.o \
- src/asf/avr32/drivers/gpio/gpio.o: ../src/asf/avr32/drivers/gpio/gpio.c \
- ../src/asf/avr32/drivers/gpio/gpio.h \
+src/CustomDevices/ImageProcessor.d src/CustomDevices/ImageProcessor.o \
+ src/CustomDevices/ImageProcessor.o: \
+ ../src/CustomDevices/ImageProcessor.c ../src/asf.h \
+ ../src/asf/avr32/drivers/acifa/acifa.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/io.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/uc3c0512c.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/core_sc0_212.h \
@@ -66,9 +67,58 @@ src/asf/avr32/drivers/gpio/gpio.d src/asf/avr32/drivers/gpio/gpio.o \
  ../src/asf/common/utils/interrupt.h \
  ../src/asf/common/utils/interrupt/interrupt_avr32.h \
  ../src/asf/avr32/utils/preprocessor/tpaste.h \
- ../src/asf/avr32/drivers/intc/intc.h
+ ../src/asf/avr32/drivers/intc/intc.h \
+ ../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h \
+ ../src/asf/avr32/utils/status_codes.h \
+ ../src/asf/thirdparty/dlmalloc/dlmalloc.h ../src/config/conf_dlmalloc.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/types.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/machine/types.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/features.h \
+ ../src/asf/avr32/utils/libs/dsplib/include/dsp.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/string.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/string.h \
+ ../src/asf/avr32/utils/libs/dsplib/include/dsp.h \
+ ../src/asf/common/services/delay/delay.h \
+ ../src/asf/common/services/clock/sysclk.h ../src/config/conf_clock.h \
+ ../src/asf/common/services/clock/uc3c/sysclk.h \
+ ../src/asf/common/boards/board.h \
+ ../src/asf/common/boards/user_board/user_board.h \
+ ../src/config/conf_board.h ../src/asf/common/services/clock/osc.h \
+ ../src/asf/common/services/clock/uc3c/osc.h \
+ ../src/asf/common/services/clock/pll.h \
+ ../src/asf/common/services/clock/uc3c/pll.h \
+ ../src/asf/common/services/clock/genclk.h \
+ ../src/asf/common/services/clock/uc3c/genclk.h \
+ ../src/asf/avr32/drivers/ebi/sdramc/sdramc.h \
+ ../src/asf/avr32/components/memory/sdram/mt48lc16m16a2tg7e/mt48lc16m16a2tg7e.h \
+ ../src/asf/avr32/drivers/eic/eic.h \
+ ../src/asf/avr32/services/fs/fat/fat.h \
+ ../src/asf/avr32/services/fs/fat/fs_com.h ../src/config/conf_explorer.h \
+ ../src/asf/avr32/services/fs/fat/file.h \
+ ../src/asf/avr32/services/fs/fat/fat.h \
+ ../src/asf/avr32/services/fs/fat/fs_com.h \
+ ../src/asf/avr32/services/fs/fat/navigation.h \
+ ../src/asf/avr32/drivers/flashc/flashc.h \
+ ../src/asf/avr32/drivers/gpio/gpio.h \
+ ../src/asf/common/services/storage/ctrl_access/ctrl_access.h \
+ ../src/config/conf_access.h \
+ ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.h \
+ ../src/asf/avr32/drivers/pdca/pdca.h \
+ ../src/asf/avr32/drivers/pm/power_clocks_lib.h \
+ ../src/asf/avr32/drivers/pm/pm_uc3c.h \
+ ../src/asf/avr32/drivers/scif/scif_uc3c.h \
+ ../src/asf/avr32/drivers/pm/sleep.h ../src/asf/avr32/drivers/pwm/pwm4.h \
+ ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.h \
+ ../src/asf/avr32/drivers/spi/spi.h ../src/asf/avr32/drivers/twim/twim.h \
+ ../src/config/conf_twim.h ../src/asf/avr32/drivers/usart/usart.h \
+ ../src/asf/avr32/utils/debug/print_funcs.h \
+ ../src/CustomDevices/CustomDevices.h ../src/CustomDevices/OV7670.h \
+ ../src/CustomDevices/PCA9542A.h ../src/CustomDevices/MotorDriver.h \
+ ../src/CustomDevices/SD_Card.h ../src/CustomDevices/ImageProcessor.h
 
-../src/asf/avr32/drivers/gpio/gpio.h:
+../src/asf.h:
+
+../src/asf/avr32/drivers/acifa/acifa.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/avr32/io.h:
 
@@ -201,3 +251,117 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.
 ../src/asf/avr32/utils/preprocessor/tpaste.h:
 
 ../src/asf/avr32/drivers/intc/intc.h:
+
+../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h:
+
+../src/asf/avr32/utils/status_codes.h:
+
+../src/asf/thirdparty/dlmalloc/dlmalloc.h:
+
+../src/config/conf_dlmalloc.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/types.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/machine/types.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/features.h:
+
+../src/asf/avr32/utils/libs/dsplib/include/dsp.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/string.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/string.h:
+
+../src/asf/avr32/utils/libs/dsplib/include/dsp.h:
+
+../src/asf/common/services/delay/delay.h:
+
+../src/asf/common/services/clock/sysclk.h:
+
+../src/config/conf_clock.h:
+
+../src/asf/common/services/clock/uc3c/sysclk.h:
+
+../src/asf/common/boards/board.h:
+
+../src/asf/common/boards/user_board/user_board.h:
+
+../src/config/conf_board.h:
+
+../src/asf/common/services/clock/osc.h:
+
+../src/asf/common/services/clock/uc3c/osc.h:
+
+../src/asf/common/services/clock/pll.h:
+
+../src/asf/common/services/clock/uc3c/pll.h:
+
+../src/asf/common/services/clock/genclk.h:
+
+../src/asf/common/services/clock/uc3c/genclk.h:
+
+../src/asf/avr32/drivers/ebi/sdramc/sdramc.h:
+
+../src/asf/avr32/components/memory/sdram/mt48lc16m16a2tg7e/mt48lc16m16a2tg7e.h:
+
+../src/asf/avr32/drivers/eic/eic.h:
+
+../src/asf/avr32/services/fs/fat/fat.h:
+
+../src/asf/avr32/services/fs/fat/fs_com.h:
+
+../src/config/conf_explorer.h:
+
+../src/asf/avr32/services/fs/fat/file.h:
+
+../src/asf/avr32/services/fs/fat/fat.h:
+
+../src/asf/avr32/services/fs/fat/fs_com.h:
+
+../src/asf/avr32/services/fs/fat/navigation.h:
+
+../src/asf/avr32/drivers/flashc/flashc.h:
+
+../src/asf/avr32/drivers/gpio/gpio.h:
+
+../src/asf/common/services/storage/ctrl_access/ctrl_access.h:
+
+../src/config/conf_access.h:
+
+../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.h:
+
+../src/asf/avr32/drivers/pdca/pdca.h:
+
+../src/asf/avr32/drivers/pm/power_clocks_lib.h:
+
+../src/asf/avr32/drivers/pm/pm_uc3c.h:
+
+../src/asf/avr32/drivers/scif/scif_uc3c.h:
+
+../src/asf/avr32/drivers/pm/sleep.h:
+
+../src/asf/avr32/drivers/pwm/pwm4.h:
+
+../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.h:
+
+../src/asf/avr32/drivers/spi/spi.h:
+
+../src/asf/avr32/drivers/twim/twim.h:
+
+../src/config/conf_twim.h:
+
+../src/asf/avr32/drivers/usart/usart.h:
+
+../src/asf/avr32/utils/debug/print_funcs.h:
+
+../src/CustomDevices/CustomDevices.h:
+
+../src/CustomDevices/OV7670.h:
+
+../src/CustomDevices/PCA9542A.h:
+
+../src/CustomDevices/MotorDriver.h:
+
+../src/CustomDevices/SD_Card.h:
+
+../src/CustomDevices/ImageProcessor.h:

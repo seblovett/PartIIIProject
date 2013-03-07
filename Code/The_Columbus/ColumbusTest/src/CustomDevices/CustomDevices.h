@@ -17,6 +17,8 @@
 #include "CustomDevices/MotorDriver.h"
 //SDCard
 #include "CustomDevices/SD_Card.h"
+//Image Processing Functions
+#include "CustomDevices/ImageProcessor.h"
 
 typedef struct {
 	int Status;

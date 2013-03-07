@@ -17,5 +17,7 @@ typedef struct {
 int LoadImage(char *Filename);
 int SaveImage(char *Filename);
 
+int FFT1D(int *Signal, int size);
+int FFT2D(int *Signal, int size);
 
 #endif /* IMAGEPROCESSOR_H_ */
