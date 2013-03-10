@@ -18,6 +18,7 @@
 #include "file.h"
 #include "navigation.h"
 #include "fastmath.h"
+#include "delay.h"
 
 //REF : http://www.chris.com/ASCII/index.php?art=transportation/nautical 
 #define ASCII_SHIP "\t\t\t             |    |    | \n\r \
@@ -74,10 +75,12 @@ void Get_Line( char * CommandBuffer )
 int main (void)
 {
 	unsigned long i, j, tmp = 0;
-	volatile unsigned long *sdram = SDRAM;
+//	volatile unsigned long *sdram = SDRAM;
 	char CommandBuffer[16];
 	int *Working_Buffer = NULL;
 	int SizeOfWorking_Buffer = 0;
+	A_ALIGNED dsp16_complex_t *ComplexBuffer;
+	int SizeOfComplex_Buffer = 0;
 	Columbus_Status.SD_Card = &SD_Status;
 	Columbus_Status.Cameras = &OV7670_Status;
 	Columbus_Status.I2CMux = &PCA9542A;
@@ -159,27 +162,35 @@ int main (void)
 				break;
 
 			case 'P'://take a photo
-					FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
-					print_dbg("\rTaking Photos");
-					TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
-					while(Photos_Ready() == false)
-						;
+				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
+				print_dbg("\rTaking Photos");
+				TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
+				while(Photos_Ready() == false)
+					;
 
-					if(Store_Both_Images() == true)
-						print_dbg("\n\rImages Stored Successfully!");
-					break;
+				if(Store_Both_Images() == true)
+					print_dbg("\n\rImages Stored Successfully!");
+				break;
 
 			case 'D':
 				print_dbg("\rFreeing Working Buffer");
 				mspace_free(sdram_msp, Working_Buffer);
 				break;
 			case 'c':
+				print_dbg("\rConverting Working Buffer to Fixed Point");
 				for(i = 0; i < SizeOfWorking_Buffer ; i++)
 				{
 					Working_Buffer[i] = DSP16_Q (Working_Buffer[i]);
 				}
 				break;
-			
+			case 'C':
+				print_dbg("\rConverting Working Buffer back from Fixed Point");
+				j = DSP16_Q(1);
+				for(i = 0; i < SizeOfWorking_Buffer ; i++)
+				{
+					Working_Buffer[i] = Working_Buffer[i] / j;
+				}
+				break;
 			case 's'://save the working buffer
 				print_dbg("\rSaving Working Buffer;");
 				SaveBuff(Working_Buffer, SizeOfWorking_Buffer);
@@ -210,6 +221,56 @@ int main (void)
 // 				}
 // 				print_dbg("\]\n\r");
 // 				break;
+			case 'o'://testing storing a complex
+				print_dbg("\rFreeing Complex Buffer");
+				mspace_free(sdram_msp, ComplexBuffer);
+				print_dbg("\n\rAssiging Space to the Complex Buffer;");
+				SizeOfComplex_Buffer = 10;
+				ComplexBuffer = mspace_malloc(sdram_msp, 10*sizeof(ComplexBuffer));
+				if(ComplexBuffer == NULL)
+				{
+					print_dbg("\n\rAssign Failed;");
+					break;
+				}
+				for(i = 0; i < SizeOfComplex_Buffer; i++)
+				{
+					ComplexBuffer[i].imag = i;
+					ComplexBuffer[i].real = i;
+				}
+				for(i = 0; i < SizeOfComplex_Buffer; i ++)
+				{
+					print_dbg("\n\r");
+					print_dbg_ulong(ComplexBuffer[i].real);
+					print_dbg(" + j");
+					print_dbg_ulong(ComplexBuffer[i].imag);
+				}
+				print_dbg("\n\rFreeing Complex Buffer");
+				mspace_free(sdram_msp, ComplexBuffer);
+				SizeOfComplex_Buffer = 0;
+				break;
+			case '3':
+				print_dbg("\rComplex FFT2D:");
+				SizeOfComplex_Buffer = FFT_SIZE * FFT_SIZE;
+				ComplexBuffer = mspace_malloc(sdram_msp,  SizeOfComplex_Buffer * sizeof(ComplexBuffer));
+				FFT2DCOMPLEX(Working_Buffer, ComplexBuffer, SizeOfWorking_Buffer);
+				break;
+			case 'k':
+				print_dbg("\rComplex Buffer:\n\r[");
+				for (i = 0; i < SizeOfComplex_Buffer; i ++)
+				{
+					print_dbg_ulong(ComplexBuffer[i].real);
+					print_dbg(" + j");
+					print_dbg_ulong(ComplexBuffer[i].imag);
+					print_dbg(", ");
+				}
+				print_dbg("]\n\r");
+				break;
+				
+			case 'F':
+				print_dbg("\rResetting Both FIFO Buffers");
+				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
+				break;
+			
 			default:
 				print_dbg("\rCommand Not Recognised;");
 				break;

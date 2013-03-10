@@ -20,4 +20,6 @@ int SaveImage(char *Filename);
 int FFT1D(int *Signal);
 int FFT2D(int *Signal);
 int log_2(int i);
+
+int* FFT2DCOMPLEX( int *Signal, dsp16_complex_t *ComplexBuffer, int size );
 #endif /* IMAGEPROCESSOR_H_ */

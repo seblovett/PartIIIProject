@@ -9,6 +9,7 @@
 #include <asf.h>
 #include "CustomDevices/CustomDevices.h"
 #include "stdio.h"
+#include "delay.h"
 // Camera
 // #include "CustomDevices/OV7670.h"
 // I2C Mux
@@ -257,6 +258,7 @@ void FIFO_Reset(uint8_t CameraID)
 		FIFO_0_WRST_CLR;
 		FIFO_0_nRRST_CLR;
 		FIFO_0_RCLK_SET;
+		delay_us(10);
 		FIFO_0_RCLK_CLR;
 		FIFO_0_nRRST_SET;
 		FIFO_0_WRST_SET;
@@ -266,6 +268,7 @@ void FIFO_Reset(uint8_t CameraID)
 		FIFO_1_WRST_CLR;
 		FIFO_1_nRRST_CLR;
 		FIFO_1_RCLK_SET;
+		delay_us(10);
 		FIFO_1_RCLK_CLR;
 		FIFO_1_nRRST_SET;
 		FIFO_1_WRST_SET;
@@ -386,7 +389,7 @@ void Store_Image_0()
 
 	FIFO_0_RCLK_CLR;
 	FIFO_0_nRRST_SET;
-	
+	delay_us(10);
 	//enable output
 	FIFO_0_nOE_CLR;
 	uint8_t buffer[WIDTH * 2];
@@ -396,11 +399,17 @@ void Store_Image_0()
 		for(i = 0; i < WIDTH*2; i+=2)
 		{
 			FIFO_0_RCLK_SET;
+			delay_us(10);
 			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			delay_us(10);
 			FIFO_0_RCLK_CLR;
+			delay_us(10);
 			FIFO_0_RCLK_SET;
+			delay_us(10);
 			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			delay_us(10);
 			FIFO_0_RCLK_CLR;
+			delay_us(10);
 		}
 		file_write_buf(&buffer, WIDTH * 2);
 	}
@@ -413,15 +422,15 @@ void Store_Image_0()
 void Store_Image_1()
 {
 	int i, j;
-	//uint8_t buffer[WIDTH * 2];
+	uint8_t buffer[WIDTH * 2];
 	char Filename_buff[15];
- 	uint8_t *Buffer_ram;
- 	Buffer_ram = mspace_malloc(sdram_msp, WIDTH * 2);
-	 if(Buffer_ram == NULL)
-	 {
-		 print_dbg("\n\rBuffer allocation fail.\n\r");
-		 return;
-	 }
+ 	//uint8_t *Buffer_ram;
+ 	//Buffer_ram = mspace_malloc(sdram_msp, WIDTH * 2);
+// 	 if(Buffer_ram == NULL)
+// 	 {
+// 		 print_dbg("\n\rBuffer allocation fail.\n\r");
+// 		 return;
+// 	 }
 	i = 0;
 	//make file
 	//delete file if it exits already
@@ -448,32 +457,38 @@ void Store_Image_1()
 	//Image1
 	//reset read pointer
 	FIFO_1_nRRST_CLR;
+	
 	FIFO_1_RCLK_SET;
-
+	delay_us(10);
 	FIFO_1_RCLK_CLR;
 	FIFO_1_nRRST_SET;
 	
 	//enable output
 	FIFO_1_nOE_CLR;
-	/*uint8_t buffer[WIDTH * 2];*/
+//	uint8_t buffer[WIDTH * 2];
 	
 	for(j = 0; j < HEIGHT; j++)
 	{
 		for(i = 0; i < WIDTH*2; i+=2)
 		{
 			FIFO_1_RCLK_SET;
-			Buffer_ram[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			delay_us(10);
+			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			delay_us(10);
 			FIFO_1_RCLK_CLR;
-			delay_us(1);
+			delay_us(10);
 			FIFO_1_RCLK_SET;
-			Buffer_ram[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			delay_us(10);
+			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+			delay_us(10);
 			FIFO_1_RCLK_CLR;
+			delay_us(10);
 		}
-		file_write_buf(Buffer_ram, WIDTH * 2);
+		file_write_buf(&buffer, WIDTH * 2);
 	}
 	
 	FIFO_1_nOE_SET;//disable output
 	file_close();
-	mspace_free(sdram_msp, Buffer_ram);
+	//mspace_free(sdram_msp, Buffer_ram);
 /*	mspace_free(sdram_msp, Buffer_ram);*/
 }

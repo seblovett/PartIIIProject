@@ -259,3 +259,32 @@ int Read2DSignal( int * WorkingBuffer )
 	file_close();
 	return STATUS_OK;
 }
+
+void SaveBitmap(int *Image, int width, int height, char *FileName)
+{
+	int i, j;
+	uint8_t *Buffer;
+	
+	nav_filelist_reset();
+	if(nav_filelist_findname((FS_STRING)FileName, false))
+	{
+		nav_setcwd((FS_STRING)FileName, true, false);		
+		nav_file_del(false);
+	}
+	nav_file_create((FS_STRING)FileName);
+	file_open(FOPEN_MODE_W);
+	//write a modified bitmap header
+	Buffer = malloc(BMPHEADERSIZE);
+	for(i = 0; i < BMPHEADERSIZE; i++)//copy all the header
+	{
+		Buffer[i] = BMPHeader[i];
+	}
+	//edit the size field
+	j = width * height * 2 + BMPHEADERSIZE + DIBHEADERSIZE;
+	for(i = 0; i < 4; i ++)
+	{
+		Buffer[i + 2] = (uint8_t)(j >> 8*i);
+	}
+	
+	file_close();
+}
