@@ -153,7 +153,7 @@ namespace PhotoViewer
                 
                 ptr = 0;
                 imageData = new byte[PhotoHeight * PhotoWidth * 2];
-                //serialPort_Uart.Write("P\r");
+                serialPort_Uart.Write("P\r");
                 Photo = true;
             }
             catch (Exception ex)

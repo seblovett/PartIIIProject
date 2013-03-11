@@ -34,3 +34,11 @@ C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x
 C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.Properties.Resources.resources
 C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\hslovett\Documents\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.exe
+E:\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.pdb
+E:\Uni\part3_project\Code\PhotoViewer\PhotoViewer\bin\Debug\PhotoViewer.exe
+E:\Uni\part3_project\Code\PhotoViewer\PhotoViewer\bin\Debug\PhotoViewer.pdb
+E:\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.csprojResolveAssemblyReference.cache
+E:\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.Form1.resources
+E:\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.Properties.Resources.resources
+E:\Uni\part3_project\Code\PhotoViewer\PhotoViewer\obj\x86\Debug\PhotoViewer.csproj.GenerateResource.Cache

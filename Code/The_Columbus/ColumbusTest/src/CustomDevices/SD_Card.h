@@ -27,4 +27,5 @@ void Log_Write(char *buff, int length);
 void SaveBuff( int * WorkingBuffer , int size);
 int Read2DSignal( int * WorkingBuffer );
 int ReadSignal( int * WorkingBuffer );
+void SaveBitmap(uint8_t *Image, int width, int height, char *FileName);
 #endif /* SD_CARD_H_ */

@@ -260,7 +260,7 @@ int Read2DSignal( int * WorkingBuffer )
 	return STATUS_OK;
 }
 
-void SaveBitmap(int *Image, int width, int height, char *FileName)
+void SaveBitmap(uint8_t *Image, int width, int height, char *FileName)
 {
 	int i, j;
 	uint8_t *Buffer;
@@ -274,7 +274,15 @@ void SaveBitmap(int *Image, int width, int height, char *FileName)
 	nav_file_create((FS_STRING)FileName);
 	file_open(FOPEN_MODE_W);
 	//write a modified bitmap header
-	Buffer = malloc(BMPHEADERSIZE);
+	//Calculate which is the biggest:
+	i = width; 
+	if(height > i)
+		i = height;
+	if(DIBHEADERSIZE > i)
+		i = DIBHEADERSIZE;
+	
+	Buffer = malloc(i);
+	
 	for(i = 0; i < BMPHEADERSIZE; i++)//copy all the header
 	{
 		Buffer[i] = BMPHeader[i];
@@ -286,5 +294,41 @@ void SaveBitmap(int *Image, int width, int height, char *FileName)
 		Buffer[i + 2] = (uint8_t)(j >> 8*i);
 	}
 	
+	file_write_buf(Buffer, BMPHEADERSIZE);
+	
+	//DIB Header
+	for(i = 0; i < DIBHEADERSIZE; i ++)
+	{
+		Buffer[i] = DIBHead[i];
+	}
+	Buffer[4] = (uint8_t)(width & 0xFF);
+	Buffer[5] = (uint8_t)((width >> 8) & 0xFF);
+	Buffer[6] = (uint8_t)((width >> 16) & 0xFF);
+	Buffer[7] = (uint8_t)((width >> 24) & 0xFF);
+	
+	Buffer[8] = (uint8_t)(height & 0xFF);
+	Buffer[9] = (uint8_t)((height >> 8) & 0xFF);
+	Buffer[10] = (uint8_t)((height >> 16) & 0xFF);
+	Buffer[11] = (uint8_t)((height >> 24) & 0xFF);
+	
+	file_write_buf(Buffer, DIBHEADERSIZE);
+	
+	for(i = 0; i < height ; i++ )
+	{
+		for(j = 0; j < width * 2; j++)
+		{
+			//Copy the data across. 
+			Buffer[j] = Image[i*height + j];
+		}
+		file_write_buf(Buffer, width * 2);
+// 		j = width % 4;
+// 		if(j != 0)
+// 		{//Padding is needed to make things 4 byte aligned
+// 			file_write_buf(Buffer, j);
+// 		}
+	}
+	
+	
+	free(Buffer);
 	file_close();
 }
