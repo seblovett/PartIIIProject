@@ -357,165 +357,91 @@ bool Store_Both_Images()
 	OV7670_Status.VSYNC1_State = IDLE;
 	return true;
 }
-void Store_Image_0()
-{ 
-	int i,j;
-	//Image0
-	//make file
-	//delete file if it exits already
-	char Filename_buff[15];
-	i = 0;
-	while(1)
-	{
-		nav_filelist_reset();
-		sprintf(&Filename_buff, Image0Name, i++);
-		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
-		{
-			//nav_setcwd((FS_STRING)Image0Name, true, false);
-// 			print_dbg("\n\r File Exists");
-// 			print_dbg(&Filename_buff);
-			//nav_file_del(false);
-		}
-		else
-		{
-			break;
-		}
-	}	
-	nav_file_create((FS_STRING)Filename_buff);//create file
-	
-	file_open(FOPEN_MODE_W);
-	//write bitmap headers
-	file_write_buf(BMPHeader, BMPHEADERSIZE);
-	file_write_buf(DIBHead, DIBHEADERSIZE);
-	
-	//read and write image data
-	//Image0
-	//reset read pointer
-	FIFO_0_nRRST_CLR;
-	FIFO_0_RCLK_SET;
-
-	FIFO_0_RCLK_CLR;
-	FIFO_0_nRRST_SET;
-	delay_us(10);
-	//enable output
-	FIFO_0_nOE_CLR;
-	uint8_t buffer[WIDTH * 2];
-	
-	for(j = 0; j < HEIGHT; j++)
-	{
-		for(i = 0; i < WIDTH*2; i+=2)
-		{
-			FIFO_0_RCLK_SET;
-			delay_us(10);
-			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-			delay_us(10);
-			FIFO_0_RCLK_CLR;
-			delay_us(10);
-			FIFO_0_RCLK_SET;
-			delay_us(10);
-			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-			delay_us(10);
-			FIFO_0_RCLK_CLR;
-			delay_us(10);
-		}
-		file_write_buf(&buffer, WIDTH * 2);
-	}
-	FIFO_0_nOE_SET;
-	file_close();
-
-	
-}
-
-void Store_Image_1()
-{
-	int i, j;
-	uint8_t buffer[WIDTH * 2];
-	char Filename_buff[15];
- 	//uint8_t *Buffer_ram;
- 	//Buffer_ram = mspace_malloc(sdram_msp, WIDTH * 2);
-// 	 if(Buffer_ram == NULL)
-// 	 {
-// 		 print_dbg("\n\rBuffer allocation fail.\n\r");
-// 		 return;
-// 	 }
-	i = 0;
-	//make file
-	//delete file if it exits already
-	nav_filelist_reset();
-	while(1)
-	{
-		sprintf(&Filename_buff, Image1Name, i++);
-		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
-		{
-			//nav_setcwd((FS_STRING)Image1Name, true, false);
-			//print_dbg("\n\rImage1.bmp File Exists");
-			//nav_file_del(false);
-		}
-		else
-		{
-			break;
-		}
-	}	
-	nav_file_create((FS_STRING)Filename_buff);//create file
-	file_open(FOPEN_MODE_W);
-	//write bitmap headers
-	file_write_buf(BMPHeader, BMPHEADERSIZE);
-	file_write_buf(DIBHead, DIBHEADERSIZE);
-	//Image1
-	//reset read pointer
-	FIFO_1_nRRST_CLR;
-	
-	FIFO_1_RCLK_SET;
-	delay_us(10);
-	FIFO_1_RCLK_CLR;
-	FIFO_1_nRRST_SET;
-	
-	//enable output
-	FIFO_1_nOE_CLR;
-//	uint8_t buffer[WIDTH * 2];
-	
-	for(j = 0; j < HEIGHT; j++)
-	{
-		for(i = 0; i < WIDTH*2; i+=2)
-		{
-			FIFO_1_RCLK_SET;
-			delay_us(10);
-			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-			delay_us(10);
-			FIFO_1_RCLK_CLR;
-			delay_us(10);
-			FIFO_1_RCLK_SET;
-			delay_us(10);
-			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-			delay_us(10);
-			FIFO_1_RCLK_CLR;
-			delay_us(10);
-		}
-		file_write_buf(&buffer, WIDTH * 2);
-	}
-	
-	FIFO_1_nOE_SET;//disable output
-	file_close();
-	//mspace_free(sdram_msp, Buffer_ram);
-/*	mspace_free(sdram_msp, Buffer_ram);*/
-}
+// void Store_Image_0()
+// { 
+// 	int i,j;
+// 	//Image0
+// 	//make file
+// 	//delete file if it exits already
+// 	char Filename_buff[15];
+// 	i = 0;
+// 	while(1)
+// 	{
+// 		nav_filelist_reset();
+// 		sprintf(&Filename_buff, Image0Name, i++);
+// 		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
+// 		{
+// 			//nav_setcwd((FS_STRING)Image0Name, true, false);
+// // 			print_dbg("\n\r File Exists");
+// // 			print_dbg(&Filename_buff);
+// 			//nav_file_del(false);
+// 		}
+// 		else
+// 		{
+// 			break;
+// 		}
+// 	}	
+// 	nav_file_create((FS_STRING)Filename_buff);//create file
+// 	
+// 	file_open(FOPEN_MODE_W);
+// 	//write bitmap headers
+// 	file_write_buf(BMPHeader, BMPHEADERSIZE);
+// 	file_write_buf(DIBHead, DIBHEADERSIZE);
+// 	
+// 	//read and write image data
+// 	//Image0
+// 	//reset read pointer
+// 	FIFO_0_nRRST_CLR;
+// 	FIFO_0_RCLK_SET;
+// 
+// 	FIFO_0_RCLK_CLR;
+// 	FIFO_0_nRRST_SET;
+// 	delay_us(10);
+// 	//enable output
+// 	FIFO_0_nOE_CLR;
+// 	uint8_t buffer[WIDTH * 2];
+// 	
+// 	for(j = 0; j < HEIGHT; j++)
+// 	{
+// 		for(i = 0; i < WIDTH*2; i+=2)
+// 		{
+// 			FIFO_0_RCLK_SET;
+// 			delay_us(10);
+// 			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+// 			delay_us(10);
+// 			FIFO_0_RCLK_CLR;
+// 			delay_us(10);
+// 			FIFO_0_RCLK_SET;
+// 			delay_us(10);
+// 			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+// 			delay_us(10);
+// 			FIFO_0_RCLK_CLR;
+// 			delay_us(10);
+// 		}
+// 		file_write_buf(&buffer, WIDTH * 2);
+// 	}
+// 	FIFO_0_nOE_SET;
+// 	file_close();
+// 
+// 	
+// }
 
 // void Store_Image_1()
 // {
 // 	int i, j;
-// 	//uint8_t buffer[WIDTH * 2];
+// 	uint8_t buffer[WIDTH * 2];
 // 	char Filename_buff[15];
-// 	uint8_t *Buffer_ram;
-// 	Buffer_ram = mspace_malloc(sdram_msp, HEIGHT * WIDTH * 2);
-// 	// 	 if(Buffer_ram == NULL)
-// 	// 	 {
-// 		// 		 print_dbg("\n\rBuffer allocation fail.\n\r");
-// 		// 		 return;
-// 	// 	 }
+//  	//uint8_t *Buffer_ram;
+//  	//Buffer_ram = mspace_malloc(sdram_msp, WIDTH * 2);
+// // 	 if(Buffer_ram == NULL)
+// // 	 {
+// // 		 print_dbg("\n\rBuffer allocation fail.\n\r");
+// // 		 return;
+// // 	 }
 // 	i = 0;
 // 	//make file
 // 	//delete file if it exits already
-//  	nav_filelist_reset();
+// 	nav_filelist_reset();
 // 	while(1)
 // 	{
 // 		sprintf(&Filename_buff, Image1Name, i++);
@@ -529,12 +455,12 @@ void Store_Image_1()
 // 		{
 // 			break;
 // 		}
-// 	}
-// // 	nav_file_create((FS_STRING)Filename_buff);//create file
-// // 	file_open(FOPEN_MODE_W);
-// // 	//write bitmap headers
-// // 	file_write_buf(BMPHeader, BMPHEADERSIZE);
-// // 	file_write_buf(DIBHead, DIBHEADERSIZE);
+// 	}	
+// 	nav_file_create((FS_STRING)Filename_buff);//create file
+// 	file_open(FOPEN_MODE_W);
+// 	//write bitmap headers
+// 	file_write_buf(BMPHeader, BMPHEADERSIZE);
+// 	file_write_buf(DIBHead, DIBHEADERSIZE);
 // 	//Image1
 // 	//reset read pointer
 // 	FIFO_1_nRRST_CLR;
@@ -546,26 +472,148 @@ void Store_Image_1()
 // 	
 // 	//enable output
 // 	FIFO_1_nOE_CLR;
-// 	//	uint8_t buffer[WIDTH * 2];
+// //	uint8_t buffer[WIDTH * 2];
 // 	
-// 	for(j = 0; j < HEIGHT * WIDTH * 2; j+= 2)
+// 	for(j = 0; j < HEIGHT; j++)
 // 	{
-// 		FIFO_1_RCLK_SET;
-// 		delay_us(10);
-// 		Buffer_ram[j+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-// 		delay_us(10);
-// 		FIFO_1_RCLK_CLR;
-// 		delay_us(10);
-// 		FIFO_1_RCLK_SET;
-// 		delay_us(10);
-// 		Buffer_ram[j] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-// 		delay_us(10);
-// 		FIFO_1_RCLK_CLR;
-// 		delay_us(10);
+// 		for(i = 0; i < WIDTH*2; i+=2)
+// 		{
+// 			FIFO_1_RCLK_SET;
+// 			delay_us(10);
+// 			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+// 			delay_us(10);
+// 			FIFO_1_RCLK_CLR;
+// 			delay_us(10);
+// 			FIFO_1_RCLK_SET;
+// 			delay_us(10);
+// 			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+// 			delay_us(10);
+// 			FIFO_1_RCLK_CLR;
+// 			delay_us(10);
+// 		}
+// 		file_write_buf(&buffer, WIDTH * 2);
 // 	}
 // 	
 // 	FIFO_1_nOE_SET;//disable output
-// /*	file_close();*/
-// 	SaveBitmap(Buffer_ram, WIDTH, HEIGHT, Filename_buff);
-// 	mspace_free(sdram_msp, Buffer_ram);
+// 	file_close();
+// 	//mspace_free(sdram_msp, Buffer_ram);
+// /*	mspace_free(sdram_msp, Buffer_ram);*/
 // }
+
+void Store_Image_1()
+{
+	int i, j;
+	//uint8_t buffer[WIDTH * 2];
+	char Filename_buff[15];
+	uint8_t *Buffer_ram;
+	Buffer_ram = mspace_malloc(sdram_msp, HEIGHT * WIDTH * 2);
+	i = 0;
+	//make file
+	//delete file if it exits already
+ 	nav_filelist_reset();
+	while(1)
+	{
+		sprintf(&Filename_buff, Image1Name, i++);
+		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
+		{
+			;
+		}
+		else
+		{
+			break;
+		}
+	}
+
+	//Image1
+	//reset read pointer
+	FIFO_1_nRRST_CLR;
+	
+	FIFO_1_RCLK_SET;
+	delay_us(10);
+	FIFO_1_RCLK_CLR;
+	FIFO_1_nRRST_SET;
+	
+	//enable output
+	FIFO_1_nOE_CLR;
+	//	uint8_t buffer[WIDTH * 2];
+	
+	for(j = 0; j < HEIGHT * WIDTH * 2; j+= 2)
+	{
+		FIFO_1_RCLK_SET;
+		delay_us(10);
+		Buffer_ram[j+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+		delay_us(10);
+		FIFO_1_RCLK_CLR;
+		delay_us(10);
+		FIFO_1_RCLK_SET;
+		delay_us(10);
+		Buffer_ram[j] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+		delay_us(10);
+		FIFO_1_RCLK_CLR;
+		delay_us(10);
+	}
+	
+	FIFO_1_nOE_SET;//disable output
+/*	file_close();*/
+	SaveBitmap(Buffer_ram, WIDTH, HEIGHT, Filename_buff);
+	mspace_free(sdram_msp, Buffer_ram);
+}
+
+void Store_Image_0()
+{
+	int i, j;
+	//uint8_t buffer[WIDTH * 2];
+	char Filename_buff[15];
+	uint8_t *Buffer_ram;
+	Buffer_ram = mspace_malloc(sdram_msp, HEIGHT * WIDTH * 2);
+	i = 0;
+	//make file
+	//delete file if it exits already
+ 	nav_filelist_reset();
+	while(1)
+	{
+		sprintf(&Filename_buff, Image0Name, i++);
+		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
+		{
+			;
+		}
+		else
+		{
+			break;
+		}
+	}
+
+	//Image1
+	//reset read pointer
+	FIFO_0_nRRST_CLR;
+	
+	FIFO_0_RCLK_SET;
+	delay_us(10);
+	FIFO_0_RCLK_CLR;
+	FIFO_0_nRRST_SET;
+	
+	//enable output
+	FIFO_0_nOE_CLR;
+	//	uint8_t buffer[WIDTH * 2];
+	
+	for(j = 0; j < HEIGHT * WIDTH * 2; j+= 2)
+	{
+		FIFO_0_RCLK_SET;
+		delay_us(10);
+		Buffer_ram[j+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+		delay_us(10);
+		FIFO_0_RCLK_CLR;
+		delay_us(10);
+		FIFO_0_RCLK_SET;
+		delay_us(10);
+		Buffer_ram[j] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+		delay_us(10);
+		FIFO_0_RCLK_CLR;
+		delay_us(10);
+	}
+	
+	FIFO_0_nOE_SET;//disable output
+/*	file_close();*/
+	SaveBitmap(Buffer_ram, WIDTH, HEIGHT, Filename_buff);
+	mspace_free(sdram_msp, Buffer_ram);
+}

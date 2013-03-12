@@ -262,7 +262,7 @@ int Read2DSignal( int * WorkingBuffer )
 
 void SaveBitmap(uint8_t *Image, int width, int height, char *FileName)
 {
-	int i, j;
+	int i, j, k;
 	uint8_t *Buffer;
 	
 	nav_filelist_reset();
@@ -318,15 +318,17 @@ void SaveBitmap(uint8_t *Image, int width, int height, char *FileName)
 		for(j = 0; j < width * 2; j++)
 		{
 			//Copy the data across. 
-			Buffer[j] = Image[i*height + j];
+			Buffer[j] = Image[i*width*2 + j];
 		}
 		file_write_buf(Buffer, width * 2);
+		
 // 		j = width % 4;
 // 		if(j != 0)
 // 		{//Padding is needed to make things 4 byte aligned
 // 			file_write_buf(Buffer, j);
 // 		}
 	}
+	
 	
 	
 	free(Buffer);
