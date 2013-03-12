@@ -59,15 +59,18 @@ __attribute__((__interrupt__)) static void VSYNC1_Handler (void)
 			case(TAKE_PHOTO):
 			FIFO_1_WEN_SET;
 			OV7670_Status.VSYNC1_State = TAKING_PHOTO;
+			//print_dbg("\n\rCase: Take Photo;");
 			break;
 			
 			case(TAKING_PHOTO):
 			FIFO_1_WEN_CLR;
 			OV7670_Status.VSYNC1_State = TAKEN_PHOTO;
+			//print_dbg("\n\rCase: Taking Photo;");
 			break;
 			
 			case (TAKEN_PHOTO):
 			FIFO_1_WEN_CLR;
+			//print_dbg("\n\rCase: Taken Photo;");
 			break;
 			
 			case(IDLE):
@@ -75,6 +78,7 @@ __attribute__((__interrupt__)) static void VSYNC1_Handler (void)
 			VSYNC_1_DISABLE_INTERRUPT;
 			FIFO_1_WEN_CLR;
 			OV7670_Status.VSYNC1_State = IDLE;
+			//print_dbg("\n\rCase: Idle;");
 			break;
 		}
 }
@@ -253,8 +257,8 @@ void FIFO_Reset(uint8_t CameraID)
 {
 	FIFO_0_nOE_SET;
 	FIFO_1_nOE_SET;
-	if(CameraID & CAMERA_LEFT)
-	{
+// 	if(CameraID & CAMERA_LEFT)
+// 	{
 		FIFO_0_WRST_CLR;
 		FIFO_0_nRRST_CLR;
 		FIFO_0_RCLK_SET;
@@ -262,9 +266,9 @@ void FIFO_Reset(uint8_t CameraID)
 		FIFO_0_RCLK_CLR;
 		FIFO_0_nRRST_SET;
 		FIFO_0_WRST_SET;
-	}
-	if(CameraID & CAMERA_RIGHT)
-	{
+// 	}
+// 	if(CameraID & CAMERA_RIGHT)
+// 	{
 		FIFO_1_WRST_CLR;
 		FIFO_1_nRRST_CLR;
 		FIFO_1_RCLK_SET;
@@ -272,7 +276,7 @@ void FIFO_Reset(uint8_t CameraID)
 		FIFO_1_RCLK_CLR;
 		FIFO_1_nRRST_SET;
 		FIFO_1_WRST_SET;
-	}
+/*	}*/
 	
 }
 
@@ -288,9 +292,10 @@ int TakePhoto(uint8_t Cameras)
 		
 	if(Cameras & CAMERA_RIGHT)
 		OV7670_Status.VSYNC1_State = TAKE_PHOTO;
-	
-	VSYNC_0_ENABLE_INTERRUPT;
-	VSYNC_1_ENABLE_INTERRUPT;
+// 	eic_clear_interrupt_line(&AVR32_EIC, VSYNC_1_LINE);
+// 	eic_clear_interrupt_line(&AVR32_EIC, VSYNC_0_LINE);
+// 	VSYNC_0_ENABLE_INTERRUPT;
+// 	VSYNC_1_ENABLE_INTERRUPT;
 	
 	return TAKING_PHOTO;
 	
@@ -348,6 +353,8 @@ bool Store_Both_Images()
 	Store_Image_0();
 	FIFO_Reset(CAMERA_LEFT);
 	
+	OV7670_Status.VSYNC0_State = IDLE;
+	OV7670_Status.VSYNC1_State = IDLE;
 	return true;
 }
 void Store_Image_0()
@@ -508,7 +515,7 @@ void Store_Image_1()
 // 	i = 0;
 // 	//make file
 // 	//delete file if it exits already
-// // 	nav_filelist_reset();
+//  	nav_filelist_reset();
 // 	while(1)
 // 	{
 // 		sprintf(&Filename_buff, Image1Name, i++);

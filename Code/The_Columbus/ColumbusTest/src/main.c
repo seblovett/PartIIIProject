@@ -164,7 +164,10 @@ int main (void)
 			case 'P'://take a photo
 				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 				print_dbg("\rTaking Photos");
-				TakePhoto(CAMERA_LEFT | CAMERA_RIGHT);
+				if(TakePhoto(CAMERA_LEFT | CAMERA_RIGHT) == CAMERAS_BUSY){
+					print_dbg("Cameras Busy");
+					break;
+				}					
 				while(Photos_Ready() == false)
 					;
 
@@ -270,7 +273,12 @@ int main (void)
 				print_dbg("\rResetting Both FIFO Buffers");
 				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 				break;
-			
+			case 'w':
+				FIFO_1_WEN_CLR;
+				break;
+			case 'W':
+				FIFO_1_WEN_SET;
+				break;
 			default:
 				print_dbg("\rCommand Not Recognised;");
 				break;

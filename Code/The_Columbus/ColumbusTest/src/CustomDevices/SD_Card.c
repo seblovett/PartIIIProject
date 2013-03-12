@@ -273,7 +273,7 @@ void SaveBitmap(uint8_t *Image, int width, int height, char *FileName)
 	}
 	nav_file_create((FS_STRING)FileName);
 	file_open(FOPEN_MODE_W);
-	//write a modified bitmap header
+	//write a modified bitmap header 
 	//Calculate which is the biggest:
 	i = width; 
 	if(height > i)
