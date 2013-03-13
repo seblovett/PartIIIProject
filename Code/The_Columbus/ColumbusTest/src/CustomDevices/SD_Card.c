@@ -334,3 +334,70 @@ void SaveBitmap(uint8_t *Image, int width, int height, char *FileName)
 	free(Buffer);
 	file_close();
 }
+
+#define BMP_HEADER_FILESIZE_OFFSET		2
+#define BMP_HEADER_OFFSETTOARRAY_OFFSET	10
+#define DIB_V5_WIDTH_OFFSET		4
+#define DIB_V5_HEIGHT_OFFSET	8
+
+
+int ReadBigEndian(uint8_t *Buffer, int Offset, uint size)
+{
+	int retVal, i; 
+	retVal = 0; //initialise value
+	for(i = 0; i < size; i++)
+	{
+		retVal |= Buffer[Offset + i] << (i * 8);
+	}
+	return (Buffer[Offset]) | (Buffer[Offset + 1] << 8) | (Buffer[Offset + 2] << 16) | (Buffer[Offset + 3] << 24);
+}
+void ReadBitmap(char *Filename)
+{
+	Image_t image; 
+	int FileSize, OffsetToArray, temp;
+	uint8_t Buffer[128];
+	nav_filelist_reset();
+	if(nav_filelist_findname((FS_STRING)Filename, false) == false)//if the file doesn't exist
+	{
+		print_dbg("\n\rFile ");
+		print_dbg(Filename);
+		print_dbg("\n\r does not exist;");
+		return;
+	}
+	nav_setcwd((FS_STRING)Filename, false, false);
+	file_open(FOPEN_MODE_R);
+	//Read Header
+	file_read_buf(Buffer, BMPHEADERSIZE);
+	//Check for BM to confirm it is a Bitmap
+	if((Buffer[0] != 'B') || (Buffer[1] != 'M'))
+	{
+		print_dbg("\n\rBitmap Parse Fail 'BM';");
+		return;
+	}
+	//Extract file size and offset to pixel array
+	FileSize = ReadBigEndian(Buffer, BMP_HEADER_FILESIZE_OFFSET, 4);
+	OffsetToArray = ReadBigEndian(Buffer, BMP_HEADER_OFFSETTOARRAY_OFFSET, 4);
+	
+	file_read_buf(Buffer, DIBHEADERSIZE);
+	temp = ReadBigEndian(Buffer, 0, 4);
+	if(temp != 0x7C) //check it is a V5 BMP DIB Header
+	{
+		print_dbg("\n\rBMP Parse: DIB Header not V5;");
+		return;
+	}
+	image.Width = ReadBigEndian(Buffer, DIB_V5_WIDTH_OFFSET, 4);
+	image.Height = ReadBigEndian(Buffer, DIB_V5_HEIGHT_OFFSET, 4);
+	
+	print_dbg("\n\rBitmap Width = ");
+	print_dbg_ulong(image.Width);
+	print_dbg("\n\rBitmap Height = ");
+	print_dbg_ulong(image.Height);
+	print_dbg("\n\rBitmap File Size = ");
+	print_dbg_ulong(FileSize);
+	print_dbg("\n\rBitmap Offset to Array = ");
+	print_dbg_ulong(OffsetToArray);
+	
+	file_close();
+	nav_filelist_reset();
+	return;
+}

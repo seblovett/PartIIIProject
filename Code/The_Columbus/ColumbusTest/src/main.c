@@ -71,12 +71,13 @@ void Get_Line( char * CommandBuffer )
 	usart_putchar(DBG_USART, 6);
 }
 
-
+#define COMMAND_BUFFER_SIZE		32
 int main (void)
 {
 	unsigned long i, j, tmp = 0;
+	char *Ptr; 
 //	volatile unsigned long *sdram = SDRAM;
-	char CommandBuffer[16];
+	char CommandBuffer[COMMAND_BUFFER_SIZE];
 	int *Working_Buffer = NULL;
 	int SizeOfWorking_Buffer = 0;
 	A_ALIGNED dsp16_complex_t *ComplexBuffer;
@@ -273,7 +274,16 @@ int main (void)
 				print_dbg("\rResetting Both FIFO Buffers");
 				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 				break;
-
+			case 'B': 
+				Ptr = CommandBuffer;
+				Ptr ++;
+				while(*Ptr == ' ')
+					Ptr++;
+				print_dbg("\n\rFile Name: \n\r\"");
+				print_dbg(Ptr);
+				print_dbg("\"");
+				ReadBitmap(Ptr);
+				break;
 			default:
 				print_dbg("\rCommand Not Recognised;");
 				break;

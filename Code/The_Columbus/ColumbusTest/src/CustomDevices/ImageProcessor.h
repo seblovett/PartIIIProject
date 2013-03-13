@@ -8,14 +8,18 @@
 
 #ifndef IMAGEPROCESSOR_H_
 #define IMAGEPROCESSOR_H_
+
+#define BMP_FORMAT_RGB565			1
+#define BMP_FORMAT_RGB555			2
+#define BMP_FORMAT_GREYSCALE		3
 typedef struct {
 	int *ImagePtr;
-	} ImageProcessor_t;
+	int Height;
+	int Width;
+	uint8_t Format;
+	} Image_t;
 	
-	
-//Load image to bitmap
-int LoadImage(char *Filename);
-int SaveImage(char *Filename);
+
 
 int FFT1D(int *Signal);
 int FFT2D(int *Signal);
