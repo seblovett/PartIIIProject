@@ -257,8 +257,8 @@ void FIFO_Reset(uint8_t CameraID)
 {
 	FIFO_0_nOE_SET;
 	FIFO_1_nOE_SET;
-// 	if(CameraID & CAMERA_LEFT)
-// 	{
+	if(CameraID & CAMERA_LEFT)
+	{
 		FIFO_0_WRST_CLR;
 		FIFO_0_nRRST_CLR;
 		FIFO_0_RCLK_SET;
@@ -266,9 +266,9 @@ void FIFO_Reset(uint8_t CameraID)
 		FIFO_0_RCLK_CLR;
 		FIFO_0_nRRST_SET;
 		FIFO_0_WRST_SET;
-// 	}
-// 	if(CameraID & CAMERA_RIGHT)
-// 	{
+	}
+	if(CameraID & CAMERA_RIGHT)
+	{
 		FIFO_1_WRST_CLR;
 		FIFO_1_nRRST_CLR;
 		FIFO_1_RCLK_SET;
@@ -276,7 +276,7 @@ void FIFO_Reset(uint8_t CameraID)
 		FIFO_1_RCLK_CLR;
 		FIFO_1_nRRST_SET;
 		FIFO_1_WRST_SET;
-/*	}*/
+	}
 	
 }
 
@@ -292,10 +292,10 @@ int TakePhoto(uint8_t Cameras)
 		
 	if(Cameras & CAMERA_RIGHT)
 		OV7670_Status.VSYNC1_State = TAKE_PHOTO;
-// 	eic_clear_interrupt_line(&AVR32_EIC, VSYNC_1_LINE);
-// 	eic_clear_interrupt_line(&AVR32_EIC, VSYNC_0_LINE);
-// 	VSYNC_0_ENABLE_INTERRUPT;
-// 	VSYNC_1_ENABLE_INTERRUPT;
+	eic_clear_interrupt_line(&AVR32_EIC, VSYNC_1_LINE);
+	eic_clear_interrupt_line(&AVR32_EIC, VSYNC_0_LINE);
+	VSYNC_0_ENABLE_INTERRUPT;
+	VSYNC_1_ENABLE_INTERRUPT;
 	
 	return TAKING_PHOTO;
 	

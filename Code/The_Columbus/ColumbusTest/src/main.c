@@ -273,12 +273,7 @@ int main (void)
 				print_dbg("\rResetting Both FIFO Buffers");
 				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 				break;
-			case 'w':
-				FIFO_1_WEN_CLR;
-				break;
-			case 'W':
-				FIFO_1_WEN_SET;
-				break;
+
 			default:
 				print_dbg("\rCommand Not Recognised;");
 				break;
