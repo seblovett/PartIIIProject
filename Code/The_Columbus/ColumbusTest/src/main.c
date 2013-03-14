@@ -139,7 +139,7 @@ int main (void)
 				break;
 			case '2':
 				print_dbg("\r2D FFT;");
-				FFT2D(Working_Buffer);
+				FFT2Dabs(Working_Buffer);
 				break;
 			case 'r':
 				if (Working_Buffer == 0)
@@ -283,6 +283,10 @@ int main (void)
 				print_dbg(Ptr);
 				print_dbg("\"");
 				ReadBitmap(Ptr);
+				break;
+			case 'i':
+				print_dbg("\rInverse Fourier Transform;")
+				IFFT2D()
 				break;
 			default:
 				print_dbg("\rCommand Not Recognised;");

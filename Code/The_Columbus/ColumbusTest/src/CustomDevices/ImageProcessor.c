@@ -60,7 +60,7 @@ int FFT1D( int *Signal)
 	return Signal;
 }
 
-int FFT2D( int *Signal )
+int FFT2Dabs( int *Signal )
 {
 	int i, j = 0;
 	int Ptr; 
@@ -230,17 +230,16 @@ int* PrepareImage(int *Image)
 	return PreparedImage;
 }
 
+
 //************************************
 // Method:    IFFT2D
 // FullName:  IFFT2D
 // Access:    public 
-// Returns:   int*
-// Qualifier:
-// Parameter: dsp16_complex_t * Result
-// Parameter: dsp16_complex_t * Input
-// Info : Needs testing! 
+// Returns:   void
+// Qualifier: 
+// Parameter: dsp16_complex_t * Signal
 //************************************
-int* IFFT2D (dsp16_complex_t *Result, dsp16_complex_t *Input)
+void IFFT2D (dsp16_complex_t *Signal) //Need to test this! 
 {
 	int i, j = 0;
 	int Ptr;
@@ -256,13 +255,13 @@ int* IFFT2D (dsp16_complex_t *Result, dsp16_complex_t *Input)
 	{
 		for(j = 0; j < FFT_SIZE; j++)
 		{
-			Input_C_1D[j].real = Input[Ptr].real; //copy the data across
-			Input_C_1D[j].imag = Input[Ptr].imag;
+			Input_C_1D[j].real = Signal[Ptr].real; //copy the data across
+			Input_C_1D[j].imag = Signal[Ptr].imag;
 		}
 
 		//Do the FFT
 		dsp16_trans_complexifft(Result_C_1D, Input_C_1D, log_2(FFT_SIZE));
-		//Copy data into 2D reult TRANSPOSED
+		//Copy data into 2D result TRANSPOSED
 
 		for(j = 0; j < FFT_SIZE; j++)
 		{
@@ -294,11 +293,25 @@ int* IFFT2D (dsp16_complex_t *Result, dsp16_complex_t *Input)
 		
 		for(j = 0; j < FFT_SIZE; j++)
 		{
-			Result[i + j * FFT_SIZE].imag = 	Result_C_1D[j].imag;
-			Result[i + j * FFT_SIZE].real = 	Result_C_1D[j].real;
+			Signal[i + j * FFT_SIZE].imag = 	Result_C_1D[j].imag;
+			Signal[i + j * FFT_SIZE].real = 	Result_C_1D[j].real;
 			//Signal[i + (j*FFT_SIZE)] = Input_R_1D[j] * FFT_SIZE;
 		}
 	}
 	
-	return Result;
+	//return Signal;
+}
+
+void ComplexMultiply(dsp16_complex_t *Result_Input1, dsp16_complex_t *Input2, int size)
+{
+	int i = 0;
+	dsp16_complex_t c;
+	for(i = 0; i < size; i++)
+	{
+		//(a+jb).(c+jd) = (ac - bd) + j(ad + bc)
+		c.real = (Result_Input1[i].real * Input2[i].real) - (Result_Input1[i].imag * Input2[i].imag);
+		c.imag = (Result_Input1[i].real * Input2[i].imag) + (Result_Input1[i].imag * Input2[i].real);
+		Result_Input1[i].imag = c.imag;
+		Result_Input1[i].real = c.real;
+	}
 }
