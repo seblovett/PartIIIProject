@@ -26,4 +26,5 @@ int FFT2D(int *Signal);
 int log_2(int i);
 
 int* FFT2DCOMPLEX( int *Signal, dsp16_complex_t *ComplexBuffer, int size );
+int* PrepareImage(int *Image);
 #endif /* IMAGEPROCESSOR_H_ */
