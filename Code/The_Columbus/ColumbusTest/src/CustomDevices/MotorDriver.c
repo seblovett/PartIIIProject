@@ -6,6 +6,7 @@
  */ 
 #include <asf.h>
 #include "CustomDevices/CustomDevices.h"
+#include <delay.h>
 //Camera
 /*#include "CustomDevices/OV7670.h"*/
 //I2C Mux
@@ -143,33 +144,42 @@ __attribute__((__interrupt__)) static void ACInterruptHandler(void)
 	
 	if (acifa_is_acb_inp_higher(&AVR32_ACIFA1)) //LEFT MOTOR
 	{
-		LED5_SET; //wheel not on white tab
+		LED5_CLR; //wheel not on white tab
 	}
 	else
 	{
-		LED5_CLR;
+		LED5_SET;
 		Motor_Control.Left_Count --;
+		print_dbg("\n\rLeft Wheel Interrupt");
+		DISABLE_ACB_INTERRUPT;
+		//delay_ms(100);
 	}
 	
 	if (acifa_is_aca_inp_higher(&AVR32_ACIFA1))
 	{
 
-		LED6_SET;
+		LED6_CLR;
 		
 	}
 	else
 	{
-		LED6_CLR;
+		LED6_SET;
 		Motor_Control.Right_Count --;
+		print_dbg("\n\rRight Wheel Interrupt");
+		//delay_ms(100);
+		DISABLE_ACA_INTERRUPT;
 	}
+	
 	int temp = 0;
 	if(Motor_Control.Left_Count <= 0) //if we have reached the end of the movement on left wheel
 		temp |= MOTOR_L;
 	
 	if(Motor_Control.Right_Count <= 0)
 		temp |= MOTOR_R;
-		
-	Motor_Stop(temp); //Stop the Right Motor
+	if(temp != 0)	
+		Motor_Stop(temp); //Stop the Motor
+	//delay_ms(100);
+	
 }
 void Analogue_Comparator_Init()
 {
@@ -186,13 +196,13 @@ void Analogue_Comparator_Init()
 	Disable_global_interrupt();
 	
 	//INTC_init_interrupts();
-	
+	acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELA, 2);
 	acifa_configure(&AVR32_ACIFA1,
 	ACIFA_COMP_SELA,
 	POT0_AC1AP1_INPUT,
 	SENSE0_AC1AN1_INPUT,
 	FOSC0);
-	acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELA, 2);
+	
 	acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELB, 2);
 	acifa_configure(&AVR32_ACIFA1,
 	ACIFA_COMP_SELB,
@@ -215,10 +225,13 @@ void Analogue_Comparator_Init()
 	
 	
 	//Motor_Go(S)
-	acifa_enable_interrupt(&AVR32_ACIFA1, 3);//Enable ACBINT and ACAINT
-	acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELA);
-	acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELB);
-
+	//acifa_enable_interrupt(&AVR32_ACIFA1, (1 << AVR32_ACIFA_ACBINT )| (1 << AVR32_ACIFA_ACAINT));//Enable ACBINT and ACAINT
+	ENABLE_ACA_INTERRUPT;
+	ENABLE_ACB_INTERRUPT;
+ 	//acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELA);
+ 	//acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELB);
+	acifa_enable_interrupt_inp_lower(&AVR32_ACIFA1, ACIFA_COMP_SELA);
+ 	acifa_enable_interrupt_inp_lower(&AVR32_ACIFA1, ACIFA_COMP_SELB);
 	acifa_start(&AVR32_ACIFA1, (ACIFA_COMP_SELA|ACIFA_COMP_SELB));
 	
 	
@@ -274,7 +287,18 @@ void Motor_Start(int Motors)
 		pwm_start_channels((1 << MOTOR_R));
 	}	
 }
-
+void Motors_Execute()
+{
+	while(Motors_Moving())
+	{
+		ENABLE_ACA_INTERRUPT;
+		ENABLE_ACB_INTERRUPT;
+		for(int i = 0; i < 750; i++)
+		{
+			delay_ms(1);
+		}
+	}
+}
 void Motor_Stop(int Motors)
 {
 	if(Motors & MOTOR_L)
@@ -291,9 +315,29 @@ void Motor_Stop(int Motors)
 		pwm_stop_channels((1 << MOTOR_R));
 	}
 }
-void Motors_Move(float x_metres, float y_metres)
+void Motors_Move(int centimetres_fwd)//Move this amount forward in centimeters
 {
 	//Calculate number of interrupts of each wheel
+	int number_interrupts; 
+	if(centimetres_fwd > 0)
+	{
+		Motor_Control.Left_State = FORWARD;
+		Motor_Control.Right_State = FORWARD;
+	}
+	else 
+	{
+		centimetres_fwd = Abs(centimetres_fwd);
+		Motor_Control.Left_State = BACKWARD;
+		Motor_Control.Right_State = BACKWARD;
+	}
+	number_interrupts = (centimetres_fwd * (int)INTERRUPTS_PER_REVOLUTION) / (int)CIRCUMFERENCE_WHEEL_CM; 
+	print_dbg("\n\rNumber of interrupts to move = ");
+	print_dbg_ulong(number_interrupts);
+	
+	Motor_Control.Left_Count = number_interrupts;
+	Motor_Control.Right_Count = number_interrupts;
+	Motor_Start(MOTOR_L | MOTOR_R);
+	Motors_Execute();
 }
 
 void Motors_Reset(void)
@@ -307,18 +351,29 @@ void Motors_Reset(void)
 
 bool Motors_Moving()
 {
-	if(Motor_Control.Left_State != STOP)
+// 	if(Motor_Control.Left_State != STOP)
+// 	{
+// 		if(Motor_Control.Right_State != STOP)
+// 		{
+// 			return true;
+// 		}
+// 		else
+// 			return false;
+// 	}
+// 	else
+// 	{
+// 		return false;
+// 	}
+	if(Motor_Control.Left_State != STOP) //Left is moving
 	{
-		if(Motor_Control.Right_State != STOP)
-		{
-			return true;
-		}
-		else
-			return false;
+		return true;
+	}
+	else if (Motor_Control.Right_State != STOP) //Right is moving
+	{
+		return true;
 	}
 	else
 	{
 		return false;
 	}
-	
 }

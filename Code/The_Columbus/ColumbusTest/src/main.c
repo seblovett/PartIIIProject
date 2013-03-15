@@ -87,6 +87,7 @@ int main (void)
 	Columbus_Status.Cameras = &OV7670_Status;
 	Columbus_Status.I2CMux = &PCA9542A;
 	Columbus_Status.SD_Card = &SD_Status;
+	Columbus_Status.Motors = &Motor_Control;
 	board_init();
 	print_dbg("\n\r");
 	print_dbg(THE);
@@ -126,9 +127,8 @@ int main (void)
 	{
 		print_dbg(PROMPT);
 		Get_Line(CommandBuffer);
-		//print_dbg("\n\r$");
-		//print_dbg(WorkingBuffer);
-		switch(CommandBuffer[0])
+		Ptr = CommandBuffer;
+		switch(*Ptr++)
 		{
 			case '?':
 				print_dbg(HELP);
@@ -142,6 +142,132 @@ int main (void)
 				print_dbg("\r2D FFT;");
 				FFT2Dabs(Working_Buffer);
 				break;
+			case '3':
+				print_dbg("\rComplex FFT2D:");
+				SizeOfComplex_Buffer = FFT_SIZE * FFT_SIZE;
+				ComplexBuffer = mspace_malloc(sdram_msp,  SizeOfComplex_Buffer * sizeof(ComplexBuffer));
+				FFT2DCOMPLEX(Working_Buffer, ComplexBuffer, SizeOfWorking_Buffer);
+				break;
+				
+			case 'B': 
+				print_dbg("\rReading Bitmap;");
+				ReadBitmap("Image_R_0.bmp", &image);
+				print_dbg("\n\rBitmap Data Returned:\n\rImage Height = ");
+				print_dbg_ulong(image.Height);
+				print_dbg("\n\rImage Width = ");
+				print_dbg_ulong(image.Width);
+				break;
+				
+			case 'c':
+				print_dbg("\rConverting Working Buffer to Fixed Point");
+				for(i = 0; i < SizeOfWorking_Buffer ; i++)
+				{
+					Working_Buffer[i] = DSP16_Q (Working_Buffer[i]);
+				}
+				break;
+			
+			case 'C':
+				print_dbg("\rConverting Working Buffer back from Fixed Point");
+				j = DSP16_Q(1);
+				for(i = 0; i < SizeOfWorking_Buffer ; i++)
+				{
+					Working_Buffer[i] = Working_Buffer[i] / j;
+				}
+				break;
+			
+			case 'D':
+				print_dbg("\rFreeing Working Buffer");
+				mspace_free(sdram_msp, Working_Buffer);
+				break;
+			
+			case 'i':
+				print_dbg("\rImage info:");
+				print_dbg("\n\rImage Pointer = ");
+				print_dbg_ulong(image.ImagePtr);
+				print_dbg("\n\rImage Height = ");
+				print_dbg_ulong(image.Height);
+				print_dbg("\n\rImage Width = ");
+				print_dbg_ulong(image.Width);
+				break;
+					
+			case 'I':
+				print_dbg("\rInverse Fourier Transform;");
+				IFFT2D(ComplexBuffer);
+				break;
+				
+			case 'k':
+				print_dbg("\rComplex Buffer:\n\r[");
+				for (i = 0; i < SizeOfComplex_Buffer; i ++)
+				{
+					print_dbg_ulong(ComplexBuffer[i].real);
+					print_dbg(" + j");
+					print_dbg_ulong(ComplexBuffer[i].imag);
+					print_dbg(", ");
+				}
+				print_dbg("]\n\r");
+				break;
+			case 'M': //Motor Related
+				while(*Ptr == ' ')
+					Ptr++; //Find next non - space char
+				
+				switch(*(Ptr++))
+				{
+					case 'q': // Reset Motors
+						print_dbg("\rResetting Motors");
+						Motors_Reset();
+						break;
+					
+					case 'F': //Move Forward 
+						while(*Ptr == ' ')
+							Ptr++; //Find next non - space char
+						i = atoi(Ptr);
+						Motors_Move(i);
+						break;
+					case 'l':
+						Motor_Stop(MOTOR_L);
+						break;
+					case 'L':
+						Columbus_Status.Motors->Left_Count = INTERRUPTS_PER_REVOLUTION + 1;
+						Columbus_Status.Motors->Left_State = FORWARD;
+						Motor_Start(MOTOR_L);
+						Motors_Execute();
+						break;
+					case 'r':
+						Motor_Stop(MOTOR_R);
+						break;
+					case 'R':
+						Columbus_Status.Motors->Right_Count = INTERRUPTS_PER_REVOLUTION + 1;
+						Columbus_Status.Motors->Right_State = FORWARD;
+						Motor_Start(MOTOR_R);
+						Motors_Execute();
+						break;
+					default:
+						print_dbg("\rCommand Not Recognised");
+						break;
+				}
+				
+				break;
+				
+			case 'p':
+				print_dbg("\rPreparing Image;");
+				PrepareImage(&image);
+				print_dbg("\rImage Prepared!");
+				break;
+				
+			case 'P'://take a photo
+				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
+				print_dbg("\rTaking Photos");
+				if(TakePhoto(CAMERA_LEFT | CAMERA_RIGHT) == CAMERAS_BUSY){
+					print_dbg("Cameras Busy");
+					break;
+				}					
+				while(Photos_Ready() == false)
+					;
+
+				if(Store_Both_Images() == true)
+					print_dbg("\n\rImages Stored Successfully!");
+				break;
+				
 			case 'r':
 				if (Working_Buffer == 0)
 				{
@@ -163,150 +289,80 @@ int main (void)
 				ReadSignal(Working_Buffer);
 				break;
 
-			case 'P'://take a photo
-				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
-				print_dbg("\rTaking Photos");
-				if(TakePhoto(CAMERA_LEFT | CAMERA_RIGHT) == CAMERAS_BUSY){
-					print_dbg("Cameras Busy");
-					break;
-				}					
-				while(Photos_Ready() == false)
-					;
-
-				if(Store_Both_Images() == true)
-					print_dbg("\n\rImages Stored Successfully!");
-				break;
-
-			case 'D':
-				print_dbg("\rFreeing Working Buffer");
-				mspace_free(sdram_msp, Working_Buffer);
-				break;
-			case 'c':
-				print_dbg("\rConverting Working Buffer to Fixed Point");
-				for(i = 0; i < SizeOfWorking_Buffer ; i++)
-				{
-					Working_Buffer[i] = DSP16_Q (Working_Buffer[i]);
-				}
-				break;
-			case 'C':
-				print_dbg("\rConverting Working Buffer back from Fixed Point");
-				j = DSP16_Q(1);
-				for(i = 0; i < SizeOfWorking_Buffer ; i++)
-				{
-					Working_Buffer[i] = Working_Buffer[i] / j;
-				}
-				break;
 			case 's'://save the working buffer
 				print_dbg("\rSaving Working Buffer;");
 				SaveBuff(Working_Buffer, SizeOfWorking_Buffer);
 				break;
-// 			case 'l':
-// 				i = atoi(CommandBuffer + 2);
-// 				i = log_2(i);
-// 				print_dbg("\n\r");
-// 				print_dbg_ulong(i);
-// 				break;
-
+				
+			case 'S':
+				print_dbg("\rSaving Bitmap;");
+				SaveBitmap(image.ImagePtr, image.Width, image.Height, "ResavedImage.bmp");
+				print_dbg("\rSaved Bitmap!;");
+				break;
+				
 			case 'T':
 				print_dbg("\rReading in 2D Signal");
 				Working_Buffer = mspace_malloc(sdram_msp, FFT_SIZE * FFT_SIZE);
 				SizeOfWorking_Buffer = FFT_SIZE * FFT_SIZE;
 				Read2DSignal(Working_Buffer);
 				break;
-// 			case 't':
-// 				print_dbg("\n\r[[");
-// 				for(i = 0; i < FFT_SIZE ; i ++)
+			case 'v':
+				print_dbg("\rColumbus Status:");
+				print_dbg("\n\rSD Card:\n\rStatus: ");
+				print_dbg_ulong(Columbus_Status.SD_Card->Status);
+				print_dbg("\n\rMemory Size : ");
+				print_dbg_ulong(Columbus_Status.SD_Card->Memory_size);
+				print_dbg("\n\rMotors:");
+				print_dbg("\n\rLeft State : ");
+				print_dbg_ulong(Columbus_Status.Motors->Left_State);
+				print_dbg("\n\rLeft Count : ");
+				print_dbg_ulong(Columbus_Status.Motors->Left_Count);
+				print_dbg("\n\rRight State : ");
+				print_dbg_ulong(Columbus_Status.Motors->Right_State);
+				print_dbg("\n\rRight Count : ");
+				print_dbg_ulong(Columbus_Status.Motors->Right_Count);
+				print_dbg("\n\rCameras:");
+				print_dbg("\n\rStatus : ");
+				print_dbg_ulong(Columbus_Status.Cameras->Status);
+				print_dbg("\n\rVSYNC0 State : ");
+				print_dbg_ulong(Columbus_Status.Cameras->VSYNC0_State);
+				print_dbg("\n\rVSYNC1 State : ");
+				print_dbg_ulong(Columbus_Status.Cameras->VSYNC1_State);
+				print_dbg("\n\rI2C Mux:");
+				print_dbg("\n\rStatus : ");
+				print_dbg_ulong(Columbus_Status.I2CMux->Status);
+				print_dbg("\n\rChannel Selected : ");
+				print_dbg_ulong(Columbus_Status.I2CMux->ChannelSelected);
+				break;
+
+// 			case 'o'://testing storing a complex
+// 				print_dbg("\rFreeing Complex Buffer");
+// 				mspace_free(sdram_msp, ComplexBuffer);
+// 				print_dbg("\n\rAssiging Space to the Complex Buffer;");
+// 				SizeOfComplex_Buffer = 10;
+// 				ComplexBuffer = mspace_malloc(sdram_msp, 10*sizeof(ComplexBuffer));
+// 				if(ComplexBuffer == NULL)
 // 				{
-// 					for (j = 0; j < FFT_SIZE; j ++)
-// 					{
-// 						print_dbg_ulong(Working_Buffer[i*FFT_SIZE + j]);
-// 						print_dbg(" ,");
-// 					}
-// 					print_dbg("\b]\n\r");
+// 					print_dbg("\n\rAssign Failed;");
+// 					break;
 // 				}
-// 				print_dbg("\]\n\r");
+// 				for(i = 0; i < SizeOfComplex_Buffer; i++)
+// 				{
+// 					ComplexBuffer[i].imag = i;
+// 					ComplexBuffer[i].real = i;
+// 				}
+// 				for(i = 0; i < SizeOfComplex_Buffer; i ++)
+// 				{
+// 					print_dbg("\n\r");
+// 					print_dbg_ulong(ComplexBuffer[i].real);
+// 					print_dbg(" + j");
+// 					print_dbg_ulong(ComplexBuffer[i].imag);
+// 				}
+// 				print_dbg("\n\rFreeing Complex Buffer");
+// 				mspace_free(sdram_msp, ComplexBuffer);
+// 				SizeOfComplex_Buffer = 0;
 // 				break;
-			case 'o'://testing storing a complex
-				print_dbg("\rFreeing Complex Buffer");
-				mspace_free(sdram_msp, ComplexBuffer);
-				print_dbg("\n\rAssiging Space to the Complex Buffer;");
-				SizeOfComplex_Buffer = 10;
-				ComplexBuffer = mspace_malloc(sdram_msp, 10*sizeof(ComplexBuffer));
-				if(ComplexBuffer == NULL)
-				{
-					print_dbg("\n\rAssign Failed;");
-					break;
-				}
-				for(i = 0; i < SizeOfComplex_Buffer; i++)
-				{
-					ComplexBuffer[i].imag = i;
-					ComplexBuffer[i].real = i;
-				}
-				for(i = 0; i < SizeOfComplex_Buffer; i ++)
-				{
-					print_dbg("\n\r");
-					print_dbg_ulong(ComplexBuffer[i].real);
-					print_dbg(" + j");
-					print_dbg_ulong(ComplexBuffer[i].imag);
-				}
-				print_dbg("\n\rFreeing Complex Buffer");
-				mspace_free(sdram_msp, ComplexBuffer);
-				SizeOfComplex_Buffer = 0;
-				break;
-			case '3':
-				print_dbg("\rComplex FFT2D:");
-				SizeOfComplex_Buffer = FFT_SIZE * FFT_SIZE;
-				ComplexBuffer = mspace_malloc(sdram_msp,  SizeOfComplex_Buffer * sizeof(ComplexBuffer));
-				FFT2DCOMPLEX(Working_Buffer, ComplexBuffer, SizeOfWorking_Buffer);
-				break;
-			case 'k':
-				print_dbg("\rComplex Buffer:\n\r[");
-				for (i = 0; i < SizeOfComplex_Buffer; i ++)
-				{
-					print_dbg_ulong(ComplexBuffer[i].real);
-					print_dbg(" + j");
-					print_dbg_ulong(ComplexBuffer[i].imag);
-					print_dbg(", ");
-				}
-				print_dbg("]\n\r");
-				break;
-				
-			case 'F':
-				print_dbg("\rResetting Both FIFO Buffers");
-				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
-				break;
-			case 'B': 
-				print_dbg("\rReading Bitmap;");
-				ReadBitmap("Image_R_0.bmp", &image);
-				print_dbg("\n\rBitmap Data Returned:\n\rImage Height = ");
-				print_dbg_ulong(image.Height);
-				print_dbg("\n\rImage Width = ");
-				print_dbg_ulong(image.Width);
-				
-				break;
-			case 'S':
-				print_dbg("\rSaving Bitmap;");
-				SaveBitmap(image.ImagePtr, image.Width, image.Height, "ResavedImage.bmp");
-				print_dbg("\rSaved Bitmap!;");
-				break;
-			case 'I':
-				print_dbg("\rInverse Fourier Transform;");
-				IFFT2D(ComplexBuffer);
-				break;
-			case 'p':
-				print_dbg("\rPreparing Image;");
-				PrepareImage(&image);
-				print_dbg("\rImage Prepared!");
-				break;
-			case 'i':
-				print_dbg("\rImage info:");
-				print_dbg("\n\rImage Pointer = ");
-				print_dbg_ulong(image.ImagePtr);
-				print_dbg("\n\rImage Height = ");
-				print_dbg_ulong(image.Height);
-				print_dbg("\n\rImage Width = ");
-				print_dbg_ulong(image.Width);
-				break;
+	
 			default:
 				print_dbg("\rCommand Not Recognised;");
 				break;

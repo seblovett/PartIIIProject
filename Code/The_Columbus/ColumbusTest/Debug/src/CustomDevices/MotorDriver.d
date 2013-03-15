@@ -105,7 +105,17 @@ src/CustomDevices/MotorDriver.d src/CustomDevices/MotorDriver.o \
  ../src/CustomDevices/CustomDevices.h ../src/CustomDevices/OV7670.h \
  ../src/CustomDevices/PCA9542A.h ../src/CustomDevices/MotorDriver.h \
  ../src/CustomDevices/SD_Card.h ../src/CustomDevices/ImageProcessor.h \
- ../src/CustomDevices/ImageProcessor.h
+ ../src/CustomDevices/ImageProcessor.h \
+ ../src/asf/common/services/delay/delay.h \
+ ../src/asf/common/services/clock/sysclk.h ../src/config/conf_clock.h \
+ ../src/asf/common/services/clock/uc3c/sysclk.h \
+ ../src/asf/common/services/clock/osc.h \
+ ../src/asf/common/services/clock/uc3c/osc.h \
+ ../src/asf/common/services/clock/pll.h \
+ ../src/asf/common/services/clock/uc3c/pll.h \
+ ../src/asf/common/services/clock/genclk.h \
+ ../src/asf/common/services/clock/uc3c/genclk.h \
+ ../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h
 
 ../src/asf.h:
 
@@ -336,3 +346,25 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/CustomDevices/ImageProcessor.h:
 
 ../src/CustomDevices/ImageProcessor.h:
+
+../src/asf/common/services/delay/delay.h:
+
+../src/asf/common/services/clock/sysclk.h:
+
+../src/config/conf_clock.h:
+
+../src/asf/common/services/clock/uc3c/sysclk.h:
+
+../src/asf/common/services/clock/osc.h:
+
+../src/asf/common/services/clock/uc3c/osc.h:
+
+../src/asf/common/services/clock/pll.h:
+
+../src/asf/common/services/clock/uc3c/pll.h:
+
+../src/asf/common/services/clock/genclk.h:
+
+../src/asf/common/services/clock/uc3c/genclk.h:
+
+../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h:
