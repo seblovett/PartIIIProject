@@ -318,6 +318,7 @@ void SaveBitmap(uint8_t *Image, int width, int height, char *FileName)
 		for(j = 0; j < width * 2; j++)
 		{
 			//Copy the data across. 
+
 			Buffer[j] = Image[i*width*2 + j];
 		}
 		file_write_buf(Buffer, width * 2);
@@ -337,9 +338,10 @@ void SaveBitmap(uint8_t *Image, int width, int height, char *FileName)
 
 #define BMP_HEADER_FILESIZE_OFFSET		2
 #define BMP_HEADER_OFFSETTOARRAY_OFFSET	10
-#define DIB_V5_WIDTH_OFFSET		4
-#define DIB_V5_HEIGHT_OFFSET	8
-
+#define DIB_V5_WIDTH_OFFSET				4
+#define DIB_V5_HEIGHT_OFFSET			8
+#define DIB_V5_BITCOUNT_OFFSET			14
+#define DIB_V5_IMAGESIZE_OFFSET			20
 
 int ReadBigEndian(uint8_t *Buffer, int Offset, uint size)
 {
@@ -351,10 +353,10 @@ int ReadBigEndian(uint8_t *Buffer, int Offset, uint size)
 	}
 	return (Buffer[Offset]) | (Buffer[Offset + 1] << 8) | (Buffer[Offset + 2] << 16) | (Buffer[Offset + 3] << 24);
 }
-void ReadBitmap(char *Filename)
+void ReadBitmap(char *Filename, Image_t *image)
 {
-	Image_t image; 
-	int FileSize, OffsetToArray, temp;
+//	Image_t image; 
+	int i, j, FileSize, OffsetToArray, temp, BitCount, ImageSize;
 	uint8_t Buffer[128];
 	nav_filelist_reset();
 	if(nav_filelist_findname((FS_STRING)Filename, false) == false)//if the file doesn't exist
@@ -385,18 +387,30 @@ void ReadBitmap(char *Filename)
 		print_dbg("\n\rBMP Parse: DIB Header not V5;");
 		return;
 	}
-	image.Width = ReadBigEndian(Buffer, DIB_V5_WIDTH_OFFSET, 4);
-	image.Height = ReadBigEndian(Buffer, DIB_V5_HEIGHT_OFFSET, 4);
-	
+	image->Width= ReadBigEndian(Buffer, DIB_V5_WIDTH_OFFSET, 4);
+	image->Height = ReadBigEndian(Buffer, DIB_V5_HEIGHT_OFFSET, 4);
+	BitCount = ReadBigEndian(Buffer, DIB_V5_BITCOUNT_OFFSET, 2);
+	ImageSize = ReadBigEndian(Buffer, DIB_V5_IMAGESIZE_OFFSET, 4);
 	print_dbg("\n\rBitmap Width = ");
-	print_dbg_ulong(image.Width);
+	print_dbg_ulong(image->Width);
 	print_dbg("\n\rBitmap Height = ");
-	print_dbg_ulong(image.Height);
+	print_dbg_ulong(image->Height);
 	print_dbg("\n\rBitmap File Size = ");
 	print_dbg_ulong(FileSize);
 	print_dbg("\n\rBitmap Offset to Array = ");
 	print_dbg_ulong(OffsetToArray);
+	print_dbg("\n\rBitmap Image Bitcount = ");
+	print_dbg_ulong(BitCount);
+	print_dbg("\n\rBitmap Image Size = ");
+	print_dbg_ulong(ImageSize);
 	
+	file_seek(OffsetToArray, FS_SEEK_SET);
+	j = 0;
+	image->ImagePtr = mspace_malloc(sdram_msp, image->Height * image->Width);
+	for(i = 0; i < ImageSize; i += 2)
+	{
+		image->ImagePtr[j++] = (file_getc()<<8) | (file_getc()); 
+	}
 	file_close();
 	nav_filelist_reset();
 	return;

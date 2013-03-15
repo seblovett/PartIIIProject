@@ -8,7 +8,7 @@
 
 #ifndef SD_CARD_H_
 #define SD_CARD_H_
-
+#include "ImageProcessor.h"
 #define SIGNAL_FILE "signal.bin"
 #define  TWOD_SIGNAL_FILE "signal2d.bin"
 
@@ -28,5 +28,6 @@ void SaveBuff( int * WorkingBuffer , int size);
 int Read2DSignal( int * WorkingBuffer );
 int ReadSignal( int * WorkingBuffer );
 void SaveBitmap(uint8_t *Image, int width, int height, char *FileName);
-void ReadBitmap(char *Filename);
+//void ReadBitmap(char *Filename);
+void ReadBitmap(char *Filename, Image_t *image);
 #endif /* SD_CARD_H_ */

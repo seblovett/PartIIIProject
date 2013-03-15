@@ -105,6 +105,7 @@ src/CustomDevices/OV7670.d src/CustomDevices/OV7670.o \
  ../src/CustomDevices/CustomDevices.h ../src/CustomDevices/OV7670.h \
  ../src/CustomDevices/PCA9542A.h ../src/CustomDevices/MotorDriver.h \
  ../src/CustomDevices/SD_Card.h ../src/CustomDevices/ImageProcessor.h \
+ ../src/CustomDevices/ImageProcessor.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/stdio.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/include/stdarg.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/stdio.h \
@@ -344,6 +345,8 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/CustomDevices/MotorDriver.h:
 
 ../src/CustomDevices/SD_Card.h:
+
+../src/CustomDevices/ImageProcessor.h:
 
 ../src/CustomDevices/ImageProcessor.h:
 

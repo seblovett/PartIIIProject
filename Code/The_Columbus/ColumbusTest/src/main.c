@@ -74,6 +74,7 @@ void Get_Line( char * CommandBuffer )
 #define COMMAND_BUFFER_SIZE		32
 int main (void)
 {
+	Image_t image;
 	unsigned long i, j, tmp = 0;
 	char *Ptr; 
 //	volatile unsigned long *sdram = SDRAM;
@@ -275,14 +276,18 @@ int main (void)
 				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 				break;
 			case 'B': 
-				Ptr = CommandBuffer;
-				Ptr ++;
-				while(*Ptr == ' ')
-					Ptr++;
-				print_dbg("\n\rFile Name: \n\r\"");
-				print_dbg(Ptr);
-				print_dbg("\"");
-				ReadBitmap(Ptr);
+				print_dbg("\rReading Bitmap;");
+				ReadBitmap("Image_R_0.bmp", &image);
+				print_dbg("\n\rBitmap Data Returned:\n\rImage Height = ");
+				print_dbg_ulong(image.Height);
+				print_dbg("\n\rImage Width = ");
+				print_dbg_ulong(image.Width);
+				
+				break;
+			case 'S':
+				print_dbg("\rSaving Bitmap;");
+				SaveBitmap(image.ImagePtr, image.Width, image.Height, "ResavedImage.bmp");
+				print_dbg("\rSaved Bitmap!;");
 				break;
 			default:
 				print_dbg("\rCommand Not Recognised;");

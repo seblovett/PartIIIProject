@@ -12,6 +12,8 @@
 #define BMP_FORMAT_RGB565			1
 #define BMP_FORMAT_RGB555			2
 #define BMP_FORMAT_GREYSCALE		3
+#define BMP_FORMAT_1xUINT			4
+#define BMP_FORMAT_2xUINT8T			5
 typedef struct {
 	int *ImagePtr;
 	int Height;
