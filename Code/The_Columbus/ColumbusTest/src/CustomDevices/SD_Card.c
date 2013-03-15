@@ -260,7 +260,7 @@ int Read2DSignal( int * WorkingBuffer )
 	return STATUS_OK;
 }
 
-void SaveBitmap(uint8_t *Image, int width, int height, char *FileName)
+void SaveBitmap(uint16_t *Image, int width, int height, char *FileName)
 {
 	int i, j, k;
 	uint8_t *Buffer;
@@ -275,7 +275,7 @@ void SaveBitmap(uint8_t *Image, int width, int height, char *FileName)
 	file_open(FOPEN_MODE_W);
 	//write a modified bitmap header 
 	//Calculate which is the biggest:
-	i = width; 
+	i = width * 2; 
 	if(height > i)
 		i = height;
 	if(DIBHEADERSIZE > i)
@@ -315,11 +315,13 @@ void SaveBitmap(uint8_t *Image, int width, int height, char *FileName)
 	
 	for(i = 0; i < height ; i++ )
 	{
-		for(j = 0; j < width * 2; j++)
+		for(j = 0; j < width ; j++)
 		{
 			//Copy the data across. 
 
-			Buffer[j] = Image[i*width*2 + j];
+			/*Buffer[j] = Image[i*width + j];*/
+			Buffer[(2 * j) + 1] = (uint8_t)(Image[i*width + j]);
+			Buffer[(2 * j)] = (uint8_t)(Image[i*width + j] >> 8);
 		}
 		file_write_buf(Buffer, width * 2);
 		

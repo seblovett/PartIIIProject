@@ -15,7 +15,7 @@
 #define BMP_FORMAT_1xUINT			4
 #define BMP_FORMAT_2xUINT8T			5
 typedef struct {
-	int *ImagePtr;
+	uint16_t *ImagePtr;
 	int Height;
 	int Width;
 	uint8_t Format;

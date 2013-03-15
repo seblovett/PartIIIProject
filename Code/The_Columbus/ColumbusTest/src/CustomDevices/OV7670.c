@@ -564,8 +564,8 @@ void Store_Image_0()
 	int i, j;
 	//uint8_t buffer[WIDTH * 2];
 	char Filename_buff[15];
-	uint8_t *Buffer_ram;
-	Buffer_ram = mspace_malloc(sdram_msp, HEIGHT * WIDTH * 2);
+	uint16_t *Buffer_ram;
+	Buffer_ram = mspace_malloc(sdram_msp, HEIGHT * WIDTH );
 	i = 0;
 	//make file
 	//delete file if it exits already
@@ -596,17 +596,17 @@ void Store_Image_0()
 	FIFO_0_nOE_CLR;
 	//	uint8_t buffer[WIDTH * 2];
 	
-	for(j = 0; j < HEIGHT * WIDTH * 2; j+= 2)
+	for(j = 0; j < HEIGHT * WIDTH; j++)
 	{
 		FIFO_0_RCLK_SET;
 		delay_us(10);
-		Buffer_ram[j+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+		Buffer_ram[j] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
 		delay_us(10);
 		FIFO_0_RCLK_CLR;
 		delay_us(10);
 		FIFO_0_RCLK_SET;
 		delay_us(10);
-		Buffer_ram[j] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
+		Buffer_ram[j] |= (((AVR32_GPIO.port[1].pvr) & 0xFF) << 8);//CAMERA_INPUT;
 		delay_us(10);
 		FIFO_0_RCLK_CLR;
 		delay_us(10);
