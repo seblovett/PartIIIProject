@@ -208,26 +208,33 @@ int* FFT2DCOMPLEX( int *Signal, dsp16_complex_t *ComplexBuffer, int size )
 	return Signal;
 }
 
-int* PrepareImage(int *Image)
+void PrepareImage(Image_t *Image)
 {
 	int row, col;
-	int *PreparedImage;
+	uint16_t *PreparedImage;
 	//Allocate some memory in the RAM
-	PreparedImage = mspace_malloc(sdram_msp, 256*256 *sizeof(int));
+	PreparedImage = mspace_malloc(sdram_msp, 256*256 );
 	
-	
+	//print_dbg("\n\rPrepared Image Pointer = ");
+	//print_dbg_ulong(PreparedImage);
 	for(row = 0; row < 256; row ++)
 	{
 		for(col = 0; col < 256; col++)
 		{
 			if(row < 240)
-				PreparedImage[row*256 + col] = Image[row * 256 + col + 32];
+				PreparedImage[row*256 + col] = Image->ImagePtr[row * 256 + col];
 			else
-				PreparedImage[(row - 240)*256 + col] = Image[row * 256 + col + 32];
+				PreparedImage[row *256 + col] = 0;//Image->ImagePtr[(row - 240) * 256 + col + 32];
 		}
 	}	
 	
-	return PreparedImage;
+ 	mspace_free(sdram_msp, Image->ImagePtr); //free up the old image
+ 	Image->ImagePtr = PreparedImage; //move the pointer to the prepared image
+ 	Image->Height = 256;
+ 	Image->Width = 256;
+	//SaveBitmap(PreparedImage, 256, 256, "PreparedImage.bmp");
+	//mspace_free(sdram_msp, PreparedImage);
+	//return PreparedImage;
 }
 
 

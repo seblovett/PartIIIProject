@@ -323,7 +323,10 @@ void SaveBitmap(uint16_t *Image, int width, int height, char *FileName)
 			Buffer[(2 * j) + 1] = (uint8_t)(Image[i*width + j]);
 			Buffer[(2 * j)] = (uint8_t)(Image[i*width + j] >> 8);
 		}
-		file_write_buf(Buffer, width * 2);
+		if(file_write_buf(Buffer, width * 2) != (width * 2))
+		{
+			print_dbg("\n\rFile write error.");
+		}
 		
 // 		j = width % 4;
 // 		if(j != 0)

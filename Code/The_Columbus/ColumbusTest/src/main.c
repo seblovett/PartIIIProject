@@ -289,9 +289,23 @@ int main (void)
 				SaveBitmap(image.ImagePtr, image.Width, image.Height, "ResavedImage.bmp");
 				print_dbg("\rSaved Bitmap!;");
 				break;
+			case 'I':
+				print_dbg("\rInverse Fourier Transform;");
+				IFFT2D(ComplexBuffer);
+				break;
+			case 'p':
+				print_dbg("\rPreparing Image;");
+				PrepareImage(&image);
+				print_dbg("\rImage Prepared!");
+				break;
 			case 'i':
-				print_dbg("\rInverse Fourier Transform;")
-				IFFT2D()
+				print_dbg("\rImage info:");
+				print_dbg("\n\rImage Pointer = ");
+				print_dbg_ulong(image.ImagePtr);
+				print_dbg("\n\rImage Height = ");
+				print_dbg_ulong(image.Height);
+				print_dbg("\n\rImage Width = ");
+				print_dbg_ulong(image.Width);
 				break;
 			default:
 				print_dbg("\rCommand Not Recognised;");
