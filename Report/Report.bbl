@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{18}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -33,13 +33,6 @@
 Farnell.
 \newblock \href{uk.farnell.com}{Farnell online store}, 2012.
 
-\bibitem[Fleuret et~al.(2007)Fleuret, Berclaz, Lengagne, and
-  Fua]{Fleuret:OccupancyMap}
-Fran\c{c}ois Fleuret, J\'{e}r\^{o}me Berclaz, Richard Lengagne, and Pascal Fua.
-\newblock Multi-camera people tracking with a probabilistic occupancy map.
-\newblock Technical report, \'{E}cole Polytechnique F\'{e}d\'{e}rale de
-  Lausanne, Lausanne, Switzerland, 2007.
-
 \bibitem[Fulton(2010)]{ImageComparison}
 Wayne Fulton.
 \newblock \href{http://www.scantips.com/basics09.html}{Image file formats -
@@ -59,10 +52,6 @@ Rostam~Affendi Hamzah, Sani Irwan~Md Salim, and Hasrul~Nisham Rosly.
 \newblock {\em Canadian Journal on Electrical and Electronics Engineering},
   1\penalty0 (3):\penalty0 49--53, 2010.
 
-\bibitem[Microsoft(2012)]{Microsoft:Kinect}
-Microsoft.
-\newblock \href{http://www.xbox.com/en-GB/Kinect}{Xbox 360 kinect}, 2012.
-
 \bibitem[Mrovlje and Vran\v{c}i\'{c}(2008)]{Mrovlje:Distance_Stereoscopic}
 Jernej Mrovlje and Damir Vran\v{c}i\'{c}.
 \newblock Distance measuring based on stereoscopic pictures.
@@ -78,44 +67,9 @@ Phillips.
 \newblock {\em PCA9542A : 2-channel I2C-bus multiplexer and interrupt logic},
   2009.
 
-\bibitem[Ruhnke et~al.(2011)Ruhnke, Kummerle, Grisetti, and
-  Burgard]{Ruhnke:LaserMapping}
-M.~Ruhnke, R.~Kummerle, G.~Grisetti, and W.~Burgard.
-\newblock Highly accurate maximum likelihood laser mapping by jointly
-  optimizing laser points and robot poses.
-\newblock In {\em Robotics and Automation (ICRA), 2011 IEEE International
-  Conference on}, pages 2812--2817. IEEE, 2011.
-
-\bibitem[Saxena et~al.(2007)Saxena, Schulte, and Ng]{Saxena:DepthEstimation}
-Ashutosh Saxena, Jamie Schulte, and Andrew~Y. Ng.
-\newblock
-  \href{http://www-cs.stanford.edu/~asaxena/learningdepth/DepthEstimation_Saxena_IJCAI.pdf}{Depth
-  estimation using monocular and stereo cues}, 2007.
-
-\bibitem[Se et~al.(2002)Se, Lowe, and Little]{Se:MappingRobot}
-Stephen Se, David Lowe, and Jim Little.
-\newblock
-  \href{http://www.vision.caltech.edu/html-files/EE148-2005/uploads/SeLowe02Mobile.pdf}{Mobile
-  robot localization and mapping with uncertainty using scale-invariant visual
-  landmarks}.
-\newblock {\em The International Journal of Robotics Research}, pages 735--758,
-  2002.
-
 \bibitem[{Texas Instruments}(2012)]{ARM:Stellaris}
 {Texas Instruments}.
 \newblock {\em Stellaris LM3S9B96 Datasheet}, 2012.
-
-\bibitem[Thrun(2003)]{thrun2003learning}
-S.~Thrun.
-\newblock Learning occupancy grid maps with forward sensor models.
-\newblock {\em Autonomous robots}, 15\penalty0 (2):\penalty0 111--127, 2003.
-
-\bibitem[Thrun and Montemerlo(2006)]{Thrun:SLAM}
-Sebastian Thrun and Michael Montemerlo.
-\newblock The graphslam algorithm with applications to large-scale mapping of
-  urban structures.
-\newblock {\em The International Journal of Robotics Research}, pages 403--428,
-  2006.
 
 \bibitem[Tjandranegara(2005)]{DistanceEstimation}
 Edwin Tjandranegara.
@@ -129,15 +83,9 @@ D.M. Tsai and C.T. Lin.
   \href{http://140.138.142.153/vision/tech/correlation2-FastNormalized.pdf}{Fast
   normalized cross correlation for defect detection}, 2003.
 
-\bibitem[Wurm et~al.(2010)Wurm, Hornung, Bennewitz, Stachniss, and
-  Burgard]{octomap}
-K.~M. Wurm, A.~Hornung, M.~Bennewitz, C.~Stachniss, and W.~Burgard.
-\newblock \href{http://octomap.sf.net/}{{OctoMap}: A probabilistic, flexible,
-  and compact {3D} map representation for robotic systems}.
-\newblock In {\em Proc. of the ICRA 2010 Workshop on Best Practice in 3D
-  Perception and Modeling for Mobile Manipulation}, Anchorage, AK, USA, May
-  2010.
-\newblock Software available at \url{http://octomap.sf.net/}.
+\bibitem[{Vishay Semiconductors}(2012)]{Vishay:TCRT1010:Datasheet}
+{Vishay Semiconductors}.
+\newblock {\em TCRT1000, TCRT1010 Datasheet}, 2012.
 
 \bibitem[Zhao et~al.(2006)Zhao, Huang, and Gao]{zhao2006image}
 F.~Zhao, Q.~Huang, and W.~Gao.

@@ -14,23 +14,14 @@ Database file #1: ECS.bib
 Warning--entry type for "Atmel:ASF" isn't style-file defined
 --line 25 of file ECS.bib
 Warning--entry type for "Farnell" isn't style-file defined
---line 50 of file ECS.bib
+--line 59 of file ECS.bib
 Warning--entry type for "DistanceEstimation" isn't style-file defined
---line 87 of file ECS.bib
-Warning--entry type for "Microsoft:Kinect" isn't style-file defined
 --line 96 of file ECS.bib
 Warning--entry type for "FATFS" isn't style-file defined
---line 131 of file ECS.bib
+--line 140 of file ECS.bib
 Warning--entry type for "ImageComparison" isn't style-file defined
---line 139 of file ECS.bib
+--line 148 of file ECS.bib
 Warning--entry type for "Tsai:NCC" isn't style-file defined
---line 164 of file ECS.bib
-Warning--entry type for "Saxena:DepthEstimation" isn't style-file defined
---line 180 of file ECS.bib
-Name 2 in "Fran\c{c}ois Fleuret and J\'{e}r\^{o}me Berclaz, and Richard Lengagne and Pascal Fua" has a comma at the end for entry Fleuret:OccupancyMap
-while executing---line 1262 of file ecs.bst
-Name 2 in "Fran\c{c}ois Fleuret and J\'{e}r\^{o}me Berclaz, and Richard Lengagne and Pascal Fua" has a comma at the end for entry Fleuret:OccupancyMap
-while executing---line 1338 of file ecs.bst
-Name 2 in "Fran\c{c}ois Fleuret and J\'{e}r\^{o}me Berclaz, and Richard Lengagne and Pascal Fua" has a comma at the end for entry Fleuret:OccupancyMap
-while executing---line 1338 of file ecs.bst
-(There were 3 error messages)
+--line 173 of file ECS.bib
+Warning--I didn't find a database entry for "NEEDED"
+(There were 7 warnings)

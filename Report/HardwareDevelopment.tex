@@ -91,9 +91,9 @@ Bits per Pixel		&	8, 16, 24 or 32	&	24				&	24, 32 or 48 			& 	24, but only 256 
 \label{ImageFormats}
 \end{table}
 
-It is clear that the best choice for images would be either PNG or JPEG. However, these require much computational time to compress the image into the correct format. To avoid compression, and thereby save processing time, bitmap was chosen at the expense of using more memory. The data in a bitmap image is also stored in RGB format so can be read back easily when processing the data. Appendix \ref{Chapter:AppendixB:BMPFile} shows the make up of a Bitmap File that was used.
+It is clear that the best choice for images would be either PNG or JPEG. However, these require more computational time to compress the image into the correct format. To avoid compression, and thereby save processing time, bitmap was chosen at the expense of using more memory. The data in a bitmap image is also stored in RGB format so can be read back easily when processing the image. Appendix \ref{Chapter:AppendixB:BMPFile} shows the make up of a Bitmap File that was used.
 
-By writing the image in this format, they are then able to be opened on any operating system. This aids debugging and allows the protoyping of image algorithms in a more powerful environment. Figure \ref{ExampleImage} shows a photo taken by the OV7670 and stored on a SD card.
+By writing the image in this format, they are then able to be opened on any operating system. This aids debugging and allows the prototyping of image algorithms in a more powerful environment. Figure \ref{ExampleImage} shows a photo taken by the OV7670 and stored on a SD card.
 
 \begin{figure}
 \begin{center}
@@ -134,13 +134,26 @@ Figure \ref{sch:DualCam_Schematic} shows the circuit diagram for the prototype. 
 \caption{Prototype of Dual Camera operation.}
 \label{fig:Prototype}
 \end{figure}
-\subsection{Motor Driving Development}
+\subsection{Motor Driver Development}
 \inote{Tachometers}
 \inote{Derivation of equations used - Distance / Rotating}
 \inote{Testing of the Motor system - conclusion is likely to be that it is not a good method, need noise reduction}
+\subsubsection{Hardware}
+Tachometers are devices used to measure rotational speed of a shaft. Tachometers are most commonly found in bicycles where a small magnet is attached to the wheel and a sensor is attached to the frame. The sensor can then calculate the time period between rotations and therefore can calculate the speed (\citep{NEEDED}) \inote{Cite Needed}.
+
+Here, an optosensor, TCRT1010, is used to measure rotations of the wheel and used to be able to move a distance decided by the microcontroller. 
+
+The TCRT1010 package contains an IR LED and a phototransistor (\citep{Vishay:TCRT1010:Datasheet})
+
+\subsubsection{Derivations}
+\subsubsection{Firmware Development}
+\subsubsection{Testing}
+
+
+
 \section{PCB Development}
 \subsection{PCB Design}
-\inote{Track Equilisation}
+\inote{Considerations - Track Equilisation, Power consumption of devices not exceeding VReg}
 \inote{Layout}
 \inote{Over Engineering?}
 \subsection{PCB Testing}
