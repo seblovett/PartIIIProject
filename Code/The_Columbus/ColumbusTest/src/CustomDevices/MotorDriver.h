@@ -17,7 +17,8 @@
 #define BACKWARD		3
 #define LEFT_SPOT		4
 #define RIGHT_SPOT		5
-#define STOP			6
+#define SPOT_PIVOT		6
+#define STOP			7
 
 
 #define ENABLE_ACA_INTERRUPT		{AVR32_ACIFA1.ier = 1;}

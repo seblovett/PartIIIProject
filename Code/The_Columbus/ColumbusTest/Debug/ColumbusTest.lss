@@ -19,27 +19,27 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   7 .comment      00000060  00000000  00000000  00015118  2**0
                   CONTENTS, READONLY
-  8 .debug_aranges 00001c70  00000000  00000000  00015178  2**0
+  8 .debug_aranges 00001c78  00000000  00000000  00015178  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_pubnames 00004ba3  00000000  00000000  00016de8  2**0
+  9 .debug_pubnames 00004bb5  00000000  00000000  00016df0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_info   00041cf6  00000000  00000000  0001b98b  2**0
+ 10 .debug_info   00041d3d  00000000  00000000  0001b9a5  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_abbrev 00008664  00000000  00000000  0005d681  2**0
+ 11 .debug_abbrev 00008699  00000000  00000000  0005d6e2  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_line   0001ed7d  00000000  00000000  00065ce5  2**0
+ 12 .debug_line   0001eda5  00000000  00000000  00065d7b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_frame  00004de0  00000000  00000000  00084a64  2**2
+ 13 .debug_frame  00004df0  00000000  00000000  00084b20  2**2
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_str    0000a44a  00000000  00000000  00089844  2**0
+ 14 .debug_str    0000a481  00000000  00000000  00089910  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_loc    00015cd5  00000000  00000000  00093c8e  2**0
+ 15 .debug_loc    00015d11  00000000  00000000  00093d91  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_macinfo 0285d45a  00000000  00000000  000a9963  2**0
+ 16 .debug_macinfo 0285d4f0  00000000  00000000  000a9aa2  2**0
                   CONTENTS, READONLY, DEBUGGING
  17 .stack        00001000  0000f000  0000f000  00000400  2**0
                   ALLOC
- 18 .debug_ranges 000022e0  00000000  00000000  02906dbd  2**0
+ 18 .debug_ranges 000022e8  00000000  00000000  02906f92  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .reset:
@@ -21953,7 +21953,7 @@ int FFT1D( int *Signal)
 	if(Motor_Control.Left_State != STOP) //Left is moving
 80009954:	48 58       	lddpc	r8,80009968 <Motors_Moving+0x14>
 80009956:	70 08       	ld.w	r8,r8[0x0]
-80009958:	58 68       	cp.w	r8,6
+80009958:	58 78       	cp.w	r8,7
 8000995a:	c0 20       	breq	8000995e <Motors_Moving+0xa>
 8000995c:	5e ff       	retal	1
 	Motor_Control.Right_State = FORWARD;
@@ -21964,7 +21964,7 @@ int FFT1D( int *Signal)
 bool Motors_Moving()
 8000995e:	48 38       	lddpc	r8,80009968 <Motors_Moving+0x14>
 80009960:	70 18       	ld.w	r8,r8[0x4]
-80009962:	58 68       	cp.w	r8,6
+80009962:	58 78       	cp.w	r8,7
 80009964:	5f 1c       	srne	r12
 	}
 	else
@@ -21993,7 +21993,7 @@ void Motor_Stop(int Motors)
 80009978:	32 8c       	mov	r12,40
 8000997a:	f0 1f 00 0c 	mcall	800099a8 <Motor_Stop+0x3c>
 		Motor_Control.Left_State = STOP;
-8000997e:	30 69       	mov	r9,6
+8000997e:	30 79       	mov	r9,7
 80009980:	48 b8       	lddpc	r8,800099ac <Motor_Stop+0x40>
 80009982:	91 09       	st.w	r8[0x0],r9
 		pwm_stop_channels((1 << MOTOR_L)); //Start PWM Channel on M0 line
@@ -22009,7 +22009,7 @@ void Motor_Stop(int Motors)
 80009990:	33 0c       	mov	r12,48
 80009992:	f0 1f 00 06 	mcall	800099a8 <Motor_Stop+0x3c>
 		Motor_Control.Right_State = STOP;
-80009996:	30 69       	mov	r9,6
+80009996:	30 79       	mov	r9,7
 80009998:	48 58       	lddpc	r8,800099ac <Motor_Stop+0x40>
 8000999a:	91 19       	st.w	r8[0x4],r9
 		pwm_stop_channels((1 << MOTOR_R));
@@ -22603,7 +22603,7 @@ void Motor_Init()
 	Motor_Control.Right_Count = 0;
 80009cd4:	91 37       	st.w	r8[0xc],r7
 	Motor_Control.Left_State = STOP;
-80009cd6:	30 69       	mov	r9,6
+80009cd6:	30 79       	mov	r9,7
 80009cd8:	91 09       	st.w	r8[0x0],r9
 	Motor_Control.Right_State = STOP;
 80009cda:	91 19       	st.w	r8[0x4],r9
