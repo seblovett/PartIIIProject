@@ -10831,8 +10831,6 @@ Source: www.ecsxtal.com .. Crystal 3.6864MHz CSM_7X_DU.PDF</description>
 <part name="R41" library="passives" deviceset="R" device="0603" value="100k"/>
 <part name="+3V37" library="supply1" deviceset="+3V3" device=""/>
 <part name="J4" library="Headers" deviceset="1BY2" device="THROUGHHOLE"/>
-<part name="R42" library="passives" deviceset="R" device="0603" value="39R"/>
-<part name="R43" library="passives" deviceset="R" device="0603" value="39R"/>
 <part name="C31" library="passives" deviceset="C-EU" device="C0603" value="100n"/>
 <part name="D1" library="Semiconductors" deviceset="DIODE" device="SMD"/>
 <part name="+3V38" library="supply1" deviceset="+3V3" device=""/>
@@ -11005,14 +11003,6 @@ Reference</text>
 <instance part="+3V25" gate="G$1" x="208.28" y="35.56"/>
 <instance part="+3V26" gate="G$1" x="231.14" y="35.56"/>
 <instance part="+3V27" gate="G$1" x="144.78" y="2.54"/>
-<instance part="R42" gate="G$1" x="96.52" y="-12.7" smashed="yes" rot="R90">
-<attribute name="NAME" x="95.0214" y="-14.986" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="96.266" y="-9.906" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="R43" gate="G$1" x="99.06" y="-12.7" smashed="yes" rot="R90">
-<attribute name="NAME" x="102.1334" y="-14.986" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="98.806" y="-9.906" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="C31" gate="G$1" x="238.76" y="88.9"/>
 <instance part="D1" gate="G$1" x="238.76" y="101.6"/>
 <instance part="+3V38" gate="G$1" x="238.76" y="110.49"/>
@@ -12147,9 +12137,11 @@ Reference</text>
 <label x="130.048" y="119.634" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R43" gate="G$1" pin="1"/>
 <wire x1="99.06" y1="-17.78" x2="99.06" y2="-20.32" width="0.1524" layer="91"/>
 <label x="99.568" y="-19.812" size="1.778" layer="95"/>
+<pinref part="IC1" gate="G$1" pin="DP"/>
+<wire x1="99.06" y1="-5.08" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-17.78" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="USB_N" class="0">
@@ -12159,9 +12151,11 @@ Reference</text>
 <label x="130.048" y="121.92" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R42" gate="G$1" pin="1"/>
 <wire x1="96.52" y1="-17.78" x2="96.52" y2="-20.32" width="0.1524" layer="91"/>
 <label x="96.52" y="-17.78" size="1.778" layer="95" rot="R180"/>
+<pinref part="IC1" gate="G$1" pin="DM"/>
+<wire x1="96.52" y1="-5.08" x2="96.52" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="-17.78" x2="96.52" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RESET_N" class="0">
@@ -12250,20 +12244,6 @@ Reference</text>
 <wire x1="187.96" y1="-12.7" x2="180.34" y2="-12.7" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="-12.7" x2="180.34" y2="-10.16" width="0.1524" layer="91"/>
 <label x="178.308" y="-16.002" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="DATA_N" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="DM"/>
-<pinref part="R42" gate="G$1" pin="2"/>
-<wire x1="96.52" y1="-5.08" x2="96.52" y2="-7.62" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="DATA_P" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="DP"/>
-<pinref part="R43" gate="G$1" pin="2"/>
-<wire x1="99.06" y1="-5.08" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$36" class="0">

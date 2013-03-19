@@ -14221,7 +14221,12 @@ Reference</text>
 <wire x1="66.04" y1="22.86" x2="66.04" y2="60.96" width="0.1524" layer="97"/>
 <wire x1="66.04" y1="60.96" x2="0" y2="60.96" width="0.1524" layer="97"/>
 <text x="2.54" y="58.42" size="1.778" layer="97">LEDs</text>
-<text x="7.62" y="101.6" size="1.778" layer="97">Spare Pins</text>
+<text x="2.54" y="101.6" size="1.778" layer="97">Spare Pins</text>
+<wire x1="2.54" y1="104.14" x2="0" y2="104.14" width="0.1524" layer="97"/>
+<wire x1="0" y1="104.14" x2="0" y2="63.5" width="0.1524" layer="97"/>
+<wire x1="0" y1="63.5" x2="66.04" y2="63.5" width="0.1524" layer="97"/>
+<wire x1="66.04" y1="63.5" x2="66.04" y2="104.14" width="0.1524" layer="97"/>
+<wire x1="66.04" y1="104.14" x2="2.54" y2="104.14" width="0.1524" layer="97"/>
 </plain>
 <instances>
 <instance part="J4" gate="G$1" x="114.3" y="10.16"/>
@@ -14290,13 +14295,13 @@ Reference</text>
 <segment>
 <wire x1="20.32" y1="96.52" x2="10.16" y2="96.52" width="0.762" layer="92"/>
 <wire x1="10.16" y1="96.52" x2="7.62" y2="99.06" width="0.762" layer="92"/>
-<label x="7.62" y="99.06" size="1.778" layer="95"/>
+<label x="10.922" y="97.282" size="1.778" layer="95"/>
 </segment>
 </bus>
 <bus name="PD[0..30]">
 <segment>
 <wire x1="7.62" y1="66.04" x2="10.16" y2="68.58" width="0.762" layer="92"/>
-<label x="7.62" y="63.5" size="1.778" layer="95"/>
+<label x="10.16" y="66.04" size="1.778" layer="95"/>
 <wire x1="10.16" y1="68.58" x2="40.64" y2="68.58" width="0.762" layer="92"/>
 </segment>
 </bus>
