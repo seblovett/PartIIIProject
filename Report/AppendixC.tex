@@ -38,73 +38,121 @@
         }
          %[rgb]{0.58,0,0.82} }
 
-
-\subsection{Dual Camera Operation}
+\subsection{The Columbus Source Code}
 \subsubsection{main.c}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/main.c}
-
-\subsubsection{Bitmap.h}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Bitmap.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/main.c}
 
 \subsubsection{Bitmap.c}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Bitmap.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/Bitmap.c}
 
-\subsubsection{Config.h}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Config.h}
+\subsubsection{CustomDevices.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices.h}
 
-\subsubsection{Config.c}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Config.c}
+\subsubsection{dummy.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/dummy.c}
 
-\subsubsection{DualCameras.h}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/DualCameras.h}
+\subsubsection{ImageProcessor.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/ImageProcessor.h}
 
-\subsubsection{DualCameras.c}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/DualCameras.c}
+\subsubsection{ImageProcessor.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/ImageProcessor.c}
+
+\subsubsection{MotorDriver.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/MotorDriver.h}
+
+\subsubsection{MotorDriver.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/MotorDriver.c}
+
+\subsubsection{OV7670.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/OV7670.h}
+
+\subsubsection{OV7670.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/OV7670.c}
+
+\subsubsection{OV7670.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/OV7670_Setup.c}
 
 \subsubsection{PCA9542A.h}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/PCA9542A.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/PCA9542A.h}
 
 \subsubsection{PCA9542A.c}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/PCA9542A.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/PCA9542A.c}
 
-\subsubsection{TWI\_Master.h}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/TWI_Master.h}
+\subsubsection{SD_Card.h}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/SD_Card.h}
 
-\subsubsection{TWI\_Master.c}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/TWI_Master.c}
+\subsubsection{SD_Card.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/SD_Card.c}
 
-\subsubsection{Usart.h}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Usart.h}
+\subsubsection{TWI.c}
+\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/The_Columbus/ColumbusTest/src/CustomDevices/TWI.c}
 
-\subsubsection{Usart.c}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Usart.c}
-
-
-\subsection{Dual Camera User Interface}
-
-\subsubsection{DualCamera\_UI.c}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/DualCamera_UI.c}
-
-\subsubsection{TWI\_slave.h}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/TWI_slave.h}
-
-\subsubsection{TWI\_slave.c}
-\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/TWI_slave.c}
-
-\section{MATLAB Code for Image Algorithm Prototyping}
-\subsection{Image Matching Algorithms}
-\subsubsection{loadimages.m}
-\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/loadimages.m}
-
-\subsubsection{GetSubImage.m}
-\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/GetSubImage.m}
-
-
-\subsubsection{SADAll.m}
-\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/SADAll.m}
-
-\subsubsection{SSDAll.m}
-\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/SSDAll.m}
-
-\subsubsection{NCC.m}
-\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/NCC.m}
+%\subsection{Dual Camera Operation}
+%\subsubsection{main.c}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/main.c}
+%
+%\subsubsection{Bitmap.h}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Bitmap.h}
+%
+%\subsubsection{Bitmap.c}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Bitmap.c}
+%
+%\subsubsection{Config.h}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Config.h}
+%
+%\subsubsection{Config.c}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Config.c}
+%
+%\subsubsection{DualCameras.h}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/DualCameras.h}
+%
+%\subsubsection{DualCameras.c}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/DualCameras.c}
+%
+%\subsubsection{PCA9542A.h}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/PCA9542A.h}
+%
+%\subsubsection{PCA9542A.c}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/PCA9542A.c}
+%
+%\subsubsection{TWI\_Master.h}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/TWI_Master.h}
+%
+%\subsubsection{TWI\_Master.c}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/TWI_Master.c}
+%
+%\subsubsection{Usart.h}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Usart.h}
+%
+%\subsubsection{Usart.c}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualOV7670/Usart.c}
+%
+%
+%\subsection{Dual Camera User Interface}
+%
+%\subsubsection{DualCamera\_UI.c}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/DualCamera_UI.c}
+%
+%\subsubsection{TWI\_slave.h}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/TWI_slave.h}
+%
+%\subsubsection{TWI\_slave.c}
+%\lstinputlisting[style=C,frame=single,numbers=left,tabsize=2,breaklines=true]{../Code/DualCamera_UI/TWI_slave.c}
+%
+%\section{MATLAB Code for Image Algorithm Prototyping}
+%\subsection{Image Matching Algorithms}
+%\subsubsection{loadimages.m}
+%\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/loadimages.m}
+%
+%\subsubsection{GetSubImage.m}
+%\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/GetSubImage.m}
+%
+%
+%\subsubsection{SADAll.m}
+%\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/SADAll.m}
+%
+%\subsubsection{SSDAll.m}
+%\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/SSDAll.m}
+%
+%\subsubsection{NCC.m}
+%\lstinputlisting[style=matlab,frame=single,numbers=left,tabsize=2,breaklines=true]{../MATLAB/NCC.m}

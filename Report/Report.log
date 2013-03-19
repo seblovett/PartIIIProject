@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  18 MAR 2013 19:39
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  19 MAR 2013 17:06
 entering extended mode
 **Report.tex
 (E:\Uni\part3_project\Report\Report.tex
@@ -973,7 +973,7 @@ Chapter 1.
 ------------------------------------------------------------------------------
  1 Introduction
 ------------------------------------------------------------------------------
-<./Figures/RobotBase.jpg, id=561, 4291.03125pt x 2653.915pt>
+<./Figures/RobotBase.jpg, id=562, 4291.03125pt x 2653.915pt>
 File: ./Figures/RobotBase.jpg Graphic file (type jpg)
 
 <use ./Figures/RobotBase.jpg>
@@ -1101,14 +1101,14 @@ Chapter 3.
 ------------------------------------------------------------------------------
  3 Initial Hardware and Firmware Development
 ------------------------------------------------------------------------------
-[7] <./Figures/RGB565.png, id=639, 809.27344pt x 148.30406pt>
+[7] <./Figures/RGB565.png, id=640, 809.27344pt x 148.30406pt>
 File: ./Figures/RGB565.png Graphic file (type png)
 
 <use ./Figures/RGB565.png>
 Package pdftex.def Info: ./Figures/RGB565.png used on input line 27.
 (pdftex.def)             Requested size: 417.47307pt x 76.50528pt.
 
-<./Figures/ov7670_im_capture.png, id=641, 1273.75874pt x 535.2497pt>
+<./Figures/ov7670_im_capture.png, id=642, 1273.75874pt x 535.2497pt>
 File: ./Figures/ov7670_im_capture.png Graphic file (type png)
 
 <use ./Figures/ov7670_im_capture.png>
@@ -1147,7 +1147,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--86
 \OT1/cmr/m/n/12 only 256
  []
 
-<Figures/ExampleImageFromCamera.jpg, id=672, 321.2pt x 240.9pt>
+<Figures/ExampleImageFromCamera.jpg, id=673, 321.2pt x 240.9pt>
 File: Figures/ExampleImageFromCamera.jpg Graphic file (type jpg)
 
 <use Figures/ExampleImageFromCamera.jpg>
@@ -1155,7 +1155,7 @@ Package pdftex.def Info: Figures/ExampleImageFromCamera.jpg used on input line
 100.
 (pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
  [11]
-<./Figures/Prototype.jpg, id=683, 4117.3825pt x 2294.5725pt>
+<./Figures/Prototype.jpg, id=684, 4117.3825pt x 2294.5725pt>
 File: ./Figures/Prototype.jpg Graphic file (type jpg)
 
 <use ./Figures/Prototype.jpg>
@@ -1167,45 +1167,91 @@ Uni/part3_project/Report/Figures/Prototype.jpg>]
 Package natbib Warning: Citation `NEEDED' on page 14 undefined on input line 14
 2.
 
-[14]) [15] (E:\Uni\part3_project\Report\InvestigationVision.tex [16
+
+Package natbib Warning: Citation `NEEDED' on page 14 undefined on input line 14
+4.
+
+<Figures/TCRT_Circuit.png, id=699, 283.0575pt x 450.9347pt>
+File: Figures/TCRT_Circuit.png Graphic file (type png)
+
+<use Figures/TCRT_Circuit.png>
+Package pdftex.def Info: Figures/TCRT_Circuit.png used on input line 154.
+(pdftex.def)             Requested size: 141.5284pt x 225.4668pt.
+
+<Figures/WheelVoltageGraph.jpg, id=700, 1928.20375pt x 630.355pt>
+File: Figures/WheelVoltageGraph.jpg Graphic file (type jpg)
+
+<use Figures/WheelVoltageGraph.jpg>
+Package pdftex.def Info: Figures/WheelVoltageGraph.jpg used on input line 160.
+(pdftex.def)             Requested size: 417.47307pt x 136.4759pt.
+ [14] [15 <E:/Uni/part3_project/Report/Figures/TCRT_Circuit.png> <E:/Uni/part3_
+project/Report/Figures/WheelVoltageGraph.jpg>] <./Figures/Robotbase_top_annot.j
+pg, id=721, 2086.04344pt x 2045.39156pt>
+File: ./Figures/Robotbase_top_annot.jpg Graphic file (type jpg)
+
+<use ./Figures/Robotbase_top_annot.jpg>
+Package pdftex.def Info: ./Figures/Robotbase_top_annot.jpg used on input line 1
+97.
+(pdftex.def)             Requested size: 417.47307pt x 409.32076pt.
+
+<./Figures/Robotbase_side_annot.jpg, id=722, 3438.8475pt x 1227.83719pt>
+File: ./Figures/Robotbase_side_annot.jpg Graphic file (type jpg)
+
+<use ./Figures/Robotbase_side_annot.jpg>
+Package pdftex.def Info: ./Figures/Robotbase_side_annot.jpg used on input line 
+198.
+(pdftex.def)             Requested size: 417.47307pt x 149.05774pt.
+
+Overfull \hbox (3.91663pt too wide) in paragraph at lines 197--199
+ [][] 
+ []
 
 
+Overfull \hbox (3.91663pt too wide) in paragraph at lines 197--199
+ [][] 
+ []
 
-]
+[16] [17 <E:/Uni/part3_project/Report/Figures/Robotbase_top_annot.jpg> <E:/Uni/
+part3_project/Report/Figures/Robotbase_side_annot.jpg>]) [18]
+(E:\Uni\part3_project\Report\InvestigationVision.tex
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Investigation into Vision Algorithms
 ------------------------------------------------------------------------------
-<./Figures/deskLeft.png, id=731, 401.5pt x 301.125pt>
+<./Figures/deskLeft.png, id=761, 401.5pt x 301.125pt>
 File: ./Figures/deskLeft.png Graphic file (type png)
 
 <use ./Figures/deskLeft.png>
 Package pdftex.def Info: ./Figures/deskLeft.png used on input line 13.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
 
-<./Figures/deskRight.png, id=732, 401.5pt x 301.125pt>
+<./Figures/deskRight.png, id=762, 401.5pt x 301.125pt>
 File: ./Figures/deskRight.png Graphic file (type png)
 
 <use ./Figures/deskRight.png>
 Package pdftex.def Info: ./Figures/deskRight.png used on input line 14.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
- [17 <E:/Uni/part3_project/Report/Figures/deskLeft.png (PNG copy)> <E:/Uni/part
-3_project/Report/Figures/deskRight.png (PNG copy)>] [18] <./Figures/SADResults.
-jpg, id=758, 960.58875pt x 631.35875pt>
+ [19
+
+
+
+ <E:/Uni/part3_project/Report/Figures/deskLeft.png (PNG copy)> <E:/Uni/part3_pr
+oject/Report/Figures/deskRight.png (PNG copy)>] [20] <./Figures/SADResults.jpg,
+ id=785, 960.58875pt x 631.35875pt>
 File: ./Figures/SADResults.jpg Graphic file (type jpg)
 
 <use ./Figures/SADResults.jpg>
 Package pdftex.def Info: ./Figures/SADResults.jpg used on input line 69.
 (pdftex.def)             Requested size: 341.43306pt x 224.40848pt.
 
-<./Figures/SSDResults.jpg, id=759, 1446.40375pt x 836.12375pt>
+<./Figures/SSDResults.jpg, id=786, 1446.40375pt x 836.12375pt>
 File: ./Figures/SSDResults.jpg Graphic file (type jpg)
 
 <use ./Figures/SSDResults.jpg>
 Package pdftex.def Info: ./Figures/SSDResults.jpg used on input line 70.
 (pdftex.def)             Requested size: 341.43306pt x 197.36942pt.
 
-<./Figures/NCCResults.jpg, id=760, 1446.40375pt x 836.12375pt>
+<./Figures/NCCResults.jpg, id=787, 1446.40375pt x 836.12375pt>
 File: ./Figures/NCCResults.jpg Graphic file (type jpg)
 
 <use ./Figures/NCCResults.jpg>
@@ -1215,31 +1261,31 @@ Package pdftex.def Info: ./Figures/NCCResults.jpg used on input line 71.
 
 LaTeX Warning: Float too large for page by 35.17421pt on input line 74.
 
-[19] [20 <E:/Uni/part3_project/Report/Figures/SADResults.jpg> <E:/Uni/part3_pro
+[21] [22 <E:/Uni/part3_project/Report/Figures/SADResults.jpg> <E:/Uni/part3_pro
 ject/Report/Figures/SSDResults.jpg> <E:/Uni/part3_project/Report/Figures/NCCRes
-ults.jpg>] <Figures/problem1.png, id=784, 791.20593pt x 910.15031pt>
+ults.jpg>] <Figures/problem1.png, id=811, 791.20593pt x 910.15031pt>
 File: Figures/problem1.png Graphic file (type png)
 
 <use Figures/problem1.png>
 Package pdftex.def Info: Figures/problem1.png used on input line 102.
 (pdftex.def)             Requested size: 417.47794pt x 480.23866pt.
- [21] [22 <E:/Uni/part3_project/Report/Figures/problem1.png>] [23] <Figures/pro
-blem2.png, id=832, 805.50937pt x 928.97063pt>
+ [23] [24 <E:/Uni/part3_project/Report/Figures/problem1.png>] [25] <Figures/pro
+blem2.png, id=859, 805.50937pt x 928.97063pt>
 File: Figures/problem2.png Graphic file (type png)
 
 <use Figures/problem2.png>
 Package pdftex.def Info: Figures/problem2.png used on input line 204.
 (pdftex.def)             Requested size: 417.4661pt x 481.45157pt.
 
-<Figures/problem3.png, id=834, 797.98125pt x 919.93687pt>
+<Figures/problem3.png, id=861, 797.98125pt x 919.93687pt>
 File: Figures/problem3.png Graphic file (type png)
 
 <use Figures/problem3.png>
 Package pdftex.def Info: Figures/problem3.png used on input line 217.
 (pdftex.def)             Requested size: 417.47311pt x 481.2756pt.
- [24]) [25 <E:/Uni/part3_project/Report/Figures/problem2.png>] [26 <E:/Uni/part
-3_project/Report/Figures/problem3.png>] [27]
-(E:\Uni\part3_project\Report\Results.tex [28
+ [26]) [27 <E:/Uni/part3_project/Report/Figures/problem2.png>] [28 <E:/Uni/part
+3_project/Report/Figures/problem3.png>] [29]
+(E:\Uni\part3_project\Report\Results.tex [30
 
 
 
@@ -1248,7 +1294,7 @@ Chapter 5.
 ------------------------------------------------------------------------------
  5 Results
 ------------------------------------------------------------------------------
-) [29] (E:\Uni\part3_project\Report\Conclusions.tex [30
+) [31] (E:\Uni\part3_project\Report\Conclusions.tex [32
 
 
 
@@ -1257,7 +1303,7 @@ Chapter 6.
 ------------------------------------------------------------------------------
  6 Conclusions and Further Work
 ------------------------------------------------------------------------------
-) [31] (E:\Uni\part3_project\Report\AppendixD.tex [32
+) [33] (E:\Uni\part3_project\Report\AppendixD.tex [34
 
 
 
@@ -1266,36 +1312,36 @@ Appendix A.
 ------------------------------------------------------------------------------
  A Gantt Chart
 ------------------------------------------------------------------------------
-<Figures/Gantt.png, id=887, 805.50937pt x 380.17032pt>
+<Figures/Gantt.png, id=914, 805.50937pt x 380.17032pt>
 File: Figures/Gantt.png Graphic file (type png)
  <use Figures/Gantt.png>
 Package pdftex.def Info: Figures/Gantt.png used on input line 8.
 (pdftex.def)             Requested size: 805.5074pt x 380.16939pt.
-) [33] [34 <E:/Uni/part3_project/Report/Figures/Gantt.png>]
+) [35] [36 <E:/Uni/part3_project/Report/Figures/Gantt.png>]
 (E:\Uni\part3_project\Report\AppendixA.tex
 Appendix B.
 ------------------------------------------------------------------------------
  B Circuit Diagrams
 ------------------------------------------------------------------------------
-<Figures/OV7670_Schematic.jpg, id=896, 844.5954pt x 597.432pt>
+<Figures/OV7670_Schematic.jpg, id=924, 844.5954pt x 597.432pt>
 File: Figures/OV7670_Schematic.jpg Graphic file (type jpg)
 
 <use Figures/OV7670_Schematic.jpg>
 Package pdftex.def Info: Figures/OV7670_Schematic.jpg used on input line 8.
 (pdftex.def)             Requested size: 844.59334pt x 597.43054pt.
 
-<Figures/IlMattoCamera_CircuitDiagram.png, id=897, 753.0534pt x 694.7556pt>
+<Figures/IlMattoCamera_CircuitDiagram.png, id=925, 753.0534pt x 694.7556pt>
 File: Figures/IlMattoCamera_CircuitDiagram.png Graphic file (type png)
 
 <use Figures/IlMattoCamera_CircuitDiagram.png>
 Package pdftex.def Info: Figures/IlMattoCamera_CircuitDiagram.png used on input
  line 17.
 (pdftex.def)             Requested size: 753.05156pt x 694.75389pt.
-) [35
+) [37
 
 
 
- <E:/Uni/part3_project/Report/Figures/OV7670_Schematic.jpg>] [36 <E:/Uni/part3_
+ <E:/Uni/part3_project/Report/Figures/OV7670_Schematic.jpg>] [38 <E:/Uni/part3_
 project/Report/Figures/IlMattoCamera_CircuitDiagram.png>] (E:\Uni\part3_project
 \Report\AppendixB.tex
 Appendix C.
@@ -1542,11 +1588,11 @@ Overfull \hbox (12.41272pt too wide) in alignment at lines 45--59
  [] [] [] [] [] 
  []
 
-[37
+[39
 
 
 
-] [38]) [39] (E:\Uni\part3_project\Report\AppendixC.tex [40
+] [40]) [41] (E:\Uni\part3_project\Report\AppendixC.tex [42
 
 
 
@@ -1561,64 +1607,64 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-(E:\Uni\part3_project\Code\DualOV7670\main.c [41] [42] [43] [44])
+(E:\Uni\part3_project\Code\DualOV7670\main.c [43] [44] [45] [46])
 (E:\Uni\part3_project\Code\DualOV7670\Bitmap.h)
-(E:\Uni\part3_project\Code\DualOV7670\Bitmap.c [45] [46])
-(E:\Uni\part3_project\Code\DualOV7670\Config.h [47])
-(E:\Uni\part3_project\Code\DualOV7670\Config.c [48])
-(E:\Uni\part3_project\Code\DualOV7670\DualCameras.h [49] [50] [51] [52]
-[53]) (E:\Uni\part3_project\Code\DualOV7670\DualCameras.c [54] [55] [56]
-[57] [58] [59] [60] [61]) (E:\Uni\part3_project\Code\DualOV7670\PCA9542A.h
-[62]) (E:\Uni\part3_project\Code\DualOV7670\PCA9542A.c [63])
-(E:\Uni\part3_project\Code\DualOV7670\TWI_Master.h [64] [65]
+(E:\Uni\part3_project\Code\DualOV7670\Bitmap.c [47] [48])
+(E:\Uni\part3_project\Code\DualOV7670\Config.h [49])
+(E:\Uni\part3_project\Code\DualOV7670\Config.c [50])
+(E:\Uni\part3_project\Code\DualOV7670\DualCameras.h [51] [52] [53] [54]
+[55]) (E:\Uni\part3_project\Code\DualOV7670\DualCameras.c [56] [57] [58]
+[59] [60] [61] [62] [63]) (E:\Uni\part3_project\Code\DualOV7670\PCA9542A.h
+[64]) (E:\Uni\part3_project\Code\DualOV7670\PCA9542A.c [65])
+(E:\Uni\part3_project\Code\DualOV7670\TWI_Master.h [66] [67]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
- [66]
-Missing character: There is no “ in font cmtt8!
-Missing character: There is no ” in font cmtt8!
-)
-(E:\Uni\part3_project\Code\DualOV7670\TWI_Master.c [67] [68] [69] [70] [71]
+ [68]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 )
-(E:\Uni\part3_project\Code\DualOV7670\Usart.h [72])
-(E:\Uni\part3_project\Code\DualOV7670\Usart.c [73])
-(E:\Uni\part3_project\Code\DualCamera_UI\DualCamera_UI.c [74] [75]) [76]
-(E:\Uni\part3_project\Code\DualCamera_UI\TWI_slave.h [77] [78]
+(E:\Uni\part3_project\Code\DualOV7670\TWI_Master.c [69] [70] [71] [72] [73]
+Missing character: There is no “ in font cmtt8!
+Missing character: There is no ” in font cmtt8!
+)
+(E:\Uni\part3_project\Code\DualOV7670\Usart.h [74])
+(E:\Uni\part3_project\Code\DualOV7670\Usart.c [75])
+(E:\Uni\part3_project\Code\DualCamera_UI\DualCamera_UI.c [76] [77]) [78]
+(E:\Uni\part3_project\Code\DualCamera_UI\TWI_slave.h [79] [80]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 )
-(E:\Uni\part3_project\Code\DualCamera_UI\TWI_slave.c [79] [80] [81] [82]
-[83] [84]
+(E:\Uni\part3_project\Code\DualCamera_UI\TWI_slave.c [81] [82] [83] [84]
+[85] [86]
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
 Missing character: There is no “ in font cmtt8!
 Missing character: There is no ” in font cmtt8!
- [85])
+ [87])
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (E:\Uni\part3_project\MATLAB\loadimages.m)
-(E:\Uni\part3_project\MATLAB\GetSubImage.m [86])
-(E:\Uni\part3_project\MATLAB\SADAll.m [87])
-(E:\Uni\part3_project\MATLAB\SSDAll.m [88]) (E:\Uni\part3_project\MATLAB\NCC.m
-[89]) [90]) [91] [92
+(E:\Uni\part3_project\MATLAB\GetSubImage.m [88])
+(E:\Uni\part3_project\MATLAB\SADAll.m [89])
+(E:\Uni\part3_project\MATLAB\SSDAll.m [90]) (E:\Uni\part3_project\MATLAB\NCC.m
+[91]) [92]) [93] [94
 
 
 ]
 ------------------------------------------------------------------------------
  References
 ------------------------------------------------------------------------------
-(E:\Uni\part3_project\Report\Report.bbl [93
+(E:\Uni\part3_project\Report\Report.bbl [95
 
 ])
 
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 83.
-[94]
+[96]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
  (E:\Uni\part3_project\Report\Report.aux
 (E:\Uni\part3_project\Report\Introduction.aux)
@@ -1634,18 +1680,18 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 945C0919F7632688A8454C32B1A4303A;14631.
+(rerunfilecheck)             Checksum: 0F2DED8ED93C26545B9CF5139C146D12;14469.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 83.
  ) 
 Here is how much of TeX's memory you used:
- 25825 strings out of 494045
- 414572 string characters out of 3145960
- 1441281 words of memory out of 3000000
- 25827 multiletter control sequences out of 15000+200000
+ 25865 strings out of 494045
+ 415572 string characters out of 3145960
+ 1442083 words of memory out of 3000000
+ 25853 multiletter control sequences out of 15000+200000
  14853 words of font info for 58 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  63i,18n,100p,1065b,1881s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.147} has been referenced but does not e
+pdfTeX warning (dest): name{Hfootnote.155} has been referenced but does not e
 xist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.24} has been referenced but does not exis
@@ -1669,9 +1715,9 @@ nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmu10.pfb>
-Output written on Report.pdf (108 pages, 11904668 bytes).
+Output written on Report.pdf (110 pages, 13038313 bytes).
 PDF statistics:
- 4192 PDF objects out of 4296 (max. 8388607)
- 2726 named destinations out of 2984 (max. 500000)
- 765 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4222 PDF objects out of 4296 (max. 8388607)
+ 2736 named destinations out of 2984 (max. 500000)
+ 777 words of extra memory for PDF output out of 10000 (max. 10000000)
 

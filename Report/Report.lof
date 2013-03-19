@@ -6,23 +6,28 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Signals generated to control the OV7670 capture and read\relax }}{9}{figure.caption.36}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax }}{12}{figure.caption.41}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Prototype of Dual Camera operation.\relax }}{13}{figure.caption.46}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Circuit diagram of Optosensor\relax }}{15}{figure.caption.53}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Graph of Wheel Angle against Voltage read by AVR\relax }}{15}{figure.caption.54}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{17}{figure.caption.59}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{17}{figure.caption.59}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{17}{figure.caption.59}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{17}{figure.caption.74}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{17}{figure.caption.74}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{17}{figure.caption.74}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{20}{figure.caption.84}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{20}{figure.caption.84}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{20}{figure.caption.84}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{20}{figure.caption.84}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{22}{figure.caption.94}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{25}{figure.caption.115}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{26}{figure.caption.118}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{19}{figure.caption.82}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{19}{figure.caption.82}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{19}{figure.caption.82}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{22}{figure.caption.92}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{22}{figure.caption.92}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{22}{figure.caption.92}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{22}{figure.caption.92}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{24}{figure.caption.102}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{27}{figure.caption.123}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{28}{figure.caption.126}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{34}{figure.caption.140}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{36}{figure.caption.148}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{35}{figure.caption.142}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{36}{figure.caption.143}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{37}{figure.caption.150}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{38}{figure.caption.151}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

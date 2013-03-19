@@ -20,7 +20,7 @@ Original code for the camera operation was given by Steve Gunn, which I used to 
 
 \subsection{Single Camera Operation}
 
-The camera uses a SCCB Interface (\cite{SCCB_Interface}) created by OmniVision. This is almost identical to the $I^{2}C$ Interface by Phillips and the two protocols are compatible. The original code used a bit-banged SCCB interface which was very slow and used up processing time. This was changed to make used of the built-in interrupt-driven $I^{2}C$ interface (named TWI in Atmel AVRs)\footnote{$I^{2}C$ , SCCB and TWI are all the same but are called differently due to Phillips owning the right to the name ``$I^{2}C$"}. This communication bus is used to set up the control registers of the OV7670 to enable operation in the correct format. RGB565 is used in my application.
+The camera uses a SCCB Interface \citep{SCCB_Interface} created by OmniVision. This is almost identical to the $I^{2}C$ Interface by Phillips and the two protocols are compatible. The original code used a bit-banged SCCB interface which was very slow and used up processing time. This was changed to make used of the built-in interrupt-driven $I^{2}C$ interface (named TWI in Atmel AVRs)\footnote{$I^{2}C$ , SCCB and TWI are all the same but are called differently due to Phillips owning the right to the name ``$I^{2}C$"}. This communication bus is used to set up the control registers of the OV7670 to enable operation in the correct format. RGB565 is used in my application.
 
 RGB565 is a 16 bit pixel representation where bits 0:4 represent the blue intensity, 5:10 is the green intensity and 11:15 represent the red intensity (see figure \ref{fig:RGB565}). This is a compact way of storing data but only allows 65536 colours. Greys can also appear to be slightly green due to the inconsistent colour ratio of the green field. 
 \begin{figure}
@@ -55,7 +55,7 @@ Two solutions to this are possible: driving one from $I^{2}C$ and one from SCCB,
 
 An \itc multiplexer sits on the bus and has multiple output buses. The master can then address the multiplexer and select whether to pass the bus to bus 0, bus 1 or not allow the data to be transferred. This saves processor time, but means a write operation has to be done to select the camera bus before being able to write to the camera. This slows down the operation, but not as much as using SCCB. The main disadvantage to the \itc MUX is the extra hardware needed; firstly the MUX itself, but also 7 extra resistors to pull up the two extra buses and the three interrupt lines must be added. 
 
-Overall, the disadvantages posed by using a MUX are small, so a multiplexer will be used as opposed to the SCCB interface. A suitable multiplexer is the Phillips PCA9542A (\cite{I2C_Mux}).
+Overall, the disadvantages posed by using a MUX are small, so a multiplexer will be used as opposed to the SCCB interface. A suitable multiplexer is the Phillips PCA9542A \citep{I2C_Mux}.
 
 The buffers have an output enable pin so the data bus can be shared by both cameras to the AVR. The ATMega644P offers three interrupt pins, two of which are used by the two VSYNC pins for the cameras.
 
@@ -65,7 +65,7 @@ Operation to read an image is identical to using one camera. However, an ID numb
 
 \section{SD Card} \label{sect:SDCard}
 
-To use the SD card, the FATFS library (\cite{FATFS}) was used. The library supplies all the functions for writing a FAT File System in the files \textit{ff.c}, \textit{ff.h}, \textit{ffconf.h}, \textit{diskio.c}, \textit{diskio.h} and \textit{integer.h}. The \textit{diskio.h} functions control what device is being used - SD/MMC Card, USB drive etc. The \textit{ff.h} header contains all the functions to write to in a FAT File system. 
+To use the SD card, the FATFS library \citep{FATFS} was used. The library supplies all the functions for writing a FAT File System in the files \textit{ff.c}, \textit{ff.h}, \textit{ffconf.h}, \textit{diskio.c}, \textit{diskio.h} and \textit{integer.h}. The \textit{diskio.h} functions control what device is being used - SD/MMC Card, USB drive etc. The \textit{ff.h} header contains all the functions to write to in a FAT File system. 
 \\
 An SD card was chosen due to it's small size, low cost and a large data storage. The cards work using an SPI bus which can be used for other devices within the system so the card only uses one extra enable pin in hardware to function. 
 
@@ -104,7 +104,7 @@ By writing the image in this format, they are then able to be opened on any oper
 \end{figure}
 
 \subsection{User Interface}
-The ATMega 664P pinout for the dual camera operation can be seen in table \ref{table:644Pin}. Due to a lack of available GPIO pins, an ATMega168 was added on the \itc bus to act as a port extender. The ATMega168 accepts a read or write command. A write places the written data on Port D and a read returns any button pressed that occurred on Port C. When a button is pressed, this is stored in the ATMega168 until a read has been done. This is so the master (644P) does not miss any button presses while busy doing lengthy operations such as writing an image. The code is based on Application Note AVVR311 (\cite{Atmel:I2CSlave}), written for IAR Compiler. This code was altered to compile with GCC under Atmel Studio. AVRs contain a hardware based \itc protocol that is interrupt based in software. The interrupt service routine of the TWI vector is a state machine which loads the data to send, stores received data, responds to acknowledges and address calls and deals with bus errors that can occur.
+The ATMega 664P pinout for the dual camera operation can be seen in table \ref{table:644Pin}. Due to a lack of available GPIO pins, an ATMega168 was added on the \itc bus to act as a port extender. The ATMega168 accepts a read or write command. A write places the written data on Port D and a read returns any button pressed that occurred on Port C. When a button is pressed, this is stored in the ATMega168 until a read has been done. This is so the master (644P) does not miss any button presses while busy doing lengthy operations such as writing an image. The code is based on Application Note AVVR311 \citep{Atmel:I2CSlave}, written for IAR Compiler. This code was altered to compile with GCC under Atmel Studio. AVRs contain a hardware based \itc protocol that is interrupt based in software. The interrupt service routine of the TWI vector is a state machine which loads the data to send, stores received data, responds to acknowledges and address calls and deals with bus errors that can occur.
 
 \begin{table}
 \centering
@@ -135,25 +135,83 @@ Figure \ref{sch:DualCam_Schematic} shows the circuit diagram for the prototype. 
 \label{fig:Prototype}
 \end{figure}
 \subsection{Motor Driver Development}
-\inote{Tachometers}
-\inote{Derivation of equations used - Distance / Rotating}
+%\inote{Tachometers}
+%\inote{Derivation of equations used - Distance / Rotating}
 \inote{Testing of the Motor system - conclusion is likely to be that it is not a good method, need noise reduction}
 \subsubsection{Hardware}
 Tachometers are devices used to measure rotational speed of a shaft. Tachometers are most commonly found in bicycles where a small magnet is attached to the wheel and a sensor is attached to the frame. The sensor can then calculate the time period between rotations and therefore can calculate the speed (\citep{NEEDED}) \inote{Cite Needed}.
 
-Here, an optosensor, TCRT1010, is used to measure rotations of the wheel and used to be able to move a distance decided by the microcontroller. 
+Here, an optosensor, TCRT1010, is used to measure rotations of the wheel and used to be able to move a distance decided by the microcontroller. The TCRT1010 package contains an IR LED and a phototransistor \citep{Vishay:TCRT1010:Datasheet}. The schematic of a simple transistor amplifier used can be seen in figure \ref{Circuit:TCRT1010} and was taken from \cite{NEEDED}. 
+\inote{Cite Needed}
+The wheel's rubber absorbed the IR, so a high voltage was always seen at the collector of the phototransistor. White tippex marks were applied to the wheels at regular intervals, which reflected IR and thereby giving a cheap way to detect wheel rotation. Figure \ref{Graph:WheelVoltage} shows the voltage at the collector (read by the ADC on the AVR) against the angle of the wheel. Five white tabs were marked on the wheel, and five dips in the voltage can be seen in figure \ref{Graph:WheelVoltage}. 
 
-The TCRT1010 package contains an IR LED and a phototransistor (\citep{Vishay:TCRT1010:Datasheet})
+\inote{Maybe do some simulations of this circuit? This could dictate a maximum speed}
 
-\subsubsection{Derivations}
+\begin{figure}
+\centering
+\caption{Circuit diagram of Optosensor}
+\label{Circuit:TCRT1010}
+\includegraphics[scale=0.5]{Figures/TCRT_Circuit.png}
+\end{figure}
+
+\begin{figure}
+\caption{Graph of Wheel Angle against Voltage read by AVR}
+\label{Graph:WheelVoltage}
+\includegraphics[width = \textwidth]{Figures/WheelVoltageGraph.jpg}
+\end{figure}
+
+%\subsubsection{Derivations of Movement Calculations}
+%Two basic movements were decided to be implemented: Straight line and rotation. 
+
 \subsubsection{Firmware Development}
+
+As the voltage swing from the phototransistor does not reach 0V the AVR cannot detect this as a logical 0. The internal ADC can be used to continually read the analogue voltage from the phototransistor and detect low points from this data. This method requires the processor to continually compare values and process the data. However, more control would be had over the noise in the data.
+
+An alternative is to use an analogue comparator built in on most AVRs. This can be set up to run an interrupt service routine when the voltage crosses a threshold. The threshold voltage can be determined by a potentiometer. The code is primarily two methods, the set up and the ISR.
+
+Set up is different for if a rotation or movement is wanted. Moving in a straight line takes a parameter of how far to move as a signed integer and calculates the total number of interrupts that need to occur can be calculated using \eqref{eq:NumberInterrupts}. This value is put in a global variable. The PWM and input pins to set the correct direction are then set up before enabling the motor. 
+
+\begin{equation}
+\label{eq:NumberInterrupts}
+Interrupts = D \times \frac{IPR}{C_w}
+\end{equation}
+
+To rotate, one of three methods can be used: Spot rotation on the centre of the robot, or pivot on either left or right wheel. For ease, the Spot rotation is the only one implemented. To calculate the distance moved, the radius to the wheels needs to be known. The circumference through the wheels is then easily calculated and the angle of rotation is then a ratio. The distance to move is calculated by equation \eqref{eq:RotationalDistance} and the total number of interrupts can be calculated using equation \eqref{eq:NumberInterrupts}. To rotate clockwise, the left motor is driven forward and the right is driven backwards. To rotate anti-clockwise, the directions are reversed
+
+\begin{equation}
+\label{eq:RotationalDistance}
+D_{R} = A \times \frac{C_b}{360}
+\end{equation}
+
+Combining equations \eqref{eq:NumberInterrupts} and \eqref{eq:RotationalDistance} gives:
+\begin{equation}
+\label{eq:RotationalInterrupts}
+Interrupts = A \times \frac{IPR}{C_w} \times \frac{C_b}{360}
+\end{equation}
+Where $A$ is the angle to rotate in degrees, $IPR$ is the number of interrupts generated per full revolution of the wheel, $C_w$ is the circumference of the wheel and $C_b$ the $2\pi\times r_b$ and $r_b$ is the distance from the centre of the robot to the centre of the wheel (see figure \ref{fig:RobotBase_Annotated}).
+
+
+
+\begin{figure}
+\centering
+\subfigure[Top View of robot base showing dimensions of interest\label{fg:RobotBase:Top}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/Robotbase_top_annot.jpg} }
+\subfigure[Side View of robot base showing dimensions of interest\label{fg:RobotBase:Side}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/Robotbase_side_annot.jpg} }
+\caption{Dimensions of Interest for Robot Movement}
+\label{fig:RobotBase_Annotated}
+\end{figure}
+\inote{Maybe a figure to explain better?}
+
+
+The motor speed can be controlled by Pulse Width Modulation (PWM). The code sets up a low duty cycle PWM signal to drive the motors slowly. This removes the need for a controller to ensure the correct distance was moved. 
+
+The final code can be seen in appendix \ref{Chapter:AppendixC:Code}
 \subsubsection{Testing}
 
 
-
+\subsubsection{Conclusion}
 \section{PCB Development}
 \subsection{PCB Design}
-\inote{Considerations - Track Equilisation, Power consumption of devices not exceeding VReg}
+\inote{Considerations - Track Equalisation, Power consumption of devices not exceeding VReg}
 \inote{Layout}
 \inote{Over Engineering?}
 \subsection{PCB Testing}

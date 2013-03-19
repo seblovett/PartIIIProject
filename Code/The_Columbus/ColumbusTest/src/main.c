@@ -223,6 +223,12 @@ int main (void)
 						i = atoi(Ptr);
 						Motors_Move(i);
 						break;
+					case 'T':
+						while(*Ptr == ' ')
+						Ptr++; //Find next non - space char
+						i = atoi(Ptr);
+						Motors_Rotate(i);
+						break;
 					case 'l':
 						Motor_Stop(MOTOR_L);
 						break;

@@ -379,43 +379,43 @@ bool Motors_Moving()
 }
 
 
-void Motors_Rotate(int angle_degs, uint8_t Pivot_Type)
+void Motors_Rotate(int angle_degs)
 {
 	int interrupts_to_move = 0; 
 	//calculate interrupts to move
-	interrupts_to_move = (INTERRUPTS_PER_REVOLUTION * angle_degs) / 360;
-	if(Pivot_Type == LEFT_SPOT)
-	{
-		//Right wheel moves
-		Motor_Control.Left_Count = 0;
-		Motor_Control.Left_State = STOP;
-		if(interrupts_to_move > 0)
-		{
-			Motor_Control.Right_State = FORWARD;
-		}
-		else
-		{
-			Motor_Control.Right_State = BACKWARD;
-		}
-		Motor_Control.Right_Count = Abs(interrupts_to_move);
-	}
-	else if (Pivot_Type == RIGHT_SPOT)
-	{
-		//Left Wheel Moves
-		Motor_Control.Right_Count = 0;
-		Motor_Control.Right_State = STOP;
-		if(interrupts_to_move > 0)
-		{
-			Motor_Control.Left_State = FORWARD;
-		}
-		else
-		{
-			Motor_Control.Left_State = BACKWARD;
-		}
-		Motor_Control.Left_Count = Abs(interrupts_to_move);
-	}
-	else if (Pivot_Type == SPOT_PIVOT)
-	{
+	interrupts_to_move = angle_degs * ROTATION_CONST;
+// 	if(Pivot_Type == LEFT_SPOT)
+// 	{
+// 		//Right wheel moves
+// 		Motor_Control.Left_Count = 0;
+// 		Motor_Control.Left_State = STOP;
+// 		if(interrupts_to_move > 0)
+// 		{
+// 			Motor_Control.Right_State = FORWARD;
+// 		}
+// 		else
+// 		{
+// 			Motor_Control.Right_State = BACKWARD;
+// 		}
+// 		Motor_Control.Right_Count = Abs(interrupts_to_move);
+// 	}
+// 	else if (Pivot_Type == RIGHT_SPOT)
+// 	{
+// 		//Left Wheel Moves
+// 		Motor_Control.Right_Count = 0;
+// 		Motor_Control.Right_State = STOP;
+// 		if(interrupts_to_move > 0)
+// 		{
+// 			Motor_Control.Left_State = FORWARD;
+// 		}
+// 		else
+// 		{
+// 			Motor_Control.Left_State = BACKWARD;
+// 		}
+// 		Motor_Control.Left_Count = Abs(interrupts_to_move);
+// 	}
+// 	else if (Pivot_Type == SPOT_PIVOT)
+// 	{
 		//Both Wheels Move
 		if(interrupts_to_move > 0)
 		{
@@ -429,5 +429,5 @@ void Motors_Rotate(int angle_degs, uint8_t Pivot_Type)
 		}
 		Motor_Control.Left_Count = Abs(interrupts_to_move);
 		Motor_Control.Right_Count = Abs(interrupts_to_move);
-	}
+//	}
 }

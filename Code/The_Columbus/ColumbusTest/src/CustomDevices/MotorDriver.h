@@ -26,7 +26,7 @@
 #define ENABLE_ACB_INTERRUPT		{AVR32_ACIFA1.ier = 2;}
 #define DISABLE_ACB_INTERRUPT		{AVR32_ACIFA1.idr = 2;}
 #define INTERRUPTS_PER_REVOLUTION	5	//Interrupts caused per full rotation of a wheel
-#define CIRCUMFERENCE_WHEEL_MM		118 //in millimeters
+#define CIRCUMFERENCE_WHEEL_MM		116 //in millimeters
 #define CIRCUMFERENCE_WHEEL_CM		12 //in centimeters
 #define MIN_RESOLUTION				CIRCUMFERENCE_WHEEL_CM / INTERRUPTS_PER_REVOLUTION
 #define C_ROT_MM					276
@@ -53,5 +53,6 @@ void Motor_Stop(int Motors);
 bool Motors_Moving();
 void Motors_Move(int centimetres_fwd)/*Move this amount forward in centimeters */;
 void Motors_Execute();
+void Motors_Rotate(int angle_degs);
 /*static void ACInterruptHandler(void);*/
 #endif /* MOTORDRIVER_H_ */
