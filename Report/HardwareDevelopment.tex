@@ -149,15 +149,15 @@ The wheel's rubber absorbed the IR, so a high voltage was always seen at the col
 
 \begin{figure}
 \centering
+\includegraphics[scale=0.5]{Figures/TCRT_Circuit.png}
 \caption{Circuit diagram of Optosensor}
 \label{Circuit:TCRT1010}
-\includegraphics[scale=0.5]{Figures/TCRT_Circuit.png}
 \end{figure}
 
 \begin{figure}
-\caption{Graph of Wheel Angle against Voltage read by AVR}
-\label{Graph:WheelVoltage}
 \includegraphics[width = \textwidth]{Figures/WheelVoltageGraph.jpg}
+\caption{Graph of Wheel Angle against the Voltage read by the AVR}
+\label{Graph:WheelVoltage}
 \end{figure}
 
 %\subsubsection{Derivations of Movement Calculations}
@@ -165,7 +165,7 @@ The wheel's rubber absorbed the IR, so a high voltage was always seen at the col
 
 \subsubsection{Firmware Development}
 
-As the voltage swing from the phototransistor does not reach 0V the AVR cannot detect this as a logical 0. The internal ADC can be used to continually read the analogue voltage from the phototransistor and detect low points from this data. This method requires the processor to continually compare values and process the data. However, more control would be had over the noise in the data.
+As the voltage swing from the phototransistor does not reach 0V, the AVR cannot detect this as a logical 0. The internal ADC can be used to continually read the analogue voltage from the phototransistor and detect low points from this data. This method requires the processor to continually compare values and process the data. However, more control would be had over the noise in the data.
 
 An alternative is to use an analogue comparator built in on most AVRs. This can be set up to run an interrupt service routine when the voltage crosses a threshold. The threshold voltage can be determined by a potentiometer. The code is primarily two methods, the set up and the ISR.
 
@@ -206,14 +206,56 @@ The motor speed can be controlled by Pulse Width Modulation (PWM). The code sets
 
 The final code can be seen in appendix \ref{Chapter:AppendixC:Code}
 \subsubsection{Testing}
-
-
+\inote{Need to get the motors to work reasonably first}
 \subsubsection{Conclusion}
+\inote{It doesn't work}
+
 \section{PCB Development}
+\subsection{Circuit Design}
+The circuit diagram for Revision A can be seen in section \ref{sch:Columbus:CircuitDiagram}. The schematic for the SDRAM and values and locations of decoupling capacitors were taken from the schematic of the UC3C-EK development board \citep{Atmel:UC3CEK}. 
 \subsection{PCB Design}
-\inote{Considerations - Track Equalisation, Power consumption of devices not exceeding VReg}
-\inote{Layout}
-\inote{Over Engineering?}
+The PCB was designed using EAGLE CAD Software. A four layer board was decided to be used to save space when routing Power. Layer 2 is a 3V3 plane and layer 3 is a ground plane. A ground plane is also on the top and bottom layers to help eliminate any ground bounce that could occur. 
+
+The SDRAM uses the EBI protocol. In high speed systems, care is often taken to equalise track lengths \citep{liu2004equalization}. The UC3C maximum clock frequency is 33MHz (with no wait states), which is not fast enough to cause any track equalisation problems. Care, however, was taken on the USB lines to ensure correct impedance and the tracks lengths matched to each other.
+
+Tracks were routed in order of priority, starting with the UC3C, SDRAM and cameras, and then other devices were routed, \itc MUX, SD card, motor drivers etc. As a precaution, spare pins from the UC3C were routed to a header (J8 and J9) so that additions could be done if a pinout or connection was found to be incorrect. Also, UART, \itc and SPI connections were routed to headers J7, J4 and J5 respectively so logic analysers and COM Port could be attached easily for debugging.
+
+Most of the passives used were 0603 size, but some 1206 capactitors were used for decoupling the voltage regulator and a 1206 diode was used for the analogue reference circuitry. LEDs were also 1206 size. All headers were 0.1'' spaced and a mini B USB socket was used. 
+
+The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and 0.1'' headers were added to connect the motors to. The optosensors were positioned such that they could be mounted directly on the PCB and be in the correct position to sense the wheels. Mounting holes were also added onto the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in table \ref{table:Components}
+
+
+\begin{table}
+\begin{tabular}{|c|c|c|c|c|} \hline
+Component	&	Cost per unit (\pounds)	& Quantity 	&	Total Cost (\pounds)	&	Source		\\ \hline
+Capactiors	&	0.155 					& 	43		& 	6.67 					& 	Farnell 	\\
+Clock 		& 	1.48					& 	1		&	1.48 					& 	Farnell		\\
+Diode		&	0.48					&	1		&	0.48					&	Farnell 	\\
+Headers		&	0.51 					&	5		&	2.55					&	Farnell 	\\
+I2C Mux PCA9542A &	0.81				&	1		&	0.81					&	Farnell		\\
+LEDs 		&	0.158					&	7		& 	1.11 					&	Farnell		\\
+Micro SD Card &	4						&	1		&	4.00 					&	Amazon 		\\
+Micro SD Card Connector & 2.04			&	1		&	2.04					&	Farnell		\\
+AT32UC3C0512C	&15.39					&	1		&	15.39					&	Farnell		\\
+TB6593FNG 	&	1.07 					&	2 		&	2.14 					&	Farnell 	\\
+Motors  	&	0.42					&	2		&	0.84				 	&	Rapid 		\\
+TCRT1010	& 	0.94 					&	2		&	1.88 					&	Farnell 	\\
+OV7670		&	17						&	2		&	34.00					& 				\\
+Potentiometer	&	0.43				&	2		&	0.86					&	Farnell 	\\
+Resistors	&	0.066 					& 	46		&	3.04 					&	Farnell 	\\
+MT48LC4M16A2P	& 3.24  				& 	1		&	3.24 					&	Farnell		\\
+Switch		&	0.45					&	1		&	0.45					&	Farnell 	\\
+USB Socket	&	0.84 					&	1		& 	0.84 					&	Farnell 	\\
+LM1117MP	&	1.03					&	1		&	1.03	 				&	Farnell		\\ \hline
+			&							&	Total Cost & 82.84					&				\\ \hline
+\end{tabular}
+\end{table}
+
+Finally, the name ``The Columbus'' was decided on as the original application for the project was a mapping robot that would search out an unknown area, so the robot was named after Christopher Columbus who explored and navigated parts of the American continents which were unknown at the time. 
+\inote{Component / Costing List}
+
+\inote{Considerations - Power consumption of devices not exceeding VReg}
+
 \subsection{PCB Testing}
 \inote{Building}
 \inote{How I tested}
@@ -223,6 +265,6 @@ The final code can be seen in appendix \ref{Chapter:AppendixC:Code}
 \subsection{PCB Amendments and Conclusion}
 \inote{Rev B of the PCB / list of problems}
 \inote{Given more time, different}
-
+\inote{silk screen for components to avoid incorrect placement}
 \section{Conclusions}
 \inote{Overall Conclusions of the Hardware design}

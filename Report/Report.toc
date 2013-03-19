@@ -20,64 +20,61 @@
 \contentsline {subsubsection}{\numberline {3.3.2.1}Hardware}{14}{subsubsection.49}
 \contentsline {subsubsection}{\numberline {3.3.2.2}Firmware Development}{14}{subsubsection.55}
 \contentsline {subsubsection}{\numberline {3.3.2.3}Testing}{16}{subsubsection.63}
-\contentsline {section}{\numberline {3.4}PCB Development}{16}{section.64}
-\contentsline {subsection}{\numberline {3.4.1}PCB Design}{16}{subsection.65}
-\contentsline {subsection}{\numberline {3.4.2}PCB Testing}{18}{subsection.69}
-\contentsline {subsection}{\numberline {3.4.3}PCB Amendments and Conclusion}{18}{subsection.75}
-\contentsline {section}{\numberline {3.5}Conclusions}{18}{section.78}
-\contentsline {chapter}{\numberline {4}Investigation into Vision Algorithms}{19}{chapter.80}
-\contentsline {section}{\numberline {4.1}Comparison}{19}{section.81}
-\contentsline {subsection}{\numberline {4.1.1}Sum of Absolute Differences}{20}{subsection.85}
-\contentsline {subsection}{\numberline {4.1.2}Sum of Squared Differences}{20}{subsection.87}
-\contentsline {subsection}{\numberline {4.1.3}NCC}{20}{subsection.89}
-\contentsline {subsection}{\numberline {4.1.4}Comparison}{21}{subsection.91}
-\contentsline {subsection}{\numberline {4.1.5}Conclusion}{23}{subsection.96}
-\contentsline {section}{\numberline {4.2}Range Finding}{23}{section.97}
-\contentsline {subsection}{\numberline {4.2.1}Derivations}{23}{subsection.98}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Object is between the Cameras}{23}{subsubsection.103}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Object is to the same side in each camera}{25}{subsubsection.112}
-\contentsline {subsubsection}{\numberline {4.2.1.3}Object is in front of a camera}{26}{subsubsection.124}
-\contentsline {subsubsection}{\numberline {4.2.1.4}Summary}{26}{subsubsection.127}
-\contentsline {section}{\numberline {4.3}Fourier Transform}{29}{section.131}
-\contentsline {subsection}{\numberline {4.3.1}Background Research and Uses}{29}{subsection.132}
-\contentsline {subsection}{\numberline {4.3.2}Fast Fourier Transform}{29}{subsection.133}
-\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT in C}{29}{subsection.134}
-\contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{29}{subsection.135}
-\contentsline {section}{\numberline {4.4}Low Level Vision Algorithms}{29}{section.136}
-\contentsline {subsection}{\numberline {4.4.1}Noise Reduction}{29}{subsection.137}
-\contentsline {subsection}{\numberline {4.4.2}Edge Detection}{29}{subsection.138}
-\contentsline {chapter}{\numberline {5}Results}{31}{chapter.139}
-\contentsline {section}{\numberline {5.1}Results}{31}{section.140}
-\contentsline {chapter}{\numberline {6}Conclusions and Further Work}{33}{chapter.143}
-\contentsline {chapter}{\numberline {A}Gantt Chart}{35}{appendix.147}
-\contentsline {chapter}{\numberline {B}Circuit Diagrams}{37}{appendix.149}
-\contentsline {chapter}{\numberline {C}Bitmap File Format}{39}{appendix.152}
-\contentsline {section}{\numberline {C.1}Bitmap File Format}{39}{section.153}
-\contentsline {chapter}{\numberline {D}Source Code}{43}{appendix.156}
-\contentsline {section}{\numberline {D.1}C Code for AVR}{43}{section.157}
-\contentsline {subsection}{\numberline {D.1.1}Dual Camera Operation}{43}{subsection.158}
-\contentsline {subsubsection}{\numberline {D.1.1.1}main.c}{43}{subsubsection.159}
-\contentsline {subsubsection}{\numberline {D.1.1.2}Bitmap.h}{47}{subsubsection.366}
-\contentsline {subsubsection}{\numberline {D.1.1.3}Bitmap.c}{47}{subsubsection.392}
-\contentsline {subsubsection}{\numberline {D.1.1.4}Config.h}{49}{subsubsection.463}
-\contentsline {subsubsection}{\numberline {D.1.1.5}Config.c}{50}{subsubsection.542}
-\contentsline {subsubsection}{\numberline {D.1.1.6}DualCameras.h}{51}{subsubsection.575}
-\contentsline {subsubsection}{\numberline {D.1.1.7}DualCameras.c}{56}{subsubsection.860}
-\contentsline {subsubsection}{\numberline {D.1.1.8}PCA9542A.h}{64}{subsubsection.1338}
-\contentsline {subsubsection}{\numberline {D.1.1.9}PCA9542A.c}{65}{subsubsection.1365}
-\contentsline {subsubsection}{\numberline {D.1.1.10}TWI\_Master.h}{66}{subsubsection.1414}
-\contentsline {subsubsection}{\numberline {D.1.1.11}TWI\_Master.c}{69}{subsubsection.1541}
-\contentsline {subsubsection}{\numberline {D.1.1.12}Usart.h}{74}{subsubsection.1764}
-\contentsline {subsubsection}{\numberline {D.1.1.13}Usart.c}{75}{subsubsection.1794}
-\contentsline {subsection}{\numberline {D.1.2}Dual Camera User Interface}{76}{subsection.1878}
-\contentsline {subsubsection}{\numberline {D.1.2.1}DualCamera\_UI.c}{76}{subsubsection.1879}
-\contentsline {subsubsection}{\numberline {D.1.2.2}TWI\_slave.h}{78}{subsubsection.1985}
-\contentsline {subsubsection}{\numberline {D.1.2.3}TWI\_slave.c}{81}{subsubsection.2111}
-\contentsline {section}{\numberline {D.2}MATLAB Code for Image Algorithm Prototyping}{88}{section.2370}
-\contentsline {subsection}{\numberline {D.2.1}Image Matching Algorithms}{88}{subsection.2371}
-\contentsline {subsubsection}{\numberline {D.2.1.1}loadimages.m}{88}{subsubsection.2372}
-\contentsline {subsubsection}{\numberline {D.2.1.2}GetSubImage.m}{88}{subsubsection.2391}
-\contentsline {subsubsection}{\numberline {D.2.1.3}SADAll.m}{89}{subsubsection.2432}
-\contentsline {subsubsection}{\numberline {D.2.1.4}SSDAll.m}{90}{subsubsection.2477}
-\contentsline {subsubsection}{\numberline {D.2.1.5}NCC.m}{91}{subsubsection.2521}
-\contentsline {chapter}{References}{95}{dummy.2608}
+\contentsline {subsubsection}{\numberline {3.3.2.4}Conclusion}{16}{subsubsection.65}
+\contentsline {section}{\numberline {3.4}PCB Development}{18}{section.67}
+\contentsline {subsection}{\numberline {3.4.1}Circuit Design}{18}{subsection.68}
+\contentsline {subsection}{\numberline {3.4.2}PCB Design}{18}{subsection.69}
+\contentsline {subsection}{\numberline {3.4.3}PCB Testing}{19}{subsection.73}
+\contentsline {subsection}{\numberline {3.4.4}PCB Amendments and Conclusion}{20}{subsection.79}
+\contentsline {section}{\numberline {3.5}Conclusions}{20}{section.83}
+\contentsline {chapter}{\numberline {4}Investigation into Vision Algorithms}{21}{chapter.85}
+\contentsline {section}{\numberline {4.1}Comparison}{21}{section.86}
+\contentsline {subsection}{\numberline {4.1.1}Sum of Absolute Differences}{22}{subsection.90}
+\contentsline {subsection}{\numberline {4.1.2}Sum of Squared Differences}{22}{subsection.92}
+\contentsline {subsection}{\numberline {4.1.3}NCC}{22}{subsection.94}
+\contentsline {subsection}{\numberline {4.1.4}Comparison}{23}{subsection.96}
+\contentsline {subsection}{\numberline {4.1.5}Conclusion}{25}{subsection.101}
+\contentsline {section}{\numberline {4.2}Range Finding}{25}{section.102}
+\contentsline {subsection}{\numberline {4.2.1}Derivations}{25}{subsection.103}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Object is between the Cameras}{25}{subsubsection.108}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Object is to the same side in each camera}{27}{subsubsection.117}
+\contentsline {subsubsection}{\numberline {4.2.1.3}Object is in front of a camera}{28}{subsubsection.129}
+\contentsline {subsubsection}{\numberline {4.2.1.4}Summary}{28}{subsubsection.132}
+\contentsline {section}{\numberline {4.3}Fourier Transform}{31}{section.136}
+\contentsline {subsection}{\numberline {4.3.1}Background Research and Uses}{31}{subsection.137}
+\contentsline {subsection}{\numberline {4.3.2}Fast Fourier Transform}{31}{subsection.138}
+\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT in C}{31}{subsection.139}
+\contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{31}{subsection.140}
+\contentsline {section}{\numberline {4.4}Low Level Vision Algorithms}{31}{section.141}
+\contentsline {subsection}{\numberline {4.4.1}Noise Reduction}{31}{subsection.142}
+\contentsline {subsection}{\numberline {4.4.2}Edge Detection}{31}{subsection.143}
+\contentsline {chapter}{\numberline {5}Results}{33}{chapter.144}
+\contentsline {section}{\numberline {5.1}Results}{33}{section.145}
+\contentsline {chapter}{\numberline {6}Conclusions and Further Work}{35}{chapter.148}
+\contentsline {chapter}{\numberline {A}Gantt Chart}{37}{appendix.152}
+\contentsline {chapter}{\numberline {B}Circuit Diagrams}{39}{appendix.154}
+\contentsline {section}{\numberline {B.1}OV7670 Breakout Board Schematic}{39}{section.155}
+\contentsline {section}{\numberline {B.2}Il Matto and Dual Camera Schematic}{39}{section.157}
+\contentsline {section}{\numberline {B.3}The Columbus Circuit Diagram}{39}{section.159}
+\contentsline {chapter}{\numberline {C}Bitmap File Format}{49}{appendix.166}
+\contentsline {section}{\numberline {C.1}Bitmap File Format}{49}{section.167}
+\contentsline {chapter}{\numberline {D}Source Code}{53}{appendix.170}
+\contentsline {section}{\numberline {D.1}C Code for AVR}{53}{section.171}
+\contentsline {subsection}{\numberline {D.1.1}The Columbus Source Code}{53}{subsection.172}
+\contentsline {subsubsection}{\numberline {D.1.1.1}main.c}{53}{subsubsection.173}
+\contentsline {subsubsection}{\numberline {D.1.1.2}Bitmap.c}{60}{subsubsection.552}
+\contentsline {subsubsection}{\numberline {D.1.1.3}CustomDevices.h}{61}{subsubsection.600}
+\contentsline {subsubsection}{\numberline {D.1.1.4}dummy.c}{62}{subsubsection.644}
+\contentsline {subsubsection}{\numberline {D.1.1.5}ImageProcessor.h}{62}{subsubsection.647}
+\contentsline {subsubsection}{\numberline {D.1.1.6}ImageProcessor.c}{63}{subsubsection.683}
+\contentsline {subsubsection}{\numberline {D.1.1.7}MotorDriver.h}{69}{subsubsection.1009}
+\contentsline {subsubsection}{\numberline {D.1.1.8}MotorDriver.c}{70}{subsubsection.1069}
+\contentsline {subsubsection}{\numberline {D.1.1.9}OV7670.h}{78}{subsubsection.1506}
+\contentsline {subsubsection}{\numberline {D.1.1.10}OV7670.c}{84}{subsubsection.1842}
+\contentsline {subsubsection}{\numberline {D.1.1.11}OV7670.c}{95}{subsubsection.2463}
+\contentsline {subsubsection}{\numberline {D.1.1.12}PCA9542A.h}{98}{subsubsection.2645}
+\contentsline {subsubsection}{\numberline {D.1.1.13}PCA9542A.c}{99}{subsubsection.2682}
+\contentsline {subsubsection}{\numberline {D.1.1.14}SD\textunderscore Card.h}{100}{subsubsection.2732}
+\contentsline {subsubsection}{\numberline {D.1.1.15}SD\textunderscore Card.c}{100}{subsubsection.2767}
+\contentsline {subsubsection}{\numberline {D.1.1.16}TWI.c}{108}{subsubsection.3191}
+\contentsline {chapter}{References}{111}{dummy.3238}

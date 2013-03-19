@@ -12,16 +12,18 @@ A level-1 auxiliary file: AppendixC.aux
 The style file: ecs.bst
 Database file #1: ECS.bib
 Warning--entry type for "Atmel:ASF" isn't style-file defined
---line 25 of file ECS.bib
+--line 37 of file ECS.bib
+Warning--entry type for "Atmel:UC3CEK" isn't style-file defined
+--line 44 of file ECS.bib
 Warning--entry type for "Farnell" isn't style-file defined
---line 59 of file ECS.bib
+--line 79 of file ECS.bib
 Warning--entry type for "DistanceEstimation" isn't style-file defined
---line 96 of file ECS.bib
+--line 116 of file ECS.bib
 Warning--entry type for "FATFS" isn't style-file defined
---line 140 of file ECS.bib
+--line 160 of file ECS.bib
 Warning--entry type for "ImageComparison" isn't style-file defined
---line 148 of file ECS.bib
+--line 168 of file ECS.bib
 Warning--entry type for "Tsai:NCC" isn't style-file defined
---line 173 of file ECS.bib
+--line 193 of file ECS.bib
 Warning--I didn't find a database entry for "NEEDED"
-(There were 7 warnings)
+(There were 8 warnings)
