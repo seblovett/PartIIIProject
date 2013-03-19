@@ -228,6 +228,7 @@ void Analogue_Comparator_Init()
 	//acifa_enable_interrupt(&AVR32_ACIFA1, (1 << AVR32_ACIFA_ACBINT )| (1 << AVR32_ACIFA_ACAINT));//Enable ACBINT and ACAINT
 	ENABLE_ACA_INTERRUPT;
 	ENABLE_ACB_INTERRUPT;
+	AVR32_ACIFA1.ier = 3; //enable interrupts	
  	//acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELA);
  	//acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELB);
 	acifa_enable_interrupt_inp_lower(&AVR32_ACIFA1, ACIFA_COMP_SELA);
@@ -429,5 +430,6 @@ void Motors_Rotate(int angle_degs)
 		}
 		Motor_Control.Left_Count = Abs(interrupts_to_move);
 		Motor_Control.Right_Count = Abs(interrupts_to_move);
+		Motor_Start(MOTOR_L | MOTOR_R);
 //	}
 }
