@@ -26,7 +26,6 @@
     <option id="common.boards" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.delay" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.storage.ctrl_access" value="Add" config="" content-id="Atmel.ASF" />
-    <option id="common.services.usb.class.device" value="Add" config="cdc_stdio" content-id="Atmel.ASF" />
   </options>
   <configurations>
     <configuration key="config.avr32.utils.trampoline" value="yes" default="yes" content-id="Atmel.ASF" />
@@ -120,31 +119,6 @@
     <file path="src/asf/avr32/drivers/acifa/acifa.h" framework="" version="" source="avr32\drivers\acifa\acifa.h" changed="False" content-id="Atmel.ASF" />
     <file path="src/asf/avr32/drivers/eic/eic.c" framework="" version="" source="avr32\drivers\eic\eic.c" changed="False" content-id="Atmel.ASF" />
     <file path="src/asf/avr32/drivers/eic/eic.h" framework="" version="" source="avr32\drivers\eic\eic.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/avr32/drivers/usbc/usbc_device.c" framework="" version="" source="avr32\drivers\usbc\usbc_device.c" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/avr32/drivers/usbc/usbc_device.h" framework="" version="" source="avr32\drivers\usbc\usbc_device.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/avr32/drivers/usbc/usbc_otg.h" framework="" version="" source="avr32\drivers\usbc\usbc_otg.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/sleepmgr/uc3/sleepmgr.c" framework="" version="" source="common\services\sleepmgr\uc3\sleepmgr.c" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/sleepmgr/sleepmgr.h" framework="" version="" source="common\services\sleepmgr\sleepmgr.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/sleepmgr/uc3/sleepmgr.h" framework="" version="" source="common\services\sleepmgr\uc3\sleepmgr.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/config/conf_sleepmgr.h" framework="" version="" source="common\services\sleepmgr\uc3\module_config\conf_sleepmgr.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/usb_atmel.h" framework="" version="" source="common\services\usb\usb_atmel.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/usb_protocol.h" framework="" version="" source="common\services\usb\usb_protocol.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/class/cdc/usb_protocol_cdc.h" framework="" version="" source="common\services\usb\class\cdc\usb_protocol_cdc.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/class/cdc/device/udi_cdc.c" framework="" version="" source="common\services\usb\class\cdc\device\udi_cdc.c" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/class/cdc/device/udi_cdc_desc.c" framework="" version="" source="common\services\usb\class\cdc\device\udi_cdc_desc.c" changed="False" content-id="Atmel.ASF" />
-    <file path="atmel_devices_cdc.inf" framework="" version="" source="common\services\usb\class\cdc\device\atmel_devices_cdc.inf" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/class/cdc/device/udi_cdc.h" framework="" version="" source="common\services\usb\class\cdc\device\udi_cdc.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/class/cdc/device/udi_cdc_conf.h" framework="" version="" source="common\services\usb\class\cdc\device\udi_cdc_conf.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/config/conf_usb.h" framework="" version="" source="common\services\usb\class\cdc\device\module_config\conf_usb.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/udc/udc.c" framework="" version="" source="common\services\usb\udc\udc.c" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/udc/udc.h" framework="" version="" source="common\services\usb\udc\udc.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/udc/udd.h" framework="" version="" source="common\services\usb\udc\udd.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/udc/udc_desc.h" framework="" version="" source="common\services\usb\udc\udc_desc.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/services/usb/udc/udi.h" framework="" version="" source="common\services\usb\udc\udi.h" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/utils/stdio/read.c" framework="" version="" source="common\utils\stdio\read.c" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/utils/stdio/write.c" framework="" version="" source="common\utils\stdio\write.c" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/utils/stdio/stdio_usb/stdio_usb.c" framework="" version="" source="common\utils\stdio\stdio_usb\stdio_usb.c" changed="False" content-id="Atmel.ASF" />
-    <file path="src/asf/common/utils/stdio/stdio_usb/stdio_usb.h" framework="" version="" source="common\utils\stdio\stdio_usb\stdio_usb.h" changed="False" content-id="Atmel.ASF" />
   </files>
   <documentation help="http://asf.atmel.com/docs/3.5.0/common.applications.user_application.user_board.uc3c/html/index.html" />
 </framework-data>
@@ -175,7 +149,7 @@
       </OverrideVtorValue>
       <Channel>
         <host>127.0.0.1</host>
-        <port>19213</port>
+        <port>17720</port>
         <ssl>False</ssl>
       </Channel>
       <ToolOptions>
@@ -206,7 +180,6 @@
       <Value>BOARD=USER_BOARD</Value>
       <Value>SD_MMC_SPI_ENABLE</Value>
       <Value>ACCESS_MEM_TO_RAM_ENABLED</Value>
-      <Value>UDD_ENABLE</Value>
     </ListValues>
   </avr32gcc.compiler.symbols.DefSymbols>
   <avr32gcc.compiler.directories.IncludePaths>
@@ -240,13 +213,6 @@
       <Value>../src/asf/avr32/drivers/pwm</Value>
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
-      <Value>../src/asf/avr32/drivers/usbc</Value>
-      <Value>../src/asf/common/services/sleepmgr</Value>
-      <Value>../src/asf/common/services/usb</Value>
-      <Value>../src/asf/common/services/usb/class/cdc</Value>
-      <Value>../src/asf/common/services/usb/class/cdc/device</Value>
-      <Value>../src/asf/common/services/usb/udc</Value>
-      <Value>../src/asf/common/utils/stdio/stdio_usb</Value>
     </ListValues>
   </avr32gcc.compiler.directories.IncludePaths>
   <avr32gcc.compiler.optimization.level>Optimize for size (-Os)</avr32gcc.compiler.optimization.level>
@@ -290,16 +256,9 @@
       <Value>../src/asf/avr32/drivers/pwm</Value>
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
-      <Value>../src/asf/avr32/drivers/usbc</Value>
-      <Value>../src/asf/common/services/sleepmgr</Value>
-      <Value>../src/asf/common/services/usb</Value>
-      <Value>../src/asf/common/services/usb/class/cdc</Value>
-      <Value>../src/asf/common/services/usb/class/cdc/device</Value>
-      <Value>../src/asf/common/services/usb/udc</Value>
-      <Value>../src/asf/common/utils/stdio/stdio_usb</Value>
     </ListValues>
   </avr32gcc.assembler.general.IncludePaths>
-  <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USER_BOARD -mrelax -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED -DUDD_ENABLE</avr32gcc.preprocessingassembler.general.AssemblerFlags>
+  <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USER_BOARD -mrelax -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED</avr32gcc.preprocessingassembler.general.AssemblerFlags>
   <avr32gcc.preprocessingassembler.general.IncludePaths>
     <ListValues>
       <Value>../src</Value>
@@ -331,13 +290,6 @@
       <Value>../src/asf/avr32/drivers/pwm</Value>
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
-      <Value>../src/asf/avr32/drivers/usbc</Value>
-      <Value>../src/asf/common/services/sleepmgr</Value>
-      <Value>../src/asf/common/services/usb</Value>
-      <Value>../src/asf/common/services/usb/class/cdc</Value>
-      <Value>../src/asf/common/services/usb/class/cdc/device</Value>
-      <Value>../src/asf/common/services/usb/udc</Value>
-      <Value>../src/asf/common/utils/stdio/stdio_usb</Value>
     </ListValues>
   </avr32gcc.preprocessingassembler.general.IncludePaths>
 </Avr32Gcc>
@@ -359,7 +311,6 @@
       <Value>BOARD=USER_BOARD</Value>
       <Value>SD_MMC_SPI_ENABLE</Value>
       <Value>ACCESS_MEM_TO_RAM_ENABLED</Value>
-      <Value>UDD_ENABLE</Value>
     </ListValues>
   </avr32gcc.compiler.symbols.DefSymbols>
   <avr32gcc.compiler.directories.IncludePaths>
@@ -393,13 +344,6 @@
       <Value>../src/asf/avr32/drivers/pwm</Value>
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
-      <Value>../src/asf/avr32/drivers/usbc</Value>
-      <Value>../src/asf/common/services/sleepmgr</Value>
-      <Value>../src/asf/common/services/usb</Value>
-      <Value>../src/asf/common/services/usb/class/cdc</Value>
-      <Value>../src/asf/common/services/usb/class/cdc/device</Value>
-      <Value>../src/asf/common/services/usb/udc</Value>
-      <Value>../src/asf/common/utils/stdio/stdio_usb</Value>
     </ListValues>
   </avr32gcc.compiler.directories.IncludePaths>
   <avr32gcc.compiler.optimization.level>Optimize (-O1)</avr32gcc.compiler.optimization.level>
@@ -444,16 +388,9 @@
       <Value>../src/asf/avr32/drivers/pwm</Value>
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
-      <Value>../src/asf/avr32/drivers/usbc</Value>
-      <Value>../src/asf/common/services/sleepmgr</Value>
-      <Value>../src/asf/common/services/usb</Value>
-      <Value>../src/asf/common/services/usb/class/cdc</Value>
-      <Value>../src/asf/common/services/usb/class/cdc/device</Value>
-      <Value>../src/asf/common/services/usb/udc</Value>
-      <Value>../src/asf/common/utils/stdio/stdio_usb</Value>
     </ListValues>
   </avr32gcc.assembler.general.IncludePaths>
-  <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USER_BOARD -mrelax -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED -DUDD_ENABLE</avr32gcc.preprocessingassembler.general.AssemblerFlags>
+  <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USER_BOARD -mrelax -DSD_MMC_SPI_ENABLE -DACCESS_MEM_TO_RAM_ENABLED</avr32gcc.preprocessingassembler.general.AssemblerFlags>
   <avr32gcc.preprocessingassembler.general.IncludePaths>
     <ListValues>
       <Value>../src</Value>
@@ -485,13 +422,6 @@
       <Value>../src/asf/avr32/drivers/pwm</Value>
       <Value>../src/asf/avr32/drivers/acifa</Value>
       <Value>../src/asf/avr32/drivers/eic</Value>
-      <Value>../src/asf/avr32/drivers/usbc</Value>
-      <Value>../src/asf/common/services/sleepmgr</Value>
-      <Value>../src/asf/common/services/usb</Value>
-      <Value>../src/asf/common/services/usb/class/cdc</Value>
-      <Value>../src/asf/common/services/usb/class/cdc/device</Value>
-      <Value>../src/asf/common/services/usb/udc</Value>
-      <Value>../src/asf/common/utils/stdio/stdio_usb</Value>
     </ListValues>
   </avr32gcc.preprocessingassembler.general.IncludePaths>
 </Avr32Gcc>
@@ -502,9 +432,6 @@
     <GenerateEepFile>True</GenerateEepFile>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="atmel_devices_cdc.inf">
-      <SubType>compile</SubType>
-    </None>
     <None Include="src\asf\avr32\drivers\cpu\cycle_counter\cycle_counter.h">
       <SubType>compile</SubType>
     </None>
@@ -610,15 +537,6 @@
     <None Include="src\asf\avr32\drivers\usart\usart.h">
       <SubType>compile</SubType>
     </None>
-    <Compile Include="src\asf\avr32\drivers\usbc\usbc_device.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <None Include="src\asf\avr32\drivers\usbc\usbc_device.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\asf\avr32\drivers\usbc\usbc_otg.h">
-      <SubType>compile</SubType>
-    </None>
     <Compile Include="src\asf\avr32\services\fs\fat\fat.c">
       <SubType>compile</SubType>
     </Compile>
@@ -703,15 +621,6 @@
     <None Include="src\config\conf_explorer.h">
       <SubType>compile</SubType>
     </None>
-    <None Include="src\asf\common\services\sleepmgr\sleepmgr.h">
-      <SubType>compile</SubType>
-    </None>
-    <Compile Include="src\asf\common\services\sleepmgr\uc3\sleepmgr.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <None Include="src\asf\common\services\sleepmgr\uc3\sleepmgr.h">
-      <SubType>compile</SubType>
-    </None>
     <Compile Include="src\asf\common\services\storage\ctrl_access\ctrl_access.c">
       <SubType>compile</SubType>
     </Compile>
@@ -724,60 +633,6 @@
     <None Include="src\config\conf_twim.h">
       <SubType>compile</SubType>
     </None>
-    <None Include="src\config\conf_sleepmgr.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\asf\common\services\usb\usb_atmel.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\asf\common\services\usb\usb_protocol.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\asf\common\services\usb\class\cdc\usb_protocol_cdc.h">
-      <SubType>compile</SubType>
-    </None>
-    <Compile Include="src\asf\common\services\usb\class\cdc\device\udi_cdc.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <None Include="src\asf\common\services\usb\class\cdc\device\udi_cdc.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\asf\common\services\usb\class\cdc\device\udi_cdc_conf.h">
-      <SubType>compile</SubType>
-    </None>
-    <Compile Include="src\asf\common\services\usb\class\cdc\device\udi_cdc_desc.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <None Include="src\config\conf_usb.h">
-      <SubType>compile</SubType>
-    </None>
-    <Compile Include="src\asf\common\services\usb\udc\udc.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <None Include="src\asf\common\services\usb\udc\udc.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\asf\common\services\usb\udc\udd.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\asf\common\services\usb\udc\udc_desc.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\asf\common\services\usb\udc\udi.h">
-      <SubType>compile</SubType>
-    </None>
-    <Compile Include="src\asf\common\utils\stdio\read.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\asf\common\utils\stdio\stdio_usb\stdio_usb.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <None Include="src\asf\common\utils\stdio\stdio_usb\stdio_usb.h">
-      <SubType>compile</SubType>
-    </None>
-    <Compile Include="src\asf\common\utils\stdio\write.c">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\CustomDevices\Bitmap.c">
       <SubType>compile</SubType>
     </Compile>
@@ -896,7 +751,6 @@
     <Folder Include="src\asf\avr32\drivers\spi\" />
     <Folder Include="src\asf\avr32\drivers\twim\" />
     <Folder Include="src\asf\avr32\drivers\usart\" />
-    <Folder Include="src\asf\avr32\drivers\usbc\" />
     <Folder Include="src\asf\avr32\services\" />
     <Folder Include="src\asf\avr32\services\fs\" />
     <Folder Include="src\asf\avr32\services\fs\fat\" />
@@ -912,19 +766,10 @@
     <Folder Include="src\asf\common\services\clock\" />
     <Folder Include="src\asf\common\services\clock\uc3c\" />
     <Folder Include="src\asf\common\services\delay\" />
-    <Folder Include="src\asf\common\services\sleepmgr\" />
-    <Folder Include="src\asf\common\services\sleepmgr\uc3\" />
     <Folder Include="src\asf\common\services\storage\" />
     <Folder Include="src\asf\common\services\storage\ctrl_access\" />
-    <Folder Include="src\asf\common\services\usb\" />
-    <Folder Include="src\asf\common\services\usb\class\" />
-    <Folder Include="src\asf\common\services\usb\class\cdc\" />
-    <Folder Include="src\asf\common\services\usb\class\cdc\device\" />
-    <Folder Include="src\asf\common\services\usb\udc\" />
     <Folder Include="src\asf\common\utils\" />
     <Folder Include="src\asf\common\utils\interrupt\" />
-    <Folder Include="src\asf\common\utils\stdio\" />
-    <Folder Include="src\asf\common\utils\stdio\stdio_usb\" />
     <Folder Include="src\config\" />
     <Folder Include="src\CustomDevices" />
   </ItemGroup>

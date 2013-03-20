@@ -100,36 +100,9 @@ src/CustomDevices/MotorDriver.d src/CustomDevices/MotorDriver.o \
  ../src/asf/avr32/drivers/scif/scif_uc3c.h \
  ../src/asf/avr32/drivers/pm/sleep.h ../src/asf/avr32/drivers/pwm/pwm4.h \
  ../src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.h \
- ../src/asf/avr32/drivers/spi/spi.h \
- ../src/asf/common/services/sleepmgr/sleepmgr.h \
- ../src/asf/common/services/sleepmgr/uc3/sleepmgr.h \
- ../src/config/conf_sleepmgr.h \
- ../src/asf/common/services/sleepmgr/uc3/sleepmgr.h \
- ../src/asf/avr32/drivers/twim/twim.h ../src/config/conf_twim.h \
- ../src/asf/avr32/drivers/usart/usart.h \
+ ../src/asf/avr32/drivers/spi/spi.h ../src/asf/avr32/drivers/twim/twim.h \
+ ../src/config/conf_twim.h ../src/asf/avr32/drivers/usart/usart.h \
  ../src/asf/avr32/utils/debug/print_funcs.h \
- ../src/asf/avr32/drivers/usbc/usbc_device.h \
- ../src/asf/avr32/drivers/usbc/usbc_otg.h \
- ../src/asf/common/services/usb/class/cdc/usb_protocol_cdc.h \
- ../src/asf/common/services/usb/class/cdc/device/udi_cdc.h \
- ../src/config/conf_usb.h \
- ../src/asf/common/services/usb/class/cdc/device/udi_cdc_conf.h \
- ../src/asf/common/utils/stdio/stdio_usb/stdio_usb.h \
- c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/stdio.h \
- c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/include/stdarg.h \
- c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/types.h \
- c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/machine/types.h \
- c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/features.h \
- c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/stdio.h \
- ../src/asf/common/services/usb/udc/udc.h \
- ../src/asf/common/services/usb/usb_protocol.h \
- ../src/asf/common/services/usb/usb_atmel.h \
- ../src/asf/common/services/usb/udc/udc_desc.h \
- ../src/asf/common/services/usb/udc/udi.h \
- ../src/asf/common/services/usb/udc/udd.h \
- ../src/asf/common/services/usb/udc/udd.h \
- ../src/asf/common/services/usb/udc/udc_desc.h \
- ../src/asf/common/services/usb/udc/udi.h \
  ../src/CustomDevices/CustomDevices.h ../src/CustomDevices/OV7670.h \
  ../src/CustomDevices/PCA9542A.h ../src/CustomDevices/MotorDriver.h \
  ../src/CustomDevices/SD_Card.h
@@ -346,14 +319,6 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 
 ../src/asf/avr32/drivers/spi/spi.h:
 
-../src/asf/common/services/sleepmgr/sleepmgr.h:
-
-../src/asf/common/services/sleepmgr/uc3/sleepmgr.h:
-
-../src/config/conf_sleepmgr.h:
-
-../src/asf/common/services/sleepmgr/uc3/sleepmgr.h:
-
 ../src/asf/avr32/drivers/twim/twim.h:
 
 ../src/config/conf_twim.h:
@@ -361,50 +326,6 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/asf/avr32/drivers/usart/usart.h:
 
 ../src/asf/avr32/utils/debug/print_funcs.h:
-
-../src/asf/avr32/drivers/usbc/usbc_device.h:
-
-../src/asf/avr32/drivers/usbc/usbc_otg.h:
-
-../src/asf/common/services/usb/class/cdc/usb_protocol_cdc.h:
-
-../src/asf/common/services/usb/class/cdc/device/udi_cdc.h:
-
-../src/config/conf_usb.h:
-
-../src/asf/common/services/usb/class/cdc/device/udi_cdc_conf.h:
-
-../src/asf/common/utils/stdio/stdio_usb/stdio_usb.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/stdio.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/include/stdarg.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/types.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/machine/types.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/features.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/stdio.h:
-
-../src/asf/common/services/usb/udc/udc.h:
-
-../src/asf/common/services/usb/usb_protocol.h:
-
-../src/asf/common/services/usb/usb_atmel.h:
-
-../src/asf/common/services/usb/udc/udc_desc.h:
-
-../src/asf/common/services/usb/udc/udi.h:
-
-../src/asf/common/services/usb/udc/udd.h:
-
-../src/asf/common/services/usb/udc/udd.h:
-
-../src/asf/common/services/usb/udc/udc_desc.h:
-
-../src/asf/common/services/usb/udc/udi.h:
 
 ../src/CustomDevices/CustomDevices.h:
 
