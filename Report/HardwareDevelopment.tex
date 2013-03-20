@@ -1,7 +1,7 @@
 %% ----------------------------------------------------------------
 %% Hardware Development.tex
 %% ---------------------------------------------------------------- 
-\chapter{Initial Hardware and Firmware Development} \label{Chapter:HardwareDevelopment}
+\chapter{Hardware and Firmware Development} \label{Chapter:HardwareDevelopment}
 For initial development, the \textit{Il Matto} board, designed by Steve Gunn, was used. The system has an ATMega644P clocked at 12MHz and has an on-board SD card socket. 
 
 The following section is broken down into the following parts:
@@ -9,7 +9,8 @@ The following section is broken down into the following parts:
 \item Camera Code
 \item SD Card
 %\item Motor Control
-\item Circuit and PCB Development
+\item Circuit Development
+\item PCB Development
 \end{enumerate}
 
 \section{Camera} \label{Section:Camera}
@@ -205,7 +206,7 @@ Where $A$ is the angle to rotate in degrees, $IPR$ is the number of interrupts g
 The motor speed can be controlled by Pulse Width Modulation (PWM). The code sets up a low duty cycle PWM signal to drive the motors slowly. This removes the need for a controller to ensure the correct distance was moved. 
 
 The final code can be seen in appendix \ref{Chapter:AppendixC:Code}
-\subsubsection{Testing}
+\subsubsection{Testing}\label{Section:MotorTest}
 \inote{Need to get the motors to work reasonably first}
 \subsubsection{Conclusion}
 \inote{It doesn't work}
@@ -222,12 +223,13 @@ Tracks were routed in order of priority, starting with the UC3C, SDRAM and camer
 
 Most of the passives used were 0603 size, but some 1206 capactitors were used for decoupling the voltage regulator and a 1206 diode was used for the analogue reference circuitry. LEDs were also 1206 size. All headers were 0.1'' spaced and a mini B USB socket was used. 
 
-The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and 0.1'' headers were added to connect the motors to. The optosensors were positioned such that they could be mounted directly on the PCB and be in the correct position to sense the wheels. Mounting holes were also added onto the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in table \ref{table:Components}
+The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and 0.1'' headers were added to connect the motors to. The optosensors were positioned such that they could be mounted directly on the PCB and be in the correct position to sense the wheels. Mounting holes were also added onto the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in table \ref{table:Costings}
 
 
 \begin{table}
-\begin{tabular}{|c|c|c|c|c|} \hline
-Component	&	Cost per unit (\pounds)	& Quantity 	&	Total Cost (\pounds)	&	Source		\\ \hline
+\centering
+\begin{tabular}{|c|p{2cm}|c|c|c|} \hline
+Component	&	Cost per unit (\pounds)	& Quantity 	&	Cost (\pounds)	&	Source		\\ \hline
 Capactiors	&	0.155 					& 	43		& 	6.67 					& 	Farnell 	\\
 Clock 		& 	1.48					& 	1		&	1.48 					& 	Farnell		\\
 Diode		&	0.48					&	1		&	0.48					&	Farnell 	\\
@@ -246,25 +248,104 @@ Resistors	&	0.066 					& 	46		&	3.04 					&	Farnell 	\\
 MT48LC4M16A2P	& 3.24  				& 	1		&	3.24 					&	Farnell		\\
 Switch		&	0.45					&	1		&	0.45					&	Farnell 	\\
 USB Socket	&	0.84 					&	1		& 	0.84 					&	Farnell 	\\
-LM1117MP	&	1.03					&	1		&	1.03	 				&	Farnell		\\ \hline
-			&							&	Total Cost & 82.84					&				\\ \hline
+LM1117MP	&	1.03					&	1		&	1.03	 				&	Farnell		\\ \hline \cline{3-4}
+\multicolumn{2}{c|}{ }					& Total Cost  & \pounds 82.84			&	\multicolumn{1}{|c}{ }			\\ \cline{3-4}
 \end{tabular}
+\caption{A table of all components used and their costs.}
+\label{table:Costings}
 \end{table}
 
-Finally, the name ``The Columbus'' was decided on as the original application for the project was a mapping robot that would search out an unknown area, so the robot was named after Christopher Columbus who explored and navigated parts of the American continents which were unknown at the time. 
-\inote{Component / Costing List}
+Finally, the name ``The Columbus'' was decided on as the original application for the project was a mapping robot that would search out an unknown area, so the robot was named after Christopher Columbus who explored and navigated parts of the American continents which were unknown at the time. The Eagle CAD Diagram of the PCB can be seen in Appendix \ref{Appendix:PCB}. The PCB was manufactured by \cite{PCBCart}. The PCB cost \pounds 205 to manufacture and ship. A photo of the PCB can be seen in figure \ref{fig:PCB:Bare}. 
+
+\begin{figure}
+\includegraphics[width=\textwidth]{./Figures/PCB_Bare.jpg}
+\caption{PCB with no components. Left: Top View. Right: Bottom View}
+\label{fig:PCB:Bare}
+\end{figure}
 
 \inote{Considerations - Power consumption of devices not exceeding VReg}
 
 \subsection{PCB Testing}
-\inote{Building}
-\inote{How I tested}
-\inote{Problems I found}
-\inote{Solutions to the Problems}
-\inote{Current Consumption?}
-\subsection{PCB Amendments and Conclusion}
+A program was written to test all the devices on the PCB. The following tests are done:
+\begin{enumerate}
+\item UART Send and Receive
+\item SD Card Test
+\item All LEDs on and off
+\item SDRAM Test
+\item \itc Test
+\item Camera Test
+\item Motor Test
+\end{enumerate}
+The folowing sections explain the tests done to check the devices and protocols worked.
+
+\subsubsection{UART Test}
+When the test program begins, the microcontroller waits for a character input. All characters are echoed back. This enables the user to check the communications work. Once a carriage return key is received ($13_{10}$), the test program continues. Listing \ref{lst:UARTTestCode} shows the test code for the UART protocol.
+
+\lstinputlisting[style=C,caption=UART Test Code,label={lst:UARTTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=110,lastline=121]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+
+
+\subsubsection{SD Card Test}
+The Atmel Software Framework \citep{Atmel:ASF} provided drivers and code for SPI communications and use of a FAT32 File System. The code was configured to use the correct Chip Select pin for the SD Card and the correct SPI Bus was also configured. The test consists of initialising the memory, reading the capacity of the card and printing it to the user. 
+
+The AVR then proceeds to delete any previous log file, create a new log file and writes \textit{``Columbus Tester''} to it. The first 8 characters, which should be \textit{``Columbus''} are read back and checked.
+\lstinputlisting[style=C,caption=UART Test Code,label={lst:UARTTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=124,lastline=196]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+
+This exercises all basic File I/O functions, creating, reading and writing and checks them on the device.
+
+\subsubsection{LED Test}
+All LEDs are turned on for 1 second, and then turned off. The user should check this occurs. It verifies that all the LEDs are functional and correctly mounted. The Power LED should be on when power is supplied to the PCB. 
+
+\subsubsection{SDRAM Test}
+The SDRAM test consists of initialising the SDRAM, calculating the SDRAM Size, writing a unique test pattern to the whole memory, and then reading it back and checking it. The total number of errors are reported. 
+
+The test was adapted from an Example Application from the Atmel Software Framework \citep{Atmel:ASF}. The code can be seen in listing \ref{lst:SDRAMTestCode}. It consists of two \textit{for} loops. In the first, the iteration number is assigned to the memory location. The second loop reads back the data and checks it is correct. An int, \textit{noErrors}, is used to count errors. 
+
+\lstinputlisting[style=C,caption=SDRAM Test Code,label={lst:SDRAMTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=217,lastline=258]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+
+\subsubsection{\itc Test}
+The \itc test checks the bus for devices. It prints out a table showing the address of any devices that acknowledge a probe. A probe is a set up to write to the address. If a device exists on the line, it should Acknowledge \citep{Philips:I2C}. The test is done three times, with no channel selected on the \itc MUX, with channel 0 selected and with channel 1 selected. The two addresses expected at $21_{16}$ for the OV7670 Camera and $74_{16}$ for the \itc MUX. The camera should only acknowledge when the \itc MUX has the relevant channel selected. Listing \ref{lst:TWITestCode} shows the test code for the \itc bus and listing \ref{lst:TWITestCode} shows the result from the full bus scan with channel 0 selected. The cameras are both checked to exist.
+\lstinputlisting[style=C,caption=\itc Test Code,label={lst:TWITestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=268,lastline=315]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+
+\begin{lstlisting}[caption={Result of \itc bus scan with Channel 0 of the \itc MUX selected},label={lst:I2CTest}]
+Scanning Channel 0
+h 0 1 2 3 4 5 6 7 8 9 A B C D E F
+0 - - - - - - - - - - - - - - - -
+1 - - - - - - - - - - - - - - - -
+2 - A - - - - - - - - - - - - - -
+3 - - - - - - - - - - - - - - - -
+4 - - - - - - - - - - - - - - - -
+5 - - - - - - - - - - - - - - - -
+6 - - - - - - - - - - - - - - - -
+7 - - - - A - - - - - - - - - - -
+\end{lstlisting}
+
+\subsubsection{Camera Test}
+
+This test consists of initialising both cameras and checking it passes. Two photos are then taken and stored to the SD card. Success or Failure is displayed. Two images should exists on the SD card from the two cameras. Listing \ref{lst:CameraTestCode} shows the code to conduct this test.
+\lstinputlisting[style=C,caption=Camera Test Code,label={lst:CameraTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=316,lastline=338]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+
+\subsubsection{Motor Driver Test}
+An extensive test of the motor driver is discussed in section \ref{Section:MotorTest}. The test code in this application resets the motors so that they are aligned to a white tab on the wheel. This code can be seen in listing \ref{lst:MotorTestCode}. The robot should move no further than 2cm to reach a white tab and the motors should drive forward. This test is useful here to ensure the motors are connected the correct way around and that the potentiometers are set to an appropriate level.
+
+\lstinputlisting[style=C,caption=Motor Test Code,label={lst:MotorTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=339,lastline=346]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+
+\subsection{PCB Faults}
+During the build and test of the PCB, a number of faults were found. Each is explained and the solution for the problem given. 
+\subsubsection{SDRAM CS Problem}
+\subsubsection{SDRAM Resistor problem}
+\subsubsection{Camera Interrupt Problem}
+\subsubsection{Camera Bus Contention Problem}
+\subsubsection{Motor Driver Footprint incorrect}
 \inote{Rev B of the PCB / list of problems}
 \inote{Given more time, different}
 \inote{silk screen for components to avoid incorrect placement}
+\subsection{PCB Conclusions}
 \section{Conclusions}
 \inote{Overall Conclusions of the Hardware design}
+\begin{figure}
+\centering
+\subfigure[Top View of built PCB\label{fg:PCB:Top}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/PCB_Top.jpg} }
+\subfigure[Bottom View of built PCB\label{fg:PCB:Bottom}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/PCB_Bottom.jpg} }
+\caption{Pictures of the PCB built. SDRAM Chip Select problem patch can be seen in figure \ref{fg:PCB:Bottom}}.
+\label{fig:PCB:Built}
+\end{figure}

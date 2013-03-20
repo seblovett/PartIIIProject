@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  19 MAR 2013 22:32
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  20 MAR 2013 12:19
 entering extended mode
 **HardwareDevelopment.tex
 (E:\Uni\part3_project\Report\HardwareDevelopment.tex
@@ -15197,9 +15197,9 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-<write> ...ce `table:Components' on page \thepage 
+<write> ...ence `table:Costings' on page \thepage 
                                                   \space undefined\on@line .
-l.225 ...ocumented in table \ref{table:Components}
+l.225 ... documented in table \ref{table:Costings}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -15208,8 +15208,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `table:Components' on page  undefined on input line 22
-5.
+LaTeX Warning: Reference `table:Costings' on page  undefined on input line 225.
+
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 225--226
@@ -15253,18 +15253,6 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no Q in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no y in font nullfont!
 Missing character: There is no C in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -15278,20 +15266,14 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no ( in font nullfont!
 Missing character: There is no ) in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.230 ...rt &	Quantity	&	Cost per unit (\pounds)	&
-                                                  	Total Cost (\pounds)	&	So...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-Missing character: There is no T in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
+Missing character: There is no Q in font nullfont!
+Missing character: There is no u in font nullfont!
 Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no y in font nullfont!
 Missing character: There is no C in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -15325,15 +15307,6 @@ Missing character: There is no 6 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 6 in font nullfont!
 Missing character: There is no 7 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.231 Capactiors	&	0.155 & 43	& 6.67 &
-                                       Farnell \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no F in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -15347,24 +15320,10 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no k in font nullfont!
 Missing character: There is no 1 in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no H in font nullfont!
-Missing character: There is no z in font nullfont!
-Missing character: There is no 1 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no 8 in font nullfont!
 Missing character: There is no 1 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.232 Clock &	16MHz	& 1.48 & 1&
-                               	 1.48 & Farnell \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 4 in font nullfont!
@@ -15390,15 +15349,6 @@ Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no 8 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.233 Diode	&	0.48&	1&	0.48&
-                            	Farnell \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no F in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -15422,15 +15372,6 @@ Missing character: There is no 2 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 5 in font nullfont!
 Missing character: There is no 5 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.234 Headers	&	0.51 &	5&	2.55&
-                               	Farnell \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no F in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -15457,15 +15398,6 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 8 in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no 1 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.235 I2C Mux	& PCA9542A &	0.81&	1&
-                                   	0.81&	Farnell\\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 8 in font nullfont!
@@ -15491,15 +15423,6 @@ Missing character: There is no 1 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no 1 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.236 LEDs &	0.158 &	7	& 1.11 &
-                               	Farnell \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no F in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -15524,15 +15447,6 @@ Missing character: There is no 4 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 0 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.237 Micro SD Card &		4&	1&	4.00 &
-                                   	Amazon \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no A in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -15568,15 +15482,6 @@ Missing character: There is no 2 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 4 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.238 Micro SD Card Connector	& 2.04	&1& 2.04&
-                                              	Farnell\\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no F in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -15584,21 +15489,6 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no l in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
 Missing character: There is no A in font nullfont!
 Missing character: There is no T in font nullfont!
 Missing character: There is no 3 in font nullfont!
@@ -15618,15 +15508,6 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 3 in font nullfont!
 Missing character: There is no 9 in font nullfont!
 Missing character: There is no 1 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.239 Microcontroller	&AT32UC3C0512C	&15.39&	1	&
-                                                15.39&	Farnell\\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no 5 in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -15639,17 +15520,6 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no l in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
 Missing character: There is no T in font nullfont!
 Missing character: There is no B in font nullfont!
 Missing character: There is no 6 in font nullfont!
@@ -15664,15 +15534,6 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 7 in font nullfont!
 Missing character: There is no 2 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.240 Motor Driver &	TB6593FNG &	1.07 &2 &
-                                          	2.14 &	Farnell \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 1 in font nullfont!
@@ -15695,15 +15556,6 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no 2 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.241 Motors & &		0.42&	2&
-                          	0.84 &	Rapid \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 8 in font nullfont!
@@ -15713,16 +15565,6 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no d in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
 Missing character: There is no T in font nullfont!
 Missing character: There is no C in font nullfont!
 Missing character: There is no R in font nullfont!
@@ -15736,15 +15578,6 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 9 in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no 2 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.242 Optosensor	& TCRT1010	& 0.94 &	2	&
-                                         1.88 &	Farnell \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 8 in font nullfont!
@@ -15756,12 +15589,6 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no l in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
 Missing character: There is no O in font nullfont!
 Missing character: There is no V in font nullfont!
 Missing character: There is no 7 in font nullfont!
@@ -15771,15 +15598,6 @@ Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no 7 in font nullfont!
 Missing character: There is no 2 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.243 Camera & OV7670		&17&	2&
-                              	34.00	& \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 3 in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -15803,15 +15621,6 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no 3 in font nullfont!
 Missing character: There is no 2 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.244 Potentiometer	&&	0.43&	2&
-                               	0.86&	Farnell \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 8 in font nullfont!
@@ -15839,15 +15648,6 @@ Missing character: There is no 6 in font nullfont!
 Missing character: There is no 6 in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no 6 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.245 Resistors	&&	0.066 & 46 &
-                               	3.04 &	Farnell \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 3 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
@@ -15859,11 +15659,6 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no l in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no M in font nullfont!
 Missing character: There is no M in font nullfont!
 Missing character: There is no T in font nullfont!
 Missing character: There is no 4 in font nullfont!
@@ -15882,15 +15677,6 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no 1 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.246 SDRAM	& MT48LC4M16A2P	& 3.24  & 1 &
-                                         	3.24 &	Farnell\\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 3 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 2 in font nullfont!
@@ -15913,15 +15699,6 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no 5 in font nullfont!
 Missing character: There is no 1 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.247 Switch	&	&0.45	&1	&
-                         0.45	&Farnell \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 4 in font nullfont!
@@ -15947,15 +15724,6 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 8 in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no 1 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.248 USB Socket	&	&0.84 &	1	&
-                               0.84 &	Farnell \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 8 in font nullfont!
@@ -15967,22 +15735,6 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no l in font nullfont!
-Missing character: There is no V in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
 Missing character: There is no L in font nullfont!
 Missing character: There is no M in font nullfont!
 Missing character: There is no 1 in font nullfont!
@@ -15996,15 +15748,6 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 3 in font nullfont!
 Missing character: There is no 1 in font nullfont!
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.249 Voltage Regulator& 	LM1117MP&	1.03&	1	&
-                                             1.03	 &Farnell\\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
@@ -16016,6 +15759,71 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no l in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no 8 in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 8 in font nullfont!
+Missing character: There is no 4 in font nullfont!
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.253 \caption
+              {A table of all components used and their costs.}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no A in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no . in font nullfont!
 
 ! LaTeX Error: \begin{document} ended by \end{table}.
 
@@ -16023,14 +15831,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.252 \end{table}
+l.255 \end{table}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (33.88889pt too wide) in paragraph at lines 229--253
+Overfull \hbox (63.84995pt too wide) in paragraph at lines 230--256
 [][]
  []
 
@@ -16280,43 +16088,296 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no x in font nullfont!
 ! Undefined control sequence.
-l.255 \inote
-            {Component / Costing List}
+<write> ...erence `Appendix:PCB' on page \thepage 
+                                                  \space undefined\on@line .
+l.257 ...an be seen in Appendix \ref{Appendix:PCB}
+                                                  . The PCB was manufactured...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+LaTeX Warning: Reference `Appendix:PCB' on page  undefined on input line 257.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no P in font nullfont!
 Missing character: There is no C in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no [ in font nullfont!
+\citation{PCBCart}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.257 ...he PCB was manufactured by \cite{PCBCart}
+                                                  . The PCB cost \pounds 205...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `PCBCart' on page  undefined on input line 257.
+
+Missing character: There is no ] in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no m in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
+Missing character: There is no a in font nullfont!
 Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
 Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
 Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no L in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 254--256
+Overfull \hbox (20.0pt too wide) in paragraph at lines 257--258
 []
  []
 
+
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 257--258
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 257--258
+[]
+ []
+
+
+Overfull \hbox (6.94444pt too wide) in paragraph at lines 257--258
+\OT1/cmr/m/ui/10 $
+ []
+
+
+! LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259 \begin{figure}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 ! Undefined control sequence.
-l.257 \inote
+l.260 \includegraphics
+                      [width=\textwidth]{./Figures/PCB_Bare.jpg}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no = in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.260 \includegraphics[width=\textwidth]
+                                        {./Figures/PCB_Bare.jpg}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.260 \includegraphics[width=\textwidth]
+                                        {./Figures/PCB_Bare.jpg}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no ] in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no B in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.260 ...graphics[width=\textwidth]{./Figures/PCB_
+                                                  Bare.jpg}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.260 ...width=\textwidth]{./Figures/PCB_Bare.jpg}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.261 \caption
+              {PCB with no components}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 \end{figure}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.263 \end{figure}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.263 \end{figure}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (166.88948pt too wide) in paragraph at lines 260--264
+[]$[]\OML/cmm/m/it/10 are:jpg[][]$ 
+ []
+
+! Undefined control sequence.
+l.265 \inote
             {Considerations - Power consumption of devices not exceeding VReg}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16381,12 +16442,12 @@ Missing character: There is no R in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no g in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 257--258
+Overfull \hbox (20.0pt too wide) in paragraph at lines 265--266
 []
  []
 
 ! Undefined control sequence.
-l.259 \subsection
+l.267 \subsection
                  {PCB Testing}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16405,7 +16466,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
-l.260 \inote
+l.268 \inote
             {Building}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16422,7 +16483,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
-l.261 \inote
+l.269 \inote
             {How I tested}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16441,7 +16502,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.262 \inote
+l.270 \inote
             {Problems I found}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16464,7 +16525,7 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.263 \inote
+l.271 \inote
             {Solutions to the Problems}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16495,7 +16556,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.264 \inote
+l.272 \inote
             {Current Consumption?}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16523,7 +16584,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no ? in font nullfont!
 ! Undefined control sequence.
-l.265 \subsection
+l.273 \subsection
                  {PCB Amendments and Conclusion}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16558,7 +16619,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.266 \inote
+l.274 \inote
             {Rev B of the PCB / list of problems}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16594,7 +16655,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.267 \inote
+l.275 \inote
             {Given more time, different}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16626,7 +16687,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.268 \inote
+l.276 \inote
             {silk screen for components to avoid incorrect placement}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16683,7 +16744,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.269 \section
+l.277 \section
               {Conclusions}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16703,7 +16764,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.270 \inote
+l.278 \inote
             {Overall Conclusions of the Hardware design}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16756,11 +16817,11 @@ Missing character: There is no n in font nullfont!
 
  
 Here is how much of TeX's memory you used:
- 42 strings out of 494045
- 727 string characters out of 3145960
+ 44 strings out of 494045
+ 748 string characters out of 3145960
  71890 words of memory out of 3000000
- 3431 multiletter control sequences out of 15000+200000
+ 3433 multiletter control sequences out of 15000+200000
  4589 words of font info for 17 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 19i,8n,21p,1044b,213s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 19i,9n,21p,1044b,252s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

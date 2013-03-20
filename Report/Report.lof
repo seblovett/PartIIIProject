@@ -2,38 +2,45 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces The base of the robot\relax }}{1}{figure.caption.13}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces RGB565 pixel format\relax }}{8}{figure.caption.35}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Signals generated to control the OV7670 capture and read\relax }}{9}{figure.caption.36}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax }}{12}{figure.caption.41}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Prototype of Dual Camera operation.\relax }}{13}{figure.caption.46}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Circuit diagram of Optosensor\relax }}{15}{figure.caption.53}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Graph of Wheel Angle against the Voltage read by the AVR\relax }}{15}{figure.caption.54}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{17}{figure.caption.59}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{17}{figure.caption.59}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Side View of robot base showing dimensions of interest}}}{17}{figure.caption.59}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces RGB565 pixel format\relax }}{8}{figure.caption.36}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Signals generated to control the OV7670 capture and read\relax }}{9}{figure.caption.37}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax }}{12}{figure.caption.42}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Prototype of Dual Camera operation.\relax }}{13}{figure.caption.47}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Circuit diagram of Optosensor\relax }}{15}{figure.caption.54}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Graph of Wheel Angle against the Voltage read by the AVR\relax }}{15}{figure.caption.55}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{17}{figure.caption.60}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{17}{figure.caption.60}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Side View of robot base showing dimensions of interest}}}{17}{figure.caption.60}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces PCB with no components. Left: Top View. Right: Bottom View\relax }}{20}{figure.caption.72}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Pictures of the PCB built. SDRAM Chip Select problem patch can be seen in figure \ref {fg:PCB:Bottom}\relax }}{28}{figure.caption.323}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top View of built PCB}}}{28}{figure.caption.323}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bottom View of built PCB}}}{28}{figure.caption.323}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{21}{figure.caption.87}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{21}{figure.caption.87}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{21}{figure.caption.87}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{24}{figure.caption.97}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{24}{figure.caption.97}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{24}{figure.caption.97}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{24}{figure.caption.97}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{26}{figure.caption.107}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{29}{figure.caption.128}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{30}{figure.caption.131}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{38}{figure.caption.153}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{40}{figure.caption.156}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{41}{figure.caption.158}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces The Columbus Circuit Diagram Page 1\relax }}{42}{figure.caption.160}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces The Columbus Circuit Diagram Page 2\relax }}{43}{figure.caption.161}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces The Columbus Circuit Diagram Page 3\relax }}{44}{figure.caption.162}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces The Columbus Circuit Diagram Page 4\relax }}{45}{figure.caption.163}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces The Columbus Circuit Diagram Page 5\relax }}{46}{figure.caption.164}
-\contentsline {figure}{\numberline {B.8}{\ignorespaces The Columbus Circuit Diagram Page 6\relax }}{47}{figure.caption.165}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{29}{figure.caption.328}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{29}{figure.caption.328}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{29}{figure.caption.328}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{32}{figure.caption.338}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{32}{figure.caption.338}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{32}{figure.caption.338}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{32}{figure.caption.338}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{34}{figure.caption.348}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{37}{figure.caption.369}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{38}{figure.caption.372}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{46}{figure.caption.394}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{48}{figure.caption.397}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{49}{figure.caption.399}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces The Columbus Circuit Diagram Page 1\relax }}{50}{figure.caption.401}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces The Columbus Circuit Diagram Page 2\relax }}{51}{figure.caption.402}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces The Columbus Circuit Diagram Page 3\relax }}{52}{figure.caption.403}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces The Columbus Circuit Diagram Page 4\relax }}{53}{figure.caption.404}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces The Columbus Circuit Diagram Page 5\relax }}{54}{figure.caption.405}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces The Columbus Circuit Diagram Page 6\relax }}{55}{figure.caption.406}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {E.1}{\ignorespaces The Top side of the CAD Design of the PCB\relax }}{120}{figure.caption.3481}
+\contentsline {figure}{\numberline {E.2}{\ignorespaces The Bottom side of the CAD Design of the PCB\relax }}{121}{figure.caption.3483}

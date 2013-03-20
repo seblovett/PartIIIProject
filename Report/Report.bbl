@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{22}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -29,6 +29,10 @@
 \bibitem[{Atmel Corporation}(2012{\natexlab{d}})]{Atmel:A3BU}
 {Atmel Corporation}.
 \newblock {\em ATXMega256A3BU Datasheet}, 2012{\natexlab{d}}.
+
+\bibitem[Cart(2013)]{PCBCart}
+PCB Cart.
+\newblock \href{http://www.pcbcart.com/}{Pcb manufacturer}, 2013.
 
 \bibitem[{Electronic Lives Manufacturing}(2012)]{FATFS}
 {Electronic Lives Manufacturing}.
@@ -73,6 +77,10 @@ Jernej Mrovlje and Damir Vran\v{c}i\'{c}.
 OmniVision.
 \newblock {\em OmniVision Serial Camera Control Bus (SCCB) Functional
   Specification}, 2007.
+
+\bibitem[Philips(20012)]{Philips:I2C}
+Philips.
+\newblock {\em UM10204}, 20012.
 
 \bibitem[Phillips(2009)]{I2C_Mux}
 Phillips.

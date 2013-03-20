@@ -9,21 +9,24 @@ A level-1 auxiliary file: AppendixD.aux
 A level-1 auxiliary file: AppendixA.aux
 A level-1 auxiliary file: AppendixB.aux
 A level-1 auxiliary file: AppendixC.aux
+A level-1 auxiliary file: AppendixPCB.aux
 The style file: ecs.bst
 Database file #1: ECS.bib
+Warning--entry type for "PCBCart" isn't style-file defined
+--line 15 of file ECS.bib
 Warning--entry type for "Atmel:ASF" isn't style-file defined
---line 37 of file ECS.bib
+--line 53 of file ECS.bib
 Warning--entry type for "Atmel:UC3CEK" isn't style-file defined
---line 44 of file ECS.bib
+--line 60 of file ECS.bib
 Warning--entry type for "Farnell" isn't style-file defined
---line 79 of file ECS.bib
+--line 95 of file ECS.bib
 Warning--entry type for "DistanceEstimation" isn't style-file defined
---line 116 of file ECS.bib
+--line 132 of file ECS.bib
 Warning--entry type for "FATFS" isn't style-file defined
---line 160 of file ECS.bib
+--line 176 of file ECS.bib
 Warning--entry type for "ImageComparison" isn't style-file defined
---line 168 of file ECS.bib
+--line 184 of file ECS.bib
 Warning--entry type for "Tsai:NCC" isn't style-file defined
---line 193 of file ECS.bib
+--line 209 of file ECS.bib
 Warning--I didn't find a database entry for "NEEDED"
-(There were 8 warnings)
+(There were 9 warnings)
