@@ -6,12 +6,13 @@
 \contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available (\cite {ImageComparison})\relax }}{11}{table.caption.41}
 \contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega644P for Dual Camera Operation.\relax }}{13}{table.caption.44}
 \contentsline {table}{\numberline {3.3}{\ignorespaces A table of all components used and their costs.\relax }}{19}{table.caption.71}
+\contentsline {table}{\numberline {3.4}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{28}{table.caption.317}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {C.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{57}{table.409}
+\contentsline {table}{\numberline {C.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{61}{table.410}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

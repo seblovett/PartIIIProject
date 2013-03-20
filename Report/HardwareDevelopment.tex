@@ -288,7 +288,7 @@ When the test program begins, the microcontroller waits for a character input. A
 The Atmel Software Framework \citep{Atmel:ASF} provided drivers and code for SPI communications and use of a FAT32 File System. The code was configured to use the correct Chip Select pin for the SD Card and the correct SPI Bus was also configured. The test consists of initialising the memory, reading the capacity of the card and printing it to the user. 
 
 The AVR then proceeds to delete any previous log file, create a new log file and writes \textit{``Columbus Tester''} to it. The first 8 characters, which should be \textit{``Columbus''} are read back and checked.
-\lstinputlisting[style=C,caption=UART Test Code,label={lst:UARTTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=124,lastline=196]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+\lstinputlisting[style=C,caption=UART Test Code,label={lst:SDTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=124,lastline=196]{../Code/ColumbusTest/ColumbusTest/src/main.c}
 
 This exercises all basic File I/O functions, creating, reading and writing and checks them on the device.
 
@@ -331,21 +331,86 @@ An extensive test of the motor driver is discussed in section \ref{Section:Motor
 
 \subsection{PCB Faults}
 During the build and test of the PCB, a number of faults were found. Each is explained and the solution for the problem given. 
-\subsubsection{SDRAM CS Problem}
-\subsubsection{SDRAM Resistor problem}
-\subsubsection{Camera Interrupt Problem}
-\subsubsection{Camera Bus Contention Problem}
-\subsubsection{Motor Driver Footprint incorrect}
-\inote{Rev B of the PCB / list of problems}
-\inote{Given more time, different}
-\inote{silk screen for components to avoid incorrect placement}
+\subsubsection{SDRAM Footprint}
+The SDRAM footprint made was done exactly to the specification of the pad size and locations with no consideration for soldering to. This meant the chip fit exactly on to the footprint. This made soldering difficult as pads had to be preloaded with solder and the device's pins were heated and bound to the solder. The chip does not seat flat against the PCB. It also put the device at risk as more heat had to be used that usually necessary. Figure \ref{fig:SDRAM_Err} shows the SDRAM chip against the footprint. There is no extra space on the pad to be able to easily solder the device.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth / 2]{./Figures/PCB_SDRAM.jpg}
+\caption{SDRAM Chip shown against its footprint.}
+\label{fig:SDRAM_Err}
+\end{figure}
+
+To avoid this, existing footprints could be used from other libraries, or double checking the footprints made. The problem meant extra care during soldering had to be taken but has not impeded the operation of the device. 
+
+\subsubsection{SDRAM Chip Select}
+The code was prototyped on the Atmel UC3C-EK development board prior to the PCB arriving. When the PCB was built, the code did not work, even with the Chip Select declaration changed. To diagnose this problem, the control lines of the SDRAM were probed with a logic analyser. On the UC3C-EK, the bus was busy with refresh cycles outside of SDRAM access. On the Columbus, no activity was seen. 
+
+The reason the correct control wasn't being seen was due to the UC3C device having a dedicated SDRAM controller, attached to only Chip Select line 1. The Columbus was designed to used chip select line 0. Chip select 1 was available on an external pin, and a via through the routing was close to a via connected to the SDRAM chip select line. Therefore, to overcome the problem, a small enameled wire was soldered to join the two vias together. This solved the problem and the correct signals were then seen on the control lines. The patch can be seen in figure \ref{fig:PCB:Bottom}. 
+
+This fault was caused by not reading the datasheet carefully and ignoring a proven circuit diagram. 
+
+\subsubsection{SDRAM Data Line Resistors}
+Once the chip select problem was solved, data returned was unreliable. The SDRAM is word (32 bit) addressed, but accessed in 16 bits. This means read cycles are done per word read. 
+Upon investigation of this problem, the 14th, 15th, 30th and 31st (top two bits of each 16 bit access) seemed to read as a 1 the majority of the time. This result wasn't repeatable and sometimes returned correct data. The other bits of the data were always correct. Table \ref{table:SDRAM_Err} shows some examples of the problematic data bits. The data written should match the data read back. 
+
+\begin{table}[!ht]
+\caption{A table showing examples of the incorrect data returned from the SDRAM}
+\label{table:SDRAM_Err}
+\begin{tabular}{c c}
+Data Written							&	Data Read \\
+00000000 00000000 00000000 00000000		&	\textcolor{red}{11}000000 00000000 \textcolor{red}{11}000000 00000000 \\
+00001111 00001111 00001111 00001111		&	\textcolor{red}{11}001111 00001111 \textcolor{red}{11}001111 00001111 \\
+\end{tabular}
+\end{table}
+
+The problem was traced to resistors \textbf{R31} and \textbf{R32}. They were soldered on incorrectly so that the two data lines of the SDRAM were connected together and the two AVR GPIO pins were connected together. Data was then read back from, effectively, a high impedance line and therefore varied. Once the resistors were soldered correctly, the issue no longer persisted and the whole SDRAM test passed. By utilising the soldermask more, device orientations could be added to ensure correct placement. This can be extended to other devices, such as diodes and capacitors, especially in densely populated areas. 
+
+\subsubsection{Camera Interrupt Line}
+
+As discussed in section \ref{Section:Camera}, the OV7670 needs an interrupt line to synchronise quickly to the start of the frame and is done by using an interrupt line. The UC3C0512C has 9 external interrupt lines. On the PCB, interrupt lines 0 and 1 were used for this control.
+
+Interrupt line 1 was easily configured and worked as expected. However, interrupt 0 did not seem to trigger the interrupt service routine. It was found that interrupt 0 was a ``Non Maskable Interrupt'' which has specific uses and cannot be used in to trigger a method. 
+
+The external interrupt 4 pin was wired to Junction 8 on the PCB. A wire was attached to the camera's VSYNC line and attached to the relevant pin on the header. The operation was then easily obtained and the VSYNC line triggered correctly.
+
+This issues would have been avoided with more understanding of the device before hand and checking the datasheet.
+
+
+\subsubsection{Motor Driver Pinout}
+
+An error was made in creating the device for the TB6593FNG Motor Driver in EAGLE. On the device, each motor output has two pins to drive each side of the motor. The pin assignment was mixed up when created and connected the two outputs together. Figure \ref{fig:Motor:Error} shows the track errors on one of the motor drivers. 
+
+\begin{figure}
+\centering
+\includegraphics[width = \textwidth /2]{./Figures/MotorDriver_error.png}
+\caption{Motor Driver error. Outputs incorrectly connected}
+\label{fig:Motor:Error}
+\end{figure}
+
+To solve this, pins 7 and 14 were lifted and removed so that output 1 and output 2 were not connected together. The devices were not damaged in the process of testing this and the motors functioned correctly after this. Double checking the footprints made against the datasheet would have avoided this problem. No impedance to the operation of the drivers has been seen, but the patch may hinder the devices ability to sink current to the motors. 
+
 \subsection{PCB Conclusions}
+A number of faults were made in the PCB design. They are:
+\begin{itemize}
+\item SDRAM footprint
+\item SDRAM chip select line
+\item SDRAM data line resistors
+\item Camera interrupt line
+\item Motor driver pinout
+\end{itemize}
+Three of the faults could have been avoided by consulting the datasheet more carefully during the circuit design stage. The footprint error was due to not being experienced in designing footprints and the data line resistors was a mistake due to lack of attention being paid. 
+
+For future PCBs, more care will be taken in circuit design, with prototyping of circuits with the hardware that will be used. This will highlight any pin specific operations (e.g. the non maskable interrupt) and reduce debugging post production. The effectiveness of a soldermask is also apparent, so more time spent on utilising this would be helpful during assembly.
+
+The PCB itself, was a success. It was a complex PCB with many potential things that could have gone wrong. It was the first PCB I had designed and was a four layer board, using some devices that I did not have experience with. All devices are functional (with a few small modifications) on the PCB so firmware development could continue with all hardware able to be used.
+
 \section{Conclusions}
 \inote{Overall Conclusions of the Hardware design}
 \begin{figure}
 \centering
-\subfigure[Top View of built PCB\label{fg:PCB:Top}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/PCB_Top.jpg} }
-\subfigure[Bottom View of built PCB\label{fg:PCB:Bottom}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/PCB_Bottom.jpg} }
-\caption{Pictures of the PCB built. SDRAM Chip Select problem patch can be seen in figure \ref{fg:PCB:Bottom}}.
+\subfigure[Top view of built PCB\label{fig:PCB:Top}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/PCB_Top.jpg} }
+\subfigure[Bottom view of built PCB with SDRAM chip select patch \label{fig:PCB:Bottom}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/PCB_Bottom.jpg} }
+\caption{Pictures of the built PCB.}
 \label{fig:PCB:Built}
 \end{figure}
