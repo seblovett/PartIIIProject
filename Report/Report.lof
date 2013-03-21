@@ -21,28 +21,28 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{33}{figure.caption.325}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{33}{figure.caption.325}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{33}{figure.caption.325}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{36}{figure.caption.335}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{36}{figure.caption.335}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{36}{figure.caption.335}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{36}{figure.caption.335}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{38}{figure.caption.345}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{41}{figure.caption.366}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{42}{figure.caption.369}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{36}{figure.caption.336}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{36}{figure.caption.336}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{36}{figure.caption.336}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{36}{figure.caption.336}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{38}{figure.caption.346}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{41}{figure.caption.367}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{42}{figure.caption.370}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{50}{figure.caption.391}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{50}{figure.caption.415}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{52}{figure.caption.394}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{53}{figure.caption.396}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces The Columbus Circuit Diagram Page 1\relax }}{54}{figure.caption.398}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces The Columbus Circuit Diagram Page 2\relax }}{55}{figure.caption.399}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces The Columbus Circuit Diagram Page 3\relax }}{56}{figure.caption.400}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces The Columbus Circuit Diagram Page 4\relax }}{57}{figure.caption.401}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces The Columbus Circuit Diagram Page 5\relax }}{58}{figure.caption.402}
-\contentsline {figure}{\numberline {B.8}{\ignorespaces The Columbus Circuit Diagram Page 6\relax }}{59}{figure.caption.403}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{52}{figure.caption.418}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{53}{figure.caption.420}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces The Columbus Circuit Diagram Page 1\relax }}{54}{figure.caption.422}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces The Columbus Circuit Diagram Page 2\relax }}{55}{figure.caption.423}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces The Columbus Circuit Diagram Page 3\relax }}{56}{figure.caption.424}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces The Columbus Circuit Diagram Page 4\relax }}{57}{figure.caption.425}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces The Columbus Circuit Diagram Page 5\relax }}{58}{figure.caption.426}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces The Columbus Circuit Diagram Page 6\relax }}{59}{figure.caption.427}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {E.1}{\ignorespaces The Top side of the CAD Design of the PCB\relax }}{124}{figure.caption.3478}
-\contentsline {figure}{\numberline {E.2}{\ignorespaces The Bottom side of the CAD Design of the PCB\relax }}{125}{figure.caption.3480}
+\contentsline {figure}{\numberline {E.1}{\ignorespaces The Top side of the CAD Design of the PCB\relax }}{124}{figure.caption.3502}
+\contentsline {figure}{\numberline {E.2}{\ignorespaces The Bottom side of the CAD Design of the PCB\relax }}{125}{figure.caption.3504}

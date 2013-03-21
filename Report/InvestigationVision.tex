@@ -43,7 +43,7 @@ This is very similar to S.A.D. but adds more complexity by squaring each differe
 %\chi ^{2} = \sum\limits_{i=0}^{I-1} \sum\limits_{j=0}^{J-1}\frac{(A[i,j] - B[i,j])^2}{(A[i,j]+B[i,j])/2}
 %\end{equation}
 
-
+\inote{test effect of box size?}
 \subsection{NCC}
 \begin{equation}\label{eq:NCC}
 NCC =  \frac{1}{n}\sum\limits_{i,j} \frac{(A[i,j] - \bar{A}).(B[i,j] - \bar{B})}{\sigma _A . \sigma _B}
@@ -242,11 +242,38 @@ When the images have been matched, these equations can be used to calculate the 
 
 
 \section{Fourier Transform}
-\subsection{Background Research and Uses}
-\subsection{Fast Fourier Transform}
-\subsection{Implementing the FFT in C}
-\subsection{Testing of the FFT on AVR}
+\subsection{Background Research and the FFT}
+The Fourier Transform is a common tool in signal processing. It transforms a time based signal to the frequency domain showing the frequency components contained in the signal as a complex number, which is often displayed as magnitude and phase.
 
+A property of the Fourier Transform of interest is the convolution theorem which states that convolution in time is multiplication in frequency \ref{eq:ConvolutionMultiplication}. 
+\inote{Define the Fourier Transform}
+\inote{Uses of FT in signal processing}
+\inote{Definition of DFT and theory of FFT}
+\inote{Why this is relevant to my project - what am I using it for?}
+\begin{equation}\label{eq:ConvolutionMultiplication}
+\int\limits_{-\infty}^{\infty}f(t)g(t-\tau)d\tau = f(t) \ast g(t) = X(f)\cdot Y(f)
+\end{equation}
+\inote{example of convolution used as autocorrelation. Include some pretty graphs}
+\subsection{Two Dimensional Fast Fourier Transform}
+\inote{Definition}
+\inote{Examples}
+\inote{2D FFT and restrictions}
+\inote{Maybe make a figure to help explain?}
+\subsection{Implementing the FFT in C}
+\inote{Include and explain code}
+\subsection{Testing of the FFT on AVR}
+\inote{Show results of some test signals}
+\inote{Need to implement grey scaling method before being able to do this}
+\inote{Show results of actual photo being transformed}
+\inote{Compare to MATLAB results}
 \section{Low Level Vision Algorithms}
 \subsection{Noise Reduction}
+\inote{Why}
+\inote{Theory}
+\inote{Examples}
+\inote{Does it improve the reliability of matching?}
 \subsection{Edge Detection}
+\inote{Why}
+\inote{Theory}
+\inote{Examples}
+\inote{Does it improve the reliability of matching?}
