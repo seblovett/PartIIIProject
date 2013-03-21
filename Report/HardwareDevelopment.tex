@@ -2,15 +2,15 @@
 %% Hardware Development.tex
 %% ---------------------------------------------------------------- 
 \chapter{Hardware and Firmware Development} \label{Chapter:HardwareDevelopment}
-For initial development, the \textit{Il Matto} board, designed by Steve Gunn, was used. The system has an ATMega644P clocked at 12MHz and has an on-board SD card socket. 
+For initial development, the \textit{Il Matto} board, designed by Steve Gunn, was used. The system has an ATMega644P clocked at 12MHz and has an on-board SD card socket. This provided the ability to prototype circuits which are then used to create a Printed Circuit Board 
 
 The following section is broken down into the following parts:
 \begin{enumerate}
-\item Camera Code
-\item SD Card
+\item[\ref{Section:Camera}] Camera Code
+\item[\ref{sect:SDCard}] SD Card
 %\item Motor Control
-\item Circuit Development
-\item PCB Development
+\item[\ref{Section:Circuit_Dev}] Circuit Development
+\item[\ref{Section:PCB_Dev}] PCB Development
 \end{enumerate}
 
 \section{Camera} \label{Section:Camera}
@@ -127,7 +127,7 @@ The ATMega 664P pinout for the dual camera operation can be seen in table \ref{t
 \end{table}
 %\section{Motor Control}
 %\inote{do something of this SOON}
-\section{Circuit Development}
+\section{Circuit Development} \label{Section:Circuit_Dev}
 \subsection{Stereo Camera Development}
 Figure \ref{sch:DualCam_Schematic} shows the circuit diagram for the prototype. This uses the Il Matto development board for the main microcontroller. The prototype can be seen in figure \ref{fig:Prototype}. This circuit captured and stored two images from the cameras to the SD card. 
 \begin{figure}
@@ -211,9 +211,9 @@ The final code can be seen in appendix \ref{Chapter:AppendixC:Code}
 \subsubsection{Conclusion}
 \inote{It doesn't work}
 
-\section{PCB Development}
+\section{PCB Development}\label{Section:PCB_Dev}
 \subsection{Circuit Design}
-The circuit diagram for Revision A can be seen in section \ref{sch:Columbus:CircuitDiagram}. The schematic for the SDRAM and values and locations of decoupling capacitors were taken from the schematic of the UC3C-EK development board \citep{Atmel:UC3CEK}. 
+The circuit diagram for Revision A can be seen in section \ref{sch:Columbus:CircuitDiagram}. The schematic for the SDRAM and values and locations of decoupling capacitors were used from the schematic of the UC3C-EK development board \citep{Atmel:UC3CEK}. 
 \subsection{PCB Design}
 The PCB was designed using EAGLE CAD Software. A four layer board was decided to be used to save space when routing Power. Layer 2 is a 3V3 plane and layer 3 is a ground plane. A ground plane is also on the top and bottom layers to help eliminate any ground bounce that could occur. 
 
