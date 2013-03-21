@@ -1,18 +1,18 @@
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces A list of risks and the prevention steps taken to reduce their impact\relax }}{2}{table.caption.15}
+\contentsline {table}{\numberline {1.1}{\ignorespaces A list of risks and the prevention steps taken to reduce their impact\relax }}{2}{table.caption.16}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison Table of some common microcontrollers. Data of microcontrollers taken from \cite {Atmel:UC3C}, \cite {Atmel:644P}, \cite {Atmel:A3BU} and \cite {ARM:Stellaris}. Costings from \cite {Farnell}\relax }}{5}{table.caption.23}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison Table of some common microcontrollers. Data of microcontrollers taken from \cite {Atmel:UC3C}, \cite {Atmel:644P}, \cite {Atmel:A3BU} and \cite {ARM:Stellaris}. Costings from \cite {Farnell}\relax }}{5}{table.caption.24}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available (\cite {ImageComparison})\relax }}{11}{table.caption.37}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega644P for Dual Camera Operation.\relax }}{13}{table.caption.40}
-\contentsline {table}{\numberline {3.3}{\ignorespaces A table of all components used and their costs.\relax }}{19}{table.caption.67}
-\contentsline {table}{\numberline {3.4}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{28}{table.caption.313}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available (\cite {ImageComparison})\relax }}{11}{table.caption.38}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega644P for Dual Camera Operation.\relax }}{13}{table.caption.41}
+\contentsline {table}{\numberline {3.3}{\ignorespaces A table of all components used and their costs.\relax }}{19}{table.caption.68}
+\contentsline {table}{\numberline {3.4}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{28}{table.caption.315}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {C.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{61}{table.430}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {C.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{63}{table.441}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

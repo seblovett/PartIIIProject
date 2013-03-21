@@ -329,7 +329,7 @@ An extensive test of the motor driver is discussed in section \ref{Section:Motor
 
 \lstinputlisting[style=C,caption=Motor Test Code,label={lst:MotorTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=339,lastline=346]{../Code/ColumbusTest/ColumbusTest/src/main.c}
 
-\subsection{PCB Faults}
+\subsection{PCB Faults}\inote{TCRT1010 Footprint}
 During the build and test of the PCB, a number of faults were found. Each is explained and the solution for the problem given. 
 \subsubsection{SDRAM Footprint}
 The SDRAM footprint made was done exactly to the specification of the pad size and locations with no consideration for soldering to. This meant the chip fit exactly on to the footprint. This made soldering difficult as pads had to be preloaded with solder and the device's pins were heated and bound to the solder. The chip does not seat flat against the PCB. It also put the device at risk as more heat had to be used that usually necessary. Figure \ref{fig:SDRAM_Err} shows the SDRAM chip against the footprint. There is no extra space on the pad to be able to easily solder the device.

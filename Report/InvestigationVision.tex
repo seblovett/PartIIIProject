@@ -3,7 +3,7 @@
 %% ---------------------------------------------------------------- 
 \chapter{Investigation into Vision Algorithms} \label{Chapter:InvestigationVision}
 
-\section{Comparison}
+\section{Matching Algorithms}\label{Section:Comparison}
 %\inote{find some references to back these claims up}
 %\inote{Talk about how to compare images and TEST them all. Make a final comparison to decide on which will be used}
 In computer vision, there are many different ways of comparing two similar images. These include the sum of absolute differences (S.A.D.) (\cite{Hamzah:DistanceDetection}), the sum of squared differences (S.S.D.)(\cite{Mrovlje:Distance_Stereoscopic}) and  normalised cross correlation (N.C.C.)(\cite{zhao2006image}). Each of these methods will be explained and tested to compare them. All testing will use images seen in figure \ref{fig:StereoTest}. Each test uses the same size window ($50\times50$) to compare the two images. 
@@ -19,7 +19,7 @@ In computer vision, there are many different ways of comparing two similar image
 
 %Explanation of how they work
 %\inote{Maybe do a basic 5x5 example for each?}
-\subsection{Sum of Absolute Differences}
+\subsection{Sum of Absolute Differences}\label{Section:SAD}
 
 Given two identically sized two dimensional matrices, $A, B$, of dimensions $I,J$, SAD is defined as
 \begin{equation} \label{eq:SAD}
@@ -28,7 +28,7 @@ SAD = \sum\limits_{i=0}^{I-1} \sum\limits_{j=0}^{J-1} A[i,j] - B[i,j]
 
 This method subtracts the observed window from the expected. All differences are then added together. This algorithm is simple and requires a small amount of computation. The algorithm returns values where a small result means the two images are well matched.
 
-\subsection{Sum of Squared Differences}
+\subsection{Sum of Squared Differences}\label{Section:SSD}
 \begin{equation}\label{eq:SSD}
 SSD = \sum\limits_{i=0}^{I-1} \sum\limits_{j=0}^{J-1} (A[i,j] - B[i,j] )^2
 \end{equation}
@@ -44,7 +44,7 @@ This is very similar to S.A.D. but adds more complexity by squaring each differe
 %\end{equation}
 
 \inote{test effect of box size?}
-\subsection{NCC}
+\subsection{NCC}\label{Section:NCC}
 \begin{equation}\label{eq:NCC}
 NCC =  \frac{1}{n}\sum\limits_{i,j} \frac{(A[i,j] - \bar{A}).(B[i,j] - \bar{B})}{\sigma _A . \sigma _B}
 \end{equation}
@@ -85,8 +85,6 @@ The NCC results are visible in figure \ref{fg:Results:NCC}. A match can be seen 
 It can be seen that there is a direct correlation between the complexity of the matching algorithm to the reliability of the match returned. In brightly lit, colourful environments absent of dark colours, SAD and SSD should provide a reliable result, but this cannot be guaranteed to always be the case. Therefore further development of the matching algorithm will start with using the normalised cross correlation. A comprise between complexity and reliability needs to be reached, where reliability is the more desirable of the two. Cross correlation is also a large area of research, so optimised algorithms do exist.
 
 \section{Range Finding}
-%\inote{Derive the range finding equations and test them}
-
 \subsection{Derivations}
 
 By using two images separated by a horizontal distance, $B$, the range of an object can be found given some characteristics of the camera. The following are derivations of the equations used to calculate distance. 
@@ -243,19 +241,55 @@ When the images have been matched, these equations can be used to calculate the 
 
 \section{Fourier Transform}
 \subsection{Background Research and the FFT}
-The Fourier Transform is a common tool in signal processing. It transforms a time based signal to the frequency domain showing the frequency components contained in the signal as a complex number, which is often displayed as magnitude and phase.
+The Fourier Transform is a common tool in signal processing. It transforms a time based signal to the frequency domain showing the frequency components contained in the signal as a complex number, which is often displayed as magnitude and phase. The Fourier Transform is defined in equation \eqref{eq:fourier} and two examples of signals and their Fourier Transforms are shown in figures \ref{fig:DiracFunctionFT} and \ref{fig:SquareWaveFT}. 
+ 
+\begin{equation}\label{eq:fourier}
+X(f) = \int\limits_{-\infty}^{\infty}x(t)e^{-\jmath 2 \pi ft}dt
+\end{equation}
 
-A property of the Fourier Transform of interest is the convolution theorem which states that convolution in time is multiplication in frequency \ref{eq:ConvolutionMultiplication}. 
-\inote{Define the Fourier Transform}
+\begin{figure}
+\centering
+\subfigure[A graph showing a Dirac Function\label{fg:Dirac:T}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/dirac.jpg} }
+\subfigure[A graph showing the Fourier Transform of the Dirac Function\label{fg:Dirac:F}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/diracft.jpg} }
+\caption{A common Fourier Transform pair: Dirac function and a flat frequency spectrum}
+\label{fig:DiracFunctionFT}
+\end{figure}
+
+\begin{figure}
+\centering
+\subfigure[A graph showing rectangular pulse\label{fg:Square:T}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/SquareWave.jpg} }
+\subfigure[A graph showing the Fourier Transform of the rectangular pulse\label{fg:Square:F}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/SincFunction.jpg} }
+\caption{A common Fourier Transform pair: a rectangular pulse and a sinc function}
+\label{fig:SquareWaveFT}
+\end{figure}
+
 \inote{Uses of FT in signal processing}
 \inote{Definition of DFT and theory of FFT}
-\inote{Why this is relevant to my project - what am I using it for?}
-\begin{equation}\label{eq:ConvolutionMultiplication}
-\int\limits_{-\infty}^{\infty}f(t)g(t-\tau)d\tau = f(t) \ast g(t) = X(f)\cdot Y(f)
+The equation for the Fourier transform in equation \eqref{eq:fourier} is for continuous time. A discrete Fourier transform (DFT) exists for finite, equally spaced samples. This is commonly used in digital systems and is defined in equation \eqref{eq:DFT}. There exists a Fast Fourier Transform (FFT) which gives exactly the same results as the DFT, but is optimised in terms of number of multiplications done. The FFT will be used in implementation due to availability of code and speed. 
+
+\begin{equation}\label{eq:DFT}
+X[k] = \sum\limits_{0}^{N-1}x[n]e^{-\jmath \Omega_0 kn}
 \end{equation}
-\inote{example of convolution used as autocorrelation. Include some pretty graphs}
+Where $\Omega_0$ is the sample frequency
+\inote{Why this is relevant to my project - what am I using it for?}
+A property of the Fourier Transform of interest is the convolution theorem which states that convolution in time is multiplication in frequency and is defined mathematically in equation \eqref{eq:ConvolutionMultiplication}. As discussed in section \ref{Section:NCC}, cross correlation is very similar to convolution. Convolution is defined in equation \eqref{eq:CrossCorrelation}. With images, $f(t)$ is a real signal, its conjugate is exactly the same, $f(t) \equiv f^*(t) \text{given that} f(t) \in \Re$. 
+
+
+\begin{equation}\label{eq:ConvolutionMultiplication}
+\int\limits_{-\infty}^{\infty}f(\tau)g(t-\tau)d\tau = f(t) \ast g(t) = X(f)\cdot Y(f)
+\end{equation}
+\begin{equation}\label{eq:CrossCorrelation}
+\int\limits_{-\infty}^{\infty}f^*(\tau)g(t+\tau)d\tau = f(t) \star g(t) = X(f)\cdot Y(f)
+\end{equation}
+
+\begin{equation}\label{eq:CCtoConv}
+f(t) \star g(t) = f(t) \ast g(-t) = F(f) \cdot G(-f)
+\end{equation}
+
+\inote{example of convolution used as correlation. Include some pretty graphs}
 \subsection{Two Dimensional Fast Fourier Transform}
 \inote{Definition}
+A two dimensional Fourier transform exists for analysing two dimensional signals, namely in this application, an image. 
 \inote{Examples}
 \inote{2D FFT and restrictions}
 \inote{Maybe make a figure to help explain?}
