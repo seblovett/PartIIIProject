@@ -1,8 +1,30 @@
 Contents: 
 
 Circuit Diagrams
+	-Project - Contains PCB CAD Designs for EAGLE v6.3
 Code
+	AnalogueComparator
+	ColumbusTest
+	DualCamera_UI
+	DualOV7670
+	FatFS
+	MotorDriver
+	OV7670+AVR+TFT-Jian
+	OV7670seblov
+	OV7670_FATFS
+	PhotoViewer
+	PORTAtoSPI
+	SDCard
+	SDTest
+	SerialToI2C
+	The_Columbus
 Documents
+	- Contains documents used often, papers, datasheets.
 Matlab
+	- Contains MATLAB files for simulation and protoyping of algorithms
 ProjectBrief
+	- Contains tex files and ProjectBrief
 Report
+	- Contains all LaTeX files for Interim Report and Final Report. PDF files included.
+	Figures
+		- Contains all figures used in the Report

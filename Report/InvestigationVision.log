@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  22 MAR 2013 17:46
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  22 MAR 2013 20:07
 entering extended mode
 **InvestigationVision.tex
 (E:\Uni\part3_project\Report\InvestigationVision.tex
@@ -13422,26 +13422,16 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 341--351
-[]
- []
-
-Missing character: There is no N in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no c in font nullfont!
@@ -13479,6 +13469,21 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no L in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -13757,7 +13762,7 @@ Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
 <write> ...ference `Section:NCC' on page \thepage 
                                                   \space undefined\on@line .
-l.352 ...od discussed in section \ref{Section:NCC}
+l.350 ...od discussed in section \ref{Section:NCC}
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13766,11 +13771,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `Section:NCC' on page  undefined on input line 352.
+LaTeX Warning: Reference `Section:NCC' on page  undefined on input line 350.
 
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.353 \inote
+l.351 \inote
             {Theory}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13785,7 +13790,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no y in font nullfont!
 ! Undefined control sequence.
-l.354 \inote
+l.352 \inote
             {Examples}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13802,7 +13807,7 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.355 \inote
+l.353 \inote
             {Does it improve the reliability of matching? Vary noise amount ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13880,7 +13885,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.356 \subsection
+l.354 \subsection
                  {Edge Detection}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13902,7 +13907,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.357 \inote
+l.355 \inote
             {Why}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13914,7 +13919,7 @@ Missing character: There is no W in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no y in font nullfont!
 ! Undefined control sequence.
-l.358 \inote
+l.356 \inote
             {Theory}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13929,7 +13934,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no y in font nullfont!
 ! Undefined control sequence.
-l.359 \inote
+l.357 \inote
             {Examples}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13946,7 +13951,7 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.360 \inote
+l.358 \inote
             {Does it improve the reliability of matching?}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have

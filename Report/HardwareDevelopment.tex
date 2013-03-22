@@ -17,7 +17,7 @@ The following section is broken down into the following parts:
 
 The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components needed and a 24MHz clock mounted. The schematic for the device can be seen in appendix \ref{Chapter:AppendixA:CircuitDiagrams}.
 
-Original code for the camera operation was given by Steve Gunn, which I used to gain the operation required. This code streamed continuous video to a TFT screen. The operation required was to take a single photo from the camera and store the data. 
+Original code for the camera operation was given by Steve Gunn, which was used to gain the operation required. This code streamed continuous video to a TFT screen. The operation required was to take a single photo from the camera and store the data. 
 
 \subsection{Single Camera Operation}
 
@@ -125,21 +125,23 @@ The ATMega 664P pinout for the dual camera operation can be seen in table \ref{t
 \caption{Pin Connections of the ATMega644P for Dual Camera Operation.}
 \label{table:644Pin}
 \end{table}
+
+The entire prototype for the dual camera operation can be seen in figure \ref{fig:Prototype}. This circuit was developed to test the cameras and is used to develop the PCB in section \ref{Section:PCB_Dev}. 
 %\section{Motor Control}
 %\inote{do something of this SOON}
-\section{Circuit Development} \label{Section:Circuit_Dev}
-\subsection{Stereo Camera Development}
-Figure \ref{sch:DualCam_Schematic} shows the circuit diagram for the prototype. This uses the Il Matto development board for the main microcontroller. The prototype can be seen in figure \ref{fig:Prototype}. This circuit captured and stored two images from the cameras to the SD card. 
+%\section{Circuit Development} \label{Section:Circuit_Dev}
+%\subsection{Stereo Camera Development}
+%Figure \ref{sch:DualCam_Schematic} shows the circuit diagram for the prototype. This uses the Il Matto development board for the main microcontroller. The prototype can be seen in figure \ref{fig:Prototype}. This circuit captured and stored two images from the cameras to the SD card. 
 \begin{figure}
 \includegraphics[width=\textwidth]{./Figures/Prototype.jpg}
 \caption{Prototype of Dual Camera operation.}
 \label{fig:Prototype}
 \end{figure}
-\subsection{Motor Driver Development}
+\section{Motor Driver Development}
 %\inote{Tachometers}
 %\inote{Derivation of equations used - Distance / Rotating}
 \inote{Testing of the Motor system - conclusion is likely to be that it is not a good method, need noise reduction}
-\subsubsection{Hardware}
+\subsection{Hardware}
 Tachometers are devices used to measure rotational speed of a shaft. Tachometers are most commonly found in bicycles where a small magnet is attached to the wheel and a sensor is attached to the frame. The sensor can then calculate the time period between rotations and therefore can calculate the speed (\citep{NEEDED}) \inote{Cite Needed}.
 
 Here, an optosensor, TCRT1010, is used to measure rotations of the wheel and used to be able to move a distance decided by the microcontroller. The TCRT1010 package contains an IR LED and a phototransistor \citep{Vishay:TCRT1010:Datasheet}. The schematic of a simple transistor amplifier used can be seen in figure \ref{Circuit:TCRT1010} and was taken from \cite{NEEDED}. 
@@ -164,7 +166,7 @@ The wheel's rubber absorbed the IR, so a high voltage was always seen at the col
 %\subsubsection{Derivations of Movement Calculations}
 %Two basic movements were decided to be implemented: Straight line and rotation. 
 
-\subsubsection{Firmware Development}
+\subsection{Firmware Development}
 
 As the voltage swing from the phototransistor does not reach 0V, the AVR cannot detect this as a logical 0. The internal ADC can be used to continually read the analogue voltage from the phototransistor and detect low points from this data. This method requires the processor to continually compare values and process the data. However, more control would be had over the noise in the data.
 
@@ -206,9 +208,9 @@ Where $A$ is the angle to rotate in degrees, $IPR$ is the number of interrupts g
 The motor speed can be controlled by Pulse Width Modulation (PWM). The code sets up a low duty cycle PWM signal to drive the motors slowly. This removes the need for a controller to ensure the correct distance was moved. 
 
 The final code can be seen in appendix \ref{Chapter:AppendixC:Code}
-\subsubsection{Testing}\label{Section:MotorTest}
+\subsection{Testing}\label{Section:MotorTest}
 \inote{Need to get the motors to work reasonably first}
-\subsubsection{Conclusion}
+\subsection{Conclusion}
 \inote{It doesn't work}
 
 \section{PCB Development}\label{Section:PCB_Dev}
@@ -223,37 +225,8 @@ Tracks were routed in order of priority, starting with the UC3C, SDRAM and camer
 
 Most of the passives used were 0603 size, but some 1206 capactitors were used for decoupling the voltage regulator and a 1206 diode was used for the analogue reference circuitry. LEDs were also 1206 size. All headers were 0.1'' spaced and a mini B USB socket was used. 
 
-The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and 0.1'' headers were added to connect the motors to. The optosensors were positioned such that they could be mounted directly on the PCB and be in the correct position to sense the wheels. Mounting holes were also added onto the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in table \ref{table:Costings}
+The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and 0.1'' headers were added to connect the motors to. The optosensors were positioned such that they could be mounted directly on the PCB and be in the correct position to sense the wheels. Mounting holes were also added onto the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in Appendix \ref{Appendix:Costings}
 
-
-\begin{table}
-\centering
-\begin{tabular}{|c|p{2cm}|c|c|c|} \hline
-Component	&	Cost per unit (\pounds)	& Quantity 	&	Cost (\pounds)	&	Source		\\ \hline
-Capactiors	&	0.155 					& 	43		& 	6.67 					& 	Farnell 	\\
-Clock 		& 	1.48					& 	1		&	1.48 					& 	Farnell		\\
-Diode		&	0.48					&	1		&	0.48					&	Farnell 	\\
-Headers		&	0.51 					&	5		&	2.55					&	Farnell 	\\
-I2C Mux PCA9542A &	0.81				&	1		&	0.81					&	Farnell		\\
-LEDs 		&	0.158					&	7		& 	1.11 					&	Farnell		\\
-Micro SD Card &	4						&	1		&	4.00 					&	Amazon 		\\
-Micro SD Card Connector & 2.04			&	1		&	2.04					&	Farnell		\\
-AT32UC3C0512C	&15.39					&	1		&	15.39					&	Farnell		\\
-TB6593FNG 	&	1.07 					&	2 		&	2.14 					&	Farnell 	\\
-Motors  	&	0.42					&	2		&	0.84				 	&	Rapid 		\\
-TCRT1010	& 	0.94 					&	2		&	1.88 					&	Farnell 	\\
-OV7670		&	17						&	2		&	34.00					& 				\\
-Potentiometer	&	0.43				&	2		&	0.86					&	Farnell 	\\
-Resistors	&	0.066 					& 	46		&	3.04 					&	Farnell 	\\
-MT48LC4M16A2P	& 3.24  				& 	1		&	3.24 					&	Farnell		\\
-Switch		&	0.45					&	1		&	0.45					&	Farnell 	\\
-USB Socket	&	0.84 					&	1		& 	0.84 					&	Farnell 	\\
-LM1117MP	&	1.03					&	1		&	1.03	 				&	Farnell		\\ \hline \cline{3-4}
-\multicolumn{2}{c|}{ }					& Total Cost  & \pounds 82.84			&	\multicolumn{1}{|c}{ }			\\ \cline{3-4}
-\end{tabular}
-\caption{A table of all components used and their costs.}
-\label{table:Costings}
-\end{table}
 
 Finally, the name ``The Columbus'' was decided on as the original application for the project was a mapping robot that would search out an unknown area, so the robot was named after Christopher Columbus who explored and navigated parts of the American continents which were unknown at the time. The Eagle CAD Diagram of the PCB can be seen in Appendix \ref{Appendix:PCB}. The PCB was manufactured by \cite{PCBCart}. The PCB cost \pounds 205 to manufacture and ship. A photo of the PCB can be seen in figure \ref{fig:PCB:Bare}. 
 
