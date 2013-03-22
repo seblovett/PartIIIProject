@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  22 MAR 2013 17:48
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  22 MAR 2013 19:52
 entering extended mode
 **Report.tex
 (E:\Uni\part3_project\Report\Report.tex
@@ -1420,26 +1420,26 @@ Overfull \hbox (3.91663pt too wide) in paragraph at lines 252--255
  [][] 
  []
 
-<./Figures/Square_1D_Sig.jpg, id=1342, 1446.40375pt x 590.205pt>
+<./Figures/Square_1D_Sig.jpg, id=1342, 1928.20375pt x 674.52pt>
 File: ./Figures/Square_1D_Sig.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_1D_Sig.jpg>
 Package pdftex.def Info: ./Figures/Square_1D_Sig.jpg used on input line 261.
-(pdftex.def)             Requested size: 417.47307pt x 170.34454pt.
+(pdftex.def)             Requested size: 417.47307pt x 146.0379pt.
 
-<./Figures/Square_1D_Mag.jpg, id=1343, 1446.40375pt x 582.175pt>
+<./Figures/Square_1D_Mag.jpg, id=1343, 1446.40375pt x 571.13374pt>
 File: ./Figures/Square_1D_Mag.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_1D_Mag.jpg>
 Package pdftex.def Info: ./Figures/Square_1D_Mag.jpg used on input line 262.
-(pdftex.def)             Requested size: 417.47307pt x 168.02693pt.
+(pdftex.def)             Requested size: 417.47307pt x 164.84021pt.
 
-<./Figures/Square_1D_Phase.jpg, id=1344, 1446.40375pt x 586.19pt>
+<./Figures/Square_1D_Phase.jpg, id=1344, 1446.40375pt x 594.22pt>
 File: ./Figures/Square_1D_Phase.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_1D_Phase.jpg>
 Package pdftex.def Info: ./Figures/Square_1D_Phase.jpg used on input line 263.
-(pdftex.def)             Requested size: 417.47307pt x 169.18573pt.
+(pdftex.def)             Requested size: 417.47307pt x 171.50334pt.
 
 Overfull \hbox (3.91663pt too wide) in paragraph at lines 261--264
  [][] 
@@ -1488,19 +1488,19 @@ File: ./Figures/Square_2D_Sig.jpg Graphic file (type jpg)
 Package pdftex.def Info: ./Figures/Square_2D_Sig.jpg used on input line 316.
 (pdftex.def)             Requested size: 284.52756pt x 284.52711pt.
 
-<./Figures/Square_2D_Abs.jpg, id=1391, 1446.40375pt x 571.13374pt>
+<./Figures/Square_2D_Abs.jpg, id=1391, 256.96pt x 256.96pt>
 File: ./Figures/Square_2D_Abs.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_2D_Abs.jpg>
 Package pdftex.def Info: ./Figures/Square_2D_Abs.jpg used on input line 317.
-(pdftex.def)             Requested size: 180.28378pt x 71.18239pt.
+(pdftex.def)             Requested size: 180.28378pt x 180.28638pt.
 
-<./Figures/Square_2D_Phase.jpg, id=1392, 1446.40375pt x 594.22pt>
+<./Figures/Square_2D_Phase.jpg, id=1392, 256.96pt x 256.96pt>
 File: ./Figures/Square_2D_Phase.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_2D_Phase.jpg>
 Package pdftex.def Info: ./Figures/Square_2D_Phase.jpg used on input line 318.
-(pdftex.def)             Requested size: 180.28378pt x 74.05971pt.
+(pdftex.def)             Requested size: 180.28378pt x 180.28638pt.
  [46] [47 <E:/Uni/part3_project/Report/Figures/Dirac_2D_Sig.jpg> <E:/Uni/part3_
 project/Report/Figures/Dirac_2D_Mag.jpg> <E:/Uni/part3_project/Report/Figures/D
 irac_2D_Phase.jpg>] [48 <E:/Uni/part3_project/Report/Figures/Square_2D_Sig.jpg>
@@ -2028,7 +2028,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 119.
 Here is how much of TeX's memory you used:
  27178 strings out of 494045
  443088 string characters out of 3145960
- 1340586 words of memory out of 3000000
+ 1340585 words of memory out of 3000000
  26165 multiletter control sequences out of 15000+200000
  14685 words of font info for 57 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
@@ -2057,7 +2057,7 @@ s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmu10.pfb>
-Output written on Report.pdf (153 pages, 21643156 bytes).
+Output written on Report.pdf (153 pages, 21571672 bytes).
 PDF statistics:
  5678 PDF objects out of 6186 (max. 8388607)
  3689 named destinations out of 4296 (max. 500000)

@@ -56,10 +56,10 @@
 \contentsline {section}{\numberline {4.3}Fourier Transform}{42}{section.377}
 \contentsline {subsection}{\numberline {4.3.1}Background Research and the FFT}{42}{subsection.378}
 \contentsline {subsection}{\numberline {4.3.2}Two Dimensional Fast Fourier Transform}{46}{subsection.395}
-\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT}{48}{subsection.412}
+\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT}{49}{subsection.412}
 \contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{49}{subsection.414}
-\contentsline {section}{\numberline {4.4}Low Level Vision Algorithms}{49}{section.420}
-\contentsline {subsection}{\numberline {4.4.1}Noise Reduction}{49}{subsection.421}
+\contentsline {section}{\numberline {4.4}Low Level Vision Algorithms}{50}{section.420}
+\contentsline {subsection}{\numberline {4.4.1}Noise Reduction}{50}{subsection.421}
 \contentsline {subsection}{\numberline {4.4.2}Edge Detection}{50}{subsection.426}
 \contentsline {chapter}{\numberline {5}Results}{51}{chapter.431}
 \contentsline {section}{\numberline {5.1}Results}{51}{section.432}
