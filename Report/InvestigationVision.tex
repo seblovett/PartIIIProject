@@ -249,23 +249,25 @@ X(f) = \int\limits_{-\infty}^{\infty}x(t)e^{-\jmath 2 \pi ft}dt
 
 \begin{figure}
 \centering
-\subfigure[A graph showing a Dirac Function\label{fg:Dirac:T}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/dirac.jpg} }
-\subfigure[A graph showing the Fourier Transform of the Dirac Function\label{fg:Dirac:F}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/diracft.jpg} }
-\caption{A common Fourier Transform pair: Dirac function and a flat frequency spectrum}
+\subfigure[A graph showing a Dirac Function\label{fg:Dirac:Signal}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Sig.jpg} }
+\subfigure[A graph showing the magnitude of the Fourier transform of the Dirac Function\label{fg:Dirac:Mag}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Mag.jpg} }
+\subfigure[A graph showing the phase of the Fourier transform of the Dirac Function\label{fg:Dirac:Phase}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Phase.jpg} }
+\caption{A Dirac signal and the phase and magnitude of its Fourier Transform}
 \label{fig:DiracFunctionFT}
 \end{figure}
 
 \begin{figure}
 \centering
-\subfigure[A graph showing rectangular pulse\label{fg:Square:T}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/SquareWave.jpg} }
-\subfigure[A graph showing the Fourier Transform of the rectangular pulse\label{fg:Square:F}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/SincFunction.jpg} }
-\caption{A common Fourier Transform pair: a rectangular pulse and a sinc function}
+\subfigure[A graph showing rectangular pulse\label{fg:Square:Signal}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Sig.jpg} }
+\subfigure[A graph showing the magnitude of the Fourier transform of the rectangular pulse\label{fg:Square:Mag}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Mag.jpg} }
+\subfigure[A graph showing the phase of the Fourier transform of the rectangular pulse\label{fg:Square:Phase}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Phase.jpg} }
+\caption{A 2D Rectangular pulse and the phase and magnitude of its Fourier Transform}
 \label{fig:SquareWaveFT}
 \end{figure}
 
 \inote{Uses of FT in signal processing}
-\inote{Definition of DFT and theory of FFT}
-The equation for the Fourier transform in equation \eqref{eq:fourier} is for continuous time. A discrete Fourier transform (DFT) exists for finite, equally spaced samples. This is commonly used in digital systems and is defined in equation \eqref{eq:DFT}. There exists a Fast Fourier Transform (FFT) which gives exactly the same results as the DFT, but is optimised in terms of number of multiplications done. The FFT will be used in implementation due to availability of code and speed. 
+%\inote{Definition of DFT and theory of FFT}
+The equation for the Fourier transform in equation \eqref{eq:fourier} is for continuous time. A discrete Fourier transform (DFT) exists for finite, equally spaced samples. This is commonly used in digital systems and is defined in equation \eqref{eq:DFT}. There exists a Fast Fourier Transform (FFT) which gives exactly the same results as the DFT, but is optimised in terms of number of multiplications done. The FFT will be used in implementation due to availability of code and speed of use. 
 
 \begin{equation}\label{eq:DFT}
 X[k] = \sum\limits_{0}^{N-1}x[n]e^{-\jmath \Omega_0 kn}
@@ -289,8 +291,35 @@ f(t) \star g(t) = f(t) \ast g(-t) = F(f) \cdot G(-f)
 \inote{example of convolution used as correlation. Include some pretty graphs}
 \subsection{Two Dimensional Fast Fourier Transform}
 \inote{Definition}
-A two dimensional Fourier transform exists for analysing two dimensional signals, namely in this application, an image. 
+A two dimensional Fourier transform exists for analysing two dimensional signals, namely in this application, an image. The Fourier Transform is shown in equation \eqref{eq:2dFT} and the discrete version is shown in \eqref{eq:2dDFT}
+
+\begin{equation}\label{eq:2dFT}
+F(u,v) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}f(x,y)e^{-2\pi\jmath (xu+yv)}dxdy
+\end{equation}
+\begin{equation}\label{eq:2dDFT}
+F(u,v) = \frac{1}{N} \sum\limits_{x=0}^{N-1}\sum\limits_{y=0}^{N-1}f(x,y)e^{-\frac{2\pi\jmath (xu+yv)}{N}} \; \; \; \; \; x,y,u,v \in \left\lbrace 0\dots N-1\right\rbrace
+\end{equation}
 \inote{Examples}
+Figures \ref{fig:2DDiracFunctionFT} and \ref{fig:2DSquareWaveFT} show the two dimensional equivalent test signals of figures \ref{fg:Dirac:Signal} and \ref{fg:Square:Signal} and the phase and magnitudes of their Fourier Transforms. There is a direct similarity between the 1D and 2D spectra; the magnitudes of the Dirac (figures \ref{fg:Dirac:Mag} and \ref{fg:Dirac2D:Mag}) are both constant values and the rectangular pulses both have a modulus sinc function magnitude (figures \ref{fg:Square:Signal} and \ref{fg:Square2D:Signal}). 
+
+\begin{figure}
+\centering
+\subfigure[A graph showing a 2D Dirac Function\label{fg:Dirac2D:Signal}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Dirac_2D_Sig.jpg} }
+\subfigure[A graph showing the magnitude of the Fourier transform of the 2D Dirac Function\label{fg:Dirac2D:Mag}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Dirac_2D_Mag.jpg} }
+\subfigure[A graph showing the phase of the Fourier transform of the 2D Dirac Function\label{fg:Dirac2D:Phase}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Dirac_2D_Phase.jpg} }
+\caption{A 2D Dirac signal and the phase and magnitude of its Fourier Transform}
+\label{fig:2DDiracFunctionFT}
+\end{figure}
+\begin{figure}
+\centering
+\subfigure[A graph showing 2D rectangular pulse\label{fg:Square2D:Signal}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Square_2D_Sig.jpg} }
+\subfigure[A graph showing the magnitude of the Fourier transform of the 2D rectangular pulse\label{fg:Square2D:Mag}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Square_2D_Abs.jpg} }
+\subfigure[A graph showing the phase of the Fourier transform of the 2D rectangular pulse\label{fg:Square2D:Phase}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Square_2D_Phase.jpg} }
+\caption{A 2D Rectangular Pulse signal and the phase and magnitude of its Fourier transform}
+\label{fig:2DSquareWaveFT}
+\end{figure}
+
+
 \inote{2D FFT and restrictions}
 \inote{Maybe make a figure to help explain?}
 \subsection{Implementing the FFT in C}
