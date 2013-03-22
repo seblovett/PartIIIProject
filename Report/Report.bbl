@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{23}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -72,6 +72,11 @@ Jin Liu and Xiaofeng Lin.
 Jernej Mrovlje and Damir Vran\v{c}i\'{c}.
 \newblock Distance measuring based on stereoscopic pictures.
 \newblock Technical report, University of Ljubljana, 2008.
+
+\bibitem[Nixon and Aguado(2012)]{nixon2012feature}
+Mark Nixon and Alberto~S Aguado.
+\newblock {\em Feature Extraction \& Image Processing for Computer Vision}.
+\newblock Academic Press, 2012.
 
 \bibitem[OmniVision(2007)]{SCCB_Interface}
 OmniVision.

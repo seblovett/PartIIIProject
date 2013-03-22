@@ -304,26 +304,35 @@ Figures \ref{fig:2DDiracFunctionFT} and \ref{fig:2DSquareWaveFT} show the two di
 
 \begin{figure}
 \centering
-\subfigure[A graph showing a 2D Dirac Function\label{fg:Dirac2D:Signal}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Dirac_2D_Sig.jpg} }
-\subfigure[A graph showing the magnitude of the Fourier transform of the 2D Dirac Function\label{fg:Dirac2D:Mag}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Dirac_2D_Mag.jpg} }
-\subfigure[A graph showing the phase of the Fourier transform of the 2D Dirac Function\label{fg:Dirac2D:Phase}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Dirac_2D_Phase.jpg} }
+\subfigure[An image of a 2D Dirac Function\label{fg:Dirac2D:Signal}]{\includegraphics[width=10cm, keepaspectratio]{./Figures/Dirac_2D_Sig.jpg} }
+\subfigure[An image of the magnitude of the Fourier transform of the 2D Dirac Function\label{fg:Dirac2D:Mag}]{\fbox{\includegraphics[width=(\textwidth / 2)-1cm, keepaspectratio]{./Figures/Dirac_2D_Mag.jpg} }}
+\subfigure[An image of the phase of the Fourier transform of the 2D Dirac Function\label{fg:Dirac2D:Phase}]{\includegraphics[width =(\textwidth / 2)-1cm, keepaspectratio]{./Figures/Dirac_2D_Phase.jpg} }
 \caption{A 2D Dirac signal and the phase and magnitude of its Fourier Transform}
 \label{fig:2DDiracFunctionFT}
 \end{figure}
 \begin{figure}
 \centering
-\subfigure[A graph showing 2D rectangular pulse\label{fg:Square2D:Signal}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Square_2D_Sig.jpg} }
-\subfigure[A graph showing the magnitude of the Fourier transform of the 2D rectangular pulse\label{fg:Square2D:Mag}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Square_2D_Abs.jpg} }
-\subfigure[A graph showing the phase of the Fourier transform of the 2D rectangular pulse\label{fg:Square2D:Phase}]{\includegraphics[scale=1, keepaspectratio]{./Figures/Square_2D_Phase.jpg} }
+\subfigure[An image of the 2D rectangular pulse\label{fg:Square2D:Signal}]{\includegraphics[width =10cm, keepaspectratio]{./Figures/Square_2D_Sig.jpg} }
+\subfigure[An image of the magnitude of the Fourier transform of the 2D rectangular pulse\label{fg:Square2D:Mag}]{\includegraphics[width =(\textwidth / 2)-1cm, keepaspectratio]{./Figures/Square_2D_Abs.jpg} }
+\subfigure[An image of the phase of the Fourier transform of the 2D rectangular pulse\label{fg:Square2D:Phase}]{\includegraphics[width =(\textwidth / 2)-1cm, keepaspectratio]{./Figures/Square_2D_Phase.jpg} }
 \caption{A 2D Rectangular Pulse signal and the phase and magnitude of its Fourier transform}
 \label{fig:2DSquareWaveFT}
 \end{figure}
 
 
 \inote{2D FFT and restrictions}
+The 2D Fourier transform can also be optimised to a fast Fourier transform algorithm in a similar way as the 1D case. The algorithm, sometimes referred to as the Butterfly transform, is briefly discussed in \cite{nixon2012feature} where is is explained that the algorithm can be easily applied to images with equal dimensions that are a power of 2. The algorithm utilises the separability property of the Fourier transform. 
+
+The 2D FFT can be implemented using a 1D FFT as follows:
+\begin{enumerate}
+\item Calculate the 1D FFT of each of the rows of the 2D data. (An FFT of data of length $n$ returns an array, also of length $n$)
+\item Calculate the 1D FFT of each of the columns of the 2D data returned from the previous step.
+\end{enumerate}
+Total number of FFTs done is $2n$ where $n$ is the height/width of the image. 
 \inote{Maybe make a figure to help explain?}
-\subsection{Implementing the FFT in C}
+\subsection{Implementing the FFT}
 \inote{Include and explain code}
+The Atmel Software Framework \citep{Atmel:ASF} included a digital signal processing library. This contained some FFT functions
 \subsection{Testing of the FFT on AVR}
 \inote{Show results of some test signals}
 \inote{Need to implement grey scaling method before being able to do this}
