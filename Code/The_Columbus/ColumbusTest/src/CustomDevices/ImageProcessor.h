@@ -27,7 +27,7 @@ int FFT1D(int *Signal);
 int FFT2Dabs(int *Signal);
 int log_2(int i);
 
-int* FFT2DCOMPLEX( int *Signal, dsp16_complex_t *ComplexBuffer, int size );
+void FFT2DCOMPLEX( int *Signal, dsp16_complex_t *ComplexBuffer, int size );
 void PrepareImage(Image_t *Image);
 //int* IFFT2D (dsp16_complex_t *Result, dsp16_complex_t *Input);
 void IFFT2D (dsp16_complex_t *Signal); /*Need to test this! */;

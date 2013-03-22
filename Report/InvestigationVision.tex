@@ -310,6 +310,7 @@ Figures \ref{fig:2DDiracFunctionFT} and \ref{fig:2DSquareWaveFT} show the two di
 \caption{A 2D Dirac signal and the phase and magnitude of its Fourier Transform}
 \label{fig:2DDiracFunctionFT}
 \end{figure}
+
 \begin{figure}
 \centering
 \subfigure[An image of the 2D rectangular pulse\label{fg:Square2D:Signal}]{\includegraphics[width =10cm, keepaspectratio]{./Figures/Square_2D_Sig.jpg} }
@@ -332,18 +333,24 @@ Total number of FFTs done is $2n$ where $n$ is the height/width of the image.
 \inote{Maybe make a figure to help explain?}
 \subsection{Implementing the FFT}
 \inote{Include and explain code}
-The Atmel Software Framework \citep{Atmel:ASF} included a digital signal processing library. This contained some FFT functions
+The Atmel Software Framework \citep{Atmel:ASF} included a digital signal processing library. This contained functions to compute the FFT of a real or complex array, the inverse FFT, magnitude and phase of complex data. Further restrictions are imposed by the DSP library used as the data must be an even power of 2, and that the data is in fixed point notation. This gives a usable dimension of $256 \times 256$ for processing images on the AVR. Though the height of an image from the OV7670 camera is $240$, the image can be transformed so that it repeats for 16 rows at the bottom as the Fourier transform works on an assumption of the data repeating itself.
+
+The function \textit{FFT2DCOMPLEX} in Appendix \ref{Appendix:Code:ImageProcessor.c} is the realisation of a two dimensional fast Fourier transform on the microcontroller. The FFT function requires the data to be 4 byte aligned (A\_ALIGNED) and of type \textit{dsp16\_complex\_t}. The data must be given in fixed point notation and it is returned in fixed point notation. A 16 bit representation was chosen over 32 bit due to being more functions for 16 bit data available. 
+
+
 \subsection{Testing of the FFT on AVR}
 \inote{Show results of some test signals}
+\inote{Elapsed Time to do FT}
 \inote{Need to implement grey scaling method before being able to do this}
 \inote{Show results of actual photo being transformed}
 \inote{Compare to MATLAB results}
 \section{Low Level Vision Algorithms}
 \subsection{Noise Reduction}
 \inote{Why}
+Noise exists in all signals. Two noise sources for the camera image is random noise in the sensor, and quantisation noise. It generates a compromise between noise and resolution that has to be made. Large amounts of noise reduction will blur edges and therefore reduce the quality of the image and make it harder to match. This section will investigate some noise reduction methods, and test if the application of them increases the reliability of matching using the Normalised Cross Correlation method discussed in section \ref{Section:NCC}. 
 \inote{Theory}
 \inote{Examples}
-\inote{Does it improve the reliability of matching?}
+\inote{Does it improve the reliability of matching? Vary noise amount in images? and test}
 \subsection{Edge Detection}
 \inote{Why}
 \inote{Theory}
