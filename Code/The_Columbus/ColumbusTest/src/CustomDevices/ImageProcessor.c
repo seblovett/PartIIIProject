@@ -77,36 +77,25 @@ void FFT2DCOMPLEX( int *Signal, dsp16_complex_t *ComplexBuffer, int size )
 //One Dimensional Fast Fourier Transform
 int FFT1D( int *Signal)
 {
-//	int size = 64;
 	int log2Size, i =0;
-//	double a;
-// 	log2Size = log_2(size);
-// 	if(log2Size & 1) //if it is an odd power of two
-// 		return 0;
-		
-	//am I making this all too complex for myself?! May just stick to defined size of 256.
-// 	A_ALIGNED dsp32_complex_t *vect1;
-// 	A_ALIGNED dsp32_t *vect2;
-	
-// 	vect1 = mspace_malloc(sdram_msp, (sizeof(dsp32_complex_t) * size));
-// 	vect2 = mspace_malloc(sdram_msp, (sizeof(dsp32_t) * size));
-
-	//Defined Sizes
-
 	A_ALIGNED dsp16_complex_t vect1[FFT_SIZE];
 	A_ALIGNED dsp16_t vect2[FFT_SIZE];
 	for(i = 0; i < FFT_SIZE; i++)
 	{
-		vect2[i] = Signal[i];
+		vect2[i] = (dsp16_t)Signal[i];
 	}
 	dsp16_trans_realcomplexfft(vect1, vect2, log_2(FFT_SIZE));
+	for(i = 0; i < FFT_SIZE; i++)
+	{
+		vect1[i].imag = vect1[i].imag * FFT_SIZE;
+		vect1[i].real = vect1[i].real * FFT_SIZE;
+	}
 	dsp16_vect_complex_abs(vect2, vect1, FFT_SIZE);
 	for(i = 0; i < FFT_SIZE; i++)
 	{
-		Signal[i] = vect2[i] * FFT_SIZE;
+		Signal[i] = vect2[i];// * FFT_SIZE;
 	}
-// 	mspace_free(sdram_msp, vect1);
-// 	mspace_free(sdram_msp, vect2);
+
 	return Signal;
 }
 

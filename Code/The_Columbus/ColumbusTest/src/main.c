@@ -285,7 +285,7 @@ int main (void)
 				break;
 			case 'd':
 				print_dbg("\rSaving Working Buffer as CSV;");
-				SaveBuff_CSV("Buffer.csv", Working_Buffer, SizeOfWorking_Buffer);
+				SaveBuff_CSV("Buffer_result.csv", Working_Buffer, SizeOfWorking_Buffer);
 				break;
 			case 'f':
 				Working_Buffer = mspace_malloc(sdram_msp, FFT_SIZE);
@@ -334,7 +334,11 @@ int main (void)
 				print_dbg("\n\rChannel Selected : ");
 				print_dbg_ulong(Columbus_Status.I2CMux->ChannelSelected);
 				break;
-
+			case 'o':
+				print_dbg("\r1 in Fixed point = ");
+				i = DSP16_Q(1);
+				print_dbg_ulong(i);
+				break;
 // 			case 'o'://testing storing a complex
 // 				print_dbg("\rFreeing Complex Buffer");
 // 				mspace_free(sdram_msp, ComplexBuffer);

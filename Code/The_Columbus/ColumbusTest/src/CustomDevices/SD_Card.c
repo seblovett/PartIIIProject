@@ -166,6 +166,7 @@ void SaveBuff_CSV(char *Filename, int *WorkingBuffer, int size)
 	int i, j;
 	char Buff[16];
 	//If the file exists, delete it
+	nav_filelist_reset();
 	if(nav_filelist_findname((FS_STRING)Filename, false))
 	{
 		nav_setcwd((FS_STRING)Filename, false, false);
@@ -173,7 +174,7 @@ void SaveBuff_CSV(char *Filename, int *WorkingBuffer, int size)
 	}
 	nav_file_create((FS_STRING)Filename);
 	nav_setcwd((FS_STRING)Filename, false, true);
-	file_open(FOPEN_MODE_APPEND);
+	file_open(FOPEN_MODE_W);
 	for(i = 0; i < size; i++)
 	{
 		sprintf(Buff, "%d,", WorkingBuffer[i]);
@@ -198,7 +199,7 @@ void Read_CSV(char *Filename, int *WorkingBuffer, int size)
 		return;
 	}
 	//Check file Exists
-	if(nav_filelist_findname((FS_STRING)BUFFERCSV_FILENAME, false) == false){		
+	if(nav_filelist_findname((FS_STRING)Filename, false) == false){		
 		print_dbg("\n\rRead_CSV : File doesn't exist;");
 		return;
 	}
@@ -206,6 +207,8 @@ void Read_CSV(char *Filename, int *WorkingBuffer, int size)
 	file_open(FOPEN_MODE_R);
 	for(i = 0; i < size; i++)
 	{
+		if(file_eof())
+			break;
 		c = 0;
 		//j = 0;
 		for(j = 0; j < 32; j++)
@@ -213,6 +216,8 @@ void Read_CSV(char *Filename, int *WorkingBuffer, int size)
 		j = 0;
 		while(c != ',')
 		{
+			if(file_eof())
+				break;
 			c = file_getc();
 			if(c == ',')
 				break;
