@@ -188,6 +188,36 @@ void SaveBuff_CSV(char *Filename, int *WorkingBuffer, int size)
 	
 	file_close(); 
 }
+void SaveCBuff_CSV(char *Filename, dsp16_complex_t *ComplexBuffer, int size)
+{
+	int i, j;
+	char Buff[16];
+	//If the file exists, delete it
+	nav_filelist_reset();
+	if(nav_filelist_findname((FS_STRING)Filename, false))
+	{
+		nav_setcwd((FS_STRING)Filename, false, false);
+		nav_file_del(false);
+	}
+	nav_file_create((FS_STRING)Filename);
+	nav_setcwd((FS_STRING)Filename, false, true);
+	file_open(FOPEN_MODE_W);
+	for(i = 0; i < size; i++)
+	{
+		if(ComplexBuffer[i].imag >= 0)
+			sprintf(Buff, "%d+%dj,", ComplexBuffer[i].real, ComplexBuffer[i].imag);
+		else
+			sprintf(Buff, "%d%dj,", ComplexBuffer[i].real, ComplexBuffer[i].imag);
+		//itoa(WorkingBuffer[i], Buff, 10);
+		j = 0;
+		while(Buff[j++] != 0);//count the size of data to be written
+		atoi(Buff);
+		file_write_buf(Buff, j-1);
+		//file_write_buf(",", 1);
+	}
+	
+	file_close();
+}
 void Read_CSV(char *Filename, int *WorkingBuffer, int size)
 {
 	char Buff[32];

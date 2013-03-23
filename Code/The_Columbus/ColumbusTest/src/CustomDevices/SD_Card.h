@@ -31,5 +31,6 @@ void SaveBitmap(uint16_t *Image, int width, int height, char *FileName);
 //void ReadBitmap(char *Filename);
 void ReadBitmap(char *Filename, Image_t *image);
 void SaveBuff_CSV(char *Filename, int *WorkingBuffer, int size);
+void SaveCBuff_CSV(char *Filename, dsp16_complex_t *ComplexBuffer, int size);
 void Read_CSV(char *Filename, int *WorkingBuffer, int size);
 #endif /* SD_CARD_H_ */

@@ -23,7 +23,7 @@ typedef struct {
 	
 
 
-int FFT1D(int *Signal);
+void FFT1D( int *Signal, dsp16_complex_t *ComplexBuffer);
 int FFT2Dabs(int *Signal);
 int log_2(int i);
 
@@ -31,4 +31,5 @@ void FFT2DCOMPLEX( int *Signal, dsp16_complex_t *ComplexBuffer, int size );
 void PrepareImage(Image_t *Image);
 //int* IFFT2D (dsp16_complex_t *Result, dsp16_complex_t *Input);
 void IFFT2D (dsp16_complex_t *Signal); /*Need to test this! */;
+int FFT1D_Abs( int *Signal);
 #endif /* IMAGEPROCESSOR_H_ */

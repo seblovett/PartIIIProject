@@ -75,7 +75,7 @@ void FFT2DCOMPLEX( int *Signal, dsp16_complex_t *ComplexBuffer, int size )
 }
 
 //One Dimensional Fast Fourier Transform
-int FFT1D( int *Signal)
+int FFT1D_Abs( int *Signal)
 {
 	int log2Size, i =0;
 	A_ALIGNED dsp16_complex_t vect1[FFT_SIZE];
@@ -98,7 +98,23 @@ int FFT1D( int *Signal)
 
 	return Signal;
 }
-
+//One Dimensional Fast Fourier Transform returning complex values
+void FFT1D( int *Signal, dsp16_complex_t *ComplexBuffer)
+{
+	int log2Size, i =0;
+	A_ALIGNED dsp16_complex_t vect1[FFT_SIZE];
+	A_ALIGNED dsp16_t vect2[FFT_SIZE];
+	for(i = 0; i < FFT_SIZE; i++)
+	{
+		vect2[i] = (dsp16_t)Signal[i];
+	}
+	dsp16_trans_realcomplexfft(vect1, vect2, log_2(FFT_SIZE));
+	for(i = 0; i < FFT_SIZE; i++)
+	{
+		ComplexBuffer[i].imag = vect1[i].imag * FFT_SIZE;
+		ComplexBuffer[i].real = vect1[i].real * FFT_SIZE;
+	}
+}
 int FFT2Dabs( int *Signal )
 {
 	int i, j = 0;

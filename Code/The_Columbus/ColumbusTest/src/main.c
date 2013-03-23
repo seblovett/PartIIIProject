@@ -120,7 +120,9 @@ int main (void)
 
 			case '1'://1d FFT (w/ memallocs)
 				print_dbg("\r1D FFT;");
-				FFT1D(Working_Buffer);
+				SizeOfComplex_Buffer = FFT_SIZE;
+				ComplexBuffer = mspace_malloc(sdram_msp,  SizeOfComplex_Buffer * sizeof(ComplexBuffer));
+				FFT1D(Working_Buffer, ComplexBuffer);
 				break;
 			case '2':
 				print_dbg("\r2D FFT;");
@@ -287,6 +289,10 @@ int main (void)
 				print_dbg("\rSaving Working Buffer as CSV;");
 				SaveBuff_CSV("Buffer_result.csv", Working_Buffer, SizeOfWorking_Buffer);
 				break;
+			case 'g':
+				print_dbg("\rSaving Complex Buffer as CSV");
+				SaveCBuff_CSV("Buffer_Complex.csv", ComplexBuffer, SizeOfComplex_Buffer);
+				break;
 			case 'f':
 				Working_Buffer = mspace_malloc(sdram_msp, FFT_SIZE);
 				SizeOfWorking_Buffer = FFT_SIZE;
@@ -294,6 +300,7 @@ int main (void)
 				Read_CSV("Buffer.csv", Working_Buffer, SizeOfWorking_Buffer);
 				print_dbg("\n\rComplete!");
 				break;
+			
 			case 'S':
 				print_dbg("\rSaving Bitmap;");
 				SaveBitmap(image.ImagePtr, image.Width, image.Height, "ResavedImage.bmp");
