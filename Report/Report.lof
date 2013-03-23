@@ -1,0 +1,66 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces The base of the robot\relax }}{1}{figure.caption.14}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces RGB565 pixel format\relax }}{8}{figure.caption.33}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Signals generated to control the OV7670 capture and read\relax }}{9}{figure.caption.34}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax }}{12}{figure.caption.39}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Prototype of Dual Camera operation.\relax }}{13}{figure.caption.42}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Circuit diagram of Optosensor\relax }}{15}{figure.caption.49}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Graph of Wheel Angle against the Voltage read by the AVR\relax }}{15}{figure.caption.50}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{17}{figure.caption.55}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{17}{figure.caption.55}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Side View of robot base showing dimensions of interest}}}{17}{figure.caption.55}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces PCB with no components. Left: Top View. Right: Bottom View\relax }}{19}{figure.caption.66}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces SDRAM Chip shown against its footprint.\relax }}{27}{figure.caption.309}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Motor Driver error. Outputs incorrectly connected\relax }}{29}{figure.caption.315}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Pictures of the built PCB.\relax }}{31}{figure.caption.319}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top view of built PCB}}}{31}{figure.caption.319}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bottom view of built PCB with SDRAM chip select patch }}}{31}{figure.caption.319}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{33}{figure.caption.324}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{33}{figure.caption.324}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{33}{figure.caption.324}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{36}{figure.caption.335}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{36}{figure.caption.335}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{36}{figure.caption.335}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{36}{figure.caption.335}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{38}{figure.caption.345}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{41}{figure.caption.366}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{42}{figure.caption.369}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces A Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{44}{figure.caption.377}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing a Dirac Function}}}{44}{figure.caption.377}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the Dirac Function}}}{44}{figure.caption.377}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the Dirac Function}}}{44}{figure.caption.377}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces A 2D Rectangular pulse and the phase and magnitude of its Fourier Transform\relax }}{45}{figure.caption.381}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing rectangular pulse}}}{45}{figure.caption.381}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the rectangular pulse}}}{45}{figure.caption.381}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the rectangular pulse}}}{45}{figure.caption.381}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces A 2D Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{47}{figure.caption.397}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {An image of a 2D Dirac Function}}}{47}{figure.caption.397}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {An image of the magnitude of the Fourier transform of the 2D Dirac Function}}}{47}{figure.caption.397}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {An image of the phase of the Fourier transform of the 2D Dirac Function}}}{47}{figure.caption.397}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces A 2D Rectangular Pulse signal and the phase and magnitude of its Fourier transform\relax }}{48}{figure.caption.401}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {An image of the 2D rectangular pulse}}}{48}{figure.caption.401}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {An image of the magnitude of the Fourier transform of the 2D rectangular pulse}}}{48}{figure.caption.401}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {An image of the phase of the Fourier transform of the 2D rectangular pulse}}}{48}{figure.caption.401}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{56}{figure.caption.437}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{58}{figure.caption.440}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{59}{figure.caption.442}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces The Columbus Circuit Diagram Page 1\relax }}{60}{figure.caption.444}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces The Columbus Circuit Diagram Page 2\relax }}{61}{figure.caption.445}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces The Columbus Circuit Diagram Page 3\relax }}{62}{figure.caption.446}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces The Columbus Circuit Diagram Page 4\relax }}{63}{figure.caption.447}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces The Columbus Circuit Diagram Page 5\relax }}{64}{figure.caption.448}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces The Columbus Circuit Diagram Page 6\relax }}{65}{figure.caption.449}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces The Top side of the CAD Design of the PCB\relax }}{68}{figure.caption.452}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces The Bottom side of the CAD Design of the PCB\relax }}{69}{figure.caption.454}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

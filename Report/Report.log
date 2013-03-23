@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  22 MAR 2013 22:29
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  23 MAR 2013 13:13
 entering extended mode
 **Report.tex
 (E:\Uni\part3_project\Report\Report.tex
@@ -842,13 +842,13 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 16.
 (E:\Uni\part3_project\Report\InvestigationVision.aux)
 (E:\Uni\part3_project\Report\Results.aux)
 (E:\Uni\part3_project\Report\Conclusions.aux)
-(E:\Uni\part3_project\Report\AppendixD.aux)
-(E:\Uni\part3_project\Report\AppendixA.aux)
-(E:\Uni\part3_project\Report\AppendixB.aux)
-(E:\Uni\part3_project\Report\AppendixC.aux)
-(E:\Uni\part3_project\Report\AppendixPCB.aux)
-(E:\Uni\part3_project\Report\AppendixContents.aux)
-(E:\Uni\part3_project\Report\AppendixCosting.aux))
+(E:\Uni\part3_project\Report\Appendix_Gantt.aux)
+(E:\Uni\part3_project\Report\Appendix_CircuitDiagrams.aux)
+(E:\Uni\part3_project\Report\Appendix_PCB.aux)
+(E:\Uni\part3_project\Report\Appendix_Costing.aux)
+(E:\Uni\part3_project\Report\Appendix_Contents.aux)
+(E:\Uni\part3_project\Report\Appendix_Bitmap.aux)
+(E:\Uni\part3_project\Report\Appendix_Code.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
@@ -1116,18 +1116,14 @@ Chapter 3.
 ------------------------------------------------------------------------------
  3 Hardware and Firmware Development
 ------------------------------------------------------------------------------
-
-LaTeX Warning: Reference `Section:Circuit_Dev' on page 7 undefined on input lin
-e 12.
-
-[7] <./Figures/RGB565.png, id=763, 809.27344pt x 148.30406pt>
+[7] <./Figures/RGB565.png, id=764, 809.27344pt x 148.30406pt>
 File: ./Figures/RGB565.png Graphic file (type png)
 
 <use ./Figures/RGB565.png>
 Package pdftex.def Info: ./Figures/RGB565.png used on input line 28.
 (pdftex.def)             Requested size: 417.47307pt x 76.50528pt.
  [8 <E:/Uni/part3_project/Report/Figures/RGB565.png>] <./Figures/ov7670_im_capt
-ure.png, id=773, 1273.75874pt x 535.2497pt>
+ure.png, id=774, 1273.75874pt x 535.2497pt>
 File: ./Figures/ov7670_im_capture.png Graphic file (type png)
 
 <use ./Figures/ov7670_im_capture.png>
@@ -1164,7 +1160,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--87
 \OT1/cmr/m/n/12 only 256
  []
 
-[11] <Figures/ExampleImageFromCamera.jpg, id=801, 321.2pt x 240.9pt>
+[11] <Figures/ExampleImageFromCamera.jpg, id=802, 321.2pt x 240.9pt>
 File: Figures/ExampleImageFromCamera.jpg Graphic file (type jpg)
 
 <use Figures/ExampleImageFromCamera.jpg>
@@ -1172,7 +1168,7 @@ Package pdftex.def Info: Figures/ExampleImageFromCamera.jpg used on input line
 101.
 (pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
 
-<./Figures/Prototype.jpg, id=807, 4117.3825pt x 2294.5725pt>
+<./Figures/Prototype.jpg, id=808, 4117.3825pt x 2294.5725pt>
 File: ./Figures/Prototype.jpg Graphic file (type jpg)
 
 <use ./Figures/Prototype.jpg>
@@ -1188,14 +1184,14 @@ Package natbib Warning: Citation `NEEDED' on page 13 undefined on input line 14
 Package natbib Warning: Citation `NEEDED' on page 14 undefined on input line 14
 7.
 
-<Figures/TCRT_Circuit.png, id=823, 283.0575pt x 450.9347pt>
+<Figures/TCRT_Circuit.png, id=824, 283.0575pt x 450.9347pt>
 File: Figures/TCRT_Circuit.png Graphic file (type png)
 
 <use Figures/TCRT_Circuit.png>
 Package pdftex.def Info: Figures/TCRT_Circuit.png used on input line 155.
 (pdftex.def)             Requested size: 141.5284pt x 225.4668pt.
 
-<Figures/WheelVoltageGraph.jpg, id=824, 1928.20375pt x 630.355pt>
+<Figures/WheelVoltageGraph.jpg, id=825, 1928.20375pt x 630.355pt>
 File: Figures/WheelVoltageGraph.jpg Graphic file (type jpg)
 
 <use Figures/WheelVoltageGraph.jpg>
@@ -1203,7 +1199,7 @@ Package pdftex.def Info: Figures/WheelVoltageGraph.jpg used on input line 161.
 (pdftex.def)             Requested size: 417.47307pt x 136.4759pt.
  [14] [15 <E:/Uni/part3_project/Report/Figures/TCRT_Circuit.png> <E:/Uni/part3_
 project/Report/Figures/WheelVoltageGraph.jpg>] <./Figures/Robotbase_top_annot.j
-pg, id=847, 2086.04344pt x 2045.39156pt>
+pg, id=848, 2086.04344pt x 2045.39156pt>
 File: ./Figures/Robotbase_top_annot.jpg Graphic file (type jpg)
 
 <use ./Figures/Robotbase_top_annot.jpg>
@@ -1211,7 +1207,7 @@ Package pdftex.def Info: ./Figures/Robotbase_top_annot.jpg used on input line 2
 00.
 (pdftex.def)             Requested size: 417.47307pt x 409.32076pt.
 
-<./Figures/Robotbase_side_annot.jpg, id=848, 3438.8475pt x 1227.83719pt>
+<./Figures/Robotbase_side_annot.jpg, id=849, 3438.8475pt x 1227.83719pt>
 File: ./Figures/Robotbase_side_annot.jpg Graphic file (type jpg)
 
 <use ./Figures/Robotbase_side_annot.jpg>
@@ -1230,7 +1226,7 @@ Overfull \hbox (3.91663pt too wide) in paragraph at lines 200--202
 
 [16] [17 <E:/Uni/part3_project/Report/Figures/Robotbase_top_annot.jpg> <E:/Uni/
 part3_project/Report/Figures/Robotbase_side_annot.jpg>] [18]
-<./Figures/PCB_Bare.jpg, id=881, 3251.14626pt x 2267.47125pt>
+<./Figures/PCB_Bare.jpg, id=882, 3251.14626pt x 2267.47125pt>
 File: ./Figures/PCB_Bare.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bare.jpg>
@@ -1261,7 +1257,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [23] (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [24])
 (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c) [25]
 (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c)
-<./Figures/PCB_SDRAM.jpg, id=1143, 1539.7525pt x 1547.7825pt>
+<./Figures/PCB_SDRAM.jpg, id=1144, 1539.7525pt x 1547.7825pt>
 File: ./Figures/PCB_SDRAM.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_SDRAM.jpg>
@@ -1272,7 +1268,7 @@ Overfull \hbox (6.02278pt too wide) in paragraph at lines 333--338
 [][] 
  []
 
-[28] <./Figures/MotorDriver_error.png, id=1172, 496.10344pt x 550.30594pt>
+[28] <./Figures/MotorDriver_error.png, id=1173, 496.10344pt x 550.30594pt>
 File: ./Figures/MotorDriver_error.png Graphic file (type png)
 
 <use ./Figures/MotorDriver_error.png>
@@ -1288,14 +1284,14 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 369.
  [29 <E:/Uni/part3_project/Report/Figures/MotorDriver_error.png>]
-<./Figures/PCB_Top.jpg, id=1177, 2669.975pt x 1862.96pt>
+<./Figures/PCB_Top.jpg, id=1178, 2669.975pt x 1862.96pt>
 File: ./Figures/PCB_Top.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Top.jpg>
 Package pdftex.def Info: ./Figures/PCB_Top.jpg used on input line 385.
 (pdftex.def)             Requested size: 417.47307pt x 291.28577pt.
 
-<./Figures/PCB_Bottom.jpg, id=1178, 2623.8025pt x 1877.0125pt>
+<./Figures/PCB_Bottom.jpg, id=1179, 2623.8025pt x 1877.0125pt>
 File: ./Figures/PCB_Bottom.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bottom.jpg>
@@ -1322,14 +1318,14 @@ Chapter 4.
 ------------------------------------------------------------------------------
  4 Investigation into Vision Algorithms
 ------------------------------------------------------------------------------
-<./Figures/deskLeft.png, id=1200, 401.5pt x 301.125pt>
+<./Figures/deskLeft.png, id=1201, 401.5pt x 301.125pt>
 File: ./Figures/deskLeft.png Graphic file (type png)
 
 <use ./Figures/deskLeft.png>
 Package pdftex.def Info: ./Figures/deskLeft.png used on input line 13.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
 
-<./Figures/deskRight.png, id=1201, 401.5pt x 301.125pt>
+<./Figures/deskRight.png, id=1202, 401.5pt x 301.125pt>
 File: ./Figures/deskRight.png Graphic file (type png)
 
 <use ./Figures/deskRight.png>
@@ -1337,21 +1333,21 @@ Package pdftex.def Info: ./Figures/deskRight.png used on input line 14.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
  [33 <E:/Uni/part3_project/Report/Figures/deskLeft.png (PNG copy)> <E:/Uni/part
 3_project/Report/Figures/deskRight.png (PNG copy)>] [34] <./Figures/SADResults.
-jpg, id=1226, 960.58875pt x 631.35875pt>
+jpg, id=1227, 960.58875pt x 631.35875pt>
 File: ./Figures/SADResults.jpg Graphic file (type jpg)
 
 <use ./Figures/SADResults.jpg>
 Package pdftex.def Info: ./Figures/SADResults.jpg used on input line 69.
 (pdftex.def)             Requested size: 341.43306pt x 224.40848pt.
 
-<./Figures/SSDResults.jpg, id=1227, 1446.40375pt x 836.12375pt>
+<./Figures/SSDResults.jpg, id=1228, 1446.40375pt x 836.12375pt>
 File: ./Figures/SSDResults.jpg Graphic file (type jpg)
 
 <use ./Figures/SSDResults.jpg>
 Package pdftex.def Info: ./Figures/SSDResults.jpg used on input line 70.
 (pdftex.def)             Requested size: 341.43306pt x 197.36942pt.
 
-<./Figures/NCCResults.jpg, id=1228, 1446.40375pt x 836.12375pt>
+<./Figures/NCCResults.jpg, id=1229, 1446.40375pt x 836.12375pt>
 File: ./Figures/NCCResults.jpg Graphic file (type jpg)
 
 <use ./Figures/NCCResults.jpg>
@@ -1363,21 +1359,21 @@ LaTeX Warning: Float too large for page by 35.17421pt on input line 74.
 
 [35] [36 <E:/Uni/part3_project/Report/Figures/SADResults.jpg> <E:/Uni/part3_pro
 ject/Report/Figures/SSDResults.jpg> <E:/Uni/part3_project/Report/Figures/NCCRes
-ults.jpg>] <Figures/problem1.png, id=1252, 791.20593pt x 910.15031pt>
+ults.jpg>] <Figures/problem1.png, id=1253, 791.20593pt x 910.15031pt>
 File: Figures/problem1.png Graphic file (type png)
 
 <use Figures/problem1.png>
 Package pdftex.def Info: Figures/problem1.png used on input line 100.
 (pdftex.def)             Requested size: 417.47794pt x 480.23866pt.
  [37] [38 <E:/Uni/part3_project/Report/Figures/problem1.png>] [39] <Figures/pro
-blem2.png, id=1300, 805.50937pt x 928.97063pt>
+blem2.png, id=1301, 805.50937pt x 928.97063pt>
 File: Figures/problem2.png Graphic file (type png)
 
 <use Figures/problem2.png>
 Package pdftex.def Info: Figures/problem2.png used on input line 202.
 (pdftex.def)             Requested size: 417.4661pt x 481.45157pt.
 
-<Figures/problem3.png, id=1302, 797.98125pt x 919.93687pt>
+<Figures/problem3.png, id=1303, 797.98125pt x 919.93687pt>
 File: Figures/problem3.png Graphic file (type png)
 
 <use Figures/problem3.png>
@@ -1385,21 +1381,21 @@ Package pdftex.def Info: Figures/problem3.png used on input line 215.
 (pdftex.def)             Requested size: 417.47311pt x 481.2756pt.
  [40] [41 <E:/Uni/part3_project/Report/Figures/problem2.png>] [42 <E:/Uni/part3
 _project/Report/Figures/problem3.png>]
-<./Figures/Dirac_1D_Sig.jpg, id=1328, 1446.40375pt x 578.16pt>
+<./Figures/Dirac_1D_Sig.jpg, id=1329, 1446.40375pt x 578.16pt>
 File: ./Figures/Dirac_1D_Sig.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_1D_Sig.jpg>
 Package pdftex.def Info: ./Figures/Dirac_1D_Sig.jpg used on input line 252.
 (pdftex.def)             Requested size: 417.47307pt x 166.86812pt.
 
-<./Figures/Dirac_1D_Mag.jpg, id=1329, 1446.40375pt x 570.13pt>
+<./Figures/Dirac_1D_Mag.jpg, id=1330, 1446.40375pt x 570.13pt>
 File: ./Figures/Dirac_1D_Mag.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_1D_Mag.jpg>
 Package pdftex.def Info: ./Figures/Dirac_1D_Mag.jpg used on input line 253.
 (pdftex.def)             Requested size: 417.47307pt x 164.5505pt.
 
-<./Figures/Dirac_1D_Phase.jpg, id=1330, 1446.40375pt x 574.145pt>
+<./Figures/Dirac_1D_Phase.jpg, id=1331, 1446.40375pt x 574.145pt>
 File: ./Figures/Dirac_1D_Phase.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_1D_Phase.jpg>
@@ -1420,21 +1416,21 @@ Overfull \hbox (3.91663pt too wide) in paragraph at lines 252--255
  [][] 
  []
 
-<./Figures/Square_1D_Sig.jpg, id=1331, 1928.20375pt x 674.52pt>
+<./Figures/Square_1D_Sig.jpg, id=1332, 1928.20375pt x 674.52pt>
 File: ./Figures/Square_1D_Sig.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_1D_Sig.jpg>
 Package pdftex.def Info: ./Figures/Square_1D_Sig.jpg used on input line 261.
 (pdftex.def)             Requested size: 417.47307pt x 146.0379pt.
 
-<./Figures/Square_1D_Mag.jpg, id=1332, 1446.40375pt x 571.13374pt>
+<./Figures/Square_1D_Mag.jpg, id=1333, 1446.40375pt x 571.13374pt>
 File: ./Figures/Square_1D_Mag.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_1D_Mag.jpg>
 Package pdftex.def Info: ./Figures/Square_1D_Mag.jpg used on input line 262.
 (pdftex.def)             Requested size: 417.47307pt x 164.84021pt.
 
-<./Figures/Square_1D_Phase.jpg, id=1333, 1446.40375pt x 594.22pt>
+<./Figures/Square_1D_Phase.jpg, id=1334, 1446.40375pt x 594.22pt>
 File: ./Figures/Square_1D_Phase.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_1D_Phase.jpg>
@@ -1460,42 +1456,42 @@ roject/Report/Figures/Dirac_1D_Mag.jpg> <E:/Uni/part3_project/Report/Figures/Di
 rac_1D_Phase.jpg>] [45 <E:/Uni/part3_project/Report/Figures/Square_1D_Sig.jpg> 
 <E:/Uni/part3_project/Report/Figures/Square_1D_Mag.jpg> <E:/Uni/part3_project/R
 eport/Figures/Square_1D_Phase.jpg>]
-<./Figures/Dirac_2D_Sig.jpg, id=1376, 462.97969pt x 462.22687pt>
+<./Figures/Dirac_2D_Sig.jpg, id=1377, 462.97969pt x 462.22687pt>
 File: ./Figures/Dirac_2D_Sig.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_2D_Sig.jpg>
 Package pdftex.def Info: ./Figures/Dirac_2D_Sig.jpg used on input line 307.
 (pdftex.def)             Requested size: 284.52756pt x 284.06682pt.
 
-<./Figures/Dirac_2D_Mag.jpg, id=1377, 463.7325pt x 463.7325pt>
+<./Figures/Dirac_2D_Mag.jpg, id=1378, 463.7325pt x 463.7325pt>
 File: ./Figures/Dirac_2D_Mag.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_2D_Mag.jpg>
 Package pdftex.def Info: ./Figures/Dirac_2D_Mag.jpg used on input line 308.
 (pdftex.def)             Requested size: 180.28378pt x 180.28178pt.
 
-<./Figures/Dirac_2D_Phase.jpg, id=1378, 463.7325pt x 461.47406pt>
+<./Figures/Dirac_2D_Phase.jpg, id=1379, 463.7325pt x 461.47406pt>
 File: ./Figures/Dirac_2D_Phase.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_2D_Phase.jpg>
 Package pdftex.def Info: ./Figures/Dirac_2D_Phase.jpg used on input line 309.
 (pdftex.def)             Requested size: 180.28378pt x 179.40378pt.
 
-<./Figures/Square_2D_Sig.jpg, id=1379, 192.72pt x 192.72pt>
+<./Figures/Square_2D_Sig.jpg, id=1380, 192.72pt x 192.72pt>
 File: ./Figures/Square_2D_Sig.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_2D_Sig.jpg>
 Package pdftex.def Info: ./Figures/Square_2D_Sig.jpg used on input line 316.
 (pdftex.def)             Requested size: 284.52756pt x 284.52711pt.
 
-<./Figures/Square_2D_Abs.jpg, id=1380, 256.96pt x 256.96pt>
+<./Figures/Square_2D_Abs.jpg, id=1381, 256.96pt x 256.96pt>
 File: ./Figures/Square_2D_Abs.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_2D_Abs.jpg>
 Package pdftex.def Info: ./Figures/Square_2D_Abs.jpg used on input line 317.
 (pdftex.def)             Requested size: 180.28378pt x 180.28638pt.
 
-<./Figures/Square_2D_Phase.jpg, id=1381, 256.96pt x 256.96pt>
+<./Figures/Square_2D_Phase.jpg, id=1382, 256.96pt x 256.96pt>
 File: ./Figures/Square_2D_Phase.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_2D_Phase.jpg>
@@ -1524,7 +1520,7 @@ Chapter 6.
 ------------------------------------------------------------------------------
  6 Conclusions and Further Work
 ------------------------------------------------------------------------------
-) [53] (E:\Uni\part3_project\Report\AppendixD.tex [54
+) [53] (E:\Uni\part3_project\Report\Appendix_Gantt.tex [54
 
 
 
@@ -1533,26 +1529,26 @@ Appendix A.
 ------------------------------------------------------------------------------
  A Gantt Chart
 ------------------------------------------------------------------------------
-<Figures/Gantt.png, id=1460, 805.50937pt x 380.17032pt>
+<Figures/Gantt.png, id=1461, 805.50937pt x 380.17032pt>
 File: Figures/Gantt.png Graphic file (type png)
 
 <use Figures/Gantt.png>
 Package pdftex.def Info: Figures/Gantt.png used on input line 8.
 (pdftex.def)             Requested size: 805.5074pt x 380.16939pt.
 ) [55] [56 <E:/Uni/part3_project/Report/Figures/Gantt.png>] (E:\Uni\part3_proje
-ct\Report\AppendixA.tex
+ct\Report\Appendix_CircuitDiagrams.tex
 Appendix B.
 ------------------------------------------------------------------------------
  B Circuit Diagrams
 ------------------------------------------------------------------------------
-<Figures/OV7670_Schematic.jpg, id=1469, 844.5954pt x 597.432pt>
+<Figures/OV7670_Schematic.jpg, id=1470, 844.5954pt x 597.432pt>
 File: Figures/OV7670_Schematic.jpg Graphic file (type jpg)
 
 <use Figures/OV7670_Schematic.jpg>
 Package pdftex.def Info: Figures/OV7670_Schematic.jpg used on input line 8.
 (pdftex.def)             Requested size: 844.59334pt x 597.43054pt.
 
-<Figures/IlMattoCamera_CircuitDiagram.png, id=1470, 753.0534pt x 694.7556pt>
+<Figures/IlMattoCamera_CircuitDiagram.png, id=1471, 753.0534pt x 694.7556pt>
 File: Figures/IlMattoCamera_CircuitDiagram.png Graphic file (type png)
 
 <use Figures/IlMattoCamera_CircuitDiagram.png>
@@ -1560,7 +1556,7 @@ Package pdftex.def Info: Figures/IlMattoCamera_CircuitDiagram.png used on input
  line 17.
 (pdftex.def)             Requested size: 753.05156pt x 694.75389pt.
 
-<./Figures/ColumbusCircuitPage1.png, id=1471, 767.9892pt x 492.8814pt>
+<./Figures/ColumbusCircuitPage1.png, id=1472, 767.9892pt x 492.8814pt>
 File: ./Figures/ColumbusCircuitPage1.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage1.png>
@@ -1568,7 +1564,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage1.png used on input line
 26.
 (pdftex.def)             Requested size: 767.98732pt x 492.88019pt.
 
-<./Figures/ColumbusCircuitPage2.png, id=1472, 493.3632pt x 182.1204pt>
+<./Figures/ColumbusCircuitPage2.png, id=1473, 493.3632pt x 182.1204pt>
 File: ./Figures/ColumbusCircuitPage2.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage2.png>
@@ -1579,7 +1575,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage2.png used on input line
 
 LaTeX Warning: Float too large for page by 24.56201pt on input line 36.
 
-<./Figures/ColumbusCircuitPage3.png, id=1473, 447.1104pt x 189.3474pt>
+<./Figures/ColumbusCircuitPage3.png, id=1474, 447.1104pt x 189.3474pt>
 File: ./Figures/ColumbusCircuitPage3.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage3.png>
@@ -1590,7 +1586,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage3.png used on input line
 
 LaTeX Warning: Float too large for page by 24.56552pt on input line 43.
 
-<./Figures/ColumbusCircuitPage4.png, id=1474, 423.5022pt x 362.7954pt>
+<./Figures/ColumbusCircuitPage4.png, id=1475, 423.5022pt x 362.7954pt>
 File: ./Figures/ColumbusCircuitPage4.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage4.png>
@@ -1598,7 +1594,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage4.png used on input line
 47.
 (pdftex.def)             Requested size: 423.50114pt x 362.79451pt.
 
-<./Figures/ColumbusCircuitPage5.png, id=1475, 406.1574pt x 385.9218pt>
+<./Figures/ColumbusCircuitPage5.png, id=1476, 406.1574pt x 385.9218pt>
 File: ./Figures/ColumbusCircuitPage5.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage5.png>
@@ -1606,7 +1602,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage5.png used on input line
 54.
 (pdftex.def)             Requested size: 406.1564pt x 385.92085pt.
 
-<./Figures/ColumbusCircuitPage6.png, id=1476, 377.2494pt x 297.7524pt>
+<./Figures/ColumbusCircuitPage6.png, id=1477, 377.2494pt x 297.7524pt>
 File: ./Figures/ColumbusCircuitPage6.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage6.png>
@@ -1625,14 +1621,62 @@ es/ColumbusCircuitPage3.png>]
 [63 <E:/Uni/part3_project/Report/Figures/ColumbusCircuitPage4.png>] [64 <E:/Uni
 /part3_project/Report/Figures/ColumbusCircuitPage5.png>] [65 <E:/Uni/part3_proj
 ect/Report/Figures/ColumbusCircuitPage6.png>]
-(E:\Uni\part3_project\Report\AppendixB.tex [66
+(E:\Uni\part3_project\Report\Appendix_PCB.tex [66
 
 
 
 ]
 Appendix C.
 ------------------------------------------------------------------------------
- C Bitmap File Format
+ C PCB Design
+------------------------------------------------------------------------------
+<Figures/ColumbusPCBTop_GP.png, id=1520, 290.16405pt x 212.69061pt>
+File: Figures/ColumbusPCBTop_GP.png Graphic file (type png)
+
+<use Figures/ColumbusPCBTop_GP.png>
+Package pdftex.def Info: Figures/ColumbusPCBTop_GP.png used on input line 8.
+(pdftex.def)             Requested size: 290.16333pt x 212.69008pt.
+
+<Figures/ColumbusPCBBottom_GP.png, id=1521, 290.16405pt x 212.69061pt>
+File: Figures/ColumbusPCBBottom_GP.png Graphic file (type png)
+
+<use Figures/ColumbusPCBBottom_GP.png>
+Package pdftex.def Info: Figures/ColumbusPCBBottom_GP.png used on input line 15
+.
+(pdftex.def)             Requested size: 290.16333pt x 212.69008pt.
+) [67] [68 <E:/Uni/part3_project/Report/Figures/ColumbusPCBTop_GP.png>] [69 <E:
+/Uni/part3_project/Report/Figures/ColumbusPCBBottom_GP.png>] (E:\Uni\part3_proj
+ect\Report\Appendix_Costing.tex [70
+
+
+
+]
+Appendix D.
+------------------------------------------------------------------------------
+ D Costings
+------------------------------------------------------------------------------
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+[]\OT1/cmr/m/n/12 Cost per
+ []
+
+) [71] (E:\Uni\part3_project\Report\Appendix_Contents.tex [72
+
+
+
+]
+Appendix E.
+------------------------------------------------------------------------------
+ E Contents of Files
+------------------------------------------------------------------------------
+) [73] (E:\Uni\part3_project\Report\Appendix_Bitmap.tex [74
+
+
+
+]
+Appendix F.
+------------------------------------------------------------------------------
+ F Bitmap File Format
 ------------------------------------------------------------------------------
 
 Underfull \hbox (badness 10000) in paragraph at lines 10--10
@@ -1874,19 +1918,19 @@ Overfull \hbox (12.41272pt too wide) in alignment at lines 45--59
  [] [] [] [] [] 
  []
 
-[67] [68]) [69] (E:\Uni\part3_project\Report\AppendixC.tex [70
+[75] [76]) [77] (E:\Uni\part3_project\Report\Appendix_Code.tex [78
 
 
 
 ]
-Appendix D.
+Appendix G.
 ------------------------------------------------------------------------------
- D Source Code
+ G Source Code
 ------------------------------------------------------------------------------
-(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\main.c [71] [72]
-[73] [74] [75] [76] [77])
+(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\main.c [79] [80]
+[81] [82] [83] [84] [85])
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\Bitmap.c
-[78])
+[86])
 Overfull \hbox (21.22224pt too wide) in paragraph at lines 49--49
 []|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/CustomD
 evices.h| 
@@ -1894,7 +1938,7 @@ evices.h|
 
 
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\CustomDe
-vices.h [79])
+vices.h [87])
 Overfull \hbox (22.52362pt too wide) in paragraph at lines 55--55
 []|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/ImagePr
 ocessor.h| 
@@ -1902,7 +1946,7 @@ ocessor.h|
 
 
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\ImagePro
-cessor.h) [80]
+cessor.h) [88]
 Overfull \hbox (21.21808pt too wide) in paragraph at lines 58--58
 []|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/ImagePr
 ocessor.c| 
@@ -1910,7 +1954,7 @@ ocessor.c|
 
 
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\ImagePro
-cessor.c [81] [82] [83] [84] [85])
+cessor.c [89] [90] [91] [92] [93])
 Overfull \hbox (6.72656pt too wide) in paragraph at lines 61--61
 []|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/MotorDr
 iver.h| 
@@ -1918,7 +1962,7 @@ iver.h|
 
 
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\MotorDri
-ver.h [86])
+ver.h [94])
 Overfull \hbox (5.42102pt too wide) in paragraph at lines 64--64
 []|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/MotorDr
 iver.c| 
@@ -1926,5 +1970,98 @@ iver.c|
 
 
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\MotorDri
-ver.c [87] [88] [89] [90] [91] [92] [93] [94])
-(E:\Uni\par
+ver.c [95] [96] [97] [98] [99] [100] [101] [102])
+(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\OV7670.h
+[103] [104] [105] [106] [107] [108])
+(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\OV7670.c
+[109] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119])
+Overfull \hbox (16.01756pt too wide) in paragraph at lines 73--73
+[]|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/OV7670[
+]Setup.c| 
+ []
+
+
+(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\OV7670_S
+etup.c [120] [121] [122])
+(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\PCA9542A
+.h [123])
+(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\PCA9542A
+.c [124])
+(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\SD_Card.
+h [125])
+(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\SD_Card.
+c [126] [127] [128] [129] [130] [131] [132] [133])
+(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\TWI.c))
+[134]
+------------------------------------------------------------------------------
+ References
+------------------------------------------------------------------------------
+(E:\Uni\part3_project\Report\Report.bbl [135
+
+
+
+])
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 86.
+[136]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
+ (E:\Uni\part3_project\Report\Report.aux
+(E:\Uni\part3_project\Report\Introduction.aux)
+(E:\Uni\part3_project\Report\Research.aux)
+(E:\Uni\part3_project\Report\HardwareDevelopment.aux)
+(E:\Uni\part3_project\Report\InvestigationVision.aux)
+(E:\Uni\part3_project\Report\Results.aux)
+(E:\Uni\part3_project\Report\Conclusions.aux)
+(E:\Uni\part3_project\Report\Appendix_Gantt.aux)
+(E:\Uni\part3_project\Report\Appendix_CircuitDiagrams.aux)
+(E:\Uni\part3_project\Report\Appendix_PCB.aux)
+(E:\Uni\part3_project\Report\Appendix_Costing.aux)
+(E:\Uni\part3_project\Report\Appendix_Contents.aux)
+(E:\Uni\part3_project\Report\Appendix_Bitmap.aux)
+(E:\Uni\part3_project\Report\Appendix_Code.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 86.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 86.
+Package rerunfilecheck Info: File `Report.out' has not changed.
+(rerunfilecheck)             Checksum: 6E45FBF9A950ECC51C5EE793A1273AD7;16442.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 86.
+ ) 
+Here is how much of TeX's memory you used:
+ 27173 strings out of 494045
+ 443295 string characters out of 3145960
+ 1340867 words of memory out of 3000000
+ 26165 multiletter control sequences out of 15000+200000
+ 14685 words of font info for 57 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 63i,18n,100p,1064b,1874s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.461} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.25} has been referenced but does not exis
+t, replaced by a fixed one
+
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmu10.pfb>
+Output written on Report.pdf (152 pages, 21565918 bytes).
+PDF statistics:
+ 5655 PDF objects out of 6186 (max. 8388607)
+ 3684 named destinations out of 4296 (max. 500000)
+ 998 words of extra memory for PDF output out of 10000 (max. 10000000)
+

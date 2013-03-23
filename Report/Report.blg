@@ -5,13 +5,13 @@ A level-1 auxiliary file: HardwareDevelopment.aux
 A level-1 auxiliary file: InvestigationVision.aux
 A level-1 auxiliary file: Results.aux
 A level-1 auxiliary file: Conclusions.aux
-A level-1 auxiliary file: AppendixD.aux
-A level-1 auxiliary file: AppendixA.aux
-A level-1 auxiliary file: AppendixB.aux
-A level-1 auxiliary file: AppendixC.aux
-A level-1 auxiliary file: AppendixPCB.aux
-A level-1 auxiliary file: AppendixContents.aux
-A level-1 auxiliary file: AppendixCosting.aux
+A level-1 auxiliary file: Appendix_Gantt.aux
+A level-1 auxiliary file: Appendix_CircuitDiagrams.aux
+A level-1 auxiliary file: Appendix_PCB.aux
+A level-1 auxiliary file: Appendix_Costing.aux
+A level-1 auxiliary file: Appendix_Contents.aux
+A level-1 auxiliary file: Appendix_Bitmap.aux
+A level-1 auxiliary file: Appendix_Code.aux
 The style file: ecs.bst
 Database file #1: ECS.bib
 Warning--entry type for "PCBCart" isn't style-file defined
