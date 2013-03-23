@@ -32,4 +32,5 @@ void PrepareImage(Image_t *Image);
 //int* IFFT2D (dsp16_complex_t *Result, dsp16_complex_t *Input);
 void IFFT2D (dsp16_complex_t *Signal); /*Need to test this! */;
 int FFT1D_Abs( int *Signal);
+void Complex_Abs( int *Signal, dsp16_complex_t *ComplexBuffer, int size);
 #endif /* IMAGEPROCESSOR_H_ */

@@ -134,7 +134,10 @@ int main (void)
 				ComplexBuffer = mspace_malloc(sdram_msp,  SizeOfComplex_Buffer * sizeof(ComplexBuffer));
 				FFT2DCOMPLEX(Working_Buffer, ComplexBuffer, SizeOfWorking_Buffer);
 				break;
-				
+			case 'm':
+				print_dbg("\rCalculating Magnitude of FFT of signal in Working Buffer");
+				FFT1D_Abs(Working_Buffer);
+				break;
 			case 'B': 
 				print_dbg("\rReading Bitmap;");
 				ReadBitmap("Image_R_0.bmp", &image);

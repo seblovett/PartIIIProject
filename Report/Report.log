@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  23 MAR 2013 17:51
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  23 MAR 2013 17:56
 entering extended mode
 **Report.tex
 (E:\Uni\part3_project\Report\Report.tex
@@ -1509,20 +1509,25 @@ File: ./Figures/AVR_FFT_Dirac_Input.jpg Graphic file (type jpg)
 Package pdftex.def Info: ./Figures/AVR_FFT_Dirac_Input.jpg used on input line 3
 49.
 (pdftex.def)             Requested size: 417.47307pt x 172.37245pt.
-File: ./Figures/AVR_FFT_Dirac_Input.jpg Graphic file (type jpg)
 
-<use ./Figures/AVR_FFT_Dirac_Input.jpg>
-Package pdftex.def Info: ./Figures/AVR_FFT_Dirac_Input.jpg used on input line 3
-54.
-(pdftex.def)             Requested size: 417.47307pt x 172.37245pt.
-File: ./Figures/AVR_FFT_Dirac_Input.jpg Graphic file (type jpg)
+<./Figures/AVR_FFT_Dirac_Complex_Output.jpg, id=1447, 1446.40375pt x 582.175pt>
+File: ./Figures/AVR_FFT_Dirac_Complex_Output.jpg Graphic file (type jpg)
+<use ./Figures/AVR_FFT_Dirac_Complex_Output.jpg>
+Package pdftex.def Info: ./Figures/AVR_FFT_Dirac_Complex_Output.jpg used on inp
+ut line 354.
+(pdftex.def)             Requested size: 417.47307pt x 168.02693pt.
 
-<use ./Figures/AVR_FFT_Dirac_Input.jpg>
-Package pdftex.def Info: ./Figures/AVR_FFT_Dirac_Input.jpg used on input line 3
-60.
-(pdftex.def)             Requested size: 417.47307pt x 172.37245pt.
- [50 <E:/Uni/part3_project/Report/Figures/AVR_FFT_Dirac_Input.jpg>] [51]) [52] 
-(E:\Uni\part3_project\Report\Results.tex
+<./Figures/AVR_FFT_Dirac_Mag.jpg, id=1448, 1446.40375pt x 601.24625pt>
+File: ./Figures/AVR_FFT_Dirac_Mag.jpg Graphic file (type jpg)
+
+<use ./Figures/AVR_FFT_Dirac_Mag.jpg>
+Package pdftex.def Info: ./Figures/AVR_FFT_Dirac_Mag.jpg used on input line 360
+.
+(pdftex.def)             Requested size: 417.47307pt x 173.53125pt.
+ [50 <E:/Uni/part3_project/Report/Figures/AVR_FFT_Dirac_Input.jpg>] [51 <E:/Uni
+/part3_project/Report/Figures/AVR_FFT_Dirac_Complex_Output.jpg> <E:/Uni/part3_p
+roject/Report/Figures/AVR_FFT_Dirac_Mag.jpg>]) [52] (E:\Uni\part3_project\Repor
+t\Results.tex
 Chapter 5.
 ------------------------------------------------------------------------------
  5 Results
@@ -1549,7 +1554,7 @@ Appendix A.
 ------------------------------------------------------------------------------
  A Gantt Chart
 ------------------------------------------------------------------------------
-<Figures/Gantt.png, id=1494, 805.50937pt x 380.17032pt>
+<Figures/Gantt.png, id=1496, 805.50937pt x 380.17032pt>
 File: Figures/Gantt.png Graphic file (type png)
 
 <use Figures/Gantt.png>
@@ -1561,14 +1566,14 @@ Appendix B.
 ------------------------------------------------------------------------------
  B Circuit Diagrams
 ------------------------------------------------------------------------------
-<Figures/OV7670_Schematic.jpg, id=1504, 844.5954pt x 597.432pt>
+<Figures/OV7670_Schematic.jpg, id=1506, 844.5954pt x 597.432pt>
 File: Figures/OV7670_Schematic.jpg Graphic file (type jpg)
 
 <use Figures/OV7670_Schematic.jpg>
 Package pdftex.def Info: Figures/OV7670_Schematic.jpg used on input line 8.
 (pdftex.def)             Requested size: 844.59334pt x 597.43054pt.
 
-<Figures/IlMattoCamera_CircuitDiagram.png, id=1505, 753.0534pt x 694.7556pt>
+<Figures/IlMattoCamera_CircuitDiagram.png, id=1507, 753.0534pt x 694.7556pt>
 File: Figures/IlMattoCamera_CircuitDiagram.png Graphic file (type png)
 
 <use Figures/IlMattoCamera_CircuitDiagram.png>
@@ -1576,7 +1581,7 @@ Package pdftex.def Info: Figures/IlMattoCamera_CircuitDiagram.png used on input
  line 17.
 (pdftex.def)             Requested size: 753.05156pt x 694.75389pt.
 
-<./Figures/ColumbusCircuitPage1.png, id=1506, 767.9892pt x 492.8814pt>
+<./Figures/ColumbusCircuitPage1.png, id=1508, 767.9892pt x 492.8814pt>
 File: ./Figures/ColumbusCircuitPage1.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage1.png>
@@ -1584,7 +1589,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage1.png used on input line
 26.
 (pdftex.def)             Requested size: 767.98732pt x 492.88019pt.
 
-<./Figures/ColumbusCircuitPage2.png, id=1507, 493.3632pt x 182.1204pt>
+<./Figures/ColumbusCircuitPage2.png, id=1509, 493.3632pt x 182.1204pt>
 File: ./Figures/ColumbusCircuitPage2.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage2.png>
@@ -1595,7 +1600,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage2.png used on input line
 
 LaTeX Warning: Float too large for page by 24.56201pt on input line 36.
 
-<./Figures/ColumbusCircuitPage3.png, id=1508, 447.1104pt x 189.3474pt>
+<./Figures/ColumbusCircuitPage3.png, id=1510, 447.1104pt x 189.3474pt>
 File: ./Figures/ColumbusCircuitPage3.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage3.png>
@@ -1606,7 +1611,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage3.png used on input line
 
 LaTeX Warning: Float too large for page by 24.56552pt on input line 43.
 
-<./Figures/ColumbusCircuitPage4.png, id=1509, 423.5022pt x 362.7954pt>
+<./Figures/ColumbusCircuitPage4.png, id=1511, 423.5022pt x 362.7954pt>
 File: ./Figures/ColumbusCircuitPage4.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage4.png>
@@ -1614,7 +1619,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage4.png used on input line
 47.
 (pdftex.def)             Requested size: 423.50114pt x 362.79451pt.
 
-<./Figures/ColumbusCircuitPage5.png, id=1510, 406.1574pt x 385.9218pt>
+<./Figures/ColumbusCircuitPage5.png, id=1512, 406.1574pt x 385.9218pt>
 File: ./Figures/ColumbusCircuitPage5.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage5.png>
@@ -1622,7 +1627,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage5.png used on input line
 54.
 (pdftex.def)             Requested size: 406.1564pt x 385.92085pt.
 
-<./Figures/ColumbusCircuitPage6.png, id=1511, 377.2494pt x 297.7524pt>
+<./Figures/ColumbusCircuitPage6.png, id=1513, 377.2494pt x 297.7524pt>
 File: ./Figures/ColumbusCircuitPage6.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage6.png>
@@ -1650,14 +1655,14 @@ Appendix C.
 ------------------------------------------------------------------------------
  C PCB Design
 ------------------------------------------------------------------------------
-<Figures/ColumbusPCBTop_GP.png, id=1553, 290.16405pt x 212.69061pt>
+<Figures/ColumbusPCBTop_GP.png, id=1555, 290.16405pt x 212.69061pt>
 File: Figures/ColumbusPCBTop_GP.png Graphic file (type png)
 
 <use Figures/ColumbusPCBTop_GP.png>
 Package pdftex.def Info: Figures/ColumbusPCBTop_GP.png used on input line 8.
 (pdftex.def)             Requested size: 290.16333pt x 212.69008pt.
 
-<Figures/ColumbusPCBBottom_GP.png, id=1554, 290.16405pt x 212.69061pt>
+<Figures/ColumbusPCBBottom_GP.png, id=1556, 290.16405pt x 212.69061pt>
 File: Figures/ColumbusPCBBottom_GP.png Graphic file (type png)
 
 <use Figures/ColumbusPCBBottom_GP.png>
@@ -2049,10 +2054,10 @@ Package rerunfilecheck Info: File `Report.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 86.
  ) 
 Here is how much of TeX's memory you used:
- 27318 strings out of 494045
- 445520 string characters out of 3145960
+ 27328 strings out of 494045
+ 445903 string characters out of 3145960
  1394360 words of memory out of 3000000
- 26184 multiletter control sequences out of 15000+200000
+ 26192 multiletter control sequences out of 15000+200000
  14685 words of font info for 57 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  63i,18n,100p,1383b,1874s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2080,9 +2085,9 @@ s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmu10.pfb>
-Output written on Report.pdf (158 pages, 21628833 bytes).
+Output written on Report.pdf (158 pages, 21744206 bytes).
 PDF statistics:
- 5843 PDF objects out of 6186 (max. 8388607)
+ 5845 PDF objects out of 6186 (max. 8388607)
  3809 named destinations out of 4296 (max. 500000)
- 1019 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1029 words of extra memory for PDF output out of 10000 (max. 10000000)
 

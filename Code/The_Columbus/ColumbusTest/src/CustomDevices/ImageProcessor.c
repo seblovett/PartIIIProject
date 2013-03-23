@@ -98,6 +98,23 @@ int FFT1D_Abs( int *Signal)
 
 	return Signal;
 }
+
+void Complex_Abs( int *Signal, dsp16_complex_t *ComplexBuffer, int size)
+{
+	int log2Size, i =0;
+	A_ALIGNED dsp16_complex_t vect1[FFT_SIZE];
+	A_ALIGNED dsp16_t vect2[FFT_SIZE];
+	for(i = 0; i < FFT_SIZE; i++)
+	{
+		vect1[i].imag = ComplexBuffer[i].imag;
+		vect1[i].real = ComplexBuffer[i].real;
+	}
+	dsp16_vect_complex_abs(vect2, vect1, FFT_SIZE);
+	for(i = 0; i < FFT_SIZE; i++)
+	{
+		Signal[i] = vect2[i];// * FFT_SIZE;
+	}
+}
 //One Dimensional Fast Fourier Transform returning complex values
 void FFT1D( int *Signal, dsp16_complex_t *ComplexBuffer)
 {
