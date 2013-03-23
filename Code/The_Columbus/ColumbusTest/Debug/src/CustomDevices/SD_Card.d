@@ -106,7 +106,11 @@ src/CustomDevices/SD_Card.d src/CustomDevices/SD_Card.o \
  ../src/CustomDevices/PCA9542A.h ../src/CustomDevices/MotorDriver.h \
  ../src/CustomDevices/SD_Card.h ../src/CustomDevices/ImageProcessor.h \
  ../src/CustomDevices/ImageProcessor.h ../src/config/conf_sd_mmc_spi.h \
- ../src/config/conf_access.h ../src/CustomDevices/dummy.h
+ ../src/config/conf_access.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/stdio.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/include/stdarg.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/stdio.h \
+ ../src/CustomDevices/dummy.h
 
 ../src/CustomDevices/CustomDevices.h:
 
@@ -341,5 +345,11 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/config/conf_sd_mmc_spi.h:
 
 ../src/config/conf_access.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/stdio.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/include/stdarg.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/stdio.h:
 
 ../src/CustomDevices/dummy.h:

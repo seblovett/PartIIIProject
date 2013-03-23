@@ -9,7 +9,7 @@
  * Include header files for all drivers that have been imported from
  * Atmel Software Framework (ASF).
  */
-#define DSP32_FORMAT 24
+
 #include <asf.h>
 #include <conf_board.h>
 #include "CustomDevices/CustomDevices.h"
@@ -21,19 +21,9 @@
 #include "delay.h"
 
 //REF : http://www.chris.com/ASCII/index.php?art=transportation/nautical 
-#define ASCII_SHIP "\t\t\t             |    |    | \n\r \
-\t\t\t            )_)  )_)  )_) \n\r \
-\t\t\t           )___))___))___)\\  \n\r\
-\t\t\t           )____)____)_____)\\\\ \n\r \
-\t\t\t         _____|____|____|____\\\\\\__ \n\r \
-\t\t\t---------\\                   /--------- \n\r \
-\t\t\t  ^^^^^ ^^^^^^^^^^^^^^^^^^^^^ \n\r \
-\t\t\t    ^^^^      ^^^^     ^^^    ^^\n\r \
-\t\t\t         ^^^^      ^^^\n\r"
-
- #define COLUMBUS " _______  _______  _                 _______  ______            _______ \n\r(  ____ \\(  ___  )( \\      |\\     /|(       )(  ___ \\ |\\     /|(  ____ \\\n\r| (    \\/| (   ) || (      | )   ( || () () || (   ) )| )   ( || (    \\/\n\r| |      | |   | || |      | |   | || || || || (__/ / | |   | || (_____ \n\r| |      | |   | || |      | |   | || |(_)| ||  __ (  | |   | |(_____  )\n\r| |      | |   | || |      | |   | || |   | || (  \\ \\ | |   | |      ) |\n\r| (____/\\| (___) || (____/\\| (___) || )   ( || )___) )| (___) |/\\____) |\n\r(_______/(_______)(_______/(_______)|/     \\||______/ (_______)\\_______)\n\n\r"
+#define ASCII_SHIP "\t\t\t             |    |    | \n\r\t\t\t            )_)  )_)  )_) \n\r\t\t\t           )___))___))___)\\  \n\r\t\t\t           )____)____)_____)\\\\ \n\r\t\t\t         _____|____|____|____\\\\\\__ \n\r\t\t\t---------\\                   /--------- \n\r\t\t\t  ^^^^^ ^^^^^^^^^^^^^^^^^^^^^ \n\r\t\t\t    ^^^^      ^^^^     ^^^    ^^\n\r\t\t\t         ^^^^      ^^^\n\r"
+#define COLUMBUS " _______  _______  _                 _______  ______            _______ \n\r(  ____ \\(  ___  )( \\      |\\     /|(       )(  ___ \\ |\\     /|(  ____ \\\n\r| (    \\/| (   ) || (      | )   ( || () () || (   ) )| )   ( || (    \\/\n\r| |      | |   | || |      | |   | || || || || (__/ / | |   | || (_____ \n\r| |      | |   | || |      | |   | || |(_)| ||  __ (  | |   | |(_____  )\n\r| |      | |   | || |      | |   | || |   | || (  \\ \\ | |   | |      ) |\n\r| (____/\\| (___) || (____/\\| (___) || )   ( || )___) )| (___) |/\\____) |\n\r(_______/(_______)(_______/(_______)|/     \\||______/ (_______)\\_______)\n\n\r"
 #define THE "\t\t\t_________          _______ \n\r \t\t\t\\__   __/|\\     /|(  ____ \\ \n\r \t\t\t   ) (   | )   ( || (    \\/\n\r\t\t\t   | |   | (___) || (__    \n\r \t\t\t   | |   |  ___  ||  __)   \n\r \t\t\t   | |   | (   ) || (      \n\r \t\t\t   | |   | )   ( || (____/\\\n\r \t\t\t   )_(   |/     \\|(_______/\n\r"
-
 #define PROMPT "\n\r$>"
 
 #define HELP	"\n\rColumbus Prompt Help:\n\r\
@@ -95,12 +85,6 @@ int main (void)
 	print_dbg(ASCII_SHIP);
 	System_Test();
 
-	
-	//print_dbg("\n\rResetting Motors.");
-	
-// 	Motors_Reset();
-// 	while(Motors_Moving() == true)
-// 		;
 	if(Columbus_Status.Status != STATUS_OK)
 	{
 		while(1)
@@ -299,7 +283,17 @@ int main (void)
 				print_dbg("\rSaving Working Buffer;");
 				SaveBuff(Working_Buffer, SizeOfWorking_Buffer);
 				break;
-				
+			case 'd':
+				print_dbg("\rSaving Working Buffer as CSV;");
+				SaveBuff_CSV("Buffer.csv", Working_Buffer, SizeOfWorking_Buffer);
+				break;
+			case 'f':
+				Working_Buffer = mspace_malloc(sdram_msp, FFT_SIZE);
+				SizeOfWorking_Buffer = FFT_SIZE;
+				print_dbg("\rReading in Buffer.csv");
+				Read_CSV("Buffer.csv", Working_Buffer, SizeOfWorking_Buffer);
+				print_dbg("\n\rComplete!");
+				break;
 			case 'S':
 				print_dbg("\rSaving Bitmap;");
 				SaveBitmap(image.ImagePtr, image.Width, image.Height, "ResavedImage.bmp");

@@ -15,11 +15,14 @@
 #include "CustomDevices/CustomDevices.h"
 #include "conf_sd_mmc_spi.h"
 #include <asf.h>
-
+#include "stdlib.h"
+#include "stdio.h"
 // Dummy char table
-const char dummy_data[] =
+const char dummy_data[] = 
 #include "dummy.h"
 ;
+
+
 // PDCA Channel pointer
 volatile avr32_pdca_channel_t* pdca_channelrx ;
 volatile avr32_pdca_channel_t* pdca_channeltx ;
@@ -143,6 +146,7 @@ void local_pdca_init(void)
 }
 
 #define BUFFER_FILENAME		"Buffer.bin"
+#define BUFFERCSV_FILENAME		"Buffer.csv"
 void SaveBuff( int * WorkingBuffer , int size) 
 {
 	//If the file exists, delete it
@@ -157,7 +161,68 @@ void SaveBuff( int * WorkingBuffer , int size)
 	file_write_buf(WorkingBuffer, size * sizeof(WorkingBuffer));
 	file_close();
 }
-
+void SaveBuff_CSV(char *Filename, int *WorkingBuffer, int size)
+{
+	int i, j;
+	char Buff[16];
+	//If the file exists, delete it
+	if(nav_filelist_findname((FS_STRING)Filename, false))
+	{
+		nav_setcwd((FS_STRING)Filename, false, false);
+		nav_file_del(false);
+	}
+	nav_file_create((FS_STRING)Filename);
+	nav_setcwd((FS_STRING)Filename, false, true);
+	file_open(FOPEN_MODE_APPEND);
+	for(i = 0; i < size; i++)
+	{
+		sprintf(Buff, "%d,", WorkingBuffer[i]);
+		//itoa(WorkingBuffer[i], Buff, 10);
+		j = 0;
+		while(Buff[j++] != 0);//count the size of data to be written
+		atoi(Buff);
+		file_write_buf(Buff, j-1);
+		//file_write_buf(",", 1);
+	}	
+	
+	file_close(); 
+}
+void Read_CSV(char *Filename, int *WorkingBuffer, int size)
+{
+	char Buff[32];
+	int i, j;
+	char c;
+	nav_filelist_reset();
+	if(WorkingBuffer == NULL){
+		print_dbg("\n\rRead_CSV: Buffer not initialised");
+		return;
+	}
+	//Check file Exists
+	if(nav_filelist_findname((FS_STRING)BUFFERCSV_FILENAME, false) == false){		
+		print_dbg("\n\rRead_CSV : File doesn't exist;");
+		return;
+	}
+	nav_setcwd((FS_STRING)Filename, false, true);
+	file_open(FOPEN_MODE_R);
+	for(i = 0; i < size; i++)
+	{
+		c = 0;
+		//j = 0;
+		for(j = 0; j < 32; j++)
+			Buff[j] = 0; //clear the buffer
+		j = 0;
+		while(c != ',')
+		{
+			c = file_getc();
+			if(c == ',')
+				break;
+			Buff[j++] = c; //load string into buffer
+		}
+		WorkingBuffer[i] = atoi(Buff); //Convert to int and put into buffer
+	}
+	file_close();
+	return;
+}
 void Log_Write(char *buff, int length) 
 {
 	nav_setcwd((FS_STRING)LOG_FILE, true, false);
