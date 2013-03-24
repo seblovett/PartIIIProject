@@ -118,7 +118,10 @@ src/main.d src/main.o src/main.o: ../src/main.c ../src/asf.h \
  ../src/asf/common/services/clock/uc3c/pll.h \
  ../src/asf/common/services/clock/genclk.h \
  ../src/asf/common/services/clock/uc3c/genclk.h \
- ../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h
+ ../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/stdio.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/include/stdarg.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/stdio.h
 
 ../src/asf.h:
 
@@ -381,3 +384,9 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.
 ../src/asf/common/services/clock/uc3c/genclk.h:
 
 ../src/asf/avr32/drivers/cpu/cycle_counter/cycle_counter.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/stdio.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/include/stdarg.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr32/4.4.3/../../../../avr32/include/sys/stdio.h:

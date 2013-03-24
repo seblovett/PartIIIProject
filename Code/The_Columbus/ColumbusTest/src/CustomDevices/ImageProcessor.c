@@ -123,7 +123,7 @@ void FFT1D( int *Signal, dsp16_complex_t *ComplexBuffer)
 	A_ALIGNED dsp16_t vect2[FFT_SIZE];
 	for(i = 0; i < FFT_SIZE; i++)
 	{
-		vect2[i] = (dsp16_t)Signal[i];
+		vect2[i] = Signal[i];
 	}
 	dsp16_trans_realcomplexfft(vect1, vect2, log_2(FFT_SIZE));
 	for(i = 0; i < FFT_SIZE; i++)

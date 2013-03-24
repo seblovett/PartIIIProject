@@ -9,7 +9,7 @@
  * Include header files for all drivers that have been imported from
  * Atmel Software Framework (ASF).
  */
-
+#define DSP16_FORMAT 10
 #include <asf.h>
 #include <conf_board.h>
 #include "CustomDevices/CustomDevices.h"
@@ -19,6 +19,7 @@
 #include "navigation.h"
 #include "fastmath.h"
 #include "delay.h"
+#include "stdio.h"
 
 //REF : http://www.chris.com/ASCII/index.php?art=transportation/nautical 
 #define ASCII_SHIP "\t\t\t             |    |    | \n\r\t\t\t            )_)  )_)  )_) \n\r\t\t\t           )___))___))___)\\  \n\r\t\t\t           )____)____)_____)\\\\ \n\r\t\t\t         _____|____|____|____\\\\\\__ \n\r\t\t\t---------\\                   /--------- \n\r\t\t\t  ^^^^^ ^^^^^^^^^^^^^^^^^^^^^ \n\r\t\t\t    ^^^^      ^^^^     ^^^    ^^\n\r\t\t\t         ^^^^      ^^^\n\r"
@@ -61,7 +62,7 @@ void Get_Line( char * CommandBuffer )
 	usart_putchar(DBG_USART, 6);
 }
 
-#define COMMAND_BUFFER_SIZE		32
+#define COMMAND_BUFFER_SIZE		128
 int main (void)
 {
 	Image_t image;
@@ -135,7 +136,7 @@ int main (void)
 				FFT2DCOMPLEX(Working_Buffer, ComplexBuffer, SizeOfWorking_Buffer);
 				break;
 			case 'm':
-				print_dbg("\rCalculating Magnitude of FFT of signal in Working Buffer");
+				print_dbg("\r1D FFT Magnitude");
 				FFT1D_Abs(Working_Buffer);
 				break;
 			case 'B': 
@@ -188,10 +189,15 @@ int main (void)
 				print_dbg("\rComplex Buffer:\n\r[");
 				for (i = 0; i < SizeOfComplex_Buffer; i ++)
 				{
-					print_dbg_ulong(ComplexBuffer[i].real);
-					print_dbg(" + j");
-					print_dbg_ulong(ComplexBuffer[i].imag);
-					print_dbg(", ");
+// 					print_dbg_ulong(ComplexBuffer[i].real);
+// 					print_dbg(" + ");
+// 					print_dbg_ulong(ComplexBuffer[i].imag);
+// 					print_dbg(", ");
+					if(ComplexBuffer[i].imag >= 0)
+						sprintf(CommandBuffer, "%d + %dj,", ComplexBuffer[i].real, ComplexBuffer[i].imag);
+					else
+						sprintf(CommandBuffer, "%d %dj,", ComplexBuffer[i].real, ComplexBuffer[i].imag);
+					print_dbg(CommandBuffer);
 				}
 				print_dbg("]\n\r");
 				break;
@@ -272,8 +278,10 @@ int main (void)
 				print_dbg("\rWorking Buffer:\n\r[");
 				for(i = 0; i < SizeOfWorking_Buffer; i++)
 				{
-					print_dbg_ulong(Working_Buffer[i]);
-					print_dbg(", ");
+// 					print_dbg_ulong(Working_Buffer[i]);
+// 					print_dbg(", ");
+					sprintf(CommandBuffer, "%d,", (dsp16_t)Working_Buffer[i]);
+					print_dbg(CommandBuffer);
 				}
 				print_dbg("\b\b]\n\r");
 				break;

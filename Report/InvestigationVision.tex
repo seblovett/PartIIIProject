@@ -345,6 +345,8 @@ A Dirac function and a rectangular pulse were used as test signals.
 
 Figure \ref{fig:AVR:FFT:Dirac:Input} shows the input signal given to the AVR. It is a 256 long array of a Dirac function. This was then converted to the internally defined fixed point notation and passed through the Fourier transform method. The resulting complex array was then saved to a Comma Separated Value file and read into MATLAB. Figure \ref{fig:AVR:FFT:Dirac:Output} shows the calculated phase and magnitude plots of the output complex array. The magnitude is relatively flat and around the value of 1. In comparison with figure \ref{fg:Dirac:Mag}, they are relatively similar. The phase, however, seems to be very different. Figure \ref{fg:Dirac:Phase} shows what was expected, but the two phase results seem not to match. This could due to MATLAB having more accurate algorithms and a more accurate representation that the 16 bit fixed point used on the AVR. However, using a function in the DSP library to calculate the magnitude, the spectrum in figure \ref{fig:AVR:FFT:Dirac:Mag} is obtained. This, though is not exactly 1 as expected, is completely flat. It is computed from the same transformed data. It suggests that there is some internal compensation in the algorithms. The actual value in figure \ref{fig:AVR:FFT:Dirac:Mag} is $0.9897$ to 4 decimal places giving an overall error of $1.03\%$. 
 
+Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref{fig:AVR:FFT:Square:Mag} show the similar outputs from the AVR. The result was renormalised from fixed point notation and the data was shifted so that the centre of the plot is frequency 0.  Again, it can be seen the magnitude calculated from the complex output (figure \ref{fig:AVR:FFT:Square:Output}) is different to the result when the magnitude is calculated on the AVR (figure \ref{fig:AVR:FFT:Square:Mag}). There are also differences in the result from the AVR and the result from MATLAB in figure \ref{fig:SquareWaveFT}, which can, again, be put down to the algorithms. 
+
 \begin{figure}
 \includegraphics[width=\textwidth]{./Figures/AVR_FFT_Dirac_Input.jpg}
 \caption{Input Dirac Signal for AVR fast Fourier transform}
@@ -355,12 +357,28 @@ Figure \ref{fig:AVR:FFT:Dirac:Input} shows the input signal given to the AVR. It
 \caption{Output phase and magnitude of the complex output from AVR fast Fourier transform of a Dirac function}
 \label{fig:AVR:FFT:Dirac:Output}
 \end{figure}
-
 \begin{figure}
 \includegraphics[width=\textwidth]{./Figures/AVR_FFT_Dirac_Mag.jpg}
 \caption{Maginitude calculated by the AVR of the Fourier transform of a Dirac function}
 \label{fig:AVR:FFT:Dirac:Mag}
 \end{figure}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{./Figures/AVR_FFT_Square_Input.jpg}
+\caption{Input Rectangular Pulse for AVR fast Fourier transform}
+\label{fig:AVR:FFT:Square:Input}
+\end{figure}
+\begin{figure}
+\includegraphics[width=\textwidth]{./Figures/AVR_FFT_Square_Complex_Output.jpg}
+\caption{Output phase and magnitude of the complex output from AVR fast Fourier transform of a Rectangular Pulse}
+\label{fig:AVR:FFT:Square:Output}
+\end{figure}
+\begin{figure}
+\includegraphics[width=\textwidth]{./Figures/AVR_FFT_Square_Mag.jpg}
+\caption{Maginitude calculated by the AVR of the Fourier transform of a Rectangular Pulse}
+\label{fig:AVR:FFT:Square:Mag}
+\end{figure}
+
 \subsubsection{2D FFT Test}
 \inote{Elapsed Time to do FT}
 \inote{Need to implement grey scaling method before being able to do this}
