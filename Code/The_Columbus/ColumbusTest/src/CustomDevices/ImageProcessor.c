@@ -44,11 +44,15 @@ void FFT2DCOMPLEX( int *Signal, dsp16_complex_t *ComplexBuffer, int size )
 	A_ALIGNED dsp16_complex_t Result_C_2D[FFT_SIZE*FFT_SIZE];
 	A_ALIGNED dsp16_t Input_R_1D[FFT_SIZE];
 	//Stage 1 - FFT Real values from Signal. Store VERTICALLY in Result_2D
+	//print_dbg("\n\rStage 1 Reached. Iteration: \n\r");
 	for(i = 0; i < FFT_SIZE; i ++){ //for each row
 		for(j = 0; j < FFT_SIZE; j++){
 			Input_R_1D[j] = Signal[Ptr++]; //copy the data across
 		}
 		//Do the FFT
+// 		print_dbg("\r");
+// 		print_dbg_ulong(i);
+		
 		dsp16_trans_realcomplexfft(Result_C_1D, Input_R_1D, log_2(FFT_SIZE));
 		//Copy data into 2D reult TRANSPOSED
 		for(j = 0; j < FFT_SIZE; j++){
@@ -56,13 +60,15 @@ void FFT2DCOMPLEX( int *Signal, dsp16_complex_t *ComplexBuffer, int size )
 			Result_C_2D[i + (j * FFT_SIZE)].real = Result_C_1D[j].real * FFT_SIZE;
 		}
 	}
+	//print_dbg("\n\rStage 2 Reached. Iteration: \n\r");
 	//Stage 2 - FFT Complex Values from Result_2D, put back into Rows
 	for(i = 0; i < FFT_SIZE; i++){//for each row
 		for(j = 0; j < FFT_SIZE; j++){//copy the data across
 			Input_C_1D[j].imag = Result_C_2D[j + i * FFT_SIZE].imag;
 			Input_C_1D[j].real = Result_C_2D[j + i * FFT_SIZE].real;
 		}
-
+// 		print_dbg("\r");
+// 		print_dbg_ulong(i);
 		//Do Fourier
 		dsp16_trans_complexfft(Result_C_1D, Input_C_1D, log_2(FFT_SIZE));
 		//Copy back

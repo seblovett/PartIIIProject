@@ -123,7 +123,11 @@ int main (void)
 				print_dbg("\r1D FFT;");
 				SizeOfComplex_Buffer = FFT_SIZE;
 				ComplexBuffer = mspace_malloc(sdram_msp,  SizeOfComplex_Buffer * sizeof(ComplexBuffer));
+				i = Get_sys_count();
 				FFT1D(Working_Buffer, ComplexBuffer);
+				i = Get_sys_count() - i; 
+				print_dbg("\n\rCycles Taken for 1D FFT = ");
+				print_dbg_ulong(i);
 				break;
 			case '2':
 				print_dbg("\r2D FFT;");
@@ -133,7 +137,11 @@ int main (void)
 				print_dbg("\rComplex FFT2D:");
 				SizeOfComplex_Buffer = FFT_SIZE * FFT_SIZE;
 				ComplexBuffer = mspace_malloc(sdram_msp,  SizeOfComplex_Buffer * sizeof(ComplexBuffer));
+				i = Get_sys_count();
 				FFT2DCOMPLEX(Working_Buffer, ComplexBuffer, SizeOfWorking_Buffer);
+				i = Get_sys_count() - i;
+				print_dbg("\n\rCycles Taken for 2D FFT = ");
+				print_dbg_ulong(i);
 				break;
 			case 'm':
 				print_dbg("\r1D FFT Magnitude");
@@ -305,8 +313,9 @@ int main (void)
 				SaveCBuff_CSV("Buffer_Complex.csv", ComplexBuffer, SizeOfComplex_Buffer);
 				break;
 			case 'f':
-				Working_Buffer = mspace_malloc(sdram_msp, FFT_SIZE*FFT_SIZE);
 				SizeOfWorking_Buffer = FFT_SIZE*FFT_SIZE;
+				Working_Buffer = mspace_malloc(sdram_msp, SizeOfWorking_Buffer);
+				
 				print_dbg("\rReading in Buffer.csv");
 				Read_CSV("Buffer.csv", Working_Buffer, SizeOfWorking_Buffer);
 				print_dbg("\n\rComplete!");

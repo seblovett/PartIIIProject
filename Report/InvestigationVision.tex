@@ -381,6 +381,11 @@ Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref
 
 \subsubsection{2D FFT Test}
 
+Two test signals were used to test the 2D FFT on the AVR, a Dirac Signal and a Square wave, seen in figures \ref{fg:Dirac2D:Signal} and \ref{fg:Square2D:Signal}. The internal method on the AVR was not able to compute the magnitude due to the method scaling all the values down causing truncation errors. The complex Fourier transform was obtained, saved to the SD card in CSV format and viewed in MATLAB. All data was normalised to omit the effects of scaling and the data shifted so that frequency 0 is in the centre. These test were done with a $64\times64$ 2D data as with a $256 \times 256$ array, the AVR runs out of internal RAM to calculate the transform. 
+\inote{I would like to get this to work by the end but not vital.}
+
+The result of the Dirac test is seen in figure \ref{fig:AVR:FFT2:Dirac}. A similar error is found in the magnitude, but the spectrum is generally flat with a small amount of ripple as seen with the 1D FFT in figure \ref{fig:AVR:FFT:Dirac:Mag}. The phase has similar issues as with the 1D FFT. However, there appears to be the correct pattern with the 2D Phase, but rotated about $45^{\circ}$. This is also the case with the Square wave test. The magnitude in figure \ref{fig:AVR:FFT2:Square:Mag} is very similar, with a distinct peak in the centre (frequency 0) and a sinc function extending vertically and horizontally from this. Again, however, the phase (figure \ref{fig:AVR:FFT2:Square:Phase}) seems to differ a lot from the expected result in figure \ref{fg:Square2D:Phase}. 
+
 \begin{figure}
 \subfigure[A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR \label{fig:AVR:FFT2:Dirac:Mag}]{\includegraphics[width=\textwidth]{Figures/AVR_FFT2_Dirac_Mag.eps}}
 \subfigure[A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR \label{fig:AVR:FFT2:Dirac:Phase}]{\includegraphics[width=\textwidth]{Figures/AVR_FFT2_Dirac_Phase.eps}}
@@ -391,8 +396,8 @@ Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref
 \begin{figure}
 \subfigure[A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR \label{fig:AVR:FFT2:Square:Mag}]{\includegraphics[width=\textwidth]{Figures/AVR_FFT2_Square_Mag.eps}}
 \subfigure[A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR \label{fig:AVR:FFT2:Square:Phase}]{\includegraphics[width=\textwidth]{Figures/AVR_FFT2_Square_Phase.eps}}
-\subfigure[Figure \ref{fig:AVR:FFT2:Square:Mag} shown as a grey scale image\label{fig:AVR:FFT2:Square:Mag:Image}]{\includegraphics[width=(\textwidth / 2)]{Figures/AVR_FFT2_Square_Mag_Image.jpg}}
-\subfigure[Figure \ref{fig:AVR:FFT2:Square:Phase} shown as a grey scale image\label{fig:AVR:FFT2:Square:Phase:Image}]{\includegraphics[width = (\textwidth / 2)]{Figures/AVR_FFT2_Square_Phase_Image.jpg}}
+%\subfigure[Figure \ref{fig:AVR:FFT2:Square:Mag} shown as a grey scale image\label{fig:AVR:FFT2:Square:Mag:Image}]{\includegraphics[width=(\textwidth / 2)]{Figures/AVR_FFT2_Square_Mag_Image.jpg}}
+%\subfigure[Figure \ref{fig:AVR:FFT2:Square:Phase} shown as a grey scale image\label{fig:AVR:FFT2:Square:Phase:Image}]{\includegraphics[width = (\textwidth / 2)]{Figures/AVR_FFT2_Square_Phase_Image.jpg}}
 \caption{3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Square Function}
 \label{fig:AVR:FFT2:Square}
 \end{figure}
