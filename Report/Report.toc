@@ -58,40 +58,40 @@
 \contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{49}{subsection.411}
 \contentsline {subsubsection}{\numberline {4.3.4.1}1D FFT Test}{49}{subsubsection.413}
 \contentsline {subsubsection}{\numberline {4.3.4.2}2D FFT Test}{52}{subsubsection.420}
-\contentsline {section}{\numberline {4.4}Low Level Vision Algorithms}{53}{section.426}
-\contentsline {subsection}{\numberline {4.4.1}Noise Reduction}{53}{subsection.427}
-\contentsline {subsection}{\numberline {4.4.2}Edge Detection}{53}{subsection.432}
-\contentsline {chapter}{\numberline {5}Results}{55}{chapter.437}
-\contentsline {section}{\numberline {5.1}Results}{55}{section.438}
-\contentsline {chapter}{\numberline {6}Conclusions and Further Work}{57}{chapter.441}
-\contentsline {chapter}{\numberline {A}Gantt Chart}{59}{appendix.445}
-\contentsline {chapter}{\numberline {B}Circuit Diagrams}{61}{appendix.447}
-\contentsline {section}{\numberline {B.1}OV7670 Breakout Board Schematic}{61}{section.448}
-\contentsline {section}{\numberline {B.2}Il Matto and Dual Camera Schematic}{61}{section.450}
-\contentsline {section}{\numberline {B.3}The Columbus Circuit Diagram}{61}{section.452}
-\contentsline {chapter}{\numberline {C}PCB Design}{71}{appendix.459}
-\contentsline {section}{\numberline {C.1}PCB Top Side}{71}{section.460}
-\contentsline {section}{\numberline {C.2}PCB Bottom Side}{71}{section.462}
-\contentsline {chapter}{\numberline {D}Costings}{75}{appendix.464}
-\contentsline {chapter}{\numberline {E}Contents of Files}{77}{appendix.466}
-\contentsline {chapter}{\numberline {F}Bitmap File Format}{79}{appendix.467}
-\contentsline {section}{\numberline {F.1}Bitmap File Format}{79}{section.468}
-\contentsline {chapter}{\numberline {G}Source Code}{83}{appendix.471}
-\contentsline {section}{\numberline {G.1}C Code for AVR}{83}{section.472}
-\contentsline {subsection}{\numberline {G.1.1}The Columbus Source Code}{83}{subsection.473}
-\contentsline {subsubsection}{\numberline {G.1.1.1}main.c}{83}{subsubsection.474}
-\contentsline {subsubsection}{\numberline {G.1.1.2}Bitmap.c}{90}{subsubsection.869}
-\contentsline {subsubsection}{\numberline {G.1.1.3}CustomDevices.h}{91}{subsubsection.917}
-\contentsline {subsubsection}{\numberline {G.1.1.4}ImageProcessor.h}{92}{subsubsection.961}
-\contentsline {subsubsection}{\numberline {G.1.1.5}ImageProcessor.c}{93}{subsubsection.999}
-\contentsline {subsubsection}{\numberline {G.1.1.6}MotorDriver.h}{99}{subsubsection.1327}
-\contentsline {subsubsection}{\numberline {G.1.1.7}MotorDriver.c}{100}{subsubsection.1387}
-\contentsline {subsubsection}{\numberline {G.1.1.8}OV7670.h}{108}{subsubsection.1824}
-\contentsline {subsubsection}{\numberline {G.1.1.9}OV7670.c}{114}{subsubsection.2160}
-\contentsline {subsubsection}{\numberline {G.1.1.10}OV7670.c}{125}{subsubsection.2781}
-\contentsline {subsubsection}{\numberline {G.1.1.11}PCA9542A.h}{128}{subsubsection.2963}
-\contentsline {subsubsection}{\numberline {G.1.1.12}PCA9542A.c}{129}{subsubsection.3000}
-\contentsline {subsubsection}{\numberline {G.1.1.13}SD\textunderscore Card.h}{130}{subsubsection.3050}
-\contentsline {subsubsection}{\numberline {G.1.1.14}SD\textunderscore Card.c}{131}{subsubsection.3088}
-\contentsline {subsubsection}{\numberline {G.1.1.15}TWI.c}{140}{subsubsection.3612}
-\contentsline {chapter}{References}{143}{dummy.3659}
+\contentsline {section}{\numberline {4.4}Low Level Vision Algorithms}{53}{section.434}
+\contentsline {subsection}{\numberline {4.4.1}Noise Reduction}{53}{subsection.435}
+\contentsline {subsection}{\numberline {4.4.2}Edge Detection}{55}{subsection.440}
+\contentsline {chapter}{\numberline {5}Results}{57}{chapter.445}
+\contentsline {section}{\numberline {5.1}Results}{57}{section.446}
+\contentsline {chapter}{\numberline {6}Conclusions and Further Work}{59}{chapter.449}
+\contentsline {chapter}{\numberline {A}Gantt Chart}{61}{appendix.453}
+\contentsline {chapter}{\numberline {B}Circuit Diagrams}{63}{appendix.455}
+\contentsline {section}{\numberline {B.1}OV7670 Breakout Board Schematic}{63}{section.456}
+\contentsline {section}{\numberline {B.2}Il Matto and Dual Camera Schematic}{63}{section.458}
+\contentsline {section}{\numberline {B.3}The Columbus Circuit Diagram}{63}{section.460}
+\contentsline {chapter}{\numberline {C}PCB Design}{73}{appendix.467}
+\contentsline {section}{\numberline {C.1}PCB Top Side}{73}{section.468}
+\contentsline {section}{\numberline {C.2}PCB Bottom Side}{73}{section.470}
+\contentsline {chapter}{\numberline {D}Costings}{77}{appendix.472}
+\contentsline {chapter}{\numberline {E}Contents of Files}{79}{appendix.474}
+\contentsline {chapter}{\numberline {F}Bitmap File Format}{81}{appendix.475}
+\contentsline {section}{\numberline {F.1}Bitmap File Format}{81}{section.476}
+\contentsline {chapter}{\numberline {G}Source Code}{85}{appendix.479}
+\contentsline {section}{\numberline {G.1}C Code for AVR}{85}{section.480}
+\contentsline {subsection}{\numberline {G.1.1}The Columbus Source Code}{85}{subsection.481}
+\contentsline {subsubsection}{\numberline {G.1.1.1}main.c}{85}{subsubsection.482}
+\contentsline {subsubsection}{\numberline {G.1.1.2}Bitmap.c}{92}{subsubsection.877}
+\contentsline {subsubsection}{\numberline {G.1.1.3}CustomDevices.h}{93}{subsubsection.925}
+\contentsline {subsubsection}{\numberline {G.1.1.4}ImageProcessor.h}{94}{subsubsection.969}
+\contentsline {subsubsection}{\numberline {G.1.1.5}ImageProcessor.c}{95}{subsubsection.1007}
+\contentsline {subsubsection}{\numberline {G.1.1.6}MotorDriver.h}{101}{subsubsection.1335}
+\contentsline {subsubsection}{\numberline {G.1.1.7}MotorDriver.c}{102}{subsubsection.1395}
+\contentsline {subsubsection}{\numberline {G.1.1.8}OV7670.h}{110}{subsubsection.1832}
+\contentsline {subsubsection}{\numberline {G.1.1.9}OV7670.c}{116}{subsubsection.2168}
+\contentsline {subsubsection}{\numberline {G.1.1.10}OV7670.c}{127}{subsubsection.2789}
+\contentsline {subsubsection}{\numberline {G.1.1.11}PCA9542A.h}{130}{subsubsection.2971}
+\contentsline {subsubsection}{\numberline {G.1.1.12}PCA9542A.c}{131}{subsubsection.3008}
+\contentsline {subsubsection}{\numberline {G.1.1.13}SD\textunderscore Card.h}{132}{subsubsection.3058}
+\contentsline {subsubsection}{\numberline {G.1.1.14}SD\textunderscore Card.c}{133}{subsubsection.3096}
+\contentsline {subsubsection}{\numberline {G.1.1.15}TWI.c}{142}{subsubsection.3620}
+\contentsline {chapter}{References}{145}{dummy.3667}

@@ -50,22 +50,30 @@
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Input Rectangular Pulse for AVR fast Fourier transform\relax }}{51}{figure.caption.417}
 \contentsline {figure}{\numberline {4.14}{\ignorespaces Output phase and magnitude of the complex output from AVR fast Fourier transform of a Rectangular Pulse\relax }}{52}{figure.caption.418}
 \contentsline {figure}{\numberline {4.15}{\ignorespaces Maginitude calculated by the AVR of the Fourier transform of a Rectangular Pulse\relax }}{52}{figure.caption.419}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Dirac Function\relax }}{53}{figure.caption.421}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{53}{figure.caption.421}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{53}{figure.caption.421}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Square Function\relax }}{54}{figure.caption.424}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{54}{figure.caption.424}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{54}{figure.caption.424}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Figure \ref {fig:AVR:FFT2:Square:Mag} shown as a grey scale image}}}{54}{figure.caption.424}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Figure \ref {fig:AVR:FFT2:Square:Phase} shown as a grey scale image}}}{54}{figure.caption.424}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{60}{figure.caption.446}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{62}{figure.caption.454}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{62}{figure.caption.449}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{63}{figure.caption.451}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces The Columbus Circuit Diagram Page 1\relax }}{64}{figure.caption.453}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces The Columbus Circuit Diagram Page 2\relax }}{65}{figure.caption.454}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces The Columbus Circuit Diagram Page 3\relax }}{66}{figure.caption.455}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces The Columbus Circuit Diagram Page 4\relax }}{67}{figure.caption.456}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces The Columbus Circuit Diagram Page 5\relax }}{68}{figure.caption.457}
-\contentsline {figure}{\numberline {B.8}{\ignorespaces The Columbus Circuit Diagram Page 6\relax }}{69}{figure.caption.458}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{64}{figure.caption.457}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{65}{figure.caption.459}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces The Columbus Circuit Diagram Page 1\relax }}{66}{figure.caption.461}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces The Columbus Circuit Diagram Page 2\relax }}{67}{figure.caption.462}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces The Columbus Circuit Diagram Page 3\relax }}{68}{figure.caption.463}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces The Columbus Circuit Diagram Page 4\relax }}{69}{figure.caption.464}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces The Columbus Circuit Diagram Page 5\relax }}{70}{figure.caption.465}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces The Columbus Circuit Diagram Page 6\relax }}{71}{figure.caption.466}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces The Top side of the CAD Design of the PCB\relax }}{72}{figure.caption.461}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces The Bottom side of the CAD Design of the PCB\relax }}{73}{figure.caption.463}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces The Top side of the CAD Design of the PCB\relax }}{74}{figure.caption.469}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces The Bottom side of the CAD Design of the PCB\relax }}{75}{figure.caption.471}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
