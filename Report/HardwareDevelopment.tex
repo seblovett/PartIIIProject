@@ -229,6 +229,55 @@ The final code can be seen in appendix \ref{Chapter:AppendixC:Code}
 \inote{Would have been accurate enough for the application, given that would be accurate to metres not cm}
 \section{PCB Development}\label{Section:PCB_Dev}
 \subsection{Circuit Design}
+
+Figure \ref{fig:Hierarchical} shows a basic hierarchy of the robot. Each pin on the AT32UC3C0512C can have one of six special functions, as well as being a GPIO pin.  Table \ref{table:UC3C:Pinout} shows the pinout for the microcontroller used. 
+\begin{figure}
+\includegraphics[width=\textwidth]{Figures/hierarchy.jpg}
+\caption{A Hierarchical diagram of the robot}
+\label{fig:Hierarchical}
+\end{figure}
+
+\begin{table}
+\caption{The Pinout of the AVR for the circuit}
+\begin{tabular}{|c|c|c|c|c|}
+\multicolumn{1}{c|}{ } & \multicolumn{4}{|c|}{Port} \\ \cline{2-5}
+Pin & A & B & C & D \\ \hline
+0&TCK&CAMERA\_ 0&&EBI-DATA13\\
+1&TDI&CAMERA\_ 1&&EBI-DATA14\\
+2&TDO&CAMERA\_2&SDA&EBI-DATA15\\
+3&TMS&CAMERA\_3&SCL&EBI-ADDR0\\
+4&USB ID&CAMERA\_4&USART TXD&EBI-ADDR1\\
+5&&CAMERA\_5&USART RXD&EBI-ADDR2\\
+6&AC R&CAMERA\_6&&EBI-ADDR3\\
+7&AC R&CAMERA\_7&EBI NCS3&EBI-ADDR4\\
+8&AC L&STBY1&EBI NCS0&EBI-ADDR5\\
+9&AC L&IN11&EBI-ADDR23&EBI-ADDR6\\
+10&VSYNC0&IN12&EBI-ADDR22&EBI-ADDR7\\
+11&ADCREF&PWM1&EBI-ADDR21&EBI-ADDR8\\
+12&&&EBI-ADDR20&EBI-ADDR9\\
+13&&PWM2&&EBI-SDCK\\
+14&&IN22&EBI-SDCKE&EBI-ADDR10\\
+15&RRST0&IN21&EBI-SDWE&EBI-ADDR11\\
+16&ADCREF&STBY2&EBI-CAS&EBI-ADDR12\\
+17&-&&EBI-RAS&EBI-ADDR13\\
+18&-&&EBI-SDA10&EBI-ADDR14\\
+19&RCLK0&SPI-MOSI&EBI-DATA0&EBI-ADDR15\\
+20&WEN0&SPI-MISO&EBI-DATA1&EBI-ADDR16\\
+21&WRST0&SPI-SCK&EBI-DATA2&EBI-ADDR17\\
+22&RRST1&SPI-CS3&EBI-DATA3&EBI-ADDR18\\
+23&RCLK1&SPI-CS2&EBI-DATA4&EBI-ADDR19\\
+24&WEN1&SPI-CS1&EBI-DATA5&EBI-NWE1\\
+25&WRST1&SPI-CS0&EBI-DATA6&EBI-NWE0\\
+26&VSYNC1&SD- DETECT&EBI-DATA7&EBI-NRD\\
+27&NOE1&&EBI-DATA8&EBI NCS1\\
+28&NOE0&&EBI-DATA9&EBI NCS2\\
+29&&&EBI-DATA10&\\
+30&-&CLK&EBI-DATA11&EBI-NWAIT\\
+31&-&CLK&EBI-DATA12&-\\ \hline
+
+\end{tabular}
+\end{table}
+
 The circuit diagram for Revision A can be seen in section \ref{sch:Columbus:CircuitDiagram}. The schematic for the SDRAM and values and locations of decoupling capacitors were used from the schematic of the UC3C-EK development board \citep{Atmel:UC3CEK}. 
 \subsection{PCB Design}
 The PCB was designed using EAGLE CAD Software. A four layer board was decided to be used to save space when routing Power. Layer 2 is a 3V3 plane and layer 3 is a ground plane. A ground plane is also on the top and bottom layers to help eliminate any ground bounce that could occur. 
