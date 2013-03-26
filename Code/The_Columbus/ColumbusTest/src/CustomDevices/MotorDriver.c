@@ -361,22 +361,22 @@ void Motor_Stop(int Motors)
 		pwm_stop_channels((1 << MOTOR_R));
 	}
 }
-void Motors_Move(int centimetres_fwd)//Move this amount forward in centimeters
+void Motors_Move(int millimetres_fwd)//Move this amount forward in centimeters
 {
 	//Calculate number of interrupts of each wheel
 	int number_interrupts; 
-	if(centimetres_fwd > 0)
+	if(millimetres_fwd > 0)
 	{
 		Motor_Control.Left_State = FORWARD;
 		Motor_Control.Right_State = FORWARD;
 	}
 	else 
 	{
-		centimetres_fwd = Abs(centimetres_fwd);
+		millimetres_fwd = Abs(millimetres_fwd);
 		Motor_Control.Left_State = BACKWARD;
 		Motor_Control.Right_State = BACKWARD;
 	}
-	number_interrupts = (centimetres_fwd * (int)INTERRUPTS_PER_REVOLUTION) / (int)CIRCUMFERENCE_WHEEL_CM; 
+	number_interrupts = (millimetres_fwd * (int)GAMMA) / (int)CIRCUMFERENCE_WHEEL_MM; 
 	print_dbg("\n\rNumber of interrupts to move = ");
 	print_dbg_ulong(number_interrupts);
 	
@@ -393,6 +393,7 @@ void Motors_Reset(void)
 	Motor_Control.Right_State = FORWARD;
 	Motor_Control.Right_Count = 1;
 	Motor_Start(MOTOR_L | MOTOR_R);
+	Motors_Execute();
 }
 
 bool Motors_Moving()
@@ -476,5 +477,6 @@ void Motors_Rotate(int angle_degs)
 		Motor_Control.Left_Count = Abs(interrupts_to_move);
 		Motor_Control.Right_Count = Abs(interrupts_to_move);
 		Motor_Start(MOTOR_L | MOTOR_R);
+		Motors_Execute();
 //	}
 }

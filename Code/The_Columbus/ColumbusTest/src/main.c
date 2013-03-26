@@ -236,7 +236,7 @@ int main (void)
 						Motor_Stop(MOTOR_L);
 						break;
 					case 'L':
-						Columbus_Status.Motors->Left_Count = INTERRUPTS_PER_REVOLUTION + 1;
+						Columbus_Status.Motors->Left_Count = GAMMA + 1;
 						Columbus_Status.Motors->Left_State = FORWARD;
 						Motor_Start(MOTOR_L);
 						Motors_Execute();
@@ -245,7 +245,7 @@ int main (void)
 						Motor_Stop(MOTOR_R);
 						break;
 					case 'R':
-						Columbus_Status.Motors->Right_Count = INTERRUPTS_PER_REVOLUTION + 1;
+						Columbus_Status.Motors->Right_Count = GAMMA + 1;
 						Columbus_Status.Motors->Right_State = FORWARD;
 						Motor_Start(MOTOR_R);
 						Motors_Execute();

@@ -25,12 +25,13 @@
 #define DISABLE_ACA_INTERRUPT		//{AVR32_ACIFA1.idr = 1;}
 #define ENABLE_ACB_INTERRUPT		//{AVR32_ACIFA1.ier = 2;}
 #define DISABLE_ACB_INTERRUPT		//{AVR32_ACIFA1.idr = 2;}
-#define INTERRUPTS_PER_REVOLUTION	5	//Interrupts caused per full rotation of a wheel
+#define GAMMA	10	//Interrupts caused per full rotation of a wheel
 #define CIRCUMFERENCE_WHEEL_MM		116 //in millimeters
-#define CIRCUMFERENCE_WHEEL_CM		12 //in centimeters
-#define MIN_RESOLUTION				CIRCUMFERENCE_WHEEL_CM / INTERRUPTS_PER_REVOLUTION
+//#define CIRCUMFERENCE_WHEEL_CM		12 //in centimeters
+#define MIN_DISTANCE_RESOLUTION		CIRCUMFERENCE_WHEEL_MM / GAMMA
+#define MIN_ROTATION_RESOLUTION		(CIRCUMFERENCE_WHEEL_MM*360)/(GAMMA * C_b)
 #define C_b							282
-#define ROTATION_CONST				(INTERRUPTS_PER_REVOLUTION * C_b) / (CIRCUMFERENCE_WHEEL_MM * 360)
+#define ROTATION_CONST				(GAMMA * C_b) / (CIRCUMFERENCE_WHEEL_MM * 360)
 //Type Defs
 typedef struct {
 	int Left_State;
