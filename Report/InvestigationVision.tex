@@ -384,7 +384,30 @@ Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref
 Two test signals were used to test the 2D FFT on the AVR, a Dirac Signal and a Square wave, seen in figures \ref{fg:Dirac2D:Signal} and \ref{fg:Square2D:Signal}. The internal method on the AVR was not able to compute the magnitude due to the method scaling all the values down causing truncation errors. The complex Fourier transform was obtained, saved to the SD card in CSV format and viewed in MATLAB. All data was normalised to omit the effects of scaling and the data shifted so that frequency 0 is in the centre. These test were done with a $64\times64$ 2D data as with a $256 \times 256$ array, the AVR runs out of internal RAM to calculate the transform. 
 \inote{I would like to get this to work by the end but not vital.}
 
-The result of the Dirac test is seen in figure \ref{fig:AVR:FFT2:Dirac}. A similar error is found in the magnitude, but the spectrum is generally flat with a small amount of ripple as seen with the 1D FFT in figure \ref{fig:AVR:FFT:Dirac:Mag}. The phase has similar issues as with the 1D FFT. However, there appears to be the correct pattern with the 2D Phase, but rotated about $45^{\circ}$. This is also the case with the Square wave test. The magnitude in figure \ref{fig:AVR:FFT2:Square:Mag} is very similar, with a distinct peak in the centre (frequency 0) and a sinc function extending vertically and horizontally from this. Again, however, the phase (figure \ref{fig:AVR:FFT2:Square:Phase}) seems to differ a lot from the expected result in figure \ref{fg:Square2D:Phase}. 
+The result of the Dirac test is seen in figure \ref{fig:AVR:FFT2:Dirac}. A similar error is found in the magnitude, but the spectrum is generally flat with a small amount of ripple as seen with the 1D FFT in figure \ref{fig:AVR:FFT:Dirac:Mag}. The phase has similar issues as with the 1D FFT. However, there appears to be the correct pattern with the 2D phase, but rotated about $45^{\circ}$. This is also the case with the Square wave test. The magnitude in figure \ref{fig:AVR:FFT2:Square:Mag} is very similar, with a distinct peak in the centre (frequency 0) and a sinc function extending vertically and horizontally from this. Again, however, the phase (figure \ref{fig:AVR:FFT2:Square:Phase}) seems to differ a lot from the expected result in figure \ref{fg:Square2D:Phase}. 
+
+The transforms are calculated in real time with a 16MHz clock source. Table \ref{table:FFTSize_Time} shows the number of clock cycles taken to calculate the relevant sized transform. A $64 \times 64$ transform takes $39ms$ to compute with a 16MHz clock. This could be reduced by increasing the internal clock speed by using the PLLs available on the AVR, potentially taking it up to 33MHz and therefore halving the time to compute. A $64 \times 64$ image, however, is not practical for the application and 
+
+%\begin{table}
+%\caption{Number of clock cycles taken to calculate the Transform of 64 or 256 long data set}
+%\begin{tabular}{|c|c|c|c|} \cline{2-4}
+%\multicolumn{2}{c|}{ } & \multicolumn{2}{|c|}{ Size of FFT } \\ \cline{2-4}
+%\multicolumn{2}{c|}{ } & 64 & 256 \\ \hline
+%\multirow{2}{*}{Number of Dimensions} 	&	1 	&	5019 	& 	23599		\\
+%										& 	2 	& 	618168 	& 	Not Done 	\\ \hline
+%\end{tabular}
+%\end{table}
+\begin{table}
+\centering
+\caption{Number of clock cycles taken to calculate the Transform of 64 or 256 long data set}
+\label{table:FFTSize_Time}
+\begin{tabular}{|c|c|c|c|} \cline{2-3}
+\multicolumn{1}{c|}{ } & \multicolumn{2}{|c|}{ Size of FFT Data } \\ \cline{2-3}
+\multicolumn{1}{c|}{ } & 64 & 256 \\ \hline
+					1D 	&	5019 	& 	23599		\\ \hline
+				 	2D 	& 	618168 	& 	- 	\\ \hline
+\end{tabular}
+\end{table}
 
 \begin{figure}
 \subfigure[A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR \label{fig:AVR:FFT2:Dirac:Mag}]{\includegraphics[width=\textwidth]{Figures/AVR_FFT2_Dirac_Mag.eps}}
@@ -402,21 +425,18 @@ The result of the Dirac test is seen in figure \ref{fig:AVR:FFT2:Dirac}. A simil
 \label{fig:AVR:FFT2:Square}
 \end{figure}
 
-
-\inote{Elapsed Time to do FT}
-\inote{Need to implement grey scaling method before being able to do this}
+\inote{Get more data for table \ref{table:FFTSize_Time} - 16 long in 1D and 2D to try and predict how long a 256x256 would take}
 \inote{Show results of actual photo being transformed}
-\inote{Compare to MATLAB results}
 \inote{Maybe IFFT it too to find total errors in algorithm?}
-\section{Low Level Vision Algorithms}
-\subsection{Noise Reduction}
-\inote{Why}
-Noise exists in all signals. Two noise sources for the camera image is random noise in the sensor, and quantisation noise. It generates a compromise between noise and resolution that has to be made. Large amounts of noise reduction will blur edges and therefore reduce the quality of the image and make it harder to match. This section will investigate some noise reduction methods, and test if the application of them increases the reliability of matching using the Normalised Cross Correlation method discussed in section \ref{Section:NCC}. 
-\inote{Theory}
-\inote{Examples}
-\inote{Does it improve the reliability of matching? Vary noise amount in images? and test}
-\subsection{Edge Detection}
-\inote{Why}
-\inote{Theory}
-\inote{Examples}
-\inote{Does it improve the reliability of matching?}
+%\section{Low Level Vision Algorithms}
+%\subsection{Noise Reduction}
+%\inote{Why}
+%Noise exists in all signals. Two noise sources for the camera image is random noise in the sensor, and quantisation noise. It generates a compromise between noise and resolution that has to be made. Large amounts of noise reduction will blur edges and therefore reduce the quality of the image and make it harder to match. This section will investigate some noise reduction methods, and test if the application of them increases the reliability of matching using the Normalised Cross Correlation method discussed in section \ref{Section:NCC}. 
+%\inote{Theory}
+%\inote{Examples}
+%\inote{Does it improve the reliability of matching? Vary noise amount in images? and test}
+%\subsection{Edge Detection}
+%\inote{Why}
+%\inote{Theory}
+%\inote{Examples}
+%\inote{Does it improve the reliability of matching?}

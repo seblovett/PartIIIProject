@@ -142,11 +142,13 @@ The entire prototype for the dual camera operation can be seen in figure \ref{fi
 %\inote{Derivation of equations used - Distance / Rotating}
 \inote{Testing of the Motor system - conclusion is likely to be that it is not a good method, need noise reduction}
 \subsection{Hardware}
-Tachometers are devices used to measure rotational speed of a shaft. Tachometers are most commonly found in bicycles where a small magnet is attached to the wheel and a sensor is attached to the frame. The sensor can then calculate the time period between rotations and therefore can calculate the speed (\citep{NEEDED}) \inote{Cite Needed}.
+Tachometers are devices used to measure rotational speed of a shaft. Tachometers are commonly found in bicycles where a small magnet is attached to the wheel and a sensor is attached to the frame. The elapsed time between every rotation detected by the sensor is measured and, by knowing the size of the wheel, speed can be calculated. 
+\inote{Cite Needed}.
 
-Here, an optosensor, TCRT1010, is used to measure rotations of the wheel and used to be able to move a distance decided by the microcontroller. The TCRT1010 package contains an IR LED and a phototransistor \citep{Vishay:TCRT1010:Datasheet}. The schematic of a simple transistor amplifier used can be seen in figure \ref{Circuit:TCRT1010} and was taken from \cite{NEEDED}. 
+Here an optosensor, the TCRT1010 made by \cite{Vishay:TCRT1010:Datasheet}, is used to measure rotations of the wheel and used to be able to move a distance determined by the microcontroller. The TCRT1010 package contains an IR LED and a phototransistor. The schematic of a simple transistor amplifier used can be seen in figure \ref{Circuit:TCRT1010} and was taken from \cite{NEEDED}. 
 \inote{Cite Needed}
-The wheel's rubber absorbed the IR, so a high voltage was always seen at the collector of the phototransistor. White tippex marks were applied to the wheels at regular intervals, which reflected IR and thereby giving a cheap way to detect wheel rotation. Figure \ref{Graph:WheelVoltage} shows the voltage at the collector (read by the ADC on the AVR) against the angle of the wheel. Five white tabs were marked on the wheel, and five dips in the voltage can be seen in figure \ref{Graph:WheelVoltage}. 
+
+A similar method to the way a bike measures speed was used. The wheel's rubber absorbed the IR, so a high voltage was always seen at the collector of the phototransistor. White tippex marks were applied to the wheels at regular intervals, which reflected IR, resulting in a low collector voltage and thereby giving a cheap way to detect wheel rotation. Figure \ref{Graph:WheelVoltage} shows the voltage at the collector (read by the ADC on the AVR) against the angle of the wheel. Five white tabs were marked on the wheel, and five dips in the voltage can be seen in figure \ref{Graph:WheelVoltage}. 
 
 \inote{Maybe do some simulations of this circuit? This could dictate a maximum speed}
 
@@ -168,18 +170,22 @@ The wheel's rubber absorbed the IR, so a high voltage was always seen at the col
 
 \subsection{Firmware Development}
 
-As the voltage swing from the phototransistor does not reach 0V, the AVR cannot detect this as a logical 0. The internal ADC can be used to continually read the analogue voltage from the phototransistor and detect low points from this data. This method requires the processor to continually compare values and process the data. However, more control would be had over the noise in the data.
+As the voltage swing from the phototransistor does not reach 0V, the AVR cannot detect this as a logical 0. The internal ADC can be used to continually read the analogue voltage from the phototransistor and detect low points from this data. This method requires the processor to continually compare values and process the data. %However, more control would be had over the noise in the data.
 
-An alternative is to use an analogue comparator built in on most AVRs. This can be set up to run an interrupt service routine when the voltage crosses a threshold. The threshold voltage can be determined by a potentiometer. The code is primarily two methods, the set up and the ISR.
+An alternative is to use an analogue comparator either externally with an Op Amp, or internally on the AVR. The AT32UC3C0512C has two on chip comparators capable of running an interrupt service routine when the voltage crosses a threshold. The threshold voltage is determined by an external potentiometer 
 
-Set up is different for if a rotation or movement is wanted. Moving in a straight line takes a parameter of how far to move as a signed integer and calculates the total number of interrupts that need to occur can be calculated using \eqref{eq:NumberInterrupts}. This value is put in a global variable. The PWM and input pins to set the correct direction are then set up before enabling the motor. 
+An ISR is written to contain a state machine to control the wheel movement. A global variable is set up to contain the total number of interrupts each wheel Each time an interrupt occurs, the comparators are checked to see which wheel caused the interrupt and a global counter is decremented. When this counter reaches 0, the motors are stopped and the movement is complete.
+
+The robot can move in either a straight line or rotate on the spot. More complex movements, for example arcs, would require more accurate tachometers and are not discussed here. 
+
+Moving in a straight line takes a parameter of how far to move as a signed integer and calculates the total number of interrupts that need to occur can be calculated using \eqref{eq:NumberInterrupts}. This value is put in a global variable so that the ISR has scope to it. The PWM and input pins to set the correct direction are then set up before enabling the motor. 
 
 \begin{equation}
 \label{eq:NumberInterrupts}
-Interrupts = D \times \frac{IPR}{C_w}
+Interrupts = D \times \frac{\gamma}{C_w}
 \end{equation}
 
-To rotate, one of three methods can be used: Spot rotation on the centre of the robot, or pivot on either left or right wheel. For ease, the Spot rotation is the only one implemented. To calculate the distance moved, the radius to the wheels needs to be known. The circumference through the wheels is then easily calculated and the angle of rotation is then a ratio. The distance to move is calculated by equation \eqref{eq:RotationalDistance} and the total number of interrupts can be calculated using equation \eqref{eq:NumberInterrupts}. To rotate clockwise, the left motor is driven forward and the right is driven backwards. To rotate anti-clockwise, the directions are reversed
+To rotate, one of three methods can be used: Spot rotation about the centre of the robot, or pivot on either left or right wheel. For ease, the Spot rotation is the only one implemented. To calculate the distance moved, the radius from the centre of the robot to the wheels needs to be known, see figure \ref{fg:RobotBase:Top}. The circumference through the wheels is then easily calculated and the angle of rotation is then a ratio. The distance to move is calculated by equation \eqref{eq:RotationalDistance} and the total number of interrupts can be calculated using equation \eqref{eq:NumberInterrupts}. To rotate clockwise, the left motor is driven forward and the right is driven backwards. To rotate anti-clockwise, the directions are reversed.
 
 \begin{equation}
 \label{eq:RotationalDistance}
@@ -189,12 +195,19 @@ D_{R} = A \times \frac{C_b}{360}
 Combining equations \eqref{eq:NumberInterrupts} and \eqref{eq:RotationalDistance} gives:
 \begin{equation}
 \label{eq:RotationalInterrupts}
-Interrupts = A \times \frac{IPR}{C_w} \times \frac{C_b}{360}
+Interrupts = A \times \frac{\gamma}{C_w} \times \frac{C_b}{360}
 \end{equation}
-Where $A$ is the angle to rotate in degrees, $IPR$ is the number of interrupts generated per full revolution of the wheel, $C_w$ is the circumference of the wheel and $C_b$ the $2\pi\times r_b$ and $r_b$ is the distance from the centre of the robot to the centre of the wheel (see figure \ref{fig:RobotBase_Annotated}).
+Where $A$ is the angle to rotate in degrees, $\gamma$ is the counts per revolution of the wheel, $C_w$ is the circumference of the wheel and $C_b = 2\pi\times r_b$ and $r_b$ is the distance from the centre of the robot to the centre of the wheel (see figure \ref{fig:RobotBase_Annotated}).
 
+\subsection{Limitations}
+Due to the low resolution of the sensor (5 counts per revolution), there is a minimum distance that can be moved and a minimum angle of rotation, shown in equations \eqref{eq:Resolution:Distance} and \eqref{eq:Resolution:Angle} respectively. These show that greater distance resolution can be obtained by decreasing the wheel size or increasing $\gamma$ and a greater rotational resolution can be obtained by the same as distance, or by increasing the distance the wheels are from the centre of the robot.
 
-
+\begin{equation}\label{eq:Resolution:Distance}
+\frac{C_w}{\gamma} = 23mm
+\end{equation}
+\begin{equation}\label{eq:Resolution:Angle}
+\theta = \frac{360 \times C_w}{\gamma \times C_b} \approx 30^\circ 
+\end{equation}
 \begin{figure}
 \centering
 \subfigure[Top View of robot base showing dimensions of interest\label{fg:RobotBase:Top}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/Robotbase_top_annot.jpg} }
@@ -202,17 +215,18 @@ Where $A$ is the angle to rotate in degrees, $IPR$ is the number of interrupts g
 \caption{Dimensions of Interest for Robot Movement}
 \label{fig:RobotBase_Annotated}
 \end{figure}
-\inote{Maybe a figure to explain better?}
 
-
-The motor speed can be controlled by Pulse Width Modulation (PWM). The code sets up a low duty cycle PWM signal to drive the motors slowly. This removes the need for a controller to ensure the correct distance was moved. 
-
+The motor speed was controlled by Pulse Width Modulation (PWM). The code sets up a low duty cycle PWM signal to drive the motors slowly. This removes the need for a controller to ensure the correct distance was moved. 
+\inote{Brief explanation of PWM?}
 The final code can be seen in appendix \ref{Chapter:AppendixC:Code}
+
+
 \subsection{Testing}\label{Section:MotorTest}
 \inote{Need to get the motors to work reasonably first}
+\inote{Use the wheel rotation data through an LPF to see what will happpen}
 \subsection{Conclusion}
 \inote{It doesn't work}
-
+\inote{Would have been accurate enough for the application, given that would be accurate to metres not cm}
 \section{PCB Development}\label{Section:PCB_Dev}
 \subsection{Circuit Design}
 The circuit diagram for Revision A can be seen in section \ref{sch:Columbus:CircuitDiagram}. The schematic for the SDRAM and values and locations of decoupling capacitors were used from the schematic of the UC3C-EK development board \citep{Atmel:UC3CEK}. 
