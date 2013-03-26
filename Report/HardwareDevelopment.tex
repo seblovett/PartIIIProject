@@ -148,9 +148,9 @@ Tachometers are devices used to measure rotational speed of a shaft. Tachometers
 Here an optosensor, the TCRT1010 made by \cite{Vishay:TCRT1010:Datasheet}, is used to measure rotations of the wheel and used to be able to move a distance determined by the microcontroller. The TCRT1010 package contains an IR LED and a phototransistor. The schematic of a simple transistor amplifier used can be seen in figure \ref{Circuit:TCRT1010} and was taken from \cite{NEEDED}. 
 \inote{Cite Needed}
 
-A similar method to the way a bike measures speed was used. The wheel's rubber absorbed the IR, so a high voltage was always seen at the collector of the phototransistor. White tippex marks were applied to the wheels at regular intervals, which reflected IR, resulting in a low collector voltage and thereby giving a cheap way to detect wheel rotation. Figure \ref{Graph:WheelVoltage} shows the voltage at the collector (read by the ADC on the AVR) against the angle of the wheel. Five white tabs were marked on the wheel, and five dips in the voltage can be seen in figure \ref{Graph:WheelVoltage}. 
+A similar method to the way a bike measures speed was used. The wheel's rubber absorbed the IR, so a high voltage was always seen at the collector of the phototransistor. White tippex marks, ``tabs'', were applied to the wheels at regular intervals. These tabs reflected IR, resulting in a lower collector voltage and thereby giving a way to detect wheel rotation, but not direction. Figure \ref{Graph:WheelVoltage} shows the voltage at the collector (read by the ADC on the AVR) against the angle of the wheel. Ten tabs were marked on the wheel, and ten dips in the voltage can be seen in figure \ref{Graph:WheelVoltage}. 
 
-\inote{Maybe do some simulations of this circuit? This could dictate a maximum speed}
+\inote{Redo this graph!}
 
 \begin{figure}
 \centering
@@ -164,28 +164,20 @@ A similar method to the way a bike measures speed was used. The wheel's rubber a
 \caption{Graph of Wheel Angle against the Voltage read by the AVR}
 \label{Graph:WheelVoltage}
 \end{figure}
-
-%\subsubsection{Derivations of Movement Calculations}
-%Two basic movements were decided to be implemented: Straight line and rotation. 
+ 
 
 \subsection{Firmware Development}
 
-As the voltage swing from the phototransistor does not reach 0V, the AVR cannot detect this as a logical 0. The internal ADC can be used to continually read the analogue voltage from the phototransistor and detect low points from this data. This method requires the processor to continually compare values and process the data. %However, more control would be had over the noise in the data.
+The basic outline of the firmware is a set up to calculate how many counts are needed to move the distance, set the inputs to the motor drivers and use PWM to control the speed. The number of times the tabs pass the sensor are counted and when the count reaches the correct number, the motors are stopped. The robot can move in either a straight line or rotate on the spot. More complex movements, for example arcs, would require more accurate tachometers and are not discussed here. 
 
-An alternative is to use an analogue comparator either externally with an Op Amp, or internally on the AVR. The AT32UC3C0512C has two on chip comparators capable of running an interrupt service routine when the voltage crosses a threshold. The threshold voltage is determined by an external potentiometer 
-
-An ISR is written to contain a state machine to control the wheel movement. A global variable is set up to contain the total number of interrupts each wheel Each time an interrupt occurs, the comparators are checked to see which wheel caused the interrupt and a global counter is decremented. When this counter reaches 0, the motors are stopped and the movement is complete.
-
-The robot can move in either a straight line or rotate on the spot. More complex movements, for example arcs, would require more accurate tachometers and are not discussed here. 
-
-Moving in a straight line takes a parameter of how far to move as a signed integer and calculates the total number of interrupts that need to occur can be calculated using \eqref{eq:NumberInterrupts}. This value is put in a global variable so that the ISR has scope to it. The PWM and input pins to set the correct direction are then set up before enabling the motor. 
+Moving in a straight line takes a parameter of how far to move as a signed integer and calculates the total number of counts that need to occur. This can be calculated using equation \eqref{eq:NumberCounts}. This value is put in a global variable so that other methods have scope to it. 
 
 \begin{equation}
-\label{eq:NumberInterrupts}
-Interrupts = D \times \frac{\gamma}{C_w}
+\label{eq:NumberCounts}
+\text{Counts} = D \times \frac{\gamma}{C_w}
 \end{equation}
 
-To rotate, one of three methods can be used: Spot rotation about the centre of the robot, or pivot on either left or right wheel. For ease, the Spot rotation is the only one implemented. To calculate the distance moved, the radius from the centre of the robot to the wheels needs to be known, see figure \ref{fg:RobotBase:Top}. The circumference through the wheels is then easily calculated and the angle of rotation is then a ratio. The distance to move is calculated by equation \eqref{eq:RotationalDistance} and the total number of interrupts can be calculated using equation \eqref{eq:NumberInterrupts}. To rotate clockwise, the left motor is driven forward and the right is driven backwards. To rotate anti-clockwise, the directions are reversed.
+For rotation, the radius from the centre of the robot to the wheels needs to be known, see figure \ref{fg:RobotBase:Top}. The circumference through the wheels is then easily calculated and the angle of rotation is then a ratio. The distance to move is calculated by equation \eqref{eq:RotationalDistance} and the total number of interrupts can be calculated using equation \eqref{eq:NumberInterrupts}. To rotate clockwise, the left motor is driven forward and the right is driven backwards. To rotate anti-clockwise, the directions are reversed.
 
 \begin{equation}
 \label{eq:RotationalDistance}
@@ -199,14 +191,24 @@ Interrupts = A \times \frac{\gamma}{C_w} \times \frac{C_b}{360}
 \end{equation}
 Where $A$ is the angle to rotate in degrees, $\gamma$ is the counts per revolution of the wheel, $C_w$ is the circumference of the wheel and $C_b = 2\pi\times r_b$ and $r_b$ is the distance from the centre of the robot to the centre of the wheel (see figure \ref{fig:RobotBase_Annotated}).
 
+
+As the voltage swing on the collector of the phototransistor does not reach near 0V, the AVR cannot detect this as a logical 0. An external amplifier could be used to generate a full swing voltage. However, the AVR has ADCs and analogue comparators. Using the ADC has the advantage of some signal processing to filter the data, but this is processor hungry and time consuming.
+
+An alternative is to use an analogue comparator. The UC3C has two on chip comparator interfaces, each with two comparators. They are a high gain Op Amp with added options for hysteresis and the ability to interrupt amongst other attributes. The comparators can use two analogue inputs or use the internal DACs as inputs. Potentiometers were used to set the reference voltage externally. %but this was later changed to use the internal DAC to reduce power consumption. Using the DAC means the microcontroller can have dynamic control over the threshold. 
+
+
+The first method implemented was to use the analogue comparators to interrupt when the collector voltage crossed the threshold. Both wheels used the same comparator interface and therefore ran the same ISR when triggered. The ISR then had to read the output of the comparators and decrement the relevant counter for the correct wheel. This method had many downfalls. First, it was not possible to know which comparator caused the interrupt. If the left wheel triggered the interrupt while the right was below the threshold, both left and right counters would be decremented. This caused a large error each time it occurred. Another problem was noise; occasionally, the lowering voltage would cause multiple interrupts each time. This problem was reduced by setting the hysteresis on the comparators but did not solve the problem completely. 
+
+A second approach utilised a simple state machine and software based hysteresis to solve the problems. 
+\inote{Insert ASM picture and explain away!}
 \subsection{Limitations}
 Due to the low resolution of the sensor (5 counts per revolution), there is a minimum distance that can be moved and a minimum angle of rotation, shown in equations \eqref{eq:Resolution:Distance} and \eqref{eq:Resolution:Angle} respectively. These show that greater distance resolution can be obtained by decreasing the wheel size or increasing $\gamma$ and a greater rotational resolution can be obtained by the same as distance, or by increasing the distance the wheels are from the centre of the robot.
 
 \begin{equation}\label{eq:Resolution:Distance}
-\frac{C_w}{\gamma} = 23mm
+\Delta_{d}\frac{C_w}{\gamma} = 12mm
 \end{equation}
 \begin{equation}\label{eq:Resolution:Angle}
-\theta = \frac{360 \times C_w}{\gamma \times C_b} \approx 30^\circ 
+\Delta_{\theta} = \frac{360 \times C_w}{\gamma \times C_b} \approx 15^\circ 
 \end{equation}
 \begin{figure}
 \centering

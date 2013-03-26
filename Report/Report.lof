@@ -8,71 +8,71 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Prototype of Dual Camera operation.\relax }}{13}{figure.caption.42}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Circuit diagram of Optosensor\relax }}{15}{figure.caption.49}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Graph of Wheel Angle against the Voltage read by the AVR\relax }}{15}{figure.caption.50}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{18}{figure.caption.58}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{18}{figure.caption.58}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Side View of robot base showing dimensions of interest}}}{18}{figure.caption.58}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces A Hierarchical diagram of the robot\relax }}{20}{figure.caption.70}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces PCB with no components. Left: Top View. Right: Bottom View\relax }}{22}{figure.caption.73}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces SDRAM Chip shown against its footprint.\relax }}{29}{figure.caption.316}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Motor Driver error. Outputs incorrectly connected\relax }}{32}{figure.caption.322}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Pictures of the built PCB.\relax }}{34}{figure.caption.326}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top view of built PCB}}}{34}{figure.caption.326}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bottom view of built PCB with SDRAM chip select patch }}}{34}{figure.caption.326}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{18}{figure.caption.59}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{18}{figure.caption.59}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Side View of robot base showing dimensions of interest}}}{18}{figure.caption.59}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces A Hierarchical diagram of the robot\relax }}{19}{figure.caption.71}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces PCB with no components. Left: Top View. Right: Bottom View\relax }}{22}{figure.caption.74}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces SDRAM Chip shown against its footprint.\relax }}{29}{figure.caption.317}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Motor Driver error. Outputs incorrectly connected\relax }}{32}{figure.caption.323}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Pictures of the built PCB.\relax }}{34}{figure.caption.327}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top view of built PCB}}}{34}{figure.caption.327}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bottom view of built PCB with SDRAM chip select patch }}}{34}{figure.caption.327}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{35}{figure.caption.331}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{35}{figure.caption.331}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{35}{figure.caption.331}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{38}{figure.caption.342}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{38}{figure.caption.342}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{38}{figure.caption.342}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{38}{figure.caption.342}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{40}{figure.caption.352}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{43}{figure.caption.373}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{44}{figure.caption.376}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces A Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{46}{figure.caption.384}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing a Dirac Function}}}{46}{figure.caption.384}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the Dirac Function}}}{46}{figure.caption.384}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the Dirac Function}}}{46}{figure.caption.384}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces A 2D Rectangular pulse and the phase and magnitude of its Fourier Transform\relax }}{47}{figure.caption.388}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing rectangular pulse}}}{47}{figure.caption.388}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the rectangular pulse}}}{47}{figure.caption.388}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the rectangular pulse}}}{47}{figure.caption.388}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces A 2D Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{49}{figure.caption.404}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {An image of a 2D Dirac Function}}}{49}{figure.caption.404}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {An image of the magnitude of the Fourier transform of the 2D Dirac Function}}}{49}{figure.caption.404}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {An image of the phase of the Fourier transform of the 2D Dirac Function}}}{49}{figure.caption.404}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces A 2D Rectangular Pulse signal and the phase and magnitude of its Fourier transform\relax }}{50}{figure.caption.408}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {An image of the 2D rectangular pulse}}}{50}{figure.caption.408}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {An image of the magnitude of the Fourier transform of the 2D rectangular pulse}}}{50}{figure.caption.408}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {An image of the phase of the Fourier transform of the 2D rectangular pulse}}}{50}{figure.caption.408}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Input Dirac Signal for AVR fast Fourier transform\relax }}{52}{figure.caption.421}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Output phase and magnitude of the complex output from AVR fast Fourier transform of a Dirac function\relax }}{53}{figure.caption.422}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Maginitude calculated by the AVR of the Fourier transform of a Dirac function\relax }}{53}{figure.caption.423}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Input Rectangular Pulse for AVR fast Fourier transform\relax }}{53}{figure.caption.424}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Output phase and magnitude of the complex output from AVR fast Fourier transform of a Rectangular Pulse\relax }}{54}{figure.caption.425}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Maginitude calculated by the AVR of the Fourier transform of a Rectangular Pulse\relax }}{54}{figure.caption.426}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Dirac Function\relax }}{56}{figure.caption.430}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{56}{figure.caption.430}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{56}{figure.caption.430}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Square Function\relax }}{57}{figure.caption.433}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{57}{figure.caption.433}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{57}{figure.caption.433}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{35}{figure.caption.332}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{35}{figure.caption.332}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{35}{figure.caption.332}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{38}{figure.caption.343}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{38}{figure.caption.343}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{38}{figure.caption.343}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{38}{figure.caption.343}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{40}{figure.caption.353}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{43}{figure.caption.374}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{44}{figure.caption.377}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces A Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{46}{figure.caption.385}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing a Dirac Function}}}{46}{figure.caption.385}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the Dirac Function}}}{46}{figure.caption.385}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the Dirac Function}}}{46}{figure.caption.385}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces A 2D Rectangular pulse and the phase and magnitude of its Fourier Transform\relax }}{47}{figure.caption.389}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing rectangular pulse}}}{47}{figure.caption.389}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the rectangular pulse}}}{47}{figure.caption.389}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the rectangular pulse}}}{47}{figure.caption.389}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces A 2D Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{49}{figure.caption.405}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {An image of a 2D Dirac Function}}}{49}{figure.caption.405}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {An image of the magnitude of the Fourier transform of the 2D Dirac Function}}}{49}{figure.caption.405}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {An image of the phase of the Fourier transform of the 2D Dirac Function}}}{49}{figure.caption.405}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces A 2D Rectangular Pulse signal and the phase and magnitude of its Fourier transform\relax }}{50}{figure.caption.409}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {An image of the 2D rectangular pulse}}}{50}{figure.caption.409}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {An image of the magnitude of the Fourier transform of the 2D rectangular pulse}}}{50}{figure.caption.409}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {An image of the phase of the Fourier transform of the 2D rectangular pulse}}}{50}{figure.caption.409}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Input Dirac Signal for AVR fast Fourier transform\relax }}{52}{figure.caption.422}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Output phase and magnitude of the complex output from AVR fast Fourier transform of a Dirac function\relax }}{53}{figure.caption.423}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Maginitude calculated by the AVR of the Fourier transform of a Dirac function\relax }}{53}{figure.caption.424}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Input Rectangular Pulse for AVR fast Fourier transform\relax }}{53}{figure.caption.425}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Output phase and magnitude of the complex output from AVR fast Fourier transform of a Rectangular Pulse\relax }}{54}{figure.caption.426}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Maginitude calculated by the AVR of the Fourier transform of a Rectangular Pulse\relax }}{54}{figure.caption.427}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Dirac Function\relax }}{56}{figure.caption.431}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{56}{figure.caption.431}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{56}{figure.caption.431}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Square Function\relax }}{57}{figure.caption.434}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{57}{figure.caption.434}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{57}{figure.caption.434}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{64}{figure.caption.448}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{64}{figure.caption.449}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{66}{figure.caption.451}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{67}{figure.caption.453}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces The Columbus Circuit Diagram Page 1\relax }}{68}{figure.caption.455}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces The Columbus Circuit Diagram Page 2\relax }}{69}{figure.caption.456}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces The Columbus Circuit Diagram Page 3\relax }}{70}{figure.caption.457}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces The Columbus Circuit Diagram Page 4\relax }}{71}{figure.caption.458}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces The Columbus Circuit Diagram Page 5\relax }}{72}{figure.caption.459}
-\contentsline {figure}{\numberline {B.8}{\ignorespaces The Columbus Circuit Diagram Page 6\relax }}{73}{figure.caption.460}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{66}{figure.caption.452}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{67}{figure.caption.454}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces The Columbus Circuit Diagram Page 1\relax }}{68}{figure.caption.456}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces The Columbus Circuit Diagram Page 2\relax }}{69}{figure.caption.457}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces The Columbus Circuit Diagram Page 3\relax }}{70}{figure.caption.458}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces The Columbus Circuit Diagram Page 4\relax }}{71}{figure.caption.459}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces The Columbus Circuit Diagram Page 5\relax }}{72}{figure.caption.460}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces The Columbus Circuit Diagram Page 6\relax }}{73}{figure.caption.461}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces The Top side of the CAD Design of the PCB\relax }}{76}{figure.caption.463}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces The Bottom side of the CAD Design of the PCB\relax }}{77}{figure.caption.465}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces The Top side of the CAD Design of the PCB\relax }}{76}{figure.caption.464}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces The Bottom side of the CAD Design of the PCB\relax }}{77}{figure.caption.466}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

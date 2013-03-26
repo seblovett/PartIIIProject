@@ -106,50 +106,11 @@ void Motor_Init()
 	pwm_channel_init(MR_PWM_CHANNEL_ID, &pwm_channel); // Set channel configuration to channel 0
 	Analogue_Comparator_Init();
 }
-__attribute__((__interrupt__)) static void ACInterruptHandler(void)
-{
-	//print_dbg("\n\rACIFA Interrupt Entered.");
-	acifa_clear_flags(&AVR32_ACIFA1, 3);
-	
-	if (acifa_is_acb_inp_higher(&AVR32_ACIFA1)) //LEFT MOTOR
-	{
-		LED5_CLR; //wheel not on white tab
-	}
-	else
-	{
-		LED5_SET;
-		Motor_Control.Left_Count --;
-		print_dbg("\n\rLeft Wheel Interrupt");
-		DISABLE_ACB_INTERRUPT;
-		//delay_ms(100);
-	}
-	
-	if (acifa_is_aca_inp_higher(&AVR32_ACIFA1))
-	{
 
-		LED6_CLR;
-		
-	}
-	else
-	{
-		LED6_SET;
-		Motor_Control.Right_Count --;
-		print_dbg("\n\rRight Wheel Interrupt");
-		//delay_ms(100);
-		DISABLE_ACA_INTERRUPT;
-	}
-	
-	int temp = 0;
-	if(Motor_Control.Left_Count <= 0) //if we have reached the end of the movement on left wheel
-		temp |= MOTOR_L;
-	
-	if(Motor_Control.Right_Count <= 0)
-		temp |= MOTOR_R;
-	if(temp != 0)	
-		Motor_Stop(temp); //Stop the Motor
-	//delay_ms(100);
-	
-}
+// __attribute__((__interrupt__)) static void ACInterruptHandler(void)
+// {
+// 	
+// }
 void Analogue_Comparator_Init()
 {
 	static const gpio_map_t ACIFA_GPIO_MAP =

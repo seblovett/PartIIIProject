@@ -5,18 +5,18 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available (\cite {ImageComparison})\relax }}{11}{table.caption.38}
 \contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega644P for Dual Camera Operation.\relax }}{13}{table.caption.41}
-\contentsline {table}{\numberline {3.3}{\ignorespaces The Pinout of the AVR for the circuit\relax }}{19}{table.caption.71}
-\contentsline {table}{\numberline {3.4}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{30}{table.caption.319}
+\contentsline {table}{\numberline {3.3}{\ignorespaces The Pinout of the AVR for the circuit\relax }}{20}{table.caption.72}
+\contentsline {table}{\numberline {3.4}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{31}{table.caption.320}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Number of clock cycles taken to calculate the Transform of 64 or 256 long data set\relax }}{55}{table.caption.429}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Number of clock cycles taken to calculate the Transform of 64 or 256 long data set\relax }}{55}{table.caption.430}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{79}{table.caption.467}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{83}{table.471}
+\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{79}{table.caption.468}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{83}{table.472}
 \addvspace {10\p@ }
