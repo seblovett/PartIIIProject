@@ -177,14 +177,14 @@ Moving in a straight line takes a parameter of how far to move as a signed integ
 \text{Counts} = D \times \frac{\gamma}{C_w}
 \end{equation}
 
-For rotation, the radius from the centre of the robot to the wheels needs to be known, see figure \ref{fg:RobotBase:Top}. The circumference through the wheels is then easily calculated and the angle of rotation is then a ratio. The distance to move is calculated by equation \eqref{eq:RotationalDistance} and the total number of interrupts can be calculated using equation \eqref{eq:NumberInterrupts}. To rotate clockwise, the left motor is driven forward and the right is driven backwards. To rotate anti-clockwise, the directions are reversed.
+For rotation, the radius from the centre of the robot to the wheels needs to be known, see figure \ref{fg:RobotBase:Top}. The circumference through the wheels is then easily calculated and the angle of rotation is then a ratio. The distance to move is calculated by equation \eqref{eq:RotationalDistance} and the total number of interrupts can be calculated using equation \eqref{eq:NumberCounts}. To rotate clockwise, the left motor is driven forward and the right is driven backwards. To rotate anti-clockwise, the directions are reversed.
 
 \begin{equation}
 \label{eq:RotationalDistance}
 D_{R} = A \times \frac{C_b}{360}
 \end{equation}
 
-Combining equations \eqref{eq:NumberInterrupts} and \eqref{eq:RotationalDistance} gives:
+Combining equations \eqref{eq:NumberCounts} and \eqref{eq:RotationalDistance} gives:
 \begin{equation}
 \label{eq:RotationalInterrupts}
 Interrupts = A \times \frac{\gamma}{C_w} \times \frac{C_b}{360}
@@ -199,17 +199,16 @@ An alternative is to use an analogue comparator. The UC3C has two on chip compar
 
 The first method implemented was to use the analogue comparators to interrupt when the collector voltage crossed the threshold. Both wheels used the same comparator interface and therefore ran the same ISR when triggered. The ISR then had to read the output of the comparators and decrement the relevant counter for the correct wheel. This method had many downfalls. First, it was not possible to know which comparator caused the interrupt. If the left wheel triggered the interrupt while the right was below the threshold, both left and right counters would be decremented. This caused a large error each time it occurred. Another problem was noise; occasionally, the lowering voltage would cause multiple interrupts each time. This problem was reduced by setting the hysteresis on the comparators but did not solve the problem completely. 
 
-A second approach utilised a simple state machine and software based hysteresis to solve the problems. 
-\inote{Insert ASM picture and explain away!}
-\subsection{Limitations}
-Due to the low resolution of the sensor (5 counts per revolution), there is a minimum distance that can be moved and a minimum angle of rotation, shown in equations \eqref{eq:Resolution:Distance} and \eqref{eq:Resolution:Angle} respectively. These show that greater distance resolution can be obtained by decreasing the wheel size or increasing $\gamma$ and a greater rotational resolution can be obtained by the same as distance, or by increasing the distance the wheels are from the centre of the robot.
+A second approach utilised a simple state machine and software based hysteresis to solve the problems. After the set up is complete, the method \textit{Motors\_Execute} is run, containing the state machine to control the motors. The state machine has two states `On a Tab' and `Not on a Tab'. When the method enters, the initial state is read from the comparators. If the wheel is already on a tab, it won't be counted. The code then runs in a loop until the motors stop. A graphic representation of the code can be seen in figure \ref{fig:StateMachine}. Starting in `Not on a Tab' state, a tab must be detected for Hyst\_Max cycles in succession for the state to change. This is the same for going from `On a Tab' to `Not on a Tab'. This is to reduce noise in the form of false readings an increase the certainty that a tab is in detect. The Global\_Count is only reduced on the transition to `On a Tab' so it is difficult for this to decrement multiple times in normal operation. To increase the certainty, Hyst\_Max can be increased at the expense of response time. 
 
-\begin{equation}\label{eq:Resolution:Distance}
-\Delta_{d}\frac{C_w}{\gamma} = 12mm
-\end{equation}
-\begin{equation}\label{eq:Resolution:Angle}
-\Delta_{\theta} = \frac{360 \times C_w}{\gamma \times C_b} \approx 15^\circ 
-\end{equation}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{Figures/ASM.jpg}
+\caption{A State Machine showing the operation of the \textit{Motor\_Execute} method}
+\label{fig:StateMachine}
+\end{figure}
+
+
 \begin{figure}
 \centering
 \subfigure[Top View of robot base showing dimensions of interest\label{fg:RobotBase:Top}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/Robotbase_top_annot.jpg} }
@@ -218,17 +217,71 @@ Due to the low resolution of the sensor (5 counts per revolution), there is a mi
 \label{fig:RobotBase_Annotated}
 \end{figure}
 
-The motor speed was controlled by Pulse Width Modulation (PWM). The code sets up a low duty cycle PWM signal to drive the motors slowly. This removes the need for a controller to ensure the correct distance was moved. 
-\inote{Brief explanation of PWM?}
+The motor speed was controlled by Pulse Width Modulation (PWM). The code sets up a low duty cycle PWM signal to drive the motors slowly. This causes any overshoot that could happen to be low and removes the need for a speed controller. 
+
 The final code can be seen in appendix \ref{Chapter:AppendixC:Code}
 
 
 \subsection{Testing}\label{Section:MotorTest}
-\inote{Need to get the motors to work reasonably first}
-\inote{Use the wheel rotation data through an LPF to see what will happpen}
+\inote{Test Rotation}
+
+To test the motor system, different distances were given to the movement method. The method prints how many counts will be moved. The actual distance moved was then measured and repeated four times. Table \ref{table:results:motor:distance} shows the results of this test and figure \ref{fig:results:motor:distance}. The results show that the maximum error observed is $4.52\%$, which related to $4.5mm$. This error is acceptable as a half centimetre error over 10 will not impact the performance of the robot. 
+
+
+\begin{table}
+\caption{Results of Motor Distance Test}
+\label{table:results:motor:distance}
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|} \hline
+Distance Specified (mm) &	Number of Counts Returned	& 	Counts $\times$ Resolution (mm)	& 	Average Measured Distance Moved (mm)	&	Error (\%) \\ \hline
+50						&	4							&	46.4							&	47.25									&	1.83		\\
+75						&	6							&	69.6							&	70.75									&	1.65		\\
+100						&	8							&	92.8							&	97.0									&	4.52		\\
+120						&	10							&	116.0							&	113.25									&	2.37		\\
+150						&	12							&	139.2							&	141.0									&	1.29		\\
+170						&	14							&	162.4							&	161.5									&	0.55		\\
+200						&	17							&	197.2							&	201.5									&	2.18		\\
+250						&	21							&	243.6							&	244.5									&	0.37		\\
+300						&	25							&	290.0							&	290.75									&	0.26		\\ \hline
+\end{tabular}
+\end{table}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{Figures/Motor_Distance.eps}
+\caption{A plot of Expected Distance against the measured data. Line indicates the average of the data at each point.}
+\label{fig:results:motor:distance}
+\end{figure}
+
+A problem was seen that the robot moved in a slight arc. Speed tests were done on the wheel by measuring the total time taken to complete eight full revolutions, the equivalent of moving 928mm. The results and the calculated wheel speeds can be seen in table \ref{table:results:motor:speed}. It shows that the left motor runs slightly faster than the right, even though the PWM duty cycle is the same. A proportional controller could be implemented to correct this error during operation. However, over the distances covered, the error introduced by this is small enough to neglect. 
+
+\begin{table}
+\caption{Results of motor speed test}
+\label{table:results:motor:speed}
+\centering
+\begin{tabular}{|c|c|c|} \hline
+Wheel &	Total Time Elapsed ($s$) & Calculated Speed ($mm.s^{-1}$) \\ \hline
+Left & 44.6		&	20.8 \\ \hline
+Right & 49.6	&	18.7 \\ \hline
+\end{tabular}
+\end{table}
+
 \subsection{Conclusion}
-\inote{It doesn't work}
-\inote{Would have been accurate enough for the application, given that would be accurate to metres not cm}
+Due to the low resolution of the sensor (10 counts per revolution), there is a minimum distance that can be moved and a minimum angle of rotation, shown in equations \eqref{eq:Resolution:Distance} and \eqref{eq:Resolution:Angle} respectively. These show that greater distance resolution can be obtained by decreasing the wheel size or increasing $\gamma$ and a greater rotational resolution can be obtained by the same as distance, or by increasing the distance the wheels are from the centre of the robot. 
+
+
+\begin{equation}\label{eq:Resolution:Distance}
+\Delta_{d}\frac{C_w}{\gamma} = 12mm
+\end{equation}
+\begin{equation}\label{eq:Resolution:Angle}
+\Delta_{\theta} = \frac{360 \times C_w}{\gamma \times C_b} \approx 15^\circ 
+\end{equation}
+
+This method fails on two points - lack of speed control and accuracy.
+A better controller could be implemented to help move at different speeds. This could use the remaining number of counts to gradually slow the speed of the motors down proportionally as well as correct the speed mismatch between the wheels. A more in-depth PID controller can be implemented if greater accuracy is needed quicker, at the expense of computation time. 
+
+Rotary encoders could be used to detect the direction of wheels as well. A good, but more costly, alternative would be the HUB-ee wheel by \cite{Creative_Robotics}, which includes a 120 point quadrature encoder and sensor, motor driver and a geared motor all within the wheel. These wheels have 12 times the accuracy as the method described here and a simple interface. 
+ 
+Given that the robot does not need to move any more accurately that to 1cm, this method has proved to be cheap and successful. The robot is able to move a distance with reasonable accuracy, but to a fairly low resolution.
+
 \section{PCB Development}\label{Section:PCB_Dev}
 \subsection{Circuit Design}
 
@@ -443,8 +496,8 @@ For future PCBs, more care will be taken in circuit design, with prototyping of 
 
 The PCB itself, was a success. It was a complex PCB with many potential things that could have gone wrong. It was the first PCB I had designed and was a four layer board, using some devices that I did not have experience with. All devices are functional (with a few small modifications) on the PCB so firmware development could continue with all hardware able to be used.
 
-\section{Conclusions}
-\inote{Overall Conclusions of the Hardware design}
+
+\inote{Redo Bottom of PCB Photo}
 \begin{figure}
 \centering
 \subfigure[Top view of built PCB\label{fig:PCB:Top}]{\includegraphics[width = \textwidth, keepaspectratio]{./Figures/PCB_Top.jpg} }
@@ -452,3 +505,6 @@ The PCB itself, was a success. It was a complex PCB with many potential things t
 \caption{Pictures of the built PCB.}
 \label{fig:PCB:Built}
 \end{figure}
+\section{Conclusions}
+
+Overall, the hardware design and firmware is a success. A few minor faults were apparent on the PCB, but these were easily patched and caused no problem. Using a firmware test, the components are seen to be fully functional giving the UC3C full ability to control motors, cameras, \itc multiplexer, memory of both SD card (up to 2GB size) and external 4MB RAM. This provides a good platform for a manoeuvrable, stereoscopic image robot to be developed. 
