@@ -32,6 +32,7 @@
 #define MIN_ROTATION_RESOLUTION		(CIRCUMFERENCE_WHEEL_MM*360)/(GAMMA * C_b)
 #define C_b							282
 #define ROTATION_CONST				(GAMMA * C_b) / (CIRCUMFERENCE_WHEEL_MM * 360)
+#define ROTATION_CONST_INV				(CIRCUMFERENCE_WHEEL_MM * 360) / (GAMMA * C_b) 
 //Type Defs
 typedef struct {
 	int Left_State;
@@ -47,13 +48,13 @@ Motor_Control_t Motor_Control;
 
 void Motor_Init();
 void Motor_Go();
-void Analogue_Comparator_Init();
+//void Analogue_Comparator_Init();
 void Motor_Start(int Motors);
 void Motors_Reset(void);
 void Motor_Stop(int Motors);
 bool Motors_Moving();
-void Motors_Move(int centimetres_fwd)/*Move this amount forward in centimeters */;
+int Motors_Move(int centimetres_fwd)/*Move this amount forward in centimeters */;
 void Motors_Execute();
-void Motors_Rotate(int angle_degs);
+int Motors_Rotate(int angle_degs);
 /*static void ACInterruptHandler(void);*/
 #endif /* MOTORDRIVER_H_ */

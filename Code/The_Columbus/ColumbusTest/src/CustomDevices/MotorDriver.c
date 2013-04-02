@@ -41,7 +41,46 @@ static void pwm_start_gc(void)
                 0);
   scif_gc_enable(AVR32_SCIF_GCLK_PWM);
 }
-
+void Analogue_Comparator_Init()
+{
+	static const gpio_map_t ACIFA_GPIO_MAP =
+	{
+	{POT0_AC1AP1_PIN, POT0_AC1AP1_FUNCTION},
+	{POT1_AC1BP1_PIN, POT1_AC1BP1_FUNCTION},
+	{SENSE0_AC1AN1_PIN, SENSE0_AC1AN1_FUNCTION},
+	{SENSE1_AC1BN1_PIN, SENSE1_AC1BN1_FUNCTION},
+	};
+	
+	gpio_enable_module(ACIFA_GPIO_MAP, sizeof(ACIFA_GPIO_MAP) / sizeof(ACIFA_GPIO_MAP[0]));
+	//Make it an interrupt
+	Disable_global_interrupt();
+	
+	acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELA, 2);
+	acifa_configure(&AVR32_ACIFA1,
+	ACIFA_COMP_SELA,
+	POT0_AC1AP1_INPUT,
+	SENSE0_AC1AN1_INPUT,
+	FOSC0);
+	
+	acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELB, 2);
+	acifa_configure(&AVR32_ACIFA1,
+	ACIFA_COMP_SELB,
+	POT1_AC1BP1_INPUT,
+	SENSE1_AC1BN1_INPUT,
+	FOSC0);
+	
+	// 	acifa_enable_interrupt(&AVR32_ACIFA1, (1 << AVR32_ACIFA_ACBINT )| (1 << AVR32_ACIFA_ACAINT));//Enable ACBINT and ACAINT
+	// 	AVR32_ACIFA1.ier = 3; //enable interrupts
+	// 	acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELA);
+	// 	acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELB);
+	// 	acifa_enable_interrupt_inp_lower(&AVR32_ACIFA1, ACIFA_COMP_SELA);
+	// 	acifa_enable_interrupt_inp_lower(&AVR32_ACIFA1, ACIFA_COMP_SELB);
+	acifa_start(&AVR32_ACIFA1, (ACIFA_COMP_SELA|ACIFA_COMP_SELB));
+	
+	//	INTC_register_interrupt(&ACInterruptHandler,AVR32_ACIFA1_IRQ ,AVR32_INTC_INT0);
+	
+	Enable_global_interrupt();
+}
 void Motor_Init()
 {
 	//Turn boths motors off
@@ -111,46 +150,7 @@ void Motor_Init()
 // {
 // 	
 // }
-void Analogue_Comparator_Init()
-{
-	static const gpio_map_t ACIFA_GPIO_MAP =
-	{
-	{POT0_AC1AP1_PIN, POT0_AC1AP1_FUNCTION},
-	{POT1_AC1BP1_PIN, POT1_AC1BP1_FUNCTION},
-	{SENSE0_AC1AN1_PIN, SENSE0_AC1AN1_FUNCTION},
-	{SENSE1_AC1BN1_PIN, SENSE1_AC1BN1_FUNCTION},
-	};
-	
-	gpio_enable_module(ACIFA_GPIO_MAP, sizeof(ACIFA_GPIO_MAP) / sizeof(ACIFA_GPIO_MAP[0]));
-	//Make it an interrupt
-	Disable_global_interrupt();
-	
-	acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELA, 2);
-	acifa_configure(&AVR32_ACIFA1,
-					ACIFA_COMP_SELA,
-					POT0_AC1AP1_INPUT,
-					SENSE0_AC1AN1_INPUT,
-					FOSC0);
-	
-	acifa_configure_hysteresis(&AVR32_ACIFA1, ACIFA_COMP_SELB, 2);
-	acifa_configure(&AVR32_ACIFA1,
-					ACIFA_COMP_SELB,
-					POT1_AC1BP1_INPUT,
-					SENSE1_AC1BN1_INPUT,
-					FOSC0);
-	
-// 	acifa_enable_interrupt(&AVR32_ACIFA1, (1 << AVR32_ACIFA_ACBINT )| (1 << AVR32_ACIFA_ACAINT));//Enable ACBINT and ACAINT
-// 	AVR32_ACIFA1.ier = 3; //enable interrupts	
-// 	acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELA);
-// 	acifa_enable_interrupt_toggle(&AVR32_ACIFA1, ACIFA_COMP_SELB);
-// 	acifa_enable_interrupt_inp_lower(&AVR32_ACIFA1, ACIFA_COMP_SELA);
-// 	acifa_enable_interrupt_inp_lower(&AVR32_ACIFA1, ACIFA_COMP_SELB);
-	acifa_start(&AVR32_ACIFA1, (ACIFA_COMP_SELA|ACIFA_COMP_SELB));
-	
-//	INTC_register_interrupt(&ACInterruptHandler,AVR32_ACIFA1_IRQ ,AVR32_INTC_INT0);
-	
-	Enable_global_interrupt();
-}
+
 void Motor_Start(int Motors)
 {
 	if(Motors & MOTOR_L)
@@ -322,10 +322,11 @@ void Motor_Stop(int Motors)
 		pwm_stop_channels((1 << MOTOR_R));
 	}
 }
-void Motors_Move(int millimetres_fwd)//Move this amount forward in centimeters
+int Motors_Move(int millimetres_fwd)//Move this amount forward in centimeters
 {
 	//Calculate number of interrupts of each wheel
 	int number_interrupts; 
+	int distance_moved; 
 	if(millimetres_fwd > 0)
 	{
 		Motor_Control.Left_State = FORWARD;
@@ -338,6 +339,7 @@ void Motors_Move(int millimetres_fwd)//Move this amount forward in centimeters
 		Motor_Control.Right_State = BACKWARD;
 	}
 	number_interrupts = (millimetres_fwd * (int)GAMMA) / (int)CIRCUMFERENCE_WHEEL_MM; 
+	distance_moved = number_interrupts * MIN_DISTANCE_RESOLUTION;
 	print_dbg("\n\rNumber of interrupts to move = ");
 	print_dbg_ulong(number_interrupts);
 	
@@ -345,6 +347,7 @@ void Motors_Move(int millimetres_fwd)//Move this amount forward in centimeters
 	Motor_Control.Right_Count = number_interrupts;
 	Motor_Start(MOTOR_L | MOTOR_R);
 	Motors_Execute();
+	return distance_moved;
 }
 
 void Motors_Reset(void)
@@ -387,11 +390,13 @@ bool Motors_Moving()
 }
 
 
-void Motors_Rotate(int angle_degs)
+int Motors_Rotate(int angle_degs)
 {
 	int interrupts_to_move = 0; 
+	int angle_rotated;
 	//calculate interrupts to move
 	interrupts_to_move = angle_degs * ROTATION_CONST;
+	angle_rotated = interrupts_to_move * ROTATION_CONST_INV;
 // 	if(Pivot_Type == LEFT_SPOT)
 // 	{
 // 		//Right wheel moves
@@ -439,5 +444,6 @@ void Motors_Rotate(int angle_degs)
 		Motor_Control.Right_Count = Abs(interrupts_to_move);
 		Motor_Start(MOTOR_L | MOTOR_R);
 		Motors_Execute();
-//	}
+		return angle_rotated;
+	//}
 }
