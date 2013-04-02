@@ -5,20 +5,19 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available (\cite {ImageComparison})\relax }}{11}{table.caption.38}
 \contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega644P for Dual Camera Operation.\relax }}{13}{table.caption.41}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Results of Motor Distance Test\relax }}{19}{table.caption.61}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Results of motor speed test\relax }}{20}{table.caption.63}
-\contentsline {table}{\numberline {3.5}{\ignorespaces The Pinout of the AVR for the circuit\relax }}{22}{table.caption.70}
-\contentsline {table}{\numberline {3.6}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{33}{table.caption.318}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Results of Motor Distance Test\relax }}{19}{table.caption.60}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Results of motor speed test\relax }}{20}{table.caption.62}
+\contentsline {table}{\numberline {3.5}{\ignorespaces The Pinout of the AVR for the circuit. '-' means unavailable and blank means unused\relax }}{22}{table.caption.69}
+\contentsline {table}{\numberline {3.6}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{33}{table.caption.317}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Number of clock cycles taken to calculate the Transform of 64 or 256 long data set\relax }}{57}{table.caption.428}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Number of clock cycles taken to calculate the Transform of 64 or 256 long data set\relax }}{57}{table.caption.426}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{81}{table.caption.466}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{79}{table.caption.460}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{85}{table.470}
+\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{83}{table.464}
 \addvspace {10\p@ }
