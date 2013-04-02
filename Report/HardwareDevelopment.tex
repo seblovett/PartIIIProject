@@ -221,13 +221,13 @@ A second approach utilised a simple state machine and software based hysteresis 
 
 The motor speed was controlled by PWM. The code sets up a low duty cycle PWM signal to drive the motors slowly. This causes any overshoot that could happen to be low and removes the need for a speed controller. 
 
-The final code can be seen in appendix \ref{Chapter:AppendixC:Code}
+The final code can be seen in appendix \ref{Chapter:AppendixC:Code}. \textit{Motor\_Init} method must be called before operation can occur. This sets up the PWM and analogue comparators. Methods \textit{Motors\_Move} and \textit{Motors\_Rotate} are the methods that can be called to move in a straight line or rotate on the spot. They both take an input which is a signed integer of either the distance to move (in millimetres) or the angle to rotate (in degrees, and positive is a clockwise movement). They both return the actual movement distances, due to the low resolution of the system.
 
 
 \subsection{Testing}\label{Section:MotorTest}
 \inote{Test Rotation}
 
-To test the motor system, different distances were given to the movement method. The method prints how many counts will be moved. The actual distance moved was then measured and repeated four times. Table \ref{table:results:motor:distance} shows the results of this test and figure \ref{fig:results:motor:distance}. The results show that the maximum error observed is $4.52\%$, which related to $4.5mm$. This error is acceptable as a half centimetre error over 10 will not impact the performance of the robot. 
+To test the motor system, different distances were given to the movement method. The method prints how many counts will be moved. The actual distance moved was then measured and repeated four times. Table \ref{table:results:motor:distance} shows the results of this test and figure \ref{fig:results:motor:distance}. The results show that the maximum error observed is $4.52\%$, which related to $4.5mm$. This error is acceptable as a half centimetre error over 10 will not impact the performance of the robot. The error is calculated from the actual distance predicted to move. 
 
 
 \begin{table}
@@ -253,7 +253,7 @@ Distance Specified (mm) &	Number of Counts Returned	& 	Counts $\times$ Resolutio
 \label{fig:results:motor:distance}
 \end{figure}
 
-A problem was seen that the robot moved in a slight arc. Speed tests were done on the wheel by measuring the total time taken to complete eight full revolutions, the equivalent of moving 928mm. The results and the calculated wheel speeds can be seen in table \ref{table:results:motor:speed}. It shows that the left motor runs slightly faster than the right, even though the PWM duty cycle is the same. A proportional controller could be implemented to correct this error during operation. However, over the distances covered, the error introduced by this is small enough to neglect. 
+A problem was seen that the robot moved in a slight arc. Speed tests were done on the wheel by measuring the total time taken to complete eight full revolutions, the equivalent of moving 928mm. The results and the calculated wheel speeds can be seen in table \ref{table:results:motor:speed}. It shows that the left motor runs slightly faster than the right, even though the PWM duty cycle is the same. A controller could be implemented to correct this error during operation. However, over the distances covered, the error introduced by this is small enough to neglect. 
 
 \begin{table}
 \caption{Results of motor speed test}
@@ -426,6 +426,8 @@ An extensive test of the motor driver is discussed in section \ref{Section:Motor
 
 \subsection{PCB Faults}\inote{TCRT1010 Footprint}
 During the build and test of the PCB, a number of faults were found. Each is explained and the solution for the problem given. 
+\subsubsection{TCRT1010 Footprint}
+The holes in the footprint for the optosensor were not large enough. This was a minor problem as the sensor was soldered in a surface mount style. This didn't affect the location of the sensor so had no other implications other than the connection being weaker than it should be. 
 \subsubsection{SDRAM Footprint}
 The SDRAM footprint made was done exactly to the specification of the pad size and locations with no consideration for soldering to. This meant the chip fit exactly on to the footprint. This made soldering difficult as pads had to be preloaded with solder and the device's pins were heated and bound to the solder. The chip does not seat flat against the PCB. It also put the device at risk as more heat had to be used that usually necessary. Figure \ref{fig:SDRAM_Err} shows the SDRAM chip against the footprint. There is no extra space on the pad to be able to easily solder the device.
 
