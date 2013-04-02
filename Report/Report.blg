@@ -23,13 +23,19 @@ Warning--entry type for "Atmel:UC3CEK" isn't style-file defined
 --line 75 of file ECS.bib
 Warning--entry type for "Farnell" isn't style-file defined
 --line 110 of file ECS.bib
+Warning--entry type for "Pirobot" isn't style-file defined
+--line 135 of file ECS.bib
 Warning--entry type for "DistanceEstimation" isn't style-file defined
 --line 147 of file ECS.bib
+Warning--entry type for "Microsoft:Kinect" isn't style-file defined
+--line 156 of file ECS.bib
 Warning--entry type for "FATFS" isn't style-file defined
 --line 191 of file ECS.bib
 Warning--entry type for "ImageComparison" isn't style-file defined
 --line 199 of file ECS.bib
 Warning--entry type for "Tsai:NCC" isn't style-file defined
 --line 224 of file ECS.bib
+Warning--entry type for "Saxena:DepthEstimation" isn't style-file defined
+--line 240 of file ECS.bib
 Warning--I didn't find a database entry for "NEEDED"
-(There were 10 warnings)
+(There were 13 warnings)

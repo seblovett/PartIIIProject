@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{29}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -53,6 +53,11 @@ Wayne Fulton.
 \newblock \href{http://www.scantips.com/basics09.html}{Image file formats -
   jpg, tif, png, gif. which to use?}, 2010.
 
+\bibitem[Goebel(2012)]{Pirobot}
+Patrick Goebel.
+\newblock \href{http://www.pirobot.org/blog/0015/}{Robot cartography: Ros +
+  slam}, 2012.
+
 \bibitem[Haller and Nedevschi(2012)]{haller2012design}
 I.~Haller and S.~Nedevschi.
 \newblock Design of interpolation functions for subpixel-accuracy stereo-vision
@@ -72,6 +77,10 @@ Jin Liu and Xiaofeng Lin.
 \newblock Equalization in high-speed communication systems.
 \newblock {\em Circuits and Systems Magazine, IEEE}, 4\penalty0 (2):\penalty0
   4--17, 2004.
+
+\bibitem[Microsoft(2012)]{Microsoft:Kinect}
+Microsoft.
+\newblock \href{http://www.xbox.com/en-GB/Kinect}{Xbox 360 kinect}, 2012.
 
 \bibitem[Mrovlje and Vran\v{c}i\'{c}(2008)]{Mrovlje:Distance_Stereoscopic}
 Jernej Mrovlje and Damir Vran\v{c}i\'{c}.
@@ -97,9 +106,29 @@ Phillips.
 \newblock {\em PCA9542A : 2-channel I2C-bus multiplexer and interrupt logic},
   2009.
 
+\bibitem[Saxena et~al.(2007)Saxena, Schulte, and Ng]{Saxena:DepthEstimation}
+Ashutosh Saxena, Jamie Schulte, and Andrew~Y. Ng.
+\newblock
+  \href{http://www-cs.stanford.edu/~asaxena/learningdepth/DepthEstimation_Saxena_IJCAI.pdf}{Depth
+  estimation using monocular and stereo cues}, 2007.
+
+\bibitem[Se et~al.(2002)Se, Lowe, and Little]{Se:MappingRobot}
+Stephen Se, David Lowe, and Jim Little.
+\newblock
+  \href{http://www.vision.caltech.edu/html-files/EE148-2005/uploads/SeLowe02Mobile.pdf}{Mobile
+  robot localization and mapping with uncertainty using scale-invariant visual
+  landmarks}.
+\newblock {\em The International Journal of Robotics Research}, pages 735--758,
+  2002.
+
 \bibitem[{Texas Instruments}(2012)]{ARM:Stellaris}
 {Texas Instruments}.
 \newblock {\em Stellaris LM3S9B96 Datasheet}, 2012.
+
+\bibitem[Thrun(2003)]{thrun2003learning}
+S.~Thrun.
+\newblock Learning occupancy grid maps with forward sensor models.
+\newblock {\em Autonomous robots}, 15\penalty0 (2):\penalty0 111--127, 2003.
 
 \bibitem[Tjandranegara(2005)]{DistanceEstimation}
 Edwin Tjandranegara.
