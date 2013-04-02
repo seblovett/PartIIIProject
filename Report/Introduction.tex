@@ -19,6 +19,15 @@
 \inote{What I ended up doing}
 \inote{The uses of my robot.} 
 
+The original idea for the project was a stereoscopic mapping robot, similar to \cite{Pirobot}. This would autonomously searched an area and return an occupancy map \cite{thrun2003learning}. However, due to time constraints, the vision part of the project was not implemented. The end robot is able to capture stereo image pairs, move with reasonable accuracy and do some image processing. The theory for distance measuring is discussed and prototyped in MATLAB but is not implemented on the AVR.
+
+Stereoscopy in computer vision is the ability to calculate the locations and depths using images from two or more cameras, which are used to triangulate and estimate distances \citep{Saxena:DepthEstimation}. By using two cameras on the same plane, separated by a set horizontal distance, the depth of the observed scene can be perceived by the system.
+
+Stereovision is a small section of computer vision which is widely used in many applications, including Microsoft's Xbox Kinect \citep{Microsoft:Kinect}, where stereo vision is used to locate a game player in order to use their movements to control the game. \cite{Mrovlje:Distance_Stereoscopic} uses stereovision to be able to locate the distance to a marker. 
+
+The stereovision robot discussed in this report is a low cost alternative to other robots which use laser range finders or high quality cameras \citep{Se:MappingRobot}. The robot will use the base seen in figure \ref{fig:RobotBase} and use two OmniVision OV7670 cameras delivering QVGA format images.
+
+
 \begin{figure}
 \includegraphics[width=\textwidth]{./Figures/RobotBase.jpg}
 \caption{The base of the robot}
@@ -26,7 +35,7 @@
 \end{figure}
 
 \section{Project Management}
-In order to reduce the risk within the project, all aspects of potential issues are looked at and are summarised in table \ref{tab:risk}. A Gantt chart of how time will be spent can be seen in figure \ref{fig:Gantt}. 
+In order to reduce the risk within the project, all aspects of potential issues are looked at and are summarised in table \ref{tab:risk}. A Gantt chart of how time was predicted to be spent can be seen in figure \ref{fig:Gantt}. However, this did not allow for PCB testing and code migration from the prototype to the AVR32, causing the project to overrun the time allowed.
 
 The project will be designed in stages - first, gaining operation of all the basic sections; movement, image capturing, image detection algorithms etc. These will then be brought together once tested to create the final product. 
 \begin{table}

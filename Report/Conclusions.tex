@@ -17,13 +17,13 @@ This work has led to a tested device which is mobile and has the capability to p
 
 The motor system is a simple, cheap method to move distances with reasonable accuracy. A better controller would allow variable speed and speed matching between motors. The system was shown to work to $4.5\%$ accuracy over a $300mm$ distance.
 
-A full image can be read from a camera and stored on an SD card in a FAT32 filesystem. This gives the ability of removable memory that can be viewed on a computer to see any internal logs. Images are stored in QVGA format (320 by 240 pixels) as a bitmap image. 
+A full image can be read from a camera and stored on an SD card in a FAT32 file system. This gives the ability of removable memory that can be viewed on a computer to see any internal logs. Images are stored in QVGA format (320 by 240 pixels) as a bitmap image. 
 
 An additional 4MB of SRAM memory is available to use on the robot allowing for large data arrays of the images to be kept in fast access RAM. The RAM is direct memory accessed so operation is almost seamless from internal memory.
 
 Multiple comparison algorithms have been investigated and compared using the same test images. It was clear that, although at a necessity of more computations, the normalised cross correlation is the best with regard to overall reliability. 
 
-The Fourier transform was also investigated and implemented. The system allows for a $2 \times 2$ array of a square image with dimensions of $2^{2n}\; $ where $n \in \mathbb{N}$ and is limited by RAM space. The transform is speed optimised and in tests proved to be fairly accurate.
+The Fourier transform was also investigated and implemented. The system allows for a $2 \times 2$ array of a square image with dimensions of $2^{2n}\; $ where $n \in \mathbb{N}$ and is limited by RAM space and time. The transform is speed optimised and in tests proved to be fairly accurate. 
 
 Range finding equations were then derived, which use the characteristics of the camera and the separation distance between them. 
 
