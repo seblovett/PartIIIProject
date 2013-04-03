@@ -53,7 +53,7 @@ Where $n$ is the number of pixels in $A$ and $B$, \\$\sigma$ is the standard dev
 %\inote{Find a source for this equation}
 \end{center}
 %\inote{No date on Reference}
-NCC is very similar to cross correlation, but normalised to reduce the error if one image is brighter than the other. This is common in computer vision (\cite{Tsai:NCC}) and cross correlation is a often used in digital signal processing, so fast algorithms have been made to calculate this. 
+NCC is very similar to cross correlation, but normalised to reduce the error if one image is brighter than the other. This is common in computer vision \citep{Tsai:NCC} and cross correlation is a often used in digital signal processing, so fast algorithms have been made to calculate this. 
 
 Unlike S.S.D. and S.A.D., the normalised cross correlation gives a high value for a match. The downside to this algorithm comes with the complexity of the equation as it contains division and the a square root of a number in order to calculate the standard deviation. These operations are rarely implemented in hardware and are time consuming to carry out in software. They also require floating point registers and operates slowly on a microcontroller without any. 
 
@@ -73,11 +73,11 @@ To compare these equations, a 50 by 50 window taken from the right picture was c
 \label{fg:CompResults}
 \end{figure}
 
-Each graph shows the correct area being identified as a match, but this also highlights the downfalls of the SAD and SSD. The figures in figure \ref{fg:CompResults} are rotated to match the orientation of the images in figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the desk phone from the right image to the entirety of the left image. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem (\cite{haller2012design}).
+Each graph shows the correct area being identified as a match, but this also highlights the downfalls of the SAD and SSD. The figures in figure \ref{fg:CompResults} are rotated to match the orientation of the images in figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the desk phone from the right image to the entirety of the left image. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem \citep{haller2012design}.
 
-SAD results in figure \ref{fg:Results:SSD} show large areas of matching. A minimum occurs around the location expected($170,175$) of a value of $5.66\times 10^4$. However, along the bottom of the image, where a dark area occurs below the desk in the lower part of figures \ref{fig:StereoTest}, the SAD algorithm detects a greater comparison, with the lowest value in this area being $3370$ at $(227, 275)$. This creates a false detection here. 
+SAD results in figure \ref{fg:Results:SAD} show large areas of matching. A minimum occurs around the location expected($170,175$) of a value of $5.66\times 10^4$. However, along the bottom of the image, where a dark area occurs below the desk in the lower part of figures \ref{fig:StereoTest}, the SAD algorithm detects a greater comparison, with the lowest value in this area being $3370$ at $(227, 275)$. This creates a false detection here. 
 
-SSD shows matches in the same two areas: where a match should occur and the dark area beneath the desk. The minimum value where the match should occur is $4.355 \times 10^5$ at location $(170,176)$. However, there is a large match correlation between the dark area under the desk where the actual lowest value of $2.768\times10^4$ occurs at $(225,274)$. This, again, is a false match and is a downfall of this algorithm. 
+SSD, figure \ref{fg:Results:SSD}, shows matches in the same two areas: where a match should occur and the dark area beneath the desk. The minimum value where the match should occur is $4.355 \times 10^5$ at location $(170,176)$. However, there is a large match correlation between the dark area under the desk where the actual lowest value of $2.768\times10^4$ occurs at $(225,274)$. This, again, is a false match and is a downfall of this algorithm. 
 
 The NCC results are visible in figure \ref{fg:Results:NCC}. A match can be seen at coordinate $(195,201)$ with a peak value of $0.9654$. The coordinate is different to the previous results because the cross correlation works over the boundary of the image creating more results. The dimensions of the image are 300 $\times$ 400, but the NCC returns an data set of dimensions 350 $\times$ 450 when using a window size of $50\times 50$. To get the actual match, half of the box size must be subtracted from the returned coordinate. This means the match occurs at $(170,176)$. With this algorithm, there is no area of the image which is close to a false detection. 
 
@@ -241,7 +241,7 @@ When the images have been matched, these equations can be used to calculate the 
 
 \section{Fourier Transform}
 \subsection{Background Research and the FFT}
-The Fourier Transform is a common tool in signal processing. It transforms a time based signal to the frequency domain showing the frequency components contained in the signal as a complex number, which is often displayed as magnitude and phase. The Fourier Transform is defined in equation \eqref{eq:fourier} and two examples of signals and their Fourier Transforms are shown in figures \ref{fig:DiracFunctionFT} and \ref{fig:SquareWaveFT}. 
+The Fourier transform is a common tool in signal processing. It transforms a time based signal to the frequency domain showing the frequency components contained in the signal as a complex number. This is often displayed as magnitude and phase. The Fourier Transform is defined in equation \eqref{eq:fourier} and two examples of signals and their Fourier Transforms are shown in figures \ref{fig:DiracFunctionFT} and \ref{fig:SquareWaveFT}. 
  
 \begin{equation}\label{eq:fourier}
 X(f) = \int\limits_{-\infty}^{\infty}x(t)e^{-\jmath 2 \pi ft}dt
@@ -265,16 +265,19 @@ X(f) = \int\limits_{-\infty}^{\infty}x(t)e^{-\jmath 2 \pi ft}dt
 \label{fig:SquareWaveFT}
 \end{figure}
 
-\inote{Uses of FT in signal processing}
-%\inote{Definition of DFT and theory of FFT}
+
+The Fourier transform is used in many areas of signal processing. It is used for filter design, system analysis and image processing as well as many others. It shows the frequency components of a time domain signal.
+
 The equation for the Fourier transform in equation \eqref{eq:fourier} is for continuous time. A discrete Fourier transform (DFT) exists for finite, equally spaced samples. This is commonly used in digital systems and is defined in equation \eqref{eq:DFT}. There exists a Fast Fourier Transform (FFT) which gives exactly the same results as the DFT, but is optimised in terms of number of multiplications done. The FFT will be used in implementation due to availability of code and speed of use. 
 
 \begin{equation}\label{eq:DFT}
 X[k] = \sum\limits_{0}^{N-1}x[n]e^{-\jmath \Omega_0 kn}
 \end{equation}
+\begin{center}
 Where $\Omega_0$ is the sample frequency
-\inote{Why this is relevant to my project - what am I using it for?}
-A property of the Fourier Transform of interest is the convolution theorem which states that convolution in time is multiplication in frequency and is defined mathematically in equation \eqref{eq:ConvolutionMultiplication}. As discussed in section \ref{Section:NCC}, cross correlation is very similar to convolution. Convolution is defined in equation \eqref{eq:CrossCorrelation}. With images, $f(t)$ is a real signal, its conjugate is exactly the same, $f(t) \equiv f^*(t) \text{given that} f(t) \in \Re$. 
+\end{center}
+
+A property of the Fourier Transform of interest is the convolution theorem which states that convolution in time is multiplication in frequency and is defined mathematically in equation \eqref{eq:ConvolutionMultiplication}. As discussed in section \ref{Section:NCC}, cross correlation is very similar to convolution. Cross correlation is defined in equation \eqref{eq:CrossCorrelation}. With images, $f(t)$ is a real signal, its conjugate is exactly the same, $f(t) \equiv f^*(t) \text{given that} f(t) \in \Re$. This means that to compute a cross correlation, the Fourier transform of the image and the template can be used and multiplied together. FFTs are quick and widely available so this should make the implementation more simple and fast.
 
 
 \begin{equation}\label{eq:ConvolutionMultiplication}
@@ -290,7 +293,6 @@ f(t) \star g(t) = f(t) \ast g(-t) = F(f) \cdot G(-f)
 
 \inote{example of convolution used as correlation. Include some pretty graphs}
 \subsection{Two Dimensional Fast Fourier Transform}
-\inote{Definition}
 A two dimensional Fourier transform exists for analysing two dimensional signals, namely in this application, an image. The Fourier Transform is shown in equation \eqref{eq:2dFT} and the discrete version is shown in \eqref{eq:2dDFT}
 
 \begin{equation}\label{eq:2dFT}
@@ -299,7 +301,7 @@ F(u,v) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\inf
 \begin{equation}\label{eq:2dDFT}
 F(u,v) = \frac{1}{N} \sum\limits_{x=0}^{N-1}\sum\limits_{y=0}^{N-1}f(x,y)e^{-\frac{2\pi\jmath (xu+yv)}{N}} \; \; \; \; \; x,y,u,v \in \left\lbrace 0\dots N-1\right\rbrace
 \end{equation}
-\inote{Examples}
+
 Figures \ref{fig:2DDiracFunctionFT} and \ref{fig:2DSquareWaveFT} show the two dimensional equivalent test signals of figures \ref{fg:Dirac:Signal} and \ref{fg:Square:Signal} and the phase and magnitudes of their Fourier Transforms. There is a direct similarity between the 1D and 2D spectra; the magnitudes of the Dirac (figures \ref{fg:Dirac:Mag} and \ref{fg:Dirac2D:Mag}) are both constant values and the rectangular pulses both have a modulus sinc function magnitude (figures \ref{fg:Square:Signal} and \ref{fg:Square2D:Signal}). 
 
 \begin{figure}
@@ -320,8 +322,6 @@ Figures \ref{fig:2DDiracFunctionFT} and \ref{fig:2DSquareWaveFT} show the two di
 \label{fig:2DSquareWaveFT}
 \end{figure}
 
-
-\inote{2D FFT and restrictions}
 The 2D Fourier transform can also be optimised to a fast Fourier transform algorithm in a similar way as the 1D case. The algorithm, sometimes referred to as the Butterfly transform, is briefly discussed in \cite{nixon2012feature} where is is explained that the algorithm can be easily applied to images with equal dimensions that are a power of 2. The algorithm utilises the separability property of the Fourier transform. 
 
 The 2D FFT can be implemented using a 1D FFT as follows:
@@ -333,7 +333,7 @@ Total number of FFTs done is $2n$ where $n$ is the height/width of the image.
 \inote{Maybe make a figure to help explain?}
 \subsection{Implementing the FFT}
 \inote{Include and explain code}
-The Atmel Software Framework \citep{Atmel:ASF} included a digital signal processing library. This contained functions to compute the FFT of a real or complex array, the inverse FFT, magnitude and phase of complex data. Further restrictions are imposed by the DSP library used as the data must be an even power of 2, and that the data is in fixed point notation. This gives a usable dimension of $256 \times 256$ for processing images on the AVR. Though the height of an image from the OV7670 camera is $240$, the image can be transformed so that it repeats for 16 rows at the bottom as the Fourier transform works on an assumption of the data repeating itself.
+The Atmel Software Framework \citep{Atmel:ASF} included a digital signal processing library. This contained functions to compute the FFT of a real or complex array, the inverse FFT, magnitude and phase of complex data. Further restrictions are imposed by the DSP library used as the data must be an even power of 2, and that the data is in fixed point notation. This gives a usable dimension of $256 \times 256$ for processing images on the AVR. Though the height of an image from the OV7670 camera is $240$ pixels, the image can be transformed so that it repeats for 16 rows at the bottom as the Fourier transform works on an assumption of the data being periodic.
 
 The function \textit{FFT2DCOMPLEX} in Appendix \ref{Appendix:Code:ImageProcessor.c} is the realisation of a two dimensional fast Fourier transform on the microcontroller. The FFT function requires the data to be 4 byte aligned (A\_ALIGNED) and of type \textit{dsp16\_complex\_t}. The data must be given in fixed point notation and it is returned in fixed point notation. A 16 bit representation was chosen over 32 bit due to being more functions for 16 bit data available. 
 
@@ -344,7 +344,7 @@ A Dirac function and a rectangular pulse were used as test signals.
 
 Figure \ref{fig:AVR:FFT:Dirac:Input} shows the input signal given to the AVR. It is a 256 long array of a Dirac function. This was then converted to the internally defined fixed point notation and passed through the Fourier transform method. The resulting complex array was then saved to a Comma Separated Value file and read into MATLAB. Figure \ref{fig:AVR:FFT:Dirac:Output} shows the calculated phase and magnitude plots of the output complex array. The magnitude is relatively flat and around the value of 1. In comparison with figure \ref{fg:Dirac:Mag}, they are relatively similar. The phase, however, seems to be very different. Figure \ref{fg:Dirac:Phase} shows what was expected, but the two phase results seem not to match. This could due to MATLAB having more accurate algorithms and a more accurate representation that the 16 bit fixed point used on the AVR. However, using a function in the DSP library to calculate the magnitude, the spectrum in figure \ref{fig:AVR:FFT:Dirac:Mag} is obtained. This, though is not exactly 1 as expected, is completely flat. It is computed from the same transformed data. It suggests that there is some internal compensation in the algorithms. The actual value in figure \ref{fig:AVR:FFT:Dirac:Mag} is $0.9897$ to 4 decimal places giving an overall error of $1.03\%$. 
 
-Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref{fig:AVR:FFT:Square:Mag} show the similar outputs from the AVR. The result was renormalised from fixed point notation and the data was shifted so that the centre of the plot is frequency 0.  Again, it can be seen the magnitude calculated from the complex output (figure \ref{fig:AVR:FFT:Square:Output}) is different to the result when the magnitude is calculated on the AVR (figure \ref{fig:AVR:FFT:Square:Mag}). There are also differences in the result from the AVR and the result from MATLAB in figure \ref{fig:SquareWaveFT}, which can, again, be put down to the algorithms. 
+Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref{fig:AVR:FFT:Square:Mag} show the similar outputs from the AVR when transforming the rectangular pulse. The result was renormalised from fixed point notation and the data was shifted so that the centre of the plot is frequency 0.  Again, it can be seen the magnitude calculated from the complex output (figure \ref{fig:AVR:FFT:Square:Output}) is different to the result when the magnitude is calculated on the AVR (figure \ref{fig:AVR:FFT:Square:Mag}). There are also differences in the result from the AVR and the result from MATLAB in figure \ref{fig:SquareWaveFT}, which can, again, be put down to the algorithms. 
 
 \begin{figure}
 \includegraphics[width=\textwidth]{./Figures/AVR_FFT_Dirac_Input.jpg}
@@ -380,10 +380,10 @@ Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref
 
 \subsubsection{2D FFT Test}
 
-Two test signals were used to test the 2D FFT on the AVR, a Dirac Signal and a Square wave, seen in figures \ref{fg:Dirac2D:Signal} and \ref{fg:Square2D:Signal}. The internal method on the AVR was not able to compute the magnitude due to the method scaling all the values down causing truncation errors. The complex Fourier transform was obtained, saved to the SD card in CSV format and viewed in MATLAB. All data was normalised to omit the effects of scaling and the data shifted so that frequency 0 is in the centre. These test were done with a $64\times64$ 2D data as with a $256 \times 256$ array, the AVR runs out of internal RAM to calculate the transform. 
+Two test signals were used to test the 2D FFT on the AVR, a Dirac signal and a square wave, seen in figures \ref{fg:Dirac2D:Signal} and \ref{fg:Square2D:Signal}. The internal method on the AVR was not able to compute the magnitude due to the method scaling all the values down causing truncation errors. The complex Fourier transform was obtained, saved to the SD card in CSV format and viewed in MATLAB. All data was normalised to omit the effects of scaling and the data shifted so that frequency 0 is in the centre. These test were done with a $64\times64$ 2D data as with a $256 \times 256$ array, the AVR runs out of internal RAM to calculate the transform. 
 \inote{I would like to get this to work by the end but not vital.}
 
-The result of the Dirac test is seen in figure \ref{fig:AVR:FFT2:Dirac}. A similar error is found in the magnitude, but the spectrum is generally flat with a small amount of ripple as seen with the 1D FFT in figure \ref{fig:AVR:FFT:Dirac:Mag}. The phase has similar issues as with the 1D FFT. However, there appears to be the correct pattern with the 2D phase, but rotated about $45^{\circ}$. This is also the case with the Square wave test. The magnitude in figure \ref{fig:AVR:FFT2:Square:Mag} is very similar, with a distinct peak in the centre (frequency 0) and a sinc function extending vertically and horizontally from this. Again, however, the phase (figure \ref{fig:AVR:FFT2:Square:Phase}) seems to differ a lot from the expected result in figure \ref{fg:Square2D:Phase}. 
+The result of the Dirac test is seen in figure \ref{fig:AVR:FFT2:Dirac}. A similar error is found in the magnitude, but the spectrum is generally flat with a small amount of ripple as seen with the 1D FFT in figure \ref{fig:AVR:FFT:Dirac:Mag}. The phase has similar issues as with the 1D FFT. However, there appears to be the correct pattern with the 2D phase, but rotated about $45^{\circ}$. This is also the case with the square wave test. The magnitude in figure \ref{fig:AVR:FFT2:Square:Mag} is very similar, with a distinct peak in the centre (frequency 0) and a sinc function extending vertically and horizontally from this. Again, however, the phase (figure \ref{fig:AVR:FFT2:Square:Phase}) seems to differ a lot from the expected result in figure \ref{fg:Square2D:Phase}. 
 
 The transforms are calculated in real time with a 16MHz clock source. Table \ref{table:FFTSize_Time} shows the number of clock cycles taken to calculate the relevant sized transform. A $64 \times 64$ transform takes $39ms$ to compute with a 16MHz clock. This could be reduced by increasing the internal clock speed by using the PLLs available on the AVR, potentially taking it up to 33MHz and therefore halving the time to compute. A $64 \times 64$ image, however, is not practical for the application and 
 
@@ -424,7 +424,6 @@ The transforms are calculated in real time with a 16MHz clock source. Table \ref
 \label{fig:AVR:FFT2:Square}
 \end{figure}
 
-\inote{Get more data for table \ref{table:FFTSize_Time} - 16 long in 1D and 2D to try and predict how long a 256x256 would take}
 \inote{Show results of actual photo being transformed}
 \inote{Maybe IFFT it too to find total errors in algorithm?}
 %\section{Low Level Vision Algorithms}

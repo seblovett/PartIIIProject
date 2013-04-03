@@ -14,28 +14,27 @@ A level-1 auxiliary file: Appendix_Code.aux
 The style file: ecs.bst
 Database file #1: ECS.bib
 Warning--entry type for "Creative_Robotics" isn't style-file defined
---line 4 of file ECS.bib
+--line 15 of file ECS.bib
 Warning--entry type for "PCBCart" isn't style-file defined
---line 30 of file ECS.bib
+--line 41 of file ECS.bib
 Warning--entry type for "Atmel:ASF" isn't style-file defined
---line 68 of file ECS.bib
+--line 79 of file ECS.bib
 Warning--entry type for "Atmel:UC3CEK" isn't style-file defined
---line 75 of file ECS.bib
+--line 86 of file ECS.bib
 Warning--entry type for "Farnell" isn't style-file defined
---line 110 of file ECS.bib
+--line 121 of file ECS.bib
 Warning--entry type for "Pirobot" isn't style-file defined
---line 135 of file ECS.bib
+--line 146 of file ECS.bib
 Warning--entry type for "DistanceEstimation" isn't style-file defined
---line 147 of file ECS.bib
+--line 158 of file ECS.bib
 Warning--entry type for "Microsoft:Kinect" isn't style-file defined
---line 156 of file ECS.bib
+--line 167 of file ECS.bib
 Warning--entry type for "FATFS" isn't style-file defined
---line 191 of file ECS.bib
+--line 202 of file ECS.bib
 Warning--entry type for "ImageComparison" isn't style-file defined
---line 199 of file ECS.bib
+--line 210 of file ECS.bib
 Warning--entry type for "Tsai:NCC" isn't style-file defined
---line 224 of file ECS.bib
+--line 235 of file ECS.bib
 Warning--entry type for "Saxena:DepthEstimation" isn't style-file defined
---line 240 of file ECS.bib
-Warning--I didn't find a database entry for "NEEDED"
-(There were 13 warnings)
+--line 251 of file ECS.bib
+(There were 12 warnings)

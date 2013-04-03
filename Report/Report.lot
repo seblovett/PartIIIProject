@@ -3,21 +3,22 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {2.1}{\ignorespaces Comparison Table of some common microcontrollers. Data of microcontrollers taken from \cite {Atmel:UC3C}, \cite {Atmel:644P}, \cite {Atmel:A3BU} and \cite {ARM:Stellaris}. Costings from \cite {Farnell}\relax }}{7}{table.caption.21}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available (\cite {ImageComparison})\relax }}{13}{table.caption.35}
+\contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available \citep {ImageComparison}\relax }}{13}{table.caption.35}
 \contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega644P for Dual Camera Operation.\relax }}{15}{table.caption.38}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Results of Motor Distance Test\relax }}{21}{table.caption.57}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Results of motor speed test\relax }}{22}{table.caption.59}
-\contentsline {table}{\numberline {3.5}{\ignorespaces The Pinout of the AVR for the circuit. '-' means unavailable and blank means unused\relax }}{24}{table.caption.66}
-\contentsline {table}{\numberline {3.6}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{35}{table.caption.315}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Results of Motor Distance Test\relax }}{21}{table.caption.54}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Results of motor speed test\relax }}{22}{table.caption.56}
+\contentsline {table}{\numberline {3.5}{\ignorespaces The Pinout of the AVR for the circuit. `-' means unavailable and blank means unused\relax }}{24}{table.caption.63}
+\contentsline {table}{\numberline {3.6}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{35}{table.caption.304}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Number of clock cycles taken to calculate the Transform of 64 or 256 long data set\relax }}{61}{table.caption.424}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Number of clock cycles taken to calculate the Transform of 64 or 256 long data set\relax }}{61}{table.caption.407}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{83}{table.caption.463}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{87}{table.467}
+\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{83}{table.caption.445}
+\contentsline {table}{\numberline {D.2}{\ignorespaces All components and their values (if applicable)\relax }}{84}{table.caption.446}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{87}{table.450}
 \addvspace {10\p@ }

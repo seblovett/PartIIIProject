@@ -228,7 +228,7 @@ int main (void)
 						break;
 					case 'T':
 						while(*Ptr == ' ')
-						Ptr++; //Find next non - space char
+							Ptr++; //Find next non - space char
 						i = atoi(Ptr);
 						Motors_Rotate(i);
 						break;
