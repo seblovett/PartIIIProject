@@ -49,46 +49,47 @@
 \contentsline {subsection}{\numberline {4.1.5}Conclusion}{45}{subsection.330}
 \contentsline {section}{\numberline {4.2}Range Finding}{45}{section.331}
 \contentsline {subsection}{\numberline {4.2.1}Derivations}{45}{subsection.332}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Object is between the Cameras}{45}{subsubsection.337}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Object is to the same side in each camera}{47}{subsubsection.346}
-\contentsline {subsubsection}{\numberline {4.2.1.3}Object is in front of a camera}{48}{subsubsection.358}
-\contentsline {subsection}{\numberline {4.2.2}Summary}{48}{subsection.361}
-\contentsline {section}{\numberline {4.3}Fourier Transform}{50}{section.365}
-\contentsline {subsection}{\numberline {4.3.1}Background Research and the FFT}{50}{subsection.366}
-\contentsline {subsection}{\numberline {4.3.2}Two Dimensional Fast Fourier Transform}{54}{subsection.381}
-\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT}{57}{subsection.395}
-\contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{57}{subsection.397}
-\contentsline {subsubsection}{\numberline {4.3.4.1}1D FFT Test}{57}{subsubsection.398}
-\contentsline {subsubsection}{\numberline {4.3.4.2}2D FFT Test}{58}{subsubsection.405}
-\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{65}{chapter.416}
-\contentsline {chapter}{\numberline {A}Gantt Chart}{67}{appendix.425}
-\contentsline {chapter}{\numberline {B}Circuit Diagrams}{69}{appendix.427}
-\contentsline {section}{\numberline {B.1}OV7670 Breakout Board Schematic}{69}{section.428}
-\contentsline {section}{\numberline {B.2}Il Matto and Dual Camera Schematic}{69}{section.430}
-\contentsline {section}{\numberline {B.3}The Columbus Circuit Diagram}{69}{section.432}
-\contentsline {chapter}{\numberline {C}PCB Design}{79}{appendix.439}
-\contentsline {section}{\numberline {C.1}PCB Top Side}{79}{section.440}
-\contentsline {section}{\numberline {C.2}PCB Bottom Side}{79}{section.442}
-\contentsline {chapter}{\numberline {D}Costings and Components}{83}{appendix.444}
-\contentsline {chapter}{\numberline {E}Contents of Files}{85}{appendix.447}
-\contentsline {chapter}{\numberline {F}Bitmap File Format}{87}{appendix.448}
-\contentsline {section}{\numberline {F.1}Bitmap File Format}{87}{section.449}
-\contentsline {chapter}{\numberline {G}Source Code}{91}{appendix.452}
-\contentsline {section}{\numberline {G.1}C Code for AVR}{91}{section.453}
-\contentsline {subsection}{\numberline {G.1.1}The Columbus Source Code}{91}{subsection.454}
-\contentsline {subsubsection}{\numberline {G.1.1.1}main.c}{91}{subsubsection.455}
-\contentsline {subsubsection}{\numberline {G.1.1.2}Bitmap.c}{99}{subsubsection.859}
-\contentsline {subsubsection}{\numberline {G.1.1.3}CustomDevices.h}{99}{subsubsection.907}
-\contentsline {subsubsection}{\numberline {G.1.1.4}ImageProcessor.h}{100}{subsubsection.951}
-\contentsline {subsubsection}{\numberline {G.1.1.5}ImageProcessor.c}{101}{subsubsection.989}
-\contentsline {subsubsection}{\numberline {G.1.1.6}MotorDriver.h}{107}{subsubsection.1323}
-\contentsline {subsubsection}{\numberline {G.1.1.7}MotorDriver.c}{108}{subsubsection.1385}
-\contentsline {subsubsection}{\numberline {G.1.1.8}OV7670.h}{117}{subsubsection.1836}
-\contentsline {subsubsection}{\numberline {G.1.1.9}OV7670.c}{123}{subsubsection.2172}
-\contentsline {subsubsection}{\numberline {G.1.1.10}OV7670.c}{134}{subsubsection.2793}
-\contentsline {subsubsection}{\numberline {G.1.1.11}PCA9542A.h}{137}{subsubsection.2975}
-\contentsline {subsubsection}{\numberline {G.1.1.12}PCA9542A.c}{138}{subsubsection.3012}
-\contentsline {subsubsection}{\numberline {G.1.1.13}SD\textunderscore Card.h}{138}{subsubsection.3062}
-\contentsline {subsubsection}{\numberline {G.1.1.14}SD\textunderscore Card.c}{139}{subsubsection.3100}
-\contentsline {subsubsection}{\numberline {G.1.1.15}TWI.c}{149}{subsubsection.3624}
-\contentsline {chapter}{References}{151}{dummy.3671}
+\contentsline {subsection}{\numberline {4.2.2}Summary}{45}{subsection.336}
+\contentsline {section}{\numberline {4.3}Fourier Transform}{46}{section.342}
+\contentsline {subsection}{\numberline {4.3.1}Background Research and the FFT}{46}{subsection.343}
+\contentsline {subsection}{\numberline {4.3.2}Two Dimensional Fast Fourier Transform}{50}{subsection.358}
+\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT}{53}{subsection.372}
+\contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{53}{subsection.374}
+\contentsline {subsubsection}{\numberline {4.3.4.1}1D FFT Test}{53}{subsubsection.375}
+\contentsline {subsubsection}{\numberline {4.3.4.2}2D FFT Test}{56}{subsubsection.382}
+\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{59}{chapter.393}
+\contentsline {chapter}{\numberline {A}Gantt Chart}{61}{appendix.402}
+\contentsline {chapter}{\numberline {B}Circuit Diagrams}{63}{appendix.404}
+\contentsline {section}{\numberline {B.1}OV7670 Breakout Board Schematic}{63}{section.405}
+\contentsline {section}{\numberline {B.2}Il Matto and Dual Camera Schematic}{63}{section.407}
+\contentsline {section}{\numberline {B.3}The Columbus Circuit Diagram}{63}{section.409}
+\contentsline {chapter}{\numberline {C}PCB Design}{73}{appendix.416}
+\contentsline {section}{\numberline {C.1}PCB Top Side}{73}{section.417}
+\contentsline {section}{\numberline {C.2}PCB Bottom Side}{73}{section.419}
+\contentsline {chapter}{\numberline {D}Costings and Components}{77}{appendix.421}
+\contentsline {chapter}{\numberline {E}Contents of Files}{79}{appendix.424}
+\contentsline {chapter}{\numberline {F}Bitmap File Format}{81}{appendix.425}
+\contentsline {section}{\numberline {F.1}Bitmap File Format}{81}{section.426}
+\contentsline {chapter}{\numberline {G}Range Finding Derivations}{85}{appendix.429}
+\contentsline {subsubsection}{\numberline {G.0.0.3}Object is between the Cameras}{85}{subsubsection.431}
+\contentsline {subsubsection}{\numberline {G.0.0.4}Object is to the same side in each camera}{87}{subsubsection.440}
+\contentsline {subsubsection}{\numberline {G.0.0.5}Object is in front of a camera}{88}{subsubsection.452}
+\contentsline {chapter}{\numberline {H}Source Code}{91}{appendix.455}
+\contentsline {section}{\numberline {H.1}C Code for AVR}{91}{section.456}
+\contentsline {subsection}{\numberline {H.1.1}The Columbus Source Code}{91}{subsection.457}
+\contentsline {subsubsection}{\numberline {H.1.1.1}main.c}{91}{subsubsection.458}
+\contentsline {subsubsection}{\numberline {H.1.1.2}Bitmap.c}{99}{subsubsection.862}
+\contentsline {subsubsection}{\numberline {H.1.1.3}CustomDevices.h}{99}{subsubsection.910}
+\contentsline {subsubsection}{\numberline {H.1.1.4}ImageProcessor.h}{100}{subsubsection.954}
+\contentsline {subsubsection}{\numberline {H.1.1.5}ImageProcessor.c}{101}{subsubsection.992}
+\contentsline {subsubsection}{\numberline {H.1.1.6}MotorDriver.h}{107}{subsubsection.1326}
+\contentsline {subsubsection}{\numberline {H.1.1.7}MotorDriver.c}{108}{subsubsection.1388}
+\contentsline {subsubsection}{\numberline {H.1.1.8}OV7670.h}{117}{subsubsection.1839}
+\contentsline {subsubsection}{\numberline {H.1.1.9}OV7670.c}{123}{subsubsection.2175}
+\contentsline {subsubsection}{\numberline {H.1.1.10}OV7670.c}{134}{subsubsection.2796}
+\contentsline {subsubsection}{\numberline {H.1.1.11}PCA9542A.h}{137}{subsubsection.2978}
+\contentsline {subsubsection}{\numberline {H.1.1.12}PCA9542A.c}{138}{subsubsection.3015}
+\contentsline {subsubsection}{\numberline {H.1.1.13}SD\textunderscore Card.h}{138}{subsubsection.3065}
+\contentsline {subsubsection}{\numberline {H.1.1.14}SD\textunderscore Card.c}{139}{subsubsection.3103}
+\contentsline {subsubsection}{\numberline {H.1.1.15}TWI.c}{149}{subsubsection.3627}
+\contentsline {chapter}{References}{151}{dummy.3674}

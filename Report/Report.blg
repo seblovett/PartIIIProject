@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: report.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Report.aux
 A level-1 auxiliary file: Introduction.aux
 A level-1 auxiliary file: Research.aux
 A level-1 auxiliary file: HardwareDevelopment.aux
@@ -10,6 +10,7 @@ A level-1 auxiliary file: Appendix_PCB.aux
 A level-1 auxiliary file: Appendix_Costing.aux
 A level-1 auxiliary file: Appendix_Contents.aux
 A level-1 auxiliary file: Appendix_Bitmap.aux
+A level-1 auxiliary file: Appendix_RangeDerivations.aux
 A level-1 auxiliary file: Appendix_Code.aux
 The style file: ecs.bst
 Database file #1: ECS.bib
