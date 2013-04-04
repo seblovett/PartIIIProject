@@ -122,8 +122,53 @@ Where $\varphi_1$ is defined in equation \eqref{eq:p2:phi1} and $\varphi_2$ is d
 \end{equation}
 When the images have been matched, these equations can be used to calculate the range to an object.
 
-\inote{Test these!}
+\subsection{Field of View}
+The field of view is an important characteristic to calculate distances and must be measured for the camera. Field of view was measured by placing a ruler at a distance in front of the camera and measuring the total distance seen across the image. Basic trigonometry then found the field of view. This was done multiple times to confirm the measurement. Results can be seen in table \ref{table:fieldofview}. The field of view used is the average of the data set. 
 
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|} \hline
+L (mm) & D (mm) & $\varphi (^c)$ \\ \hline
+70 & 104 & 0.6435\\
+90 & 135 &0.6015\\
+178 & 285 &0.6054\\
+214 & 345 &0.6493 \\ \hline
+\multicolumn{2}{|c|}{Average} & 0.6249 \\ \hline
+\end{tabular}
+\caption{Table of results to calculate the field of view of the camera}
+\label{table:fieldofview}
+\end{table}
+
+\inote{Figure to show this?}
+
+\subsection{Example}
+A stereo pair of images were taken from the built robot and can be seen in figure \ref{fig:duck:stereo}. A template image of the ducks head, at $(108, 103)$ from the right image was Cross correlated with the left image and the result can be seen in figure \ref{fig:duck:ncc}. A peak is seen at $(269,180)$. Using equation \eqref{eq:summary:1}, where $B = 45mm$, $\varphi_0 = 0.6249^c$, $x_0=320$ and $x_1$ and $x_2$ are from the matched and chosen $x$ coordinates respectively:
+
+\begin{equation}
+\label{eq:D:duck}
+D = \frac{45\times 320}{2 \tan\left(\frac{0.6249}{2}\right)(269-108)} = 341mm
+\end{equation}
+
+The actual measurement from the front of the duck to the base of the camera was set up to be $300mm$. The error could be due to low resolution, incorrect matching, or error in the field of view measurement, but overall, given the small distance between the cameras and low resolution, the result is reasonably accurate.
+
+\inote{do more distances!!!} 
+
+\begin{figure}
+\caption{Stereo pair of images of a rubber duck on a reel of solder}
+\label{fig:duck:stereo}
+\includegraphics[width=\textwidth ]{Figures/Duck_L_R.eps}
+\end{figure}
+
+\begin{figure}
+\caption{NCC results from matching using the ducks head from the right image as the template to the left image}
+\label{fig:duck:ncc}
+\includegraphics[width=\textwidth]{Figures/NCC_Duck.eps}
+\end{figure}
+
+\subsection{Conclusions}
+
+Extensive testing of the effect of separation of the cameras has been done before \citep{Mrovlje:Distance_Stereoscopic}. The robot was designed to be small, but some accuracy still remained. 
+\inote{Finish}
 
 \section{Fourier Transform}
 \subsection{Background Research and the FFT}
