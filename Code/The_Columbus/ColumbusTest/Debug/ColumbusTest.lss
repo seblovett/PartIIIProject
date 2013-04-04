@@ -27712,7 +27712,7 @@ __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 					case 'T':
 						while(*Ptr == ' ')
 8000b7f6:	32 09       	mov	r9,32
-						Ptr++; //Find next non - space char
+							Ptr++; //Find next non - space char
 8000b7f8:	2f fc       	sub	r12,-1
 							Ptr++; //Find next non - space char
 						i = atoi(Ptr);
@@ -27723,7 +27723,7 @@ __always_inline static unsigned long cpu_is_timeout(t_cpu_time *cpu_time)
 8000b7fa:	19 88       	ld.ub	r8,r12[0x0]
 8000b7fc:	f2 08 18 00 	cp.b	r8,r9
 8000b800:	cf c0       	breq	8000b7f8 <main+0x3c0>
-						Ptr++; //Find next non - space char
+							Ptr++; //Find next non - space char
 						i = atoi(Ptr);
 8000b802:	f0 1f 00 fc 	mcall	8000bbf0 <main+0x7b8>
 						Motors_Rotate(i);

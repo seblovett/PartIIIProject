@@ -1,7 +1,7 @@
 
 loadimages;
 show;
-BoxSize = [50,50];
+BoxSize = [100,100];
 MaxConfMatches = 20;
 %SubCoord = [145, 300];
 figure(1);

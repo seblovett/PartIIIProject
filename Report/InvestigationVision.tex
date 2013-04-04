@@ -177,7 +177,7 @@ A property of the Fourier Transform of interest is the convolution theorem which
 f(t) \star g(t) = f(t) \ast g(-t) = F(f) \cdot G(-f)
 \end{equation}
 
-\inote{example of convolution used as correlation. Include some pretty graphs}
+%\inote{example of convolution used as correlation. Include some pretty graphs}
 \subsection{Two Dimensional Fast Fourier Transform}
 A two dimensional Fourier transform exists for analysing two dimensional signals, namely in this application, an image. The Fourier Transform is shown in equation \eqref{eq:2dFT} and the discrete version is shown in \eqref{eq:2dDFT}
 
@@ -218,7 +218,7 @@ The 2D FFT can be implemented using a 1D FFT as follows:
 Total number of FFTs done is $2n$ where $n$ is the height/width of the image. 
 \inote{Maybe make a figure to help explain?}
 \subsection{Implementing the FFT}
-\inote{Include and explain code}
+%\inote{Include and explain code}
 The Atmel Software Framework \citep{Atmel:ASF} included a digital signal processing library. This contained functions to compute the FFT of a real or complex array, the inverse FFT, magnitude and phase of complex data. Further restrictions are imposed by the DSP library used as the data must be an even power of 2, and that the data is in fixed point notation. This gives a usable dimension of $256 \times 256$ for processing images on the AVR. Though the height of an image from the OV7670 camera is $240$ pixels, the image can be transformed so that it repeats for 16 rows at the bottom as the Fourier transform works on an assumption of the data being periodic.
 
 The function \textit{FFT2DCOMPLEX} in Appendix \ref{Appendix:Code:ImageProcessor.c} is the realisation of a two dimensional fast Fourier transform on the microcontroller. The FFT function requires the data to be 4 byte aligned (A\_ALIGNED) and of type \textit{dsp16\_complex\_t}. The data must be given in fixed point notation and it is returned in fixed point notation. A 16 bit representation was chosen over 32 bit due to being more functions for 16 bit data available. 
@@ -310,7 +310,7 @@ The transforms are calculated in real time with a 16MHz clock source. Table \ref
 \label{fig:AVR:FFT2:Square}
 \end{figure}
 
-\inote{Show results of actual photo being transformed}
+\inote{Show results of actual photo being transformed, need 2D 256 FFT working before}
 \inote{Maybe IFFT it too to find total errors in algorithm?}
 %\section{Low Level Vision Algorithms}
 %\subsection{Noise Reduction}

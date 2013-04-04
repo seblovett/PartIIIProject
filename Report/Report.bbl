@@ -102,14 +102,14 @@ OmniVision.
 \newblock {\em OmniVision Serial Camera Control Bus (SCCB) Functional
   Specification}, 2007.
 
-\bibitem[Philips(20012)]{Philips:I2C}
-Philips.
-\newblock {\em UM10204}, 20012.
-
 \bibitem[Phillips(2009)]{I2C_Mux}
 Phillips.
 \newblock {\em PCA9542A : 2-channel I2C-bus multiplexer and interrupt logic},
   2009.
+
+\bibitem[Phillips(2012)]{Philips:I2C}
+Phillips.
+\newblock {\em UM10204 - I2C-bus specification and user manual}, 2012.
 
 \bibitem[Saxena et~al.(2007)Saxena, Schulte, and Ng]{Saxena:DepthEstimation}
 Ashutosh Saxena, Jamie Schulte, and Andrew~Y. Ng.
