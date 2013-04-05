@@ -1,7 +1,7 @@
 
 loadimages;
 show;
-BoxSize = [100,100];
+BoxSize = [26,26];
 MaxConfMatches = 20;
 %SubCoord = [145, 300];
 figure(1);
@@ -57,19 +57,21 @@ end
 
 Result = [maxValue, LeftMatchCoord];
 figure(1);
+
+left(LeftMatchCoord(1)-(BoxSize(1)/2):LeftMatchCoord(1)+(BoxSize(1)/2),LeftMatchCoord(2)-(BoxSize(2))/2)=255;
+left(LeftMatchCoord(1)-(BoxSize(1)/2):LeftMatchCoord(1)+(BoxSize(1)/2),LeftMatchCoord(2)+(BoxSize(2))/2)=255;
+left(LeftMatchCoord(1)-(BoxSize(1)/2),LeftMatchCoord(2)-(BoxSize(2)/2):LeftMatchCoord(2)+(BoxSize(2))/2)=255;
+left(LeftMatchCoord(1)+(BoxSize(1)/2),LeftMatchCoord(2)-(BoxSize(2)/2):LeftMatchCoord(2)+(BoxSize(2)/2))=255;
+subplot(1,2,1);
+imshow(left);
 if NumConfidentMatches >= 1 && NumConfidentMatches < MaxConfMatches
-    left(LeftMatchCoord(1)-(BoxSize(1)/2):LeftMatchCoord(1)+(BoxSize(1)/2),LeftMatchCoord(2)-(BoxSize(2))/2)=255;
-    left(LeftMatchCoord(1)-(BoxSize(1)/2):LeftMatchCoord(1)+(BoxSize(1)/2),LeftMatchCoord(2)+(BoxSize(2))/2)=255;
-    left(LeftMatchCoord(1)-(BoxSize(1)/2),LeftMatchCoord(2)-(BoxSize(2)/2):LeftMatchCoord(2)+(BoxSize(2))/2)=255;
-    left(LeftMatchCoord(1)+(BoxSize(1)/2),LeftMatchCoord(2)-(BoxSize(2)/2):LeftMatchCoord(2)+(BoxSize(2)/2))=255;
+    
     
     right(rSubCoord(1)-(BoxSize(1)/2):rSubCoord(1)+(BoxSize(1)/2),rSubCoord(2)-(BoxSize(2)/2))=255;
     right(rSubCoord(1)-(BoxSize(1)/2):rSubCoord(1)+(BoxSize(1)/2),rSubCoord(2)+(BoxSize(2)/2))=255;
     right(rSubCoord(1)-(BoxSize(1)/2),rSubCoord(2)-(BoxSize(2)/2):rSubCoord(2)+(BoxSize(2)/2))=255;
     right(rSubCoord(1)+(BoxSize(1)/2),rSubCoord(2)-(BoxSize(2)/2):rSubCoord(2)+(BoxSize(2)/2))=255;
     
-    subplot(1,2,1);
-    imshow(left);
     subplot(1,2,2);
     imshow(right);
 %     LeftMatchCoord

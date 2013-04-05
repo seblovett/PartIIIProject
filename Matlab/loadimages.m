@@ -16,5 +16,5 @@
 % left = imread('scene_left.png');
 % right = imread('scene_right.png');
 
-left = imread('Images/Duck_0_L.bmp');
-right = imread('Images/Duck_0_R.bmp');
+left = imread('Range_Test_Images/Duck_L_500.bmp');
+right = imread('Range_Test_Images/Duck_R_500.bmp');
