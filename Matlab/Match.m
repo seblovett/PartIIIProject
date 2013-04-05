@@ -1,7 +1,7 @@
 function [ MatchDiff ] = Match( left, right )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
-close all;
+%close all;
 % Global Constants
 BoxSize = 50
 
