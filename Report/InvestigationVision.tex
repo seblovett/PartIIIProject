@@ -154,22 +154,28 @@ The actual measurement from the front of the duck to the base of the camera was 
 \inote{do more distances!!!} 
 
 \begin{figure}
+\includegraphics[width=\textwidth ]{Figures/Duck_L_R.eps}
 \caption{Stereo pair of images of a rubber duck on a reel of solder}
 \label{fig:duck:stereo}
-\includegraphics[width=\textwidth ]{Figures/Duck_L_R.eps}
 \end{figure}
 
 \begin{figure}
+\includegraphics[width=\textwidth]{Figures/NCC_Duck.eps}
 \caption{NCC results from matching using the ducks head from the right image as the template to the left image}
 \label{fig:duck:ncc}
-\includegraphics[width=\textwidth]{Figures/NCC_Duck.eps}
 \end{figure}
 
 \subsection{Conclusions}
 
-Extensive testing of the effect of separation of the cameras has been done before \citep{Mrovlje:Distance_Stereoscopic}. The robot was designed to be small, but some accuracy still remained. 
-\inote{Finish}
+Extensive testing of the effect of separation of the cameras has been done before \citep{Mrovlje:Distance_Stereoscopic}. Figure \ref{fig:B:Plot} shows that by increasing $B$ will give you a larger range of detectable distances, but at a lower resolution. A separation of more than $100$ is about the same calculated distance due to the function being of the form $D = \frac{k}{\Delta_x}$. An external frame could be made for the robot to increase the separation if needed.
 
+The robot was designed to be small, but some accuracy still remained. With a separation of $B = 42mm$, the maximum distance to an object is, theoretically, $20m$. With a higher resolution camera, less error will be introduced into the range finding. 
+\inote{Finish}
+\begin{figure}
+\includegraphics[width=\textwidth]{Figures/BPlot.eps}
+\caption{3D Surface plot graph showing range of distances that can be calculated over a range of camera separation, B, values.}
+\label{fig:B:Plot}
+\end{figure}
 \section{Fourier Transform}
 \subsection{Background Research and the FFT}
 The Fourier transform is a common tool in signal processing. It transforms a time based signal to the frequency domain showing the frequency components contained in the signal as a complex number. This is often displayed as magnitude and phase. The Fourier Transform is defined in equation \eqref{eq:fourier} and two examples of signals and their Fourier Transforms are shown in figures \ref{fig:DiracFunctionFT} and \ref{fig:SquareWaveFT}. 
