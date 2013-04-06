@@ -25,7 +25,7 @@ Multiple comparison algorithms have been investigated and compared using the sam
 
 The Fourier transform was also investigated and implemented. The system allows for a $2 \times 2$ array of a square image with dimensions of $2^{2n}\; $ where $n \in \mathbb{N}$ and is limited by RAM space and time. The transform is speed optimised and in tests proved to be fairly accurate. 
 
-Range finding equations were then derived, which use the characteristics of the camera and the separation distance between them. %They have also been tested using MATLAB and images that have been rendered where all the distances are known and exact.
+Range finding equations were then researched and derived, which use the characteristics of the camera and the separation distance between them to calculate distance to objects in view. The range finding capability was tested using MATLAB and it found that the system could not accurately calculate distances to objects. However, depth perception is possible even with low resolution cameras and small separation between them.
 
 All aspects implemented on the robot have been shown to be functional. A faster processor would have been a good idea to use for image processing, but this could have developed other problems with the PCB. The Raspberry Pi or Steve Gunn's \textit{`L'Imperatrice'}, which both run a Linux operating system, would have been a good choice to remove the need for as much hardware design and existing image processing libraries could have been utilised to gain more functionality in the time. 
 

@@ -62,7 +62,7 @@ Unlike S.S.D. and S.A.D., the normalised cross correlation gives a high value fo
 %test and compare
 \subsection{Comparison}
 
-To compare these equations, a 50 by 50 window taken from the right picture was compared with the left image over the entire valid range. The coordinates on the graph give the centre pixel of the calculation. 
+To compare these equations, a $50 \times 50$ template taken from the right picture was compared with the left image over the entire valid range. The coordinates on the graph give the centre pixel of the calculation. 
 
 \begin{figure}
 \centering
@@ -79,7 +79,7 @@ SAD results in figure \ref{fg:Results:SAD} show large areas of matching. A minim
 
 SSD, figure \ref{fg:Results:SSD}, shows matches in the same two areas: where a match should occur and the dark area beneath the desk. The minimum value where the match should occur is $4.355 \times 10^5$ at location $(170,176)$. However, there is a large match correlation between the dark area under the desk where the actual lowest value of $2.768\times10^4$ occurs at $(225,274)$. This, again, is a false match and is a downfall of this algorithm. 
 
-The NCC results are visible in figure \ref{fg:Results:NCC}. A match can be seen at coordinate $(195,201)$ with a peak value of $0.9654$. The coordinate is different to the previous results because the cross correlation works over the boundary of the image creating more results. The dimensions of the image are 300 $\times$ 400, but the NCC returns an data set of dimensions 350 $\times$ 450 when using a window size of $50\times 50$. To get the actual match, half of the box size must be subtracted from the returned coordinate. This means the match occurs at $(170,176)$. With this algorithm, there is no area of the image which is close to a false detection. 
+The NCC results are visible in figure \ref{fg:Results:NCC}. A match can be seen at coordinate $(195,201)$ with a peak value of $0.9654$. The coordinate is different to the previous results because the cross correlation works over the boundary of the image creating more results. The dimensions of the image are $300 \times 400$, but the NCC returns an data set of dimensions $350 \times 450$ when using a template size of $50\times 50$. To get the actual match, half of the box size must be subtracted from the returned coordinate. This means the match occurs at $(170,176)$. With this algorithm, there is no area of the image which is close to a false detection. 
 
 \subsection{Conclusion}
 It can be seen that there is a direct correlation between the complexity of the matching algorithm to the reliability of the match returned. In brightly lit, colourful environments absent of dark colours, SAD and SSD should provide a reliable result, but this cannot be guaranteed to always be the case. Therefore further development of the matching algorithm will start with using the normalised cross correlation. A comprise between complexity and reliability needs to be reached, where reliability is the more desirable of the two. Cross correlation is also a large area of research, so optimised algorithms do exist.
@@ -123,9 +123,11 @@ Where $\varphi_1$ is defined in equation \eqref{eq:p2:phi1} and $\varphi_2$ is d
 When the images have been matched, these equations can be used to calculate the range to an object.
 
 \subsection{Field of View}
-The field of view is an important characteristic to calculate distances and must be measured for the camera. Field of view was measured by placing a ruler at a distance in front of the camera and measuring the total distance seen across the image. Basic trigonometry then found the field of view. This was done multiple times to confirm the measurement. Results can be seen in table \ref{table:fieldofview}. The field of view used is the average of the data set. 
-
+The field of view is an important characteristic to calculate distances and must be measured for the camera. Field of view was measured by placing a ruler at a distance in front of the camera and measuring the total distance seen across the image. Basic trigonometry then found the field of view. This was done multiple times to confirm the measurement. Results can be seen in table \ref{table:fieldofview}. The field of view used is the average of the data set and was found to be $\varphi_0 = 0.6249^c$. 
+\inote{Figure to show this?}
 \begin{table}
+\caption{Table of results to calculate the field of view of the camera}
+\label{table:fieldofview}
 \centering
 \begin{tabular}{|c|c|c|} \hline
 L (mm) & D (mm) & $\varphi (^c)$ \\ \hline
@@ -135,23 +137,36 @@ L (mm) & D (mm) & $\varphi (^c)$ \\ \hline
 214 & 345 &0.6493 \\ \hline
 \multicolumn{2}{|c|}{Average} & 0.6249 \\ \hline
 \end{tabular}
-\caption{Table of results to calculate the field of view of the camera}
-\label{table:fieldofview}
+
 \end{table}
 
-\inote{Figure to show this?}
 
-\subsection{Example}
-A stereo pair of images were taken from the built robot and can be seen in figure \ref{fig:duck:stereo}. A template image of the ducks head, at $(108, 103)$ from the right image was Cross correlated with the left image and the result can be seen in figure \ref{fig:duck:ncc}. A peak is seen at $(269,180)$. Using equation \eqref{eq:summary:1}, where $B = 45mm$, $\varphi_0 = 0.6249^c$, $x_0=320$ and $x_1$ and $x_2$ are from the matched and chosen $x$ coordinates respectively:
 
-\begin{equation}
-\label{eq:D:duck}
-D = \frac{45\times 320}{2 \tan\left(\frac{0.6249}{2}\right)(269-108)} = 341mm
-\end{equation}
+\subsection{Testing}
+MATLAB was used to test the range finding. The MATLAB script can be found Appendix \ref{Chapter:AppendixC:Code}. It is unable to automatically detect and object so the user must select the template when prompted. 
 
-The actual measurement from the front of the duck to the base of the camera was set up to be $300mm$. The error could be due to low resolution, incorrect matching, or error in the field of view measurement, but overall, given the small distance between the cameras and low resolution, the result is reasonably accurate.
+A stereo pair of images at different ranges were captured using the completed robot. To calculate the distance, a template from the right image of the ducks head was cross correlated with the left image. The maximum peak in the result was found and used as the match point. The distance was then calculated using equation \eqref{eq:summary:1}, with $B=42mm$, $\varphi_0=0.6249$ and $x_0=320$. Example images can be seen in figure \ref{fig:duck:stereo} and an example NCC result can be seen in figure \ref{fig:duck:ncc}. 
 
-\inote{do more distances!!!} 
+Table \ref{table:range} shows the distances tested with the distance calculated using the above method. The ranges calculated were inaccurate. This could be down to the resolution of the camera being low, so one pixel change can potentially be a large distance error. Matching can only be done to the accuracy of a few pixels without extra effort and therefore can introduce a small error and cause a large distance error in the calculation. 
+
+\begin{table}
+\centering
+\caption{Results of range finding test}
+\label{table:range}
+\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|} \hline
+Actual Distance (mm) & Pixel Difference in Images (pixel) & Calculated Distance (mm) & Error (\%) \\ \hline
+100 & 290 & 72 & 28\\ 
+200 & 152 & 137 & 32\\ 
+300 & 109 & 191 & 36\\ 
+400 & 88 & 236 & 41\\ 
+500 & 75 & 277 & 45\\ 
+600 & 67 & 310 & 48\\ 
+700 & 61 & 341 & 51\\ 
+800 & 57 & 365 & 54\\ 
+900 & 53 & 393 & 56\\ 
+1000 & 51 & 408 & 59\\ \hline
+\end{tabular}
+\end{table}
 
 \begin{figure}
 \includegraphics[width=\textwidth ]{Figures/Duck_L_R.eps}
@@ -167,14 +182,19 @@ The actual measurement from the front of the duck to the base of the camera was 
 
 \subsection{Conclusions}
 
-Extensive testing of the effect of separation of the cameras has been done before \citep{Mrovlje:Distance_Stereoscopic}. Figure \ref{fig:B:Plot} shows that by increasing $B$ will give you a larger range of detectable distances, but at a lower resolution. A separation of more than $100$ is about the same calculated distance due to the function being of the form $D = \frac{k}{\Delta_x}$. An external frame could be made for the robot to increase the separation if needed.
+Extensive testing of the effect of separation of the cameras has been done before \citep{Mrovlje:Distance_Stereoscopic}. Figure \ref{fig:B:Plot} shows that by increasing $B$ will give you a larger range of detectable distances, but with a larger potential error with a low resolution camera. A separation of more than 100 pixels will result in around the same calculated distance due to the function being of the form $D = \frac{k}{x}$. This gives a range of distances that the can be detected. For $B=42mm$, it is around $200mm$ to $1m$. An external frame could be made to mount the cameras with a greater separation distance to alter this characteristic on the robot.
 
-The robot was designed to be small, but some accuracy still remained. With a separation of $B = 42mm$, the maximum distance to an object is, theoretically, $20m$. With a higher resolution camera, less error will be introduced into the range finding. 
-\inote{Finish}
+The robot was designed to be small, and the cameras were chosen as a cheap alternative to more expensive products on the market. The test results show that using the cameras with a small separation and low resolution, the system is unable to accurately measure distances to objects seen. The separation of objects in the images is a reciprocal function and the data gathered in the test matches this characteristic, see figure \ref{fig:Distance:DeltaX}. This means the system can perceive depth from the separation of the objects, but not accurately calculate the distance. 
+
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/BPlot.eps}
 \caption{3D Surface plot graph showing range of distances that can be calculated over a range of camera separation, B, values.}
 \label{fig:B:Plot}
+\end{figure}
+\begin{figure}
+\includegraphics[width=\textwidth]{Figures/Distance_DeltaX.eps}
+\caption{Graph showing Distance of the object against the difference in the match locations.}
+\label{fig:Distance:DeltaX}
 \end{figure}
 \section{Fourier Transform}
 \subsection{Background Research and the FFT}
