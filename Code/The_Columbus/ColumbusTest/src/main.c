@@ -10,6 +10,7 @@
  * Atmel Software Framework (ASF).
  */
 #define DSP16_FORMAT 10
+#define COMMAND_BUFFER_SIZE		128
 #include <asf.h>
 #include <conf_board.h>
 #include "CustomDevices/CustomDevices.h"
@@ -21,59 +22,16 @@
 #include "delay.h"
 #include "stdio.h"
 
-//REF : http://www.chris.com/ASCII/index.php?art=transportation/nautical 
-#define ASCII_SHIP "\t\t\t             |    |    | \n\r\t\t\t            )_)  )_)  )_) \n\r\t\t\t           )___))___))___)\\  \n\r\t\t\t           )____)____)_____)\\\\ \n\r\t\t\t         _____|____|____|____\\\\\\__ \n\r\t\t\t---------\\                   /--------- \n\r\t\t\t  ^^^^^ ^^^^^^^^^^^^^^^^^^^^^ \n\r\t\t\t    ^^^^      ^^^^     ^^^    ^^\n\r\t\t\t         ^^^^      ^^^\n\r"
-#define COLUMBUS " _______  _______  _                 _______  ______            _______ \n\r(  ____ \\(  ___  )( \\      |\\     /|(       )(  ___ \\ |\\     /|(  ____ \\\n\r| (    \\/| (   ) || (      | )   ( || () () || (   ) )| )   ( || (    \\/\n\r| |      | |   | || |      | |   | || || || || (__/ / | |   | || (_____ \n\r| |      | |   | || |      | |   | || |(_)| ||  __ (  | |   | |(_____  )\n\r| |      | |   | || |      | |   | || |   | || (  \\ \\ | |   | |      ) |\n\r| (____/\\| (___) || (____/\\| (___) || )   ( || )___) )| (___) |/\\____) |\n\r(_______/(_______)(_______/(_______)|/     \\||______/ (_______)\\_______)\n\n\r"
-#define THE "\t\t\t_________          _______ \n\r \t\t\t\\__   __/|\\     /|(  ____ \\ \n\r \t\t\t   ) (   | )   ( || (    \\/\n\r\t\t\t   | |   | (___) || (__    \n\r \t\t\t   | |   |  ___  ||  __)   \n\r \t\t\t   | |   | (   ) || (      \n\r \t\t\t   | |   | )   ( || (____/\\\n\r \t\t\t   )_(   |/     \\|(_______/\n\r"
-#define PROMPT "\n\r$>"
 
-#define HELP	"\n\rColumbus Prompt Help:\n\r\
-				? : Shows this prompt\n\r \
-				c : converts the working buffer from integer to fixed point\n\r\
-				D : Frees the Memory pointed to by the Working Buffer \n\r \
-				r : displays the contents of the working buffer\n\r\
-				R : Reads contents of signal.bin, representing 1D Signal. Integers, Big Endian\n\r\
-				T : Reads contents of signal2d.bin, representing 2D Signal. \n\r \
-				s : saves the working buffer\n\r\
-				P : Takes and stores Stereo Photos \n\r \
-				1 : computes the One Dimensional FFT of the working buffer. Returns magnitude.\n\r\
-				2 : Computes the Two Dimensional FFT of the Working Buffer. \n\r \
-				"
 
-void Get_Line( char * CommandBuffer ) 
-{
-	int c = 0;
-	
-	while(c != 13)
-	{
-		c = usart_getchar(DBG_USART);
-		if(c == '\b')
-		{
-			CommandBuffer--;
-			*(CommandBuffer) = 0;
-		}		
-		else
-		{
-			*(CommandBuffer) = c; 
-			CommandBuffer++;
-		}
-		print_dbg_char(c);
-	}
-	usart_putchar(DBG_USART, 6);
-}
+void Get_Line( char * CommandBuffer );
+void Auto_Run();
+void Debug_Mode();
+void System_Error();
 
-#define COMMAND_BUFFER_SIZE		128
+
 int main (void)
 {
-	Image_t image;
-	unsigned long i, j, tmp = 0;
-	char *Ptr; 
-//	volatile unsigned long *sdram = SDRAM;
-	char CommandBuffer[COMMAND_BUFFER_SIZE];
-	int *Working_Buffer = NULL;
-	int SizeOfWorking_Buffer = 0;
-	A_ALIGNED dsp16_complex_t *ComplexBuffer;
-	int SizeOfComplex_Buffer = 0;
 	Columbus_Status.SD_Card = &SD_Status;
 	Columbus_Status.Cameras = &OV7670_Status;
 	Columbus_Status.I2CMux = &PCA9542A;
@@ -85,29 +43,127 @@ int main (void)
 	print_dbg(COLUMBUS);
 	print_dbg(ASCII_SHIP);
 	System_Test();
-
+	
 	if(Columbus_Status.Status != STATUS_OK)
 	{
-		while(1)
-		{	
-			LED2_SET;
-			LED3_SET;
-			LED4_SET;
-			LED5_SET;
-			LED6_SET;
-			delay_ms(500);
-			LED2_CLR;
-			LED3_CLR;
-			LED4_CLR;
-			LED5_CLR;
-			LED6_CLR;
-			delay_ms(500);
-		}//inifinte loop
+		System_Error();
 	}
-
-
 	print_dbg("\n\rColumbus Ready!");
-	// Insert application code here, after the board has been initialized.
+	
+	//Enter into Auto Run if not in debug mode
+	if(gpio_get_pin_value(DEBUG_PIN))
+	{	
+		print_dbg("\n\rEntering Auto Run");
+		if(1 == Auto_Run()) //if 
+			System_Error(); //use the system error loop to stop operation
+	}	
+	print_dbg("\n\rEntering Debug Mode...");
+	Debug_Mode();
+	
+}
+void Get_Line( char * CommandBuffer )
+{
+	int c = 0;
+	
+	while(c != 13)
+	{
+		c = usart_getchar(DBG_USART);
+		if(c == '\b')
+		{
+			CommandBuffer--;
+			*(CommandBuffer) = 0;
+		}
+		else
+		{
+			*(CommandBuffer) = c;
+			CommandBuffer++;
+		}
+		print_dbg_char(c);
+	}
+	usart_putchar(DBG_USART, 6);
+}
+
+void System_Error()
+{
+	while(1)
+	{
+		LED2_SET;
+		if(Columbus_Status.Status & SD_ERR)
+			LED3_SET;
+		if(Columbus_Status.Status & CAM_ERR)
+			LED4_SET;
+		delay_ms(500);
+		
+		LED2_CLR;
+		if(Columbus_Status.Status & SD_ERR)
+			LED3_CLR;
+		if(Columbus_Status.Status & CAM_ERR)
+			LED4_CLR;
+		delay_ms(500);
+	}
+}
+
+void GetCommand(AutoCommand_t AutoCommand)
+{
+	
+}
+
+int Auto_Run()
+{
+	char Commands[AUTO_COMMAND_LENGTH] = "FPRFPRFPRFPR";
+	int Args[AUTO_COMMAND_LENGTH] = {10, 0, 90, 10, 0, 90, 10, 0, -90, 10, 0, -90};
+	AutoCommand_t AutoCommand;
+	AutoCommand.Counter = 0;
+	
+	while(1)
+	{
+		GetCommand(AutoCommand);
+		switch(AutoCommand.Command)
+		{
+			case 'F'://Move Forward
+			
+				break;
+				
+			case 'B'://Move Backward
+			
+				break;
+			
+			case 'R'://Rotate
+			
+				break;
+			
+			case 'P'://Take Photo
+			
+				break;
+				
+			case 'J': //Jump
+				
+				break;
+				
+			case 'q': //End and enter debug
+				return 0;
+				
+			default: //System Error
+				Columbus_Status.Status |= AutoRunCMD_ERR;
+			case 'Q': //End and stop
+				print_dbg("\n\rSystem Exiting...");
+				return 1;
+		}
+	}
+}
+
+void Debug_Mode()
+{
+	Image_t image;
+	unsigned long i, j, tmp = 0;
+	char *Ptr;
+	//	volatile unsigned long *sdram = SDRAM;
+	char CommandBuffer[COMMAND_BUFFER_SIZE];
+	int *Working_Buffer = NULL;
+	int SizeOfWorking_Buffer = 0;
+	A_ALIGNED dsp16_complex_t *ComplexBuffer;
+	int SizeOfComplex_Buffer = 0;
+	
 	while(1)
 	{
 		print_dbg(PROMPT);
@@ -118,14 +174,17 @@ int main (void)
 			case '?':
 				print_dbg(HELP);
 				break;
-
-			case '1'://1d FFT (w/ memallocs)
+			case 'A':
+				if(gpio_get_pin_value(DEBUG_PIN))
+					Auto_Run();
+				break;
+			case '1':
 				print_dbg("\r1D FFT;");
 				SizeOfComplex_Buffer = FFT_SIZE;
 				ComplexBuffer = mspace_malloc(sdram_msp,  SizeOfComplex_Buffer * sizeof(ComplexBuffer));
 				i = Get_sys_count();
 				FFT1D(Working_Buffer, ComplexBuffer);
-				i = Get_sys_count() - i; 
+				i = Get_sys_count() - i;
 				print_dbg("\n\rCycles Taken for 1D FFT = ");
 				print_dbg_ulong(i);
 				break;
@@ -147,7 +206,7 @@ int main (void)
 				print_dbg("\r1D FFT Magnitude");
 				FFT1D_Abs(Working_Buffer);
 				break;
-			case 'B': 
+			case 'B':
 				print_dbg("\rReading Bitmap;");
 				ReadBitmap("Image_R_0.bmp", &image);
 				print_dbg("\n\rBitmap Data Returned:\n\rImage Height = ");
@@ -155,7 +214,7 @@ int main (void)
 				print_dbg("\n\rImage Width = ");
 				print_dbg_ulong(image.Width);
 				break;
-				
+			
 			case 'c':
 				print_dbg("\rConverting Working Buffer to Fixed Point");
 				for(i = 0; i < SizeOfWorking_Buffer ; i++)
@@ -187,40 +246,40 @@ int main (void)
 				print_dbg("\n\rImage Width = ");
 				print_dbg_ulong(image.Width);
 				break;
-					
+			
 			case 'I':
 				print_dbg("\rInverse Fourier Transform;");
 				IFFT2D(ComplexBuffer);
 				break;
-				
+			
 			case 'k':
 				print_dbg("\rComplex Buffer:\n\r[");
 				for (i = 0; i < SizeOfComplex_Buffer; i ++)
 				{
-// 					print_dbg_ulong(ComplexBuffer[i].real);
-// 					print_dbg(" + ");
-// 					print_dbg_ulong(ComplexBuffer[i].imag);
-// 					print_dbg(", ");
+					// 					print_dbg_ulong(ComplexBuffer[i].real);
+					// 					print_dbg(" + ");
+					// 					print_dbg_ulong(ComplexBuffer[i].imag);
+					// 					print_dbg(", ");
 					if(ComplexBuffer[i].imag >= 0)
-						sprintf(CommandBuffer, "%d + %dj,", ComplexBuffer[i].real, ComplexBuffer[i].imag);
+					sprintf(CommandBuffer, "%d + %dj,", ComplexBuffer[i].real, ComplexBuffer[i].imag);
 					else
-						sprintf(CommandBuffer, "%d %dj,", ComplexBuffer[i].real, ComplexBuffer[i].imag);
+					sprintf(CommandBuffer, "%d %dj,", ComplexBuffer[i].real, ComplexBuffer[i].imag);
 					print_dbg(CommandBuffer);
 				}
 				print_dbg("]\n\r");
 				break;
 			case 'M': //Motor Related
 				while(*Ptr == ' ')
-					Ptr++; //Find next non - space char
-				
+				Ptr++; //Find next non - space char
+			
 				switch(*(Ptr++))
 				{
 					case 'q': // Reset Motors
 						print_dbg("\rResetting Motors");
 						Motors_Reset();
 						break;
-					
-					case 'F': //Move Forward 
+				
+					case 'F': //Move Forward
 						while(*Ptr == ' ')
 							Ptr++; //Find next non - space char
 						i = atoi(Ptr);
@@ -254,29 +313,29 @@ int main (void)
 						print_dbg("\rCommand Not Recognised");
 						break;
 				}
-				
-				break;
-				
+			
+			break;
+			
 			case 'p':
 				print_dbg("\rPreparing Image;");
 				PrepareImage(&image);
 				print_dbg("\rImage Prepared!");
 				break;
-				
+			
 			case 'P'://take a photo
 				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 				print_dbg("\rTaking Photos");
 				if(TakePhoto(CAMERA_LEFT | CAMERA_RIGHT) == CAMERAS_BUSY){
 					print_dbg("Cameras Busy");
 					break;
-				}					
+				}
 				while(Photos_Ready() == false)
-					;
+				;
 
 				if(Store_Both_Images() == true)
-					print_dbg("\n\rImages Stored Successfully!");
+				print_dbg("\n\rImages Stored Successfully!");
 				break;
-				
+			
 			case 'r':
 				if (Working_Buffer == 0)
 				{
@@ -286,8 +345,6 @@ int main (void)
 				print_dbg("\rWorking Buffer:\n\r[");
 				for(i = 0; i < SizeOfWorking_Buffer; i++)
 				{
-// 					print_dbg_ulong(Working_Buffer[i]);
-// 					print_dbg(", ");
 					sprintf(CommandBuffer, "%d,", (dsp16_t)Working_Buffer[i]);
 					print_dbg(CommandBuffer);
 				}
@@ -315,7 +372,6 @@ int main (void)
 			case 'f':
 				SizeOfWorking_Buffer = FFT_SIZE*FFT_SIZE;
 				Working_Buffer = mspace_malloc(sdram_msp, SizeOfWorking_Buffer);
-				
 				print_dbg("\rReading in Buffer.csv");
 				Read_CSV("Buffer.csv", Working_Buffer, SizeOfWorking_Buffer);
 				print_dbg("\n\rComplete!");
@@ -326,7 +382,7 @@ int main (void)
 				SaveBitmap(image.ImagePtr, image.Width, image.Height, "ResavedImage.bmp");
 				print_dbg("\rSaved Bitmap!;");
 				break;
-				
+			
 			case 'T':
 				print_dbg("\rReading in 2D Signal");
 				Working_Buffer = mspace_malloc(sdram_msp, FFT_SIZE * FFT_SIZE);
@@ -366,34 +422,8 @@ int main (void)
 				i = DSP16_Q(1);
 				print_dbg_ulong(i);
 				break;
-// 			case 'o'://testing storing a complex
-// 				print_dbg("\rFreeing Complex Buffer");
-// 				mspace_free(sdram_msp, ComplexBuffer);
-// 				print_dbg("\n\rAssiging Space to the Complex Buffer;");
-// 				SizeOfComplex_Buffer = 10;
-// 				ComplexBuffer = mspace_malloc(sdram_msp, 10*sizeof(ComplexBuffer));
-// 				if(ComplexBuffer == NULL)
-// 				{
-// 					print_dbg("\n\rAssign Failed;");
-// 					break;
-// 				}
-// 				for(i = 0; i < SizeOfComplex_Buffer; i++)
-// 				{
-// 					ComplexBuffer[i].imag = i;
-// 					ComplexBuffer[i].real = i;
-// 				}
-// 				for(i = 0; i < SizeOfComplex_Buffer; i ++)
-// 				{
-// 					print_dbg("\n\r");
-// 					print_dbg_ulong(ComplexBuffer[i].real);
-// 					print_dbg(" + j");
-// 					print_dbg_ulong(ComplexBuffer[i].imag);
-// 				}
-// 				print_dbg("\n\rFreeing Complex Buffer");
-// 				mspace_free(sdram_msp, ComplexBuffer);
-// 				SizeOfComplex_Buffer = 0;
-// 				break;
-	
+
+			
 			default:
 				print_dbg("\rCommand Not Recognised;");
 				break;

@@ -151,6 +151,10 @@ void OV7670_Init()
 			delay_ms(1);
 		}	
 	}
+	else
+	{
+		OV7670_Status.Status |= CAM0_NotFOUND;
+	}
 	if(OV7670_Status.Camera_1_Found)
 	{
 		PCA9542A_Chan_Sel(I2C_CHANNEL_1);
@@ -176,6 +180,10 @@ void OV7670_Init()
 			}
 			delay_ms(1);
 		}
+	}
+	else
+	{
+		OV7670_Status.Status |= CAM1_NotFOUND;
 	}
 	PCA9542A_Chan_Sel(NO_SELECT);
 	

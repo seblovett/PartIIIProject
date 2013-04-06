@@ -33,6 +33,8 @@ void board_init(void)
 	//Allocate Memory Space
 	sdram_msp = create_mspace_with_base((void*) SDRAM_START_ADDRESS, MEM_SPACE_SIZE, 0);
 	
+	gpio_enable_pin_pull_up(DEBUG_PIN); //Enable the pull up for the debug enable
+	
 	Enable_global_interrupt();
 }
 void SD_Card_Test()
@@ -88,8 +90,8 @@ void System_Test()
 	if(OV7670_Status.Status != STATUS_OK)
 	{
 		Columbus_Status.Status |= CAM_ERR;
-		print_dbg("\n\rCamera Error(s): ");
-		print_dbg_ulong(OV7670_Status.Status);
+		print_dbg("\n\rCamera Error(s): 0x");
+		print_dbg_hex(OV7670_Status.Status);
 	}	
 	if(PCA9542A.Status != STATUS_OK)
 	{

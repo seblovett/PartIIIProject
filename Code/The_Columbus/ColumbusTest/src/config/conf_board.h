@@ -19,7 +19,8 @@
 #define BOARD_OSC32_STARTUP_US  71000
 #define BOARD_OSC32_IS_XTAL     true
 
-
+//Debug Loader
+#define DEBUG_PIN	AVR32_PIN_PD23
 //SDRAM 
 
 //! Part header file of used SDRAM(s).
@@ -66,6 +67,7 @@
 #define LED4_GPIO   AVR32_PIN_PB27
 #define LED5_GPIO   AVR32_PIN_PB28
 #define LED6_GPIO   AVR32_PIN_PB29
+
 
 #define LED2_SET		{gpio_set_gpio_pin(LED2_GPIO);}
 #define LED3_SET		{gpio_set_gpio_pin(LED3_GPIO);}
