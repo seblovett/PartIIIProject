@@ -25,7 +25,7 @@
 
 
 void Get_Line( char * CommandBuffer );
-void Auto_Run();
+int Auto_Run();
 void Debug_Mode();
 void System_Error();
 
@@ -103,52 +103,81 @@ void System_Error()
 	}
 }
 
-void GetCommand(AutoCommand_t AutoCommand)
+#define AutoRun_Commands_FileName	"AutoRun.txt"
+AutoCommand_t DefaultCommands[13] = {
+	{'F', 10},
+	{'P', 0},
+	{'R', 90},
+	{'F', 10},
+	{'P', 0},
+	{'R', 90},
+	{'F', 10},
+	{'P', 0},
+	{'R', -90},
+	{'F', 10},
+	{'P', 0},
+	{'R', -90},
+	{ 'q', 0}
+};
+void LoadCommands(AutoCommand_t *AutoCommand)
 {
-	
+	nav_filelist_reset();
+	if(nav_filelist_findname((FS_STRING)AutoRun_Commands_FileName, false))
+	{ //If the file exists, load it
+		print_dbg("\n\rFile Found");
+	}
+	else
+	{	//Load default commands
+		print_dbg("\n\rFile Not Found");
+		AutoCommand = DefaultCommands; //Move pointer to the default commands
+	}		
 }
 
 int Auto_Run()
 {
-	char Commands[AUTO_COMMAND_LENGTH] = "FPRFPRFPRFPR";
-	int Args[AUTO_COMMAND_LENGTH] = {10, 0, 90, 10, 0, 90, 10, 0, -90, 10, 0, -90};
-	AutoCommand_t AutoCommand;
-	AutoCommand.Counter = 0;
-	
+	int PC = 0;
+	AutoCommand_t *AutoCommands;
+	LoadCommands(AutoCommands);
 	while(1)
 	{
-		GetCommand(AutoCommand);
-		switch(AutoCommand.Command)
+		switch(AutoCommands[PC].Command)
 		{
 			case 'F'://Move Forward
-			
+				print_dbg("\n\rMove Forward ");
+				print_dbg_ulong(AutoCommands[PC].Arg);
 				break;
 				
 			case 'B'://Move Backward
-			
+				print_dbg("\n\rMove Backward ");
+				print_dbg_ulong(AutoCommands[PC].Arg);
 				break;
 			
 			case 'R'://Rotate
-			
+				print_dbg("\n\rRotate ");
+				print_dbg_ulong(AutoCommands[PC].Arg);
 				break;
 			
 			case 'P'://Take Photo
-			
+				print_dbg("\n\rTaking Photo");
 				break;
 				
 			case 'J': //Jump
-				
+				print_dbg("\n\rProgram Jump to ");
+				print_dbg_ulong(AutoCommands[PC].Arg);
 				break;
 				
 			case 'q': //End and enter debug
+				print_dbg("\n\rQuit to Debug");
 				return 0;
 				
 			default: //System Error
 				Columbus_Status.Status |= AutoRunCMD_ERR;
+				print_dbg("\n\rSystem Error");
 			case 'Q': //End and stop
 				print_dbg("\n\rSystem Exiting...");
 				return 1;
 		}
+		PC++;
 	}
 }
 

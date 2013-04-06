@@ -32,13 +32,14 @@ typedef struct  {
 	int Arg;
 } AutoCommand_t;
 
-#define AUTO_COMMAND_LENGTH		12
+#define AUTO_COMMAND_LENGTH		14
 
 #define SD_ERR		0x1
 #define CAM_ERR		0x2
 #define I2CMux_ERR	0x4
 #define CAM0_NotFOUND	0x08
 #define CAM1_NotFOUND	0x10
+#define AutoRunCMD_ERR	0x20
 #define FFT_SIZE 64
 
 
