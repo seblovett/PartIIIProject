@@ -203,30 +203,33 @@ int Auto_Run()
 			case 'F'://Move Forward
 				print_dbg("\n\rMove Forward ");
 				print_dbg_ulong(AutoCommands[PC].Arg);
+				Motors_Move(AutoCommands[PC].Arg);
 				break;
 				
 			case 'B'://Move Backward
 				print_dbg("\n\rMove Backward ");
 				print_dbg_ulong(AutoCommands[PC].Arg);
+				Motors_Move(-AutoCommands[PC].Arg);
 				break;
 			
 			case 'R'://Rotate
 				print_dbg("\n\rRotate ");
 				print_dbg_ulong(AutoCommands[PC].Arg);
+				Motors_Rotate(AutoCommands[PC].Arg);
 				break;
 			
 			case 'P'://Take Photo
-//				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
+				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 				print_dbg("\n\rTaking Photos");
-// 				if(TakePhoto(CAMERA_LEFT | CAMERA_RIGHT) == CAMERAS_BUSY){
-// 					print_dbg("\n\rCameras Busy");
-// 					break;
-// 				}
-// 				while(Photos_Ready() == false)
-// 				;
-// 
-// 				if(Store_Both_Images() == true)
-// 				print_dbg("\n\rImages Stored Successfully!");
+				if(TakePhoto(CAMERA_LEFT | CAMERA_RIGHT) == CAMERAS_BUSY){
+					print_dbg("\n\rCameras Busy");
+					break;
+				}
+				while(Photos_Ready() == false)
+				;
+
+				if(Store_Both_Images() == true)
+				print_dbg("\n\rImages Stored Successfully!");
 				break;
 				
 			case 'J': //Jump
@@ -380,7 +383,7 @@ void Debug_Mode()
 						while(*Ptr == ' ')
 							Ptr++; //Find next non - space char
 						i = atoi(Ptr);
-						Motors_Move(i);
+						].........)Motors_Move(i);
 						break;
 					case 'T':
 						while(*Ptr == ' ')
