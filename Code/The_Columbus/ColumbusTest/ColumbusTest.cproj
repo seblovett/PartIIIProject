@@ -156,7 +156,7 @@
       </OverrideVtorValue>
       <Channel>
         <host>127.0.0.1</host>
-        <port>3013</port>
+        <port>1919</port>
         <ssl>False</ssl>
       </Channel>
       <ToolOptions>

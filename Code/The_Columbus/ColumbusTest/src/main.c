@@ -172,12 +172,13 @@ void LoadCommands()
 				
 			}
 		}
-		print_dbg("\n\rCommands Found: ");
-		for(j = 0; j < i; j++)
-		{
-			print_dbg("\n\r");
-			print_dbg_hex(AutoCommands[j].Command);
-		}
+		file_close();
+// 		print_dbg("\n\rCommands Found: ");
+// 		for(j = 0; j < i; j++)
+// 		{
+// 			print_dbg("\n\r");
+// 			print_dbg_hex(AutoCommands[j].Command);
+// 		}
 	}
 	else
 	{	//Load default commands
@@ -190,7 +191,7 @@ void LoadCommands()
 // 	print_dbg("\n\rDefaultCommand Pointer = ");
 // 	print_dbg_ulong(DefaultCommands);
 }
-
+//#define DEBUG
 int Auto_Run()
 {
 	int PC = 0;
@@ -202,25 +203,39 @@ int Auto_Run()
 		{
 			case 'F'://Move Forward
 				print_dbg("\n\rMove Forward ");
+				LED4_SET;
 				print_dbg_ulong(AutoCommands[PC].Arg);
+				#ifndef DEBUG
 				Motors_Move(AutoCommands[PC].Arg);
+				#endif
+				LED4_CLR;
 				break;
 				
 			case 'B'://Move Backward
 				print_dbg("\n\rMove Backward ");
+				LED4_SET;
 				print_dbg_ulong(AutoCommands[PC].Arg);
+				#ifndef DEBUG
 				Motors_Move(-AutoCommands[PC].Arg);
+				#endif
+				LED4_CLR;
 				break;
 			
 			case 'R'://Rotate
 				print_dbg("\n\rRotate ");
+				LED3_SET
 				print_dbg_ulong(AutoCommands[PC].Arg);
+				#ifndef DEBUG
 				Motors_Rotate(AutoCommands[PC].Arg);
+				#endif
+				LED3_CLR;
 				break;
 			
 			case 'P'://Take Photo
-				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 				print_dbg("\n\rTaking Photos");
+				LED2_SET;
+				#ifndef DEBUG				
+				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 				if(TakePhoto(CAMERA_LEFT | CAMERA_RIGHT) == CAMERAS_BUSY){
 					print_dbg("\n\rCameras Busy");
 					break;
@@ -230,12 +245,16 @@ int Auto_Run()
 
 				if(Store_Both_Images() == true)
 				print_dbg("\n\rImages Stored Successfully!");
+				#endif
+				LED2_CLR;
 				break;
 				
 			case 'J': //Jump
 				print_dbg("\n\rProgram Jump to ");
 				print_dbg_ulong(AutoCommands[PC].Arg);
+				#ifndef DEBUG	
 				PC = AutoCommands[PC].Arg;
+				#endif
 				break;
 				
 			case 'q': //End and enter debug
@@ -264,7 +283,9 @@ void Debug_Mode()
 	int SizeOfWorking_Buffer = 0;
 	A_ALIGNED dsp16_complex_t *ComplexBuffer;
 	int SizeOfComplex_Buffer = 0;
-	
+	LED2_SET;//Set these LEDs to indicate Columbus is in debug mode;
+	LED3_SET;
+	LED4_SET;
 	while(1)
 	{
 		print_dbg(PROMPT);
@@ -383,7 +404,7 @@ void Debug_Mode()
 						while(*Ptr == ' ')
 							Ptr++; //Find next non - space char
 						i = atoi(Ptr);
-						].........)Motors_Move(i);
+						Motors_Move(i);
 						break;
 					case 'T':
 						while(*Ptr == ' ')

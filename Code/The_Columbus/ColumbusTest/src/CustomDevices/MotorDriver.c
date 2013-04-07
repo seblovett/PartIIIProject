@@ -202,6 +202,7 @@ void Motor_Start(int Motors)
 #define SAMPLE_TIME	10
 void Motors_Execute()
 {
+	LEDMOTOR_SET;
 	int Left_State = acifa_is_acb_inp_higher(&AVR32_ACIFA1);
 	int Right_State = acifa_is_aca_inp_higher(&AVR32_ACIFA1);
 	int Left_Hyst = 0;
@@ -305,6 +306,7 @@ void Motors_Execute()
 		//Delay to keep a low sample time
 		delay_ms(SAMPLE_TIME);
 	}
+	LEDMOTOR_CLR;
 }
 void Motor_Stop(int Motors)
 {
