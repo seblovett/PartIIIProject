@@ -1088,6 +1088,8 @@ Discarded input sections
  .bss           0x00000000        0x0 src/CustomDevices/ImageProcessor.o
  .text.ComplexMultiply
                 0x00000000       0x6e src/CustomDevices/ImageProcessor.o
+ .text.PrepareImage
+                0x00000000       0x7c src/CustomDevices/ImageProcessor.o
  .text.Complex_Abs
                 0x00000000       0x5c src/CustomDevices/ImageProcessor.o
  .text          0x00000000        0x0 src/CustomDevices/MotorDriver.o
@@ -1568,7 +1570,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .plt
  *(.plt)
 
-.text           0x80002004    0x105a0
+.text           0x80002004    0x1053c
  *(.text .stub .text.* .gnu.linkonce.t.*)
  .text.sd_mmc_spi_get_capacity
                 0x80002004      0x11c src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -2217,418 +2219,415 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *fill*         0x8000959a        0x2 d703d703
  .text.IFFT2D   0x8000959c      0x124 src/CustomDevices/ImageProcessor.o
                 0x8000959c                IFFT2D
- .text.PrepareImage
-                0x800096c0       0x7c src/CustomDevices/ImageProcessor.o
-                0x800096c0                PrepareImage
- .text.FFT1D    0x8000973c       0x6c src/CustomDevices/ImageProcessor.o
-                0x8000973c                FFT1D
+ .text.FFT1D    0x800096c0       0x6c src/CustomDevices/ImageProcessor.o
+                0x800096c0                FFT1D
  .text.FFT2DCOMPLEX
-                0x800097a8      0x110 src/CustomDevices/ImageProcessor.o
-                0x800097a8                FFT2DCOMPLEX
+                0x8000972c      0x110 src/CustomDevices/ImageProcessor.o
+                0x8000972c                FFT2DCOMPLEX
  .text.FFT2Dabs
-                0x800098b8      0x110 src/CustomDevices/ImageProcessor.o
-                0x800098b8                FFT2Dabs
+                0x8000983c      0x110 src/CustomDevices/ImageProcessor.o
+                0x8000983c                FFT2Dabs
  .text.FFT1D_Abs
-                0x800099c8       0x7c src/CustomDevices/ImageProcessor.o
-                0x800099c8                FFT1D_Abs
+                0x8000994c       0x7c src/CustomDevices/ImageProcessor.o
+                0x8000994c                FFT1D_Abs
  .text.Motors_Moving
-                0x80009a44       0x18 src/CustomDevices/MotorDriver.o
-                0x80009a44                Motors_Moving
+                0x800099c8       0x18 src/CustomDevices/MotorDriver.o
+                0x800099c8                Motors_Moving
  .text.Motor_Stop
-                0x80009a5c       0x48 src/CustomDevices/MotorDriver.o
-                0x80009a5c                Motor_Stop
+                0x800099e0       0x48 src/CustomDevices/MotorDriver.o
+                0x800099e0                Motor_Stop
  .text.Motors_Execute
-                0x80009aa4      0x134 src/CustomDevices/MotorDriver.o
-                0x80009aa4                Motors_Execute
+                0x80009a28      0x134 src/CustomDevices/MotorDriver.o
+                0x80009a28                Motors_Execute
  .text.Motor_Start
-                0x80009bd8       0xb0 src/CustomDevices/MotorDriver.o
-                0x80009bd8                Motor_Start
+                0x80009b5c       0xb0 src/CustomDevices/MotorDriver.o
+                0x80009b5c                Motor_Start
  .text.Motors_Rotate
-                0x80009c88       0x78 src/CustomDevices/MotorDriver.o
-                0x80009c88                Motors_Rotate
+                0x80009c0c       0x78 src/CustomDevices/MotorDriver.o
+                0x80009c0c                Motors_Rotate
  .text.Motors_Reset
-                0x80009d00       0x28 src/CustomDevices/MotorDriver.o
-                0x80009d00                Motors_Reset
+                0x80009c84       0x28 src/CustomDevices/MotorDriver.o
+                0x80009c84                Motors_Reset
  .text.Motors_Move
-                0x80009d28       0x8c src/CustomDevices/MotorDriver.o
-                0x80009d28                Motors_Move
+                0x80009cac       0x8c src/CustomDevices/MotorDriver.o
+                0x80009cac                Motors_Move
  .text.Analogue_Comparator_Init
-                0x80009db4       0x74 src/CustomDevices/MotorDriver.o
-                0x80009db4                Analogue_Comparator_Init
+                0x80009d38       0x74 src/CustomDevices/MotorDriver.o
+                0x80009d38                Analogue_Comparator_Init
  .text.Motor_Init
-                0x80009e28      0x144 src/CustomDevices/MotorDriver.o
-                0x80009e28                Motor_Init
+                0x80009dac      0x144 src/CustomDevices/MotorDriver.o
+                0x80009dac                Motor_Init
  .text.Photos_Ready
-                0x80009f6c       0x60 src/CustomDevices/OV7670.o
-                0x80009f6c                Photos_Ready
+                0x80009ef0       0x60 src/CustomDevices/OV7670.o
+                0x80009ef0                Photos_Ready
  .text.Store_Image_0
-                0x80009fcc      0x230 src/CustomDevices/OV7670.o
-                0x80009fcc                Store_Image_0
+                0x80009f50      0x230 src/CustomDevices/OV7670.o
+                0x80009f50                Store_Image_0
  .text.Store_Image_1
-                0x8000a1fc      0x224 src/CustomDevices/OV7670.o
-                0x8000a1fc                Store_Image_1
+                0x8000a180      0x224 src/CustomDevices/OV7670.o
+                0x8000a180                Store_Image_1
  .text.FIFO_Reset
-                0x8000a420       0xc8 src/CustomDevices/OV7670.o
-                0x8000a420                FIFO_Reset
+                0x8000a3a4       0xc8 src/CustomDevices/OV7670.o
+                0x8000a3a4                FIFO_Reset
  .text.Store_Both_Images
-                0x8000a4e8       0x3c src/CustomDevices/OV7670.o
-                0x8000a4e8                Store_Both_Images
+                0x8000a46c       0x3c src/CustomDevices/OV7670.o
+                0x8000a46c                Store_Both_Images
  .text.FIFO_Init
-                0x8000a524      0x268 src/CustomDevices/OV7670.o
-                0x8000a524                FIFO_Init
+                0x8000a4a8      0x268 src/CustomDevices/OV7670.o
+                0x8000a4a8                FIFO_Init
  .text.TakePhoto
-                0x8000a78c       0x88 src/CustomDevices/OV7670.o
-                0x8000a78c                TakePhoto
+                0x8000a710       0x88 src/CustomDevices/OV7670.o
+                0x8000a710                TakePhoto
  .text.VSYNC0_Handler
-                0x8000a814       0x7c src/CustomDevices/OV7670.o
+                0x8000a798       0x7c src/CustomDevices/OV7670.o
  .text.VSYNC1_Handler
-                0x8000a890       0x7c src/CustomDevices/OV7670.o
+                0x8000a814       0x7c src/CustomDevices/OV7670.o
  .text.Write_Reg
-                0x8000a90c       0x24 src/CustomDevices/OV7670.o
-                0x8000a90c                Write_Reg
+                0x8000a890       0x24 src/CustomDevices/OV7670.o
+                0x8000a890                Write_Reg
  .text.OV7670_Init
-                0x8000a930      0x2bc src/CustomDevices/OV7670.o
-                0x8000a930                OV7670_Init
+                0x8000a8b4      0x2bc src/CustomDevices/OV7670.o
+                0x8000a8b4                OV7670_Init
  .text.PCA9542A_Chan_Sel
-                0x8000abec       0x3c src/CustomDevices/PCA9542A.o
-                0x8000abec                PCA9542A_Chan_Sel
+                0x8000ab70       0x3c src/CustomDevices/PCA9542A.o
+                0x8000ab70                PCA9542A_Chan_Sel
  .text.ReadBigEndian
-                0x8000ac28       0x1c src/CustomDevices/SD_Card.o
-                0x8000ac28                ReadBigEndian
+                0x8000abac       0x1c src/CustomDevices/SD_Card.o
+                0x8000abac                ReadBigEndian
  .text.ReadBitmap
-                0x8000ac44      0x1c0 src/CustomDevices/SD_Card.o
-                0x8000ac44                ReadBitmap
+                0x8000abc8      0x1c0 src/CustomDevices/SD_Card.o
+                0x8000abc8                ReadBitmap
  .text.Read2DSignal
-                0x8000ae04       0xa0 src/CustomDevices/SD_Card.o
-                0x8000ae04                Read2DSignal
+                0x8000ad88       0xa0 src/CustomDevices/SD_Card.o
+                0x8000ad88                Read2DSignal
  .text.ReadSignal
-                0x8000aea4       0xa0 src/CustomDevices/SD_Card.o
-                0x8000aea4                ReadSignal
+                0x8000ae28       0xa0 src/CustomDevices/SD_Card.o
+                0x8000ae28                ReadSignal
  .text.SaveBuff
-                0x8000af44       0x70 src/CustomDevices/SD_Card.o
-                0x8000af44                SaveBuff
+                0x8000aec8       0x70 src/CustomDevices/SD_Card.o
+                0x8000aec8                SaveBuff
  .text.SaveBitmap
-                0x8000afb4      0x170 src/CustomDevices/SD_Card.o
-                0x8000afb4                SaveBitmap
+                0x8000af38      0x170 src/CustomDevices/SD_Card.o
+                0x8000af38                SaveBitmap
  .text.Read_CSV
-                0x8000b124       0xbc src/CustomDevices/SD_Card.o
-                0x8000b124                Read_CSV
+                0x8000b0a8       0xbc src/CustomDevices/SD_Card.o
+                0x8000b0a8                Read_CSV
  .text.SaveCBuff_CSV
-                0x8000b1e0       0xf8 src/CustomDevices/SD_Card.o
-                0x8000b1e0                SaveCBuff_CSV
+                0x8000b164       0xf8 src/CustomDevices/SD_Card.o
+                0x8000b164                SaveCBuff_CSV
  .text.SaveBuff_CSV
-                0x8000b2d8       0xbc src/CustomDevices/SD_Card.o
-                0x8000b2d8                SaveBuff_CSV
+                0x8000b25c       0xbc src/CustomDevices/SD_Card.o
+                0x8000b25c                SaveBuff_CSV
  .text.sd_mmc_resources_init
-                0x8000b394       0x84 src/CustomDevices/SD_Card.o
-                0x8000b394                sd_mmc_resources_init
+                0x8000b318       0x84 src/CustomDevices/SD_Card.o
+                0x8000b318                sd_mmc_resources_init
  .text.twim_init
-                0x8000b418       0x58 src/CustomDevices/TWI.o
-                0x8000b418                twim_init
+                0x8000b39c       0x58 src/CustomDevices/TWI.o
+                0x8000b39c                twim_init
  .text.LoadCommands
-                0x8000b470      0x1c8 src/main.o
-                0x8000b470                LoadCommands
+                0x8000b3f4      0x1fc src/main.o
+                0x8000b3f4                LoadCommands
  .text.Auto_Run
-                0x8000b638       0xd4 src/main.o
-                0x8000b638                Auto_Run
+                0x8000b5f0       0xe4 src/main.o
+                0x8000b5f0                Auto_Run
  .text.System_Error
-                0x8000b70c       0xbc src/main.o
-                0x8000b70c                System_Error
+                0x8000b6d4       0xbc src/main.o
+                0x8000b6d4                System_Error
  .text.Get_Line
-                0x8000b7c8       0x4c src/main.o
-                0x8000b7c8                Get_Line
+                0x8000b790       0x4c src/main.o
+                0x8000b790                Get_Line
  .text.Debug_Mode
-                0x8000b814      0x768 src/main.o
-                0x8000b814                Debug_Mode
- .text.main     0x8000bf7c       0xbc src/main.o
-                0x8000bf7c                main
+                0x8000b7dc      0x73c src/main.o
+                0x8000b7dc                Debug_Mode
+ .text.main     0x8000bf18       0xbc src/main.o
+                0x8000bf18                main
  .text.dsp16_vect_complex_abs_kernel_x0
-                0x8000c038        0x2 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
- *fill*         0x8000c03a        0x2 d703d703
+                0x8000bfd4        0x2 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
+ *fill*         0x8000bfd6        0x2 d703d703
  .text.dsp16_vect_complex_abs
-                0x8000c03c      0x100 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
+                0x8000bfd8      0x100 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
                                 0x10c (size before relaxing)
-                0x8000c03c                dsp16_vect_complex_abs
+                0x8000bfd8                dsp16_vect_complex_abs
  .text.dsp16_vect_complex_abs_kernel_x3
-                0x8000c13c       0x88 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
+                0x8000c0d8       0x88 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
                                  0x90 (size before relaxing)
  .text.dsp16_vect_complex_abs_kernel_x2
-                0x8000c1c4       0x5c ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
+                0x8000c160       0x5c ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
                                  0x64 (size before relaxing)
  .text.dsp16_vect_complex_abs_kernel_x1
-                0x8000c220       0x30 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
+                0x8000c1bc       0x30 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
                                  0x38 (size before relaxing)
  .text.dsp16_op_sqrt
-                0x8000c250       0x96 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(op_dsp16_sqrt_at32uc.o)
-                0x8000c250                dsp16_op_sqrt
- *fill*         0x8000c2e6        0x2 d703d703
+                0x8000c1ec       0x96 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(op_dsp16_sqrt_at32uc.o)
+                0x8000c1ec                dsp16_op_sqrt
+ *fill*         0x8000c282        0x2 d703d703
  .text.dsp16_trans_complexfft
-                0x8000c2e8      0x254 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(trans_dsp16_complex_fft_at32uc.o)
-                0x8000c2e8                dsp16_trans_complexfft
+                0x8000c284      0x254 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(trans_dsp16_complex_fft_at32uc.o)
+                0x8000c284                dsp16_trans_complexfft
  .text.dsp16_trans_complexifft_ex
-                0x8000c53c      0x254 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(trans_dsp16_complex_ifft_at32uc.o)
+                0x8000c4d8      0x254 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(trans_dsp16_complex_ifft_at32uc.o)
  .text.dsp16_trans_complexifft
-                0x8000c790       0x1c ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(trans_dsp16_complex_ifft_at32uc.o)
+                0x8000c72c       0x1c ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(trans_dsp16_complex_ifft_at32uc.o)
                                  0x28 (size before relaxing)
-                0x8000c790                dsp16_trans_complexifft
+                0x8000c72c                dsp16_trans_complexifft
  .text.dsp16_trans_realcomplexfft
-                0x8000c7ac      0x220 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(trans_dsp16_real_complex_fft_at32uc.o)
-                0x8000c7ac                dsp16_trans_realcomplexfft
+                0x8000c748      0x220 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(trans_dsp16_real_complex_fft_at32uc.o)
+                0x8000c748                dsp16_trans_realcomplexfft
  .text.dsp16_vect_conj_kernel_ext
-                0x8000c9cc       0x34 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
+                0x8000c968       0x34 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
  .text.dsp16_vect_conj_end_kernel_x0
-                0x8000ca00        0x4 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
+                0x8000c99c        0x4 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
  .text.dsp16_vect_conj_end_kernel_x1
-                0x8000ca04        0xa ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
+                0x8000c9a0        0xa ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
  .text.dsp16_vect_conj_end_kernel_x2
-                0x8000ca0e       0x10 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
+                0x8000c9aa       0x10 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
  .text.dsp16_vect_conj_end_kernel_x3
-                0x8000ca1e       0x16 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
+                0x8000c9ba       0x16 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
  .text.dsp16_vect_complex_conj
-                0x8000ca34       0x2c ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
+                0x8000c9d0       0x2c ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
                                  0x34 (size before relaxing)
-                0x8000ca34                dsp16_vect_complex_conj
- .text          0x8000ca60       0xe8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_s32_to_f64.o)
-                0x8000ca60                __avr32_u32_to_f64
-                0x8000ca68                __avr32_s32_to_f64
- .text          0x8000cb48       0x68 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_cmp_ge.o)
-                0x8000cb48                __avr32_f64_cmp_ge
- .text.atoi     0x8000cbb0        0xc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
+                0x8000c9d0                dsp16_vect_complex_conj
+ .text          0x8000c9fc       0xe8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_s32_to_f64.o)
+                0x8000c9fc                __avr32_u32_to_f64
+                0x8000ca04                __avr32_s32_to_f64
+ .text          0x8000cae4       0x68 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_cmp_ge.o)
+                0x8000cae4                __avr32_f64_cmp_ge
+ .text.atoi     0x8000cb4c        0xc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
                                  0x10 (size before relaxing)
-                0x8000cbb0                atoi
- .text.memcmp   0x8000cbbc       0x26 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
-                0x8000cbbc                memcmp
- .text          0x8000cbe2      0x148 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcpy.o)
-                0x8000cbe2                memcpy
- .text.memset   0x8000cd2a        0xe c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
-                0x8000cd2a                memset
- .text.sprintf  0x8000cd38       0x3c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
+                0x8000cb4c                atoi
+ .text.memcmp   0x8000cb58       0x26 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+                0x8000cb58                memcmp
+ .text          0x8000cb7e      0x148 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcpy.o)
+                0x8000cb7e                memcpy
+ .text.memset   0x8000ccc6        0xe c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+                0x8000ccc6                memset
+ .text.sprintf  0x8000ccd4       0x3c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
                                  0x40 (size before relaxing)
-                0x8000cd38                sprintf
+                0x8000ccd4                sprintf
  .text._strtol_r
-                0x8000cd74      0x138 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
-                0x8000cd74                _strtol_r
- .text.strtol   0x8000ceac       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
+                0x8000cd10      0x138 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
+                0x8000cd10                _strtol_r
+ .text.strtol   0x8000ce48       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
                                  0x1c (size before relaxing)
-                0x8000ceac                strtol
- .text.get_arg  0x8000cec0      0x318 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+                0x8000ce48                strtol
+ .text.get_arg  0x8000ce5c      0x318 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
                                 0x320 (size before relaxing)
  .text.__sprint_r
-                0x8000d1d8       0x1c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+                0x8000d174       0x1c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
                                  0x20 (size before relaxing)
  .text._vfprintf_r
-                0x8000d1f4     0x1f1c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+                0x8000d190     0x1f1c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
                                0x1f90 (size before relaxing)
-                0x8000d1f4                _vfprintf_r
+                0x8000d190                _vfprintf_r
  .text.__swsetup_r
-                0x8000f110       0xdc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
+                0x8000f0ac       0xdc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
                                  0xe8 (size before relaxing)
-                0x8000f110                __swsetup_r
- .text.quorem   0x8000f1ec      0x120 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
+                0x8000f0ac                __swsetup_r
+ .text.quorem   0x8000f188      0x120 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
                                 0x124 (size before relaxing)
- .text._dtoa_r  0x8000f30c      0xbe0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
+ .text._dtoa_r  0x8000f2a8      0xbe0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
                                 0xc90 (size before relaxing)
-                0x8000f30c                _dtoa_r
+                0x8000f2a8                _dtoa_r
  .text._fflush_r
-                0x8000feec      0x110 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
+                0x8000fe88      0x110 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
                                 0x118 (size before relaxing)
-                0x8000feec                _fflush_r
+                0x8000fe88                _fflush_r
  .text.__sfp_lock_acquire
-                0x8000fffc        0x2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
-                0x8000fffc                __sfp_lock_acquire
+                0x8000ff98        0x2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+                0x8000ff98                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x8000fffe        0x2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
-                0x8000fffe                __sfp_lock_release
+                0x8000ff9a        0x2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+                0x8000ff9a                __sfp_lock_release
  .text._cleanup_r
-                0x80010000        0xc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+                0x8000ff9c        0xc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
                                  0x14 (size before relaxing)
-                0x80010000                _cleanup_r
+                0x8000ff9c                _cleanup_r
  .text.__sfmoreglue
-                0x8001000c       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+                0x8000ffa8       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
                                  0x30 (size before relaxing)
-                0x8001000c                __sfmoreglue
- .text.__sfp    0x80010034       0x70 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+                0x8000ffa8                __sfmoreglue
+ .text.__sfp    0x8000ffd0       0x70 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
                                  0x7c (size before relaxing)
-                0x80010034                __sfp
- .text.__sinit  0x800100a4       0x9c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+                0x8000ffd0                __sfp
+ .text.__sinit  0x80010040       0x9c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
                                  0xb0 (size before relaxing)
-                0x800100a4                __sinit
+                0x80010040                __sinit
  .text._malloc_trim_r
-                0x80010140       0x9c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
+                0x800100dc       0x9c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
                                  0xa8 (size before relaxing)
-                0x80010140                _malloc_trim_r
- .text._free_r  0x800101dc      0x190 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
+                0x800100dc                _malloc_trim_r
+ .text._free_r  0x80010178      0x190 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
                                 0x1a4 (size before relaxing)
-                0x800101dc                _free_r
+                0x80010178                _free_r
  .text.__sfvwrite_r
-                0x8001036c      0x2a4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
+                0x80010308      0x2a4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
                                 0x2c8 (size before relaxing)
-                0x8001036c                __sfvwrite_r
- .text._fwalk   0x80010610       0x4c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
+                0x80010308                __sfvwrite_r
+ .text._fwalk   0x800105ac       0x4c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
                                  0x54 (size before relaxing)
-                0x80010610                _fwalk
+                0x800105ac                _fwalk
  .text._localeconv_r
-                0x8001065c        0x8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
-                0x8001065c                _localeconv_r
+                0x800105f8        0x8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
+                0x800105f8                _localeconv_r
  .text.__smakebuf_r
-                0x80010664       0xc4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
+                0x80010600       0xc4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
                                  0xd4 (size before relaxing)
-                0x80010664                __smakebuf_r
+                0x80010600                __smakebuf_r
  .text._malloc_r
-                0x80010728      0x434 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
+                0x800106c4      0x434 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
                                 0x454 (size before relaxing)
-                0x80010728                _malloc_r
- .text.memchr   0x80010b5c       0x16 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
-                0x80010b5c                memchr
- .text.memmove  0x80010b72       0x3e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
-                0x80010b72                memmove
+                0x800106c4                _malloc_r
+ .text.memchr   0x80010af8       0x16 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
+                0x80010af8                memchr
+ .text.memmove  0x80010b0e       0x3e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
+                0x80010b0e                memmove
  .text.__malloc_lock
-                0x80010bb0        0x2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
-                0x80010bb0                __malloc_lock
+                0x80010b4c        0x2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
+                0x80010b4c                __malloc_lock
  .text.__malloc_unlock
-                0x80010bb2        0x2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
-                0x80010bb2                __malloc_unlock
+                0x80010b4e        0x2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
+                0x80010b4e                __malloc_unlock
  .text.__hi0bits
-                0x80010bb4       0x60 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
-                0x80010bb4                __hi0bits
+                0x80010b50       0x60 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80010b50                __hi0bits
  .text.__lo0bits
-                0x80010c14       0x8e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
-                0x80010c14                __lo0bits
- .text.__mcmp   0x80010ca2       0x32 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
-                0x80010ca2                __mcmp
- .text._Bfree   0x80010cd4       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80010bb0       0x8e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80010bb0                __lo0bits
+ .text.__mcmp   0x80010c3e       0x32 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80010c3e                __mcmp
+ .text._Bfree   0x80010c70       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
                                  0x38 (size before relaxing)
-                0x80010cd4                _Bfree
- .text._Balloc  0x80010d08       0x70 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80010c70                _Bfree
+ .text._Balloc  0x80010ca4       0x70 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
                                  0x78 (size before relaxing)
-                0x80010d08                _Balloc
- .text.__d2b    0x80010d78       0xa8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80010ca4                _Balloc
+ .text.__d2b    0x80010d14       0xa8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
                                  0xbc (size before relaxing)
-                0x80010d78                __d2b
- .text.__mdiff  0x80010e20       0xd0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80010d14                __d2b
+ .text.__mdiff  0x80010dbc       0xd0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
                                  0xd8 (size before relaxing)
-                0x80010e20                __mdiff
+                0x80010dbc                __mdiff
  .text.__lshift
-                0x80010ef0       0x88 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80010e8c       0x88 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
                                  0x94 (size before relaxing)
-                0x80010ef0                __lshift
+                0x80010e8c                __lshift
  .text.__multiply
-                0x80010f78      0x100 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80010f14      0x100 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
                                 0x108 (size before relaxing)
-                0x80010f78                __multiply
- .text.__i2b    0x80011078       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80010f14                __multiply
+ .text.__i2b    0x80011014       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
                                  0x18 (size before relaxing)
-                0x80011078                __i2b
+                0x80011014                __i2b
  .text.__multadd
-                0x80011088       0x7c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80011024       0x7c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
                                  0x88 (size before relaxing)
-                0x80011088                __multadd
+                0x80011024                __multadd
  .text.__pow5mult
-                0x80011104       0x90 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x800110a0       0x90 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
                                  0xac (size before relaxing)
-                0x80011104                __pow5mult
+                0x800110a0                __pow5mult
  .text._realloc_r
-                0x80011194      0x2c4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
+                0x80011130      0x2c4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
                                 0x2e0 (size before relaxing)
-                0x80011194                _realloc_r
- .text._sbrk_r  0x80011458       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
+                0x80011130                _realloc_r
+ .text._sbrk_r  0x800113f4       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
                                  0x28 (size before relaxing)
-                0x80011458                _sbrk_r
+                0x800113f4                _sbrk_r
  .text.__isinfd
-                0x80011478       0x2a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
-                0x80011478                __isinfd
+                0x80011414       0x2a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
+                0x80011414                __isinfd
  .text.__isnand
-                0x800114a2       0x1c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
-                0x800114a2                __isnand
- *fill*         0x800114be        0x2 d703d703
+                0x8001143e       0x1c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
+                0x8001143e                __isnand
+ *fill*         0x8001145a        0x2 d703d703
  .text.__sclose
-                0x800114c0        0x8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
+                0x8001145c        0x8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
                                  0x10 (size before relaxing)
-                0x800114c0                __sclose
- .text.__sseek  0x800114c8       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
+                0x8001145c                __sclose
+ .text.__sseek  0x80011464       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
                                  0x2c (size before relaxing)
-                0x800114c8                __sseek
+                0x80011464                __sseek
  .text.__swrite
-                0x800114f0       0x2c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
+                0x8001148c       0x2c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
                                  0x38 (size before relaxing)
-                0x800114f0                __swrite
- .text.__sread  0x8001151c       0x1c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
+                0x8001148c                __swrite
+ .text.__sread  0x800114b8       0x1c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
                                  0x24 (size before relaxing)
-                0x8001151c                __sread
- .text.strlen   0x80011538       0x16 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
-                0x80011538                strlen
- *fill*         0x8001154e        0x2 d703d703
- .text._close   0x80011550       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
-                0x80011550                _close
- .text._lseek   0x80011568       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
-                0x80011568                _lseek
- .text._read    0x80011580       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
-                0x80011580                _read
- .text._write   0x80011598       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
-                0x80011598                _write
- .text.isatty   0x800115b0       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
-                0x800115b0                isatty
+                0x800114b8                __sread
+ .text.strlen   0x800114d4       0x16 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
+                0x800114d4                strlen
+ *fill*         0x800114ea        0x2 d703d703
+ .text._close   0x800114ec       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+                0x800114ec                _close
+ .text._lseek   0x80011504       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+                0x80011504                _lseek
+ .text._read    0x8001151c       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+                0x8001151c                _read
+ .text._write   0x80011534       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+                0x80011534                _write
+ .text.isatty   0x8001154c       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+                0x8001154c                isatty
  .text._fstat_host
-                0x800115c8       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
-                0x800115c8                _fstat_host
- .text._fstat   0x800115e0       0x4c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+                0x80011564       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+                0x80011564                _fstat_host
+ .text._fstat   0x8001157c       0x4c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
                                  0x50 (size before relaxing)
-                0x800115e0                _fstat
- .text._sbrk    0x8001162c       0x3c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+                0x8001157c                _fstat
+ .text._sbrk    0x800115c8       0x3c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
                                  0x40 (size before relaxing)
-                0x8001162c                _sbrk
+                0x800115c8                _sbrk
  .text._write_r
-                0x80011668       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
+                0x80011604       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
                                  0x2c (size before relaxing)
-                0x80011668                _write_r
+                0x80011604                _write_r
  .text._calloc_r
-                0x80011690       0x58 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
+                0x8001162c       0x58 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
                                  0x60 (size before relaxing)
-                0x80011690                _calloc_r
+                0x8001162c                _calloc_r
  .text._close_r
-                0x800116e8       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
+                0x80011684       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
                                  0x28 (size before relaxing)
-                0x800116e8                _close_r
- .text.__errno  0x80011708        0xc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-errno.o)
-                0x80011708                __errno
+                0x80011684                _close_r
+ .text.__errno  0x800116a4        0xc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-errno.o)
+                0x800116a4                __errno
  .text._fclose_r
-                0x80011714       0xbc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
+                0x800116b0       0xbc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
                                  0xd0 (size before relaxing)
-                0x80011714                _fclose_r
- .text.fclose   0x800117d0       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
+                0x800116b0                _fclose_r
+ .text.fclose   0x8001176c       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
                                  0x18 (size before relaxing)
-                0x800117d0                fclose
+                0x8001176c                fclose
  .text._fstat_r
-                0x800117e0       0x24 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
+                0x8001177c       0x24 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
                                  0x2c (size before relaxing)
-                0x800117e0                _fstat_r
+                0x8001177c                _fstat_r
  .text._lseek_r
-                0x80011804       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
+                0x800117a0       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
                                  0x2c (size before relaxing)
-                0x80011804                _lseek_r
- .text._read_r  0x8001182c       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
+                0x800117a0                _lseek_r
+ .text._read_r  0x800117c8       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
                                  0x2c (size before relaxing)
-                0x8001182c                _read_r
- .text          0x80011854      0x1d4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_mul.o)
-                0x80011854                __avr32_f64_mul
- .text          0x80011a28      0x2a8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_addsub.o)
-                0x80011a2c                __avr32_f64_sub
-                0x80011bc8                __avr32_f64_add
- .text          0x80011cd0       0x2a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_to_s32.o)
-                0x80011cd0                __avr32_f64_to_u32
-                0x80011cd4                __avr32_f64_to_s32
- .text          0x80011cfa       0x26 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_cmp_eq.o)
-                0x80011cfa                __avr32_f64_cmp_eq
- .text          0x80011d20       0x68 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_cmp_lt.o)
-                0x80011d20                __avr32_f64_cmp_lt
- .text          0x80011d88      0x318 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_div.o)
-                0x80011d88                __avr32_f64_div
- .text          0x800120a0      0x292 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
-                0x800120a0                __avr32_udiv64
-                0x800120a0                __udivdi3
- .text          0x80012332      0x272 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
-                0x80012332                __avr32_umod64
-                0x80012332                __umoddi3
+                0x800117c8                _read_r
+ .text          0x800117f0      0x1d4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_mul.o)
+                0x800117f0                __avr32_f64_mul
+ .text          0x800119c4      0x2a8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_addsub.o)
+                0x800119c8                __avr32_f64_sub
+                0x80011b64                __avr32_f64_add
+ .text          0x80011c6c       0x2a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_to_s32.o)
+                0x80011c6c                __avr32_f64_to_u32
+                0x80011c70                __avr32_f64_to_s32
+ .text          0x80011c96       0x26 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_cmp_eq.o)
+                0x80011c96                __avr32_f64_cmp_eq
+ .text          0x80011cbc       0x68 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_cmp_lt.o)
+                0x80011cbc                __avr32_f64_cmp_lt
+ .text          0x80011d24      0x318 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_avr32_f64_div.o)
+                0x80011d24                __avr32_f64_div
+ .text          0x8001203c      0x292 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
+                0x8001203c                __avr32_udiv64
+                0x8001203c                __udivdi3
+ .text          0x800122ce      0x272 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
+                0x800122ce                __avr32_umod64
+                0x800122ce                __umoddi3
  *(.text.*personality*)
  *(.gnu.warning)
 
@@ -2646,7 +2645,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                 0x80012800                PROVIDE (_etext, .)
                 0x80012800                PROVIDE (etext, .)
 
-.rodata         0x80012800     0x1f18
+.rodata         0x80012800     0x1f04
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.SDRAMC_EBI_GPIO_MAP.14470
                 0x80012800      0x128 src/asf/avr32/drivers/ebi/sdramc/sdramc.o
@@ -2718,65 +2717,65 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                 0x800132d8       0x68 src/main.o
                 0x800132d8                DefaultCommands
  .rodata.str1.4
-                0x80013340      0xd29 src/main.o
-                                0xd40 (size before relaxing)
- *fill*         0x80014069        0x3 00
+                0x80013340      0xd15 src/main.o
+                                0xd2c (size before relaxing)
+ *fill*         0x80014055        0x3 00
  .rodata.complex_abs_end_kernel_opti.15288
-                0x8001406c       0x10 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
+                0x80014058       0x10 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_abs.o)
  .rodata.conj_end_kernel_opti.15243
-                0x8001407c       0x10 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
+                0x80014068       0x10 ../src/asf/avr32/utils/libs/dsplib/at32ucr3fp/gcc\libdsp-at32ucr3fp-dspspeed_opt.a(vect_dsp16_complex_conj_at32uc.o)
  .rodata._ctype_
-                0x8001408c      0x104 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
-                0x8001408c                _ctype_
+                0x80014078      0x104 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+                0x80014078                _ctype_
  .rodata.str1.4
-                0x80014190        0x2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-impure.o)
+                0x8001417c        0x2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-impure.o)
                                   0x4 (size before relaxing)
- *fill*         0x80014192        0x2 00
+ *fill*         0x8001417e        0x2 00
  .rodata._global_impure_ptr
-                0x80014194        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-impure.o)
-                0x80014194                _global_impure_ptr
+                0x80014180        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-impure.o)
+                0x80014180                _global_impure_ptr
  .rodata.get_arg
-                0x80014198       0x3c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+                0x80014184       0x3c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
  .rodata._vfprintf_r
-                0x800141d4      0x164 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+                0x800141c0      0x164 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
  .rodata.state_table
-                0x80014338       0x6c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+                0x80014324       0x6c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
  .rodata.action_table
-                0x800143a4       0x6c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+                0x80014390       0x6c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
  .rodata.str1.4
-                0x80014410       0x3a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+                0x800143fc       0x3a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
                                  0x3c (size before relaxing)
- *fill*         0x8001444a        0x2 00
+ *fill*         0x80014436        0x2 00
  .rodata.blanks.3430
-                0x8001444c       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+                0x80014438       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
  .rodata.zeroes.3431
-                0x8001445c       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+                0x80014448       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
  .rodata.chclass
-                0x8001446c      0x100 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+                0x80014458      0x100 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
  .rodata.str1.4
-                0x8001456c       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
+                0x80014558       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
                                  0x14 (size before relaxing)
  .rodata.__sf_fake_stdin
-                0x8001457c       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
-                0x8001457c                __sf_fake_stdin
+                0x80014568       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+                0x80014568                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x8001459c       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
-                0x8001459c                __sf_fake_stdout
+                0x80014588       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+                0x80014588                __sf_fake_stdout
  .rodata.__sf_fake_stderr
-                0x800145bc       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
-                0x800145bc                __sf_fake_stderr
- .rodata.lconv  0x800145dc       0x30 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
+                0x800145a8       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+                0x800145a8                __sf_fake_stderr
+ .rodata.lconv  0x800145c8       0x30 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
  .rodata.str1.4
-                0x8001460c       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
+                0x800145f8       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
                                  0x18 (size before relaxing)
  .rodata.p05.2471
-                0x8001461c        0xc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80014608        0xc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
  .rodata.__mprec_tens
-                0x80014628       0xc8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
-                0x80014628                __mprec_tens
+                0x80014614       0xc8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x80014614                __mprec_tens
  .rodata.__mprec_bigtens
-                0x800146f0       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
-                0x800146f0                __mprec_bigtens
+                0x800146dc       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+                0x800146dc                __mprec_bigtens
 
 .rodata1
  *(.rodata1)
@@ -2791,9 +2790,10 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.gcc_except_table)
  *(.gcc_except_table.*)
 
-.dalign         0x80014718        0x0
-                0x80014718                . = ALIGN (0x8)
-                0x80014718                PROVIDE (_data_lma, .)
+.dalign         0x80014704        0x4
+                0x80014708                . = ALIGN (0x8)
+ *fill*         0x80014704        0x4 00
+                0x80014708                PROVIDE (_data_lma, .)
                 0x00000004                PROVIDE (_data, ORIGIN (CPUSRAM))
                 0x00000004                . = ORIGIN (CPUSRAM)
 
@@ -2852,7 +2852,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  *(.got.plt)
  *(.got)
 
-.data           0x00000004     0x1118 load address 0x80014718
+.data           0x00000004     0x1118 load address 0x80014708
  *(.data .data.* .gnu.linkonce.d.*)
  .data.sd_mmc_spi_presence_status
                 0x00000004        0x1 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -2892,7 +2892,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .data1
  *(.data1)
 
-.balign         0x0000111c        0x4 load address 0x80015830
+.balign         0x0000111c        0x4 load address 0x80015820
                 0x00001120                . = ALIGN (0x8)
  *fill*         0x0000111c        0x4 00
                 0x00001120                _edata = .
@@ -2900,7 +2900,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
                 0x00001120                PROVIDE (edata, .)
                 0x00001120                __bss_start = .
 
-.bss            0x00001120      0x9e0 load address 0x80015830
+.bss            0x00001120      0x9e0 load address 0x80015820
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
  .bss.gl_ptr_mem
@@ -3509,7 +3509,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_pubnames
                 0x00004c46       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
 
-.debug_info     0x00000000    0x42177
+.debug_info     0x00000000    0x42182
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x154b src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_info    0x0000154b      0x224 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -3543,49 +3543,49 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_info    0x000254ed     0x12ee src/CustomDevices/PCA9542A.o
  .debug_info    0x000267db     0x2090 src/CustomDevices/SD_Card.o
  .debug_info    0x0002886b     0x12d7 src/CustomDevices/TWI.o
- .debug_info    0x00029b42     0x31db src/main.o
- .debug_info    0x0002cd1d      0x8dc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
- .debug_info    0x0002d5f9       0x71 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .debug_info    0x0002d66a      0x960 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-impure.o)
- .debug_info    0x0002dfca       0xe5 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_info    0x0002e0af       0xcd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
- .debug_info    0x0002e17c      0x989 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
- .debug_info    0x0002eb05      0x99d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
- .debug_info    0x0002f4a2     0x15df c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
- .debug_info    0x00030a81      0x982 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
- .debug_info    0x00031403      0xcf7 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
- .debug_info    0x000320fa      0xa22 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
- .debug_info    0x00032b1c      0xc2a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
- .debug_info    0x00033746      0xb3d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
- .debug_info    0x00034283      0x9fc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
- .debug_info    0x00034c7f      0xa61 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
- .debug_info    0x000356e0      0xb24 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
- .debug_info    0x00036204      0xa96 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
- .debug_info    0x00036c9a      0xc4e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
- .debug_info    0x000378e8       0xe7 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
- .debug_info    0x000379cf      0x102 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
- .debug_info    0x00037ad1      0x8cf c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
- .debug_info    0x000383a0     0x149a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
- .debug_info    0x0003983a      0xb17 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
- .debug_info    0x0003a351      0x8de c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
- .debug_info    0x0003ac2f      0x14d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
- .debug_info    0x0003ad7c      0x14c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
- .debug_info    0x0003aec8      0xa28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
- .debug_info    0x0003b8f0       0xbe c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
- .debug_info    0x0003b9ae      0x93a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
- .debug_info    0x0003c2e8      0x90d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
- .debug_info    0x0003cbf5      0x997 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
- .debug_info    0x0003d58c      0x8d2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
- .debug_info    0x0003de5e      0x8a6 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-errno.o)
- .debug_info    0x0003e704      0x9bc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
- .debug_info    0x0003f0c0      0xa76 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
- .debug_info    0x0003fb36      0x8fb c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
- .debug_info    0x00040431      0x906 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
- .debug_info    0x00040d37      0x973 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reent.o)
- .debug_info    0x000416aa      0x573 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
- .debug_info    0x00041c1d      0x55a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
+ .debug_info    0x00029b42     0x31e6 src/main.o
+ .debug_info    0x0002cd28      0x8dc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
+ .debug_info    0x0002d604       0x71 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+ .debug_info    0x0002d675      0x960 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-impure.o)
+ .debug_info    0x0002dfd5       0xe5 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_info    0x0002e0ba       0xcd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_info    0x0002e187      0x989 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
+ .debug_info    0x0002eb10      0x99d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
+ .debug_info    0x0002f4ad     0x15df c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+ .debug_info    0x00030a8c      0x982 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
+ .debug_info    0x0003140e      0xcf7 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
+ .debug_info    0x00032105      0xa22 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
+ .debug_info    0x00032b27      0xc2a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+ .debug_info    0x00033751      0xb3d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
+ .debug_info    0x0003428e      0x9fc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
+ .debug_info    0x00034c8a      0xa61 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
+ .debug_info    0x000356eb      0xb24 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
+ .debug_info    0x0003620f      0xa96 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
+ .debug_info    0x00036ca5      0xc4e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
+ .debug_info    0x000378f3       0xe7 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
+ .debug_info    0x000379da      0x102 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
+ .debug_info    0x00037adc      0x8cf c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
+ .debug_info    0x000383ab     0x149a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+ .debug_info    0x00039845      0xb17 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
+ .debug_info    0x0003a35c      0x8de c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
+ .debug_info    0x0003ac3a      0x14d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
+ .debug_info    0x0003ad87      0x14c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
+ .debug_info    0x0003aed3      0xa28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
+ .debug_info    0x0003b8fb       0xbe c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
+ .debug_info    0x0003b9b9      0x93a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+ .debug_info    0x0003c2f3      0x90d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
+ .debug_info    0x0003cc00      0x997 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
+ .debug_info    0x0003d597      0x8d2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
+ .debug_info    0x0003de69      0x8a6 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-errno.o)
+ .debug_info    0x0003e70f      0x9bc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
+ .debug_info    0x0003f0cb      0xa76 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
+ .debug_info    0x0003fb41      0x8fb c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
+ .debug_info    0x0004043c      0x906 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
+ .debug_info    0x00040d42      0x973 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reent.o)
+ .debug_info    0x000416b5      0x573 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
+ .debug_info    0x00041c28      0x55a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
 
-.debug_abbrev   0x00000000     0x8668
+.debug_abbrev   0x00000000     0x8695
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x2a4 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_abbrev  0x000002a4      0x145 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -3619,49 +3619,49 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_abbrev  0x0000409a      0x19f src/CustomDevices/PCA9542A.o
  .debug_abbrev  0x00004239      0x2cd src/CustomDevices/SD_Card.o
  .debug_abbrev  0x00004506      0x161 src/CustomDevices/TWI.o
- .debug_abbrev  0x00004667      0x2b9 src/main.o
- .debug_abbrev  0x00004920      0x167 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
- .debug_abbrev  0x00004a87       0x59 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .debug_abbrev  0x00004ae0      0x160 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-impure.o)
- .debug_abbrev  0x00004c40       0x92 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_abbrev  0x00004cd2       0x85 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
- .debug_abbrev  0x00004d57      0x1a4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
- .debug_abbrev  0x00004efb      0x1cc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
- .debug_abbrev  0x000050c7      0x3dd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
- .debug_abbrev  0x000054a4      0x16a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
- .debug_abbrev  0x0000560e      0x251 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
- .debug_abbrev  0x0000585f      0x1c6 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
- .debug_abbrev  0x00005a25      0x28c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
- .debug_abbrev  0x00005cb1      0x1d9 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
- .debug_abbrev  0x00005e8a      0x1b4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
- .debug_abbrev  0x0000603e      0x1df c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
- .debug_abbrev  0x0000621d      0x210 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
- .debug_abbrev  0x0000642d      0x17b c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
- .debug_abbrev  0x000065a8      0x205 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
- .debug_abbrev  0x000067ad       0xb1 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
- .debug_abbrev  0x0000685e       0xa2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
- .debug_abbrev  0x00006900      0x15b c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
- .debug_abbrev  0x00006a5b      0x30e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
- .debug_abbrev  0x00006d69      0x1c1 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
- .debug_abbrev  0x00006f2a      0x17f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
- .debug_abbrev  0x000070a9       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
- .debug_abbrev  0x00007186       0xce c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
- .debug_abbrev  0x00007254      0x192 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
- .debug_abbrev  0x000073e6       0x83 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
- .debug_abbrev  0x00007469      0x19a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
- .debug_abbrev  0x00007603      0x175 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
- .debug_abbrev  0x00007778      0x193 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
- .debug_abbrev  0x0000790b      0x170 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
- .debug_abbrev  0x00007a7b      0x150 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-errno.o)
- .debug_abbrev  0x00007bcb      0x1a1 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
- .debug_abbrev  0x00007d6c      0x17f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
- .debug_abbrev  0x00007eeb      0x17f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
- .debug_abbrev  0x0000806a      0x170 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
- .debug_abbrev  0x000081da      0x1e6 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reent.o)
- .debug_abbrev  0x000083c0      0x151 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
- .debug_abbrev  0x00008511      0x157 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
+ .debug_abbrev  0x00004667      0x2e6 src/main.o
+ .debug_abbrev  0x0000494d      0x167 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
+ .debug_abbrev  0x00004ab4       0x59 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+ .debug_abbrev  0x00004b0d      0x160 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-impure.o)
+ .debug_abbrev  0x00004c6d       0x92 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_abbrev  0x00004cff       0x85 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_abbrev  0x00004d84      0x1a4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
+ .debug_abbrev  0x00004f28      0x1cc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
+ .debug_abbrev  0x000050f4      0x3dd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+ .debug_abbrev  0x000054d1      0x16a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
+ .debug_abbrev  0x0000563b      0x251 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
+ .debug_abbrev  0x0000588c      0x1c6 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
+ .debug_abbrev  0x00005a52      0x28c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+ .debug_abbrev  0x00005cde      0x1d9 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
+ .debug_abbrev  0x00005eb7      0x1b4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
+ .debug_abbrev  0x0000606b      0x1df c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
+ .debug_abbrev  0x0000624a      0x210 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
+ .debug_abbrev  0x0000645a      0x17b c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
+ .debug_abbrev  0x000065d5      0x205 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
+ .debug_abbrev  0x000067da       0xb1 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
+ .debug_abbrev  0x0000688b       0xa2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
+ .debug_abbrev  0x0000692d      0x15b c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
+ .debug_abbrev  0x00006a88      0x30e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+ .debug_abbrev  0x00006d96      0x1c1 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
+ .debug_abbrev  0x00006f57      0x17f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
+ .debug_abbrev  0x000070d6       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
+ .debug_abbrev  0x000071b3       0xce c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
+ .debug_abbrev  0x00007281      0x192 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
+ .debug_abbrev  0x00007413       0x83 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
+ .debug_abbrev  0x00007496      0x19a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+ .debug_abbrev  0x00007630      0x175 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
+ .debug_abbrev  0x000077a5      0x193 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
+ .debug_abbrev  0x00007938      0x170 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
+ .debug_abbrev  0x00007aa8      0x150 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-errno.o)
+ .debug_abbrev  0x00007bf8      0x1a1 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
+ .debug_abbrev  0x00007d99      0x17f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
+ .debug_abbrev  0x00007f18      0x17f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
+ .debug_abbrev  0x00008097      0x170 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
+ .debug_abbrev  0x00008207      0x1e6 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reent.o)
+ .debug_abbrev  0x000083ed      0x151 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x0000853e      0x157 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
 
-.debug_line     0x00000000    0x1ef7a
+.debug_line     0x00000000    0x1ef88
  *(.debug_line)
  .debug_line    0x00000000      0xbfe src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_line    0x00000bfe      0x929 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -3695,49 +3695,49 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_line    0x00013ab2      0xcc4 src/CustomDevices/PCA9542A.o
  .debug_line    0x00014776      0xee8 src/CustomDevices/SD_Card.o
  .debug_line    0x0001565e      0xcaa src/CustomDevices/TWI.o
- .debug_line    0x00016308      0xffc src/main.o
- .debug_line    0x00017304      0x1fb c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
- .debug_line    0x000174ff       0x78 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
- .debug_line    0x00017577      0x166 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-impure.o)
- .debug_line    0x000176dd      0x182 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_line    0x0001785f      0x17c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
- .debug_line    0x000179db      0x262 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
- .debug_line    0x00017c3d      0x31c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
- .debug_line    0x00017f59      0xc23 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
- .debug_line    0x00018b7c      0x249 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
- .debug_line    0x00018dc5      0xb95 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
- .debug_line    0x0001995a      0x2fd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
- .debug_line    0x00019c57      0x555 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
- .debug_line    0x0001a1ac      0x30a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
- .debug_line    0x0001a4b6      0x42b c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
- .debug_line    0x0001a8e1      0x2a2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
- .debug_line    0x0001ab83      0x267 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
- .debug_line    0x0001adea      0x2b3 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
- .debug_line    0x0001b09d      0x52f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
- .debug_line    0x0001b5cc      0x17d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
- .debug_line    0x0001b749      0x190 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
- .debug_line    0x0001b8d9      0x192 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
- .debug_line    0x0001ba6b      0xd0b c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
- .debug_line    0x0001c776      0x347 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
- .debug_line    0x0001cabd      0x200 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
- .debug_line    0x0001ccbd      0x17a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
- .debug_line    0x0001ce37      0x16f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
- .debug_line    0x0001cfa6      0x299 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
- .debug_line    0x0001d23f      0x182 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
- .debug_line    0x0001d3c1      0x562 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
- .debug_line    0x0001d923      0x20d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
- .debug_line    0x0001db30      0x191 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
- .debug_line    0x0001dcc1      0x201 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
- .debug_line    0x0001dec2      0x18c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-errno.o)
- .debug_line    0x0001e04e      0x267 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
- .debug_line    0x0001e2b5      0x216 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
- .debug_line    0x0001e4cb      0x20d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
- .debug_line    0x0001e6d8      0x20c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
- .debug_line    0x0001e8e4      0x2aa c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reent.o)
- .debug_line    0x0001eb8e      0x1e5 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
- .debug_line    0x0001ed73      0x207 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
+ .debug_line    0x00016308     0x100a src/main.o
+ .debug_line    0x00017312      0x1fb c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
+ .debug_line    0x0001750d       0x78 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-ctype_.o)
+ .debug_line    0x00017585      0x166 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-impure.o)
+ .debug_line    0x000176eb      0x182 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_line    0x0001786d      0x17c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_line    0x000179e9      0x262 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
+ .debug_line    0x00017c4b      0x31c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
+ .debug_line    0x00017f67      0xc23 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+ .debug_line    0x00018b8a      0x249 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
+ .debug_line    0x00018dd3      0xb95 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
+ .debug_line    0x00019968      0x2fd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
+ .debug_line    0x00019c65      0x555 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+ .debug_line    0x0001a1ba      0x30a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
+ .debug_line    0x0001a4c4      0x42b c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
+ .debug_line    0x0001a8ef      0x2a2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
+ .debug_line    0x0001ab91      0x267 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
+ .debug_line    0x0001adf8      0x2b3 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
+ .debug_line    0x0001b0ab      0x52f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
+ .debug_line    0x0001b5da      0x17d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
+ .debug_line    0x0001b757      0x190 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
+ .debug_line    0x0001b8e7      0x192 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
+ .debug_line    0x0001ba79      0xd0b c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+ .debug_line    0x0001c784      0x347 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
+ .debug_line    0x0001cacb      0x200 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
+ .debug_line    0x0001cccb      0x17a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
+ .debug_line    0x0001ce45      0x16f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
+ .debug_line    0x0001cfb4      0x299 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
+ .debug_line    0x0001d24d      0x182 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
+ .debug_line    0x0001d3cf      0x562 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+ .debug_line    0x0001d931      0x20d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
+ .debug_line    0x0001db3e      0x191 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
+ .debug_line    0x0001dccf      0x201 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
+ .debug_line    0x0001ded0      0x18c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-errno.o)
+ .debug_line    0x0001e05c      0x267 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
+ .debug_line    0x0001e2c3      0x216 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
+ .debug_line    0x0001e4d9      0x20d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
+ .debug_line    0x0001e6e6      0x20c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
+ .debug_line    0x0001e8f2      0x2aa c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reent.o)
+ .debug_line    0x0001eb9c      0x1e5 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
+ .debug_line    0x0001ed81      0x207 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
 
-.debug_frame    0x00000000     0x4fd0
+.debug_frame    0x00000000     0x4fd4
  *(.debug_frame)
  .debug_frame   0x00000000      0x364 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_frame   0x00000364       0xb4 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -3769,45 +3769,45 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_frame   0x00003a9c       0x48 src/CustomDevices/PCA9542A.o
  .debug_frame   0x00003ae4      0x254 src/CustomDevices/SD_Card.o
  .debug_frame   0x00003d38       0x2c src/CustomDevices/TWI.o
- .debug_frame   0x00003d64      0x150 src/main.o
- .debug_frame   0x00003eb4       0x40 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
- .debug_frame   0x00003ef4       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_frame   0x00003f1c       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
- .debug_frame   0x00003f3c       0x48 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
- .debug_frame   0x00003f84       0x5c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
- .debug_frame   0x00003fe0      0x258 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
- .debug_frame   0x00004238       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
- .debug_frame   0x0000426c       0x78 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
- .debug_frame   0x000042e4       0x4c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
- .debug_frame   0x00004330      0x13c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
- .debug_frame   0x0000446c       0x58 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
- .debug_frame   0x000044c4       0x44 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
- .debug_frame   0x00004508       0x70 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
- .debug_frame   0x00004578       0x7c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
- .debug_frame   0x000045f4       0x38 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
- .debug_frame   0x0000462c       0x40 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
- .debug_frame   0x0000466c       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
- .debug_frame   0x0000468c       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
- .debug_frame   0x000046b4       0x30 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
- .debug_frame   0x000046e4      0x2b4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
- .debug_frame   0x00004998       0x44 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
- .debug_frame   0x000049dc       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
- .debug_frame   0x00004a10       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
- .debug_frame   0x00004a30       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
- .debug_frame   0x00004a50       0x94 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
- .debug_frame   0x00004ae4       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
- .debug_frame   0x00004b04      0x220 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
- .debug_frame   0x00004d24       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
- .debug_frame   0x00004d58       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
- .debug_frame   0x00004d8c       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
- .debug_frame   0x00004dc0       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-errno.o)
- .debug_frame   0x00004de0       0x4c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
- .debug_frame   0x00004e2c       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
- .debug_frame   0x00004e60       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
- .debug_frame   0x00004e94       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
- .debug_frame   0x00004ec8       0x80 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reent.o)
- .debug_frame   0x00004f48       0x44 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
- .debug_frame   0x00004f8c       0x44 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
+ .debug_frame   0x00003d64      0x154 src/main.o
+ .debug_frame   0x00003eb8       0x40 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
+ .debug_frame   0x00003ef8       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_frame   0x00003f20       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memset.o)
+ .debug_frame   0x00003f40       0x48 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
+ .debug_frame   0x00003f88       0x5c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
+ .debug_frame   0x00003fe4      0x258 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+ .debug_frame   0x0000423c       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
+ .debug_frame   0x00004270       0x78 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
+ .debug_frame   0x000042e8       0x4c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
+ .debug_frame   0x00004334      0x13c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+ .debug_frame   0x00004470       0x58 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
+ .debug_frame   0x000044c8       0x44 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
+ .debug_frame   0x0000450c       0x70 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
+ .debug_frame   0x0000457c       0x7c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
+ .debug_frame   0x000045f8       0x38 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
+ .debug_frame   0x00004630       0x40 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
+ .debug_frame   0x00004670       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
+ .debug_frame   0x00004690       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
+ .debug_frame   0x000046b8       0x30 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mlock.o)
+ .debug_frame   0x000046e8      0x2b4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+ .debug_frame   0x0000499c       0x44 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
+ .debug_frame   0x000049e0       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
+ .debug_frame   0x00004a14       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
+ .debug_frame   0x00004a34       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
+ .debug_frame   0x00004a54       0x94 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
+ .debug_frame   0x00004ae8       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
+ .debug_frame   0x00004b08      0x220 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+ .debug_frame   0x00004d28       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
+ .debug_frame   0x00004d5c       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
+ .debug_frame   0x00004d90       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
+ .debug_frame   0x00004dc4       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-errno.o)
+ .debug_frame   0x00004de4       0x4c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
+ .debug_frame   0x00004e30       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
+ .debug_frame   0x00004e64       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
+ .debug_frame   0x00004e98       0x34 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
+ .debug_frame   0x00004ecc       0x80 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reent.o)
+ .debug_frame   0x00004f4c       0x44 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
+ .debug_frame   0x00004f90       0x44 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
 
 .debug_str      0x00000000     0xa547
  *(.debug_str)
@@ -3958,7 +3958,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_str     0x0000a53d        0xa c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
                                 0x1dd (size before relaxing)
 
-.debug_loc      0x00000000    0x162f8
+.debug_loc      0x00000000    0x1630e
  *(.debug_loc)
  .debug_loc     0x00000000      0x911 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
  .debug_loc     0x00000911      0x131 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi_mem.o
@@ -3990,44 +3990,44 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_loc     0x0000d7dd       0x9d src/CustomDevices/PCA9542A.o
  .debug_loc     0x0000d87a      0x78b src/CustomDevices/SD_Card.o
  .debug_loc     0x0000e005       0x2b src/CustomDevices/TWI.o
- .debug_loc     0x0000e030      0x374 src/main.o
- .debug_loc     0x0000e3a4       0x77 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
- .debug_loc     0x0000e41b       0x3d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
- .debug_loc     0x0000e458       0xb7 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
- .debug_loc     0x0000e50f      0x176 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
- .debug_loc     0x0000e685     0x2f89 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
- .debug_loc     0x0001160e       0x5b c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
- .debug_loc     0x00011669      0xb95 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
- .debug_loc     0x000121fe      0x13f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
- .debug_loc     0x0001233d      0x202 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
- .debug_loc     0x0001253f      0x384 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
- .debug_loc     0x000128c3      0x28e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
- .debug_loc     0x00012b51       0xe7 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
- .debug_loc     0x00012c38       0xd1 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
- .debug_loc     0x00012d09       0xc2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
- .debug_loc     0x00012dcb      0x5a5 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
- .debug_loc     0x00013370       0x31 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
- .debug_loc     0x000133a1       0x81 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
- .debug_loc     0x00013422     0x122d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
- .debug_loc     0x0001464f      0x56e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
- .debug_loc     0x00014bbd       0x63 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
- .debug_loc     0x00014c20       0x43 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
- .debug_loc     0x00014c63       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
- .debug_loc     0x00014c7b      0x1ee c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
- .debug_loc     0x00014e69       0x1e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
- .debug_loc     0x00014e87      0x268 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
- .debug_loc     0x000150ef       0x94 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
- .debug_loc     0x00015183       0xbd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
- .debug_loc     0x00015240       0x63 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
- .debug_loc     0x000152a3       0xb6 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
- .debug_loc     0x00015359       0x76 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
- .debug_loc     0x000153cf       0x94 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
- .debug_loc     0x00015463       0x94 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
- .debug_loc     0x000154f7      0x10a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reent.o)
- .debug_loc     0x00015601      0x6d9 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
- .debug_loc     0x00015cda      0x61e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
+ .debug_loc     0x0000e030      0x38a src/main.o
+ .debug_loc     0x0000e3ba       0x77 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-atoi.o)
+ .debug_loc     0x0000e431       0x3d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memcmp.o)
+ .debug_loc     0x0000e46e       0xb7 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sprintf.o)
+ .debug_loc     0x0000e525      0x176 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strtol.o)
+ .debug_loc     0x0000e69b     0x2f89 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-vfprintf.o)
+ .debug_loc     0x00011624       0x5b c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-wsetup.o)
+ .debug_loc     0x0001167f      0xb95 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-dtoa.o)
+ .debug_loc     0x00012214      0x13f c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fflush.o)
+ .debug_loc     0x00012353      0x202 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-findfp.o)
+ .debug_loc     0x00012555      0x384 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-freer.o)
+ .debug_loc     0x000128d9      0x28e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fvwrite.o)
+ .debug_loc     0x00012b67       0xe7 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fwalk.o)
+ .debug_loc     0x00012c4e       0xd1 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-locale.o)
+ .debug_loc     0x00012d1f       0xc2 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-makebuf.o)
+ .debug_loc     0x00012de1      0x5a5 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mallocr.o)
+ .debug_loc     0x00013386       0x31 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memchr.o)
+ .debug_loc     0x000133b7       0x81 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-memmove.o)
+ .debug_loc     0x00013438     0x122d c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-mprec.o)
+ .debug_loc     0x00014665      0x56e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reallocr.o)
+ .debug_loc     0x00014bd3       0x63 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-sbrkr.o)
+ .debug_loc     0x00014c36       0x43 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isinfd.o)
+ .debug_loc     0x00014c79       0x18 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-s_isnand.o)
+ .debug_loc     0x00014c91      0x1ee c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-stdio.o)
+ .debug_loc     0x00014e7f       0x1e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-strlen.o)
+ .debug_loc     0x00014e9d      0x268 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-syscalls.o)
+ .debug_loc     0x00015105       0x94 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-writer.o)
+ .debug_loc     0x00015199       0xbd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-callocr.o)
+ .debug_loc     0x00015256       0x63 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-closer.o)
+ .debug_loc     0x000152b9       0xb6 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fclose.o)
+ .debug_loc     0x0001536f       0x76 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-fstatr.o)
+ .debug_loc     0x000153e5       0x94 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-lseekr.o)
+ .debug_loc     0x00015479       0x94 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-readr.o)
+ .debug_loc     0x0001550d      0x10a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/../../../../avr32/lib/ucr3fp\libc.a(lib_a-reent.o)
+ .debug_loc     0x00015617      0x6d9 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_udivdi3.o)
+ .debug_loc     0x00015cf0      0x61e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr32/4.4.3/ucr3fp\libgcc.a(_umoddi3.o)
 
-.debug_macinfo  0x00000000  0x2863568
+.debug_macinfo  0x00000000  0x2863569
  *(.debug_macinfo)
  .debug_macinfo
                 0x00000000   0x14ba84 src/asf/avr32/components/memory/sd_mmc/sd_mmc_spi/sd_mmc_spi.o
@@ -4094,7 +4094,7 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_macinfo
                 0x025bb24d   0x1527fc src/CustomDevices/TWI.o
  .debug_macinfo
-                0x0270da49   0x155b1f src/main.o
+                0x0270da49   0x155b20 src/main.o
 
 .debug_weaknames
  *(.debug_weaknames)

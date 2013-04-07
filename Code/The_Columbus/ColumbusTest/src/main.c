@@ -120,7 +120,7 @@ const AutoCommand_t DefaultCommands[13] = {
 	{ 'q', 0}
 };
 AutoCommand_t *AutoCommands = DefaultCommands;//Use the default by default.
-#define ReadBuffSize 64
+#define ReadBuffSize 256
 void LoadCommands()
 {
 	int i = 1;
@@ -172,12 +172,19 @@ void LoadCommands()
 				
 			}
 		}
+		print_dbg("\n\rCommands Found: ");
+		for(j = 0; j < i; j++)
+		{
+			print_dbg("\n\r");
+			print_dbg_hex(AutoCommands[j].Command);
+		}
 	}
 	else
 	{	//Load default commands
 		print_dbg("\n\rAuto Run File Not Found, Using Default Commands:");
 		//AutoCommand = &DefaultCommands; //Move pointer to the default commands
 	}		
+	
 // 	print_dbg("\n\rAutoCommand Pointer = ");
 // 	print_dbg_ulong(AutoCommands);
 // 	print_dbg("\n\rDefaultCommand Pointer = ");
@@ -209,12 +216,23 @@ int Auto_Run()
 				break;
 			
 			case 'P'://Take Photo
-				print_dbg("\n\rTaking Photo");
+//				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
+				print_dbg("\n\rTaking Photos");
+// 				if(TakePhoto(CAMERA_LEFT | CAMERA_RIGHT) == CAMERAS_BUSY){
+// 					print_dbg("\n\rCameras Busy");
+// 					break;
+// 				}
+// 				while(Photos_Ready() == false)
+// 				;
+// 
+// 				if(Store_Both_Images() == true)
+// 				print_dbg("\n\rImages Stored Successfully!");
 				break;
 				
 			case 'J': //Jump
 				print_dbg("\n\rProgram Jump to ");
 				print_dbg_ulong(AutoCommands[PC].Arg);
+				PC = AutoCommands[PC].Arg;
 				break;
 				
 			case 'q': //End and enter debug
@@ -255,7 +273,7 @@ void Debug_Mode()
 				print_dbg(HELP);
 				break;
 			case 'A':
-				Auto_Run();
+				Auto_Run(); //Does not allow hard system exit as already in debug mode
 				break;
 			case '1':
 				print_dbg("\r1D FFT;");
@@ -395,11 +413,11 @@ void Debug_Mode()
 			
 			break;
 			
-			case 'p':
-				print_dbg("\rPreparing Image;");
-				PrepareImage(&image);
-				print_dbg("\rImage Prepared!");
-				break;
+// 			case 'p':
+// 				print_dbg("\rPreparing Image;");
+// 				PrepareImage(&image);
+// 				print_dbg("\rImage Prepared!");
+// 				break;
 			
 			case 'P'://take a photo
 				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
