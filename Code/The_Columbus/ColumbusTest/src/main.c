@@ -104,7 +104,7 @@ void System_Error()
 }
 
 #define AutoRun_Commands_FileName	"AutoRun.txt"
-AutoCommand_t DefaultCommands[13] = {
+const AutoCommand_t DefaultCommands[13] = {
 	{'F', 10},
 	{'P', 0},
 	{'R', 90},
@@ -119,25 +119,76 @@ AutoCommand_t DefaultCommands[13] = {
 	{'R', -90},
 	{ 'q', 0}
 };
-void LoadCommands(AutoCommand_t *AutoCommand)
+AutoCommand_t *AutoCommands = DefaultCommands;//Use the default by default.
+#define ReadBuffSize 64
+void LoadCommands()
 {
+	int i = 1;
+	int j, k;
+	char c = 0;
+	char buff[ReadBuffSize];
 	nav_filelist_reset();
 	if(nav_filelist_findname((FS_STRING)AutoRun_Commands_FileName, false))
 	{ //If the file exists, load it
-		print_dbg("\n\rFile Found");
+		print_dbg("\n\rAuto Run File Found");
+		nav_setcwd((FS_STRING)AutoRun_Commands_FileName, false, false);
+		file_open(FOPEN_MODE_R);
+		print_dbg("\r\n");
+		while(!file_eof())//count how many commands there are
+		{
+			c = file_getc();
+			if(c == 0xD)//if a carriage return if found
+				i++;
+			print_dbg_hex(c);
+			print_dbg("\n\r");
+		}
+		sprintf(buff, "\n\r%d commands found", i);
+		print_dbg(buff);
+		
+		AutoCommands = malloc(i*sizeof(AutoCommand_t));//Initalise the array
+		
+		file_seek(0, FS_SEEK_SET);
+		i = 0;//command counter
+		c = 0;
+		while(!file_eof())
+		{
+			k = file_read_buf(buff, ReadBuffSize);//read a chunk of the files
+			if(k > ReadBuffSize)
+				k = ReadBuffSize;
+			//parse it
+			for(j = 0; j < k; )
+			{
+				while(buff[j] == ' ') //find next non-whitespace
+					j++;
+				AutoCommands[i].Command = buff[j++];
+				while(buff[j] == ' ') //find next non-whitespace
+					j++;
+				if((AutoCommands[i].Command == 'F') || (AutoCommands[i].Command == 'B') || AutoCommands[i].Command == 'R' || AutoCommands[i].Command == 'J')
+					AutoCommands[i].Arg = atoi(buff+j);
+				else
+					AutoCommands[i].Arg = 0;
+				i++;
+				while((buff[j++] != 0xA) && (j < k));//find the next line char
+				
+			}
+		}
 	}
 	else
 	{	//Load default commands
-		print_dbg("\n\rFile Not Found");
-		AutoCommand = DefaultCommands; //Move pointer to the default commands
+		print_dbg("\n\rAuto Run File Not Found, Using Default Commands:");
+		//AutoCommand = &DefaultCommands; //Move pointer to the default commands
 	}		
+// 	print_dbg("\n\rAutoCommand Pointer = ");
+// 	print_dbg_ulong(AutoCommands);
+// 	print_dbg("\n\rDefaultCommand Pointer = ");
+// 	print_dbg_ulong(DefaultCommands);
 }
 
 int Auto_Run()
 {
 	int PC = 0;
-	AutoCommand_t *AutoCommands;
-	LoadCommands(AutoCommands);
+	
+	LoadCommands();
 	while(1)
 	{
 		switch(AutoCommands[PC].Command)
@@ -204,8 +255,7 @@ void Debug_Mode()
 				print_dbg(HELP);
 				break;
 			case 'A':
-				if(gpio_get_pin_value(DEBUG_PIN))
-					Auto_Run();
+				Auto_Run();
 				break;
 			case '1':
 				print_dbg("\r1D FFT;");
