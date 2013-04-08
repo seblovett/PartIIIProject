@@ -399,53 +399,22 @@ int Motors_Rotate(int angle_degs)
 	//calculate interrupts to move
 	interrupts_to_move = angle_degs * ROTATION_CONST;
 	angle_rotated = interrupts_to_move * ROTATION_CONST_INV;
-// 	if(Pivot_Type == LEFT_SPOT)
-// 	{
-// 		//Right wheel moves
-// 		Motor_Control.Left_Count = 0;
-// 		Motor_Control.Left_State = STOP;
-// 		if(interrupts_to_move > 0)
-// 		{
-// 			Motor_Control.Right_State = FORWARD;
-// 		}
-// 		else
-// 		{
-// 			Motor_Control.Right_State = BACKWARD;
-// 		}
-// 		Motor_Control.Right_Count = Abs(interrupts_to_move);
-// 	}
-// 	else if (Pivot_Type == RIGHT_SPOT)
-// 	{
-// 		//Left Wheel Moves
-// 		Motor_Control.Right_Count = 0;
-// 		Motor_Control.Right_State = STOP;
-// 		if(interrupts_to_move > 0)
-// 		{
-// 			Motor_Control.Left_State = FORWARD;
-// 		}
-// 		else
-// 		{
-// 			Motor_Control.Left_State = BACKWARD;
-// 		}
-// 		Motor_Control.Left_Count = Abs(interrupts_to_move);
-// 	}
-// 	else if (Pivot_Type == SPOT_PIVOT)
-// 	{
-		//Both Wheels Move
-		if(interrupts_to_move > 0)
-		{
-			Motor_Control.Left_State = FORWARD;
-			Motor_Control.Right_State = BACKWARD;
-		}
-		else
-		{
-			Motor_Control.Right_State = FORWARD;
-			Motor_Control.Left_State = BACKWARD;
-		}
-		Motor_Control.Left_Count = Abs(interrupts_to_move);
-		Motor_Control.Right_Count = Abs(interrupts_to_move);
-		Motor_Start(MOTOR_L | MOTOR_R);
-		Motors_Execute();
-		return angle_rotated;
-	//}
+
+	//Both Wheels Move
+	if(interrupts_to_move > 0)
+	{
+		Motor_Control.Left_State = FORWARD;
+		Motor_Control.Right_State = BACKWARD;
+	}
+	else
+	{
+		Motor_Control.Right_State = FORWARD;
+		Motor_Control.Left_State = BACKWARD;
+	}
+	Motor_Control.Left_Count = Abs(interrupts_to_move);
+	Motor_Control.Right_Count = Abs(interrupts_to_move);
+	Motor_Start(MOTOR_L | MOTOR_R);
+	Motors_Execute();
+	return angle_rotated;
+
 }

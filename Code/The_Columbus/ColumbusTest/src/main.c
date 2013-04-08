@@ -281,9 +281,7 @@ int Auto_Run(int Debug)//Debug = 1, don't run commands
 				if(!Debug){//Inevitable in Debug mode
 				Columbus_Status.Status |= AutoRunCMD_ERR;
 				print_dbg("\n\rSystem Error");
-				}				
-			case 'Q': //End and stop
-				print_dbg("\n\rSystem Exiting...");
+				}		
 				return 1;
 		}
 		PC++;
