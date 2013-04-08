@@ -54,7 +54,7 @@ int main (void)
 	if(gpio_get_pin_value(DEBUG_PIN))
 	{	
 		print_dbg("\n\rEntering Auto Run");
-		if(1 == Auto_Run()) //if 
+		if(1 == Auto_Run(0)) //if 
 			System_Error(); //use the system error loop to stop operation
 	}	
 	print_dbg("\n\rEntering Debug Mode...");
@@ -82,7 +82,36 @@ void Get_Line( char * CommandBuffer )
 	}
 	usart_putchar(DBG_USART, 6);
 }
-
+void PrintStatus()
+{
+	print_dbg("\n\n\rColumbus Status:\t0x");
+	print_dbg_hex(Columbus_Status.Status);
+	print_dbg("\n\rSD Card:\n\rStatus:\t\t\t0x");
+	print_dbg_hex(Columbus_Status.SD_Card->Status);
+	print_dbg("\n\rMemory Size :\t\t0x");
+	print_dbg_hex(Columbus_Status.SD_Card->Memory_size);
+	print_dbg("\n\rMotors:");
+	print_dbg("\n\rLeft State :\t\t0x");
+	print_dbg_hex(Columbus_Status.Motors->Left_State);
+	print_dbg("\n\rLeft Count :\t\t0x");
+	print_dbg_hex(Columbus_Status.Motors->Left_Count);
+	print_dbg("\n\rRight State :\t\t0x");
+	print_dbg_hex(Columbus_Status.Motors->Right_State);
+	print_dbg("\n\rRight Count :\t\t0x");
+	print_dbg_hex(Columbus_Status.Motors->Right_Count);
+	print_dbg("\n\rCameras:");
+	print_dbg("\n\rStatus :\t\t0x");
+	print_dbg_hex(Columbus_Status.Cameras->Status);
+	print_dbg("\n\rVSYNC0 State :\t\t0x");
+	print_dbg_hex(Columbus_Status.Cameras->VSYNC0_State);
+	print_dbg("\n\rVSYNC1 State :\t\t0x");
+	print_dbg_hex(Columbus_Status.Cameras->VSYNC1_State);
+	print_dbg("\n\rI2C Mux:");
+	print_dbg("\n\rStatus :\t\t0x");
+	print_dbg_hex(Columbus_Status.I2CMux->Status);
+	print_dbg("\n\rChannel Selected :\t0x");
+	print_dbg_hex(Columbus_Status.I2CMux->ChannelSelected);
+}
 void System_Error()
 {
 	while(1)
@@ -100,6 +129,7 @@ void System_Error()
 		if(Columbus_Status.Status & CAM_ERR)
 			LED4_CLR;
 		delay_ms(500);
+		PrintStatus();
 	}
 }
 
@@ -133,16 +163,14 @@ void LoadCommands()
 		print_dbg("\n\rAuto Run File Found");
 		nav_setcwd((FS_STRING)AutoRun_Commands_FileName, false, false);
 		file_open(FOPEN_MODE_R);
-		print_dbg("\r\n");
 		while(!file_eof())//count how many commands there are
 		{
 			c = file_getc();
 			if(c == 0xD)//if a carriage return if found
 				i++;
-			print_dbg_hex(c);
-			print_dbg("\n\r");
+
 		}
-		sprintf(buff, "\n\r%d commands found", i);
+		sprintf(buff, "\n\r%d commands found\n\r", i);
 		print_dbg(buff);
 		
 		AutoCommands = malloc(i*sizeof(AutoCommand_t));//Initalise the array
@@ -173,26 +201,14 @@ void LoadCommands()
 			}
 		}
 		file_close();
-// 		print_dbg("\n\rCommands Found: ");
-// 		for(j = 0; j < i; j++)
-// 		{
-// 			print_dbg("\n\r");
-// 			print_dbg_hex(AutoCommands[j].Command);
-// 		}
 	}
 	else
 	{	//Load default commands
 		print_dbg("\n\rAuto Run File Not Found, Using Default Commands:");
-		//AutoCommand = &DefaultCommands; //Move pointer to the default commands
 	}		
-	
-// 	print_dbg("\n\rAutoCommand Pointer = ");
-// 	print_dbg_ulong(AutoCommands);
-// 	print_dbg("\n\rDefaultCommand Pointer = ");
-// 	print_dbg_ulong(DefaultCommands);
 }
-//#define DEBUG
-int Auto_Run()
+
+int Auto_Run(int Debug)//Debug = 1, don't run commands
 {
 	int PC = 0;
 	
@@ -205,9 +221,9 @@ int Auto_Run()
 				print_dbg("\n\rMove Forward ");
 				LED4_SET;
 				print_dbg_ulong(AutoCommands[PC].Arg);
-				#ifndef DEBUG
+				if(!Debug){
 				Motors_Move(AutoCommands[PC].Arg);
-				#endif
+				}
 				LED4_CLR;
 				break;
 				
@@ -215,26 +231,26 @@ int Auto_Run()
 				print_dbg("\n\rMove Backward ");
 				LED4_SET;
 				print_dbg_ulong(AutoCommands[PC].Arg);
-				#ifndef DEBUG
+				if(!Debug){
 				Motors_Move(-AutoCommands[PC].Arg);
-				#endif
+				}
 				LED4_CLR;
 				break;
 			
 			case 'R'://Rotate
 				print_dbg("\n\rRotate ");
-				LED3_SET
+				LED3_SET;
 				print_dbg_ulong(AutoCommands[PC].Arg);
-				#ifndef DEBUG
+				if(!Debug){
 				Motors_Rotate(AutoCommands[PC].Arg);
-				#endif
+				}
 				LED3_CLR;
 				break;
 			
 			case 'P'://Take Photo
 				print_dbg("\n\rTaking Photos");
 				LED2_SET;
-				#ifndef DEBUG				
+				if(!Debug){				
 				FIFO_Reset(CAMERA_LEFT | CAMERA_RIGHT);
 				if(TakePhoto(CAMERA_LEFT | CAMERA_RIGHT) == CAMERAS_BUSY){
 					print_dbg("\n\rCameras Busy");
@@ -245,16 +261,16 @@ int Auto_Run()
 
 				if(Store_Both_Images() == true)
 				print_dbg("\n\rImages Stored Successfully!");
-				#endif
+				}
 				LED2_CLR;
 				break;
 				
 			case 'J': //Jump
 				print_dbg("\n\rProgram Jump to ");
 				print_dbg_ulong(AutoCommands[PC].Arg);
-				#ifndef DEBUG	
+				if(!Debug){
 				PC = AutoCommands[PC].Arg;
-				#endif
+				}
 				break;
 				
 			case 'q': //End and enter debug
@@ -262,8 +278,10 @@ int Auto_Run()
 				return 0;
 				
 			default: //System Error
+				if(!Debug){//Inevitable in Debug mode
 				Columbus_Status.Status |= AutoRunCMD_ERR;
 				print_dbg("\n\rSystem Error");
+				}				
 			case 'Q': //End and stop
 				print_dbg("\n\rSystem Exiting...");
 				return 1;
@@ -271,6 +289,8 @@ int Auto_Run()
 		PC++;
 	}
 }
+
+
 
 void Debug_Mode()
 {
@@ -297,7 +317,8 @@ void Debug_Mode()
 				print_dbg(HELP);
 				break;
 			case 'A':
-				Auto_Run(); //Does not allow hard system exit as already in debug mode
+				print_dbg("\rRunning AutoRun in Debug Mode;");
+				Auto_Run(1); //Runs in debug mode
 				break;
 			case '1':
 				print_dbg("\r1D FFT;");
@@ -368,10 +389,10 @@ void Debug_Mode()
 				print_dbg_ulong(image.Width);
 				break;
 			
-			case 'I':
-				print_dbg("\rInverse Fourier Transform;");
-				IFFT2D(ComplexBuffer);
-				break;
+// 			case 'I': //Not yet tested
+// 				print_dbg("\rInverse Fourier Transform;");
+// 				IFFT2D(ComplexBuffer);
+// 				break;
 			
 			case 'k':
 				print_dbg("\rComplex Buffer:\n\r[");
@@ -412,17 +433,11 @@ void Debug_Mode()
 						i = atoi(Ptr);
 						Motors_Rotate(i);
 						break;
-					case 'l':
-						Motor_Stop(MOTOR_L);
-						break;
 					case 'L':
 						Columbus_Status.Motors->Left_Count = GAMMA + 1;
 						Columbus_Status.Motors->Left_State = FORWARD;
 						Motor_Start(MOTOR_L);
 						Motors_Execute();
-						break;
-					case 'r':
-						Motor_Stop(MOTOR_R);
 						break;
 					case 'R':
 						Columbus_Status.Motors->Right_Count = GAMMA + 1;
@@ -511,32 +526,7 @@ void Debug_Mode()
 				Read2DSignal(Working_Buffer);
 				break;
 			case 'v':
-				print_dbg("\rColumbus Status:");
-				print_dbg("\n\rSD Card:\n\rStatus: ");
-				print_dbg_ulong(Columbus_Status.SD_Card->Status);
-				print_dbg("\n\rMemory Size : ");
-				print_dbg_ulong(Columbus_Status.SD_Card->Memory_size);
-				print_dbg("\n\rMotors:");
-				print_dbg("\n\rLeft State : ");
-				print_dbg_ulong(Columbus_Status.Motors->Left_State);
-				print_dbg("\n\rLeft Count : ");
-				print_dbg_ulong(Columbus_Status.Motors->Left_Count);
-				print_dbg("\n\rRight State : ");
-				print_dbg_ulong(Columbus_Status.Motors->Right_State);
-				print_dbg("\n\rRight Count : ");
-				print_dbg_ulong(Columbus_Status.Motors->Right_Count);
-				print_dbg("\n\rCameras:");
-				print_dbg("\n\rStatus : ");
-				print_dbg_ulong(Columbus_Status.Cameras->Status);
-				print_dbg("\n\rVSYNC0 State : ");
-				print_dbg_ulong(Columbus_Status.Cameras->VSYNC0_State);
-				print_dbg("\n\rVSYNC1 State : ");
-				print_dbg_ulong(Columbus_Status.Cameras->VSYNC1_State);
-				print_dbg("\n\rI2C Mux:");
-				print_dbg("\n\rStatus : ");
-				print_dbg_ulong(Columbus_Status.I2CMux->Status);
-				print_dbg("\n\rChannel Selected : ");
-				print_dbg_ulong(Columbus_Status.I2CMux->ChannelSelected);
+				PrintStatus();
 				break;
 			case 'o':
 				print_dbg("\r1 in Fixed point = ");

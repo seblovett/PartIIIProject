@@ -49,18 +49,36 @@ typedef struct  {
 #define THE "\t\t\t_________          _______ \n\r \t\t\t\\__   __/|\\     /|(  ____ \\ \n\r \t\t\t   ) (   | )   ( || (    \\/\n\r\t\t\t   | |   | (___) || (__    \n\r \t\t\t   | |   |  ___  ||  __)   \n\r \t\t\t   | |   | (   ) || (      \n\r \t\t\t   | |   | )   ( || (____/\\\n\r \t\t\t   )_(   |/     \\|(_______/\n\r"
 #define PROMPT "\n\r$>"
 
-#define HELP	"\n\rColumbus Prompt Help:\n\r\
-					? : Shows this prompt\n\r \
-					c : converts the working buffer from integer to fixed point\n\r\
-					D : Frees the Memory pointed to by the Working Buffer \n\r \
-					r : displays the contents of the working buffer\n\r\
-					R : Reads contents of signal.bin, representing 1D Signal. Integers, Big Endian\n\r\
-					T : Reads contents of signal2d.bin, representing 2D Signal. \n\r \
-					s : saves the working buffer\n\r\
-					P : Takes and stores Stereo Photos \n\r \
-					1 : computes the One Dimensional FFT of the working buffer. Returns magnitude.\n\r\
-					2 : Computes the Two Dimensional FFT of the Working Buffer. \n\r \
-					"
+#define HELP	"\rColumbus Prompt Help:\n\r\
+\t? : Shows this prompt\n\r \
+\tA : Runs the AutoRun procedure in debug mode\r\n \
+\tB : Reads a Bitmap file and prints information \n\r \
+\tc : converts the working buffer from integer to fixed point\n\r\
+\tC : Converts the working buffer from fixed point to integer\n\r\
+\td : Saves the Working Buffer to \"Buffer_results.csv\" \n\r \
+\tD : Frees the Memory pointed to by the Working Buffer \n\r \
+\tf : Reads \"Buffer.csv\" as a 2D Array of FFT_SIZE by FFT_SIZE\n\r \
+\tg : Saves the Complex Buffer to \"Buffer_Complex.csv\" \n\r\
+\tk : Prints the Complex Buffer \n\r \
+\tm : Computes the Magnitude of the 1D FFT of the Working Buffer \n\r\ 
+\tM : Motor Driving Options, prefix to the following: \n\r \
+\t\t F (int) : Drive Robot forward by (int) millimetres (negative number for reverse)\n\r\
+\t\t L : Dive Left Wheel Forward a full rotation \n\r\
+\t\t q : Resets Motors \n\r\
+\t\t R : Drive Right Wheel Forward a full rotation \n\r\
+\t\t T (int) : Rotate Robot by (int) degrees (postitive turns Clockwise)\n\r\
+\to : Displays the fixed point value for (int)1 \n\r\
+\tP : Takes and stores Stereo Photos \n\r \
+\tr : displays the contents of the working buffer\n\r\
+\tR : Reads contents of signal.bin, representing 1D Signal. Integers, Big Endian\n\r\
+\tT : Reads contents of signal2d.bin, representing 2D Signal. \n\r \
+\ts : saves the working buffer\n\r\
+\tS : Saves the image in memory to a Bitmaps \n\r\
+\tv : Prints the status variables \n\r \
+\t1 : computes the One Dimensional FFT of the working buffer. Returns magnitude.\n\r\
+\t2 : Computes the Magnitude of the Two Dimensional FFT of the Working Buffer. \n\r \
+\t3 : Computes the Complex 2D FFT of the working buffer and stores it in the Complex Buffer \n\r\
+"
 
 
 mspace sdram_msp;
