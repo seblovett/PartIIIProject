@@ -349,11 +349,40 @@ bool Photos_Ready(void)
 }
 
 
-
+#define ImageNumberFile "ImageNum.bin"
 bool Store_Both_Images()
 {
 	if(Photos_Ready() == false)
 		return false;
+	char buff[16];
+	//Ideally wanted this done on flash for speed, but difficulties arose with using the flash memory.
+	nav_filelist_reset();
+	if(!nav_filelist_findname((FS_STRING)ImageNumberFile, false))//If a global counter file exists
+	{
+		nav_file_create((FS_STRING)ImageNumberFile); //Make it
+		nav_setcwd((FS_STRING)ImageNumberFile, false, false);
+		OV7670_Status.ImageCount= 0; 
+	}
+	else 
+	{
+		nav_setcwd((FS_STRING)ImageNumberFile, false, false); //Read the global counter file
+		file_open(FOPEN_MODE_R);
+		file_read_buf(buff, 16); //Read the data.
+		OV7670_Status.ImageCount = atoi(buff); //Get the count
+		OV7670_Status.ImageCount++; //Increment it
+		file_close();
+		nav_filelist_reset();
+	}
+	nav_setcwd((FS_STRING)ImageNumberFile, false, false); //Update the counter in the file
+	file_open(FOPEN_MODE_W);
+	sprintf(buff, "%d", OV7670_Status.ImageCount);
+	file_write_buf(buff, 16);
+	file_close();
+	nav_filelist_reset();
+	
+	print_dbg("\n\rImage Number = ");//Print the image number to debug
+	print_dbg_ulong(OV7670_Status.ImageCount);
+	
 	
 	Store_Image_1();
 	FIFO_Reset(CAMERA_RIGHT);
@@ -361,152 +390,10 @@ bool Store_Both_Images()
 	Store_Image_0();
 	FIFO_Reset(CAMERA_LEFT);
 	
-	OV7670_Status.VSYNC0_State = IDLE;
+	OV7670_Status.VSYNC0_State = IDLE;//Reset the states to IDLE 
 	OV7670_Status.VSYNC1_State = IDLE;
 	return true;
 }
-// void Store_Image_0()
-// { 
-// 	int i,j;
-// 	//Image0
-// 	//make file
-// 	//delete file if it exits already
-// 	char Filename_buff[15];
-// 	i = 0;
-// 	while(1)
-// 	{
-// 		nav_filelist_reset();
-// 		sprintf(&Filename_buff, Image0Name, i++);
-// 		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
-// 		{
-// 			//nav_setcwd((FS_STRING)Image0Name, true, false);
-// // 			print_dbg("\n\r File Exists");
-// // 			print_dbg(&Filename_buff);
-// 			//nav_file_del(false);
-// 		}
-// 		else
-// 		{
-// 			break;
-// 		}
-// 	}	
-// 	nav_file_create((FS_STRING)Filename_buff);//create file
-// 	
-// 	file_open(FOPEN_MODE_W);
-// 	//write bitmap headers
-// 	file_write_buf(BMPHeader, BMPHEADERSIZE);
-// 	file_write_buf(DIBHead, DIBHEADERSIZE);
-// 	
-// 	//read and write image data
-// 	//Image0
-// 	//reset read pointer
-// 	FIFO_0_nRRST_CLR;
-// 	FIFO_0_RCLK_SET;
-// 
-// 	FIFO_0_RCLK_CLR;
-// 	FIFO_0_nRRST_SET;
-// 	delay_us(10);
-// 	//enable output
-// 	FIFO_0_nOE_CLR;
-// 	uint8_t buffer[WIDTH * 2];
-// 	
-// 	for(j = 0; j < HEIGHT; j++)
-// 	{
-// 		for(i = 0; i < WIDTH*2; i+=2)
-// 		{
-// 			FIFO_0_RCLK_SET;
-// 			delay_us(10);
-// 			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-// 			delay_us(10);
-// 			FIFO_0_RCLK_CLR;
-// 			delay_us(10);
-// 			FIFO_0_RCLK_SET;
-// 			delay_us(10);
-// 			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-// 			delay_us(10);
-// 			FIFO_0_RCLK_CLR;
-// 			delay_us(10);
-// 		}
-// 		file_write_buf(&buffer, WIDTH * 2);
-// 	}
-// 	FIFO_0_nOE_SET;
-// 	file_close();
-// 
-// 	
-// }
-
-// void Store_Image_1()
-// {
-// 	int i, j;
-// 	uint8_t buffer[WIDTH * 2];
-// 	char Filename_buff[15];
-//  	//uint8_t *Buffer_ram;
-//  	//Buffer_ram = mspace_malloc(sdram_msp, WIDTH * 2);
-// // 	 if(Buffer_ram == NULL)
-// // 	 {
-// // 		 print_dbg("\n\rBuffer allocation fail.\n\r");
-// // 		 return;
-// // 	 }
-// 	i = 0;
-// 	//make file
-// 	//delete file if it exits already
-// 	nav_filelist_reset();
-// 	while(1)
-// 	{
-// 		sprintf(&Filename_buff, Image1Name, i++);
-// 		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
-// 		{
-// 			//nav_setcwd((FS_STRING)Image1Name, true, false);
-// 			//print_dbg("\n\rImage1.bmp File Exists");
-// 			//nav_file_del(false);
-// 		}
-// 		else
-// 		{
-// 			break;
-// 		}
-// 	}	
-// 	nav_file_create((FS_STRING)Filename_buff);//create file
-// 	file_open(FOPEN_MODE_W);
-// 	//write bitmap headers
-// 	file_write_buf(BMPHeader, BMPHEADERSIZE);
-// 	file_write_buf(DIBHead, DIBHEADERSIZE);
-// 	//Image1
-// 	//reset read pointer
-// 	FIFO_1_nRRST_CLR;
-// 	
-// 	FIFO_1_RCLK_SET;
-// 	delay_us(10);
-// 	FIFO_1_RCLK_CLR;
-// 	FIFO_1_nRRST_SET;
-// 	
-// 	//enable output
-// 	FIFO_1_nOE_CLR;
-// //	uint8_t buffer[WIDTH * 2];
-// 	
-// 	for(j = 0; j < HEIGHT; j++)
-// 	{
-// 		for(i = 0; i < WIDTH*2; i+=2)
-// 		{
-// 			FIFO_1_RCLK_SET;
-// 			delay_us(10);
-// 			buffer[i+1] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-// 			delay_us(10);
-// 			FIFO_1_RCLK_CLR;
-// 			delay_us(10);
-// 			FIFO_1_RCLK_SET;
-// 			delay_us(10);
-// 			buffer[i] = ((AVR32_GPIO.port[1].pvr) & 0xFF);//CAMERA_INPUT;
-// 			delay_us(10);
-// 			FIFO_1_RCLK_CLR;
-// 			delay_us(10);
-// 		}
-// 		file_write_buf(&buffer, WIDTH * 2);
-// 	}
-// 	
-// 	FIFO_1_nOE_SET;//disable output
-// 	file_close();
-// 	//mspace_free(sdram_msp, Buffer_ram);
-// /*	mspace_free(sdram_msp, Buffer_ram);*/
-// }
 
 void Store_Image_1()
 {
@@ -516,22 +403,14 @@ void Store_Image_1()
 	uint8_t *Buffer_ram;
 	Buffer_ram = mspace_malloc(sdram_msp, HEIGHT * WIDTH * 2);
 	i = 0;
-	//make file
-	//delete file if it exits already
- 	nav_filelist_reset();
-	while(1)
+	//Use global counter
+	sprintf(&Filename_buff, Image1Name, OV7670_Status.ImageCount);
+	nav_filelist_reset();
+	if(nav_filelist_findname((FS_STRING)Filename_buff, false))//if the file already exists
 	{
-		sprintf(&Filename_buff, Image1Name, i++);
-		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
-		{
-			;
-		}
-		else
-		{
-			break;
-		}
+		nav_setcwd((FS_STRING)Filename_buff, false, false);
+		nav_file_del(false);//Delete it
 	}
-
 	//Image1
 	//reset read pointer
 	FIFO_1_nRRST_CLR;
@@ -575,23 +454,14 @@ void Store_Image_0()
 	uint16_t *Buffer_ram;
 	Buffer_ram = mspace_malloc(sdram_msp, HEIGHT * WIDTH );
 	i = 0;
-	//make file
-	//delete file if it exits already
- 	nav_filelist_reset();
-	while(1)
+	sprintf(&Filename_buff, Image0Name, OV7670_Status.ImageCount);
+	nav_filelist_reset();
+	if(nav_filelist_findname((FS_STRING)Filename_buff, false))//if the file already exists
 	{
-		sprintf(&Filename_buff, Image0Name, i++);
-		if(nav_filelist_findname((FS_STRING)Filename_buff, false))
-		{
-			;
-		}
-		else
-		{
-			break;
-		}
+		nav_setcwd((FS_STRING)Filename_buff, false, false);
+		nav_file_del(false);//Delete it
 	}
-
-	//Image1
+	//Image0
 	//reset read pointer
 	FIFO_0_nRRST_CLR;
 	

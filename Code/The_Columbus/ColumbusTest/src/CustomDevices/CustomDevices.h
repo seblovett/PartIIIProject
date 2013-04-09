@@ -77,10 +77,12 @@ typedef struct  {
 \tv : Prints the status variables \n\r \
 \t1 : computes the One Dimensional FFT of the working buffer. Returns magnitude.\n\r\
 \t2 : Computes the Magnitude of the Two Dimensional FFT of the Working Buffer. \n\r \
-\t3 : Computes the Complex 2D FFT of the working buffer and stores it in the Complex Buffer \n\r\
-"
+\t3 : Computes the Complex 2D FFT of the working buffer and stores it in the Complex Buffer \n\r"
 
 
+//////////////////////////////////////////////////////////////////////////
+// Globals
+//////////////////////////////////////////////////////////////////////////
 mspace sdram_msp;
 Columbus_Status_t Columbus_Status;
 //TWI Methods

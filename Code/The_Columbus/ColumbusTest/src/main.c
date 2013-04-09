@@ -106,6 +106,8 @@ void PrintStatus()
 	print_dbg_hex(Columbus_Status.Cameras->VSYNC0_State);
 	print_dbg("\n\rVSYNC1 State :\t\t0x");
 	print_dbg_hex(Columbus_Status.Cameras->VSYNC1_State);
+	print_dbg("\n\rImage Counter:\t\t0x");
+	print_dbg_hex(Columbus_Status.Cameras->ImageCount);
 	print_dbg("\n\rI2C Mux:");
 	print_dbg("\n\rStatus :\t\t0x");
 	print_dbg_hex(Columbus_Status.I2CMux->Status);
@@ -450,7 +452,7 @@ void Debug_Mode()
 			
 			break;
 			
-// 			case 'p':
+// 			case 'p': //Not yet tested
 // 				print_dbg("\rPreparing Image;");
 // 				PrepareImage(&image);
 // 				print_dbg("\rImage Prepared!");

@@ -41,6 +41,7 @@ typedef struct {
 	bool Camera_1_Error;
 	uint8_t VSYNC0_State;
 	uint8_t VSYNC1_State;
+	uint ImageCount;
 	} OV7670_t ;
 
 OV7670_t OV7670_Status;
