@@ -2,9 +2,9 @@
 %% Hardware Development.tex
 %% ---------------------------------------------------------------- 
 \chapter{Hardware and Firmware Development} \label{Chapter:HardwareDevelopment}
-For initial development, the \textit{Il Matto} board, designed by Steve Gunn, was used. The system has an ATMega644P clocked at 12MHz and has an on-board SD card socket. This provided the ability to prototype circuits which were then used to create a PCB.
+For initial development, the \textit{`Il Matto'} board, designed by Steve Gunn, was used. The system has an ATMega644P, 12MHz clock and an on board SD card socket. This provided the ability to prototype circuits which were then used to create a PCB.
 
-The following section is broken down into the following parts:
+This section is broken down into the following parts:
 \begin{enumerate}
 \item[\ref{Section:Camera}] Camera Code
 \item[\ref{sect:SDCard}] SD Card
@@ -15,26 +15,35 @@ The following section is broken down into the following parts:
 
 \section{Camera} \label{Section:Camera}
 
-The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components needed and a 24MHz clock mounted. The schematic for the device can be seen in appendix \ref{Chapter:AppendixA:CircuitDiagrams}.
-
-Original code for the camera operation was given by Steve Gunn, which was used to gain the operation required. This code streamed continuous video to a TFT screen. The operation required was to take a single photo from the camera and store the data. 
+The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components and a 24MHz clock mounted. The schematic for the device can be seen in appendix \ref{Chapter:AppendixA:CircuitDiagrams}. The camera has a small hardware modification, due to a PCB fault. Pin 8 of the buffer is lifted and connected to pin 6 of the header, which is disconnected from the PCB (see figure \ref{fig:OV7670:Mod}).
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth /4]{Figures/OV7670_Back.jpg}
+\caption{Reverse side of the OV7670 Camera showing the modification}
+\label{fig:OV7670:Mod}
+\end{figure}
+Original code for the camera operation was given by Steve Gunn which streamed continuous video to a TFT screen from the camera. The operation required was to take a single photo from the camera and store the data. 
 
 \subsection{Single Camera Operation}
 
-The camera uses a SCCB Interface \citep{SCCB_Interface} created by OmniVision. This is almost identical to the $I^{2}C$ Interface by Phillips and the two protocols are compatible. The original code used a software driven SCCB interface which was very slow and used up processing time. This was changed to make used of the built-in interrupt-driven $I^{2}C$ interface (named TWI in Atmel AVRs)\footnote{$I^{2}C$ , SCCB and TWI are all the same but are called differently due to Phillips owning the right to the name ``$I^{2}C$"}. This communication bus is used to set up the control registers of the OV7670 to enable operation in the correct format. 
+The camera uses a SCCB Interface \citep{SCCB_Interface} created by OmniVision. This is almost identical to the $I^{2}C$ Interface by Phillips and the two protocols are compatible. The original code for the camera used a software driven SCCB interface which was very slow and used up processing time. This was changed to make used of the built-in interrupt-driven $I^{2}C$ interface (named TWI in Atmel AVRs)\footnote{$I^{2}C$ , SCCB and TWI are all the same but are called differently due to Phillips owning the right to the name ``$I^{2}C$"}. This communication bus is used to write to the control registers of the camera to set up the signals, image format and image size. The set up procedure is used from the code given and sets the camera to function as explained below.
 
-RGB565 is a 16 bit pixel representation where bits 0:4 represent the blue intensity, 5:10 is the green intensity and 11:15 represent the red intensity (see figure \ref{fig:RGB565}). This is a compact way of storing data but only allows 65536 colours. Greys can also appear to be slightly green due to the inconsistent colour ratio of the green field. This representation was used as it is a compact format to store images in. It is easily converted to grey scale and is a widely used format.
+RGB565 is a 16 bit pixel representation where bits 0-4, 5-10 and 11-15, represent the blue, green and red intensity respectively (see figure \ref{fig:RGB565}). This is a compact way of storing data but only allows 65536 colours. Greys can also appear to be slightly green due to the inconsistent colour ratio of the green field. This representation was used as it is a compact format, easily converted to grey scale and is widely used.
 \begin{figure}
 \includegraphics[width = \textwidth]{./Figures/RGB565.png}
 \caption{RGB565 pixel format}
 \label{fig:RGB565}
 \end{figure}
 
-The camera must use a high speed clock in order to ensure the pixels obtained are from the same time. This makes it difficult for an AVR to be able to respond to the camera quick enough (ATMegas typically clocked at 8-12MHz). This highlights the necessity for a FIFO Buffer. 
+The camera must use a high speed clock in order to ensure the pixels obtained are from the same time. This makes it difficult for an ATMega (typically clocked at 8-12MHz) to be able to respond to the camera quick enough. This highlights the necessity for a FIFO Buffer. 
 
-The OV7670 is set up so that the VSYNC pin goes low at the beginning of every full frame of data, and HREF is high when the data being output is valid. The pixel data is then clocked out on every rising edge of PCLK. To control the buffer, WEN (write enable) is NAND with the HREF signal. When both are high, the write enable to the buffer will be active and the data will be clocked in by PCLK. In order to acquire a full frame, the first VSYNC pin is set up to interrupt the AVR to enable WEN. The camera will output an entire frame of pixel data and store it into the buffer. When the second VSYNC is received, the WEN signal is disabled, stopping any more data being stored. At this point, the FIFO buffer contains all the image data.
+The OV7670 is set up so that the VSYNC pin goes low at the beginning of every frame of data, and HREF is high when the data being output is valid. The pixel data is then clocked out on every rising edge of PCLK. To control the buffer, WEN (write enable) is NAND with the HREF signal. When both are high, the write enable to the buffer will be active and the data will be clocked in by PCLK. 
 
-To obtain the data from the buffer, the AVR sets output enable and pulses the read clock. Valid data is available on the input port while RCLK is high. All the data is then read in half a pixel at a time. The entire operation can be seen in figure \ref{fig:ov_Capture}.
+In order to acquire a full image, WEN must be high between two consecutive VSYNC pulses. VSYNC is set up to interrupt the AVR and a small state machine is implemented to count VSYNC pulses and control WEN correctly. After the WEN signal is pulsed, the buffer will contain all the valid pixel data.
+
+To obtain the data from the buffer, the AVR sets output enable low and pulses the read clock. Valid data is available on the data port while RCLK is high. All the data is then read half a pixel at a time (the endianness of the data can be set up on the camera). 
+
+After the data has been read, the buffer is reset by asserting the read and write reset signals (RRST and WRST) for at least one clock cycle of the relevant clock. The entire operation can be seen in figure \ref{fig:ov_Capture}.
 \begin{figure}
 \includegraphics[width = \textwidth]{./Figures/ov7670_im_capture.png}
 \caption{Signals generated to control the OV7670 capture and read}
@@ -44,25 +53,23 @@ To obtain the data from the buffer, the AVR sets output enable and pulses the re
 
 Difficulties arose at this point with the storage of the data. The ATMega644P has 4kB of internal SRAM, but  153.6kB of memory is needed to store a single image at QVGA (320 by 240 pixels, 2 bytes per pixel) quality. 
 
-Firstly, data was sent straight to a desktop computer via a COM Port using USART. A simple desktop program was written in C\# to receive and store all the data, and to make a Bitmap image from the data. This method was slow, taking around 30 seconds to transmit one uncompressed image. 
+Firstly, data was sent to a desktop computer by USART. A simple program was written in C\# to receive and store all the data as a Bitmap image. This method was slow, taking around 30 seconds to transmit one uncompressed image. 
 
-The second option was to use extra memory connected to the microcontroller. An SD card is used as FAT file system so that data can be looked at by a user on a computer. Text log files are also written to aid debugging. This is discussed in section \ref{sect:SDCard}. 
+The second option was to use extra memory connected to the microcontroller. An SD card was used as FAT file system so the memory card is usable on a computer. Text log files were also written to aid debugging. This is discussed in section \ref{sect:SDCard}. 
 
 \subsection{Dual Camera Operation}
 In order for stereovision to be successful, two cameras separated by a horizontal distance ($B$) will need to be driven at the same time to obtain photos within a small time frame of one another.
 
 A major problem occurred with using the \itc interface to set up both cameras. The camera has an \itc address of $21_{16}$, which cannot be changed. Multiple \itc devices with exactly the same address cannot be used on the same bus. 
-Two solutions to this are possible: driving one from $I^{2}C$ and one from SCCB, or using an \itc multiplexer. By using two different buses the cameras will be individually addressable. However, SCCB is slow and processor-hungry as it deals with the protocol bit by bit in software. This takes up memory and is not reusable for other operations.
+Two solutions to this are possible: driving one from $I^{2}C$ and one from SCCB, or using an \itc multiplexer. By using two different buses the cameras will be individually addressable. However, SCCB is slow and processor-hungry as it is software driven. This takes up program memory and is not reusable for other operations.
 
-An \itc multiplexer sits on the bus and has multiple output buses. The master can then address the multiplexer and select whether to pass the bus to bus 0, bus 1 or not allow the data to be transferred. This saves processor time, but means a write operation has to be done to select the camera bus before being able to write to the camera. This slows down the operation, but not as much as using SCCB. The main disadvantage to the \itc MUX is the extra hardware needed; firstly the MUX itself, but also 7 extra resistors to pull up the two extra buses and the three interrupt lines must be added. 
+An \itc multiplexer sits on one \itc bus and has multiple output buses. The master can then address the multiplexer and select whether to pass the bus to channel 0, channel 1 or not allow the data to be transferred. This saves processor time, but means a write operation has to be done to select the camera bus before being able to write to the camera. This slows down the operation slightly, but not as much as using SCCB. The main disadvantage to the \itc multiplexer is the extra hardware needed; firstly the multiplexer itself, but also 7 extra resistors to pull up the two extra buses and the three interrupt lines which aren't used, must be added. 
 
-Overall, the disadvantages posed by using a MUX are small, so a multiplexer will be used as opposed to the SCCB interface. A suitable multiplexer is the Phillips PCA9542A \citep{I2C_Mux}.
+Overall, the disadvantages posed by using a multiplexer are small, so it was used as opposed to the SCCB interface. A suitable multiplexer is the Phillips PCA9542A \citep{I2C_Mux}.
 
-The buffers have an output enable pin so the data bus can be shared by both cameras to the AVR. The ATMega644P offers three interrupt pins, two of which are used by the two VSYNC pins for the cameras.
+The buffers have an output enable pin so the data bus can be shared by both cameras to the AVR. The ATMega644P offers three interrupt pins, two of which are used by the two VSYNC pins for the cameras to drive two individual ISRs. 
 
-Two ISRs are used to control the relevant WEN signal when VSYNC is triggered. When taking a photo, both frames are taken at a time period close together to capture the same scenario. The data for both images are read back individually by the AVR. 
-
-Operation to read an image is identical to using one camera. However, an ID number is passed through the functions to make a decision on the pins to use to read the buffer and to enable the output. Care was taken to avoid bus contention, but no checking procedure is explicitly in place. Both images are then read back from the buffers and stored to memory. 
+Operation to read an image is identical to using one camera. The code was duplicated so that the two cameras were accessed individually. Care was taken to avoid any bus contention on the data bus, but no checking is explicitly done. When taking a photo, both frames are taken at a time period close together to capture the same scenario. The data can then be read in either order and stored.
 
 \section{SD Card} \label{sect:SDCard}
 

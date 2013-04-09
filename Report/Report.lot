@@ -1,30 +1,30 @@
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces A list of risks and the prevention steps taken to reduce their impact\relax }}{3}{table.caption.13}
+\contentsline {table}{\numberline {1.1}{\ignorespaces A list of risks and the prevention steps taken to reduce their impact\relax }}{3}{table.caption.15}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison Table of some common microcontrollers. Data of microcontrollers taken from \cite {Atmel:UC3C}, \cite {Atmel:644P}, \cite {Atmel:A3BU} and \cite {ARM:Stellaris}. Costings from \cite {Farnell}\relax }}{7}{table.caption.21}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison Table of some common microcontrollers. Data of microcontrollers taken from \cite {Atmel:UC3C}, \cite {Atmel:644P}, \cite {Atmel:A3BU} and \cite {ARM:Stellaris}. Costings from \cite {Farnell}\relax }}{7}{table.caption.23}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available \citep {ImageComparison}\relax }}{13}{table.caption.35}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega644P for Dual Camera Operation.\relax }}{15}{table.caption.38}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Results of Motor Distance Test\relax }}{22}{table.caption.55}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Results of motor speed test\relax }}{22}{table.caption.57}
-\contentsline {table}{\numberline {3.5}{\ignorespaces The Pinout of the AVR for the circuit. `-' means unavailable and blank means unused\relax }}{25}{table.caption.64}
-\contentsline {table}{\numberline {3.6}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{36}{table.caption.305}
+\contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available \citep {ImageComparison}\relax }}{14}{table.caption.38}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega644P for Dual Camera Operation.\relax }}{15}{table.caption.41}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Results of Motor Distance Test\relax }}{22}{table.caption.58}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Results of motor speed test\relax }}{23}{table.caption.60}
+\contentsline {table}{\numberline {3.5}{\ignorespaces The Pinout of the AVR for the circuit. `-' means unavailable and blank means unused\relax }}{25}{table.caption.67}
+\contentsline {table}{\numberline {3.6}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{36}{table.caption.308}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Table of results to calculate the field of view of the camera\relax }}{47}{table.caption.345}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Results of range finding test\relax }}{47}{table.caption.347}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Number of clock cycles taken to calculate the Transform of 64 or 256 long data set\relax }}{60}{table.caption.393}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Table of results to calculate the field of view of the camera\relax }}{47}{table.caption.348}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Results of range finding test\relax }}{47}{table.caption.350}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Number of clock cycles taken to calculate the Transform of 64 or 256 long data set\relax }}{60}{table.caption.396}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Table showing the Auto Run Commands Implemented\relax }}{65}{table.caption.409}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Table showing the available Debug Commands\relax }}{66}{table.caption.410}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Table show the meaning of the LED lights. F - Flashing, X - Don't Care\relax }}{67}{table.caption.411}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Table showing the Auto Run Commands Implemented\relax }}{65}{table.caption.412}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Table showing the available Debug Commands\relax }}{66}{table.caption.413}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Table show the meaning of the LED lights. F - Flashing, X - Don't Care\relax }}{67}{table.caption.414}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{85}{table.caption.432}
-\contentsline {table}{\numberline {D.2}{\ignorespaces All components and their values (if applicable)\relax }}{86}{table.caption.433}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{89}{table.437}
+\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{85}{table.caption.435}
+\contentsline {table}{\numberline {D.2}{\ignorespaces All components and their values (if applicable)\relax }}{86}{table.caption.436}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD Card}}{89}{table.440}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

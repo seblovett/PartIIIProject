@@ -45,18 +45,19 @@
 \maketitle
 \inote{Turn off iNotes!}
 \begin{abstract}
-This report describes the research, design, build and test of a stereoscopic robot using two Omnivision OV7670 cameras and an Atmel AT32UC3C0512C Microcontroller. A custom PCB was designed to fit a wheeled base. The report is in two main parts, hardware design and vision algorithms. The hardware design section describes the prototypes and design of the subsystems. The PCB that was designed is also tested.
+\inote{I don't like this. Consider changing...}
+This report describes the research, design, build and test of a stereoscopic robot using two Omnivision OV7670 cameras and an Atmel AT32UC3C0512C Microcontroller. A custom PCB was designed to fit a wheeled base. The report is in two main parts, hardware design and vision algorithms. The hardware design section describes the prototypes and design of the subsystems.
 
 The vision algorithms section discusses range finding from stereo images, comparison algorithms between stereo pairs and the implementation and test of a two dimensional fast Fourier transform on an AVR. 
 
-The final product is a small mobile robot equipped with cameras and capability of image processing. The device has the ability to roam unintelligently and capture photos or be used as a command line terminal to control by a user.
+The final product is a small mobile robot equipped with cameras and capability of image processing. The device has the ability to execute a predefined set of commands in an automatic stand alone way. The robot can also be used as a shell terminal to debug and remote control. 
 \end{abstract}
 \tableofcontents
 \listoffigures
 \listoftables
 \lstlistoflistings
 \listofsymbols{ll}{
-\multicolumn{2}{c}{\textbf{Abbreviations}} \\
+%\multicolumn{2}{c}{\textbf{Abbreviations}} \\
 \itc 					& 	Inter-Integrated Circuit \\ 
 TWI 					&	Two Wire Interface \\
 SCCB 					&	Serial Camera Control Bus\\
@@ -69,7 +70,9 @@ ADC						&	Analogue to Digital Converter \\
 DAC						&	Digital to Analogue Converter \\
 PWM 					&	Pulse Width Modulation		\\
 GPIO					&	General Purpose Input Output \\
-\multicolumn{2}{c}{\textbf{Images}} \\
+PLL						&	Phase Locked Loop \\
+FPU						&	Floating Point Unit \\
+%\multicolumn{2}{c}{\textbf{Images}} \\
 $\varphi_0$				&	Field of view of the camera \\
 $\varphi_1, \varphi_2$	&	Angle from camera to the object \\
 $B$ 					&	Separation distance of two cameras \\
@@ -77,7 +80,7 @@ $D$						&	Distance from camera to the object \\
 $i,j$  					&	Pixel index of an Image 	\\
 $x_0$					&	Horizontal resolution of the image \\
 $x_1, x_2$				&	Distance of object from the normal of the camera \\
-\multicolumn{2}{c}{\textbf{Motors}} \\
+%\multicolumn{2}{c}{\textbf{Motors}} \\
 $\delta$				& 	Distance to move \\
 $\gamma$				&	Number of tabs on the wheel \\
 $A$						&	Angle of rotation \\

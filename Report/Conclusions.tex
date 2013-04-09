@@ -36,6 +36,9 @@ The system could be used in future projects to develop more functionality. Wirel
 %\inote{Suggestions for further work}
 
 \section{System Operation}
+
+The system uses a debug USART available on J7 (57600bps, 8 data, 0 parity and 1 stop bit).
+
 The system has two modes of operation, `Auto Run' and Debug. By default, the Auto Run mode will run. Debug mode can be entered by the relevant command in the Auto Run procedure (see table \ref{table:AutoRun}) or by connecting Pin D23, available at Pin 1 of J9, to ground on system boot. The state of the robot is shown by the LEDs. Table \ref{table:LEDs} shows the meaning of the LEDs.
 
 Auto Run mode runs a set of commands located in \textit{``AutoRun.txt''} on the SD Card. If this file is not present, the system will run a default procedure defined in the code. A list of commands that can be run from this mode can be seen in table \ref{table:AutoRun}. The commands are specified by line If an invalid command is found, the system will exit and run the \textit{System\_Error} loop. The  \textit{System\_Error} loop prints the status of all devices out once a second. By attaching a USART terminal, the error can be found.

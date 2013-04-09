@@ -8,29 +8,30 @@ The research for this project was split into three sections:
 \item Software, broken down into:
 \begin{enumerate}
 \item Firmware, and
-\item Algorithms
+\item Image Processing
 \end{enumerate}
 \end{enumerate}
 
-Hardware and firmware research will be discussed in this section. Vision algorithms are looked at in detail in chapter \ref{Chapter:InvestigationVision}.
+Hardware and firmware research will be discussed in this section. Image processing is looked at in detail in chapter \ref{Chapter:InvestigationVision}.
 \section{Hardware Research}
 %\inote{Talk about why I chose to develop with AVRs, comparison with other uControllers. Why I used the OV7670 Camera etc etc}
 \subsection{Microcontrollers}\label{Research:Microcontrollers}
-The robot is to be designed with a budget of \pounds 80 (not including P.C.B.). The choice of microcontroller will be an important one, as a compromise between cost, power and usability must be made. There are two main brands of microcontrollers present in the consumer market: ARM and Atmel AVRs.\\ %and PICs. 
+The budget for the design was \pounds 80 (not including PCB). The choice of microcontroller was an important one, as a compromise between cost, power and usability had to be made. There are two main brands of microcontrollers present in the consumer market: ARM and AVRs.\\ %and PICs. 
 %\inote{Do more research into ARM stuff}
-ARM is an architecture which is developed by ARM Holdings. ARM devices come in a many varieties: ARM9, ARM7, Strong ARM, ARM Cortex etc. Whilst ARM Holdings do not fabricate and sell the devices themselves, many companies, such as Texas Instruments, use the architecture and manufacture their own devices. ARM cores are based on a RISC Harvard architecture and tend to be 32-bit with a high clock speed. ARM microcontrollers have on chip support for SPI, \itc, PWM, ADCs and can have Flash, SDRAM and EEPROM memory built-in. For this comparison, the Stellaris by Texas Instruments will be examined. 
 
-Atmel have a variety of products in the microcontroller market. They range from 8-bit, low clock speed devices for the hobbyist (ATMega and ATTiny series), to an improved 8-bit variant (XMega), and a 32-bit design (AT32UC3). XMegas and AVR32s tend to have higher clock speeds than the ATMegas. The AVR core also has a Harvard RISC architecture, and is mainly 8-bit. Atmel devices often have on board peripherals such as \itc (called TWI on AVRs), SPI and ADCs, as well as a number of different memories: Flash, EEPROM and SDRAM. An AT32UC3C0512C, ATXmega256A3BU and ATMega644P will be compared in this section. 
+ARM is an architecture which is developed by ARM Holdings. ARM devices come in a many varieties: ARM9, ARM7, Strong ARM, ARM Cortex etc. Whilst ARM Holdings do not fabricate and sell the devices themselves, many companies, such as Texas Instruments, use the architecture and manufacture their own devices. ARM cores are based on a RISC Harvard architecture and tend to be 32-bit with a high clock speed. ARM microcontrollers have on chip support for SPI, \itc, PWM, ADCs and can have Flash, SRAM and EEPROM memory built-in. For this comparison, the Stellaris by Texas Instruments will be examined. 
+
+Atmel have a variety of products in the microcontroller market, which have an AVR core that is a predominantly 8-bit, Harvard RISC architecture. They range from a low clock speed device for the hobbyist (ATMega and ATTiny series), to an improved 8-bit variant (XMega), and a 32-bit architecture (AT32UC3). XMegas and AT32s tend to have higher clock speeds than the ATMega. Atmel devices often have on board peripherals such as \itc , SPI and ADCs, as well as a number of different memories: Flash, EEPROM and SRAM. An AT32UC3C0512C, ATXmega256A3BU and ATMega644P will be compared in this section. 
 
 
-Table \ref{tab:uCComp} shows a brief summary of some common ARM and AVR microcontrollers. The Stellaris offers the most power with the largest DMIPS performance. However, due to the necessity of floating point operations, the AT32 clearly has a distinct advantage by having a built-in floating point unit. The XMega and ATMega do not offer enough power and are restricted by a small amount of SDRAM and Flash. All devices looked at use 3.3V supply and have basic communication protocols (SPI, \itc and USART). Overall, the AT32UC3C0512C is the best choice with a high throughput, a floating point unit and a vast amount of GPIO and communications. There is no EEPROM which may be desirable, but these can be added onto an SPI or \itc bus. This device, although slightly more costly, is best suited to this application out of the selection researched.
+Table \ref{tab:uCComp} shows a brief summary of some common ARM and AVR microcontrollers. The Stellaris offers the most power with the largest DMIPS performance. However, due to the necessity of floating point operations, the AT32 clearly has a distinct advantage by having a built-in floating point unit. The XMega and ATMega do not offer enough power and are restricted by a small amount of SRAM and Flash. All devices looked at use 3.3V supply and have basic communication protocols (SPI, \itc and USART). Overall, the AT32UC3 is the best choice with a high throughput, a floating point unit and a vast amount of GPIOs and communications. There is no EEPROM which may be desirable, but these can be added onto an SPI or \itc bus. This device, although slightly more costly, is best suited to this application out of the selection researched.
 %\inote{Much point wasting words on PIC?}
 %PICs are useless...
 
 \begin{table}
 \centering
-\begin{tabular}{|p{3.5cm}|p{2.4cm}|p{2.9cm}|p{2.3cm}|p{2.4cm}|}\hline
-						& 	ARM Stellaris		&	AT32UC3C0512C 		&	XMegaA3BU	&	ATMega644P 	\\	\hline
+\begin{tabular}{|p{3.0cm}|p{2.0cm}|p{3cm}|p{2.3cm}|p{2.4cm}|}\hline
+Attribute				& 	ARM Stellaris		&	AT32UC3C0512C 		&	XMegaA3BU	&	ATMega644P 	\\	\hline
 Clock Speed	(MHz)		&	80					&	33 or 66			&	32			&	12			\\
 DMIPS					&	100					&	91					&	-			&	20 MIPS		\\
 Package					&	100 LQFP or 108 BGA	&	64, 100, 144TQFP	&	64 QFP or QFN & 40 DIP, 44 TQFP, 44 QFN \\
@@ -53,11 +54,11 @@ Timers					&	4					&	3 16-bit			& 7 16-bit, 8 8-bit & 2 8-bit, 1 16-bit \\
 \section{Firmware}
 \subsection{Camera}
 
-The camera used is the OV7670 camera by OmniVision. Steve Gunn provided source code for use on the Il Matto development board which uses an ATMega644P and also has an onboard SD Card reader. The original code streamed video from the camera to a colour TFT screen. The camera is supplied on a small breakout board with a FIFO buffer. The camera operation is discussed in section \ref{Section:Camera}. Many implementations of firmware for this camera exist.
+The camera used is the OV7670 by OmniVision. Steve Gunn provided source code for use on the Il Matto development board, which streamed video from the camera to a colour TFT screen. The camera is supplied on a small breakout board with a FIFO buffer. The camera operation is discussed in section \ref{Section:Camera}. Many implementations of firmware for this camera exist across different devices. 
 
 \subsection{Atmel Software Framework}
 
-Atmel offer a software framework which contains basic code and device drivers for many of their XMega and AT32 devices \citep{Atmel:ASF}. There are also many AVR application notes which provide explanations and example code for protocols like TWI, SPI and timers. These application notes are aimed at older devices like the ATTiny and ATMega and are generally written for IAR Embedded Workbench compiler, as opposed to the AVRGCC compiler used within Atmel Studio. 
+Atmel offer a software framework which contains basic code and device drivers for many of their XMega and AT32 devices \citep{Atmel:ASF}. There are also many AVR application notes which provide explanations and example code for protocols like \itc , SPI and timers. These application notes are aimed at older devices like the ATTiny and ATMega. Both the ASF and the application notes are available online and are a good source of code for basic protocols.
 
 %\section{Image Algorithms}
 %
