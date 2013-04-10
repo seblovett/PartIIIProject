@@ -11,21 +11,21 @@ This work has led to a tested device which is mobile and has the capability to p
 \item Motor driving
 \item Stereoscopic Cameras
 \item SD Card memory
-\item SRAM
+\item SDRAM
 \item Image Processing
 \end{enumerate} 
 
 The motor system is a simple, cheap method to move distances with reasonable accuracy. A better controller would allow variable speed and speed matching between motors. The system was shown to work to $4.5\%$ accuracy over a $300mm$ distance.
 
-A full image can be read from a camera and stored on an SD card in a FAT32 file system. This gives the ability of removable memory that can be viewed on a computer to see any internal logs. Images are stored in QVGA format (320 by 240 pixels) as a bitmap image. 
+A stereo image pairs can be read captured by the cameras and stored on an SD card in a FAT32 file system. This gives the ability of removable memory that can be viewed on a computer to see any internal logs. Images are stored in QVGA format (320 by 240 pixels) as a bitmap image. 
 
-An additional 4MB of SRAM memory is available to use on the robot allowing for large data arrays of the images to be kept in fast access RAM. The RAM is direct memory accessed so operation is almost seamless from internal memory.
+An additional 4MB of SDRAM memory is available to use on the robot allowing for large data arrays of the images to be kept in fast access RAM. The RAM is direct memory accessed so operation is almost seamless from internal memory.
 
 Multiple comparison algorithms have been investigated and compared using the same test images. It was clear that, although at a necessity of more computations, the normalised cross correlation is the best with regard to overall reliability. 
 
-The Fourier transform was also investigated and implemented. The system allows for a $2 \times 2$ array of a square image with dimensions of $2^{2n}\; $ where $n \in \mathbb{N}$ and is limited by RAM space and time. The transform is speed optimised and in tests proved to be fairly accurate. 
-
 Range finding equations were then researched and derived, which use the characteristics of the camera and the separation distance between them to calculate distance to objects in view. The range finding capability was tested using MATLAB and it found that the system could not accurately calculate distances to objects. However, depth perception is possible even with low resolution cameras and small separation between them.
+
+The Fourier transform was also investigated and implemented. The system allows for a 2D array of a square image with dimensions of $2^{2n}\; $, where $n \in \mathbb{N}$, and is limited by RAM space and time. The transform is speed optimised and in tests proved to be fairly accurate. 
 
 All aspects implemented on the robot have been shown to be functional. A faster processor would have been a good idea to use for image processing, but this could have developed other problems with the PCB. The Raspberry Pi or Steve Gunn's \textit{`L'Imperatrice'}, which both run a Linux operating system, would have been a good choice to remove the need for as much hardware design and existing image processing libraries could have been utilised to gain more functionality in the time. 
 
@@ -39,7 +39,7 @@ The system could be used in future projects to develop more functionality. Wirel
 
 The system uses a debug USART available on J7 (57600bps, 8 data, 0 parity and 1 stop bit).
 
-The system has two modes of operation, `Auto Run' and Debug. By default, the Auto Run mode will run. Debug mode can be entered by the relevant command in the Auto Run procedure (see table \ref{table:AutoRun}) or by connecting Pin D23, available at Pin 1 of J9, to ground on system boot. The state of the robot is shown by the LEDs. Table \ref{table:LEDs} shows the meaning of the LEDs.
+The system has two modes of operation, `Auto Run' and Debug. By default, the Auto Run mode will run. Debug mode can be entered by the relevant command in the Auto Run procedure (see table \ref{table:AutoRun}) or by connecting Pin D23, available at Pin 1 of J9, to ground on system start. The state of the robot is shown by the LEDs. Table \ref{table:LEDs} shows the meaning of the LEDs.
 
 Auto Run mode runs a set of commands located in \textit{``AutoRun.txt''} on the SD Card. If this file is not present, the system will run a default procedure defined in the code. A list of commands that can be run from this mode can be seen in table \ref{table:AutoRun}. The commands are specified by line If an invalid command is found, the system will exit and run the \textit{System\_Error} loop. The  \textit{System\_Error} loop prints the status of all devices out once a second. By attaching a USART terminal, the error can be found.
 

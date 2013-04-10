@@ -10,38 +10,38 @@
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Prototype of streaming camera images to TFT screen.\relax }}{16}{figure.caption.43}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Circuit diagram of Optosensor\relax }}{17}{figure.caption.46}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Graph of Wheel Angle against the Voltage read by the AVR\relax }}{18}{figure.caption.47}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces A State Machine showing the operation of the \textit {Motor\_Execute} method\relax }}{20}{figure.caption.52}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{21}{figure.caption.53}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{21}{figure.caption.53}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Side View of robot base showing dimensions of interest}}}{21}{figure.caption.53}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces A plot of Expected Distance against the measured data. Line indicates the average of the data at each point.\relax }}{23}{figure.caption.59}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces A hierarchical diagram of the robot\relax }}{26}{figure.caption.66}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces PCB with no components. Left: Top View. Right: Bottom View\relax }}{27}{figure.caption.69}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces SDRAM Chip shown against its footprint.\relax }}{35}{figure.caption.305}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Motor Driver error. Outputs incorrectly connected\relax }}{37}{figure.caption.311}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Pictures of the built PCB.\relax }}{39}{figure.caption.313}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top view of built PCB}}}{39}{figure.caption.313}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bottom view of built PCB with SDRAM chip select patch }}}{39}{figure.caption.313}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces A State Machine showing the operation of the \textit {Motor\_Execute} method\relax }}{21}{figure.caption.55}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{22}{figure.caption.56}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{22}{figure.caption.56}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Side View of robot base showing dimensions of interest}}}{22}{figure.caption.56}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces A plot of Expected Distance against the measured data. Line indicates the average of the data at each point.\relax }}{23}{figure.caption.61}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces A hierarchical diagram of the robot\relax }}{26}{figure.caption.68}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces PCB with no components. Left: Top View. Right: Bottom View\relax }}{27}{figure.caption.71}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces SDRAM Chip shown against its footprint.\relax }}{35}{figure.caption.307}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Motor Driver error. Outputs incorrectly connected\relax }}{38}{figure.caption.313}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Pictures of the built PCB.\relax }}{40}{figure.caption.315}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top view of built PCB}}}{40}{figure.caption.315}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bottom view of built PCB with SDRAM chip select patch }}}{40}{figure.caption.315}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{41}{figure.caption.319}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{41}{figure.caption.319}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{41}{figure.caption.319}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{44}{figure.caption.330}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{44}{figure.caption.330}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{44}{figure.caption.330}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{44}{figure.caption.330}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Stereo pair of images of a rubber duck on a reel of solder\relax }}{48}{figure.caption.351}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces NCC results from matching using the ducks head from the right image as the template to the left image\relax }}{48}{figure.caption.352}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces 3D Surface plot graph showing range of distances that can be calculated over a range of camera separation, B, values.\relax }}{49}{figure.caption.354}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Graph showing Distance of the object against the difference in the match locations.\relax }}{49}{figure.caption.355}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces A Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{51}{figure.caption.359}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing a Dirac Function}}}{51}{figure.caption.359}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the Dirac Function}}}{51}{figure.caption.359}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the Dirac Function}}}{51}{figure.caption.359}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces A 2D Rectangular pulse and the phase and magnitude of its Fourier Transform\relax }}{52}{figure.caption.363}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing rectangular pulse}}}{52}{figure.caption.363}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the rectangular pulse}}}{52}{figure.caption.363}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the rectangular pulse}}}{52}{figure.caption.363}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic Test Images from MATLAB Examples\relax }}{41}{figure.caption.321}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{41}{figure.caption.321}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{41}{figure.caption.321}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Result Graphs of Comparison Algorithms\relax }}{44}{figure.caption.331}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results (Low match)}}}{44}{figure.caption.331}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results (Low match)}}}{44}{figure.caption.331}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results (High match)}}}{44}{figure.caption.331}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Stereo pair of images of a rubber duck on a reel of solder\relax }}{48}{figure.caption.352}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces NCC results from matching using the ducks head from the right image as the template to the left image\relax }}{48}{figure.caption.353}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 3D Surface plot graph showing range of distances that can be calculated over a range of camera separation, B, values.\relax }}{49}{figure.caption.355}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Graph showing Distance of the object against the difference in the match locations.\relax }}{49}{figure.caption.356}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces A Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{51}{figure.caption.360}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing a Dirac Function}}}{51}{figure.caption.360}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the Dirac Function}}}{51}{figure.caption.360}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the Dirac Function}}}{51}{figure.caption.360}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces A 2D Rectangular pulse and the phase and magnitude of its Fourier Transform\relax }}{52}{figure.caption.364}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing rectangular pulse}}}{52}{figure.caption.364}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the rectangular pulse}}}{52}{figure.caption.364}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the rectangular pulse}}}{52}{figure.caption.364}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces A 2D Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{54}{figure.caption.374}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {An image of a 2D Dirac Function}}}{54}{figure.caption.374}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {An image of the magnitude of the Fourier transform of the 2D Dirac Function}}}{54}{figure.caption.374}
@@ -56,32 +56,32 @@
 \contentsline {figure}{\numberline {4.14}{\ignorespaces Input Rectangular Pulse for AVR fast Fourier transform\relax }}{58}{figure.caption.391}
 \contentsline {figure}{\numberline {4.15}{\ignorespaces Output phase and magnitude of the complex output from AVR fast Fourier transform of a Rectangular Pulse\relax }}{58}{figure.caption.392}
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Magnitude calculated by the AVR of the Fourier transform of a Rectangular Pulse\relax }}{59}{figure.caption.393}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Dirac Function\relax }}{60}{figure.caption.397}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{60}{figure.caption.397}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{60}{figure.caption.397}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Square Function\relax }}{61}{figure.caption.400}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{61}{figure.caption.400}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{61}{figure.caption.400}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Dirac Function\relax }}{61}{figure.caption.398}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{61}{figure.caption.398}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{61}{figure.caption.398}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Square Function\relax }}{62}{figure.caption.401}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{62}{figure.caption.401}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{62}{figure.caption.401}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{70}{figure.caption.416}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Chart of how time will be spent in the areas of the project\relax }}{70}{figure.caption.417}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{72}{figure.caption.419}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{73}{figure.caption.421}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces The Columbus Circuit Diagram Page 1\relax }}{74}{figure.caption.423}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces The Columbus Circuit Diagram Page 2\relax }}{75}{figure.caption.424}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces The Columbus Circuit Diagram Page 3\relax }}{76}{figure.caption.425}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces The Columbus Circuit Diagram Page 4\relax }}{77}{figure.caption.426}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces The Columbus Circuit Diagram Page 5\relax }}{78}{figure.caption.427}
-\contentsline {figure}{\numberline {B.8}{\ignorespaces The Columbus Circuit Diagram Page 6\relax }}{79}{figure.caption.428}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces The circuit diagram for the OV7670 breakout board\relax }}{72}{figure.caption.420}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces The circuit diagram for Dual Cameras using the Il Matto Board\relax }}{73}{figure.caption.422}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces The Columbus Circuit Diagram Page 1\relax }}{74}{figure.caption.424}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces The Columbus Circuit Diagram Page 2\relax }}{75}{figure.caption.425}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces The Columbus Circuit Diagram Page 3\relax }}{76}{figure.caption.426}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces The Columbus Circuit Diagram Page 4\relax }}{77}{figure.caption.427}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces The Columbus Circuit Diagram Page 5\relax }}{78}{figure.caption.428}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces The Columbus Circuit Diagram Page 6\relax }}{79}{figure.caption.429}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces The Top side of the CAD Design of the PCB\relax }}{82}{figure.caption.431}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces The Bottom side of the CAD Design of the PCB\relax }}{83}{figure.caption.433}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces The Top side of the CAD Design of the PCB\relax }}{82}{figure.caption.432}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces The Bottom side of the CAD Design of the PCB\relax }}{83}{figure.caption.434}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {G.1}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{94}{figure.caption.443}
-\contentsline {figure}{\numberline {G.2}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{96}{figure.caption.464}
-\contentsline {figure}{\numberline {G.3}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{97}{figure.caption.467}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {G.1}{\ignorespaces Problem 1 - Object is between the Cameras\relax }}{94}{figure.caption.444}
+\contentsline {figure}{\numberline {G.2}{\ignorespaces Problem 2 - Object is to the same side in both cameras\relax }}{96}{figure.caption.465}
+\contentsline {figure}{\numberline {G.3}{\ignorespaces Problem 3 - Object is directly in front of a camera\relax }}{97}{figure.caption.468}
 \addvspace {10\p@ }

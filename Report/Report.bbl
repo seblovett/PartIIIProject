@@ -1,11 +1,7 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{29}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
-
-\bibitem[{Atmel Corporation}(2007)]{Atmel:I2CSlave}
-{Atmel Corporation}.
-\newblock {\em AVR311: TWI Slave}, 2007.
 
 \bibitem[{Atmel Corporation}(2009)]{Atmel:ASF}
 {Atmel Corporation}.
@@ -29,10 +25,6 @@
 \bibitem[{Atmel Corporation}(2012{\natexlab{d}})]{Atmel:A3BU}
 {Atmel Corporation}.
 \newblock {\em ATXMega256A3BU Datasheet}, 2012{\natexlab{d}}.
-
-\bibitem[Cart(2013)]{PCBCart}
-PCB Cart.
-\newblock \href{http://www.pcbcart.com/}{Pcb manufacturer}, 2013.
 
 \bibitem[{Creative Robotics Ltd}(2013)]{Creative_Robotics}
 {Creative Robotics Ltd}.
@@ -101,6 +93,10 @@ Mark Nixon and Alberto~S Aguado.
 OmniVision.
 \newblock {\em OmniVision Serial Camera Control Bus (SCCB) Functional
   Specification}, 2007.
+
+\bibitem[{PCB Cart}(2013)]{PCBCart}
+{PCB Cart}.
+\newblock \href{http://www.pcbcart.com/}{Pcb manufacturer}, 2013.
 
 \bibitem[Phillips(2009)]{I2C_Mux}
 Phillips.
