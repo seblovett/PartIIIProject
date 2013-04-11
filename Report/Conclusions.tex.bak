@@ -1,0 +1,121 @@
+%% ----------------------------------------------------------------
+%% Conclusions.tex
+%% ---------------------------------------------------------------- 
+\chapter{Conclusions and Further Work} \label{Chapter: Conclusions}
+%\section{Conclusion}
+
+%\inote{What I have accomplished}
+This work has led to a tested device which is mobile and has the capability to perform stereoscopic image processing. The system has the following parts:
+
+\begin{enumerate}
+\item Motor driving
+\item Stereoscopic Cameras
+\item SD Card memory
+\item SRAM
+\item Image Processing
+\end{enumerate} 
+
+The motor system is a simple, cheap method to move distances with reasonable accuracy. A better controller would allow variable speed and speed matching between motors. The system was shown to work to $4.5\%$ accuracy over a $300mm$ distance.
+
+A stereo image pairs can be read captured by the cameras and stored on an SD card in a FAT32 file system. This gives the ability of removable memory that can be viewed on a computer to see any internal logs. Images are stored in QVGA format (320 by 240 pixels) as a bitmap image. 
+
+An additional 4MB of SRAM memory is available to use on the robot allowing for large data arrays of the images to be kept in fast access RAM. The RAM is direct memory accessed so operation is almost seamless from internal memory.
+
+Multiple comparison algorithms have been investigated and compared using the same test images. It was clear that, although at a necessity of more computations, the normalised cross correlation is the best with regard to overall reliability. 
+
+Range finding equations were then researched and derived, which use the characteristics of the camera and the separation distance between them to calculate distance to objects in view. The range finding capability was tested using MATLAB and it found that the system could not accurately calculate distances to objects. However, depth perception is possible even with low resolution cameras and small separation between them.
+
+The Fourier transform was also investigated and implemented. The system allows for a 2D array of a square image with dimensions of $2^{2n}\; $, where $n \in \mathbb{N}$, and is limited by RAM space and time. The transform is speed optimised and in tests proved to be fairly accurate. 
+
+All aspects implemented on the robot have been shown to be functional. A faster processor would have been a good idea to use for image processing, but this could have developed other problems with the PCB. The Raspberry Pi or Steve Gunn's \textit{`L'Imperatrice'}, which both run a Linux operating system, would have been a good choice to remove the need for as much hardware design and existing image processing libraries could have been utilised to gain more functionality in the time. 
+
+Though the robots original application wasn't achieved, the end device is a base for a stereoscopic application. The system is a tested platform for future applications to be implemented on and additions can be made using the spare pins and bus connections on the PCB headers. 
+
+The system could be used in future projects to develop more functionality. Wireless communications could be added to the system to allow a connection to the computer and search algorithms can be implemented alongside distance calculations to make the robot aware of its surroundings. 
+%\inote{What could be changed to make it better}
+%\inote{Suggestions for further work}
+
+\section{System Operation}
+
+The system uses a debug USART available on J7 (57600bps, 8 data, 0 parity and 1 stop bit).
+
+The system has two modes of operation, `Auto Run' and Debug. By default, the Auto Run mode will run. Debug mode can be entered by the relevant command in the Auto Run procedure (see table \ref{table:AutoRun}) or by connecting Pin D23, available at Pin 1 of J9, to ground on system start. The state of the robot is shown by the LEDs. Table \ref{table:LEDs} shows the meaning of the LEDs.
+
+Auto Run mode runs a set of commands located in \textit{``AutoRun.txt''} on the SD Card. If this file is not present, the system will run a default procedure defined in the code. A list of commands that can be run from this mode can be seen in table \ref{table:AutoRun}. The commands are specified by line If an invalid command is found, the system will exit and run the \textit{System\_Error} loop. The  \textit{System\_Error} loop prints the status of all devices out once a second. By attaching a USART terminal, the error can be found.
+
+Debug mode is a DOS-shell style terminal allowing the user to access methods and variables. This was used for development and debugging. A full list of commands can be seen in table \ref{table:Debug}. 
+
+\begin{table}
+\centering
+\caption{Table showing the Auto Run Commands Implemented}
+\label{table:AutoRun}
+\begin{tabular}{|c|c|c|}\hline
+Command & 	Argument 			& 	Operation \\\hline
+B		&	int					&	Move backward by the argument value (millimetres) \\
+F		&	int 				&	Move forward by the argument value (millimetres)\\
+J		&	int					&	Jumps to the command specified (0 indexed)\\
+P		&	N/A					&	Takes a stereo pair of photos\\
+q		&	N/A					&	Quits Auto Run and enters debug mode\\
+R		& 	int 			 	&	Rotates by argument (degrees)\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{Table showing the available Debug Commands}
+\label{table:Debug}
+\begin{tabular}{|l|l|p{10cm}|}\hline
+Command & Argument & Operation \\\hline
+? && Shows the help prompt\\ 
+A && Runs the Auto Run procedure in debug mode\\ 
+B && Reads a Bitmap file and prints information \\ 
+c && converts the working buffer from integer to fixed point\\
+C && Converts the working buffer from fixed point to integer\\
+d && Saves the Working Buffer to ``Buffer\_results.csv'' \\ 
+D && Frees the Memory pointed to by the Working Buffer \\ 
+f && Reads ``Buffer.csv'' as a 2D Array of FFT\_SIZE by FFT\_SIZE\\ 
+g && Saves the Complex Buffer to ``Buffer\_Complex.csv'' \\
+k && Prints the Complex Buffer \\ 
+m && Computes the Magnitude of the 1D FFT of the Working Buffer \\
+M F &(int) & Drive Robot forward by (int) millimetres (negative number for reverse)\\
+M L && Dive Left Wheel Forward a full rotation \\
+M q && Resets Motors \\
+M R && Drive Right Wheel Forward a full rotation \\
+M T &(int) & Rotate Robot by (int) degrees (positive turns Clockwise)\\
+o && Displays the fixed point value for (int)1 \\
+P && Takes and stores Stereo Photos \\ 
+r && displays the contents of the working buffer\\
+R && Reads contents of ``signal.bin'', representing 1D Signal. Integers, Big Endian\\
+T && Reads contents of ``signal2d.bin'', representing 2D Signal. \\ 
+s && saves the working buffer\\
+S && Saves the image in memory to a Bitmaps \\
+v && Prints the status variables \\ 
+1 && computes the One Dimensional FFT of the working buffer. Returns magnitude.\\
+2 && Computes the Magnitude of the Two Dimensional FFT of the Working Buffer. \\ 
+3 && Computes the Complex 2D FFT of the working buffer and stores it in the Complex Buffer \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{Table show the meaning of the LED lights. F - Flashing, X - Don't Care}
+\label{table:LEDs}
+\begin{tabular}{|c|c|c|c|c|c|c|}\cline{1-6}
+\multicolumn{6}{|c|}{LED} \\ \hline
+MOTOR 	& 2		& 3 	& 4 	& 5 	& 6 	& Meaning\\ \hline
+Off		& Off	& Off	& Off	& Off	& Off	& System Initialising \\
+On		& X		& X		& X		& X		& X		& Robot moving\\
+Off		& X		& X		& X		& X		& X		& Robot not moving\\
+X		& On	& On	& On	& X		& X 	& System in Debug Mode \\
+X		& X		& X		& X		& On	& X		& Left Wheel on a `Tab'	\\
+X		& X		& X		& X		& Off	& X		& Left Wheel not on a `Tab'	\\
+X		& X		& X		& X		& X 	& On	& Right Wheel on a `Tab'	\\
+X		& X		& X		& X		& X		& Off	& Right Wheel not on a `Tab'	\\
+Off		& On	& Off	& Off	& X		& X		& Auto Run Mode - Robot taking photos	\\
+On		& Off	& On	& Off	& X		& X		& Auto Run Mode - Robot rotating	\\
+On		& Off	& Off	& On	& X		& X		& Auto Run Mode - Robot moving\\
+Off		& F		& Off	& Off	& X		& X		& System Error - Generic\\
+Off		& F		& F		& X		& X		& X		& System Error - SD Card Error\\
+Off		& F		& X		& F		& X		& X		& System Error - Camera Error\\ \hline
+\end{tabular}
+\end{table}
