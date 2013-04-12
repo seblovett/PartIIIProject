@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  12 APR 2013 21:30
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  12 APR 2013 22:22
 entering extended mode
 **report.tex
 (E:\Uni\part3_project\Report\report.tex
@@ -2094,11 +2094,11 @@ Appendix E.
 ------------------------------------------------------------------------------
  E Contents of Files
 ------------------------------------------------------------------------------
-) [89
+[89
 
 
 
-] (E:\Uni\part3_project\Report\Appendix_Bitmap.tex [90
+] [90]) [91] (E:\Uni\part3_project\Report\Appendix_Bitmap.tex [92
 
 
 
@@ -2347,8 +2347,8 @@ Overfull \hbox (12.41272pt too wide) in alignment at lines 45--59
  [] [] [] [] [] 
  []
 
-[91] [92]) [93] (E:\Uni\part3_project\Report\Appendix_RangeDerivations.tex
-[94
+[93] [94]) [95] (E:\Uni\part3_project\Report\Appendix_RangeDerivations.tex
+[96
 
 
 
@@ -2357,29 +2357,29 @@ Appendix G.
 ------------------------------------------------------------------------------
  G Range Finding Derivations
 ------------------------------------------------------------------------------
-<Figures/problem1.png, id=1997, 791.20593pt x 910.15031pt>
+<Figures/problem1.png, id=2005, 791.20593pt x 910.15031pt>
 File: Figures/problem1.png Graphic file (type png)
 
 <use Figures/problem1.png>
 Package pdftex.def Info: Figures/problem1.png used on input line 6.
 (pdftex.def)             Requested size: 417.47794pt x 480.23866pt.
- [95] [96 <E:/Uni/part3_project/Report/Figures/problem1.png>] <Figures/problem2
-.png, id=2029, 805.50937pt x 928.97063pt>
+ [97] [98 <E:/Uni/part3_project/Report/Figures/problem1.png>] <Figures/problem2
+.png, id=2038, 805.50937pt x 928.97063pt>
 File: Figures/problem2.png Graphic file (type png)
 
 <use Figures/problem2.png>
 Package pdftex.def Info: Figures/problem2.png used on input line 108.
 (pdftex.def)             Requested size: 417.4661pt x 481.45157pt.
- [97]
-<Figures/problem3.png, id=2046, 797.98125pt x 919.93687pt>
+ [99]
+<Figures/problem3.png, id=2054, 797.98125pt x 919.93687pt>
 File: Figures/problem3.png Graphic file (type png)
 
 <use Figures/problem3.png>
 Package pdftex.def Info: Figures/problem3.png used on input line 121.
 (pdftex.def)             Requested size: 417.47311pt x 481.2756pt.
-) [98 <E:/Uni/part3_project/Report/Figures/problem2.png>] [99 <E:/Uni/part3_pro
-ject/Report/Figures/problem3.png>]
-(E:\Uni\part3_project\Report\Appendix_Code.tex [100
+) [100 <E:/Uni/part3_project/Report/Figures/problem2.png>] [101 <E:/Uni/part3_p
+roject/Report/Figures/problem3.png>]
+(E:\Uni\part3_project\Report\Appendix_Code.tex [102
 
 
 
@@ -2388,10 +2388,10 @@ Appendix H.
 ------------------------------------------------------------------------------
  H Source Code
 ------------------------------------------------------------------------------
-(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\main.c [101] [102]
-[103] [104] [105] [106] [107] [108] [109] [110])
+(E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\main.c [103] [104]
+[105] [106] [107] [108] [109] [110] [111] [112])
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\Bitmap.c
-[111])
+[113])
 Overfull \hbox (21.22224pt too wide) in paragraph at lines 49--49
 []|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/CustomD
 evices.h| 
@@ -2399,7 +2399,7 @@ evices.h|
 
 
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\CustomDe
-vices.h [112] [113])
+vices.h [114] [115])
 Overfull \hbox (22.52362pt too wide) in paragraph at lines 55--55
 []|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/ImagePr
 ocessor.h| 
@@ -2407,7 +2407,7 @@ ocessor.h|
 
 
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\ImagePro
-cessor.h) [114]
+cessor.h) [116]
 Overfull \hbox (21.21808pt too wide) in paragraph at lines 58--58
 []|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/ImagePr
 ocessor.c| 
@@ -2415,7 +2415,7 @@ ocessor.c|
 
 
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\ImagePro
-cessor.c [115] [116] [117] [118] [119]) [120]
+cessor.c [117] [118] [119] [120] [121]) [122]
 Overfull \hbox (6.72656pt too wide) in paragraph at lines 61--61
 []|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/MotorDr
 iver.h| 
@@ -2423,7 +2423,7 @@ iver.h|
 
 
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\MotorDri
-ver.h [121])
+ver.h [123])
 Overfull \hbox (5.42102pt too wide) in paragraph at lines 64--64
 []|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/MotorDr
 iver.c| 
@@ -2431,11 +2431,11 @@ iver.c|
 
 
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\MotorDri
-ver.c [122] [123] [124] [125] [126] [127] [128]) [129]
+ver.c [124] [125] [126] [127] [128] [129] [130]) [131]
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\OV7670.h
-[130] [131] [132] [133] [134]) [135]
+[132] [133] [134] [135] [136]) [137]
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\OV7670.c
-[136] [137] [138] [139] [140] [141] [142] [143])
+[138] [139] [140] [141] [142] [143] [144] [145])
 Overfull \hbox (16.01756pt too wide) in paragraph at lines 73--73
 []|\OT1/cmr/m/n/12 ../Code/The[]Columbus/ColumbusTest/src/CustomDevices/OV7670[
 ]Setup.c| 
@@ -2443,21 +2443,21 @@ Overfull \hbox (16.01756pt too wide) in paragraph at lines 73--73
 
 
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\OV7670_S
-etup.c [144] [145] [146] [147])
+etup.c [146] [147] [148] [149])
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\PCA9542A
 .h)
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\PCA9542A
-.c [148])
+.c [150])
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\SD_Card.
-h [149])
+h [151])
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\SD_Card.
-c [150] [151] [152] [153] [154] [155] [156] [157] [158] [159])
+c [152] [153] [154] [155] [156] [157] [158] [159] [160] [161])
 (E:\Uni\part3_project\Code\The_Columbus\ColumbusTest\src\CustomDevices\TWI.c)
-[160] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+[162] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(E:\Uni\part3_project\MATLAB\Match.m [161])
-(E:\Uni\part3_project\MATLAB\MatchAll.m)) [162]
+(E:\Uni\part3_project\MATLAB\Match.m [163])
+(E:\Uni\part3_project\MATLAB\MatchAll.m)) [164]
 ------------------------------------------------------------------------------
  References
 ------------------------------------------------------------------------------
@@ -2484,10 +2484,10 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
  ) 
 Here is how much of TeX's memory you used:
- 28213 strings out of 494045
- 459888 string characters out of 3145960
- 1658325 words of memory out of 3000000
- 26847 multiletter control sequences out of 15000+200000
+ 28216 strings out of 494045
+ 459928 string characters out of 3145960
+ 1658328 words of memory out of 3000000
+ 26848 multiletter control sequences out of 15000+200000
  14853 words of font info for 58 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  63i,18n,100p,1397b,2352s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2517,9 +2517,9 @@ pe1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmu10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb>
-Output written on report.pdf (180 pages, 38187422 bytes).
+Output written on report.pdf (182 pages, 38190794 bytes).
 PDF statistics:
- 6495 PDF objects out of 7423 (max. 8388607)
- 4008 named destinations out of 4296 (max. 500000)
+ 6506 PDF objects out of 7423 (max. 8388607)
+ 4010 named destinations out of 4296 (max. 500000)
  1183 words of extra memory for PDF output out of 10000 (max. 10000000)
 
