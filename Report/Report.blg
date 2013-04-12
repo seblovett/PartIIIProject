@@ -4,6 +4,7 @@ A level-1 auxiliary file: Research.aux
 A level-1 auxiliary file: HardwareDevelopment.aux
 A level-1 auxiliary file: InvestigationVision.aux
 A level-1 auxiliary file: Conclusions.aux
+The style file: ecs.bst
 A level-1 auxiliary file: Appendix_Gantt.aux
 A level-1 auxiliary file: Appendix_CircuitDiagrams.aux
 A level-1 auxiliary file: Appendix_PCB.aux
@@ -12,7 +13,6 @@ A level-1 auxiliary file: Appendix_Contents.aux
 A level-1 auxiliary file: Appendix_Bitmap.aux
 A level-1 auxiliary file: Appendix_RangeDerivations.aux
 A level-1 auxiliary file: Appendix_Code.aux
-The style file: ecs.bst
 Database file #1: ECS.bib
 Warning--entry type for "Creative_Robotics" isn't style-file defined
 --line 15 of file ECS.bib

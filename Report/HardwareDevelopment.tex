@@ -4,14 +4,14 @@
 \chapter{Hardware and Firmware Development} \label{Chapter:HardwareDevelopment}
 For initial development, the \textit{`Il Matto'} board, designed by Steve Gunn, was used. The system has an ATMega644P, 12MHz clock and an on board SD card socket. This provided the ability to prototype circuits which were then used to create a PCB.
 
-This section is broken down into the following parts:
-\begin{enumerate}
-\item[\ref{Section:Camera}] Camera Code
-\item[\ref{sect:SDCard}] SD Card
-%\item Motor Control
-\item[\ref{Section:Motor_Dev}] Motor Development
-\item[\ref{Section:PCB_Dev}] PCB Development
-\end{enumerate}
+%This section is broken down into the following parts:
+%\begin{enumerate}
+%\item[\ref{Section:Camera}] Camera Code
+%\item[\ref{sect:SDCard}] SD Card
+%%\item Motor Control
+%\item[\ref{Section:Motor_Dev}] Motor Development
+%\item[\ref{Section:PCB_Dev}] PCB Development
+%\end{enumerate}
 
 \section{Camera} \label{Section:Camera}
 
@@ -113,7 +113,7 @@ By writing the image in this format, they are then able to be opened on any oper
 
 The first prototype made can be seen in figure \ref{fig:Prototype}. This obtained two images from both cameras, and stored them to the SD Card. The cameras shared the data bus and a \itc multiplexer was used. An ATMega168 was added to the system as no pins remained for debugging on the \textit{Il Matto} board. The pinout for the 644 can be seen in table \ref{table:644Pin}. The ATMega168 used the already existing \itc bus and acted as a port extender - button inputs were read and status LEDs were written to. This enabled a debug output for the system. The prototype worked well and proved the circuit worked. 
 
-A second prototype was made to stream the images to a TFT screen. This can be seen in figure \ref{fig:Prototype:TFT}. This provided the ability to check the cameras worked, and gave a live stream so the lens could be focused to give a clear image. The refresh rate of a full image was slow ($\approx 0.6fps$), but the system was successful.w
+A second prototype was made to stream the images to a TFT screen. This can be seen in figure \ref{fig:Prototype:TFT}. This provided the ability to check the cameras worked, and gave a live stream so the lens could be focused to give a clear image. The refresh rate of a full image was slow ($\approx 0.6fps$), but the system was successful.
 
 \begin{table}
 \centering
@@ -253,7 +253,7 @@ The final code can be seen in appendix \ref{Chapter:AppendixC:Code}. \textit{Mot
 \subsection{Testing}\label{Section:MotorTest}
 %\inote{Test Rotation}
 
-To test the motor system, different distances were given to the movement method. The method prints how many counts will be moved. The actual distance moved was then measured and repeated four times. Table \ref{table:results:motor:distance} and figure \ref{fig:results:motor:distance} show the results of this test. The results show that the maximum error observed is $4.52\%$, which related to $4.5mm$. This error is acceptable as a half centimetre error over 10cm will not impact the performance of the robot. The error is calculated from the actual distance predicted to move. 
+To test the motor system, different distances were given to the movement method. The method prints how many counts will be moved. The actual distance moved was then measured and repeated four times. Table \ref{table:results:motor:distance} shows the results of this test. They show that the maximum error observed is $4.52\%$, which related to $4.5mm$. This error is acceptable as a half centimetre error over 10cm will not impact the performance of the robot. The error is calculated from the actual distance predicted to move. 
 
 
 \begin{table}
@@ -273,11 +273,11 @@ Distance Specified (mm) &	Number of Counts Calculated	& 	Counts $\times$ Resolut
 \end{tabular}
 \end{table}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{Figures/Motor_Distance.eps}
-\caption{A plot of Expected Distance against the measured data. Line indicates the average of the data at each point.}
-\label{fig:results:motor:distance}
-\end{figure}
+%\begin{figure}
+%\includegraphics[width=\textwidth]{Figures/Motor_Distance.eps}
+%\caption{A plot of Expected Distance against the measured data. Line indicates the average of the data at each point.}
+%\label{fig:results:motor:distance}
+%\end{figure}
 
 A problem was seen that the robot moved in a slight arc. Speed tests were done on the wheel by measuring the total time taken to complete eight full revolutions, the equivalent of moving 928mm. The results and the calculated wheel speeds can be seen in table \ref{table:results:motor:speed}. It shows that the left motor runs slightly faster than the right, even though the PWM duty cycle is the same. A controller could be implemented to correct this error during operation. However, over the distances covered, the error introduced by this is small enough to neglect. 
 
@@ -377,14 +377,15 @@ Passives used were all surface mount of either 0603 or 1206 size to save space o
 The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and headers were added to connect the motors to. The optosensors were positioned such that they could be mounted directly on the PCB and be in the correct position to sense the wheels. Mounting holes were also added onto the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in Appendix \ref{Appendix:Costings}
 
 
-Finally, the name \textit{``The Columbus''} was decided on as the original application for the project was a mapping robot that would search out an unknown area, so the robot was named after Christopher Columbus who explored and navigated parts of the American continents which were unknown at the time. The Eagle CAD Diagram of the PCB can be seen in Appendix \ref{Appendix:PCB}. The PCB was manufactured by \cite{PCBCart}. The PCB cost \pounds 205 to manufacture and ship. A photo of the PCB can be seen in figure \ref{fig:PCB:Bare}. 
+Finally, the name \textit{``The Columbus''} was decided on as the original application for the project was a mapping robot that would search out an unknown area, so the robot was named after Christopher Columbus who explored and navigated parts of the American continents which were unknown at the time. The Eagle CAD Diagram of the PCB can be seen in Appendix \ref{Appendix:PCB}. The PCB was manufactured by \cite{PCBCart}. The PCB cost \pounds 205 to manufacture and ship five PCBs. A photo of the PCB can be seen in figure \ref{fig:PCB:Bare}. 
 
 \begin{figure}
-\includegraphics[width=\textwidth]{./Figures/PCB_Bare.jpg}
-\caption{PCB with no components. Left: Top View. Right: Bottom View}
+\centering
+\subfigure[Top of the PCB]{\includegraphics[scale=0.4]{./Figures/PCB_Bare_Top.jpg} }
+\subfigure[Bottom of the PCB]{\includegraphics[scale=0.4]{./Figures/PCB_Bare_Bottom.jpg} }
+\caption{PCB with no components mounted}
 \label{fig:PCB:Bare}
 \end{figure}
-
 \inote{Considerations - Power consumption of devices not exceeding VReg}
 
 \subsection{PCB Testing}

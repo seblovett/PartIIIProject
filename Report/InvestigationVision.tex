@@ -66,9 +66,9 @@ To compare these equations, a $50 \times 50$ template taken from the right pictu
 
 \begin{figure}
 \centering
-\subfigure[S.A.D Results (Low match)\label{fg:Results:SAD}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/SADResults.jpg} }
-\subfigure[S.S.D. Results (Low match)\label{fg:Results:SSD}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/SSDResults.jpg} }
-\subfigure[N.C.C. Results (High match)\label{fg:Results:NCC}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/NCCResults.jpg} }
+\subfigure[S.A.D Results (Low match)\label{fg:Results:SAD}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/SADResults.eps} }
+\subfigure[S.S.D. Results (Low match)\label{fg:Results:SSD}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/SSDResults.eps} }
+\subfigure[N.C.C. Results (High match)\label{fg:Results:NCC}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/NCCResults.eps} }
 \caption{Result Graphs of Comparison Algorithms}
 \label{fg:CompResults}
 \end{figure}
@@ -167,12 +167,14 @@ Actual Distance (mm) & Pixel Difference in Images (pixel) & Calculated Distance 
 1000 & 51 & 408 & 59\\ \hline
 \end{tabular}
 \end{table}
-
 \begin{figure}
-\includegraphics[width=\textwidth ]{Figures/Duck_L_R.eps}
+\centering
+\subfigure[Left Image]{\includegraphics[scale=0.4]{./Figures/Duck_L.jpg} }
+\subfigure[Right Image]{\includegraphics[scale=0.4]{./Figures/Duck_R.jpg} }
 \caption{Stereo pair of images of a rubber duck on a reel of solder}
 \label{fig:duck:stereo}
 \end{figure}
+
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/NCC_Duck.eps}
@@ -206,18 +208,18 @@ X(f) = \int\limits_{-\infty}^{\infty}x(t)e^{-\jmath 2 \pi ft}dt
 
 \begin{figure}
 \centering
-\subfigure[A graph showing a Dirac Function\label{fg:Dirac:Signal}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Sig.jpg} }
-\subfigure[A graph showing the magnitude of the Fourier transform of the Dirac Function\label{fg:Dirac:Mag}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Mag.jpg} }
-\subfigure[A graph showing the phase of the Fourier transform of the Dirac Function\label{fg:Dirac:Phase}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Phase.jpg} }
+\subfigure[A graph showing a Dirac Function\label{fg:Dirac:Signal}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Sig.eps} }
+\subfigure[A graph showing the magnitude of the Fourier transform of the Dirac Function\label{fg:Dirac:Mag}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Mag.eps} }
+\subfigure[A graph showing the phase of the Fourier transform of the Dirac Function\label{fg:Dirac:Phase}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Phase.eps} }
 \caption{A Dirac signal and the phase and magnitude of its Fourier Transform}
 \label{fig:DiracFunctionFT}
 \end{figure}
 
 \begin{figure}
 \centering
-\subfigure[A graph showing rectangular pulse\label{fg:Square:Signal}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Sig.jpg} }
-\subfigure[A graph showing the magnitude of the Fourier transform of the rectangular pulse\label{fg:Square:Mag}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Mag.jpg} }
-\subfigure[A graph showing the phase of the Fourier transform of the rectangular pulse\label{fg:Square:Phase}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Phase.jpg} }
+\subfigure[A graph showing rectangular pulse\label{fg:Square:Signal}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Sig.eps} }
+\subfigure[A graph showing the magnitude of the Fourier transform of the rectangular pulse\label{fg:Square:Mag}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Mag.eps} }
+\subfigure[A graph showing the phase of the Fourier transform of the rectangular pulse\label{fg:Square:Phase}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Phase.eps} }
 \caption{A 2D Rectangular pulse and the phase and magnitude of its Fourier Transform}
 \label{fig:SquareWaveFT}
 \end{figure}

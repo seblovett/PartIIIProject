@@ -1,5 +1,5 @@
 
-loadimages;
+%loadimages;
 show;
 BoxSize = [26,26];
 MaxConfMatches = 20;

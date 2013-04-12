@@ -1,4 +1,4 @@
-function [ MatchDiff ] = Match( left, right )
+function [ NCC MatchDiff ] = Match( left, right )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 %close all;
@@ -32,8 +32,8 @@ RightTemplate = rightG(Ry-(BoxSize/2):Ry+(BoxSize/2), Rx-(BoxSize/2):Rx+(BoxSize
 NCC = normxcorr2(RightTemplate, leftG);
 
 %Display
-figure(f);
-subplot(2,2,3);
+figure(f+1);
+%subplot(2,2,3);
 surf(NCC);
 hold on;
 shading interp;
