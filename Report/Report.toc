@@ -61,45 +61,45 @@
 \contentsline {subsection}{\numberline {4.3.3}Implementing the FFT}{53}{subsection.388}
 \contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{56}{subsection.389}
 \contentsline {subsubsection}{\numberline {4.3.4.1}1D FFT Test}{56}{subsubsection.390}
-\contentsline {subsubsection}{\numberline {4.3.4.2}2D FFT Test}{57}{subsubsection.397}
-\contentsline {subsection}{\numberline {4.3.5}Conclusion}{59}{subsection.399}
-\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{63}{chapter.409}
-\contentsline {section}{\numberline {5.1}System Operation}{64}{section.415}
-\contentsline {chapter}{\numberline {A}Gantt Chart}{71}{appendix.421}
-\contentsline {chapter}{\numberline {B}Circuit Diagrams}{73}{appendix.423}
-\contentsline {section}{\numberline {B.1}OV7670 Breakout Board Schematic}{73}{section.424}
-\contentsline {section}{\numberline {B.2}Il Matto and Dual Camera Schematic}{73}{section.426}
-\contentsline {section}{\numberline {B.3}The Columbus Circuit Diagram}{73}{section.428}
-\contentsline {chapter}{\numberline {C}PCB Design}{83}{appendix.435}
-\contentsline {section}{\numberline {C.1}PCB Top Side}{83}{section.436}
-\contentsline {section}{\numberline {C.2}PCB Bottom Side}{83}{section.438}
-\contentsline {chapter}{\numberline {D}Costings and Components}{87}{appendix.440}
-\contentsline {chapter}{\numberline {E}Contents of Files}{89}{appendix.443}
-\contentsline {chapter}{\numberline {F}Bitmap File Format}{93}{appendix.444}
-\contentsline {section}{\numberline {F.1}Bitmap File Format}{93}{section.445}
-\contentsline {chapter}{\numberline {G}Range Finding Derivations}{97}{appendix.448}
-\contentsline {section}{\numberline {G.1}Object is between the Cameras}{97}{section.450}
-\contentsline {section}{\numberline {G.2}Object is to the same side in each camera}{99}{section.459}
-\contentsline {section}{\numberline {G.3}Object is in front of a camera}{100}{section.471}
-\contentsline {chapter}{\numberline {H}Source Code}{103}{appendix.474}
-\contentsline {section}{\numberline {H.1}C Code for AVR}{103}{section.475}
-\contentsline {subsection}{\numberline {H.1.1}The Columbus Source Code}{103}{subsection.476}
-\contentsline {subsubsection}{\numberline {H.1.1.1}main.c}{103}{subsubsection.477}
-\contentsline {subsubsection}{\numberline {H.1.1.2}Bitmap.c}{113}{subsubsection.1022}
-\contentsline {subsubsection}{\numberline {H.1.1.3}CustomDevices.h}{114}{subsubsection.1070}
-\contentsline {subsubsection}{\numberline {H.1.1.4}ImageProcessor.h}{116}{subsubsection.1163}
-\contentsline {subsubsection}{\numberline {H.1.1.5}ImageProcessor.c}{117}{subsubsection.1201}
-\contentsline {subsubsection}{\numberline {H.1.1.6}MotorDriver.h}{123}{subsubsection.1535}
-\contentsline {subsubsection}{\numberline {H.1.1.7}MotorDriver.c}{124}{subsubsection.1597}
-\contentsline {subsubsection}{\numberline {H.1.1.8}OV7670.h}{131}{subsubsection.2019}
-\contentsline {subsubsection}{\numberline {H.1.1.9}OV7670.c}{137}{subsubsection.2356}
-\contentsline {subsubsection}{\numberline {H.1.1.10}OV7670.c}{146}{subsubsection.2855}
-\contentsline {subsubsection}{\numberline {H.1.1.11}PCA9542A.h}{150}{subsubsection.3037}
-\contentsline {subsubsection}{\numberline {H.1.1.12}PCA9542A.c}{150}{subsubsection.3074}
-\contentsline {subsubsection}{\numberline {H.1.1.13}SD\textunderscore Card.h}{151}{subsubsection.3124}
-\contentsline {subsubsection}{\numberline {H.1.1.14}SD\textunderscore Card.c}{152}{subsubsection.3162}
-\contentsline {subsubsection}{\numberline {H.1.1.15}TWI.c}{162}{subsubsection.3686}
-\contentsline {section}{\numberline {H.2}MATLAB Code}{163}{section.3733}
-\contentsline {subsection}{\numberline {H.2.1}Image Matching Algorithms}{163}{subsection.3734}
-\contentsline {subsubsection}{\numberline {H.2.1.1}Match.m}{163}{subsubsection.3735}
-\contentsline {subsubsection}{\numberline {H.2.1.2}MatchAll.m}{164}{subsubsection.3787}
+\contentsline {subsubsection}{\numberline {4.3.4.2}2D FFT Test}{57}{subsubsection.399}
+\contentsline {subsection}{\numberline {4.3.5}Conclusion}{60}{subsection.401}
+\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{63}{chapter.411}
+\contentsline {section}{\numberline {5.1}System Operation}{64}{section.417}
+\contentsline {chapter}{\numberline {A}Gantt Chart}{71}{appendix.423}
+\contentsline {chapter}{\numberline {B}Circuit Diagrams}{73}{appendix.425}
+\contentsline {section}{\numberline {B.1}OV7670 Breakout Board Schematic}{73}{section.426}
+\contentsline {section}{\numberline {B.2}Il Matto and Dual Camera Schematic}{73}{section.428}
+\contentsline {section}{\numberline {B.3}The Columbus Circuit Diagram}{73}{section.430}
+\contentsline {chapter}{\numberline {C}PCB Design}{83}{appendix.437}
+\contentsline {section}{\numberline {C.1}PCB Top Side}{83}{section.438}
+\contentsline {section}{\numberline {C.2}PCB Bottom Side}{83}{section.440}
+\contentsline {chapter}{\numberline {D}Costings and Components}{87}{appendix.442}
+\contentsline {chapter}{\numberline {E}Contents of Files}{89}{appendix.445}
+\contentsline {chapter}{\numberline {F}Bitmap File Format}{91}{appendix.446}
+\contentsline {section}{\numberline {F.1}Bitmap File Format}{91}{section.447}
+\contentsline {chapter}{\numberline {G}Range Finding Derivations}{95}{appendix.450}
+\contentsline {section}{\numberline {G.1}Object is between the Cameras}{95}{section.452}
+\contentsline {section}{\numberline {G.2}Object is to the same side in each camera}{97}{section.461}
+\contentsline {section}{\numberline {G.3}Object is in front of a camera}{98}{section.473}
+\contentsline {chapter}{\numberline {H}Source Code}{101}{appendix.476}
+\contentsline {section}{\numberline {H.1}C Code for AVR}{101}{section.477}
+\contentsline {subsection}{\numberline {H.1.1}The Columbus Source Code}{101}{subsection.478}
+\contentsline {subsubsection}{\numberline {H.1.1.1}main.c}{101}{subsubsection.479}
+\contentsline {subsubsection}{\numberline {H.1.1.2}Bitmap.c}{111}{subsubsection.1024}
+\contentsline {subsubsection}{\numberline {H.1.1.3}CustomDevices.h}{112}{subsubsection.1072}
+\contentsline {subsubsection}{\numberline {H.1.1.4}ImageProcessor.h}{114}{subsubsection.1165}
+\contentsline {subsubsection}{\numberline {H.1.1.5}ImageProcessor.c}{115}{subsubsection.1203}
+\contentsline {subsubsection}{\numberline {H.1.1.6}MotorDriver.h}{121}{subsubsection.1537}
+\contentsline {subsubsection}{\numberline {H.1.1.7}MotorDriver.c}{122}{subsubsection.1599}
+\contentsline {subsubsection}{\numberline {H.1.1.8}OV7670.h}{129}{subsubsection.2021}
+\contentsline {subsubsection}{\numberline {H.1.1.9}OV7670.c}{135}{subsubsection.2358}
+\contentsline {subsubsection}{\numberline {H.1.1.10}OV7670.c}{144}{subsubsection.2857}
+\contentsline {subsubsection}{\numberline {H.1.1.11}PCA9542A.h}{148}{subsubsection.3039}
+\contentsline {subsubsection}{\numberline {H.1.1.12}PCA9542A.c}{148}{subsubsection.3076}
+\contentsline {subsubsection}{\numberline {H.1.1.13}SD\textunderscore Card.h}{149}{subsubsection.3126}
+\contentsline {subsubsection}{\numberline {H.1.1.14}SD\textunderscore Card.c}{150}{subsubsection.3164}
+\contentsline {subsubsection}{\numberline {H.1.1.15}TWI.c}{160}{subsubsection.3688}
+\contentsline {section}{\numberline {H.2}MATLAB Code}{161}{section.3735}
+\contentsline {subsection}{\numberline {H.2.1}Image Matching Algorithms}{161}{subsection.3736}
+\contentsline {subsubsection}{\numberline {H.2.1.1}Match.m}{161}{subsubsection.3737}
+\contentsline {subsubsection}{\numberline {H.2.1.2}MatchAll.m}{162}{subsubsection.3789}
