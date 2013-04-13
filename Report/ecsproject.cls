@@ -159,25 +159,20 @@
     \vskip 60\p@
     \begin{center}
       \setlength{\parskip}{0pt}
-      {\large\textbf{\UNIVNAME}\par}
+      {\large\textbf{\deptname}\par}
       \bigskip
       {\normalsize \FACNAME \par}
       \smallskip
-      {\normalsize \deptname \par}
+      {\normalsize \UNIVNAME \par}
       \vfill
   \bigskip
       \bigskip
       \bigskip
-      \bigskip
-  {\large \bf \@title \par}
-      \bigskip
-      {\Large by \par}
-      \bigskip
-      \bigskip
       {\large \textbf{\authornames} \par}
-      \vfill
-      {\large A project report submitted for the}
-      {\large award of \par \degreename \par}
+	 {\large \@date \par}
+      \bigskip
+	 {\large \bf \@title \par}
+      \bigskip
       \vfill
       {\normalsize Supervisor: \supname \par}
       {\normalsize Examiner: \examname \par}
@@ -185,7 +180,8 @@
       \bigskip
       \bigskip
       \bigskip
-      {\large \@date \par}
+      {\large A project report submitted for the}
+      {\large award of \par \degreename \par}
       \bigskip
     \end{center}
     \par
