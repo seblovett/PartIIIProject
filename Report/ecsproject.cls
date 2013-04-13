@@ -176,7 +176,7 @@
       \bigskip
       {\large \textbf{\authornames} \par}
       \vfill
-      {\large A project progress report submitted for the}
+      {\large A project report submitted for the}
       {\large award of \par \degreename \par}
       \vfill
       {\normalsize Supervisor: \supname \par}

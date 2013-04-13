@@ -15,7 +15,7 @@ For initial development, the \textit{`Il Matto'} board, designed by Steve Gunn, 
 
 \section{Camera} \label{Section:Camera}
 
-The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components and a 24MHz clock mounted. The schematic for the device can be seen in appendix \ref{Chapter:AppendixA:CircuitDiagrams}. The camera has a small hardware modification, due to a PCB fault. Pin 8 of the buffer is lifted and connected to pin 6 of the header, which is disconnected from the PCB (see figure \ref{fig:OV7670:Mod}).
+The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components and a 24MHz clock mounted. The schematic for the device can be seen in appendix \ref{sch:OV7670}. The camera has a small hardware modification, due to a PCB fault. Pin 8 of the buffer is lifted and connected to pin 6 of the header, which is disconnected from the PCB (see figure \ref{fig:OV7670:Mod}).
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth /4]{Figures/OV7670_Back.jpg}
@@ -28,7 +28,7 @@ Original code for the camera operation was given by Steve Gunn which streamed co
 
 The camera uses a SCCB Interface \citep{SCCB_Interface} created by OmniVision. This is almost identical to the $I^{2}C$ Interface by Phillips and the two protocols are compatible. The original code for the camera used a software driven SCCB interface which was very slow and used up processing time. This was changed to make used of the built-in interrupt-driven $I^{2}C$ interface (named TWI in Atmel AVRs)\footnote{$I^{2}C$ , SCCB and TWI are all the same but are called differently due to Phillips owning the right to the name ``$I^{2}C$"}. This communication bus is used to write to the control registers of the camera to set up the signals, image format and image size. The set up procedure is used from the code given and sets the camera to function as explained below.
 
-RGB565 is a 16 bit pixel representation where bits 0-4, 5-10 and 11-15, represent the blue, green and red intensity respectively (see figure \ref{fig:RGB565}). This is a compact way of storing data but only allows 65536 colours. Greys can also appear to be slightly green due to the inconsistent colour ratio of the green field. This representation was used as it is a compact format, easily converted to grey scale and is widely used.
+RGB565 is a 16 bit pixel representation where bits 0-4, 5-10 and 11-15, represent the blue, green and red intensity respectively (see figure \ref{fig:RGB565}). This is a compact way of storing data but only allows 65536 colours. Greys can also appear to be slightly green due to the inconsistent colour ratio of the green field. This representation was used as it is a compact format and easily converted to grey scale.
 \begin{figure}
 \includegraphics[width = \textwidth]{./Figures/RGB565.png}
 \caption{RGB565 pixel format}
@@ -37,13 +37,13 @@ RGB565 is a 16 bit pixel representation where bits 0-4, 5-10 and 11-15, represen
 
 The camera must use a high speed clock in order to ensure the pixels obtained are from the same time. This makes it difficult for an ATMega (typically clocked at 8-12MHz) to be able to respond to the camera quick enough. This highlights the necessity for a FIFO Buffer. 
 
-The OV7670 is set up so that the VSYNC pin goes low at the beginning of every frame of data, and HREF is high when the data being output is valid. The pixel data is then clocked out on every rising edge of PCLK. To control the buffer, WEN (write enable) is NAND with the HREF signal. When both are high, the write enable to the buffer will be active and the data will be clocked in by PCLK. 
+The OV7670 is set up so that the VSYNC pin goes low at the beginning of every frame of data, and HREF is high when the output data is valid. The pixel data is then clocked out on every rising edge of PCLK. To control the buffer, WEN (write enable) is logically NAND with the HREF signal. When both are high, the write enable to the buffer will be active and the data will be clocked in by the camera into the buffer. 
 
-In order to acquire a full image, WEN must be high between two consecutive VSYNC pulses. VSYNC is set up to interrupt the AVR and a small state machine is implemented to count VSYNC pulses and control WEN correctly. After the WEN signal is pulsed, the buffer will contain all the valid pixel data.
+In order to store a full image into the buffer, WEN must be high between two consecutive VSYNC pulses. VSYNC is set up to interrupt the AVR and a small state machine is implemented to count VSYNC pulses and control WEN correctly. After the WEN signal is pulsed, the FIFO buffer will contain all the valid pixel data.
 
-To obtain the data from the buffer, the AVR sets output enable low and pulses the read clock. Valid data is available on the data port while RCLK is high. All the data is then read half a pixel at a time (the endianness of the data can be set up on the camera). 
+To obtain the image data from the FIFO buffer, the AVR sets output enable low and pulses the read clock. Valid data is available on the data port while RCLK is high. All the data is then read 8 bits at a time.
 
-After the data has been read, the buffer is reset by asserting the read and write reset signals (RRST and WRST) for at least one clock cycle of the relevant clock. The entire operation can be seen in figure \ref{fig:ov_Capture}.
+After the data has been read, the buffer is reset by asserting the read and write reset signals (RRST and WRST) for at least one clock cycle of RCLK or PCLK respectively. The entire operation can be seen in figure \ref{fig:ov_Capture}.
 \begin{figure}
 \includegraphics[width = \textwidth]{./Figures/ov7670_im_capture.png}
 \caption{Signals generated to control the OV7670 capture and read}
@@ -56,7 +56,7 @@ Difficulties arose at this point with the storage of the data. The ATMega644P ha
 Firstly, data was sent to a desktop computer by USART. A simple program was written in C\# to receive and store all the data as a Bitmap image. This method was slow, taking around 30 seconds to transmit one uncompressed image. 
 
 The second option was to use extra memory connected to the microcontroller. An SD card was used as FAT file system so the memory card is usable on a computer. Text log files were also written to aid debugging. This is discussed in section \ref{sect:SDCard}. 
-
+\inote{From Tom: Sorry for so many notes, you should be able to see my points of understanding through that, it is good and I pretty much get it (I wish we knew for D4 haha) but there are a few ambiguities and stuff that don't help. Maybe a little diagram with Camera, FIFO, and Microcontroller on it showing the signals between them would help aswell, but it isn't that necessary.}
 \subsection{Dual Camera Operation}
 In order for stereovision to be successful, two cameras separated by a horizontal distance ($B$) will need to be driven at the same time to obtain photos within a small time frame of one another.
 
@@ -73,7 +73,9 @@ Operation to read an image is identical to using one camera. The code was duplic
 
 \section{SD Card} \label{sect:SDCard}
 
-An SD card was chosen due to its small size, low cost and a large data storage. Smaller variants also exist, the mini and micro SD. The cards work using an SPI bus which can be used for other devices within the system as well. For the prototyping stage, the FATFS library \citep{FATFS} was used. This supplied all basic read and write operations for the SD card. For the AT32, the ASF supplied a more comprehensive FAT library and was used in the final product.
+An SD card was chosen due to its small size, low cost and a large data storage. 
+%Smaller variants also exist, the mini and micro SD. 
+The cards work using an SPI bus which can be used for other devices within the system as well. For the prototyping stage, the FATFS library \citep{FATFS} was used. This supplied all basic read and write operations for the SD card. For the AT32, the ASF supplied a more comprehensive FAT library and was used in the final product.
 
 \subsection{Storing Images}
 
@@ -99,7 +101,8 @@ Bits per Pixel		&	8, 16, 24 or 32	&	24				&	24, 32 or 48 			& 	24, but only 256 
 
 It is clear that the best choice for images would be either PNG or JPEG. However, these require more computational time to compress the image into the correct format. To avoid compression, and thereby save processing time, bitmap was chosen at the expense of using more memory. The data in a bitmap image is also stored in RGB format so can be read back easily when processing the image. Appendix \ref{Chapter:AppendixB:BMPFile} shows the make up of a Bitmap File that was used.
 
-By writing the image in this format, they are then able to be opened on any operating system. This aids debugging and allows the prototyping of image algorithms in a more powerful environment. Figure \ref{ExampleImage} shows a photo taken by the OV7670 and stored on a SD card. The quality is not professional, but all features can be seen. The colour is accurate and large text can be read at a small distance. Though the images were able to be opened in most programs, MATLAB gave errors when reading the bitmaps. This could be avoided by opening and resaving the images in MS Paint.
+%By writing the image in this format, they are then able to be opened on any operating system. 
+Storing the image as a Bitmap enables the file to be opened on a range of operating systems. This aids debugging and allows the prototyping of image algorithms in a more powerful environment. Figure \ref{ExampleImage} shows a photo taken by the OV7670 and stored on a SD card. The quality is not professional, but all features can be seen. The colour is accurate and large text can be read at a small distance. Though the images were able to be opened in most programs, MATLAB gave errors when reading the bitmaps. This could be avoided by opening and resaving the images as a Bitmap in MS Paint.
 
 \begin{figure}
 \begin{center}
@@ -111,7 +114,7 @@ By writing the image in this format, they are then able to be opened on any oper
 
 \section{The Prototypes}
 
-The first prototype made can be seen in figure \ref{fig:Prototype}. This obtained two images from both cameras, and stored them to the SD Card. The cameras shared the data bus and a \itc multiplexer was used. An ATMega168 was added to the system as no pins remained for debugging on the \textit{Il Matto} board. The pinout for the 644 can be seen in table \ref{table:644Pin}. The ATMega168 used the already existing \itc bus and acted as a port extender - button inputs were read and status LEDs were written to. This enabled a debug output for the system. The prototype worked well and proved the circuit worked. 
+The first prototype made can be seen in figure \ref{fig:Prototype}. This obtained two images from both cameras, and stored them to the SD Card. The cameras shared the data bus and a \itc multiplexer was used. An ATMega168 microcontroller was added to the system as no pins remained for debugging on the \textit{Il Matto} board. The pinout for the 644 can be seen in table \ref{table:644Pin}. The ATMega168 used the already existing \itc bus and acted as a port extender - button inputs were read and status LEDs were written to. This enabled a debug output for the system. The prototype worked well and proved the circuit worked. 
 
 A second prototype was made to stream the images to a TFT screen. This can be seen in figure \ref{fig:Prototype:TFT}. This provided the ability to check the cameras worked, and gave a live stream so the lens could be focused to give a clear image. The refresh rate of a full image was slow ($\approx 0.6fps$), but the system was successful.
 
@@ -173,7 +176,8 @@ A similar method to the way a bike measures speed was used. The wheel's rubber a
 
 \subsection{Firmware Development}
 
-To move a distance, the number of times a tab passes the sensor, a count, must be detected. The firmware sets up a PWM output and has set up and execute functions. A low duty cycle PWM signal was used to drive the motors slowly. This removed the need for a speed controller and meant any overshoot of the motors during breaking would be low. Straight line movement and spot rotations were implemented. More complex movements, for example arcs, would require more accurate tachometers and are not discussed here. 
+%To move a distance, the number of times a tab passes the sensor, a count, must be detected.
+To enable the robot to move a set distance, the number of wheel rotations must be counted. This is achieved by incrementing a count every time a tab is detected. The firmware sets up a PWM output and has set up and execute functions. A low duty cycle PWM signal was used to drive the motors slowly. This removed the need for a speed controller and meant any overshoot of the motors during breaking would be low. Straight line movement and spot rotations were implemented. More complex movements, for example arcs, would require more accurate tachometers and are left for further work. %not discussed here. 
 
 \subsubsection{Set Up}
 The set up calculates the number of counts needed, and sets the direction of the wheels. Each motor driver has two inputs to control direction and table \ref{table:MotorDirection} shows the inputs needed to generate the two movements - straight line and rotational. 
@@ -223,7 +227,7 @@ As the voltage swing on the collector of the phototransistor did not reach near 
 
 The ADC could be used to continually sample the collector voltage and detect dips in the signal. This method has the advantage of a variable threshold and the ability to filter noise. The operation, however, would be complex to implement in code. 
 
-An alternative was to use an analogue comparator. The UC3C has two on chip comparator interfaces, each with two comparators. They are a high gain operational amplifier with added options of hysteresis and the ability to interrupt amongst other attributes. The comparators can use two analogue inputs or use the internal DACs as inputs. Potentiometers were used to set the reference voltage externally. Using the comparators had the advantage of returning a boolean value of if the collector voltage is higher or lower than the threshold voltage. The detection is of a tab was then simpler. This method was decided on for an easier implementation.
+An alternative was to use an analogue comparator. The UC3C has two on chip comparator interfaces, each with two comparators. They are a high gain operational amplifier with added options of hysteresis and the ability to interrupt amongst other attributes. The comparators can use two analogue inputs or use the internal DACs as inputs. Potentiometers were used to set the reference voltage externally. Using the comparators had the advantage of returning a boolean value of if the collector voltage is higher or lower than the threshold voltage. The detection of a tab was then simpler. This method was chosen for an easier implementation.
 
 The first method implemented was to use the analogue comparators to interrupt when the collector voltage crossed the threshold. Both wheels used the same comparator interface and therefore ran the same ISR when triggered. The ISR then had to read the output of the comparators and decrement the relevant counter for the correct wheel. This method had many downfalls. First, it was not possible to know which comparator caused the interrupt. If the left wheel triggered the interrupt while the right was below the threshold, both left and right counters would be decremented. This caused a large error each time it occurred. Another problem was noise; occasionally, the lowering voltage would cause multiple interrupts each time. This problem was reduced by setting the hysteresis on the comparators but did not solve the problem completely. 
 
@@ -247,7 +251,9 @@ A second approach utilised a simple state machine and software based hysteresis 
 
  
 
-The final code can be seen in appendix \ref{Chapter:AppendixC:Code}. \textit{Motor\_Init} method must be called before operation can occur. This sets up the PWM and analogue comparators. Methods \textit{Motors\_Move} and \textit{Motors\_Rotate} are the methods that can be called to move in a straight line or rotate on the spot. They both take an input which is a signed integer of either the distance to move (in millimetres) or the angle to rotate (in degrees, positive is a clockwise movement). They both return the actual movement distances, due to the low resolution of the system.
+%The final code can be seen in appendix \ref{Chapter:AppendixC:Code}. 
+%\textit{Motor\_Init} method must be called before operation can occur. 
+The \textit{Motor\_Init} method must be called before \textit{Motor\_Execute} can be performed. This sets up the PWM and analogue comparators. Methods \textit{Motors\_Move} and \textit{Motors\_Rotate} are the methods that can be called to move in a straight line or rotate on the spot. They both take an input which is a signed integer of either the distance to move (in millimetres) or the angle to rotate (in degrees, positive is a clockwise movement). They both return the actual movement distances, due to the low resolution of the system.
 
 
 \subsection{Testing}\label{Section:MotorTest}
@@ -366,18 +372,19 @@ Pin & A & B & C & D \\ \hline
 
 The circuit diagram for Revision A can be seen in section \ref{sch:Columbus:CircuitDiagram}. The schematic for the SDRAM and values and locations of decoupling capacitors were used from the schematic of the UC3C-EK development board \citep{Atmel:UC3CEK}. 
 \subsection{PCB Design}
-The PCB was designed using EAGLE CAD Software. A four layer board was decided to be used to reduce the number of tracks and more easily supply power and ground to the devices. Layer two is a $3.3V$ plane and layer three is a ground plane. A ground plane is also on the top and bottom layers to help eliminate any ground bounce that could occur. 
+The PCB was designed using EAGLE CAD Software. A four layer board was decided upon to reduce the number of tracks and more easily supply power and ground to the devices. Layer two is a $3.3V$ plane and layer three is a ground plane. A ground plane is also on the top and bottom layers to help eliminate any ground bounce that could occur. 
 
 The SDRAM uses the EBI protocol. In high speed systems, care is often taken to equalise track lengths \citep{liu2004equalization}. The UC3C maximum clock frequency is 33MHz (with no wait states), which is not fast enough to cause any track equalisation problems. Care, however, was taken on the USB lines to ensure correct impedance and the tracks lengths matched to each other.
 
-Tracks were routed in order of priority, starting with the UC3C, SDRAM and cameras. All other devices were then routed (\itc multiplexer, SD card, motor drivers etc). As a precaution, spare pins from the UC3C were routed to headers (J8 and J9, so that additions could be done if a pinout or connection was found to be incorrect. UART, \itc and SPI connections were routed to headers J7, J4 and J5 respectively so logic analysers and a COM Port could be attached easily for debugging, or so that extra devices could be added onto the respective protocols for future developments. 
+Tracks were routed in order of priority, starting with the UC3C, SDRAM and cameras. All other devices were then routed (\itc multiplexer, SD card, motor drivers etc). As a precaution, spare pins from the UC3C were routed to headers (J8 and J9), so that additions could be done if a pinout or connection was found to be incorrect. UART, \itc and SPI connections were routed to headers J7, J4 and J5 respectively so logic analysers and a COM Port could be attached easily for debugging, or so that extra devices could be added onto the respective protocols for future developments. 
 
 Passives used were all surface mount of either 0603 or 1206 size to save space on the board. All headers used were 0.1'' spaced for easy connections and a mini B USB socket was added to power the robot, program via the bootloader or so that the robot could potentially act as a USB device. 
 
-The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and headers were added to connect the motors to. The optosensors were positioned such that they could be mounted directly on the PCB and be in the correct position to sense the wheels. Mounting holes were also added onto the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in Appendix \ref{Appendix:Costings}
+The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and headers were added to connect the motors to. The optosensors were positioned such that they could be mounted directly on the PCB and be in the correct position to sense the wheels. Mounting holes were also added onto the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in Appendix \ref{Appendix:Costings}.
 
+The Eagle CAD Diagram of the PCB can be seen in Appendix \ref{Appendix:PCB}. The PCB was manufactured by \cite{PCBCart}. The PCB cost \pounds 205 to manufacture and ship five PCBs. A photo of the PCB can be seen in figure \ref{fig:PCB:Bare}. 
 
-Finally, the name \textit{``The Columbus''} was decided on as the original application for the project was a mapping robot that would search out an unknown area, so the robot was named after Christopher Columbus who explored and navigated parts of the American continents which were unknown at the time. The Eagle CAD Diagram of the PCB can be seen in Appendix \ref{Appendix:PCB}. The PCB was manufactured by \cite{PCBCart}. The PCB cost \pounds 205 to manufacture and ship five PCBs. A photo of the PCB can be seen in figure \ref{fig:PCB:Bare}. 
+Finally, the name \textit{``The Columbus''} was decided on as the original application for the project was a mapping robot that would search out an unknown area, so the robot was named after Christopher Columbus who explored and navigated parts of the American continents which were unknown at the time. 
 
 \begin{figure}
 \centering
@@ -457,7 +464,7 @@ During the build and test of the PCB, a number of faults were found. Each is exp
 \subsubsection{TCRT1010 Footprint}
 The holes in the footprint for the optosensor were not large enough. This was a minor problem as the sensor was soldered in a surface mount style. This didn't affect the location of the sensor so had no other implications other than the connection being weaker than it should be. 
 \subsubsection{SDRAM Footprint}
-The SDRAM footprint made was done exactly to the specification of the pad size and locations with no consideration for soldering. This meant the chip fits exactly on to the footprint and made soldering difficult as pads had to be preloaded with solder and the device's pins were heated and bound to the solder. It also put the device at risk as more heat had to be used that usually necessary. Figure \ref{fig:SDRAM_Err} shows the SDRAM chip slightly offset against the footprint. It can be seen that there is no extra space on the pad to be able to easily solder the device. Though this made building difficult and increased soldering errors, it had no impact on the operation of the device.
+The SDRAM footprint made was done exactly to the specification of the pad size and locations with no consideration for soldering. This meant the chip fits exactly on to the footprint and made soldering difficult as pads had to be preloaded with solder and the device's pins were heated and bound to the solder. It also put the device at risk as more heat had to be used that usually necessary. Figure \ref{fig:SDRAM_Err} shows the SDRAM chip slightly offset against the footprint. It can be seen that there is no extra space on the pad to be able to easily solder the device. Though this made building difficult and increased soldering errors, it had no impact on the operation of the device. To avoid reproducing the problem, future PCB designs should use existing footprints where available, and consider the design from a practical assembly point of view.
 
 \begin{figure}
 \centering
@@ -466,7 +473,8 @@ The SDRAM footprint made was done exactly to the specification of the pad size a
 \label{fig:SDRAM_Err}
 \end{figure}
 
-To avoid this, existing footprints could be used from other libraries, or double checking the footprints made. The problem meant extra care during soldering had to be taken but has not impeded the operation of the device. 
+
+%To avoid this, existing footprints could be used from other libraries, or double checking the footprints made. The problem meant extra care during soldering had to be taken but has not impeded the operation of the device. 
 
 \subsubsection{SDRAM Chip Select}
 The code was prototyped on the Atmel UC3C-EK development board prior to the PCB arriving. This used chip select 1 for the SDRAM and the PCB was designed using chip select 0. When the PCB was built, the code did not work. To diagnose this problem, the control lines of the SDRAM were probed with a logic analyser. On the UC3C-EK, the bus was busy with refresh cycles outside of SDRAM access. On the Columbus, no activity was seen. 
@@ -478,7 +486,7 @@ This fault was caused by not reading the datasheet carefully and ignoring a prov
 \subsubsection{SDRAM Data Line Resistors}
 Once the chip select problem was solved, data returned was unreliable. The SDRAM is word (32 bit) addressed, but accessed in 16 bits. Each SDRAM access, therefore, consisted of two access cycles. 
 Upon investigation of this problem, the 14th, 15th, 30th and 31st (top two bits of each 16 bit access) seemed to read as a 1 the majority of the time. This result wasn't repeatable and sometimes returned correct data. The other bits of the data were always correct. Table \ref{table:SDRAM_Err} shows some examples of the problematic data bits. The data written should match the data read back. 
-
+\inote{Maybe a picture or a diagram would explain the problem more clearly.}
 \begin{table}[!ht]
 \caption{A table showing examples of the incorrect data returned from the SDRAM}
 \label{table:SDRAM_Err}
@@ -499,7 +507,7 @@ Interrupt line 1 was easily configured and worked as expected. However, interrup
 
 The external interrupt 4 pin was wired to Junction 8 on the PCB. A wire was attached to the camera's VSYNC line and attached to the relevant pin on the header. The operation was then easily obtained and the VSYNC line triggered correctly.
 
-This issues would have been avoided with more understanding of the device before hand and checking the datasheet. The patch can also be seen in figure \ref{fig:PCB:Bottom}.
+This issue would have been avoided with more understanding of the device before hand and checking the datasheet. The patch can also be seen in figure \ref{fig:PCB:Bottom}.
 
 
 \subsubsection{Motor Driver Footprint}
@@ -513,7 +521,9 @@ An error was made in creating the device for the TB6593FNG Motor Driver in EAGLE
 \label{fig:Motor:Error}
 \end{figure}
 
-To solve this, pins 7 and 14 were lifted and removed so that output 1 and output 2 were not connected together. The devices were not damaged in the process of testing this and the motors functioned correctly after the modification. Double checking the footprints made against the datasheet would have avoided this problem. No impact to the operation of the drivers has been seen, but the patch may hinder the devices ability to sink current to the motors when driving at higher speeds. 
+To solve this, pins 7 and 14 were lifted and removed so that output 1 and output 2 were not connected together. The devices were not damaged in the process of testing this and the motors functioned correctly after the modification. 
+%Double checking the footprints made against the datasheet would have avoided this problem. 
+No impact to the operation of the drivers has been seen, but the patch may hinder the devices ability to sink current to the motors when driving at higher speeds. 
 
 \subsection{PCB Conclusions}
 A number of faults were made in the PCB design. They are:

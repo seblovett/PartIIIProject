@@ -13,7 +13,7 @@ The research for this project was split into three sections:
 \end{enumerate}
 
 Hardware and firmware research will be discussed in this section. Image processing is looked at in detail in chapter \ref{Chapter:InvestigationVision}.
-\section{Hardware Research}
+\section{Hardware Research}\label{Research:Hardware}
 %\inote{Talk about why I chose to develop with AVRs, comparison with other uControllers. Why I used the OV7670 Camera etc etc}
 \subsection{Microcontrollers}\label{Research:Microcontrollers}
 The budget for the design was \pounds 80 (not including PCB). The choice of microcontroller was an important one, as a compromise between cost, power and usability had to be made. There are two main brands of microcontrollers present in the consumer market: ARM and AVRs.\\ %and PICs. 
@@ -54,8 +54,7 @@ Timers					&	4					&	3 16-bit			& 7 16-bit, 8 8-bit & 2 8-bit, 1 16-bit \\
 \section{Firmware}
 \subsection{Camera}
 
-The camera used is the OV7670 by OmniVision. Steve Gunn provided source code for use on the Il Matto development board, which streamed video from the camera to a colour TFT screen. The camera is supplied on a small breakout board with a FIFO buffer. The camera operation is discussed in section \ref{Section:Camera}. Many implementations of firmware for this camera exist across different devices. 
-
+The camera used is the OV7670 by OmniVision. Steve Gunn provided source code for use on the Il Matto development board, which streamed video from the camera to a colour TFT screen. The camera is supplied on a small breakout board with a FIFO buffer. Many implementations of firmware for this camera exist across different devices. The camera operation is discussed in section \ref{Section:Camera}. 
 \subsection{Atmel Software Framework}
 
 Atmel offer a software framework which contains basic code and device drivers for many of their XMega and AT32 devices \citep{Atmel:ASF}. There are also many AVR application notes which provide explanations and example code for protocols like \itc , SPI and timers. These application notes are aimed at older devices like the ATTiny and ATMega. Both the ASF and the application notes are available online and are a good source of code for basic protocols.
