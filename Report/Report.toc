@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {2.1.1}Microcontrollers}{5}{subsection.22}
 \contentsline {section}{\numberline {2.2}Firmware}{6}{section.25}
 \contentsline {subsection}{\numberline {2.2.1}Camera}{6}{subsection.26}
-\contentsline {subsection}{\numberline {2.2.2}Atmel Software Framework}{7}{subsection.27}
+\contentsline {subsection}{\numberline {2.2.2}Atmel Software Framework}{8}{subsection.27}
 \contentsline {chapter}{\numberline {3}Hardware and Firmware Development}{9}{chapter.28}
 \contentsline {section}{\numberline {3.1}Camera}{9}{section.29}
 \contentsline {subsection}{\numberline {3.1.1}Single Camera Operation}{9}{subsection.31}
@@ -15,8 +15,8 @@
 \contentsline {section}{\numberline {3.2}SD Card}{13}{section.37}
 \contentsline {subsection}{\numberline {3.2.1}Storing Images}{13}{subsection.38}
 \contentsline {section}{\numberline {3.3}The Prototypes}{14}{section.41}
-\contentsline {section}{\numberline {3.4}Motor Driver Development}{17}{section.45}
-\contentsline {subsection}{\numberline {3.4.1}Hardware}{17}{subsection.46}
+\contentsline {section}{\numberline {3.4}Motor Driver Development}{15}{section.45}
+\contentsline {subsection}{\numberline {3.4.1}Hardware}{15}{subsection.46}
 \contentsline {subsection}{\numberline {3.4.2}Firmware Development}{17}{subsection.49}
 \contentsline {subsubsection}{\numberline {3.4.2.1}Set Up}{18}{subsubsection.50}
 \contentsline {subsubsection}{\numberline {3.4.2.2}Execute}{19}{subsubsection.55}
@@ -24,14 +24,14 @@
 \contentsline {subsection}{\numberline {3.4.4}Conclusion}{23}{subsection.63}
 \contentsline {section}{\numberline {3.5}PCB Development}{24}{section.66}
 \contentsline {subsection}{\numberline {3.5.1}Circuit Design}{24}{subsection.67}
-\contentsline {subsection}{\numberline {3.5.2}PCB Design}{24}{subsection.70}
-\contentsline {subsection}{\numberline {3.5.3}PCB Testing}{27}{subsection.75}
-\contentsline {subsubsection}{\numberline {3.5.3.1}UART Test}{29}{subsubsection.76}
+\contentsline {subsection}{\numberline {3.5.2}PCB Design}{26}{subsection.70}
+\contentsline {subsection}{\numberline {3.5.3}PCB Testing}{28}{subsection.75}
+\contentsline {subsubsection}{\numberline {3.5.3.1}UART Test}{28}{subsubsection.76}
 \contentsline {subsubsection}{\numberline {3.5.3.2}SD Card Test}{29}{subsubsection.90}
 \contentsline {subsubsection}{\numberline {3.5.3.3}LED Test}{31}{subsubsection.165}
 \contentsline {subsubsection}{\numberline {3.5.3.4}SDRAM Test}{31}{subsubsection.166}
 \contentsline {subsubsection}{\numberline {3.5.3.5}$I^{2}C$ Test}{32}{subsubsection.210}
-\contentsline {subsubsection}{\numberline {3.5.3.6}Camera Test}{34}{subsubsection.271}
+\contentsline {subsubsection}{\numberline {3.5.3.6}Camera Test}{33}{subsubsection.271}
 \contentsline {subsubsection}{\numberline {3.5.3.7}Motor Driver Test}{34}{subsubsection.296}
 \contentsline {subsection}{\numberline {3.5.4}PCB Faults}{35}{subsection.306}
 \contentsline {subsubsection}{\numberline {3.5.4.1}TCRT1010 Footprint}{35}{subsubsection.307}
@@ -39,7 +39,7 @@
 \contentsline {subsubsection}{\numberline {3.5.4.3}SDRAM Chip Select}{35}{subsubsection.310}
 \contentsline {subsubsection}{\numberline {3.5.4.4}SDRAM Data Line Resistors}{36}{subsubsection.311}
 \contentsline {subsubsection}{\numberline {3.5.4.5}Camera Interrupt Line}{37}{subsubsection.314}
-\contentsline {subsubsection}{\numberline {3.5.4.6}Motor Driver Footprint}{38}{subsubsection.315}
+\contentsline {subsubsection}{\numberline {3.5.4.6}Motor Driver Footprint}{37}{subsubsection.315}
 \contentsline {subsection}{\numberline {3.5.5}PCB Conclusions}{38}{subsection.317}
 \contentsline {section}{\numberline {3.6}Conclusions}{39}{section.321}
 \contentsline {chapter}{\numberline {4}Vision Algorithms}{41}{chapter.322}
@@ -53,8 +53,8 @@
 \contentsline {subsection}{\numberline {4.2.1}Derivations}{45}{subsection.340}
 \contentsline {subsection}{\numberline {4.2.2}Summary}{45}{subsection.344}
 \contentsline {subsection}{\numberline {4.2.3}Field of View}{46}{subsection.350}
-\contentsline {subsection}{\numberline {4.2.4}Testing}{47}{subsection.354}
-\contentsline {subsection}{\numberline {4.2.5}Conclusion}{49}{subsection.360}
+\contentsline {subsection}{\numberline {4.2.4}Testing}{46}{subsection.354}
+\contentsline {subsection}{\numberline {4.2.5}Conclusion}{48}{subsection.360}
 \contentsline {section}{\numberline {4.3}Fourier Transform}{50}{section.363}
 \contentsline {subsection}{\numberline {4.3.1}Background Research and the FFT}{50}{subsection.364}
 \contentsline {subsection}{\numberline {4.3.2}Two Dimensional Fast Fourier Transform}{53}{subsection.377}

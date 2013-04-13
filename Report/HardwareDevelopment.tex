@@ -88,16 +88,13 @@ Many image formats are common, such as Joint Photographic Expert Group (JPEG), P
 
 \begin{table}
 \centering
-\begin{tabular}{|p{3cm}| p{2cm}|p{2cm}|p{2cm}|p{2cm}|} \hline
-			&	Bitmap 		& 	JPEG			 	&	PNG				& 	GIF \\ \hline
-Extension 		& 	*.bmp 		&  	*.jpg /*.jpeg 		& 	*.png				& 	*.gif \\ \hline
-Compression 	& 	No 			& 	Lossless  and Lossy		&	Lossless ZIP			&	Lossy	\\\hline
+\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}} \toprule
+			&	Bitmap 		& 	JPEG			 	&	PNG				& 	GIF \\ \toprule
+Extension 		& 	*.bmp 		&  	*.jpg /*.jpeg 		& 	*.png				& 	*.gif \\ \midrule
+Compression 	& 	No 			& 	Lossless  and Lossy		&	Lossless ZIP			&	Lossy	\\ \midrule
 File Size of 320 by 
-240 pixel Image (kB) &	225			&	20				&	23				&	24 \\\hline
-Bits per Pixel		&	8, 16, 24 or 32	&	24				&	24, 32 or 48 			& 	24, but only 256 Colours \\
-
-
-\hline
+240 pixel Image (kB) &	225			&	20				&	23				&	24 \\ \midrule
+Bits per Pixel		&	8, 16, 24 or 32	&	24				&	24, 32 or 48 			& 	24, but only 256 Colours \\ \bottomrule
 \end{tabular}
 \caption{A table comparing different image formats available \citep{ImageComparison}}
 \label{ImageFormats}
@@ -124,18 +121,16 @@ A second prototype was made to stream the images to a TFT screen. This can be se
 
 \begin{table}
 \centering
-\begin{tabular}{|c|c|c|c|c|}\hline
-	& 	Port A 	& 	Port B 			& 	Port C 				& 	Port D 		\\ \hline
-0	&	Data 0	&	SD Write Protect&	\itc - SCL			&	No Connection	\\
-1	&	Data 1	&	SD Card Detect	&	\itc - SDA			&	No Connection	\\
-2	&	Data 2	&	USB Data Plus	&	Read Clock 1		&	VSync 0			\\
-3	&	Data 3	&	USB Data Minus	&	Read Reset 1		&	VSync 1			\\
-4	&	Data 4	&	SPI Chip Select	&	Write Enable 1		&	Read Clock 0	\\
-5	&	Data 5	&	SPI	MOSI 		&	Write Reset 1		&	Read Reset 0	\\
-6	&	Data 6	&	SPI MISO		&	Output Enable 0		&	Write Enable 0	\\
-7	&	Data 7	&	SPI Clock		&	Output Enable 1		&	Write Reset 0	\\
-\hline
-
+\begin{tabular}{ccccc}\toprule
+Pin	& 	Port A 	& 	Port B 			& 	Port C 				& 	Port D 		\\ \toprule
+0	&	Data 0	&	SD Write Protect&	\itc - SCL			&	No Connection	\\ \midrule
+1	&	Data 1	&	SD Card Detect	&	\itc - SDA			&	No Connection	\\ \midrule
+2	&	Data 2	&	USB Data Plus	&	Read Clock 1		&	VSync 0			\\ \midrule
+3	&	Data 3	&	USB Data Minus	&	Read Reset 1		&	VSync 1			\\ \midrule
+4	&	Data 4	&	SPI Chip Select	&	Write Enable 1		&	Read Clock 0	\\ \midrule
+5	&	Data 5	&	SPI	MOSI 		&	Write Reset 1		&	Read Reset 0	\\ \midrule
+6	&	Data 6	&	SPI MISO		&	Output Enable 0		&	Write Enable 0	\\ \midrule
+7	&	Data 7	&	SPI Clock		&	Output Enable 1		&	Write Reset 0	\\ \bottomrule
 \end{tabular}
 \caption{Pin Connections of the ATMega644P for Dual Camera Operation.}
 \label{table:644Pin}
@@ -190,14 +185,14 @@ The set up calculates the number of counts needed, and sets the direction of the
 \centering
 \caption{A table to show the inputs to the motor drivers to set the movement}
 \label{table:MotorDirection}
-\begin{tabular}{|c|c|c|c|c|c|c|}\cline{2-7}
-\multicolumn{1}{c|}{ }&\multicolumn{3}{|c|}{Motor 1}&\multicolumn{3}{|c|}{Motor 2}\\\cline{2-7}
-\multicolumn{1}{c|}{ }	&	STBY 	&	IN1	& IN2 	& STBY 	& IN1 	& IN2	\\ \hline
-Stop					&	0		&	X	&	X	&	0	&	X	&	X	\\
-Forward					&	1		&	1	&	0	&	1	&	1	&	0	\\	
-Backward				&	1		&	0	&	1	&	1	&	0	&	1	\\
-Clockwise				&	1		&	1	&	0	&	1	&	0	&	1	\\
-Anti-clockwise 			&	1		&	0	&	1	&	1	&	1	&	0	\\\hline
+\begin{tabular}{ccccccc}\toprule
+\multicolumn{1}{c}{ }&\multicolumn{3}{c}{Motor 1}&\multicolumn{3}{c}{Motor 2}\\ \cmidrule(r){2-4} \cmidrule(l){5-7}
+\multicolumn{1}{c}{ }	&	STBY 	&	IN1	& IN2 	& STBY 	& IN1 	& IN2	\\ \toprule
+Stop					&	0		&	X	&	X	&	0	&	X	&	X	\\ \midrule
+Forward					&	1		&	1	&	0	&	1	&	1	&	0	\\ \midrule
+Backward				&	1		&	0	&	1	&	1	&	0	&	1	\\ \midrule
+Clockwise				&	1		&	1	&	0	&	1	&	0	&	1	\\ \midrule
+Anti-clockwise 			&	1		&	0	&	1	&	1	&	1	&	0	\\\bottomrule
 \end{tabular}
 
 \end{table}
@@ -269,17 +264,17 @@ To test the motor system, different distances were given to the movement method.
 \begin{table}
 \caption{Results of Motor Distance Test}
 \label{table:results:motor:distance}
-\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|} \hline
-Distance Specified (mm) &	Number of Counts Calculated	& 	Counts $\times$ Resolution (mm)	& 	Average Measured Distance Moved (mm)	&	Error (\%) \\ \hline
-50						&	4							&	46.4							&	47.25									&	1.83		\\
-75						&	6							&	69.6							&	70.75									&	1.65		\\
-100						&	8							&	92.8							&	97.0									&	4.52		\\
-120						&	10							&	116.0							&	113.25									&	2.37		\\
-150						&	12							&	139.2							&	141.0									&	1.29		\\
-170						&	14							&	162.4							&	161.5									&	0.55		\\
-200						&	17							&	197.2							&	201.5									&	2.18		\\
-250						&	21							&	243.6							&	244.5									&	0.37		\\
-300						&	25							&	290.0							&	290.75									&	0.26		\\ \hline
+\begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}} \toprule
+Distance Specified (mm) &	Number of Counts Calculated	& 	Counts $\times$ Resolution (mm)	& 	Average Measured Distance Moved (mm)	&	Error (\%) \\ \toprule
+50						&	4							&	46.4							&	47.25									&	1.83		\\ \midrule
+75						&	6							&	69.6							&	70.75									&	1.65		\\ \midrule
+100						&	8							&	92.8							&	97.0									&	4.52		\\ \midrule
+120						&	10							&	116.0							&	113.25									&	2.37		\\ \midrule
+150						&	12							&	139.2							&	141.0									&	1.29		\\ \midrule
+170						&	14							&	162.4							&	161.5									&	0.55		\\ \midrule
+200						&	17							&	197.2							&	201.5									&	2.18		\\ \midrule
+250						&	21							&	243.6							&	244.5									&	0.37		\\ \midrule
+300						&	25							&	290.0							&	290.75									&	0.26		\\ \bottomrule
 \end{tabular}
 \end{table}
 
@@ -295,10 +290,10 @@ A problem was seen that the robot moved in a slight arc. Speed tests were done o
 \caption{Results of motor speed test}
 \label{table:results:motor:speed}
 \centering
-\begin{tabular}{|c|c|c|} \hline
-Wheel &	Total Time Elapsed ($s$) & Calculated Speed ($mm.s^{-1}$) \\ \hline
-Left & 44.6		&	20.8 \\ \hline
-Right & 49.6	&	18.7 \\ \hline
+\begin{tabular}{ccc} \toprule
+Wheel &	Total Time Elapsed ($s$) & Calculated Speed ($mm.s^{-1}$) \\ \toprule
+Left & 44.6		&	20.8 \\ \midrule
+Right & 49.6	&	18.7 \\ \bottomrule
 \end{tabular}
 \end{table}
 
@@ -335,41 +330,41 @@ Figure \ref{fig:Hierarchical} shows a basic hierarchy of the robot. Each pin on 
 \caption{The Pinout of the AVR for the circuit. `-' means unavailable and blank means unused}
 \label{table:UC3C:Pinout}
 %\begin{tabular}{|p{1.2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}\cline{2-5}
-\begin{tabular}{|c|c|c|c|c|}\cline{2-5}
-\multicolumn{1}{c|}{ } & \multicolumn{4}{|c|}{Port} \\ \hline
-Pin & A & B & C & D \\ \hline
-0&TCK&CAMERA\_ 0&&EBI-DATA13\\
-1&TDI&CAMERA\_ 1&&EBI-DATA14\\
-2&TDO&CAMERA\_2&SDA&EBI-DATA15\\
-3&TMS&CAMERA\_3&SCL&EBI-ADDR0\\
-4&USB ID&CAMERA\_4&USART TXD&EBI-ADDR1\\
-5&&CAMERA\_5&USART RXD&EBI-ADDR2\\
-6&AC R&CAMERA\_6&&EBI-ADDR3\\
-7&AC R&CAMERA\_7&EBI NCS3&EBI-ADDR4\\
-8&AC L&STBY1&EBI NCS0&EBI-ADDR5\\
-9&AC L&IN11&EBI-ADDR23&EBI-ADDR6\\
-10&VSYNC0&IN12&EBI-ADDR22&EBI-ADDR7\\
-11&ADCREF&PWM1&EBI-ADDR21&EBI-ADDR8\\
-12&&&EBI-ADDR20&EBI-ADDR9\\
-13&&PWM2&&EBI-SDCK\\
-14&&IN22&EBI-SDCKE&EBI-ADDR10\\
-15&RRST0&IN21&EBI-SDWE&EBI-ADDR11\\
-16&ADCREF&STBY2&EBI-CAS&EBI-ADDR12\\
-17&-&&EBI-RAS&EBI-ADDR13\\
-18&-&&EBI-SDA10&EBI-ADDR14\\
-19&RCLK0&SPI-MOSI&EBI-DATA0&EBI-ADDR15\\
-20&WEN0&SPI-MISO&EBI-DATA1&EBI-ADDR16\\
-21&WRST0&SPI-SCK&EBI-DATA2&EBI-ADDR17\\
-22&RRST1&SPI-CS3&EBI-DATA3&EBI-ADDR18\\
-23&RCLK1&SPI-CS2&EBI-DATA4&EBI-ADDR19\\
-24&WEN1&SPI-CS1&EBI-DATA5&EBI-NWE1\\
-25&WRST1&SPI-CS0&EBI-DATA6&EBI-NWE0\\
-26&VSYNC1&SD- DETECT&EBI-DATA7&EBI-NRD\\
-27&NOE1&&EBI-DATA8&EBI NCS1\\
-28&NOE0&&EBI-DATA9&EBI NCS2\\
-29&&&EBI-DATA10&\\
-30&-&CLK&EBI-DATA11&EBI-NWAIT\\
-31&-&CLK&EBI-DATA12&-\\ \hline
+\begin{tabular}{ccccc}\toprule%\cline{2-5}
+%\multicolumn{1}{c|}{ } & \multicolumn{4}{|c|}{Port} \\ \hline
+Pin & Port A & Port B & Port C & Port D \\ \toprule
+0&TCK&CAMERA\_ 0&&EBI-DATA13\\ \midrule
+1&TDI&CAMERA\_ 1&&EBI-DATA14\\\midrule
+2&TDO&CAMERA\_2&SDA&EBI-DATA15\\\midrule
+3&TMS&CAMERA\_3&SCL&EBI-ADDR0\\\midrule
+4&USB ID&CAMERA\_4&USART TXD&EBI-ADDR1\\\midrule
+5&&CAMERA\_5&USART RXD&EBI-ADDR2\\\midrule
+6&AC R&CAMERA\_6&&EBI-ADDR3\\\midrule
+7&AC R&CAMERA\_7&EBI NCS3&EBI-ADDR4\\\midrule
+8&AC L&STBY1&EBI NCS0&EBI-ADDR5\\\midrule
+9&AC L&IN11&EBI-ADDR23&EBI-ADDR6\\\midrule
+10&VSYNC0&IN12&EBI-ADDR22&EBI-ADDR7\\\midrule
+11&ADCREF&PWM1&EBI-ADDR21&EBI-ADDR8\\\midrule
+12&&&EBI-ADDR20&EBI-ADDR9\\\midrule
+13&&PWM2&&EBI-SDCK\\\midrule
+14&&IN22&EBI-SDCKE&EBI-ADDR1\\\midrule
+15&RRST0&IN21&EBI-SDWE&EBI-ADDR11\\\midrule
+16&ADCREF&STBY2&EBI-CAS&EBI-ADDR12\\\midrule
+17&-&&EBI-RAS&EBI-ADDR13\\\midrule
+18&-&&EBI-SDA10&EBI-ADDR14\\\midrule
+19&RCLK0&SPI-MOSI&EBI-DATA0&EBI-ADDR15\\\midrule
+20&WEN0&SPI-MISO&EBI-DATA1&EBI-ADDR16\\\midrule
+21&WRST0&SPI-SCK&EBI-DATA2&EBI-ADDR17\\\midrule
+22&RRST1&SPI-CS3&EBI-DATA3&EBI-ADDR18\\\midrule
+23&RCLK1&SPI-CS2&EBI-DATA4&EBI-ADDR19\\\midrule
+24&WEN1&SPI-CS1&EBI-DATA5&EBI-NWE1\\\midrule
+25&WRST1&SPI-CS0&EBI-DATA6&EBI-NWE0\\\midrule
+26&VSYNC1&SD- DETECT&EBI-DATA7&EBI-NRD\\\midrule
+27&NOE1&&EBI-DATA8&EBI NCS1\\\midrule
+28&NOE0&&EBI-DATA9&EBI NCS2\\\midrule
+29&&&EBI-DATA10&\\\midrule
+30&-&CLK&EBI-DATA11&EBI-NWAIT\\\midrule
+31&-&CLK&EBI-DATA12&-\\ \bottomrule
 
 \end{tabular}
 \end{table}
@@ -392,8 +387,8 @@ Finally, the name \textit{``The Columbus''} was decided on as the original appli
 
 \begin{figure}
 \centering
-\subfigure[Top of the PCB]{\includegraphics[scale=0.4]{./Figures/PCB_Bare_Top.jpg} }
-\subfigure[Bottom of the PCB]{\includegraphics[scale=0.4]{./Figures/PCB_Bare_Bottom.jpg} }
+\subfigure[Top of the PCB]{\includegraphics[width=\textwidth / 2 - 1cm]{./Figures/PCB_Bare_Top.jpg} }
+\subfigure[Bottom of the PCB]{\includegraphics[width=\textwidth / 2 - 1cm]{./Figures/PCB_Bare_Bottom.jpg} }
 \caption{PCB with no components mounted}
 \label{fig:PCB:Bare}
 \end{figure}
@@ -494,10 +489,10 @@ Upon investigation of this problem, the 14th, 15th, 30th and 31st (top two bits 
 \begin{table}[!ht]
 \caption{A table showing examples of the incorrect data returned from the SDRAM}
 \label{table:SDRAM_Err}
-\begin{tabular}{|c|c|}\hline
-Data Written							&	Data Read \\\hline
-00000000 00000000 00000000 00000000		&	\textcolor{red}{11}000000 00000000 \textcolor{red}{11}000000 00000000 \\
-00001111 00001111 00001111 00001111		&	\textcolor{red}{11}001111 00001111 \textcolor{red}{11}001111 00001111 \\\hline
+\begin{tabular}{cc}\toprule
+Data Written							&	Data Read \\ \toprule
+00000000 00000000 00000000 00000000		&	\textcolor{red}{11}000000 00000000 \textcolor{red}{11}000000 00000000 \\\midrule
+00001111 00001111 00001111 00001111		&	\textcolor{red}{11}001111 00001111 \textcolor{red}{11}001111 00001111 \\ \bottomrule
 \end{tabular}
 \end{table}
 

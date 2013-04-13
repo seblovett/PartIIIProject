@@ -58,14 +58,14 @@ The final robot can be seen in figure \ref{fig:Robot:Complete}.
 \centering
 \caption{Table showing the Auto Run Commands Implemented}
 \label{table:AutoRun}
-\begin{tabular}{|c|c|c|}\hline
-Command & 	Argument 			& 	Operation \\\hline
-B		&	int					&	Move backward by the argument value (millimetres) \\
-F		&	int 				&	Move forward by the argument value (millimetres)\\
-J		&	int					&	Jumps to the command specified (0 indexed)\\
-P		&	N/A					&	Takes a stereo pair of photos\\
-q		&	N/A					&	Quits Auto Run and enters debug mode\\
-R		& 	int 			 	&	Rotates by argument (degrees)\\\hline
+\begin{tabular}{ccc}\toprule
+Command & 	Argument 			& 	Operation \\\toprule
+B		&	int					&	Move backward by the argument value (millimetres) \\\midrule
+F		&	int 				&	Move forward by the argument value (millimetres)\\\midrule
+J		&	int					&	Jumps to the command specified (0 indexed)\\\midrule
+P		&	N/A					&	Takes a stereo pair of photos\\\midrule
+q		&	N/A					&	Quits Auto Run and enters debug mode\\\midrule
+R		& 	int 			 	&	Rotates by argument (degrees)\\ \bottomrule
 \end{tabular}
 \end{table}
 
@@ -73,35 +73,35 @@ R		& 	int 			 	&	Rotates by argument (degrees)\\\hline
 \centering
 \caption{Table showing the available Debug Commands}
 \label{table:Debug}
-\begin{tabular}{|l|l|p{10cm}|}\hline
-Command & Argument & Operation \\\hline
-? && Shows the help prompt\\ 
-A && Runs the Auto Run procedure in debug mode\\ 
-B && Reads a Bitmap file and prints information \\ 
-c && converts the working buffer from integer to fixed point\\
-C && Converts the working buffer from fixed point to integer\\
-d && Saves the Working Buffer to ``Buffer\_results.csv'' \\ 
-D && Frees the Memory pointed to by the Working Buffer \\ 
-f && Reads ``Buffer.csv'' as a 2D Array of FFT\_SIZE by FFT\_SIZE\\ 
-g && Saves the Complex Buffer to ``Buffer\_Complex.csv'' \\
-k && Prints the Complex Buffer \\ 
-m && Computes the Magnitude of the 1D FFT of the Working Buffer \\
-M F &(int) & Drive Robot forward by (int) millimetres (negative number for reverse)\\
-M L && Dive Left Wheel Forward a full rotation \\
-M q && Resets Motors \\
-M R && Drive Right Wheel Forward a full rotation \\
-M T &(int) & Rotate Robot by (int) degrees (positive turns Clockwise)\\
-o && Displays the fixed point value for (int)1 \\
-P && Takes and stores Stereo Photos \\ 
-r && displays the contents of the working buffer\\
-R && Reads contents of ``signal.bin'', representing 1D Signal. Integers, Big Endian\\
-T && Reads contents of ``signal2d.bin'', representing 2D Signal. \\ 
-s && saves the working buffer\\
-S && Saves the image in memory to a Bitmaps \\
-v && Prints the status variables \\ 
-1 && computes the One Dimensional FFT of the working buffer. Returns magnitude.\\
-2 && Computes the Magnitude of the Two Dimensional FFT of the Working Buffer. \\ 
-3 && Computes the Complex 2D FFT of the working buffer and stores it in the Complex Buffer \\ \hline
+\begin{tabular}{llp{10cm}}\toprule
+Command & Argument & Operation \\\toprule
+? && Shows the help prompt\\ \midrule
+A && Runs the Auto Run procedure in debug mode\\ \midrule
+B && Reads a Bitmap file and prints information \\ \midrule
+c && converts the working buffer from integer to fixed point\\\midrule
+C && Converts the working buffer from fixed point to integer\\\midrule
+d && Saves the Working Buffer to ``Buffer\_results.csv'' \\ \midrule
+D && Frees the Memory pointed to by the Working Buffer \\ \midrule
+f && Reads ``Buffer.csv'' as a 2D Array of FFT\_SIZE by FFT\_SIZE\\ \midrule
+g && Saves the Complex Buffer to ``Buffer\_Complex.csv'' \\\midrule
+k && Prints the Complex Buffer \\ \midrule
+m && Computes the Magnitude of the 1D FFT of the Working Buffer \\\midrule
+M F &(int) & Drive Robot forward by (int) millimetres (negative number for reverse)\\\midrule
+M L && Dive Left Wheel Forward a full rotation \\\midrule
+M q && Resets Motors \\\midrule
+M R && Drive Right Wheel Forward a full rotation \\\midrule
+M T &(int) & Rotate Robot by (int) degrees (positive turns Clockwise)\\\midrule
+o && Displays the fixed point value for (int)1 \\\midrule
+P && Takes and stores Stereo Photos \\ \midrule
+r && displays the contents of the working buffer\\\midrule
+R && Reads contents of ``signal.bin'', representing 1D Signal. Integers, Big Endian\\\midrule
+T && Reads contents of ``signal2d.bin'', representing 2D Signal. \\ \midrule
+s && saves the working buffer\\\midrule
+S && Saves the image in memory to a Bitmaps \\\midrule
+v && Prints the status variables \\ \midrule
+1 && computes the One Dimensional FFT of the working buffer. Returns magnitude.\\\midrule
+2 && Computes the Magnitude of the Two Dimensional FFT of the Working Buffer. \\ \midrule
+3 && Computes the Complex 2D FFT of the working buffer and stores it in the Complex Buffer \\ \bottomrule
 \end{tabular}
 \end{table}
 
@@ -109,22 +109,22 @@ v && Prints the status variables \\
 \centering
 \caption{Table show the meaning of the LED lights. F - Flashing, X - Don't Care}
 \label{table:LEDs}
-\begin{tabular}{|c|c|c|c|c|c|c|}\cline{1-6}
-\multicolumn{6}{|c|}{LED} \\ \hline
-MOTOR 	& 2		& 3 	& 4 	& 5 	& 6 	& Meaning\\ \hline
-Off		& Off	& Off	& Off	& Off	& Off	& System Initialising \\
-On		& X		& X		& X		& X		& X		& Robot moving\\
-Off		& X		& X		& X		& X		& X		& Robot not moving\\
-X		& On	& On	& On	& X		& X 	& System in Debug Mode \\
-X		& X		& X		& X		& On	& X		& Left Wheel on a `Tab'	\\
-X		& X		& X		& X		& Off	& X		& Left Wheel not on a `Tab'	\\
-X		& X		& X		& X		& X 	& On	& Right Wheel on a `Tab'	\\
-X		& X		& X		& X		& X		& Off	& Right Wheel not on a `Tab'	\\
-Off		& On	& Off	& Off	& X		& X		& Auto Run Mode - Robot taking photos	\\
-On		& Off	& On	& Off	& X		& X		& Auto Run Mode - Robot rotating	\\
-On		& Off	& Off	& On	& X		& X		& Auto Run Mode - Robot moving\\
-Off		& F		& Off	& Off	& X		& X		& System Error - Generic\\
-Off		& F		& F		& X		& X		& X		& System Error - SD Card Error\\
-Off		& F		& X		& F		& X		& X		& System Error - Camera Error\\ \hline
+\begin{tabular}{ccccccc}\toprule
+\multicolumn{6}{c}{LED} 						& Meaning\\ \cmidrule{1-6}
+MOTOR 	& 2		& 3 	& 4 	& 5 	& 6 	& \\ \toprule
+Off		& Off	& Off	& Off	& Off	& Off	& System Initialising \\ \midrule
+On		& X		& X		& X		& X		& X		& Robot moving\\\midrule
+Off		& X		& X		& X		& X		& X		& Robot not moving\\\midrule
+X		& On	& On	& On	& X		& X 	& System in Debug Mode \\\midrule
+X		& X		& X		& X		& On	& X		& Left Wheel on a `Tab'	\\\midrule
+X		& X		& X		& X		& Off	& X		& Left Wheel not on a `Tab'	\\\midrule
+X		& X		& X		& X		& X 	& On	& Right Wheel on a `Tab'	\\\midrule
+X		& X		& X		& X		& X		& Off	& Right Wheel not on a `Tab'	\\\midrule
+Off		& On	& Off	& Off	& X		& X		& Auto Run Mode - Robot taking photos	\\\midrule
+On		& Off	& On	& Off	& X		& X		& Auto Run Mode - Robot rotating	\\\midrule
+On		& Off	& Off	& On	& X		& X		& Auto Run Mode - Robot moving\\\midrule
+Off		& F		& Off	& Off	& X		& X		& System Error - Generic\\\midrule
+Off		& F		& F		& X		& X		& X		& System Error - SD Card Error\\\midrule
+Off		& F		& X		& F		& X		& X		& System Error - Camera Error\\ \bottomrule
 \end{tabular}
 \end{table}

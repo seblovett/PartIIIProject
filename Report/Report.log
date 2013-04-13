@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  13 APR 2013 21:04
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  13 APR 2013 22:07
 entering extended mode
 **report.tex
 (E:\Uni\part3_project\Report\report.tex
@@ -829,7 +829,7 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen193
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 17.
+Package hyperref Info: Option `colorlinks' set `true' on input line 18.
 
 (E:\Uni\part3_project\Report\Definitions.tex
 \c@address=\count189
@@ -848,22 +848,22 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 17.
 (E:\Uni\part3_project\Report\Appendix_Contents.aux)
 (E:\Uni\part3_project\Report\Appendix_Bitmap.aux)
 (E:\Uni\part3_project\Report\Appendix_RangeDerivations.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -892,7 +892,7 @@ Package caption Info: End \AtBeginDocument code.
 )
 \c@lstlisting=\count197
 \AtBeginShipoutBox=\box45
-Package hyperref Info: Link coloring ON on input line 22.
+Package hyperref Info: Link coloring ON on input line 23.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -901,9 +901,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count198
 )
-LaTeX Info: Redefining \ref on input line 22.
-LaTeX Info: Redefining \pageref on input line 22.
-LaTeX Info: Redefining \nameref on input line 22.
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
 
 (E:\Uni\part3_project\Report\report.out)
 (E:\Uni\part3_project\Report\report.out)
@@ -912,11 +912,11 @@ LaTeX Info: Redefining \nameref on input line 22.
 ------------------------------------------------------------------------------
  Title Page
 ------------------------------------------------------------------------------
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
+LaTeX Font Info:    Try loading font information for U+msa on input line 41.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+LaTeX Font Info:    Try loading font information for U+msb on input line 41.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -928,7 +928,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 ]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 41.
+ine 42.
 
 ------------------------------------------------------------------------------
  Abstract Page
@@ -985,7 +985,7 @@ ine 41.
  Acknowledgements
 ------------------------------------------------------------------------------
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
 
  []
 
@@ -1069,12 +1069,12 @@ Underfull \hbox (badness 1990) in paragraph at lines 37--37
  []
 
 
-Underfull \hbox (badness 4048) in paragraph at lines 37--38
+Underfull \hbox (badness 4048) in paragraph at lines 37--37
 []\OT1/cmr/m/n/12 40 DIP, 44
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
 \OT1/cmr/m/n/12 TQFP, 44
  []
 
@@ -1119,7 +1119,7 @@ Underfull \hbox (badness 3724) in paragraph at lines 44--44
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
 []\OT1/cmr/m/n/12 SPI, TWI,
  []
 
@@ -1128,11 +1128,7 @@ Overfull \hbox (3.87682pt too wide) in paragraph at lines 33--50
  [][] 
  []
 
-[6]) [7] (E:\Uni\part3_project\Report\HardwareDevelopment.tex [8
-
-
-
-]
+[6] [7]) [8] (E:\Uni\part3_project\Report\HardwareDevelopment.tex
 Chapter 3.
 ------------------------------------------------------------------------------
  3 Hardware and Firmware Development
@@ -1143,7 +1139,11 @@ File: Figures/OV7670_Back.jpg Graphic file (type jpg)
 <use Figures/OV7670_Back.jpg>
 Package pdftex.def Info: Figures/OV7670_Back.jpg used on input line 21.
 (pdftex.def)             Requested size: 104.36826pt x 132.99367pt.
- [9]
+ [9
+
+
+
+]
 <./Figures/RGB565.png, id=811, 809.27344pt x 148.30406pt>
 File: ./Figures/RGB565.png Graphic file (type png)
 
@@ -1200,12 +1200,12 @@ Underfull \hbox (badness 1946) in paragraph at lines 97--97
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
 []\OT1/cmr/m/n/12 24, but
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
 \OT1/cmr/m/n/12 only 256
  []
 
@@ -1214,21 +1214,21 @@ File: Figures/ExampleImageFromCamera.jpg Graphic file (type jpg)
 
 <use Figures/ExampleImageFromCamera.jpg>
 Package pdftex.def Info: Figures/ExampleImageFromCamera.jpg used on input line 
-113.
+110.
 (pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
  [14]
 <./Figures/Prototype.jpg, id=862, 4117.3825pt x 2294.5725pt>
 File: ./Figures/Prototype.jpg Graphic file (type jpg)
 
 <use ./Figures/Prototype.jpg>
-Package pdftex.def Info: ./Figures/Prototype.jpg used on input line 145.
+Package pdftex.def Info: ./Figures/Prototype.jpg used on input line 140.
 (pdftex.def)             Requested size: 417.47307pt x 232.6218pt.
 
 <./Figures/Camera_TFT.jpg, id=863, 4769.82pt x 3179.88pt>
 File: ./Figures/Camera_TFT.jpg Graphic file (type jpg)
 
 <use ./Figures/Camera_TFT.jpg>
-Package pdftex.def Info: ./Figures/Camera_TFT.jpg used on input line 151.
+Package pdftex.def Info: ./Figures/Camera_TFT.jpg used on input line 146.
 (pdftex.def)             Requested size: 417.47307pt x 278.31645pt.
  [15 <E:/Uni/part3_project/Report/Figures/ExampleImageFromCamera.jpg>] [16 <E:/
 Uni/part3_project/Report/Figures/Prototype.jpg> <E:/Uni/part3_project/Report/Fi
@@ -1237,7 +1237,7 @@ gures/Camera_TFT.jpg>]
 File: Figures/TCRT_Circuit.png Graphic file (type png)
 
 <use Figures/TCRT_Circuit.png>
-Package pdftex.def Info: Figures/TCRT_Circuit.png used on input line 169.
+Package pdftex.def Info: Figures/TCRT_Circuit.png used on input line 164.
 (pdftex.def)             Requested size: 141.5284pt x 225.4668pt.
 Package epstopdf Info: Source file: <Figures/WheelVoltageGraph.eps>
 (epstopdf)                    date: 2013-04-11 10:44:06
@@ -1248,7 +1248,7 @@ Package epstopdf Info: Source file: <Figures/WheelVoltageGraph.eps>
 (epstopdf)                    size: 10984 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/WheelVoltageGraph-e
 ps-converted-to.pdf Figures/WheelVoltageGraph.eps>
-(epstopdf)             \includegraphics on input line 175.
+(epstopdf)             \includegraphics on input line 170.
 Package epstopdf Info: Output file is already uptodate.
 
 <Figures/WheelVoltageGraph-eps-converted-to.pdf, id=881, 1446.40375pt x 508.901
@@ -1256,83 +1256,83 @@ Package epstopdf Info: Output file is already uptodate.
 File: Figures/WheelVoltageGraph-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/WheelVoltageGraph-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/WheelVoltageGraph-eps-converted-to.pdf used on
- input line 175.
+ input line 170.
 (pdftex.def)             Requested size: 417.47307pt x 146.87871pt.
  [17] [18 <E:/Uni/part3_project/Report/Figures/TCRT_Circuit.png> <E:/Uni/part3_
 project/Report/Figures/WheelVoltageGraph-eps-converted-to.pdf>] [19]
 <Figures/ASM.jpg, id=915, 516.0078pt x 356.2911pt>
 File: Figures/ASM.jpg Graphic file (type jpg)
  <use Figures/ASM.jpg>
-Package pdftex.def Info: Figures/ASM.jpg used on input line 242.
+Package pdftex.def Info: Figures/ASM.jpg used on input line 237.
 (pdftex.def)             Requested size: 417.47307pt x 288.25714pt.
 
-<./Figures/Robotbase_top_annot.jpg, id=916, 2086.04344pt x 2045.39156pt>
+[20] <./Figures/Robotbase_top_annot.jpg, id=920, 2086.04344pt x 2045.39156pt>
 File: ./Figures/Robotbase_top_annot.jpg Graphic file (type jpg)
 
 <use ./Figures/Robotbase_top_annot.jpg>
 Package pdftex.def Info: ./Figures/Robotbase_top_annot.jpg used on input line 2
-50.
+45.
 (pdftex.def)             Requested size: 417.47307pt x 409.32076pt.
 
-<./Figures/Robotbase_side_annot.jpg, id=917, 3438.8475pt x 1227.83719pt>
+<./Figures/Robotbase_side_annot.jpg, id=921, 3438.8475pt x 1227.83719pt>
 File: ./Figures/Robotbase_side_annot.jpg Graphic file (type jpg)
 
 <use ./Figures/Robotbase_side_annot.jpg>
 Package pdftex.def Info: ./Figures/Robotbase_side_annot.jpg used on input line 
-251.
+246.
 (pdftex.def)             Requested size: 417.47307pt x 149.05774pt.
 
-Overfull \hbox (3.91663pt too wide) in paragraph at lines 250--252
+Overfull \hbox (3.91663pt too wide) in paragraph at lines 245--247
  [][] 
  []
 
 
-Overfull \hbox (3.91663pt too wide) in paragraph at lines 250--252
+Overfull \hbox (3.91663pt too wide) in paragraph at lines 245--247
  [][] 
  []
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 273--273
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 []\OT1/cmr/m/n/12 Distance
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--273
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 \OT1/cmr/m/n/12 Spec-i-fied
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--273
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 []\OT1/cmr/m/n/12 Number
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--273
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 \OT1/cmr/m/n/12 of Counts
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--273
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 []\OT1/cmr/m/n/12 Counts $\OMS/cmsy/m/n/12 $
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--273
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 \OT1/cmr/m/n/12 Res-o-lu-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--273
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 []\OT1/cmr/m/n/12 Average
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--273
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 \OT1/cmr/m/n/12 Mea-sured
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--273
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 \OT1/cmr/m/n/12 Dis-tance
  []
 
@@ -1343,108 +1343,101 @@ tbase_side_annot.jpg>] [23]
 File: Figures/hierarchy.jpg Graphic file (type jpg)
 
 <use Figures/hierarchy.jpg>
-Package pdftex.def Info: Figures/hierarchy.jpg used on input line 328.
+Package pdftex.def Info: Figures/hierarchy.jpg used on input line 323.
 (pdftex.def)             Requested size: 417.47307pt x 339.98323pt.
- [24] [25] [26 <E:/Uni/part3_project/Report/Figures/hierarchy.jpg>]
-<./Figures/PCB_Bare_Top.jpg, id=973, 3251.14626pt x 2267.47125pt>
+
+
+LaTeX Warning: Float too large for page by 30.51561pt on input line 370.
+
+[24] [25] [26 <E:/Uni/part3_project/Report/Figures/hierarchy.jpg>]
+<./Figures/PCB_Bare_Top.jpg, id=973, 1602.98875pt x 2267.47125pt>
 File: ./Figures/PCB_Bare_Top.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bare_Top.jpg>
-Package pdftex.def Info: ./Figures/PCB_Bare_Top.jpg used on input line 395.
-(pdftex.def)             Requested size: 1300.4355pt x 906.97246pt.
+Package pdftex.def Info: ./Figures/PCB_Bare_Top.jpg used on input line 390.
+(pdftex.def)             Requested size: 180.28378pt x 254.99301pt.
 
-<./Figures/PCB_Bare_Bottom.jpg, id=974, 3251.14626pt x 2267.47125pt>
+<./Figures/PCB_Bare_Bottom.jpg, id=974, 1601.985pt x 2267.47125pt>
 File: ./Figures/PCB_Bare_Bottom.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bare_Bottom.jpg>
-Package pdftex.def Info: ./Figures/PCB_Bare_Bottom.jpg used on input line 396.
-(pdftex.def)             Requested size: 1300.4355pt x 906.97246pt.
-
-Overfull \hbox (886.87906pt too wide) in paragraph at lines 395--397
- [][] 
- []
-
-
-Overfull \hbox (886.87906pt too wide) in paragraph at lines 395--397
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 1202.47182pt on input line 399.
-
-[27] [28 <E:/Uni/part3_project/Report/Figures/PCB_Bare_Top.jpg> <E:/Uni/part3_p
-roject/Report/Figures/PCB_Bare_Bottom.jpg>]
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+Package pdftex.def Info: ./Figures/PCB_Bare_Bottom.jpg used on input line 391.
+(pdftex.def)             Requested size: 180.28378pt x 255.166pt.
+ [27] [28 <E:/Uni/part3_project/Report/Figures/PCB_Bare_Top.jpg> <E:/Uni/part3_
+project/Report/Figures/PCB_Bare_Bottom.jpg>] ("C:\Program Files (x86)\MiKTeX 2.
+9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
 (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c)
-(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [29] [30])
+(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [29]) [30]
 (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [31])
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 439.
+(hyperref)                removing `math shift' on input line 434.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 439.
+(hyperref)                removing `superscript' on input line 434.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 439.
+(hyperref)                removing `math shift' on input line 434.
 
 (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [32]) [33]
 (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c)
-(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [34])
-<./Figures/PCB_SDRAM.jpg, id=1248, 1539.7525pt x 1547.7825pt>
+(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c) [34]
+<./Figures/PCB_SDRAM.jpg, id=1252, 1539.7525pt x 1547.7825pt>
 File: ./Figures/PCB_SDRAM.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_SDRAM.jpg>
-Package pdftex.def Info: ./Figures/PCB_SDRAM.jpg used on input line 475.
+Package pdftex.def Info: ./Figures/PCB_SDRAM.jpg used on input line 470.
 (pdftex.def)             Requested size: 208.73653pt x 209.81546pt.
- [35] [36 <E:/Uni/part3_project/Report/Figures/PCB_SDRAM.jpg>]
-Overfull \hbox (6.02278pt too wide) in paragraph at lines 497--502
+ [35]
+Overfull \hbox (6.02278pt too wide) in paragraph at lines 492--497
 [][] 
  []
 
-[37] <./Figures/MotorDriver_error.png, id=1273, 496.10344pt x 550.30594pt>
+[36 <E:/Uni/part3_project/Report/Figures/PCB_SDRAM.jpg>]
+<./Figures/MotorDriver_error.png, id=1268, 496.10344pt x 550.30594pt>
 File: ./Figures/MotorDriver_error.png Graphic file (type png)
 
 <use ./Figures/MotorDriver_error.png>
-Package pdftex.def Info: ./Figures/MotorDriver_error.png used on input line 523
+Package pdftex.def Info: ./Figures/MotorDriver_error.png used on input line 518
 .
 (pdftex.def)             Requested size: 208.73653pt x 231.53836pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 535.
+ [37]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 530.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 535.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 530.
  [38 <E:/Uni/part3_project/Report/Figures/MotorDriver_error.png>]
 <./Figures/PCB_Top.jpg, id=1279, 2669.975pt x 1862.96pt>
 File: ./Figures/PCB_Top.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Top.jpg>
-Package pdftex.def Info: ./Figures/PCB_Top.jpg used on input line 550.
+Package pdftex.def Info: ./Figures/PCB_Top.jpg used on input line 545.
 (pdftex.def)             Requested size: 417.47307pt x 291.28577pt.
 
 <./Figures/PCB_Bottom.jpg, id=1280, 3880.4975pt x 2812.5075pt>
 File: ./Figures/PCB_Bottom.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bottom.jpg>
-Package pdftex.def Info: ./Figures/PCB_Bottom.jpg used on input line 551.
+Package pdftex.def Info: ./Figures/PCB_Bottom.jpg used on input line 546.
 (pdftex.def)             Requested size: 417.47307pt x 302.55324pt.
 
-Overfull \hbox (3.91663pt too wide) in paragraph at lines 550--552
+Overfull \hbox (3.91663pt too wide) in paragraph at lines 545--547
  [][] 
  []
 
 
-Overfull \hbox (3.91663pt too wide) in paragraph at lines 550--552
+Overfull \hbox (3.91663pt too wide) in paragraph at lines 545--547
  [][] 
  []
 
@@ -1550,13 +1543,14 @@ Underfull \hbox (badness 2617) in paragraph at lines 169--169
 []\OT1/cmr/m/n/12 Calculated Dis-
  []
 
-<./Figures/Duck_L.jpg, id=1455, 321.2pt x 240.9pt>
+[47 <E:/Uni/part3_project/Report/Figures/FoV.jpg>]
+<./Figures/Duck_L.jpg, id=1459, 321.2pt x 240.9pt>
 File: ./Figures/Duck_L.jpg Graphic file (type jpg)
  <use ./Figures/Duck_L.jpg>
 Package pdftex.def Info: ./Figures/Duck_L.jpg used on input line 184.
 (pdftex.def)             Requested size: 128.47772pt x 96.35828pt.
 
-<./Figures/Duck_R.jpg, id=1456, 321.2pt x 240.9pt>
+<./Figures/Duck_R.jpg, id=1460, 321.2pt x 240.9pt>
 File: ./Figures/Duck_R.jpg Graphic file (type jpg)
  <use ./Figures/Duck_R.jpg>
 Package pdftex.def Info: ./Figures/Duck_R.jpg used on input line 185.
@@ -1572,16 +1566,15 @@ ted-to.pdf Figures/NCC_Duck.eps>
 (epstopdf)             \includegraphics on input line 192.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/NCC_Duck-eps-converted-to.pdf, id=1457, 1445.4pt x 708.6475pt>
+<Figures/NCC_Duck-eps-converted-to.pdf, id=1461, 1445.4pt x 708.6475pt>
 File: Figures/NCC_Duck-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/NCC_Duck-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/NCC_Duck-eps-converted-to.pdf used on input li
 ne 192.
 (pdftex.def)             Requested size: 417.47307pt x 204.68073pt.
- [47 <E:/Uni/part3_project/Report/Figures/FoV.jpg>] [48 <E:/Uni/part3_project/R
-eport/Figures/Duck_L.jpg> <E:/Uni/part3_project/Report/Figures/Duck_R.jpg> <E:/
-Uni/part3_project/Report/Figures/NCC_Duck-eps-converted-to.pdf>]
+ [48 <E:/Uni/part3_project/Report/Figures/Duck_L.jpg> <E:/Uni/part3_project/Rep
+ort/Figures/Duck_R.jpg>]
 Package epstopdf Info: Source file: <Figures/BPlot.eps>
 (epstopdf)                    date: 2013-04-12 17:42:01
 (epstopdf)                    size: 26690855 bytes
@@ -1593,7 +1586,7 @@ Package epstopdf Info: Source file: <Figures/BPlot.eps>
 (epstopdf)             \includegraphics on input line 204.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/BPlot-eps-converted-to.pdf, id=1500, 1445.4pt x 708.6475pt>
+<Figures/BPlot-eps-converted-to.pdf, id=1472, 1445.4pt x 708.6475pt>
 File: Figures/BPlot-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/BPlot-eps-converted-to.pdf>
@@ -1612,14 +1605,15 @@ df>
 (epstopdf)             \includegraphics on input line 209.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Distance_DeltaX-eps-converted-to.pdf, id=1501, 1446.40375pt x 525.965p
+<Figures/Distance_DeltaX-eps-converted-to.pdf, id=1473, 1446.40375pt x 525.965p
 t>
 File: Figures/Distance_DeltaX-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/Distance_DeltaX-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Distance_DeltaX-eps-converted-to.pdf used on i
 nput line 209.
 (pdftex.def)             Requested size: 417.47307pt x 151.80363pt.
- [49 <E:/Uni/part3_project/Report/Figures/BPlot-eps-converted-to.pdf>]
+ [49 <E:/Uni/part3_project/Report/Figures/NCC_Duck-eps-converted-to.pdf> <E:/Un
+i/part3_project/Report/Figures/BPlot-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/Dirac_1D_Sig.eps>
 (epstopdf)                    date: 2013-04-12 20:24:21
 (epstopdf)                    size: 14482 bytes
@@ -2061,11 +2055,14 @@ Overfull \hbox (7.49371pt too wide) in paragraph at lines 76--106
  [][] 
  []
 
-) [65 <E:/Uni/part3_project/Report/Figures/Robot.jpg>] [66] [67]
-(E:\Uni\part3_project\Report\report.bbl [68
+
+LaTeX Warning: Float too large for page by 29.45343pt on input line 106.
+
+) [65 <E:/Uni/part3_project/Report/Figures/Robot.jpg>] [66] [67] [68]
+(E:\Uni\part3_project\Report\report.bbl [69
 
 
-] [69]) [70]
+]) [70]
 (E:\Uni\part3_project\Report\Appendix_Gantt.tex
 Appendix A.
 ------------------------------------------------------------------------------
@@ -2506,8 +2503,8 @@ ject/Report/Figures/problem3.png>] [100
 ------------------------------------------------------------------------------
  References
 ------------------------------------------------------------------------------
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
 (E:\Uni\part3_project\Report\report.aux
 (E:\Uni\part3_project\Report\Introduction.aux)
 (E:\Uni\part3_project\Report\Research.aux)
@@ -2521,16 +2518,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
 (E:\Uni\part3_project\Report\Appendix_Contents.aux)
 (E:\Uni\part3_project\Report\Appendix_Bitmap.aux)
 (E:\Uni\part3_project\Report\Appendix_RangeDerivations.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 122.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 9B8AAA6782C6D7E4FD6220A7E5110B43;14522.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
  ) 
 Here is how much of TeX's memory you used:
  22034 strings out of 494045
  373949 string characters out of 3145960
- 955681 words of memory out of 3000000
+ 901222 words of memory out of 3000000
  24110 multiletter control sequences out of 15000+200000
  14685 words of font info for 57 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
@@ -2559,7 +2556,7 @@ s/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmu10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb>
-Output written on report.pdf (118 pages, 37732932 bytes).
+Output written on report.pdf (118 pages, 34662256 bytes).
 PDF statistics:
  2170 PDF objects out of 2487 (max. 8388607)
  626 named destinations out of 1000 (max. 500000)

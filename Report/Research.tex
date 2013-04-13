@@ -30,22 +30,22 @@ Table \ref{tab:uCComp} shows a brief summary of some common ARM and AVR microcon
 
 \begin{table}
 \centering
-\begin{tabular}{|p{3.0cm}|p{2.0cm}|p{3cm}|p{2.3cm}|p{2.4cm}|}\hline
-Attribute				& 	ARM Stellaris		&	AT32UC3C0512C 		&	XMegaA3BU	&	ATMega644P 	\\	\hline
-Clock Speed	(MHz)		&	80					&	33 or 66			&	32			&	12			\\
-DMIPS					&	100					&	91					&	-			&	20 MIPS		\\
-Package					&	100 LQFP or 108 BGA	&	64, 100, 144TQFP	&	64 QFP or QFN & 40 DIP, 44 TQFP, 44 QFN \\
-Cost of 1 unit(\pounds)	&	10.30				& 15.39 &	6.65	 & 6.86\\
-Flash Size(kB)			&	256					&	512					&	256			&	64 \\
-SDRAM Size (kB)			&	32					&	64					&	16			&	4	\\
-EEPROM Size(kB)			&	2					&	None internal		&	4			&	2 	\\
-GPIO					&	64					& 	45, 81 or 123		&	47			& 	32	\\
-Operating Voltage (V)	&	3.3					& 	5	or 3.3			& 	1.6- 3.6\footnote{Clock frequency for voltages 1.6 - 2.7 is 12MHz.}		& 	2.7-5.5	\\
-Communication Interfaces &	SPI, \itc, SSI, MAC, CAN, EPI, USB, USART, I2S	& SPI, TWI, EBI, USB, Ethernet, CAN, USART, I2S	&	USART, TWI, USB, SPI 		&	SPI, TWI, USART \\
-Floating Point			&	None				&	Built in FPU		&	None		&	None		\\
-ADCs					&	16					&	16					&	16			&	8			\\
+\begin{tabular}{p{3.0cm}p{2.0cm}p{3cm}p{2.3cm}p{2.4cm}}\toprule
+Attribute				& 	ARM Stellaris		&	AT32UC3C0512C 		&	XMegaA3BU	&	ATMega644P 	\\	\toprule
+Clock Speed	(MHz)		&	80					&	33 or 66			&	32			&	12			\\\midrule
+DMIPS					&	100					&	91					&	-			&	20 MIPS		\\\midrule
+Package					&	100 LQFP or 108 BGA	&	64, 100, 144TQFP	&	64 QFP or QFN & 40 DIP, 44 TQFP, 44 QFN \\\midrule
+Cost of 1 unit(\pounds)	&	10.30				& 15.39 &	6.65	 & 6.86\\\midrule
+Flash Size(kB)			&	256					&	512					&	256			&	64 \\\midrule
+SDRAM Size (kB)			&	32					&	64					&	16			&	4	\\\midrule
+EEPROM Size(kB)			&	2					&	None internal		&	4			&	2 	\\\midrule
+GPIO					&	64					& 	45, 81 or 123		&	47			& 	32	\\\midrule
+Operating Voltage (V)	&	3.3					& 	5	or 3.3			& 	1.6- 3.6\footnote{Clock frequency for voltages 1.6 - 2.7 is 12MHz.}		& 	2.7-5.5	\\\midrule
+Communication Interfaces &	SPI, \itc, SSI, MAC, CAN, EPI, USB, USART, I2S	& SPI, TWI, EBI, USB, Ethernet, CAN, USART, I2S	&	USART, TWI, USB, SPI 		&	SPI, TWI, USART \\\midrule
+Floating Point			&	None				&	Built in FPU		&	None		&	None		\\\midrule
+ADCs					&	16					&	16					&	16			&	8			\\\midrule
 Timers					&	4					&	3 16-bit			& 7 16-bit, 8 8-bit & 2 8-bit, 1 16-bit \\
-\hline
+\bottomrule
 \end{tabular}
 \caption{Comparison Table of some common microcontrollers. Data of microcontrollers taken from \cite{Atmel:UC3C}, \cite{Atmel:644P}, \cite{Atmel:A3BU} and \cite{ARM:Stellaris}. Costings from \cite{Farnell}}
 \label{tab:uCComp}

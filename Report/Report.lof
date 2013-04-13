@@ -36,7 +36,7 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Stereo pair of images of a rubber duck on a reel of solder\relax }}{48}{figure.caption.356}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{48}{figure.caption.356}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{48}{figure.caption.356}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces NCC results from matching using the ducks head from the right image as the template to the left image\relax }}{48}{figure.caption.359}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces NCC results from matching using the ducks head from the right image as the template to the left image\relax }}{49}{figure.caption.359}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces 3D Surface plot graph showing range of distances that can be calculated over a range of camera separation, B, values.\relax }}{49}{figure.caption.361}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Graph showing Distance of the object against the difference in the match locations.\relax }}{50}{figure.caption.362}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces A Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{51}{figure.caption.366}

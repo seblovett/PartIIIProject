@@ -141,13 +141,13 @@ The field of view is an important cariable that must be measured for the camera.
 \caption{Table of results to calculate the field of view of the camera}
 \label{table:fieldofview}
 \centering
-\begin{tabular}{|c|c|c|} \hline
-L (mm) & D (mm) & $\varphi (^c)$ \\ \hline
-70 & 104 & 0.6435\\
-90 & 135 &0.6015\\
-178 & 285 &0.6054\\
-214 & 345 &0.6493 \\ \hline
-\multicolumn{2}{|c|}{Average} & 0.6249 \\ \hline
+\begin{tabular}{|c|c|c|} \toprule
+L (mm) & D (mm) & $\varphi (^c)$ \\ \toprule
+70 & 104 & 0.6435\\\midrule
+90 & 135 &0.6015\\\midrule
+178 & 285 &0.6054\\ \midrule
+214 & 345 &0.6493 \\ \bottomrule
+\multicolumn{2}{|c|}{Average} & 0.6249 \\ \bottomrule
 \end{tabular}
 
 \end{table}
@@ -165,18 +165,18 @@ Table \ref{table:range} shows the distances tested with the distance calculated 
 \centering
 \caption{Results of range finding test}
 \label{table:range}
-\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|} \hline
-Actual Distance (mm) & Pixel Difference in Images (pixel) & Calculated Distance (mm) & Error (\%) \\ \hline
-100 & 290 & 72 & 28\\ 
-200 & 152 & 137 & 32\\ 
-300 & 109 & 191 & 36\\ 
-400 & 88 & 236 & 41\\ 
-500 & 75 & 277 & 45\\ 
-600 & 67 & 310 & 48\\ 
-700 & 61 & 341 & 51\\ 
-800 & 57 & 365 & 54\\ 
-900 & 53 & 393 & 56\\ 
-1000 & 51 & 408 & 59\\ \hline
+\begin{tabular}{p{3cm}p{3cm}p{3cm}p{3cm}} \toprule
+Actual Distance (mm) & Pixel Difference in Images (pixel) & Calculated Distance (mm) & Error (\%) \\ \toprule
+100 & 290 & 72 & 28\\ \midrule
+200 & 152 & 137 & 32\\ \midrule
+300 & 109 & 191 & 36\\ \midrule
+400 & 88 & 236 & 41\\ \midrule
+500 & 75 & 277 & 45\\ \midrule
+600 & 67 & 310 & 48\\ \midrule
+700 & 61 & 341 & 51\\ \midrule
+800 & 57 & 365 & 54\\ \midrule
+900 & 53 & 393 & 56\\ \midrule
+1000 & 51 & 408 & 59\\ \bottomrule
 \end{tabular}
 \end{table}
 \begin{figure}
@@ -371,11 +371,11 @@ The transforms are calculated in real time with a 16MHz clock source. Table \ref
 \centering
 \caption{Number of clock cycles taken to calculate the Transform of 64 or 256 long data set}
 \label{table:FFTSize_Time}
-\begin{tabular}{|c|c|c|c|} \cline{2-3}
-\multicolumn{1}{c|}{ } & \multicolumn{2}{|c|}{ Size of FFT Data } \\ \cline{2-3}
-\multicolumn{1}{c|}{ } & 64 & 256 \\ \hline
-					1D 	&	5019 	& 	23599		\\ \hline
-				 	2D 	& 	618168 	& 	- 	\\ \hline
+\begin{tabular}{ccc} \toprule
+ 	& \multicolumn{2}{c}{ Size of FFT Data } \\ \cmidrule{2-3}
+	& 	64 		& 	256 \\ \toprule
+1D 	&	5019 	& 	23599		\\ \midrule
+2D 	& 	618168 	& 	- 	\\ \bottomrule
 \end{tabular}
 \end{table}
 
