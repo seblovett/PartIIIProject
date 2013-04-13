@@ -13,9 +13,10 @@
 \newlabel{fig:RGB565}{{3.2}{10}{RGB565 pixel format\relax \relax }{figure.caption.33}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Signals generated to control the OV7670 capture and read\relax }}{11}{figure.caption.34}}
 \newlabel{fig:ov_Capture}{{3.3}{11}{Signals generated to control the OV7670 capture and read\relax \relax }{figure.caption.34}{}}
-\citation{I2C_Mux}
-\@writefile{tdo}{\contentsline {todo}{From Tom: Sorry for so many notes, you should be able to see my points of understanding through that, it is good and I pretty much get it (I wish we knew for D4 haha) but there are a few ambiguities and stuff that don't help. Maybe a little diagram with Camera, FIFO, and Microcontroller on it showing the signals between them would help aswell, but it isn't that necessary.}{12}{section*.35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Hierarchical diagram of the single camera operation showing signals between the camera, FIFO buffer and the microcontroller\relax }}{12}{figure.caption.35}}
+\newlabel{fig:cam:heir}{{3.4}{12}{Hierarchical diagram of the single camera operation showing signals between the camera, FIFO buffer and the microcontroller\relax \relax }{figure.caption.35}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Dual Camera Operation}{12}{subsection.36}}
+\citation{I2C_Mux}
 \citation{FATFS}
 \citation{ImageComparison}
 \citation{ImageComparison}
@@ -24,81 +25,81 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Storing Images}{13}{subsection.38}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces A table comparing different image formats available \citep  {ImageComparison}\relax }}{14}{table.caption.39}}
 \newlabel{ImageFormats}{{3.1}{14}{A table comparing different image formats available \citep {ImageComparison}\relax \relax }{table.caption.39}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax }}{14}{figure.caption.40}}
-\newlabel{ExampleImage}{{3.4}{14}{An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax \relax }{figure.caption.40}{}}
-\citation{Vishay:TCRT1010:Datasheet}
-\citation{c9Lab:SRG}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}The Prototypes}{14}{section.41}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax }}{15}{figure.caption.40}}
+\newlabel{ExampleImage}{{3.5}{15}{An Example Image taken using the OV7670 and stored as a Bitmap on the SD Card\relax \relax }{figure.caption.40}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Pin Connections of the ATMega644P for Dual Camera Operation.\relax }}{15}{table.caption.42}}
 \newlabel{table:644Pin}{{3.2}{15}{Pin Connections of the ATMega644P for Dual Camera Operation.\relax \relax }{table.caption.42}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}The Prototypes}{15}{section.41}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Motor Driver Development}{15}{section.45}}
-\newlabel{Section:Motor_Dev}{{3.4}{15}{Motor Driver Development\relax }{section.45}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Hardware}{15}{subsection.46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Prototype of Dual Camera operation.\relax }}{16}{figure.caption.43}}
-\newlabel{fig:Prototype}{{3.5}{16}{Prototype of Dual Camera operation.\relax \relax }{figure.caption.43}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Prototype of streaming camera images to TFT screen.\relax }}{16}{figure.caption.44}}
-\newlabel{fig:Prototype:TFT}{{3.6}{16}{Prototype of streaming camera images to TFT screen.\relax \relax }{figure.caption.44}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Circuit diagram of Optosensor\relax }}{17}{figure.caption.47}}
-\newlabel{Circuit:TCRT1010}{{3.7}{17}{Circuit diagram of Optosensor\relax \relax }{figure.caption.47}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Prototype of Dual Camera operation.\relax }}{16}{figure.caption.43}}
+\newlabel{fig:Prototype}{{3.6}{16}{Prototype of Dual Camera operation.\relax \relax }{figure.caption.43}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Prototype of streaming camera images to TFT screen.\relax }}{16}{figure.caption.44}}
+\newlabel{fig:Prototype:TFT}{{3.7}{16}{Prototype of streaming camera images to TFT screen.\relax \relax }{figure.caption.44}{}}
+\citation{Vishay:TCRT1010:Datasheet}
+\citation{c9Lab:SRG}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Motor Driver Development}{17}{section.45}}
+\newlabel{Section:Motor_Dev}{{3.4}{17}{Motor Driver Development\relax }{section.45}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Hardware}{17}{subsection.46}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Firmware Development}{17}{subsection.49}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Graph of Wheel Angle against the Voltage read by the AVR\relax }}{18}{figure.caption.48}}
-\newlabel{Graph:WheelVoltage}{{3.8}{18}{Graph of Wheel Angle against the Voltage read by the AVR\relax \relax }{figure.caption.48}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces A table to show the inputs to the motor drivers to set the movement\relax }}{18}{table.caption.51}}
-\newlabel{table:MotorDirection}{{3.3}{18}{A table to show the inputs to the motor drivers to set the movement\relax \relax }{table.caption.51}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Circuit diagram of Optosensor\relax }}{18}{figure.caption.47}}
+\newlabel{Circuit:TCRT1010}{{3.8}{18}{Circuit diagram of Optosensor\relax \relax }{figure.caption.47}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Graph of Wheel Angle against the Voltage read by the AVR\relax }}{18}{figure.caption.48}}
+\newlabel{Graph:WheelVoltage}{{3.9}{18}{Graph of Wheel Angle against the Voltage read by the AVR\relax \relax }{figure.caption.48}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2.1}Set Up}{18}{subsubsection.50}}
 \newlabel{eq:NumberCounts}{{3.1}{18}{Set Up\relax }{equation.52}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces A table to show the inputs to the motor drivers to set the movement\relax }}{19}{table.caption.51}}
+\newlabel{table:MotorDirection}{{3.3}{19}{A table to show the inputs to the motor drivers to set the movement\relax \relax }{table.caption.51}{}}
 \newlabel{eq:RotationalDistance}{{3.2}{19}{Set Up\relax }{equation.53}{}}
 \newlabel{eq:RotationalInterrupts}{{3.3}{19}{Set Up\relax }{equation.54}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2.2}Execute}{19}{subsubsection.55}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Testing}{20}{subsection.60}}
-\newlabel{Section:MotorTest}{{3.4.3}{20}{Testing\relax }{subsection.60}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces A State Machine showing the operation of the \textit  {Motor\_Execute} method\relax }}{21}{figure.caption.56}}
-\newlabel{fig:StateMachine}{{3.9}{21}{A State Machine showing the operation of the \textit {Motor\_Execute} method\relax \relax }{figure.caption.56}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Results of Motor Distance Test\relax }}{21}{table.caption.61}}
-\newlabel{table:results:motor:distance}{{3.4}{21}{Results of Motor Distance Test\relax \relax }{table.caption.61}{}}
-\newlabel{fg:RobotBase:Top}{{3.10(a)}{22}{Subfigure 3 3.10(a)\relax }{subfigure.58}{}}
-\newlabel{sub@fg:RobotBase:Top}{{(a)}{22}{Subfigure 3 3.10(a)\relax }{subfigure.58}{}}
-\newlabel{fg:RobotBase:Side}{{3.10(b)}{22}{Subfigure 3 3.10(b)\relax }{subfigure.59}{}}
-\newlabel{sub@fg:RobotBase:Side}{{(b)}{22}{Subfigure 3 3.10(b)\relax }{subfigure.59}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{22}{figure.caption.57}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces A State Machine showing the operation of the \textit  {Motor\_Execute} method\relax }}{21}{figure.caption.56}}
+\newlabel{fig:StateMachine}{{3.10}{21}{A State Machine showing the operation of the \textit {Motor\_Execute} method\relax \relax }{figure.caption.56}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Testing}{21}{subsection.60}}
+\newlabel{Section:MotorTest}{{3.4.3}{21}{Testing\relax }{subsection.60}{}}
+\newlabel{fg:RobotBase:Top}{{3.11(a)}{22}{Subfigure 3 3.11(a)\relax }{subfigure.58}{}}
+\newlabel{sub@fg:RobotBase:Top}{{(a)}{22}{Subfigure 3 3.11(a)\relax }{subfigure.58}{}}
+\newlabel{fg:RobotBase:Side}{{3.11(b)}{22}{Subfigure 3 3.11(b)\relax }{subfigure.59}{}}
+\newlabel{sub@fg:RobotBase:Side}{{(b)}{22}{Subfigure 3 3.11(b)\relax }{subfigure.59}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{22}{figure.caption.57}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{22}{figure.caption.57}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Side View of robot base showing dimensions of interest}}}{22}{figure.caption.57}}
-\newlabel{fig:RobotBase_Annotated}{{3.10}{22}{Dimensions of Interest for Robot Movement\relax \relax }{figure.caption.57}{}}
-\citation{Creative_Robotics}
+\newlabel{fig:RobotBase_Annotated}{{3.11}{22}{Dimensions of Interest for Robot Movement\relax \relax }{figure.caption.57}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Results of Motor Distance Test\relax }}{23}{table.caption.61}}
+\newlabel{table:results:motor:distance}{{3.4}{23}{Results of Motor Distance Test\relax \relax }{table.caption.61}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Results of motor speed test\relax }}{23}{table.caption.62}}
 \newlabel{table:results:motor:speed}{{3.5}{23}{Results of motor speed test\relax \relax }{table.caption.62}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4}Conclusion}{23}{subsection.63}}
 \newlabel{eq:Resolution:Distance}{{3.4}{23}{Conclusion\relax }{equation.64}{}}
 \newlabel{eq:Resolution:Angle}{{3.5}{23}{Conclusion\relax }{equation.65}{}}
+\citation{Creative_Robotics}
 \citation{Atmel:UC3CEK}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces A hierarchical diagram of the robot\relax }}{24}{figure.caption.68}}
-\newlabel{fig:Hierarchical}{{3.11}{24}{A hierarchical diagram of the robot\relax \relax }{figure.caption.68}{}}
+\citation{liu2004equalization}
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}PCB Development}{24}{section.66}}
 \newlabel{Section:PCB_Dev}{{3.5}{24}{PCB Development\relax }{section.66}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Circuit Design}{24}{subsection.67}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}PCB Design}{24}{subsection.70}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces The Pinout of the AVR for the circuit. `-' means unavailable and blank means unused\relax }}{25}{table.caption.69}}
 \newlabel{table:UC3C:Pinout}{{3.6}{25}{The Pinout of the AVR for the circuit. `-' means unavailable and blank means unused\relax \relax }{table.caption.69}{}}
-\citation{liu2004equalization}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces A hierarchical diagram of the robot\relax }}{26}{figure.caption.68}}
+\newlabel{fig:Hierarchical}{{3.12}{26}{A hierarchical diagram of the robot\relax \relax }{figure.caption.68}{}}
 \citation{PCBCart}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}PCB Design}{26}{subsection.70}}
 \@writefile{tdo}{\contentsline {todo}{Considerations - Power consumption of devices not exceeding VReg}{27}{section*.74}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}PCB Testing}{27}{subsection.75}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3.1}UART Test}{27}{subsubsection.76}}
-\newlabel{UART:Test}{{3.5.3.1}{27}{UART Test\relax }{subsubsection.76}{}}
-\newlabel{lst:UARTTestCode}{{3.1}{27}{UART Test Code\relax }{lstlisting.77}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}UART Test Code}{27}{lstlisting.77}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces PCB with no components mounted\relax }}{28}{figure.caption.71}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces PCB with no components mounted\relax }}{28}{figure.caption.71}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Top of the PCB}}}{28}{figure.caption.71}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Bottom of the PCB}}}{28}{figure.caption.71}}
-\newlabel{fig:PCB:Bare}{{3.12}{28}{PCB with no components mounted\relax \relax }{figure.caption.71}{}}
+\newlabel{fig:PCB:Bare}{{3.13}{28}{PCB with no components mounted\relax \relax }{figure.caption.71}{}}
 \citation{Atmel:ASF}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3.1}UART Test}{29}{subsubsection.76}}
+\newlabel{UART:Test}{{3.5.3.1}{29}{UART Test\relax }{subsubsection.76}{}}
+\newlabel{lst:UARTTestCode}{{3.1}{29}{UART Test Code\relax }{lstlisting.77}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}UART Test Code}{29}{lstlisting.77}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3.2}SD Card Test}{29}{subsubsection.90}}
 \newlabel{SD:Test}{{3.5.3.2}{29}{SD Card Test\relax }{subsubsection.90}{}}
 \newlabel{lst:SDTestCode}{{3.2}{29}{UART Test Code\relax }{lstlisting.91}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3.2}UART Test Code}{29}{lstlisting.91}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3.3}LED Test}{30}{subsubsection.165}}
-\newlabel{LED:Test}{{3.5.3.3}{30}{LED Test\relax }{subsubsection.165}{}}
 \citation{Atmel:ASF}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3.3}LED Test}{31}{subsubsection.165}}
+\newlabel{LED:Test}{{3.5.3.3}{31}{LED Test\relax }{subsubsection.165}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3.4}SDRAM Test}{31}{subsubsection.166}}
 \newlabel{SDRAM:Test}{{3.5.3.4}{31}{SDRAM Test\relax }{subsubsection.166}{}}
 \newlabel{lst:SDRAMTestCode}{{3.3}{31}{SDRAM Test Code\relax }{lstlisting.167}{}}
@@ -110,38 +111,38 @@
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3.4}$I^{2}C$ Test Code}{32}{lstlisting.211}}
 \newlabel{lst:I2CTest}{{3.5}{33}{Result of \itc bus scan with Channel 0 of the \itc multiplexer selected\relax }{lstlisting.260}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3.5}Result of $I^{2}C$ bus scan with Channel 0 of the $I^{2}C$ multiplexer selected}{33}{lstlisting.260}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3.6}Camera Test}{33}{subsubsection.271}}
-\newlabel{Camera:Test}{{3.5.3.6}{33}{Camera Test\relax }{subsubsection.271}{}}
-\newlabel{lst:CameraTestCode}{{3.6}{33}{Camera Test Code\relax }{lstlisting.272}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.6}Camera Test Code}{33}{lstlisting.272}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3.6}Camera Test}{34}{subsubsection.271}}
+\newlabel{Camera:Test}{{3.5.3.6}{34}{Camera Test\relax }{subsubsection.271}{}}
+\newlabel{lst:CameraTestCode}{{3.6}{34}{Camera Test Code\relax }{lstlisting.272}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.6}Camera Test Code}{34}{lstlisting.272}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3.7}Motor Driver Test}{34}{subsubsection.296}}
 \newlabel{Motor:Test}{{3.5.3.7}{34}{Motor Driver Test\relax }{subsubsection.296}{}}
 \newlabel{lst:MotorTestCode}{{3.7}{34}{Motor Test Code\relax }{lstlisting.297}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3.7}Motor Test Code}{34}{lstlisting.297}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}PCB Faults}{34}{subsection.306}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4.1}TCRT1010 Footprint}{34}{subsubsection.307}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces SDRAM Chip shown against its footprint.\relax }}{35}{figure.caption.309}}
-\newlabel{fig:SDRAM_Err}{{3.13}{35}{SDRAM Chip shown against its footprint.\relax \relax }{figure.caption.309}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}PCB Faults}{35}{subsection.306}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4.1}TCRT1010 Footprint}{35}{subsubsection.307}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4.2}SDRAM Footprint}{35}{subsubsection.308}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4.3}SDRAM Chip Select}{35}{subsubsection.310}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces SDRAM Chip shown against its footprint.\relax }}{36}{figure.caption.309}}
+\newlabel{fig:SDRAM_Err}{{3.14}{36}{SDRAM Chip shown against its footprint.\relax \relax }{figure.caption.309}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4.4}SDRAM Data Line Resistors}{36}{subsubsection.311}}
-\@writefile{tdo}{\contentsline {todo}{Maybe a picture or a diagram would explain the problem more clearly.}{36}{section*.312}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.7}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{36}{table.caption.313}}
-\newlabel{table:SDRAM_Err}{{3.7}{36}{A table showing examples of the incorrect data returned from the SDRAM\relax \relax }{table.caption.313}{}}
+\@writefile{tdo}{\contentsline {todo}{Maybe a picture or a diagram would explain the problem more clearly.}{37}{section*.312}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.7}{\ignorespaces A table showing examples of the incorrect data returned from the SDRAM\relax }}{37}{table.caption.313}}
+\newlabel{table:SDRAM_Err}{{3.7}{37}{A table showing examples of the incorrect data returned from the SDRAM\relax \relax }{table.caption.313}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4.5}Camera Interrupt Line}{37}{subsubsection.314}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4.6}Motor Driver Footprint}{37}{subsubsection.315}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Motor Driver error. Outputs incorrectly connected\relax }}{38}{figure.caption.316}}
-\newlabel{fig:Motor:Error}{{3.14}{38}{Motor Driver error. Outputs incorrectly connected\relax \relax }{figure.caption.316}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Motor Driver error. Outputs incorrectly connected\relax }}{38}{figure.caption.316}}
+\newlabel{fig:Motor:Error}{{3.15}{38}{Motor Driver error. Outputs incorrectly connected\relax \relax }{figure.caption.316}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4.6}Motor Driver Footprint}{38}{subsubsection.315}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.5}PCB Conclusions}{38}{subsection.317}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.6}Conclusions}{39}{section.321}}
-\newlabel{fig:PCB:Top}{{3.15(a)}{40}{Subfigure 3 3.15(a)\relax }{subfigure.319}{}}
-\newlabel{sub@fig:PCB:Top}{{(a)}{40}{Subfigure 3 3.15(a)\relax }{subfigure.319}{}}
-\newlabel{fig:PCB:Bottom}{{3.15(b)}{40}{Subfigure 3 3.15(b)\relax }{subfigure.320}{}}
-\newlabel{sub@fig:PCB:Bottom}{{(b)}{40}{Subfigure 3 3.15(b)\relax }{subfigure.320}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Pictures of the built PCB.\relax }}{40}{figure.caption.318}}
+\newlabel{fig:PCB:Top}{{3.16(a)}{40}{Subfigure 3 3.16(a)\relax }{subfigure.319}{}}
+\newlabel{sub@fig:PCB:Top}{{(a)}{40}{Subfigure 3 3.16(a)\relax }{subfigure.319}{}}
+\newlabel{fig:PCB:Bottom}{{3.16(b)}{40}{Subfigure 3 3.16(b)\relax }{subfigure.320}{}}
+\newlabel{sub@fig:PCB:Bottom}{{(b)}{40}{Subfigure 3 3.16(b)\relax }{subfigure.320}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Pictures of the built PCB.\relax }}{40}{figure.caption.318}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Top view of built PCB}}}{40}{figure.caption.318}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Bottom view of built PCB with SDRAM chip select patch }}}{40}{figure.caption.318}}
-\newlabel{fig:PCB:Built}{{3.15}{40}{Pictures of the built PCB.\relax \relax }{figure.caption.318}{}}
+\newlabel{fig:PCB:Built}{{3.16}{40}{Pictures of the built PCB.\relax \relax }{figure.caption.318}{}}
 \@setckpt{HardwareDevelopment}{
 \setcounter{page}{41}
 \setcounter{equation}{5}
@@ -158,7 +159,7 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{15}
+\setcounter{figure}{16}
 \setcounter{table}{7}
 \setcounter{parentequation}{0}
 \setcounter{example}{0}
@@ -177,7 +178,7 @@
 \setcounter{LT@tables}{1}
 \setcounter{LT@chunks}{2}
 \setcounter{NAT@ctr}{0}
-\setcounter{@todonotes@numberoftodonotes}{6}
+\setcounter{@todonotes@numberoftodonotes}{5}
 \setcounter{address}{1}
 \setcounter{alg}{0}
 \setcounter{lstlisting}{7}

@@ -43,20 +43,24 @@ In order to store a full image into the buffer, WEN must be high between two con
 
 To obtain the image data from the FIFO buffer, the AVR sets output enable low and pulses the read clock. Valid data is available on the data port while RCLK is high. All the data is then read 8 bits at a time.
 
-After the data has been read, the buffer is reset by asserting the read and write reset signals (RRST and WRST) for at least one clock cycle of RCLK or PCLK respectively. The entire operation can be seen in figure \ref{fig:ov_Capture}.
+After the data has been read, the buffer is reset by asserting the read and write reset signals (RRST and WRST) for at least one clock cycle of RCLK or PCLK respectively. The entire operation can be seen in figure \ref{fig:ov_Capture} and a hierarchical diagram of this is seen in figure \ref{fig:cam:heir}.
 \begin{figure}
 \includegraphics[width = \textwidth]{./Figures/ov7670_im_capture.png}
 \caption{Signals generated to control the OV7670 capture and read}
 \label{fig:ov_Capture}
 \end{figure}
-
+\begin{figure}
+\includegraphics[width=\textwidth]{./Figures/Camera_Hierarchy.jpg}
+\caption{Hierarchical diagram of the single camera operation showing signals between the camera, FIFO buffer and the microcontroller}
+\label{fig:cam:heir}
+\end{figure}
 
 Difficulties arose at this point with the storage of the data. The ATMega644P has 4kB of internal SRAM, but  153.6kB of memory is needed to store a single image at QVGA (320 by 240 pixels, 2 bytes per pixel) quality. 
 
 Firstly, data was sent to a desktop computer by USART. A simple program was written in C\# to receive and store all the data as a Bitmap image. This method was slow, taking around 30 seconds to transmit one uncompressed image. 
 
 The second option was to use extra memory connected to the microcontroller. An SD card was used as FAT file system so the memory card is usable on a computer. Text log files were also written to aid debugging. This is discussed in section \ref{sect:SDCard}. 
-\inote{From Tom: Sorry for so many notes, you should be able to see my points of understanding through that, it is good and I pretty much get it (I wish we knew for D4 haha) but there are a few ambiguities and stuff that don't help. Maybe a little diagram with Camera, FIFO, and Microcontroller on it showing the signals between them would help aswell, but it isn't that necessary.}
+
 \subsection{Dual Camera Operation}
 In order for stereovision to be successful, two cameras separated by a horizontal distance ($B$) will need to be driven at the same time to obtain photos within a small time frame of one another.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  13 APR 2013 14:42
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  13 APR 2013 15:02
 entering extended mode
 **report.tex
 (E:\Uni\part3_project\Report\report.tex
@@ -1014,7 +1014,7 @@ Chapter 1.
 
 
 
-] <./Figures/RobotBase.jpg, id=731, 4291.03125pt x 2653.915pt>
+] <./Figures/RobotBase.jpg, id=734, 4291.03125pt x 2653.915pt>
 File: ./Figures/RobotBase.jpg Graphic file (type jpg)
 
 <use ./Figures/RobotBase.jpg>
@@ -1149,14 +1149,14 @@ Chapter 3.
 ------------------------------------------------------------------------------
  3 Hardware and Firmware Development
 ------------------------------------------------------------------------------
-<Figures/OV7670_Back.jpg, id=799, 1462.46375pt x 1863.96375pt>
+<Figures/OV7670_Back.jpg, id=802, 1462.46375pt x 1863.96375pt>
 File: Figures/OV7670_Back.jpg Graphic file (type jpg)
 
 <use Figures/OV7670_Back.jpg>
 Package pdftex.def Info: Figures/OV7670_Back.jpg used on input line 21.
 (pdftex.def)             Requested size: 104.36826pt x 132.99367pt.
  [9]
-<./Figures/RGB565.png, id=809, 809.27344pt x 148.30406pt>
+<./Figures/RGB565.png, id=812, 809.27344pt x 148.30406pt>
 File: ./Figures/RGB565.png Graphic file (type png)
 
 <use ./Figures/RGB565.png>
@@ -1164,71 +1164,80 @@ Package pdftex.def Info: ./Figures/RGB565.png used on input line 33.
 (pdftex.def)             Requested size: 417.47307pt x 76.50528pt.
  [10 <E:/Uni/part3_project/Report/Figures/OV7670_Back.jpg> <E:/Uni/part3_projec
 t/Report/Figures/RGB565.png>]
-<./Figures/ov7670_im_capture.png, id=818, 1273.75874pt x 535.2497pt>
+<./Figures/ov7670_im_capture.png, id=822, 1273.75874pt x 535.2497pt>
 File: ./Figures/ov7670_im_capture.png Graphic file (type png)
 
 <use ./Figures/ov7670_im_capture.png>
 Package pdftex.def Info: ./Figures/ov7670_im_capture.png used on input line 48.
 
 (pdftex.def)             Requested size: 417.47307pt x 175.4242pt.
- [11 <E:/Uni/part3_project/Report/Figures/ov7670_im_capture.png>] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 89--89
+
+<./Figures/Camera_Hierarchy.jpg, id=823, 434.70406pt x 327.74445pt>
+File: ./Figures/Camera_Hierarchy.jpg Graphic file (type jpg)
+
+<use ./Figures/Camera_Hierarchy.jpg>
+Package pdftex.def Info: ./Figures/Camera_Hierarchy.jpg used on input line 53.
+(pdftex.def)             Requested size: 417.47307pt x 314.76111pt.
+ [11 <E:/Uni/part3_project/Report/Figures/ov7670_im_capture.png>] [12 <E:/Uni/p
+art3_project/Report/Figures/Camera_Hierarchy.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
 []\OT1/cmr/m/n/12 *.jpg
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
 []\OT1/cmr/m/n/12 Lossless
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
 []\OT1/cmr/m/n/12 Lossless
  []
 
 
-Underfull \hbox (badness 1946) in paragraph at lines 93--93
+Underfull \hbox (badness 1946) in paragraph at lines 97--97
 []\OT1/cmr/m/n/12 24, 32 or
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 []\OT1/cmr/m/n/12 24, but
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 \OT1/cmr/m/n/12 only 256
  []
 
-[13] <Figures/ExampleImageFromCamera.jpg, id=848, 321.2pt x 240.9pt>
+[13] <Figures/ExampleImageFromCamera.jpg, id=852, 321.2pt x 240.9pt>
 File: Figures/ExampleImageFromCamera.jpg Graphic file (type jpg)
 
 <use Figures/ExampleImageFromCamera.jpg>
 Package pdftex.def Info: Figures/ExampleImageFromCamera.jpg used on input line 
-109.
+113.
 (pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
- [14 <E:/Uni/part3_project/Report/Figures/ExampleImageFromCamera.jpg>]
-<./Figures/Prototype.jpg, id=856, 4117.3825pt x 2294.5725pt>
+ [14]
+<./Figures/Prototype.jpg, id=860, 4117.3825pt x 2294.5725pt>
 File: ./Figures/Prototype.jpg Graphic file (type jpg)
 
 <use ./Figures/Prototype.jpg>
-Package pdftex.def Info: ./Figures/Prototype.jpg used on input line 141.
+Package pdftex.def Info: ./Figures/Prototype.jpg used on input line 145.
 (pdftex.def)             Requested size: 417.47307pt x 232.6218pt.
 
-<./Figures/Camera_TFT.jpg, id=857, 4769.82pt x 3179.88pt>
+<./Figures/Camera_TFT.jpg, id=861, 4769.82pt x 3179.88pt>
 File: ./Figures/Camera_TFT.jpg Graphic file (type jpg)
 
 <use ./Figures/Camera_TFT.jpg>
-Package pdftex.def Info: ./Figures/Camera_TFT.jpg used on input line 147.
+Package pdftex.def Info: ./Figures/Camera_TFT.jpg used on input line 151.
 (pdftex.def)             Requested size: 417.47307pt x 278.31645pt.
- [15] [16 <E:/Uni/part3_project/Report/Figures/Prototype.jpg> <E:/Uni/part3_pro
-ject/Report/Figures/Camera_TFT.jpg>]
-<Figures/TCRT_Circuit.png, id=875, 283.0575pt x 450.9347pt>
+ [15 <E:/Uni/part3_project/Report/Figures/ExampleImageFromCamera.jpg>] [16 <E:/
+Uni/part3_project/Report/Figures/Prototype.jpg> <E:/Uni/part3_project/Report/Fi
+gures/Camera_TFT.jpg>]
+<Figures/TCRT_Circuit.png, id=878, 283.0575pt x 450.9347pt>
 File: Figures/TCRT_Circuit.png Graphic file (type png)
 
 <use Figures/TCRT_Circuit.png>
-Package pdftex.def Info: Figures/TCRT_Circuit.png used on input line 165.
+Package pdftex.def Info: Figures/TCRT_Circuit.png used on input line 169.
 (pdftex.def)             Requested size: 141.5284pt x 225.4668pt.
 Package epstopdf Info: Source file: <Figures/WheelVoltageGraph.eps>
 (epstopdf)                    date: 2013-04-11 10:44:06
@@ -1239,204 +1248,203 @@ Package epstopdf Info: Source file: <Figures/WheelVoltageGraph.eps>
 (epstopdf)                    size: 10984 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/WheelVoltageGraph-e
 ps-converted-to.pdf Figures/WheelVoltageGraph.eps>
-(epstopdf)             \includegraphics on input line 171.
+(epstopdf)             \includegraphics on input line 175.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/WheelVoltageGraph-eps-converted-to.pdf, id=876, 1446.40375pt x 508.901
+<Figures/WheelVoltageGraph-eps-converted-to.pdf, id=879, 1446.40375pt x 508.901
 25pt>
 File: Figures/WheelVoltageGraph-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/WheelVoltageGraph-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/WheelVoltageGraph-eps-converted-to.pdf used on
- input line 171.
+ input line 175.
 (pdftex.def)             Requested size: 417.47307pt x 146.87871pt.
- [17 <E:/Uni/part3_project/Report/Figures/TCRT_Circuit.png>] [18 <E:/Uni/part3_
+ [17] [18 <E:/Uni/part3_project/Report/Figures/TCRT_Circuit.png> <E:/Uni/part3_
 project/Report/Figures/WheelVoltageGraph-eps-converted-to.pdf>] [19]
-<Figures/ASM.jpg, id=909, 871.21484pt x 570.933pt>
+<Figures/ASM.jpg, id=913, 871.21484pt x 570.933pt>
 File: Figures/ASM.jpg Graphic file (type jpg)
  <use Figures/ASM.jpg>
-Package pdftex.def Info: Figures/ASM.jpg used on input line 238.
+Package pdftex.def Info: Figures/ASM.jpg used on input line 242.
 (pdftex.def)             Requested size: 417.47307pt x 273.583pt.
 
-<./Figures/Robotbase_top_annot.jpg, id=910, 2086.04344pt x 2045.39156pt>
+<./Figures/Robotbase_top_annot.jpg, id=914, 2086.04344pt x 2045.39156pt>
 File: ./Figures/Robotbase_top_annot.jpg Graphic file (type jpg)
 
 <use ./Figures/Robotbase_top_annot.jpg>
 Package pdftex.def Info: ./Figures/Robotbase_top_annot.jpg used on input line 2
-46.
+50.
 (pdftex.def)             Requested size: 417.47307pt x 409.32076pt.
 
-<./Figures/Robotbase_side_annot.jpg, id=911, 3438.8475pt x 1227.83719pt>
+<./Figures/Robotbase_side_annot.jpg, id=915, 3438.8475pt x 1227.83719pt>
 File: ./Figures/Robotbase_side_annot.jpg Graphic file (type jpg)
 
 <use ./Figures/Robotbase_side_annot.jpg>
 Package pdftex.def Info: ./Figures/Robotbase_side_annot.jpg used on input line 
-247.
+251.
 (pdftex.def)             Requested size: 417.47307pt x 149.05774pt.
 
-Overfull \hbox (3.91663pt too wide) in paragraph at lines 246--248
+Overfull \hbox (3.91663pt too wide) in paragraph at lines 250--252
  [][] 
  []
 
 
-Overfull \hbox (3.91663pt too wide) in paragraph at lines 246--248
+Overfull \hbox (3.91663pt too wide) in paragraph at lines 250--252
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 269--269
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 []\OT1/cmr/m/n/12 Distance
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--269
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 \OT1/cmr/m/n/12 Spec-i-fied
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--269
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 []\OT1/cmr/m/n/12 Number
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--269
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 \OT1/cmr/m/n/12 of Counts
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--269
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 []\OT1/cmr/m/n/12 Counts $\OMS/cmsy/m/n/12 $
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--269
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 \OT1/cmr/m/n/12 Res-o-lu-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--269
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 []\OT1/cmr/m/n/12 Average
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--269
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 \OT1/cmr/m/n/12 Mea-sured
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--269
+Underfull \hbox (badness 10000) in paragraph at lines 273--273
 \OT1/cmr/m/n/12 Dis-tance
  []
 
-[20] [21 <E:/Uni/part3_project/Report/Figures/ASM.jpg>] [22 <E:/Uni/part3_proje
-ct/Report/Figures/Robotbase_top_annot.jpg> <E:/Uni/part3_project/Report/Figures
-/Robotbase_side_annot.jpg>] [23]
-<Figures/hierarchy.jpg, id=941, 1046.40938pt x 852.18375pt>
+[21 <E:/Uni/part3_project/Report/Figures/ASM.jpg>] [22 <E:/Uni/part3_project/Re
+port/Figures/Robotbase_top_annot.jpg> <E:/Uni/part3_project/Report/Figures/Robo
+tbase_side_annot.jpg>] [23]
+<Figures/hierarchy.jpg, id=944, 1046.40938pt x 852.18375pt>
 File: Figures/hierarchy.jpg Graphic file (type jpg)
 
 <use Figures/hierarchy.jpg>
-Package pdftex.def Info: Figures/hierarchy.jpg used on input line 324.
+Package pdftex.def Info: Figures/hierarchy.jpg used on input line 328.
 (pdftex.def)             Requested size: 417.47307pt x 339.98323pt.
- [24 <E:/Uni/part3_project/Report/Figures/hierarchy.jpg>] [25] [26]
-<./Figures/PCB_Bare_Top.jpg, id=968, 3251.14626pt x 2267.47125pt>
+ [24] [25] [26 <E:/Uni/part3_project/Report/Figures/hierarchy.jpg>]
+<./Figures/PCB_Bare_Top.jpg, id=971, 3251.14626pt x 2267.47125pt>
 File: ./Figures/PCB_Bare_Top.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bare_Top.jpg>
-Package pdftex.def Info: ./Figures/PCB_Bare_Top.jpg used on input line 391.
+Package pdftex.def Info: ./Figures/PCB_Bare_Top.jpg used on input line 395.
 (pdftex.def)             Requested size: 1300.4355pt x 906.97246pt.
 
-<./Figures/PCB_Bare_Bottom.jpg, id=969, 3251.14626pt x 2267.47125pt>
+<./Figures/PCB_Bare_Bottom.jpg, id=972, 3251.14626pt x 2267.47125pt>
 File: ./Figures/PCB_Bare_Bottom.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bare_Bottom.jpg>
-Package pdftex.def Info: ./Figures/PCB_Bare_Bottom.jpg used on input line 392.
+Package pdftex.def Info: ./Figures/PCB_Bare_Bottom.jpg used on input line 396.
 (pdftex.def)             Requested size: 1300.4355pt x 906.97246pt.
 
-Overfull \hbox (886.87906pt too wide) in paragraph at lines 391--393
+Overfull \hbox (886.87906pt too wide) in paragraph at lines 395--397
  [][] 
  []
 
 
-Overfull \hbox (886.87906pt too wide) in paragraph at lines 391--393
+Overfull \hbox (886.87906pt too wide) in paragraph at lines 395--397
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 1202.47182pt on input line 395.
+LaTeX Warning: Float too large for page by 1202.47182pt on input line 399.
 
+[27] [28 <E:/Uni/part3_project/Report/Figures/PCB_Bare_Top.jpg> <E:/Uni/part3_p
+roject/Report/Figures/PCB_Bare_Bottom.jpg>]
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c) [27] [28 <E:/U
-ni/part3_project/Report/Figures/PCB_Bare_Top.jpg> <E:/Uni/part3_project/Report/
-Figures/PCB_Bare_Bottom.jpg>]
-(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [29]) [30]
+(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c)
+(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [29] [30])
 (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [31])
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 435.
+(hyperref)                removing `math shift' on input line 439.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 435.
+(hyperref)                removing `superscript' on input line 439.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 435.
+(hyperref)                removing `math shift' on input line 439.
 
-(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [32])
-(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [33])
-(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c) [34]
+(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [32]) [33]
+(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c)
+(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [34])
 <./Figures/PCB_SDRAM.jpg, id=1246, 1539.7525pt x 1547.7825pt>
 File: ./Figures/PCB_SDRAM.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_SDRAM.jpg>
-Package pdftex.def Info: ./Figures/PCB_SDRAM.jpg used on input line 471.
+Package pdftex.def Info: ./Figures/PCB_SDRAM.jpg used on input line 475.
 (pdftex.def)             Requested size: 208.73653pt x 209.81546pt.
- [35 <E:/Uni/part3_project/Report/Figures/PCB_SDRAM.jpg>]
-Overfull \hbox (6.02278pt too wide) in paragraph at lines 493--498
+ [35] [36 <E:/Uni/part3_project/Report/Figures/PCB_SDRAM.jpg>]
+Overfull \hbox (6.02278pt too wide) in paragraph at lines 497--502
 [][] 
  []
 
-[36] <./Figures/MotorDriver_error.png, id=1262, 496.10344pt x 550.30594pt>
+[37] <./Figures/MotorDriver_error.png, id=1271, 496.10344pt x 550.30594pt>
 File: ./Figures/MotorDriver_error.png Graphic file (type png)
 
 <use ./Figures/MotorDriver_error.png>
-Package pdftex.def Info: ./Figures/MotorDriver_error.png used on input line 519
+Package pdftex.def Info: ./Figures/MotorDriver_error.png used on input line 523
 .
 (pdftex.def)             Requested size: 208.73653pt x 231.53836pt.
- [37]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 531.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 535.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 531.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 535.
  [38 <E:/Uni/part3_project/Report/Figures/MotorDriver_error.png>]
-<./Figures/PCB_Top.jpg, id=1273, 2669.975pt x 1862.96pt>
+<./Figures/PCB_Top.jpg, id=1277, 2669.975pt x 1862.96pt>
 File: ./Figures/PCB_Top.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Top.jpg>
-Package pdftex.def Info: ./Figures/PCB_Top.jpg used on input line 546.
+Package pdftex.def Info: ./Figures/PCB_Top.jpg used on input line 550.
 (pdftex.def)             Requested size: 417.47307pt x 291.28577pt.
 
-<./Figures/PCB_Bottom.jpg, id=1274, 3880.4975pt x 2812.5075pt>
+<./Figures/PCB_Bottom.jpg, id=1278, 3880.4975pt x 2812.5075pt>
 File: ./Figures/PCB_Bottom.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bottom.jpg>
-Package pdftex.def Info: ./Figures/PCB_Bottom.jpg used on input line 547.
+Package pdftex.def Info: ./Figures/PCB_Bottom.jpg used on input line 551.
 (pdftex.def)             Requested size: 417.47307pt x 302.55324pt.
 
-Overfull \hbox (3.91663pt too wide) in paragraph at lines 546--548
+Overfull \hbox (3.91663pt too wide) in paragraph at lines 550--552
  [][] 
  []
 
 
-Overfull \hbox (3.91663pt too wide) in paragraph at lines 546--548
+Overfull \hbox (3.91663pt too wide) in paragraph at lines 550--552
  [][] 
  []
 
@@ -1447,14 +1455,14 @@ Chapter 4.
 ------------------------------------------------------------------------------
  4 Vision Algorithms
 ------------------------------------------------------------------------------
-<./Figures/deskLeft.png, id=1291, 401.5pt x 301.125pt>
+<./Figures/deskLeft.png, id=1295, 401.5pt x 301.125pt>
 File: ./Figures/deskLeft.png Graphic file (type png)
 
 <use ./Figures/deskLeft.png>
 Package pdftex.def Info: ./Figures/deskLeft.png used on input line 13.
 (pdftex.def)             Requested size: 160.59715pt x 120.44786pt.
 
-<./Figures/deskRight.png, id=1292, 401.5pt x 301.125pt>
+<./Figures/deskRight.png, id=1296, 401.5pt x 301.125pt>
 File: ./Figures/deskRight.png Graphic file (type png)
 
 <use ./Figures/deskRight.png>
@@ -1478,7 +1486,7 @@ nverted-to.pdf ./Figures/SADResults.eps>
 (epstopdf)             \includegraphics on input line 71.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/SADResults-eps-converted-to.pdf, id=1313, 1445.4pt x 708.6475pt>
+<./Figures/SADResults-eps-converted-to.pdf, id=1317, 1445.4pt x 708.6475pt>
 File: ./Figures/SADResults-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Figures/SADResults-eps-converted-to.pdf>
@@ -1497,7 +1505,7 @@ nverted-to.pdf ./Figures/SSDResults.eps>
 (epstopdf)             \includegraphics on input line 72.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/SSDResults-eps-converted-to.pdf, id=1314, 1445.4pt x 517.935pt>
+<./Figures/SSDResults-eps-converted-to.pdf, id=1318, 1445.4pt x 517.935pt>
 File: ./Figures/SSDResults-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Figures/SSDResults-eps-converted-to.pdf>
@@ -1516,7 +1524,7 @@ nverted-to.pdf ./Figures/NCCResults.eps>
 (epstopdf)             \includegraphics on input line 73.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/NCCResults-eps-converted-to.pdf, id=1315, 1445.4pt x 708.6475pt>
+<./Figures/NCCResults-eps-converted-to.pdf, id=1319, 1445.4pt x 708.6475pt>
 File: ./Figures/NCCResults-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Figures/NCCResults-eps-converted-to.pdf>
@@ -1526,7 +1534,7 @@ t line 73.
  [43] [44 <E:/Uni/part3_project/Report/Figures/SADResults-eps-converted-to.pdf>
  <E:/Uni/part3_project/Report/Figures/SSDResults-eps-converted-to.pdf> <E:/Uni/
 part3_project/Report/Figures/NCCResults-eps-converted-to.pdf>] [45]
-<Figures/FoV.jpg, id=1435, 871.21484pt x 570.933pt>
+<Figures/FoV.jpg, id=1439, 871.21484pt x 570.933pt>
 File: Figures/FoV.jpg Graphic file (type jpg)
  <use Figures/FoV.jpg>
 Package pdftex.def Info: Figures/FoV.jpg used on input line 133.
@@ -1542,13 +1550,13 @@ Underfull \hbox (badness 2617) in paragraph at lines 169--169
 []\OT1/cmr/m/n/12 Calculated Dis-
  []
 
-<./Figures/Duck_L.jpg, id=1449, 321.2pt x 240.9pt>
+<./Figures/Duck_L.jpg, id=1453, 321.2pt x 240.9pt>
 File: ./Figures/Duck_L.jpg Graphic file (type jpg)
  <use ./Figures/Duck_L.jpg>
 Package pdftex.def Info: ./Figures/Duck_L.jpg used on input line 184.
 (pdftex.def)             Requested size: 128.47772pt x 96.35828pt.
 
-<./Figures/Duck_R.jpg, id=1450, 321.2pt x 240.9pt>
+<./Figures/Duck_R.jpg, id=1454, 321.2pt x 240.9pt>
 File: ./Figures/Duck_R.jpg Graphic file (type jpg)
  <use ./Figures/Duck_R.jpg>
 Package pdftex.def Info: ./Figures/Duck_R.jpg used on input line 185.
@@ -1564,7 +1572,7 @@ ted-to.pdf Figures/NCC_Duck.eps>
 (epstopdf)             \includegraphics on input line 192.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/NCC_Duck-eps-converted-to.pdf, id=1451, 1445.4pt x 708.6475pt>
+<Figures/NCC_Duck-eps-converted-to.pdf, id=1455, 1445.4pt x 708.6475pt>
 File: Figures/NCC_Duck-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/NCC_Duck-eps-converted-to.pdf>
@@ -1585,7 +1593,7 @@ Package epstopdf Info: Source file: <Figures/BPlot.eps>
 (epstopdf)             \includegraphics on input line 204.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/BPlot-eps-converted-to.pdf, id=1494, 1445.4pt x 708.6475pt>
+<Figures/BPlot-eps-converted-to.pdf, id=1498, 1445.4pt x 708.6475pt>
 File: Figures/BPlot-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/BPlot-eps-converted-to.pdf>
@@ -1604,7 +1612,7 @@ df>
 (epstopdf)             \includegraphics on input line 209.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Distance_DeltaX-eps-converted-to.pdf, id=1495, 1446.40375pt x 525.965p
+<Figures/Distance_DeltaX-eps-converted-to.pdf, id=1499, 1446.40375pt x 525.965p
 t>
 File: Figures/Distance_DeltaX-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/Distance_DeltaX-eps-converted-to.pdf>
@@ -1624,7 +1632,7 @@ converted-to.pdf ./Figures/Dirac_1D_Sig.eps>
 (epstopdf)             \includegraphics on input line 223.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Dirac_1D_Sig-eps-converted-to.pdf, id=1531, 1446.40375pt x 528.97626
+<./Figures/Dirac_1D_Sig-eps-converted-to.pdf, id=1535, 1446.40375pt x 528.97626
 pt>
 File: ./Figures/Dirac_1D_Sig-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Dirac_1D_Sig-eps-converted-to.pdf>
@@ -1643,7 +1651,7 @@ converted-to.pdf ./Figures/Dirac_1D_Mag.eps>
 (epstopdf)             \includegraphics on input line 224.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Dirac_1D_Mag-eps-converted-to.pdf, id=1532, 1446.40375pt x 525.965pt
+<./Figures/Dirac_1D_Mag-eps-converted-to.pdf, id=1536, 1446.40375pt x 525.965pt
 >
 File: ./Figures/Dirac_1D_Mag-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Dirac_1D_Mag-eps-converted-to.pdf>
@@ -1662,7 +1670,7 @@ s-converted-to.pdf ./Figures/Dirac_1D_Phase.eps>
 (epstopdf)             \includegraphics on input line 225.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Dirac_1D_Phase-eps-converted-to.pdf, id=1533, 1446.40375pt x 546.04p
+<./Figures/Dirac_1D_Phase-eps-converted-to.pdf, id=1537, 1446.40375pt x 546.04p
 t>
 File: ./Figures/Dirac_1D_Phase-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Dirac_1D_Phase-eps-converted-to.pdf>
@@ -1696,7 +1704,7 @@ df>
 (epstopdf)             \includegraphics on input line 232.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Square_1D_Sig-eps-converted-to.pdf, id=1534, 1446.40375pt x 549.0512
+<./Figures/Square_1D_Sig-eps-converted-to.pdf, id=1538, 1446.40375pt x 549.0512
 5pt>
 File: ./Figures/Square_1D_Sig-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Square_1D_Sig-eps-converted-to.pdf>
@@ -1715,7 +1723,7 @@ df>
 (epstopdf)             \includegraphics on input line 233.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Square_1D_Mag-eps-converted-to.pdf, id=1535, 1446.40375pt x 554.07pt
+<./Figures/Square_1D_Mag-eps-converted-to.pdf, id=1539, 1446.40375pt x 554.07pt
 >
 File: ./Figures/Square_1D_Mag-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Square_1D_Mag-eps-converted-to.pdf>
@@ -1734,7 +1742,7 @@ ps-converted-to.pdf ./Figures/Square_1D_Phase.eps>
 (epstopdf)             \includegraphics on input line 234.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Square_1D_Phase-eps-converted-to.pdf, id=1536, 1446.40375pt x 540.01
+<./Figures/Square_1D_Phase-eps-converted-to.pdf, id=1540, 1446.40375pt x 540.01
 75pt>
 File: ./Figures/Square_1D_Phase-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Square_1D_Phase-eps-converted-to.pdf>
@@ -1763,42 +1771,42 @@ rt3_project/Report/Figures/Dirac_1D_Phase-eps-converted-to.pdf>] [52 <E:/Uni/pa
 rt3_project/Report/Figures/Square_1D_Sig-eps-converted-to.pdf> <E:/Uni/part3_pr
 oject/Report/Figures/Square_1D_Mag-eps-converted-to.pdf> <E:/Uni/part3_project/
 Report/Figures/Square_1D_Phase-eps-converted-to.pdf>]
-<./Figures/Dirac_2D_Sig.jpg, id=1599, 462.97969pt x 462.22687pt>
+<./Figures/Dirac_2D_Sig.jpg, id=1603, 462.97969pt x 462.22687pt>
 File: ./Figures/Dirac_2D_Sig.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_2D_Sig.jpg>
 Package pdftex.def Info: ./Figures/Dirac_2D_Sig.jpg used on input line 277.
 (pdftex.def)             Requested size: 284.52756pt x 284.06682pt.
 
-<./Figures/Dirac_2D_Mag.jpg, id=1600, 463.7325pt x 463.7325pt>
+<./Figures/Dirac_2D_Mag.jpg, id=1604, 463.7325pt x 463.7325pt>
 File: ./Figures/Dirac_2D_Mag.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_2D_Mag.jpg>
 Package pdftex.def Info: ./Figures/Dirac_2D_Mag.jpg used on input line 278.
 (pdftex.def)             Requested size: 180.28378pt x 180.28178pt.
 
-<./Figures/Dirac_2D_Phase.jpg, id=1601, 463.7325pt x 461.47406pt>
+<./Figures/Dirac_2D_Phase.jpg, id=1605, 463.7325pt x 461.47406pt>
 File: ./Figures/Dirac_2D_Phase.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_2D_Phase.jpg>
 Package pdftex.def Info: ./Figures/Dirac_2D_Phase.jpg used on input line 279.
 (pdftex.def)             Requested size: 180.28378pt x 179.40378pt.
 
-<./Figures/Square_2D_Sig.jpg, id=1602, 192.72pt x 192.72pt>
+<./Figures/Square_2D_Sig.jpg, id=1606, 192.72pt x 192.72pt>
 File: ./Figures/Square_2D_Sig.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_2D_Sig.jpg>
 Package pdftex.def Info: ./Figures/Square_2D_Sig.jpg used on input line 286.
 (pdftex.def)             Requested size: 284.52756pt x 284.52711pt.
 
-<./Figures/Square_2D_Abs.jpg, id=1603, 256.96pt x 256.96pt>
+<./Figures/Square_2D_Abs.jpg, id=1607, 256.96pt x 256.96pt>
 File: ./Figures/Square_2D_Abs.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_2D_Abs.jpg>
 Package pdftex.def Info: ./Figures/Square_2D_Abs.jpg used on input line 287.
 (pdftex.def)             Requested size: 180.28378pt x 180.28638pt.
 
-<./Figures/Square_2D_Phase.jpg, id=1604, 256.96pt x 256.96pt>
+<./Figures/Square_2D_Phase.jpg, id=1608, 256.96pt x 256.96pt>
 File: ./Figures/Square_2D_Phase.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_2D_Phase.jpg>
@@ -1827,7 +1835,7 @@ ut-eps-converted-to.pdf ./Figures/AVR_FFT_Dirac_Input.eps>
 (epstopdf)             \includegraphics on input line 318.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Dirac_Input-eps-converted-to.pdf, id=1654, 1446.40375pt x 55
+<./Figures/AVR_FFT_Dirac_Input-eps-converted-to.pdf, id=1658, 1446.40375pt x 55
 7.08125pt>
 File: ./Figures/AVR_FFT_Dirac_Input-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -1847,7 +1855,7 @@ plex_Mag-eps-converted-to.pdf ./Figures/AVR_FFT_Dirac_Complex_Mag.eps>
 (epstopdf)             \includegraphics on input line 323.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Dirac_Complex_Mag-eps-converted-to.pdf, id=1655, 1446.40375p
+<./Figures/AVR_FFT_Dirac_Complex_Mag-eps-converted-to.pdf, id=1659, 1446.40375p
 t x 560.0925pt>
 File: ./Figures/AVR_FFT_Dirac_Complex_Mag-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -1868,7 +1876,7 @@ plex_Phase-eps-converted-to.pdf ./Figures/AVR_FFT_Dirac_Complex_Phase.eps>
 (epstopdf)             \includegraphics on input line 324.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Dirac_Complex_Phase-eps-converted-to.pdf, id=1656, 1446.4037
+<./Figures/AVR_FFT_Dirac_Complex_Phase-eps-converted-to.pdf, id=1660, 1446.4037
 5pt x 708.6475pt>
 File: ./Figures/AVR_FFT_Dirac_Complex_Phase-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1899,7 +1907,7 @@ to.pdf>
 (epstopdf)             \includegraphics on input line 330.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Dirac_Mag-eps-converted-to.pdf, id=1657, 1446.40375pt x 566.
+<./Figures/AVR_FFT_Dirac_Mag-eps-converted-to.pdf, id=1661, 1446.40375pt x 566.
 115pt>
 File: ./Figures/AVR_FFT_Dirac_Mag-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/AVR_FFT_Dirac_Mag-eps-converted-to.pdf>
@@ -1918,7 +1926,7 @@ put-eps-converted-to.pdf ./Figures/AVR_FFT_Square_Input.eps>
 (epstopdf)             \includegraphics on input line 336.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Square_Input-eps-converted-to.pdf, id=1658, 1446.40375pt x 5
+<./Figures/AVR_FFT_Square_Input-eps-converted-to.pdf, id=1662, 1446.40375pt x 5
 69.12625pt>
 File: ./Figures/AVR_FFT_Square_Input-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -1927,7 +1935,7 @@ Package pdftex.def Info: ./Figures/AVR_FFT_Square_Input-eps-converted-to.pdf us
 ed on input line 336.
 (pdftex.def)             Requested size: 417.47307pt x 164.2608pt.
 
-<./Figures/AVR_FFT_Square_Complex_Output.jpg, id=1659, 1446.40375pt x 609.27625
+<./Figures/AVR_FFT_Square_Complex_Output.jpg, id=1663, 1446.40375pt x 609.27625
 pt>
 File: ./Figures/AVR_FFT_Square_Complex_Output.jpg Graphic file (type jpg)
  <use ./Figures/AVR_FFT_Square_Complex_Output.jpg>
@@ -1935,7 +1943,7 @@ Package pdftex.def Info: ./Figures/AVR_FFT_Square_Complex_Output.jpg used on in
 put line 341.
 (pdftex.def)             Requested size: 417.47307pt x 175.84886pt.
 
-<./Figures/AVR_FFT_Square_Mag.jpg, id=1660, 1446.40375pt x 617.30624pt>
+<./Figures/AVR_FFT_Square_Mag.jpg, id=1664, 1446.40375pt x 617.30624pt>
 File: ./Figures/AVR_FFT_Square_Mag.jpg Graphic file (type jpg)
 
 <use ./Figures/AVR_FFT_Square_Mag.jpg>
@@ -1962,7 +1970,7 @@ eps-converted-to.pdf Figures/AVR_FFT2_Dirac_Mag.eps>
 (epstopdf)             \includegraphics on input line 383.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/AVR_FFT2_Dirac_Mag-eps-converted-to.pdf, id=1698, 1084.05pt x 473.77pt
+<Figures/AVR_FFT2_Dirac_Mag-eps-converted-to.pdf, id=1702, 1084.05pt x 473.77pt
 >
 File: Figures/AVR_FFT2_Dirac_Mag-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/AVR_FFT2_Dirac_Mag-eps-converted-to.pdf>
@@ -1981,7 +1989,7 @@ e-eps-converted-to.pdf Figures/AVR_FFT2_Dirac_Phase.eps>
 (epstopdf)             \includegraphics on input line 384.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/AVR_FFT2_Dirac_Phase-eps-converted-to.pdf, id=1699, 1084.05pt x 458.71
+<Figures/AVR_FFT2_Dirac_Phase-eps-converted-to.pdf, id=1703, 1084.05pt x 458.71
 375pt>
 File: Figures/AVR_FFT2_Dirac_Phase-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -2001,7 +2009,7 @@ to.pdf>
 (epstopdf)             \includegraphics on input line 390.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/AVR_FFT2_Square_Mag-eps-converted-to.pdf, id=1700, 1084.05pt x 482.803
+<Figures/AVR_FFT2_Square_Mag-eps-converted-to.pdf, id=1704, 1084.05pt x 482.803
 76pt>
 File: Figures/AVR_FFT2_Square_Mag-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/AVR_FFT2_Square_Mag-eps-converted-to.pdf>
@@ -2020,7 +2028,7 @@ se-eps-converted-to.pdf Figures/AVR_FFT2_Square_Phase.eps>
 (epstopdf)             \includegraphics on input line 391.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/AVR_FFT2_Square_Phase-eps-converted-to.pdf, id=1701, 1084.05pt x 464.7
+<Figures/AVR_FFT2_Square_Phase-eps-converted-to.pdf, id=1705, 1084.05pt x 464.7
 3625pt>
 File: Figures/AVR_FFT2_Square_Phase-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2042,7 +2050,7 @@ Chapter 5.
 
 
 
-] [64] <Figures/Robot.jpg, id=1755, 4769.82pt x 3179.88pt>
+] [64] <Figures/Robot.jpg, id=1759, 4769.82pt x 3179.88pt>
 File: Figures/Robot.jpg Graphic file (type jpg)
 
 <use Figures/Robot.jpg>
@@ -2063,7 +2071,7 @@ Appendix A.
 ------------------------------------------------------------------------------
  A Gantt Chart
 ------------------------------------------------------------------------------
-<Figures/Gantt.png, id=1798, 805.50937pt x 380.17032pt>
+<Figures/Gantt.png, id=1802, 805.50937pt x 380.17032pt>
 File: Figures/Gantt.png Graphic file (type png)
 
 <use Figures/Gantt.png>
@@ -2078,7 +2086,7 @@ Appendix B.
 ------------------------------------------------------------------------------
  B Circuit Diagrams
 ------------------------------------------------------------------------------
-<Figures/OV7670_Schematic.jpg, id=1807, 844.5954pt x 597.432pt>
+<Figures/OV7670_Schematic.jpg, id=1811, 844.5954pt x 597.432pt>
 File: Figures/OV7670_Schematic.jpg Graphic file (type jpg)
 
 <use Figures/OV7670_Schematic.jpg>
@@ -2089,7 +2097,7 @@ Package pdftex.def Info: Figures/OV7670_Schematic.jpg used on input line 8.
 
 
 ] [74 <E:/Uni/part3_project/Report/Figures/OV7670_Schematic.jpg>]
-<Figures/IlMattoCamera_CircuitDiagram.png, id=1817, 753.0534pt x 694.7556pt>
+<Figures/IlMattoCamera_CircuitDiagram.png, id=1821, 753.0534pt x 694.7556pt>
 File: Figures/IlMattoCamera_CircuitDiagram.png Graphic file (type png)
 
 <use Figures/IlMattoCamera_CircuitDiagram.png>
@@ -2099,7 +2107,7 @@ Package pdftex.def Info: Figures/IlMattoCamera_CircuitDiagram.png used on input
  [75
 
  <E:/Uni/part3_project/Report/Figures/IlMattoCamera_CircuitDiagram.png>]
-<./Figures/ColumbusCircuitPage1.png, id=1822, 767.9892pt x 492.8814pt>
+<./Figures/ColumbusCircuitPage1.png, id=1826, 767.9892pt x 492.8814pt>
 File: ./Figures/ColumbusCircuitPage1.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage1.png>
@@ -2107,7 +2115,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage1.png used on input line
 26.
 (pdftex.def)             Requested size: 767.98732pt x 492.88019pt.
 
-<./Figures/ColumbusCircuitPage2.png, id=1823, 493.3632pt x 182.1204pt>
+<./Figures/ColumbusCircuitPage2.png, id=1827, 493.3632pt x 182.1204pt>
 File: ./Figures/ColumbusCircuitPage2.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage2.png>
@@ -2118,7 +2126,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage2.png used on input line
 
 LaTeX Warning: Float too large for page by 24.56201pt on input line 36.
 
-<./Figures/ColumbusCircuitPage3.png, id=1824, 447.1104pt x 189.3474pt>
+<./Figures/ColumbusCircuitPage3.png, id=1828, 447.1104pt x 189.3474pt>
 File: ./Figures/ColumbusCircuitPage3.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage3.png>
@@ -2129,7 +2137,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage3.png used on input line
 
 LaTeX Warning: Float too large for page by 24.56552pt on input line 43.
 
-<./Figures/ColumbusCircuitPage4.png, id=1825, 423.5022pt x 362.7954pt>
+<./Figures/ColumbusCircuitPage4.png, id=1829, 423.5022pt x 362.7954pt>
 File: ./Figures/ColumbusCircuitPage4.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage4.png>
@@ -2137,7 +2145,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage4.png used on input line
 47.
 (pdftex.def)             Requested size: 423.50114pt x 362.79451pt.
 
-<./Figures/ColumbusCircuitPage5.png, id=1826, 406.1574pt x 385.9218pt>
+<./Figures/ColumbusCircuitPage5.png, id=1830, 406.1574pt x 385.9218pt>
 File: ./Figures/ColumbusCircuitPage5.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage5.png>
@@ -2145,7 +2153,7 @@ Package pdftex.def Info: ./Figures/ColumbusCircuitPage5.png used on input line
 54.
 (pdftex.def)             Requested size: 406.1564pt x 385.92085pt.
 
-<./Figures/ColumbusCircuitPage6.png, id=1827, 377.2494pt x 297.7524pt>
+<./Figures/ColumbusCircuitPage6.png, id=1831, 377.2494pt x 297.7524pt>
 File: ./Figures/ColumbusCircuitPage6.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage6.png>
@@ -2165,7 +2173,7 @@ Appendix C.
 ------------------------------------------------------------------------------
  C PCB Design
 ------------------------------------------------------------------------------
-<Figures/ColumbusPCBTop_GP.png, id=1857, 290.16405pt x 212.69061pt>
+<Figures/ColumbusPCBTop_GP.png, id=1861, 290.16405pt x 212.69061pt>
 File: Figures/ColumbusPCBTop_GP.png Graphic file (type png)
 
 <use Figures/ColumbusPCBTop_GP.png>
@@ -2176,7 +2184,7 @@ Package pdftex.def Info: Figures/ColumbusPCBTop_GP.png used on input line 8.
 
 
 ] [84 <E:/Uni/part3_project/Report/Figures/ColumbusPCBTop_GP.png>]
-<Figures/ColumbusPCBBottom_GP.png, id=1866, 290.16405pt x 212.69061pt>
+<Figures/ColumbusPCBBottom_GP.png, id=1870, 290.16405pt x 212.69061pt>
 File: Figures/ColumbusPCBBottom_GP.png Graphic file (type png)
 
 <use Figures/ColumbusPCBBottom_GP.png>
@@ -2470,21 +2478,21 @@ Appendix G.
 ------------------------------------------------------------------------------
  G Range Finding Derivations
 ------------------------------------------------------------------------------
-<Figures/problem1.png, id=1912, 791.20593pt x 910.15031pt>
+<Figures/problem1.png, id=1916, 791.20593pt x 910.15031pt>
 File: Figures/problem1.png Graphic file (type png)
 
 <use Figures/problem1.png>
 Package pdftex.def Info: Figures/problem1.png used on input line 6.
 (pdftex.def)             Requested size: 417.47794pt x 480.23866pt.
  [95] [96 <E:/Uni/part3_project/Report/Figures/problem1.png>] <Figures/problem2
-.png, id=1944, 805.50937pt x 928.97063pt>
+.png, id=1948, 805.50937pt x 928.97063pt>
 File: Figures/problem2.png Graphic file (type png)
 
 <use Figures/problem2.png>
 Package pdftex.def Info: Figures/problem2.png used on input line 108.
 (pdftex.def)             Requested size: 417.4661pt x 481.45157pt.
  [97]
-<Figures/problem3.png, id=1961, 797.98125pt x 919.93687pt>
+<Figures/problem3.png, id=1965, 797.98125pt x 919.93687pt>
 File: Figures/problem3.png Graphic file (type png)
 
 <use Figures/problem3.png>
@@ -2524,13 +2532,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
  ) 
 Here is how much of TeX's memory you used:
- 22029 strings out of 494045
- 373730 string characters out of 3145960
- 827900 words of memory out of 3000000
- 24106 multiletter control sequences out of 15000+200000
+ 22034 strings out of 494045
+ 373881 string characters out of 3145960
+ 955722 words of memory out of 3000000
+ 24110 multiletter control sequences out of 15000+200000
  14685 words of font info for 57 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 63i,18n,100p,1397b,1830s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,18n,100p,1397b,1826s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.452} has been referenced but does not e
 xist, replaced by a fixed one
 
@@ -2556,9 +2564,9 @@ ype1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmu10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on report.pdf (118 pages, 37370394 bytes).
+Output written on report.pdf (118 pages, 37605517 bytes).
 PDF statistics:
- 2167 PDF objects out of 2487 (max. 8388607)
+ 2171 PDF objects out of 2487 (max. 8388607)
  626 named destinations out of 1000 (max. 500000)
- 1017 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1022 words of extra memory for PDF output out of 10000 (max. 10000000)
 
