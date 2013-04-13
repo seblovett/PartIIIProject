@@ -10,14 +10,14 @@
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Prototype of streaming camera images to TFT screen.\relax }}{16}{figure.caption.44}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Circuit diagram of Optosensor\relax }}{17}{figure.caption.47}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Graph of Wheel Angle against the Voltage read by the AVR\relax }}{18}{figure.caption.48}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces A State Machine showing the operation of the \textit {Motor\_Execute} method\relax }}{20}{figure.caption.56}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{21}{figure.caption.57}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{21}{figure.caption.57}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Side View of robot base showing dimensions of interest}}}{21}{figure.caption.57}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces A State Machine showing the operation of the \textit {Motor\_Execute} method\relax }}{21}{figure.caption.56}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Dimensions of Interest for Robot Movement\relax }}{22}{figure.caption.57}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top View of robot base showing dimensions of interest}}}{22}{figure.caption.57}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Side View of robot base showing dimensions of interest}}}{22}{figure.caption.57}
 \contentsline {figure}{\numberline {3.11}{\ignorespaces A hierarchical diagram of the robot\relax }}{24}{figure.caption.68}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces PCB with no components mounted\relax }}{27}{figure.caption.71}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top of the PCB}}}{27}{figure.caption.71}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bottom of the PCB}}}{27}{figure.caption.71}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces PCB with no components mounted\relax }}{28}{figure.caption.71}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top of the PCB}}}{28}{figure.caption.71}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bottom of the PCB}}}{28}{figure.caption.71}
 \contentsline {figure}{\numberline {3.13}{\ignorespaces SDRAM Chip shown against its footprint.\relax }}{35}{figure.caption.309}
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Motor Driver error. Outputs incorrectly connected\relax }}{38}{figure.caption.316}
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Pictures of the built PCB.\relax }}{40}{figure.caption.318}

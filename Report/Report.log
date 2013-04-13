@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  13 APR 2013 14:33
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.13)  13 APR 2013 14:42
 entering extended mode
 **report.tex
 (E:\Uni\part3_project\Report\report.tex
@@ -1251,11 +1251,11 @@ Package pdftex.def Info: Figures/WheelVoltageGraph-eps-converted-to.pdf used on
 (pdftex.def)             Requested size: 417.47307pt x 146.87871pt.
  [17 <E:/Uni/part3_project/Report/Figures/TCRT_Circuit.png>] [18 <E:/Uni/part3_
 project/Report/Figures/WheelVoltageGraph-eps-converted-to.pdf>] [19]
-<Figures/ASM.jpg, id=909, 516.0078pt x 256.91985pt>
+<Figures/ASM.jpg, id=909, 871.21484pt x 570.933pt>
 File: Figures/ASM.jpg Graphic file (type jpg)
  <use Figures/ASM.jpg>
 Package pdftex.def Info: Figures/ASM.jpg used on input line 238.
-(pdftex.def)             Requested size: 417.47307pt x 207.86087pt.
+(pdftex.def)             Requested size: 417.47307pt x 273.583pt.
 
 <./Figures/Robotbase_top_annot.jpg, id=910, 2086.04344pt x 2045.39156pt>
 File: ./Figures/Robotbase_top_annot.jpg Graphic file (type jpg)
@@ -1282,9 +1282,7 @@ Overfull \hbox (3.91663pt too wide) in paragraph at lines 246--248
  [][] 
  []
 
-[20 <E:/Uni/part3_project/Report/Figures/ASM.jpg>] [21 <E:/Uni/part3_project/Re
-port/Figures/Robotbase_top_annot.jpg> <E:/Uni/part3_project/Report/Figures/Robo
-tbase_side_annot.jpg>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 269--269
 []\OT1/cmr/m/n/12 Distance
  []
@@ -1329,21 +1327,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 269--269
 \OT1/cmr/m/n/12 Dis-tance
  []
 
-[22] <Figures/hierarchy.jpg, id=933, 1046.40938pt x 852.18375pt>
+[20] [21 <E:/Uni/part3_project/Report/Figures/ASM.jpg>] [22 <E:/Uni/part3_proje
+ct/Report/Figures/Robotbase_top_annot.jpg> <E:/Uni/part3_project/Report/Figures
+/Robotbase_side_annot.jpg>] [23]
+<Figures/hierarchy.jpg, id=941, 1046.40938pt x 852.18375pt>
 File: Figures/hierarchy.jpg Graphic file (type jpg)
 
 <use Figures/hierarchy.jpg>
 Package pdftex.def Info: Figures/hierarchy.jpg used on input line 324.
 (pdftex.def)             Requested size: 417.47307pt x 339.98323pt.
- [23] [24 <E:/Uni/part3_project/Report/Figures/hierarchy.jpg>] [25]
-<./Figures/PCB_Bare_Top.jpg, id=962, 3251.14626pt x 2267.47125pt>
+ [24 <E:/Uni/part3_project/Report/Figures/hierarchy.jpg>] [25] [26]
+<./Figures/PCB_Bare_Top.jpg, id=968, 3251.14626pt x 2267.47125pt>
 File: ./Figures/PCB_Bare_Top.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bare_Top.jpg>
 Package pdftex.def Info: ./Figures/PCB_Bare_Top.jpg used on input line 391.
 (pdftex.def)             Requested size: 1300.4355pt x 906.97246pt.
 
-<./Figures/PCB_Bare_Bottom.jpg, id=963, 3251.14626pt x 2267.47125pt>
+<./Figures/PCB_Bare_Bottom.jpg, id=969, 3251.14626pt x 2267.47125pt>
 File: ./Figures/PCB_Bare_Bottom.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bare_Bottom.jpg>
@@ -1362,17 +1363,17 @@ Overfull \hbox (886.87906pt too wide) in paragraph at lines 391--393
 
 LaTeX Warning: Float too large for page by 1202.47182pt on input line 395.
 
-[26] [27 <E:/Uni/part3_project/Report/Figures/PCB_Bare_Top.jpg> <E:/Uni/part3_p
-roject/Report/Figures/PCB_Bare_Bottom.jpg>]
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c) [28]
+(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c) [27] [28 <E:/U
+ni/part3_project/Report/Figures/PCB_Bare_Top.jpg> <E:/Uni/part3_project/Report/
+Figures/PCB_Bare_Bottom.jpg>]
 (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [29]) [30]
-(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c)
+(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [31])
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 435.
@@ -1385,7 +1386,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 435.
 
-[31] (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [32])
+(E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [32])
 (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c [33])
 (E:\Uni\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c) [34]
 <./Figures/PCB_SDRAM.jpg, id=1246, 1539.7525pt x 1547.7825pt>
@@ -1406,6 +1407,7 @@ File: ./Figures/MotorDriver_error.png Graphic file (type png)
 Package pdftex.def Info: ./Figures/MotorDriver_error.png used on input line 519
 .
 (pdftex.def)             Requested size: 208.73653pt x 231.53836pt.
+ [37]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 531.
 
 
@@ -1414,15 +1416,15 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 531.
- [37]
-<./Figures/PCB_Top.jpg, id=1269, 2669.975pt x 1862.96pt>
+ [38 <E:/Uni/part3_project/Report/Figures/MotorDriver_error.png>]
+<./Figures/PCB_Top.jpg, id=1273, 2669.975pt x 1862.96pt>
 File: ./Figures/PCB_Top.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Top.jpg>
 Package pdftex.def Info: ./Figures/PCB_Top.jpg used on input line 546.
 (pdftex.def)             Requested size: 417.47307pt x 291.28577pt.
 
-<./Figures/PCB_Bottom.jpg, id=1270, 3880.4975pt x 2812.5075pt>
+<./Figures/PCB_Bottom.jpg, id=1274, 3880.4975pt x 2812.5075pt>
 File: ./Figures/PCB_Bottom.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bottom.jpg>
@@ -1438,9 +1440,9 @@ Overfull \hbox (3.91663pt too wide) in paragraph at lines 546--548
  [][] 
  []
 
-[38 <E:/Uni/part3_project/Report/Figures/MotorDriver_error.png>]) [39] [40 <E:/
-Uni/part3_project/Report/Figures/PCB_Top.jpg> <E:/Uni/part3_project/Report/Figu
-res/PCB_Bottom.jpg>] (E:\Uni\part3_project\Report\InvestigationVision.tex
+) [39] [40 <E:/Uni/part3_project/Report/Figures/PCB_Top.jpg> <E:/Uni/part3_proj
+ect/Report/Figures/PCB_Bottom.jpg>]
+(E:\Uni\part3_project\Report\InvestigationVision.tex
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Vision Algorithms
@@ -2524,7 +2526,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
 Here is how much of TeX's memory you used:
  22029 strings out of 494045
  373730 string characters out of 3145960
- 823008 words of memory out of 3000000
+ 827900 words of memory out of 3000000
  24106 multiletter control sequences out of 15000+200000
  14685 words of font info for 57 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
@@ -2554,7 +2556,7 @@ ype1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmu10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on report.pdf (118 pages, 37488468 bytes).
+Output written on report.pdf (118 pages, 37370394 bytes).
 PDF statistics:
  2167 PDF objects out of 2487 (max. 8388607)
  626 named destinations out of 1000 (max. 500000)
