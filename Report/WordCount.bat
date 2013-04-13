@@ -1,2 +1,4 @@
-texcount -brief Research.tex InvestigationVision.tex Introduction.tex HardwareDevelopment.tex Conclusions.tex
-pause
+texcount -brief -inc Report.tex
+echo off
+texcount -v -html -inc Report.tex > count.html
+echo on
