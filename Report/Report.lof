@@ -31,42 +31,43 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {S.A.D Results. Blue shows areas of matching.}}}{44}{figure.caption.334}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {S.S.D. Results Blue shows areas of matching.}}}{44}{figure.caption.334}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {N.C.C. Results Red shows areas of matching.}}}{44}{figure.caption.334}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Stereo pair of images of a rubber duck on a reel of solder\relax }}{48}{figure.caption.356}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagram of the set up to measure the Field of View of the camera\relax }}{47}{figure.caption.351}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Stereo pair of images of a rubber duck on a reel of solder\relax }}{48}{figure.caption.356}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{48}{figure.caption.356}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{48}{figure.caption.356}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces NCC results from matching using the ducks head from the right image as the template to the left image\relax }}{48}{figure.caption.359}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces 3D Surface plot graph showing range of distances that can be calculated over a range of camera separation, B, values.\relax }}{49}{figure.caption.361}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Graph showing Distance of the object against the difference in the match locations.\relax }}{49}{figure.caption.362}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces A Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{50}{figure.caption.366}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing a Dirac Function}}}{50}{figure.caption.366}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the Dirac Function}}}{50}{figure.caption.366}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the Dirac Function}}}{50}{figure.caption.366}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces A 2D Rectangular pulse and the phase and magnitude of its Fourier Transform\relax }}{51}{figure.caption.370}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing rectangular pulse}}}{51}{figure.caption.370}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the rectangular pulse}}}{51}{figure.caption.370}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the rectangular pulse}}}{51}{figure.caption.370}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces A 2D Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{53}{figure.caption.380}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {An image of a 2D Dirac Function}}}{53}{figure.caption.380}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {An image of the magnitude of the Fourier transform of the 2D Dirac Function}}}{53}{figure.caption.380}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {An image of the phase of the Fourier transform of the 2D Dirac Function}}}{53}{figure.caption.380}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces A 2D Rectangular Pulse signal and the phase and magnitude of its Fourier transform\relax }}{54}{figure.caption.384}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {An image of the 2D rectangular pulse}}}{54}{figure.caption.384}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {An image of the magnitude of the Fourier transform of the 2D rectangular pulse}}}{54}{figure.caption.384}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {An image of the phase of the Fourier transform of the 2D rectangular pulse}}}{54}{figure.caption.384}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Input Dirac Signal for AVR fast Fourier transform\relax }}{57}{figure.caption.394}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Output phase and magnitude of the complex output from AVR fast Fourier transform of a Dirac function\relax }}{57}{figure.caption.395}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Magnitude of the Complex Output from the AVR}}}{57}{figure.caption.395}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Phase of the Complex Output from the AVR}}}{57}{figure.caption.395}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Magnitude calculated by the AVR of the Fourier transform of a Dirac function\relax }}{58}{figure.caption.398}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Input Rectangular Pulse for AVR fast Fourier transform\relax }}{58}{figure.caption.399}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Output phase and magnitude of the complex output from AVR fast Fourier transform of a Rectangular Pulse\relax }}{58}{figure.caption.400}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Magnitude calculated by the AVR of the Fourier transform of a Rectangular Pulse\relax }}{59}{figure.caption.401}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Dirac Function\relax }}{60}{figure.caption.406}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{60}{figure.caption.406}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{60}{figure.caption.406}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Square Function\relax }}{61}{figure.caption.409}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{61}{figure.caption.409}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{61}{figure.caption.409}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces NCC results from matching using the ducks head from the right image as the template to the left image\relax }}{48}{figure.caption.359}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 3D Surface plot graph showing range of distances that can be calculated over a range of camera separation, B, values.\relax }}{49}{figure.caption.361}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Graph showing Distance of the object against the difference in the match locations.\relax }}{50}{figure.caption.362}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces A Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{51}{figure.caption.366}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing a Dirac Function}}}{51}{figure.caption.366}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the Dirac Function}}}{51}{figure.caption.366}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the Dirac Function}}}{51}{figure.caption.366}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces A 2D Rectangular pulse and the phase and magnitude of its Fourier Transform\relax }}{52}{figure.caption.370}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A graph showing rectangular pulse}}}{52}{figure.caption.370}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A graph showing the magnitude of the Fourier transform of the rectangular pulse}}}{52}{figure.caption.370}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {A graph showing the phase of the Fourier transform of the rectangular pulse}}}{52}{figure.caption.370}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces A 2D Dirac signal and the phase and magnitude of its Fourier Transform\relax }}{54}{figure.caption.380}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {An image of a 2D Dirac Function}}}{54}{figure.caption.380}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {An image of the magnitude of the Fourier transform of the 2D Dirac Function}}}{54}{figure.caption.380}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {An image of the phase of the Fourier transform of the 2D Dirac Function}}}{54}{figure.caption.380}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces A 2D Rectangular Pulse signal and the phase and magnitude of its Fourier transform\relax }}{55}{figure.caption.384}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {An image of the 2D rectangular pulse}}}{55}{figure.caption.384}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {An image of the magnitude of the Fourier transform of the 2D rectangular pulse}}}{55}{figure.caption.384}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {An image of the phase of the Fourier transform of the 2D rectangular pulse}}}{55}{figure.caption.384}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Input Dirac Signal for AVR fast Fourier transform\relax }}{57}{figure.caption.394}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Output phase and magnitude of the complex output from AVR fast Fourier transform of a Dirac function\relax }}{58}{figure.caption.395}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Magnitude of the Complex Output from the AVR}}}{58}{figure.caption.395}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Phase of the Complex Output from the AVR}}}{58}{figure.caption.395}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Magnitude calculated by the AVR of the Fourier transform of a Dirac function\relax }}{58}{figure.caption.398}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Input Rectangular Pulse for AVR fast Fourier transform\relax }}{59}{figure.caption.399}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Output phase and magnitude of the complex output from AVR fast Fourier transform of a Rectangular Pulse\relax }}{59}{figure.caption.400}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Magnitude calculated by the AVR of the Fourier transform of a Rectangular Pulse\relax }}{59}{figure.caption.401}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Dirac Function\relax }}{61}{figure.caption.406}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{61}{figure.caption.406}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{61}{figure.caption.406}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces 3D Plots of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Square Function\relax }}{62}{figure.caption.409}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A 3D Plot of the normalised magnitude of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{62}{figure.caption.409}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A 3D Plot of the phase of the complex data returned by the 2D fast Fourier Transform on the AVR }}}{62}{figure.caption.409}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces The completed Robot\relax }}{65}{figure.caption.421}
 \addvspace {10\p@ }

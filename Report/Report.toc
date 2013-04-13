@@ -53,16 +53,16 @@
 \contentsline {subsection}{\numberline {4.2.1}Derivations}{45}{subsection.340}
 \contentsline {subsection}{\numberline {4.2.2}Summary}{45}{subsection.344}
 \contentsline {subsection}{\numberline {4.2.3}Field of View}{46}{subsection.350}
-\contentsline {subsection}{\numberline {4.2.4}Testing}{46}{subsection.354}
-\contentsline {subsection}{\numberline {4.2.5}Conclusion}{47}{subsection.360}
-\contentsline {section}{\numberline {4.3}Fourier Transform}{49}{section.363}
-\contentsline {subsection}{\numberline {4.3.1}Background Research and the FFT}{49}{subsection.364}
-\contentsline {subsection}{\numberline {4.3.2}Two Dimensional Fast Fourier Transform}{52}{subsection.377}
-\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT}{55}{subsection.391}
+\contentsline {subsection}{\numberline {4.2.4}Testing}{47}{subsection.354}
+\contentsline {subsection}{\numberline {4.2.5}Conclusion}{49}{subsection.360}
+\contentsline {section}{\numberline {4.3}Fourier Transform}{50}{section.363}
+\contentsline {subsection}{\numberline {4.3.1}Background Research and the FFT}{50}{subsection.364}
+\contentsline {subsection}{\numberline {4.3.2}Two Dimensional Fast Fourier Transform}{53}{subsection.377}
+\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT}{56}{subsection.391}
 \contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{56}{subsection.392}
 \contentsline {subsubsection}{\numberline {4.3.4.1}1D FFT Test}{56}{subsubsection.393}
-\contentsline {subsubsection}{\numberline {4.3.4.2}2D FFT Test}{56}{subsubsection.402}
-\contentsline {subsection}{\numberline {4.3.5}Conclusion}{59}{subsection.404}
+\contentsline {subsubsection}{\numberline {4.3.4.2}2D FFT Test}{60}{subsubsection.402}
+\contentsline {subsection}{\numberline {4.3.5}Conclusion}{60}{subsection.404}
 \contentsline {chapter}{\numberline {5}Conclusions and Further Work}{63}{chapter.414}
 \contentsline {section}{\numberline {5.1}System Operation}{64}{section.420}
 \contentsline {chapter}{\numberline {A}Gantt Chart}{71}{appendix.426}
