@@ -432,7 +432,13 @@ The test was adapted from an example application in the ASF \citep{Atmel:ASF}. T
 \lstinputlisting[style=C,caption=SDRAM Test Code,label={lst:SDRAMTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=217,lastline=258]{../Code/ColumbusTest/ColumbusTest/src/main.c}
 
 \subsubsection{\itc Test}\label{I2C:Test}
-The \itc test checks the bus for devices. It prints out a table showing the address of any devices that acknowledge a probe. A probe is set up to write to the address. If a device exists on the line, it should acknowledge its own address. \citep{Philips:I2C}. The test is done three times: with no channel selected on the \itc multiplexer, with channel 0 selected and with channel 1 selected. The addresses expected are $21_{16}$ for the OV7670 Camera and $74_{16}$ for the \itc multiplexer. The camera should only acknowledge when the \itc multiplexer has the relevant channel selected. Listing \ref{lst:TWITestCode} shows the test code for the \itc bus and listing \ref{lst:I2CTest} shows the result from the full bus scan with channel 0 selected. The existence of both cameras is checked. %The cameras are both checked to exist.
+The \itc test checks the bus for devices. It prints out a table showing the address of any devices that acknowledge a probe. A probe is set up to write to the address. If a device exists on the line, it should acknowledge its own address \citep{Philips:I2C}. The probe consists of a set-up to write to the address. Figure \ref{fig:I2C} shows the \itc traffic generated for a probe, with both cases of the device acknowledging (ACK) and not acknowledging (NACK). The test is done three times: with no channel selected on the \itc multiplexer, with channel 0 selected and with channel 1 selected. The addresses expected are $21_{16}$ for the OV7670 Camera and $74_{16}$ for the \itc multiplexer. The camera should only acknowledge when the \itc multiplexer has the relevant channel selected. Listing \ref{lst:TWITestCode} shows the test code for the \itc bus and listing \ref{lst:I2CTest} shows the result from the full bus scan with channel 0 selected. The existence of both cameras is checked. %The cameras are both checked to exist.
+\begin{figure}
+\subfigure[ACK]{\includegraphics[width=\textwidth]{./Figures/I2C_Probe_ACK.jpg} }
+\subfigure[NACK]{\includegraphics[width=\textwidth]{./Figures/I2C_Probe_NACK.jpg} }
+\caption{The \itc traffic of a probe. An ACK shows a device exists. Green circle indicates a start. Red square indicates a stop.}
+\label{fig:I2C}
+\end{figure}
 \lstinputlisting[style=C,caption=\itc Test Code,label={lst:TWITestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=268,lastline=315]{../Code/ColumbusTest/ColumbusTest/src/main.c}
 
 \begin{lstlisting}[caption={Result of \itc bus scan with Channel 0 of the \itc multiplexer selected},label={lst:I2CTest}]
