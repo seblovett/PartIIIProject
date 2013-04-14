@@ -88,6 +88,8 @@ Many image formats are common, such as Joint Photographic Expert Group (JPEG), P
 
 \begin{table}
 \centering
+\caption{A table comparing different image formats available \citep{ImageComparison}}
+\label{ImageFormats}
 \begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}} \toprule
 			&	Bitmap 		& 	JPEG			 	&	PNG				& 	GIF \\ \toprule
 Extension 		& 	*.bmp 		&  	*.jpg /*.jpeg 		& 	*.png				& 	*.gif \\ \midrule
@@ -96,8 +98,6 @@ File Size of 320 by
 240 pixel Image (kB) &	225			&	20				&	23				&	24 \\ \midrule
 Bits per Pixel		&	8, 16, 24 or 32	&	24				&	24, 32 or 48 			& 	24, but only 256 Colours \\ \bottomrule
 \end{tabular}
-\caption{A table comparing different image formats available \citep{ImageComparison}}
-\label{ImageFormats}
 \end{table}
 
 It is clear that the best choice for images would be either PNG or JPEG. However, these require more computational time to compress the image into the correct format. To avoid compression, and thereby save processing time, bitmap was chosen at the expense of using more memory. The data in a bitmap image is also stored in RGB format so can be read back easily when processing the image. Appendix \ref{Chapter:AppendixB:BMPFile} shows the make up of a Bitmap File that was used.
@@ -121,6 +121,8 @@ A second prototype was made to stream the images to a TFT screen. This can be se
 
 \begin{table}
 \centering
+\caption{Pin Connections of the ATMega644P for Dual Camera Operation.}
+\label{table:644Pin}
 \begin{tabular}{ccccc}\toprule
 Pin	& 	Port A 	& 	Port B 			& 	Port C 				& 	Port D 		\\ \toprule
 0	&	Data 0	&	SD Write Protect&	\itc - SCL			&	No Connection	\\ \midrule
@@ -132,8 +134,6 @@ Pin	& 	Port A 	& 	Port B 			& 	Port C 				& 	Port D 		\\ \toprule
 6	&	Data 6	&	SPI MISO		&	Output Enable 0		&	Write Enable 0	\\ \midrule
 7	&	Data 7	&	SPI Clock		&	Output Enable 1		&	Write Reset 0	\\ \bottomrule
 \end{tabular}
-\caption{Pin Connections of the ATMega644P for Dual Camera Operation.}
-\label{table:644Pin}
 \end{table}
 
 \begin{figure}

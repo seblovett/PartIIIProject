@@ -37,19 +37,44 @@ The final robot designed could be used for a variety of applications. The robot 
 \end{figure}
 
 \section{Project Management}
-In order to reduce the risk within the project, all aspects of potential issues were looked at and are summarised in table \ref{tab:risk}. A Gantt chart of how time was planned to be spent can be seen in figure \ref{fig:Gantt}.  
+%In order to reduce the risk within the project, all aspects of potential issues were looked at and are summarised in table \ref{tab:risk}. A Gantt chart of how time was planned to be spent can be seen in figure \ref{fig:Gantt}.  
 
-The project was designed in stages - first, gaining operation of all the basic sections; movement, image capturing, image detection algorithms etc. These were then be brought together once tested to create the final product. This meant functionality was obtained of the basic aspects before addressing more complex issues. 
+%The project was designed in stages - first, gaining operation of all the basic sections; movement, image capturing, image detection algorithms etc. These were then be brought together once tested to create the final product. This meant functionality was obtained of the basic aspects before addressing more complex issues. 
+
+The project set ambitious targets. All sections of the design that needed addressing are seen in table \ref{table:sections}. The project was developed using a spiral model to achieve the design aspects, starting with the hardware and firmware which were developed concurrently. This was done to obtain basic functionality first before concentrating on more complex aspects. Higher level algorithms were also prototyped during initial hardware development. However, the software was inherently dependant on the hardware. Therefore the hardware aspect was given priority. 
+
+A number of risks were present during the project. These were assessed and steps were taken to reduce the chance of occurring. These can be seen in table \ref{tab:risk}. 
+
+At the beginning of the project, the Gantt chart in figure \ref{fig:Gantt:1} was made. This was then reviewed after the interim report hand-in and figure \ref{fig:Gantt:2} was made for how time should be spent during the second half of the project. Figure \ref{fig:Gantt:3} shows how time was actually spent during the project. 
+
+Figure \ref{fig:Gantt:3} shows that more time was spent on testing than originally anticipated. Individual sections also arose small errors that were time consuming to correct, causing the time allocated to be insufficient. The motor driving also required a large change when porting to the AT32, causing time to be spent developing this further. 
+
 \begin{table}
+\centering
+\caption{Hardware and Software aspects of the design}
+\label{table:sections}
+\begin{tabular}{cc}\toprule
+Hardware & Software \\ \toprule
+Single Camera	&	Firmware \\ \midrule
+Dual Camera		&	Matching Algorithms \\ \midrule
+SD Card			&	Range Finding \\ \midrule
+Motor System	&	Mapping  \\ \midrule
+PCB Design		&	Searching \\ \midrule
+PCB Test		&	Testing \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{A list of risks and the prevention steps taken to reduce their impact}
+\label{tab:risk}
 \begin{tabular}{p{6cm}p{2cm}p{6cm}}\toprule
 Risk						&	Severity	&	Prevention \\ \toprule
 Components not arriving on time	&	High		&	Order parts as early as possible \\ \midrule
 Project not fulfilling specification				&	High		&	Develop in stages to obtain functionality in parts. Ensure enough time is allocated to the project.	\\\midrule
 PCB Design is incorrect		&	Medium		&	Check the design carefully and get second opinion. \\\midrule
 Failure of personal computer causing data loss & Low	& 	Keep back ups of all work on Devtrack Git repository and Dropbox.\\
-
 \bottomrule
 \end{tabular}
-\caption{A list of risks and the prevention steps taken to reduce their impact}
-\label{tab:risk}
 \end{table}
+
