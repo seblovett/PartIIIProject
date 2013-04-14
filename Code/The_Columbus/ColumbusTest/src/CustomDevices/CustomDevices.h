@@ -40,7 +40,7 @@ typedef struct  {
 #define CAM0_NotFOUND	0x08
 #define CAM1_NotFOUND	0x10
 #define AutoRunCMD_ERR	0x20
-#define FFT_SIZE 256
+#define FFT_SIZE 64
 
 
 //REF : http://www.chris.com/ASCII/index.php?art=transportation/nautical

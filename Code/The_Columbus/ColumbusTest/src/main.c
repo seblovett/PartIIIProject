@@ -506,7 +506,7 @@ void Debug_Mode()
 				SaveCBuff_CSV("Buffer_Complex.csv", ComplexBuffer, SizeOfComplex_Buffer);
 				break;
 			case 'f':
-				SizeOfWorking_Buffer = FFT_SIZE;
+				SizeOfWorking_Buffer = FFT_SIZE*FFT_SIZE;
 				Working_Buffer = mspace_malloc(sdram_msp, SizeOfWorking_Buffer);
 				print_dbg("\rReading in Buffer.csv");
 				Read_CSV("Buffer.csv", Working_Buffer, SizeOfWorking_Buffer);
