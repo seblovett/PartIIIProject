@@ -12,7 +12,7 @@ In computer vision, there are many different ways of comparing two similar image
 \centering
 \subfigure[Left Image]{\includegraphics[scale=0.4]{./Figures/deskLeft.png} }
 \subfigure[Right Image]{\includegraphics[scale=0.4]{./Figures/deskRight.png} }
-\caption{Stereoscopic Test Images from MATLAB Examples}
+\caption{Stereoscopic test images from MATLAB examples}
 \label{fig:StereoTest}
 \end{figure}
 
@@ -68,10 +68,10 @@ To compare these equations, a $50 \times 50$ template taken from the right pictu
 
 \begin{figure}
 \centering
-\subfigure[S.A.D Results. Blue shows areas of matching.\label{fg:Results:SAD}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/SADResults.eps} }
-\subfigure[S.S.D. Results Blue shows areas of matching.\label{fg:Results:SSD}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/SSDResults.eps} }
-\subfigure[N.C.C. Results Red shows areas of matching.\label{fg:Results:NCC}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/NCCResults.eps} }
-\caption{Result Graphs of Comparison Algorithms}
+\subfigure[S.A.D results - blue shows areas of matching\label{fg:Results:SAD}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/SADResults.eps} }
+\subfigure[S.S.D. results - blue shows areas of matching\label{fg:Results:SSD}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/SSDResults.eps} }
+\subfigure[N.C.C. results - red shows areas of matching\label{fg:Results:NCC}]{\includegraphics[width = 12cm, keepaspectratio]{./Figures/NCCResults.eps} }
+\caption{Result graphs of comparison algorithms}
 \label{fg:CompResults}
 \end{figure}
 
@@ -131,7 +131,7 @@ When the images have been matched, these equations can be used to calculate the 
 The field of view is an important cariable that must be measured for the camera. Field of view was measured by placing a ruler at a distance in front of the camera and measuring the total distance seen across the image. Equation \eqref{eq:FoV}, derived from the set up in figure \ref{fig:FoV}, was then used to calculate the field of view. This was done multiple times for accuracy. Results can be seen in table \ref{table:fieldofview}. The field of view used is the average of the data set and was found to be $\varphi_0 = 0.6249^c$. 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/FoV.jpg}
-\caption{Diagram of the set up to measure the Field of View of the camera}
+\caption{Diagram of the set-up to measure the field of view of the camera}
 \label{fig:FoV}
 \end{figure}
 \begin{equation}\label{eq:FoV}
@@ -181,8 +181,8 @@ Actual Distance (mm) & Pixel Difference in Images (pixel) & Calculated Distance 
 \end{table}
 \begin{figure}
 \centering
-\subfigure[Left Image]{\includegraphics[scale=0.4]{./Figures/Duck_L.jpg} }
-\subfigure[Right Image]{\includegraphics[scale=0.4]{./Figures/Duck_R.jpg} }
+\subfigure[Left image]{\includegraphics[scale=0.4]{./Figures/Duck_L.jpg} }
+\subfigure[Right image]{\includegraphics[scale=0.4]{./Figures/Duck_R.jpg} }
 \caption{Stereo pair of images of a rubber duck on a reel of solder}
 \label{fig:duck:stereo}
 \end{figure}
@@ -190,7 +190,7 @@ Actual Distance (mm) & Pixel Difference in Images (pixel) & Calculated Distance 
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/NCC_Duck.eps}
-\caption{NCC results from matching using the ducks head from the right image as the template to the left image}
+\caption{NCC results from matching using the duck's head from the right image as the template to the left image}
 \label{fig:duck:ncc}
 \end{figure}
 
@@ -202,12 +202,12 @@ The robot was designed to be small, and the cameras were chosen as a cheap alter
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/BPlot.eps}
-\caption{3D Surface plot graph showing range of distances that can be calculated over a range of camera separation, B, values.}
+\caption{3D surface plot graph showing range of distances that can be calculated over a range of camera separation, B, values}
 \label{fig:B:Plot}
 \end{figure}
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/Distance_DeltaX.eps}
-\caption{Graph showing Distance of the object against the difference in the match locations.}
+\caption{Graph showing distance of the object against the difference in the match locations}
 \label{fig:Distance:DeltaX}
 \end{figure}
 \section{Fourier Transform}
@@ -220,10 +220,10 @@ X(f) = \int\limits_{-\infty}^{\infty}x(t)e^{-\jmath 2 \pi ft}dt
 
 \begin{figure}
 \centering
-\subfigure[A graph showing a Dirac Function\label{fg:Dirac:Signal}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Sig.eps} }
-\subfigure[A graph showing the magnitude of the Fourier transform of the Dirac Function\label{fg:Dirac:Mag}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Mag.eps} }
-\subfigure[A graph showing the phase of the Fourier transform of the Dirac Function\label{fg:Dirac:Phase}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Phase.eps} }
-\caption{A Dirac signal and the phase and magnitude of its Fourier Transform}
+\subfigure[A graph showing a Dirac function\label{fg:Dirac:Signal}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Sig.eps} }
+\subfigure[A graph showing the magnitude of the Fourier transform of the Dirac function\label{fg:Dirac:Mag}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Mag.eps} }
+\subfigure[A graph showing the phase of the Fourier transform of the Dirac function\label{fg:Dirac:Phase}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Dirac_1D_Phase.eps} }
+\caption{A Dirac function, and the phase and magnitude of its Fourier transform}
 \label{fig:DiracFunctionFT}
 \end{figure}
 
@@ -232,7 +232,7 @@ X(f) = \int\limits_{-\infty}^{\infty}x(t)e^{-\jmath 2 \pi ft}dt
 \subfigure[A graph showing rectangular pulse\label{fg:Square:Signal}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Sig.eps} }
 \subfigure[A graph showing the magnitude of the Fourier transform of the rectangular pulse\label{fg:Square:Mag}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Mag.eps} }
 \subfigure[A graph showing the phase of the Fourier transform of the rectangular pulse\label{fg:Square:Phase}]{\includegraphics[width=\textwidth, keepaspectratio]{./Figures/Square_1D_Phase.eps} }
-\caption{A 2D Rectangular pulse and the phase and magnitude of its Fourier Transform}
+\caption{A rectangular pulse, and the phase and magnitude of its Fourier transform}
 \label{fig:SquareWaveFT}
 \end{figure}
 
@@ -274,10 +274,10 @@ Figures \ref{fig:2DDiracFunctionFT} and \ref{fig:2DSquareWaveFT} show the 2D equ
 
 \begin{figure}
 \centering
-\subfigure[An image of a 2D Dirac Function\label{fg:Dirac2D:Signal}]{\includegraphics[width=10cm, keepaspectratio]{./Figures/Dirac_2D_Sig.jpg} }
-\subfigure[An image of the magnitude of the Fourier transform of the 2D Dirac Function\label{fg:Dirac2D:Mag}]{\fbox{\includegraphics[width=(\textwidth / 2)-1cm, keepaspectratio]{./Figures/Dirac_2D_Mag.jpg} }}
-\subfigure[An image of the phase of the Fourier transform of the 2D Dirac Function\label{fg:Dirac2D:Phase}]{\includegraphics[width =(\textwidth / 2)-1cm, keepaspectratio]{./Figures/Dirac_2D_Phase.jpg} }
-\caption{A 2D Dirac signal and the phase and magnitude of its Fourier Transform}
+\subfigure[An image of a 2D Dirac function\label{fg:Dirac2D:Signal}]{\includegraphics[width=10cm, keepaspectratio]{./Figures/Dirac_2D_Sig.jpg} }
+\subfigure[An image of the magnitude of the Fourier transform of the 2D Dirac function\label{fg:Dirac2D:Mag}]{\fbox{\includegraphics[width=(\textwidth / 2)-1cm, keepaspectratio]{./Figures/Dirac_2D_Mag.jpg} }}
+\subfigure[An image of the phase of the Fourier transform of the 2D Dirac function\label{fg:Dirac2D:Phase}]{\includegraphics[width =(\textwidth / 2)-1cm, keepaspectratio]{./Figures/Dirac_2D_Phase.jpg} }
+\caption{A 2D Dirac signal, and the phase and magnitude of its Fourier transform}
 \label{fig:2DDiracFunctionFT}
 \end{figure}
 
@@ -286,7 +286,7 @@ Figures \ref{fig:2DDiracFunctionFT} and \ref{fig:2DSquareWaveFT} show the 2D equ
 \subfigure[An image of the 2D rectangular pulse\label{fg:Square2D:Signal}]{\includegraphics[width =10cm, keepaspectratio]{./Figures/Square_2D_Sig.jpg} }
 \subfigure[An image of the magnitude of the Fourier transform of the 2D rectangular pulse\label{fg:Square2D:Mag}]{\includegraphics[width =(\textwidth / 2)-1cm, keepaspectratio]{./Figures/Square_2D_Abs.jpg} }
 \subfigure[An image of the phase of the Fourier transform of the 2D rectangular pulse\label{fg:Square2D:Phase}]{\includegraphics[width =(\textwidth / 2)-1cm, keepaspectratio]{./Figures/Square_2D_Phase.jpg} }
-\caption{A 2D Rectangular Pulse signal and the phase and magnitude of its Fourier transform}
+\caption{A 2D rectangular pulse signal, and the phase and magnitude of its Fourier transform}
 \label{fig:2DSquareWaveFT}
 \end{figure}
 
@@ -316,12 +316,12 @@ Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref
 
 \begin{figure}
 \includegraphics[width=\textwidth]{./Figures/AVR_FFT_Dirac_Input.eps}
-\caption{Input Dirac Signal for AVR fast Fourier transform}
+\caption{Input Dirac signal for AVR fast Fourier transform}
 \label{fig:AVR:FFT:Dirac:Input}
 \end{figure}
 \begin{figure}
-\subfigure[Magnitude of the Complex Output from the AVR]{\includegraphics[width =\textwidth, keepaspectratio]{./Figures/AVR_FFT_Dirac_Complex_Mag.eps} }
-\subfigure[Phase of the Complex Output from the AVR]{\includegraphics[width =\textwidth, keepaspectratio]{./Figures/AVR_FFT_Dirac_Complex_Phase.eps} }
+\subfigure[Magnitude of the complex output from the AVR]{\includegraphics[width =\textwidth, keepaspectratio]{./Figures/AVR_FFT_Dirac_Complex_Mag.eps} }
+\subfigure[Phase of the complex output from the AVR]{\includegraphics[width =\textwidth, keepaspectratio]{./Figures/AVR_FFT_Dirac_Complex_Phase.eps} }
 \caption{Output phase and magnitude of the complex output from AVR fast Fourier transform of a Dirac function}
 \label{fig:AVR:FFT:Dirac:Output}
 \end{figure}
@@ -334,18 +334,18 @@ Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref
 
 \begin{figure}
 \includegraphics[width=\textwidth]{./Figures/AVR_FFT_Square_Input.eps}
-\caption{Input Rectangular Pulse for AVR fast Fourier transform}
+\caption{Input rectangular pulse for AVR fast Fourier transform}
 \label{fig:AVR:FFT:Square:Input}
 \end{figure}
 \begin{figure}
-\subfigure[Magnitude of the Complex Output from the AVR]{\includegraphics[width =\textwidth, keepaspectratio]{./Figures/AVR_FFT_Square_Complex_Mag.eps} }
-\subfigure[Phase of the Complex Output from the AVR]{\includegraphics[width =\textwidth, keepaspectratio]{./Figures/AVR_FFT_Square_Complex_Phase.eps} }
-\caption{Output phase and magnitude of the complex output from AVR fast Fourier transform of a Rectangular Pulse}
+\subfigure[Magnitude of the complex output from the AVR]{\includegraphics[width =\textwidth, keepaspectratio]{./Figures/AVR_FFT_Square_Complex_Mag.eps} }
+\subfigure[Phase of the complex output from the AVR]{\includegraphics[width =\textwidth, keepaspectratio]{./Figures/AVR_FFT_Square_Complex_Phase.eps} }
+\caption{Output phase and magnitude of the complex output from AVR fast Fourier transform of a rectangular pulse}
 \label{fig:AVR:FFT:Square:Output}
 \end{figure}
 \begin{figure}
 \includegraphics[width=\textwidth]{./Figures/AVR_FFT_Square_Mag.eps}
-\caption{Magnitude calculated by the AVR of the Fourier transform of a Rectangular Pulse}
+\caption{Magnitude calculated by the AVR of the Fourier transform of a rectangular pulse}
 \label{fig:AVR:FFT:Square:Mag}
 \end{figure}
 
@@ -370,7 +370,7 @@ The transforms are calculated in real time with a 16MHz clock source. Table \ref
 %\end{table}
 \begin{table}
 \centering
-\caption{Number of clock cycles taken to calculate the Transform of 64 or 256 long data set}
+\caption{Number of clock cycles taken to calculate the transform of 64 or 256 long data set}
 \label{table:FFTSize_Time}
 \begin{tabular}{ccc} \toprule
  	& \multicolumn{2}{c}{ Size of FFT Data } \\ \cmidrule{2-3}
@@ -381,18 +381,18 @@ The transforms are calculated in real time with a 16MHz clock source. Table \ref
 \end{table}
 
 \begin{figure}
-\subfigure[Normalised Magnitude\label{fig:AVR:FFT2:Dirac:Mag}]{\includegraphics[width=\textwidth / 2]{Figures/AVR_FFT2_Dirac_Mag.jpg}}
+\subfigure[Normalised magnitude\label{fig:AVR:FFT2:Dirac:Mag}]{\includegraphics[width=\textwidth / 2]{Figures/AVR_FFT2_Dirac_Mag.jpg}}
 \subfigure[Phase \label{fig:AVR:FFT2:Dirac:Phase}]{\includegraphics[width=\textwidth /2]{Figures/AVR_FFT2_Dirac_Phase.jpg}}
-\caption{Images of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Dirac Function}
+\caption{Images of the phase and magnitude of the complex data returned from the 2D FFT on the AVR of a 2D Dirac function}
 \label{fig:AVR:FFT2:Dirac}
 \end{figure}
 
 \begin{figure}
-\subfigure[Normalised Magnitude\label{fig:AVR:FFT2:Square:Mag}]{\includegraphics[width=\textwidth / 2]{Figures/AVR_FFT2_Square_Mag.jpg}}
+\subfigure[Normalised magnitude\label{fig:AVR:FFT2:Square:Mag}]{\includegraphics[width=\textwidth / 2]{Figures/AVR_FFT2_Square_Mag.jpg}}
 \subfigure[Phase\label{fig:AVR:FFT2:Square:Phase}]{\includegraphics[width=\textwidth / 2]{Figures/AVR_FFT2_Square_Phase.jpg}}
 %\subfigure[Figure \ref{fig:AVR:FFT2:Square:Mag} shown as a grey scale image\label{fig:AVR:FFT2:Square:Mag:Image}]{\includegraphics[width=(\textwidth / 2)]{Figures/AVR_FFT2_Square_Mag_Image.jpg}}
 %\subfigure[Figure \ref{fig:AVR:FFT2:Square:Phase} shown as a grey scale image\label{fig:AVR:FFT2:Square:Phase:Image}]{\includegraphics[width = (\textwidth / 2)]{Figures/AVR_FFT2_Square_Phase_Image.jpg}}
-\caption{Images of the phase and magnitude of the Complex Data returned from the 2D FFT on the AVR of a 2D Square Function}
+\caption{Images of the phase and magnitude of the complex data returned from the 2D FFT on the AVR of a 2D square function}
 \label{fig:AVR:FFT2:Square}
 \end{figure}
 

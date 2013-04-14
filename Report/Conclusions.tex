@@ -40,7 +40,7 @@ The system could be used in future projects to develop more functionality. Wirel
 
 The system uses a debug USART available on J7 (57600bps, 8 data, 0 parity and 1 stop bit).
 
-The system has two modes of operation, `Auto Run' and Debug. By default, the Auto Run mode will run. Debug mode can be entered by the relevant command in the Auto Run procedure (see table \ref{table:AutoRun}) or by connecting Pin D23, available at Pin 1 of J9, to ground on system start. The state of the robot is shown by the LEDs. Table \ref{table:LEDs} shows the meaning of the LEDs.
+The system has two modes of operation, `Auto Run' and debug. By default, the Auto Run mode will run. Debug mode can be entered by the relevant command in the Auto Run procedure (see table \ref{table:AutoRun}) or by connecting Pin D23, available at Pin 1 of J9, to ground on system start. The state of the robot is shown by the LEDs. Table \ref{table:LEDs} shows the meaning of the LEDs.
 
 Auto Run mode runs a set of commands located in \textit{``AutoRun.txt''} on the SD Card. If this file is not present, the system will run a default procedure defined in the code. A list of commands that can be run from this mode can be seen in table \ref{table:AutoRun}. The commands are specified by line If an invalid command is found, the system will exit and run the \textit{System\_Error} loop. The  \textit{System\_Error} loop prints the status of all devices out once a second. By attaching a USART terminal, the error can be found.
 
@@ -50,13 +50,13 @@ The final robot can be seen in figure \ref{fig:Robot:Complete}.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/Robot.jpg}
-\caption{The completed Robot}
+\caption{The completed robot}
 \label{fig:Robot:Complete}
 \end{figure}
 
 \begin{table}
 \centering
-\caption{Table showing the Auto Run Commands Implemented}
+\caption{Table showing the Auto Run commands implemented}
 \label{table:AutoRun}
 \begin{tabular}{ccc}\toprule
 Command & 	Argument 			& 	Operation \\\toprule
@@ -71,7 +71,7 @@ R		& 	int 			 	&	Rotates by argument (degrees)\\ \bottomrule
 
 \begin{table}
 \centering
-\caption{Table showing the available Debug Commands}
+\caption{Table showing the available debug commands}
 \label{table:Debug}
 \begin{tabular}{llp{10cm}}\toprule
 Command & Argument & Operation \\\toprule
