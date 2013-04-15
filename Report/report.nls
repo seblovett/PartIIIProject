@@ -1,0 +1,43 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{\itc}]\begingroup Inter-Integrated Circuit\nomeqref {0}
+		\nompageref{xvii}
+  \item [{ADC}]\begingroup Analogue to Digital Converter\nomeqref {0}
+		\nompageref{xvii}
+  \item [{ASF}]\begingroup Atmel Software Framework\nomeqref {0}
+		\nompageref{xvii}
+  \item [{DAC}]\begingroup Digital to Analogue Converter\nomeqref {0}
+		\nompageref{xvii}
+  \item [{FFT}]\begingroup Fast Fourier Transform\nomeqref {0}
+		\nompageref{xvii}
+  \item [{FIFO}]\begingroup First In - First Out\nomeqref {0}
+		\nompageref{xvii}
+  \item [{FPU}]\begingroup Floating Point Unit\nomeqref {0}
+		\nompageref{xvii}
+  \item [{GPIO}]\begingroup General Purpose Input Output\nomeqref {0}
+		\nompageref{xvii}
+  \item [{ISR}]\begingroup Interrupt Service Routine\nomeqref {0}
+		\nompageref{xvii}
+  \item [{kB}]\begingroup Kilobytes\nomeqref {0}\nompageref{xvii}
+  \item [{NCC}]\begingroup Normalised Cross Correlation\nomeqref {0}
+		\nompageref{xvii}
+  \item [{PCB}]\begingroup Printed Circuit Board\nomeqref {0}
+		\nompageref{xvii}
+  \item [{PWM}]\begingroup Pulse Width Modulation\nomeqref {0}
+		\nompageref{xvii}
+  \item [{RISC}]\begingroup Reduced Instruction Set Computer\nomeqref {2.0}
+		\nompageref{6}
+  \item [{SAD}]\begingroup Sum of Absolute Differences\nomeqref {0}
+		\nompageref{xvii}
+  \item [{SCCB}]\begingroup Serial Camera Control Bus\nomeqref {0}
+		\nompageref{xvii}
+  \item [{SPI}]\begingroup Serial Peripheral Interface\nomeqref {0}
+		\nompageref{xvii}
+  \item [{SSD}]\begingroup Sum of Squared Differences\nomeqref {0}
+		\nompageref{xvii}
+  \item [{TWI}]\begingroup Two Wire Interface\nomeqref {0}
+		\nompageref{xvii}
+
+\end{thenomenclature}

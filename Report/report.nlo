@@ -1,0 +1,19 @@
+\nomenclatureentry{aADC@[{ADC}]\begingroup Analogue to Digital Converter\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aASF@[{ASF}]\begingroup Atmel Software Framework\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aDAC@[{DAC}]\begingroup Digital to Analogue Converter\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aFFT@[{FFT}]\begingroup Fast Fourier Transform\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aFIFO@[{FIFO}]\begingroup First In - First Out\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aFPU@[{FPU}]\begingroup Floating Point Unit\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aGPIO@[{GPIO}]\begingroup General Purpose Input Output\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aISR@[{ISR}]\begingroup Interrupt Service Routine\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{a\itc@[{\itc}]\begingroup Inter-Integrated Circuit\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{akB@[{kB}]\begingroup Kilobytes\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aNCC@[{NCC}]\begingroup Normalised Cross Correlation\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aPCB@[{PCB}]\begingroup Printed Circuit Board\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aPWM@[{PWM}]\begingroup Pulse Width Modulation\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aSAD@[{SAD}]\begingroup Sum of Absolute Differences\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aSCCB@[{SCCB}]\begingroup Serial Camera Control Bus\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aSPI@[{SPI}]\begingroup Serial Peripheral Interface\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aSSD@[{SSD}]\begingroup Sum of Squared Differences\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aTWI@[{TWI}]\begingroup Two Wire Interface\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aRISC@[{RISC}]\begingroup Reduced Instruction Set Computer\nomeqref {2.0}|nompageref}{6}
