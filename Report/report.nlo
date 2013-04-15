@@ -1,3 +1,8 @@
+\nomenclatureentry{aCSV@[{CSV}]\begingroup Comma Separated Value\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aDSP@[{DSP}]\begingroup Digital Signal Processing\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aEBI@[{EBI}]\begingroup External Bus Interface\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aUSB@[{USB}]\begingroup Universal Serial Bus\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aPID@[{PID}]\begingroup Proportional Integral Derivative\nomeqref {0}|nompageref}{xix}
 \nomenclatureentry{aADC@[{ADC}]\begingroup Analogue to Digital Converter\nomeqref {0}|nompageref}{xix}
 \nomenclatureentry{aASF@[{ASF}]\begingroup Atmel Software Framework\nomeqref {0}|nompageref}{xix}
 \nomenclatureentry{aDAC@[{DAC}]\begingroup Digital to Analogue Converter\nomeqref {0}|nompageref}{xix}
@@ -6,7 +11,7 @@
 \nomenclatureentry{aFPU@[{FPU}]\begingroup Floating Point Unit\nomeqref {0}|nompageref}{xix}
 \nomenclatureentry{aGPIO@[{GPIO}]\begingroup General Purpose Input Output\nomeqref {0}|nompageref}{xix}
 \nomenclatureentry{aISR@[{ISR}]\begingroup Interrupt Service Routine\nomeqref {0}|nompageref}{xix}
-\nomenclatureentry{a\itc@[{\itc}]\begingroup Inter-Integrated Circuit\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aI$^2$C@[{I$^2$C}]\begingroup Inter-Integrated Circuit\nomeqref {0}|nompageref}{xix}
 \nomenclatureentry{akB@[{kB}]\begingroup Kilobytes\nomeqref {0}|nompageref}{xix}
 \nomenclatureentry{aNCC@[{NCC}]\begingroup Normalised Cross Correlation\nomeqref {0}|nompageref}{xix}
 \nomenclatureentry{aPCB@[{PCB}]\begingroup Printed Circuit Board\nomeqref {0}|nompageref}{xix}
@@ -16,4 +21,21 @@
 \nomenclatureentry{aSPI@[{SPI}]\begingroup Serial Peripheral Interface\nomeqref {0}|nompageref}{xix}
 \nomenclatureentry{aSSD@[{SSD}]\begingroup Sum of Squared Differences\nomeqref {0}|nompageref}{xix}
 \nomenclatureentry{aTWI@[{TWI}]\begingroup Two Wire Interface\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aRISC@[{RISC}]\begingroup Reduced Instruction Set Computer\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aEEPROM@[{EEPROM}]\begingroup Electrically Erasable and Programmable Read Only Memory\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aSRAM@[{SRAM}]\begingroup Static Random-Access Memory\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aSDRAM@[{SDRAM}]\begingroup Synchronous Dynamic Random-Access Memory\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aDMIPS@[{DMIPS}]\begingroup Dhrystone Million Instructions Per Second\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aUSART@[{USART}]\begingroup Universal Synchronous/Asynchronous Receiver/Transmitter\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aFAT@[{FAT}]\begingroup File Allocation Table\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aVSYNC@[{VSYNC}]\begingroup Vertical Syncronise\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aWEN@[{WEN}]\begingroup Write Enable\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aOE@[{OE}]\begingroup Output Enable\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aRCLK@[{RCLK}]\begingroup Read Clock\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aHREF@[{HREF}]\begingroup Horizontal Reference\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aPCLK@[{PCLK}]\begingroup Pixel Clock\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aRRST@[{RRST}]\begingroup Read Reset\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aWRST@[{WRST}]\begingroup Write Reset\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aACK@[{ACK}]\begingroup Acknowledge\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{aNACK@[{NACK}]\begingroup Negative Acknowledge\nomeqref {0}|nompageref}{xix}
 \nomenclatureentry{aRISC@[{RISC}]\begingroup Reduced Instruction Set Computer\nomeqref {2.0}|nompageref}{6}

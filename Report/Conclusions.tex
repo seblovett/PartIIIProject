@@ -19,7 +19,7 @@ The motor system is a simple, cheap method to move distances with reasonable acc
 
 Stereo image pairs can be captured and stored on an SD card in a FAT32 file system. The SD card is also used for transferring images to and reading log files on a computer. Images are stored in QVGA format ($320px \times 240px$) as a Bitmap image. 
 
-An additional 4MB of SDRAM memory is available to use on the robot allowing for large data arrays of the images to be kept in fast access RAM. The RAM is direct memory accessed so operation is almost seamless from internal memory.
+An additional 4MB of SDRAM memory is available to use on the robot allowing for large data arrays of the images to be kept in fast access RAM. The RAM is direct memory accessed (DMA) so operation is almost seamless from internal memory.
 
 Multiple comparison algorithms have been investigated and compared using the same test images. It was clear that, although at a necessity of more computations, the normalised cross correlation is the best with regard to overall reliability. 
 

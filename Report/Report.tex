@@ -17,7 +17,7 @@
 \usepackage[intoc]{nomencl}
 \makenomenclature
 \renewcommand{\nomname}{List of Abbreviations}
-\hypersetup{colorlinks=true}   % Set to false for black/white printing
+\hypersetup{colorlinks=false}   % Set to false for black/white printing
 \input{Definitions}            % Include your abbreviations
 
 
@@ -58,28 +58,33 @@ The final product is a small mobile robot equipped with cameras and capability o
 \listoffigures
 \listoftables
 \lstlistoflistings
-\listofsymbols{ll}{
-%\multicolumn{2}{c}{\textbf{Abbreviations}} \\
-%\multicolumn{2}{c}{\textbf{Images}} \\
-$\varphi_0$				&	Field of view of the camera \\
-$\varphi_1, \varphi_2$	&	Angle from camera to the object \\
-$B$ 					&	Separation distance of two cameras \\
-$D$						&	Distance from camera to the object \\
-$i,j$  					&	Pixel index of an image 	\\
-$x_0$					&	Horizontal resolution of the image \\
-$x_1, x_2$				&	Distance of object from the normal of the camera \\
-%\multicolumn{2}{c}{\textbf{Motors}} \\
-$\delta$				& 	Distance to move \\
-$\gamma$				&	Number of tabs on the wheel \\
-$A$						&	Angle of rotation \\
-$C_w$					&	Circumference of the wheel \\
-$r_b$					&	Distance from centre of the robot to the wheel \\
-$C_b$					&	$2\pi r_b$ \\
-}
 \clearpage
 \markboth{\nomname}{\nomname}
 \printnomenclature 
 \cleardoublepage
+\listofsymbols{ll}{
+$B$ 					&	Separation distance of two cameras \\
+$C_b$					&	$2\pi r_b$ \\
+$C_w$					&	Circumference of the wheel \\
+$D$						&	Distance from camera to the object \\
+$i,j$  					&	Pixel index of an image 	\\
+$r_b$					&	Distance from centre of the robot to the wheel \\
+$x_0$					&	Horizontal resolution of the image \\
+$x_1, x_2$				&	Distance of object from the normal of the camera \\
+$\gamma$				&	Number of tabs on the wheel \\
+$\Delta_\delta$			&	Distance Resolution \\
+$\Delta_\Theta$			&	Rotational Resolution \\
+$\delta$				& 	Distance to move \\
+$\Theta$				&	Angle of rotation \\
+$\sigma$				&	Standard Deviation \\
+$\varphi_0$				&	Field of view of the camera \\
+$\varphi_1, \varphi_2$	&	Angle from camera to the object \\
+}
+\nomenclature{CSV}{Comma Separated Value}
+\nomenclature{DSP}{Digital Signal Processing}
+\nomenclature{EBI}{External Bus Interface}
+\nomenclature{USB}{Universal Serial Bus}
+\nomenclature{PID}{Proportional Integral Derivative}
 \nomenclature{ADC}{Analogue to Digital Converter}
 \nomenclature{ASF}{Atmel Software Framework}
 \nomenclature{DAC}{Digital to Analogue Converter}
@@ -88,7 +93,7 @@ $C_b$					&	$2\pi r_b$ \\
 \nomenclature{FPU}{Floating Point Unit}
 \nomenclature{GPIO}{General Purpose Input Output}
 \nomenclature{ISR}{Interrupt Service Routine}
-\nomenclature{\itc}{Inter-Integrated Circuit}
+\nomenclature{I$^2$C}{Inter-Integrated Circuit}
 \nomenclature{kB}{Kilobytes}
 \nomenclature{NCC}{Normalised Cross Correlation}
 \nomenclature{PCB}{Printed Circuit Board}
@@ -98,6 +103,25 @@ $C_b$					&	$2\pi r_b$ \\
 \nomenclature{SPI}{Serial Peripheral Interface}
 \nomenclature{SSD}{Sum of Squared Differences}
 \nomenclature{TWI}{Two Wire Interface}
+\nomenclature{RISC}{Reduced Instruction Set Computer}
+\nomenclature{EEPROM}{Electrically Erasable and Programmable Read Only Memory}
+\nomenclature{SRAM}{Static Random-Access Memory}
+\nomenclature{SDRAM}{Synchronous Dynamic Random-Access Memory}
+\nomenclature{DMIPS}{Dhrystone Million Instructions Per Second}
+\nomenclature{USART}{Universal Synchronous/Asynchronous Receiver/Transmitter}
+\nomenclature{FAT}{File Allocation Table}
+\nomenclature{VSYNC}{Vertical Syncronise}
+\nomenclature{WEN}{Write Enable}
+\nomenclature{OE}{Output Enable}
+\nomenclature{RCLK}{Read Clock}
+\nomenclature{HREF}{Horizontal Reference}
+\nomenclature{PCLK}{Pixel Clock}
+\nomenclature{RRST}{Read Reset}
+\nomenclature{WRST}{Write Reset}
+\nomenclature{ACK}{Acknowledge}
+\nomenclature{NACK}{Negative Acknowledge}
+
+
 \acknowledgements{I would like to thank Professor Steve Gunn whose help throughout the year was invaluable and for the weekly meetings no matter where he was in the world. I would also like to thank my friends and family for their support and help throughout my degree and with proof reading, to Tom for our years of being lab partners during our time here, and finally to Alice for asking the two golden questions that solved 90\% of my problems whenever I had one; ``Is it connected?'' and ``Is it switched on?''. }%\\ \\ All work presented in this report is my own unless otherwise stated or referenced. \\ }
 \clearpage
 \newpage

@@ -6,7 +6,7 @@
 \section{Matching Algorithms}\label{Section:Comparison}
 %\inote{find some references to back these claims up}
 %\inote{Talk about how to compare images and TEST them all. Make a final comparison to decide on which will be used}
-In computer vision, there are many different ways of comparing two similar images. These include the sum of absolute differences (S.A.D.) \citep{Hamzah:DistanceDetection}, the sum of squared differences (S.S.D.)\citep{Mrovlje:Distance_Stereoscopic} and  normalised cross correlation (N.C.C.)\citep{zhao2006image}. Each of these methods will be explained and tested in order to compare them. All testing will use images seen in figure \ref{fig:StereoTest}. Each test uses the same size template ($50px\times50px$) to compare the two images. 
+In computer vision, there are many different ways of comparing two similar images. These include the sum of absolute differences (SAD) \citep{Hamzah:DistanceDetection}, the sum of squared differences (SSD)\citep{Mrovlje:Distance_Stereoscopic} and  normalised cross correlation (NCC)\citep{zhao2006image}. Each of these methods will be explained and tested in order to compare them. All testing will use images seen in figure \ref{fig:StereoTest}. Each test uses the same size template ($50px\times50px$) to compare the two images. 
 
 \begin{figure}
 \centering
@@ -148,7 +148,7 @@ L (mm) & D (mm) & $\varphi (^c)$ \\ \toprule
 90 & 135 &0.6015\\\midrule
 178 & 285 &0.6054\\ \midrule
 214 & 345 &0.6493 \\ \bottomrule
-\multicolumn{2}{|c|}{Average} & 0.6249 \\ \bottomrule
+\multicolumn{2}{c}{Average} & 0.6249 \\ \bottomrule
 \end{tabular}
 
 \end{table}
@@ -311,7 +311,7 @@ A function was made, called \textit{FFT2DCOMPLEX}, to realise the 2D FFT on the 
 \subsubsection{1D FFT Test}
 A Dirac function and a rectangular pulse were used as test signals. 
 
-Figure \ref{fig:AVR:FFT:Dirac:Input} shows the input signal given to the AVR. It is a 256 long array of a Dirac function. This was then converted to the internally defined fixed point notation and passed through the Fourier transform method. The resulting complex array was then saved to a Comma Separated Value file and read into MATLAB. Figure \ref{fig:AVR:FFT:Dirac:Output} shows the calculated phase and magnitude plots of the output complex array. The magnitude is relatively flat and around the value of 1. In comparison with figure \ref{fg:Dirac:Mag}, they are relatively similar. The phase, however, seems to be very different. Figure \ref{fg:Dirac:Phase} shows what was expected, but the two phase results appear to be quite different. This could be due to MATLAB having more accurate algorithms and a more accurate representation than the 16 bit fixed point used on the AVR. However, using a function in the DSP library to calculate the magnitude, the spectrum in figure \ref{fig:AVR:FFT:Dirac:Mag} is obtained. This, though is not a magnitude of exactly $1.0$ as expected, is completely flat and it is computed from the same transformed data. This suggests that there is some internal compensation in the algorithms. The actual value in figure \ref{fig:AVR:FFT:Dirac:Mag} is $0.9897$ to 4 decimal places giving an overall error of $1.03\%$. 
+Figure \ref{fig:AVR:FFT:Dirac:Input} shows the input signal given to the AVR. It is a 256 long array of a Dirac function. This was then converted to the internally defined fixed point notation and passed through the Fourier transform method. The resulting complex array was then saved to a CSV file and read into MATLAB. Figure \ref{fig:AVR:FFT:Dirac:Output} shows the calculated phase and magnitude plots of the output complex array. The magnitude is relatively flat and around the value of 1. In comparison with figure \ref{fg:Dirac:Mag}, they are relatively similar. The phase, however, seems to be very different. Figure \ref{fg:Dirac:Phase} shows what was expected, but the two phase results appear to be quite different. This could be due to MATLAB having more accurate algorithms and a more accurate representation than the 16 bit fixed point used on the AVR. However, using a function in the DSP library to calculate the magnitude, the spectrum in figure \ref{fig:AVR:FFT:Dirac:Mag} is obtained. This, though is not a magnitude of exactly $1.0$ as expected, is completely flat and it is computed from the same transformed data. This suggests that there is some internal compensation in the algorithms. The actual value in figure \ref{fig:AVR:FFT:Dirac:Mag} is $0.9897$ to 4 decimal places giving an overall error of $1.03\%$. 
 
 Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref{fig:AVR:FFT:Square:Mag} show the similar outputs from the AVR when transforming the rectangular pulse. The result was renormalised from fixed point notation and the data was shifted so that the centre of the plot is frequency 0.  Again, it can be seen that the magnitude calculated from the complex output (figure \ref{fig:AVR:FFT:Square:Output}) is different to the result when the magnitude is calculated on the AVR (figure \ref{fig:AVR:FFT:Square:Mag}). There are also differences in the result from the AVR and the result from MATLAB in figure \ref{fig:SquareWaveFT}, which can, again, be attributed to the algorithms. 
 

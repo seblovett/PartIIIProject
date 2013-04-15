@@ -1,5 +1,5 @@
-\contentsline {chapter}{List of Symbols}{xv}{dummy.5}
-\contentsline {chapter}{List of Abbreviations}{xvii}{chapter*.8}
+\contentsline {chapter}{List of Abbreviations}{xv}{chapter*.5}
+\contentsline {chapter}{List of Symbols}{xvii}{dummy.6}
 \contentsline {chapter}{Acknowledgements}{xix}{dummy.9}
 \contentsline {chapter}{Statement of Originality}{xxi}{dummy.10}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.11}
@@ -28,7 +28,7 @@
 \contentsline {subsection}{\numberline {3.5.1}Circuit Design}{25}{subsection.67}
 \contentsline {subsection}{\numberline {3.5.2}PCB Design}{25}{subsection.70}
 \contentsline {subsection}{\numberline {3.5.3}PCB Testing}{28}{subsection.74}
-\contentsline {subsubsection}{\numberline {3.5.3.1}UART Test}{28}{subsubsection.75}
+\contentsline {subsubsection}{\numberline {3.5.3.1}USART Test}{28}{subsubsection.75}
 \contentsline {subsubsection}{\numberline {3.5.3.2}SD Card Test}{29}{subsubsection.89}
 \contentsline {subsubsection}{\numberline {3.5.3.3}LED Test}{30}{subsubsection.164}
 \contentsline {subsubsection}{\numberline {3.5.3.4}SDRAM Test}{31}{subsubsection.165}

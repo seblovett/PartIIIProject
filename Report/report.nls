@@ -2,42 +2,79 @@
 
  \nomgroup{A}
 
-  \item [{\itc}]\begingroup Inter-Integrated Circuit\nomeqref {0}
-		\nompageref{xvii}
+  \item [{ACK}]\begingroup Acknowledge\nomeqref {0}\nompageref{xix}
   \item [{ADC}]\begingroup Analogue to Digital Converter\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
   \item [{ASF}]\begingroup Atmel Software Framework\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
+  \item [{CSV}]\begingroup Comma Separated Value\nomeqref {0}
+		\nompageref{xix}
   \item [{DAC}]\begingroup Digital to Analogue Converter\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
+  \item [{DMIPS}]\begingroup Dhrystone Million Instructions Per Second\nomeqref {0}
+		\nompageref{xix}
+  \item [{DSP}]\begingroup Digital Signal Processing\nomeqref {0}
+		\nompageref{xix}
+  \item [{EBI}]\begingroup External Bus Interface\nomeqref {0}
+		\nompageref{xix}
+  \item [{EEPROM}]\begingroup Electrically Erasable and Programmable Read Only Memory\nomeqref {0}
+		\nompageref{xix}
+  \item [{FAT}]\begingroup File Allocation Table\nomeqref {0}
+		\nompageref{xix}
   \item [{FFT}]\begingroup Fast Fourier Transform\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
   \item [{FIFO}]\begingroup First In - First Out\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
   \item [{FPU}]\begingroup Floating Point Unit\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
   \item [{GPIO}]\begingroup General Purpose Input Output\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
+  \item [{HREF}]\begingroup Horizontal Reference\nomeqref {0}
+		\nompageref{xix}
+  \item [{I$^2$C}]\begingroup Inter-Integrated Circuit\nomeqref {0}
+		\nompageref{xix}
   \item [{ISR}]\begingroup Interrupt Service Routine\nomeqref {0}
-		\nompageref{xvii}
-  \item [{kB}]\begingroup Kilobytes\nomeqref {0}\nompageref{xvii}
+		\nompageref{xix}
+  \item [{kB}]\begingroup Kilobytes\nomeqref {0}\nompageref{xix}
+  \item [{NACK}]\begingroup Negative Acknowledge\nomeqref {0}
+		\nompageref{xix}
   \item [{NCC}]\begingroup Normalised Cross Correlation\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
+  \item [{OE}]\begingroup Output Enable\nomeqref {0}\nompageref{xix}
   \item [{PCB}]\begingroup Printed Circuit Board\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
+  \item [{PCLK}]\begingroup Pixel Clock\nomeqref {0}\nompageref{xix}
+  \item [{PID}]\begingroup Proportional Integral Derivative\nomeqref {0}
+		\nompageref{xix}
   \item [{PWM}]\begingroup Pulse Width Modulation\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
+  \item [{RCLK}]\begingroup Read Clock\nomeqref {0}\nompageref{xix}
+  \item [{RISC}]\begingroup Reduced Instruction Set Computer\nomeqref {0}
+		\nompageref{xix}
   \item [{RISC}]\begingroup Reduced Instruction Set Computer\nomeqref {2.0}
 		\nompageref{6}
+  \item [{RRST}]\begingroup Read Reset\nomeqref {0}\nompageref{xix}
   \item [{SAD}]\begingroup Sum of Absolute Differences\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
   \item [{SCCB}]\begingroup Serial Camera Control Bus\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
+  \item [{SDRAM}]\begingroup Synchronous Dynamic Random-Access Memory\nomeqref {0}
+		\nompageref{xix}
   \item [{SPI}]\begingroup Serial Peripheral Interface\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
+  \item [{SRAM}]\begingroup Static Random-Access Memory\nomeqref {0}
+		\nompageref{xix}
   \item [{SSD}]\begingroup Sum of Squared Differences\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
   \item [{TWI}]\begingroup Two Wire Interface\nomeqref {0}
-		\nompageref{xvii}
+		\nompageref{xix}
+  \item [{USART}]\begingroup Universal Synchronous/Asynchronous Receiver/Transmitter\nomeqref {0}
+		\nompageref{xix}
+  \item [{USB}]\begingroup Universal Serial Bus\nomeqref {0}
+		\nompageref{xix}
+  \item [{VSYNC}]\begingroup Vertical Syncronise\nomeqref {0}
+		\nompageref{xix}
+  \item [{WEN}]\begingroup Write Enable\nomeqref {0}\nompageref{xix}
+  \item [{WRST}]\begingroup Write Reset\nomeqref {0}\nompageref{xix}
 
 \end{thenomenclature}

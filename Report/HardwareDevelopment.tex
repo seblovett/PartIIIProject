@@ -45,7 +45,7 @@ To obtain the image data from the FIFO buffer, the AVR sets output enable low an
 
 After the data has been read, the buffer is reset by asserting the read reset (RRST) and write reset (WRST) signals for at least one clock cycle of RCLK or PCLK respectively. The entire operation can be seen in figure \ref{fig:ov_Capture} and a hierarchical diagram of this is seen in figure \ref{fig:cam:heir}.
 \begin{figure}
-\includegraphics[width = \textwidth - 3cm]{./Figures/ov7670_im_capture.eps}
+\includegraphics[width = \textwidth]{./Figures/ov7670_im_capture.eps}
 \caption{Signals generated to control the OV7670 capture and read}
 \label{fig:ov_Capture}
 \end{figure}
@@ -208,13 +208,13 @@ For rotation, the radius from the centre of the robot to the wheels needs to be 
 
 \begin{equation}
 \label{eq:RotationalDistance}
-\delta_{R} = A \times \frac{C_b}{360}
+\delta_{R} = \Theta \times \frac{C_b}{360}
 \end{equation}
 
 Combining equations \eqref{eq:NumberCounts} and \eqref{eq:RotationalDistance} gives:
 \begin{equation}
 \label{eq:RotationalInterrupts}
-Counts = \gamma \times \frac{C_b}{C_w} \times \frac{A}{360}
+Counts = \gamma \times \frac{C_b}{C_w} \times \frac{\Theta}{360}
 \end{equation}
 Figure \ref{fig:RobotBase_Annotated} shows the dimensions of interest of the robot base. In the set up method, equations \eqref{eq:NumberCounts} and \eqref{eq:RotationalInterrupts} are used to calculate the counts needed. The results are placed in the global struct and the execute method is then run.
 
@@ -375,7 +375,7 @@ The PCB was designed using EAGLE CAD Software. A four layer board was decided up
 
 The SDRAM uses the EBI protocol. In high speed systems, care is often taken to equalise track lengths \citep{liu2004equalization}. The UC3C maximum clock frequency is 33MHz (with no wait states), which is not fast enough to cause any track equalisation problems. Care, however, was taken on the USB lines to ensure correct impedance and that the track lengths matched to each other.
 
-Tracks were routed in order of priority, starting with the UC3C, SDRAM and cameras. All other devices were then routed (\itc multiplexer, SD card, motor drivers etc). As a precaution, spare pins from the UC3C were routed to headers (J8 and J9), so that additions could be done if a pinout or connection was found to be incorrect. UART, \itc and SPI connections were routed to headers J7, J4 and J5 respectively so that logic analysers and a COM Port could be attached easily for debugging, or so that extra devices could be added onto the respective protocols for future developments. 
+Tracks were routed in order of priority, starting with the UC3C, SDRAM and cameras. All other devices were then routed (\itc multiplexer, SD card, motor drivers etc). As a precaution, spare pins from the UC3C were routed to headers (J8 and J9), so that additions could be done if a pinout or connection was found to be incorrect. USART, \itc and SPI connections were routed to headers J7, J4 and J5 respectively so that logic analysers and a COM Port could be attached easily for debugging, or so that extra devices could be added onto the respective protocols for future developments. 
 
 Passives used were all surface mount of either 0603 or 1206 size to save space on the board. All headers used were 0.1'' spaced for easy connections and a mini B USB socket was added. USB could be used to power the robot or to program the AVR via the bootloader. Future work could make the robot act as a USB device. 
 
@@ -397,7 +397,7 @@ Finally, the name \textit{``The Columbus''} was decided on as the original appli
 \subsection{PCB Testing}
 A program was written to test all the devices on the PCB. The following tests were done and are explained in the subsequent sections.%:
 %\begin{enumerate}
-%\item[\ref{UART:Test}] UART Send and Receive
+%\item[\ref{USART:Test}] USART Send and Receive
 %\item[\ref{SD:Test}] SD Card 
 %\item[\ref{LED:Test}] LEDs 
 %\item[\ref{SDRAM:Test}] SDRAM 
@@ -407,17 +407,17 @@ A program was written to test all the devices on the PCB. The following tests we
 %\end{enumerate}
 
 
-\subsubsection{UART Test}\label{UART:Test}
-When the test program begins, the microcontroller waits for a character input. All characters are echoed back. This enables the user to check the communications work. Once a carriage return key is received ($D_{16}$), the test program continues. Listing \ref{lst:UARTTestCode} shows the test code for the UART protocol.
+\subsubsection{USART Test}\label{USART:Test}
+When the test program begins, the microcontroller waits for a character input. All characters are echoed back. This enables the user to check the communications work. Once a carriage return key is received ($D_{16}$), the test program continues. Listing \ref{lst:USARTTestCode} shows the test code for the USART protocol.
 
-\lstinputlisting[style=C,caption=UART Test Code,label={lst:UARTTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=110,lastline=121]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+\lstinputlisting[style=C,caption=USART Test Code,label={lst:USARTTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=110,lastline=121]{../Code/ColumbusTest/ColumbusTest/src/main.c}
 
 
 \subsubsection{SD Card Test}\label{SD:Test}
 The Atmel Software Framework \citep{Atmel:ASF} provided drivers and code for SPI communications and use of a FAT32 file system. The code was configured to use the correct chip select pin for the SD Card and the correct SPI Bus. The test consists of initialising the memory, reading the capacity of the card and printing it to the user. 
 
 The AVR then proceeds to delete any previous log file, create a new log file and writes \textit{``Columbus Tester''} to it. The first 8 characters, which should be \textit{``Columbus''}, are read back and checked.
-\lstinputlisting[style=C,caption=UART Test Code,label={lst:SDTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=124,lastline=196]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+\lstinputlisting[style=C,caption=SD Test Code,label={lst:SDTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=124,lastline=196]{../Code/ColumbusTest/ColumbusTest/src/main.c}
 
 This exercises all basic file I/O functions (creating, reading and writing) and checks that they work.
 
@@ -432,7 +432,7 @@ The test was adapted from an example application in the ASF \citep{Atmel:ASF}. T
 \lstinputlisting[style=C,caption=SDRAM Test Code,label={lst:SDRAMTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=217,lastline=258]{../Code/ColumbusTest/ColumbusTest/src/main.c}
 
 \subsubsection{\itc Test}\label{I2C:Test}
-The \itc test checks the bus for devices. It prints out a table showing the address of any devices that acknowledge a probe. A probe is set up to write to the address. If a device exists on the line, it should acknowledge its own address \citep{Philips:I2C}. The probe consists of a set-up to write to the address. Figure \ref{fig:I2C} shows the \itc traffic generated for a probe, with both cases of the device acknowledging (ACK) and not acknowledging (NACK). The test is done three times: with no channel selected on the \itc multiplexer, with channel 0 selected and with channel 1 selected. The addresses expected are $21_{16}$ for the OV7670 Camera and $74_{16}$ for the \itc multiplexer. The camera should only acknowledge when the \itc multiplexer has the relevant channel selected. Listing \ref{lst:TWITestCode} shows the test code for the \itc bus and listing \ref{lst:I2CTest} shows the result from the full bus scan with channel 0 selected. The existence of both cameras is checked. %The cameras are both checked to exist.
+The \itc test checks the bus for devices. It prints out a table showing the address of any devices that acknowledge a probe. A probe is set up to write to the address. If a device exists on the line, it should acknowledge (ACK) its own address \citep{Philips:I2C}. The probe consists of a set-up to write to the address. Figure \ref{fig:I2C} shows the \itc traffic generated for a probe, with both cases of the device responding with an ACK, or negative acknowledging (NACK). The test is done three times: with no channel selected on the \itc multiplexer, with channel 0 selected and with channel 1 selected. The addresses expected are $21_{16}$ for the OV7670 Camera and $74_{16}$ for the \itc multiplexer. The camera should only acknowledge when the \itc multiplexer has the relevant channel selected. Listing \ref{lst:TWITestCode} shows the test code for the \itc bus and listing \ref{lst:I2CTest} shows the result from the full bus scan with channel 0 selected. The existence of both cameras is checked. %The cameras are both checked to exist.
 \begin{figure}
 \subfigure[ACK]{\includegraphics[width=\textwidth]{./Figures/I2C_Probe_ACK.jpg} }
 \subfigure[NACK]{\includegraphics[width=\textwidth]{./Figures/I2C_Probe_NACK.jpg} }
@@ -561,4 +561,4 @@ The PCB itself was a success. It was a complex PCB with a high risk of potential
 \end{figure}
 \section{Conclusions}
 
-Overall, the hardware design and firmware was a success. A few minor faults were apparent on the PCB, but these were easily patched and caused no problems. Using a firmware test, the components are seen to be fully functional giving the UC3C full ability to control motors, cameras, \itc multiplexer, and memory of both SD card (up to 2GB size) and external 4MB RAM. This provides a good platform for a manoeuvrable, stereoscopic vision robot to be developed. 
+Overall, the hardware design and firmware was a success. A few minor faults were apparent on the PCB, but these were easily patched and caused no problems. Using a firmware test, the components are seen to be fully functional giving the UC3C full ability to control motors, cameras, \itc multiplexer, and memory of both SD card (up to 2GB size) and external 4MB SDRAM. This provides a good platform for a manoeuvrable, stereoscopic vision robot to be developed. 
