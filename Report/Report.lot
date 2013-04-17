@@ -14,18 +14,18 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Table of results to calculate the field of view of the camera\relax }}{47}{table.caption.354}
 \contentsline {table}{\numberline {4.2}{\ignorespaces Results of range finding test\relax }}{48}{table.caption.356}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Number of clock cycles taken to calculate the transform of 64 or 256 long data set\relax }}{62}{table.caption.412}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Number of clock cycles taken to calculate the transform of 64 or 256 long data set\relax }}{63}{table.caption.418}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Table showing the Auto Run commands implemented\relax }}{66}{table.caption.421}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Table showing the available debug commands\relax }}{67}{table.caption.422}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Table show the meaning of the LED lights. F - Flashing, X - Don't Care\relax }}{68}{table.caption.423}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Table showing the Auto Run commands implemented\relax }}{68}{table.caption.427}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Table showing the available debug commands\relax }}{69}{table.caption.428}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Table show the meaning of the LED lights. F - Flashing, X - Don't Care\relax }}{70}{table.caption.429}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{89}{table.caption.447}
-\contentsline {table}{\numberline {D.2}{\ignorespaces All components and their values (if applicable)\relax }}{90}{table.caption.448}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD card}}{93}{table.452}
+\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{91}{table.caption.453}
+\contentsline {table}{\numberline {D.2}{\ignorespaces All components and their values (if applicable)\relax }}{92}{table.caption.454}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD card}}{95}{table.458}
 \addvspace {10\p@ }

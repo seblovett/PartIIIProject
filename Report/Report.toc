@@ -1,7 +1,7 @@
-\contentsline {chapter}{List of Abbreviations}{xv}{chapter*.5}
-\contentsline {chapter}{List of Symbols}{xvii}{dummy.6}
-\contentsline {chapter}{Acknowledgements}{xix}{dummy.9}
-\contentsline {chapter}{Statement of Originality}{xxi}{dummy.10}
+\contentsline {chapter}{List of Abbreviations}{xvii}{chapter*.5}
+\contentsline {chapter}{List of Symbols}{xix}{dummy.6}
+\contentsline {chapter}{Acknowledgements}{xxi}{dummy.9}
+\contentsline {chapter}{Statement of Originality}{xxiii}{dummy.10}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.11}
 \contentsline {section}{\numberline {1.1}Project Management}{2}{section.13}
 \contentsline {chapter}{\numberline {2}Research}{5}{chapter.16}
@@ -56,30 +56,31 @@
 \contentsline {subsection}{\numberline {4.2.2}Summary}{45}{subsection.345}
 \contentsline {subsection}{\numberline {4.2.3}Field of View}{46}{subsection.351}
 \contentsline {subsection}{\numberline {4.2.4}Testing}{46}{subsection.355}
-\contentsline {subsection}{\numberline {4.2.5}Conclusion}{48}{subsection.361}
-\contentsline {section}{\numberline {4.3}Fourier Transform}{49}{section.364}
-\contentsline {subsection}{\numberline {4.3.1}Background Research and the FFT}{49}{subsection.365}
-\contentsline {subsection}{\numberline {4.3.2}Two Dimensional Fast Fourier Transform}{53}{subsection.378}
-\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT}{56}{subsection.391}
-\contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{56}{subsection.392}
-\contentsline {subsubsection}{\numberline {4.3.4.1}1D FFT Test}{56}{subsubsection.393}
-\contentsline {subsubsection}{\numberline {4.3.4.2}2D FFT Test}{60}{subsubsection.404}
-\contentsline {subsection}{\numberline {4.3.5}Conclusion}{60}{subsection.411}
-\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{63}{chapter.413}
-\contentsline {section}{\numberline {5.1}System Operation}{64}{section.419}
-\contentsline {chapter}{\numberline {A}Gantt Charts}{71}{appendix.425}
-\contentsline {chapter}{\numberline {B}Circuit Diagrams}{75}{appendix.429}
-\contentsline {section}{\numberline {B.1}OV7670 Breakout Board Schematic}{75}{section.430}
-\contentsline {section}{\numberline {B.2}Il Matto and Dual Camera Schematic}{77}{section.432}
-\contentsline {section}{\numberline {B.3}The Columbus Circuit Diagram}{78}{section.434}
-\contentsline {chapter}{\numberline {C}PCB Design}{85}{appendix.441}
-\contentsline {section}{\numberline {C.1}PCB Top Side}{85}{section.442}
-\contentsline {section}{\numberline {C.2}PCB Bottom Side}{87}{section.444}
-\contentsline {chapter}{\numberline {D}Costings and Components}{89}{appendix.446}
-\contentsline {chapter}{\numberline {E}Contents of Files}{91}{appendix.449}
-\contentsline {chapter}{\numberline {F}Bitmap File Format}{93}{appendix.450}
-\contentsline {section}{\numberline {F.1}Bitmap File Format}{93}{section.451}
-\contentsline {chapter}{\numberline {G}Range Finding Derivations}{97}{appendix.454}
-\contentsline {section}{\numberline {G.1}Object is between the Cameras}{97}{section.456}
-\contentsline {section}{\numberline {G.2}Object is to the same side in each Camera}{99}{section.465}
-\contentsline {section}{\numberline {G.3}Object is in front of a Camera}{100}{section.477}
+\contentsline {subsection}{\numberline {4.2.5}The Effect of Resolution and Field of View}{48}{subsection.361}
+\contentsline {subsection}{\numberline {4.2.6}Conclusion}{49}{subsection.367}
+\contentsline {section}{\numberline {4.3}Fourier Transform}{51}{section.370}
+\contentsline {subsection}{\numberline {4.3.1}Background Research and the FFT}{51}{subsection.371}
+\contentsline {subsection}{\numberline {4.3.2}Two Dimensional Fast Fourier Transform}{54}{subsection.384}
+\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT}{57}{subsection.397}
+\contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{57}{subsection.398}
+\contentsline {subsubsection}{\numberline {4.3.4.1}1D FFT Test}{57}{subsubsection.399}
+\contentsline {subsubsection}{\numberline {4.3.4.2}2D FFT Test}{61}{subsubsection.410}
+\contentsline {subsection}{\numberline {4.3.5}Conclusion}{61}{subsection.417}
+\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{65}{chapter.419}
+\contentsline {section}{\numberline {5.1}System Operation}{66}{section.425}
+\contentsline {chapter}{\numberline {A}Gantt Charts}{73}{appendix.431}
+\contentsline {chapter}{\numberline {B}Circuit Diagrams}{77}{appendix.435}
+\contentsline {section}{\numberline {B.1}OV7670 Breakout Board Schematic}{77}{section.436}
+\contentsline {section}{\numberline {B.2}Il Matto and Dual Camera Schematic}{79}{section.438}
+\contentsline {section}{\numberline {B.3}The Columbus Circuit Diagram}{80}{section.440}
+\contentsline {chapter}{\numberline {C}PCB Design}{87}{appendix.447}
+\contentsline {section}{\numberline {C.1}PCB Top Side}{87}{section.448}
+\contentsline {section}{\numberline {C.2}PCB Bottom Side}{89}{section.450}
+\contentsline {chapter}{\numberline {D}Costings and Components}{91}{appendix.452}
+\contentsline {chapter}{\numberline {E}Contents of Files}{93}{appendix.455}
+\contentsline {chapter}{\numberline {F}Bitmap File Format}{95}{appendix.456}
+\contentsline {section}{\numberline {F.1}Bitmap File Format}{95}{section.457}
+\contentsline {chapter}{\numberline {G}Range Finding Derivations}{99}{appendix.460}
+\contentsline {section}{\numberline {G.1}Object is between the Cameras}{99}{section.462}
+\contentsline {section}{\numberline {G.2}Object is to the same side in each Camera}{101}{section.471}
+\contentsline {section}{\numberline {G.3}Object is in front of a Camera}{102}{section.483}

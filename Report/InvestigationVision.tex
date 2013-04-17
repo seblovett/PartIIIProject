@@ -160,7 +160,7 @@ MATLAB was used to test the range finding. It is unable to automatically detect 
 
 A stereo pair of images of a rubber duck at different ranges were captured using the completed robot. To calculate the distance, a template from the right image of the duck's head was cross correlated with the left image. The maximum peak in the result was found and used as the match point. The distance was then calculated using equation \eqref{eq:summary:1}, with $B=42mm$, $\varphi_0=0.6249$ and $x_0=320$. Example images can be seen in figure \ref{fig:duck:stereo} and an example NCC result can be seen in figure \ref{fig:duck:ncc}. 
 
-Table \ref{table:range} shows the distances tested with the distance calculated using the above method. The ranges calculated were inaccurate. This could be attributed to the resolution of the camera being low, so one pixel change could lead to a large distance error. Matching can only be achieved to the accuracy of a few pixels without a more complex design, and therefore can introduce a small error when matching and cause a large distance error in the calculation. 
+Table \ref{table:range} shows the distances tested with the distance calculated using the above method. The ranges calculated were inaccurate. Matching can only be achieved to the accuracy of a few pixels without a more complex design, and therefore can introduce a small error when matching and cause a large distance error in the calculation. 
 
 \begin{table}
 \centering
@@ -195,11 +195,45 @@ Actual Distance (mm) & Pixel Difference in Images (pixel) & Calculated Distance 
 \label{fig:duck:ncc}
 \end{figure}
 
+
+\subsection{The Effect of Resolution and Field of View}
+
+By simplifying equation \eqref{eq:summary:1} to \eqref{eq:range:simp} shows that the function is at a maximum when $\Delta_x = 1$ and is the maximum distance able to be calculated. The maximum error is found using equation \eqref{eq:range:maxerr} and shows that the error increases with resolution. 
+
+\begin{equation}\label{eq:range:simp}
+D(\Delta_x) = \frac{B.x_0}{2\tan \left(\frac{\varphi_0}{2}\right).\Delta_x}
+\end{equation}
+
+\begin{equation}\label{eq:range:maxerr}
+Err_{max} = D(1) - D(2) = \frac{B.x_0}{2\tan \left(\frac{\varphi_0}{2}\right)} - \frac{B.x_0}{2\tan \left(\frac{\varphi_0}{2}\right).2} = \frac{B.x_0}{\tan \left(4\frac{\varphi_0}{2}\right)}
+\end{equation}
+
+This is because as $x_0$ increases, the range of $(x_1 - x_2)$ also increases. The minimum detectable distance, equation \eqref{eq:range:min}, is not related to resolution, but depends on $B$ and $\varphi_0$. 
+
+\begin{equation}\label{eq:range:min}
+D(x_0) = \frac{B}{2\tan \left(\frac{\varphi_0}{2}\right)}
+\end{equation}
+
+Figure \ref{fig:MaxR} shows the relationship between maximum distance, $x_0$ and $\varphi_0$. By increasing the horizontal resolution, the maximum distance increases, but also increases the error. Increasing $\varphi_0$ will lower the distance, but the error will decrease and can be seen in figure \ref{fig:DeltaxPhi0}. A compromise must be made between maximum distance and resolution.
+
+\begin{figure}
+\includegraphics[width=\textwidth]{Figures/Distance_Phi0_X0.eps}
+\caption{A surface plot of the maximum range able to be found with varying $\varphi_0$ and $x_0$. $B=42mm$, $\Delta_x = 1$}
+\label{fig:MaxR}
+\end{figure}
+\begin{figure}
+\includegraphics[width=\textwidth]{Figures/DeltaXPhi0.eps}
+\caption{A surface plot of the range of distances able to be calculated with a range of field of views. $B=42mm$, $x_0 = 320$.}
+\label{fig:DeltaxPhi0}
+\end{figure}
+
 \subsection{Conclusion}
 
-Extensive testing of the effect of separation of the cameras has been done before \citep{Mrovlje:Distance_Stereoscopic}. Figure \ref{fig:B:Plot} shows that increasing $B$ will give you a larger range of detectable distances, but with a large potential error when using a low resolution camera. A separation of more than 100 pixels will result in around the same calculated distance due to the function being of the form $D =kx^{-1}$. This gives a range of distances that the can be detected. For $B=42mm$, it is around $200mm$ to $1m$. An external frame could be made to mount the cameras with a greater separation distance to alter this characteristic on the robot.
+Extensive testing of the effect of separation has been done before \citep{Mrovlje:Distance_Stereoscopic}. Figures \ref{fig:B:Plot} shows that increasing B will give you a larger range of detectable distances, but with a larger maximum error. Resolution also increases the error and maximum detectable distance. In reality, cameras have not increased only by resolution, but the lens have become wider angled as well. 
 
-The robot was designed to be small, and the cameras were chosen as a cheap alternative to more expensive products on the market. The test results show that by using cameras with a small separation and a low resolution, the system is unable to accurately measure distances to objects seen. The separation of objects in the images is a reciprocal function and the data gathered in the test matches this characteristic, see figure \ref{fig:Distance:DeltaX}. This means the system can perceive depth from the separation of the objects, but not accurately calculate the distance. 
+In order to improve the ability of these cameras for range finding, adding a wide angle lens will reduce the error at the expense of reducing the maximum range. Alternatively, the robot could use an algorithm to view the object at different perspectives to estimate the distance to it. 
+
+The robot was designed to be small, and the cameras were chosen as a cheap alternative to more expensive products on the market. The test results show that by using cameras as described, ranges cannot accurately be measured. The separation of objects in the images is a reciprocal function and the data gathered in the test matches this characteristic, see figure \ref{fig:Distance:DeltaX}. This means the system can perceive depth from the separation of the objects, but not accurately calculate the distance.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/BPlot.eps}
