@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.15)  15 APR 2013 15:45
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.18)  18 APR 2013 12:43
 entering extended mode
 **report.tex
 (H:\part3_project\Report\report.tex
@@ -1047,7 +1047,7 @@ Chapter 1.
 ------------------------------------------------------------------------------
  1 Introduction
 ------------------------------------------------------------------------------
-<./Figures/RobotBase.jpg, id=758, 4291.03125pt x 2653.915pt>
+<./Figures/RobotBase.jpg, id=759, 4291.03125pt x 2653.915pt>
 File: ./Figures/RobotBase.jpg Graphic file (type jpg)
 
 <use ./Figures/RobotBase.jpg> [1
@@ -1209,7 +1209,7 @@ Chapter 3.
 ------------------------------------------------------------------------------
  3 Hardware and Firmware Development
 ------------------------------------------------------------------------------
-<Figures/OV7670_Back.jpg, id=841, 1462.46375pt x 1863.96375pt>
+<Figures/OV7670_Back.jpg, id=842, 1462.46375pt x 1863.96375pt>
 File: Figures/OV7670_Back.jpg Graphic file (type jpg)
 
 <use Figures/OV7670_Back.jpg> [9
@@ -1217,7 +1217,7 @@ File: Figures/OV7670_Back.jpg Graphic file (type jpg)
 
 
 ]
-<./Figures/RGB565.png, id=853, 809.27344pt x 148.30406pt>
+<./Figures/RGB565.png, id=854, 809.27344pt x 148.30406pt>
 File: ./Figures/RGB565.png Graphic file (type png)
 
 <use ./Figures/RGB565.png> [10 <H:/part3_project/Report/Figures/OV7670_Back.jpg
@@ -1234,11 +1234,11 @@ to.pdf>
 (epstopdf)             \includegraphics on input line 48.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/ov7670_im_capture-eps-converted-to.pdf, id=865, 1084.05pt x 486.8187
+<./Figures/ov7670_im_capture-eps-converted-to.pdf, id=866, 1084.05pt x 486.8187
 6pt>
 File: ./Figures/ov7670_im_capture-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/ov7670_im_capture-eps-converted-to.pdf>
-<./Figures/Camera_Hierarchy.jpg, id=866, 434.70406pt x 327.74445pt>
+<./Figures/Camera_Hierarchy.jpg, id=867, 434.70406pt x 327.74445pt>
 File: ./Figures/Camera_Hierarchy.jpg Graphic file (type jpg)
 
 <use ./Figures/Camera_Hierarchy.jpg> [11 <H:/part3_project/Report/Figures/ov767
@@ -1273,21 +1273,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--99
 \OT1/cmr/m/n/12 only 256
  []
 
-<Figures/ExampleImageFromCamera.jpg, id=897, 321.2pt x 240.9pt>
+<Figures/ExampleImageFromCamera.jpg, id=898, 321.2pt x 240.9pt>
 File: Figures/ExampleImageFromCamera.jpg Graphic file (type jpg)
 
 <use Figures/ExampleImageFromCamera.jpg> [14]
-<./Figures/Prototype.jpg, id=905, 4117.3825pt x 2294.5725pt>
+<./Figures/Prototype.jpg, id=906, 4117.3825pt x 2294.5725pt>
 File: ./Figures/Prototype.jpg Graphic file (type jpg)
 
 <use ./Figures/Prototype.jpg>
-<./Figures/Camera_TFT.jpg, id=906, 4769.82pt x 3179.88pt>
+<./Figures/Camera_TFT.jpg, id=907, 4769.82pt x 3179.88pt>
 File: ./Figures/Camera_TFT.jpg Graphic file (type jpg)
 
 <use ./Figures/Camera_TFT.jpg> [15 <H:/part3_project/Report/Figures/ExampleImag
 eFromCamera.jpg>] [16 <H:/part3_project/Report/Figures/Prototype.jpg> <H:/part3
 _project/Report/Figures/Camera_TFT.jpg>]
-<Figures/TCRT_Circuit.png, id=923, 283.0575pt x 450.9347pt>
+<Figures/TCRT_Circuit.png, id=924, 283.0575pt x 450.9347pt>
 File: Figures/TCRT_Circuit.png Graphic file (type png)
 
 <use Figures/TCRT_Circuit.png>
@@ -1303,20 +1303,20 @@ ps-converted-to.pdf Figures/WheelVoltageGraph.eps>
 (epstopdf)             \includegraphics on input line 170.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/WheelVoltageGraph-eps-converted-to.pdf, id=924, 1446.40375pt x 508.901
+<Figures/WheelVoltageGraph-eps-converted-to.pdf, id=925, 1446.40375pt x 508.901
 25pt>
 File: Figures/WheelVoltageGraph-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/WheelVoltageGraph-eps-converted-to.pdf> [17] [18 <H:/part3_projec
 t/Report/Figures/TCRT_Circuit.png (PNG copy)> <H:/part3_project/Report/Figures/
 WheelVoltageGraph-eps-converted-to.pdf>] [19] [20]
-<Figures/ASM.jpg, id=961, 516.0078pt x 356.2911pt>
+<Figures/ASM.jpg, id=962, 516.0078pt x 356.2911pt>
 File: Figures/ASM.jpg Graphic file (type jpg)
  <use Figures/ASM.jpg>
-<./Figures/Robotbase_top_annot.jpg, id=962, 2086.04344pt x 2045.39156pt>
+<./Figures/Robotbase_top_annot.jpg, id=963, 2086.04344pt x 2045.39156pt>
 File: ./Figures/Robotbase_top_annot.jpg Graphic file (type jpg)
 
 <use ./Figures/Robotbase_top_annot.jpg>
-<./Figures/Robotbase_side_annot.jpg, id=963, 3438.8475pt x 1227.83719pt>
+<./Figures/Robotbase_side_annot.jpg, id=964, 3438.8475pt x 1227.83719pt>
 File: ./Figures/Robotbase_side_annot.jpg Graphic file (type jpg)
 
 <use ./Figures/Robotbase_side_annot.jpg>
@@ -1376,7 +1376,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 268--268
 \OT1/cmr/m/n/12 Dis-tance
  []
 
-[23] <Figures/hierarchy.jpg, id=986, 1046.40938pt x 852.18375pt>
+[23] <Figures/hierarchy.jpg, id=987, 1046.40938pt x 852.18375pt>
 File: Figures/hierarchy.jpg Graphic file (type jpg)
 
 <use Figures/hierarchy.jpg> [24]
@@ -1384,11 +1384,11 @@ File: Figures/hierarchy.jpg Graphic file (type jpg)
 LaTeX Warning: Float too large for page by 30.51561pt on input line 370.
 
 [25 <H:/part3_project/Report/Figures/hierarchy.jpg>] [26]
-<./Figures/PCB_Bare_Top.jpg, id=1014, 1602.98875pt x 2267.47125pt>
+<./Figures/PCB_Bare_Top.jpg, id=1015, 1602.98875pt x 2267.47125pt>
 File: ./Figures/PCB_Bare_Top.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bare_Top.jpg>
-<./Figures/PCB_Bare_Bottom.jpg, id=1015, 1601.985pt x 2267.47125pt>
+<./Figures/PCB_Bare_Bottom.jpg, id=1016, 1601.985pt x 2267.47125pt>
 File: ./Figures/PCB_Bare_Bottom.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bare_Bottom.jpg> [27]
@@ -1414,11 +1414,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 434.
 
-<./Figures/I2C_Probe_ACK.jpg, id=1177, 597.73312pt x 170.88844pt>
+<./Figures/I2C_Probe_ACK.jpg, id=1178, 597.73312pt x 170.88844pt>
 File: ./Figures/I2C_Probe_ACK.jpg Graphic file (type jpg)
 
 <use ./Figures/I2C_Probe_ACK.jpg>
-<./Figures/I2C_Probe_NACK.jpg, id=1178, 584.1825pt x 169.38281pt>
+<./Figures/I2C_Probe_NACK.jpg, id=1179, 584.1825pt x 169.38281pt>
 File: ./Figures/I2C_Probe_NACK.jpg Graphic file (type jpg)
 
 <use ./Figures/I2C_Probe_NACK.jpg>
@@ -1436,7 +1436,7 @@ t/Figures/I2C_Probe_NACK.jpg>]
 (H:\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c) [33]
 (H:\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c) [34]
 (H:\part3_project\Code\ColumbusTest\ColumbusTest\src\main.c)
-<./Figures/PCB_SDRAM.jpg, id=1282, 1539.7525pt x 1547.7825pt>
+<./Figures/PCB_SDRAM.jpg, id=1283, 1539.7525pt x 1547.7825pt>
 File: ./Figures/PCB_SDRAM.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_SDRAM.jpg> [35]
@@ -1445,16 +1445,16 @@ Overfull \hbox (6.02278pt too wide) in paragraph at lines 502--507
  []
 
 [36 <H:/part3_project/Report/Figures/PCB_SDRAM.jpg>] [37]
-<./Figures/MotorDriver_error.png, id=1309, 496.10344pt x 550.30594pt>
+<./Figures/MotorDriver_error.png, id=1310, 496.10344pt x 550.30594pt>
 File: ./Figures/MotorDriver_error.png Graphic file (type png)
 
 <use ./Figures/MotorDriver_error.png> [38 <H:/part3_project/Report/Figures/Moto
 rDriver_error.png (PNG copy)>]
-<./Figures/PCB_Top.jpg, id=1315, 2669.975pt x 1862.96pt>
+<./Figures/PCB_Top.jpg, id=1316, 2669.975pt x 1862.96pt>
 File: ./Figures/PCB_Top.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Top.jpg>
-<./Figures/PCB_Bottom.jpg, id=1316, 3880.4975pt x 2812.5075pt>
+<./Figures/PCB_Bottom.jpg, id=1317, 3880.4975pt x 2812.5075pt>
 File: ./Figures/PCB_Bottom.jpg Graphic file (type jpg)
 
 <use ./Figures/PCB_Bottom.jpg>
@@ -1473,11 +1473,11 @@ Chapter 4.
 ------------------------------------------------------------------------------
  4 Vision Algorithms
 ------------------------------------------------------------------------------
-<./Figures/deskLeft.png, id=1334, 401.5pt x 301.125pt>
+<./Figures/deskLeft.png, id=1335, 401.5pt x 301.125pt>
 File: ./Figures/deskLeft.png Graphic file (type png)
 
 <use ./Figures/deskLeft.png>
-<./Figures/deskRight.png, id=1335, 401.5pt x 301.125pt>
+<./Figures/deskRight.png, id=1336, 401.5pt x 301.125pt>
 File: ./Figures/deskRight.png Graphic file (type png)
 
 <use ./Figures/deskRight.png> [41
@@ -1499,7 +1499,7 @@ nverted-to.pdf ./Figures/SADResults.eps>
 (epstopdf)             \includegraphics on input line 71.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/SADResults-eps-converted-to.pdf, id=1356, 1445.4pt x 708.6475pt>
+<./Figures/SADResults-eps-converted-to.pdf, id=1357, 1445.4pt x 708.6475pt>
 File: ./Figures/SADResults-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Figures/SADResults-eps-converted-to.pdf>
@@ -1515,7 +1515,7 @@ nverted-to.pdf ./Figures/SSDResults.eps>
 (epstopdf)             \includegraphics on input line 72.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/SSDResults-eps-converted-to.pdf, id=1357, 1445.4pt x 517.935pt>
+<./Figures/SSDResults-eps-converted-to.pdf, id=1358, 1445.4pt x 517.935pt>
 File: ./Figures/SSDResults-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Figures/SSDResults-eps-converted-to.pdf>
@@ -1531,13 +1531,13 @@ nverted-to.pdf ./Figures/NCCResults.eps>
 (epstopdf)             \includegraphics on input line 73.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/NCCResults-eps-converted-to.pdf, id=1358, 1445.4pt x 708.6475pt>
+<./Figures/NCCResults-eps-converted-to.pdf, id=1359, 1445.4pt x 708.6475pt>
 File: ./Figures/NCCResults-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Figures/NCCResults-eps-converted-to.pdf> [43] [44 <H:/part3_project/Repo
 rt/Figures/SADResults-eps-converted-to.pdf> <H:/part3_project/Report/Figures/SS
 DResults-eps-converted-to.pdf> <H:/part3_project/Report/Figures/NCCResults-eps-
-converted-to.pdf>] [45] <Figures/FoV.jpg, id=1477, 871.21484pt x 570.933pt>
+converted-to.pdf>] [45] <Figures/FoV.jpg, id=1478, 871.21484pt x 570.933pt>
 File: Figures/FoV.jpg Graphic file (type jpg)
 
 <use Figures/FoV.jpg> [46] [47 <H:/part3_project/Report/Figures/FoV.jpg>]
@@ -1550,10 +1550,10 @@ Underfull \hbox (badness 2617) in paragraph at lines 170--170
 []\OT1/cmr/m/n/12 Calculated Dis-
  []
 
-<./Figures/Duck_L.jpg, id=1495, 321.2pt x 240.9pt>
+<./Figures/Duck_L.jpg, id=1496, 321.2pt x 240.9pt>
 File: ./Figures/Duck_L.jpg Graphic file (type jpg)
  <use ./Figures/Duck_L.jpg>
-<./Figures/Duck_R.jpg, id=1496, 321.2pt x 240.9pt>
+<./Figures/Duck_R.jpg, id=1497, 321.2pt x 240.9pt>
 File: ./Figures/Duck_R.jpg Graphic file (type jpg)
  <use ./Figures/Duck_R.jpg>
 Package epstopdf Info: Source file: <Figures/NCC_Duck.eps>
@@ -1567,7 +1567,7 @@ ted-to.pdf Figures/NCC_Duck.eps>
 (epstopdf)             \includegraphics on input line 193.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/NCC_Duck-eps-converted-to.pdf, id=1497, 1445.4pt x 708.6475pt>
+<Figures/NCC_Duck-eps-converted-to.pdf, id=1498, 1445.4pt x 708.6475pt>
 File: Figures/NCC_Duck-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/NCC_Duck-eps-converted-to.pdf> [48 <H:/part3_project/Report/Figure
@@ -1583,7 +1583,7 @@ Package epstopdf Info: Source file: <Figures/BPlot.eps>
 (epstopdf)             \includegraphics on input line 205.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/BPlot-eps-converted-to.pdf, id=1508, 1445.4pt x 708.6475pt>
+<Figures/BPlot-eps-converted-to.pdf, id=1509, 1445.4pt x 708.6475pt>
 File: Figures/BPlot-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/BPlot-eps-converted-to.pdf>
@@ -1599,7 +1599,7 @@ df>
 (epstopdf)             \includegraphics on input line 210.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Distance_DeltaX-eps-converted-to.pdf, id=1509, 1446.40375pt x 525.965p
+<Figures/Distance_DeltaX-eps-converted-to.pdf, id=1510, 1446.40375pt x 525.965p
 t>
 File: Figures/Distance_DeltaX-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/Distance_DeltaX-eps-converted-to.pdf> [49 <H:/part3_project/Repor
@@ -1616,7 +1616,7 @@ converted-to.pdf ./Figures/Dirac_1D_Sig.eps>
 (epstopdf)             \includegraphics on input line 224.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Dirac_1D_Sig-eps-converted-to.pdf, id=1546, 1446.40375pt x 528.97626
+<./Figures/Dirac_1D_Sig-eps-converted-to.pdf, id=1547, 1446.40375pt x 528.97626
 pt>
 File: ./Figures/Dirac_1D_Sig-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Dirac_1D_Sig-eps-converted-to.pdf>
@@ -1632,7 +1632,7 @@ converted-to.pdf ./Figures/Dirac_1D_Mag.eps>
 (epstopdf)             \includegraphics on input line 225.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Dirac_1D_Mag-eps-converted-to.pdf, id=1547, 1446.40375pt x 525.965pt
+<./Figures/Dirac_1D_Mag-eps-converted-to.pdf, id=1548, 1446.40375pt x 525.965pt
 >
 File: ./Figures/Dirac_1D_Mag-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Dirac_1D_Mag-eps-converted-to.pdf>
@@ -1648,7 +1648,7 @@ s-converted-to.pdf ./Figures/Dirac_1D_Phase.eps>
 (epstopdf)             \includegraphics on input line 226.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Dirac_1D_Phase-eps-converted-to.pdf, id=1548, 1446.40375pt x 546.04p
+<./Figures/Dirac_1D_Phase-eps-converted-to.pdf, id=1549, 1446.40375pt x 546.04p
 t>
 File: ./Figures/Dirac_1D_Phase-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Dirac_1D_Phase-eps-converted-to.pdf>
@@ -1678,7 +1678,7 @@ df>
 (epstopdf)             \includegraphics on input line 233.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Square_1D_Sig-eps-converted-to.pdf, id=1549, 1446.40375pt x 549.0512
+<./Figures/Square_1D_Sig-eps-converted-to.pdf, id=1550, 1446.40375pt x 549.0512
 5pt>
 File: ./Figures/Square_1D_Sig-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Square_1D_Sig-eps-converted-to.pdf>
@@ -1694,7 +1694,7 @@ df>
 (epstopdf)             \includegraphics on input line 234.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Square_1D_Mag-eps-converted-to.pdf, id=1550, 1446.40375pt x 554.07pt
+<./Figures/Square_1D_Mag-eps-converted-to.pdf, id=1551, 1446.40375pt x 554.07pt
 >
 File: ./Figures/Square_1D_Mag-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Square_1D_Mag-eps-converted-to.pdf>
@@ -1710,7 +1710,7 @@ ps-converted-to.pdf ./Figures/Square_1D_Phase.eps>
 (epstopdf)             \includegraphics on input line 235.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/Square_1D_Phase-eps-converted-to.pdf, id=1551, 1446.40375pt x 540.01
+<./Figures/Square_1D_Phase-eps-converted-to.pdf, id=1552, 1446.40375pt x 540.01
 75pt>
 File: ./Figures/Square_1D_Phase-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/Square_1D_Phase-eps-converted-to.pdf>
@@ -1735,27 +1735,27 @@ ures/Dirac_1D_Mag-eps-converted-to.pdf> <H:/part3_project/Report/Figures/Dirac_
 1D_Phase-eps-converted-to.pdf>] [52 <H:/part3_project/Report/Figures/Square_1D_
 Sig-eps-converted-to.pdf> <H:/part3_project/Report/Figures/Square_1D_Mag-eps-co
 nverted-to.pdf> <H:/part3_project/Report/Figures/Square_1D_Phase-eps-converted-
-to.pdf>] <./Figures/Dirac_2D_Sig.jpg, id=1641, 462.97969pt x 462.22687pt>
+to.pdf>] <./Figures/Dirac_2D_Sig.jpg, id=1642, 462.97969pt x 462.22687pt>
 File: ./Figures/Dirac_2D_Sig.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_2D_Sig.jpg>
-<./Figures/Dirac_2D_Mag.jpg, id=1642, 463.7325pt x 463.7325pt>
+<./Figures/Dirac_2D_Mag.jpg, id=1643, 463.7325pt x 463.7325pt>
 File: ./Figures/Dirac_2D_Mag.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_2D_Mag.jpg>
-<./Figures/Dirac_2D_Phase.jpg, id=1643, 463.7325pt x 461.47406pt>
+<./Figures/Dirac_2D_Phase.jpg, id=1644, 463.7325pt x 461.47406pt>
 File: ./Figures/Dirac_2D_Phase.jpg Graphic file (type jpg)
 
 <use ./Figures/Dirac_2D_Phase.jpg>
-<./Figures/Square_2D_Sig.jpg, id=1644, 192.72pt x 192.72pt>
+<./Figures/Square_2D_Sig.jpg, id=1645, 192.72pt x 192.72pt>
 File: ./Figures/Square_2D_Sig.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_2D_Sig.jpg>
-<./Figures/Square_2D_Abs.jpg, id=1645, 256.96pt x 256.96pt>
+<./Figures/Square_2D_Abs.jpg, id=1646, 256.96pt x 256.96pt>
 File: ./Figures/Square_2D_Abs.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_2D_Abs.jpg>
-<./Figures/Square_2D_Phase.jpg, id=1646, 256.96pt x 256.96pt>
+<./Figures/Square_2D_Phase.jpg, id=1647, 256.96pt x 256.96pt>
 File: ./Figures/Square_2D_Phase.jpg Graphic file (type jpg)
 
 <use ./Figures/Square_2D_Phase.jpg> [53] [54 <H:/part3_project/Report/Figures/D
@@ -1781,7 +1781,7 @@ ut-eps-converted-to.pdf ./Figures/AVR_FFT_Dirac_Input.eps>
 (epstopdf)             \includegraphics on input line 319.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Dirac_Input-eps-converted-to.pdf, id=1693, 1446.40375pt x 55
+<./Figures/AVR_FFT_Dirac_Input-eps-converted-to.pdf, id=1694, 1446.40375pt x 55
 7.08125pt>
 File: ./Figures/AVR_FFT_Dirac_Input-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -1798,7 +1798,7 @@ plex_Mag-eps-converted-to.pdf ./Figures/AVR_FFT_Dirac_Complex_Mag.eps>
 (epstopdf)             \includegraphics on input line 324.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Dirac_Complex_Mag-eps-converted-to.pdf, id=1694, 1446.40375p
+<./Figures/AVR_FFT_Dirac_Complex_Mag-eps-converted-to.pdf, id=1695, 1446.40375p
 t x 560.0925pt>
 File: ./Figures/AVR_FFT_Dirac_Complex_Mag-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -1816,7 +1816,7 @@ plex_Phase-eps-converted-to.pdf ./Figures/AVR_FFT_Dirac_Complex_Phase.eps>
 (epstopdf)             \includegraphics on input line 325.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Dirac_Complex_Phase-eps-converted-to.pdf, id=1695, 1446.4037
+<./Figures/AVR_FFT_Dirac_Complex_Phase-eps-converted-to.pdf, id=1696, 1446.4037
 5pt x 708.6475pt>
 File: ./Figures/AVR_FFT_Dirac_Complex_Phase-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1843,7 +1843,7 @@ to.pdf>
 (epstopdf)             \includegraphics on input line 331.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Dirac_Mag-eps-converted-to.pdf, id=1696, 1446.40375pt x 566.
+<./Figures/AVR_FFT_Dirac_Mag-eps-converted-to.pdf, id=1697, 1446.40375pt x 566.
 115pt>
 File: ./Figures/AVR_FFT_Dirac_Mag-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Figures/AVR_FFT_Dirac_Mag-eps-converted-to.pdf>
@@ -1859,7 +1859,7 @@ put-eps-converted-to.pdf ./Figures/AVR_FFT_Square_Input.eps>
 (epstopdf)             \includegraphics on input line 337.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Square_Input-eps-converted-to.pdf, id=1697, 1446.40375pt x 5
+<./Figures/AVR_FFT_Square_Input-eps-converted-to.pdf, id=1698, 1446.40375pt x 5
 29.98pt>
 File: ./Figures/AVR_FFT_Square_Input-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -1876,7 +1876,7 @@ mplex_Mag-eps-converted-to.pdf ./Figures/AVR_FFT_Square_Complex_Mag.eps>
 (epstopdf)             \includegraphics on input line 342.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Square_Complex_Mag-eps-converted-to.pdf, id=1698, 1446.40375
+<./Figures/AVR_FFT_Square_Complex_Mag-eps-converted-to.pdf, id=1699, 1446.40375
 pt x 536.0025pt>
 File: ./Figures/AVR_FFT_Square_Complex_Mag-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1895,7 +1895,7 @@ mplex_Phase-eps-converted-to.pdf ./Figures/AVR_FFT_Square_Complex_Phase.eps>
 (epstopdf)             \includegraphics on input line 343.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Square_Complex_Phase-eps-converted-to.pdf, id=1699, 1446.403
+<./Figures/AVR_FFT_Square_Complex_Phase-eps-converted-to.pdf, id=1700, 1446.403
 75pt x 539.01375pt>
 File: ./Figures/AVR_FFT_Square_Complex_Phase-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -1922,7 +1922,7 @@ g-eps-converted-to.pdf ./Figures/AVR_FFT_Square_Mag.eps>
 (epstopdf)             \includegraphics on input line 348.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Figures/AVR_FFT_Square_Mag-eps-converted-to.pdf, id=1700, 1446.40375pt x 532
+<./Figures/AVR_FFT_Square_Mag-eps-converted-to.pdf, id=1701, 1446.40375pt x 532
 .99126pt>
 File: ./Figures/AVR_FFT_Square_Mag-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -1934,11 +1934,11 @@ roject/Report/Figures/AVR_FFT_Dirac_Mag-eps-converted-to.pdf>]
 [59 <H:/part3_project/Report/Figures/AVR_FFT_Square_Input-eps-converted-to.pdf>
  <H:/part3_project/Report/Figures/AVR_FFT_Square_Complex_Mag-eps-converted-to.p
 df> <H:/part3_project/Report/Figures/AVR_FFT_Square_Complex_Phase-eps-converted
--to.pdf>] <Figures/AVR_FFT2_Dirac_Mag.jpg, id=1748, 316.18124pt x 313.17pt>
+-to.pdf>] <Figures/AVR_FFT2_Dirac_Mag.jpg, id=1749, 316.18124pt x 313.17pt>
 File: Figures/AVR_FFT2_Dirac_Mag.jpg Graphic file (type jpg)
 
 <use Figures/AVR_FFT2_Dirac_Mag.jpg>
-<Figures/AVR_FFT2_Dirac_Phase.jpg, id=1749, 311.66437pt x 310.91156pt>
+<Figures/AVR_FFT2_Dirac_Phase.jpg, id=1750, 311.66437pt x 310.91156pt>
 File: Figures/AVR_FFT2_Dirac_Phase.jpg Graphic file (type jpg)
 
 <use Figures/AVR_FFT2_Dirac_Phase.jpg>
@@ -1946,11 +1946,11 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 360--362
 [][] [][] 
  []
 
-<Figures/AVR_FFT2_Square_Mag.jpg, id=1750, 48.93282pt x 48.93282pt>
+<Figures/AVR_FFT2_Square_Mag.jpg, id=1751, 48.93282pt x 48.93282pt>
 File: Figures/AVR_FFT2_Square_Mag.jpg Graphic file (type jpg)
 
 <use Figures/AVR_FFT2_Square_Mag.jpg>
-<Figures/AVR_FFT2_Square_Phase.jpg, id=1751, 267.24844pt x 264.99pt>
+<Figures/AVR_FFT2_Square_Phase.jpg, id=1752, 267.24844pt x 264.99pt>
 File: Figures/AVR_FFT2_Square_Phase.jpg Graphic file (type jpg)
 
 <use Figures/AVR_FFT2_Square_Phase.jpg>
@@ -1971,7 +1971,7 @@ Chapter 5.
 
 
 
-] [64] <Figures/Robot.jpg, id=1792, 4769.82pt x 3179.88pt>
+] [64] <Figures/Robot.jpg, id=1793, 4769.82pt x 3179.88pt>
 File: Figures/Robot.jpg Graphic file (type jpg)
 
 <use Figures/Robot.jpg>
@@ -1992,18 +1992,18 @@ Appendix A.
 ------------------------------------------------------------------------------
  A Gantt Charts
 ------------------------------------------------------------------------------
-<Figures/Gantt.jpg, id=1835, 805.0878pt x 379.77885pt>
+<Figures/Gantt.jpg, id=1836, 805.0878pt x 379.77885pt>
 File: Figures/Gantt.jpg Graphic file (type jpg)
  <use Figures/Gantt.jpg>
 [71
 
 
 ] [72 <H:/part3_project/Report/Figures/Gantt.jpg>]
-<Figures/Gantt2.jpg, id=1844, 629.11035pt x 256.91985pt>
+<Figures/Gantt2.jpg, id=1845, 629.11035pt x 256.91985pt>
 File: Figures/Gantt2.jpg Graphic file (type jpg)
 
 <use Figures/Gantt2.jpg>
-<Figures/Gantt3.jpg, id=1845, 805.0878pt x 379.77885pt>
+<Figures/Gantt3.jpg, id=1846, 805.0878pt x 379.77885pt>
 File: Figures/Gantt3.jpg Graphic file (type jpg)
 
 <use Figures/Gantt3.jpg>) [73 <H:/part3_project/Report/Figures/Gantt2.jpg>]
@@ -2013,7 +2013,7 @@ Appendix B.
 ------------------------------------------------------------------------------
  B Circuit Diagrams
 ------------------------------------------------------------------------------
-<Figures/OV7670_Schematic.jpg, id=1854, 844.5954pt x 597.432pt>
+<Figures/OV7670_Schematic.jpg, id=1855, 844.5954pt x 597.432pt>
 File: Figures/OV7670_Schematic.jpg Graphic file (type jpg)
 
 <use Figures/OV7670_Schematic.jpg> [75
@@ -2022,40 +2022,40 @@ File: Figures/OV7670_Schematic.jpg Graphic file (type jpg)
 
 
 ] [76 <H:/part3_project/Report/Figures/OV7670_Schematic.jpg>]
-<Figures/IlMattoCamera_CircuitDiagram.png, id=1864, 753.0534pt x 694.7556pt>
+<Figures/IlMattoCamera_CircuitDiagram.png, id=1865, 753.0534pt x 694.7556pt>
 File: Figures/IlMattoCamera_CircuitDiagram.png Graphic file (type png)
 
 <use Figures/IlMattoCamera_CircuitDiagram.png> [77
 
  <H:/part3_project/Report/Figures/IlMattoCamera_CircuitDiagram.png (PNG copy)>]
 
-<./Figures/ColumbusCircuitPage1.png, id=1869, 767.9892pt x 492.8814pt>
+<./Figures/ColumbusCircuitPage1.png, id=1870, 767.9892pt x 492.8814pt>
 File: ./Figures/ColumbusCircuitPage1.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage1.png>
-<./Figures/ColumbusCircuitPage2.png, id=1870, 493.3632pt x 182.1204pt>
+<./Figures/ColumbusCircuitPage2.png, id=1871, 493.3632pt x 182.1204pt>
 File: ./Figures/ColumbusCircuitPage2.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage2.png>
 
 LaTeX Warning: Float too large for page by 24.56201pt on input line 36.
 
-<./Figures/ColumbusCircuitPage3.png, id=1871, 447.1104pt x 189.3474pt>
+<./Figures/ColumbusCircuitPage3.png, id=1872, 447.1104pt x 189.3474pt>
 File: ./Figures/ColumbusCircuitPage3.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage3.png>
 
 LaTeX Warning: Float too large for page by 24.56552pt on input line 43.
 
-<./Figures/ColumbusCircuitPage4.png, id=1872, 423.5022pt x 362.7954pt>
+<./Figures/ColumbusCircuitPage4.png, id=1873, 423.5022pt x 362.7954pt>
 File: ./Figures/ColumbusCircuitPage4.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage4.png>
-<./Figures/ColumbusCircuitPage5.png, id=1873, 406.1574pt x 385.9218pt>
+<./Figures/ColumbusCircuitPage5.png, id=1874, 406.1574pt x 385.9218pt>
 File: ./Figures/ColumbusCircuitPage5.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage5.png>
-<./Figures/ColumbusCircuitPage6.png, id=1874, 377.2494pt x 297.7524pt>
+<./Figures/ColumbusCircuitPage6.png, id=1875, 377.2494pt x 297.7524pt>
 File: ./Figures/ColumbusCircuitPage6.png Graphic file (type png)
 
 <use ./Figures/ColumbusCircuitPage6.png>) [78
@@ -2071,7 +2071,7 @@ Appendix C.
 ------------------------------------------------------------------------------
  C PCB Design
 ------------------------------------------------------------------------------
-<Figures/ColumbusPCBTop_GP.png, id=1904, 290.16405pt x 212.69061pt>
+<Figures/ColumbusPCBTop_GP.png, id=1905, 290.16405pt x 212.69061pt>
 File: Figures/ColumbusPCBTop_GP.png Graphic file (type png)
 
 <use Figures/ColumbusPCBTop_GP.png> [85
@@ -2079,7 +2079,7 @@ File: Figures/ColumbusPCBTop_GP.png Graphic file (type png)
 
 
 ] [86 <H:/part3_project/Report/Figures/ColumbusPCBTop_GP.png (PNG copy)>]
-<Figures/ColumbusPCBBottom_GP.png, id=1913, 290.16405pt x 212.69061pt>
+<Figures/ColumbusPCBBottom_GP.png, id=1914, 290.16405pt x 212.69061pt>
 File: Figures/ColumbusPCBBottom_GP.png Graphic file (type png)
 
 <use Figures/ColumbusPCBBottom_GP.png> [87
@@ -2367,15 +2367,15 @@ Appendix G.
 ------------------------------------------------------------------------------
  G Range Finding Derivations
 ------------------------------------------------------------------------------
-<Figures/problem1.png, id=1959, 791.20593pt x 910.15031pt>
+<Figures/problem1.png, id=1960, 791.20593pt x 910.15031pt>
 File: Figures/problem1.png Graphic file (type png)
 
 <use Figures/problem1.png> [97] [98 <H:/part3_project/Report/Figures/problem1.p
-ng (PNG copy)>] <Figures/problem2.png, id=1991, 805.50937pt x 928.97063pt>
+ng (PNG copy)>] <Figures/problem2.png, id=1992, 805.50937pt x 928.97063pt>
 File: Figures/problem2.png Graphic file (type png)
 
 <use Figures/problem2.png> [99]
-<Figures/problem3.png, id=2008, 797.98125pt x 919.93687pt>
+<Figures/problem3.png, id=2009, 797.98125pt x 919.93687pt>
 File: Figures/problem3.png Graphic file (type png)
 
 <use Figures/problem3.png>) [100 <H:/part3_project/Report/Figures/problem2.png 
@@ -2406,13 +2406,13 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: CD1546E4BB8C68048853E9EC5C5D60B8;14853.
  ) 
 Here is how much of TeX's memory you used:
- 21830 strings out of 494053
- 373722 string characters out of 3146155
- 864193 words of memory out of 3000000
- 23837 multiletter control sequences out of 15000+200000
- 14685 words of font info for 57 fonts, out of 3000000 for 9000
+ 21832 strings out of 494053
+ 373744 string characters out of 3146179
+ 864196 words of memory out of 3000000
+ 23838 multiletter control sequences out of 15000+200000
+ 14986 words of font info for 58 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 63i,18n,100p,1421b,1889s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,18n,100p,1439b,1889s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.453} has been referenced but does not e
 xist, replaced by a fixed one
 
@@ -2420,26 +2420,27 @@ pdfTeX warning (dest): name{Hfootnote.24} has been referenced but does not exis
 t, replaced by a fixed one
 
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmu10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-public/amsfonts/symbols/msbm10.pfb>
-Output written on report.pdf (124 pages, 35598887 bytes).
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmu10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb>
+Output written on report.pdf (124 pages, 35607763 bytes).
 PDF statistics:
- 2212 PDF objects out of 2487 (max. 8388607)
+ 2216 PDF objects out of 2487 (max. 8388607)
  633 named destinations out of 1000 (max. 500000)
  1063 words of extra memory for PDF output out of 10000 (max. 10000000)
 

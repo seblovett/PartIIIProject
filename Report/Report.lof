@@ -28,7 +28,7 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top view of built PCB}}}{40}{figure.caption.319}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bottom view of built PCB with patches }}}{40}{figure.caption.319}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic test images from MATLAB examples\relax }}{41}{figure.caption.325}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Stereoscopic test images from \textsc {Matlab} examples\relax }}{41}{figure.caption.325}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Left Image}}}{41}{figure.caption.325}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Right Image}}}{41}{figure.caption.325}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Result graphs of comparison algorithms\relax }}{44}{figure.caption.335}
