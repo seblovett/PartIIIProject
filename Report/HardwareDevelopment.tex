@@ -91,7 +91,7 @@ Many image formats are common, such as Joint Photographic Expert Group (JPEG), P
 \caption{Comparison of different image formats available \citep{ImageComparison}}
 \label{ImageFormats}
 \begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}} \toprule
-			&	Bitmap 		& 	JPEG			 	&	PNG				& 	GIF \\ \toprule
+			&	\textbf{Bitmap} 		& 	\textbf{JPEG}			 	&	\textbf{PNG}				& 	\textbf{GIF} \\ \toprule
 Extension 		& 	*.bmp 		&  	*.jpg /*.jpeg 		& 	*.png				& 	*.gif \\ \midrule
 Compression 	& 	No 			& 	Lossless  and Lossy		&	Lossless ZIP			&	Lossy	\\ \midrule
 File Size of 320 by 
@@ -124,7 +124,7 @@ A second prototype was made to stream the images to a TFT screen. This can be se
 \caption{Pin connections of the ATMega644P for dual camera operation.}
 \label{table:644Pin}
 \begin{tabular}{ccccc}\toprule
-Pin	& 	Port A 	& 	Port B 			& 	Port C 				& 	Port D 		\\ \toprule
+\textbf{Pin}	& 	\textbf{Port A} 	& 	\textbf{Port B} 			& 	\textbf{Port C} 				& 	\textbf{Port D} 		\\ \toprule
 0	&	Data 0	&	SD Write Protect&	\itc - SCL			&	No Connection	\\ \midrule
 1	&	Data 1	&	SD Card Detect	&	\itc - SDA			&	No Connection	\\ \midrule
 2	&	Data 2	&	USB Data Plus	&	Read Clock 1		&	VSync 0			\\ \midrule
@@ -186,8 +186,8 @@ The set up function calculates the number of counts needed, and sets the directi
 \caption{The inputs to the motor drivers to set the movement}
 \label{table:MotorDirection}
 \begin{tabular}{ccccccc}\toprule
-\multicolumn{1}{c}{ }&\multicolumn{3}{c}{Motor 1}&\multicolumn{3}{c}{Motor 2}\\ \cmidrule(r){2-4} \cmidrule(l){5-7}
-\multicolumn{1}{c}{ }	&	STBY 	&	IN1	& IN2 	& STBY 	& IN1 	& IN2	\\ \toprule
+\multicolumn{1}{c}{ }&\multicolumn{3}{c}{\textbf{Motor 1}}&\multicolumn{3}{c}{\textbf{Motor 2}}\\ \cmidrule(r){2-4} \cmidrule(l){5-7}
+\multicolumn{1}{c}{ }	&	\textbf{STBY} 	&	\textbf{IN1}	& \textbf{IN2} 	& \textbf{STBY} 	& \textbf{IN1} 	& \textbf{IN2}	\\ \toprule
 Stop					&	0		&	X	&	X	&	0	&	X	&	X	\\ \midrule
 Forward					&	1		&	1	&	0	&	1	&	1	&	0	\\ \midrule
 Backward				&	1		&	0	&	1	&	1	&	0	&	1	\\ \midrule
@@ -265,7 +265,7 @@ To test the motor system, different distances were given to the movement method.
 \caption{Results of motor distance test}
 \label{table:results:motor:distance}
 \begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}} \toprule
-Distance Specified (mm) &	Number of Counts Calculated	& 	Counts $\times$ Resolution (mm)	& 	Average Measured Distance Moved (mm)	&	Error (\%) \\ \toprule
+\textbf{Distance Specified (mm)} &	\textbf{Number of Counts Calculated}	& \textbf{Counts $\times$ Resolution (mm)}	& 	\textbf{Average Measured Distance Moved (mm)}	&	\textbf{Error (\%)} \\ \toprule
 50						&	4							&	46.4							&	47.25									&	1.83		\\ \midrule
 75						&	6							&	69.6							&	70.75									&	1.65		\\ \midrule
 100						&	8							&	92.8							&	97.0									&	4.52		\\ \midrule
@@ -291,7 +291,7 @@ However, the robot did not move in a straight line, but with a slight arc. Speed
 \label{table:results:motor:speed}
 \centering
 \begin{tabular}{ccc} \toprule
-Wheel &	Total Time Elapsed ($s$) & Calculated Speed ($mm.s^{-1}$) \\ \toprule
+\textbf{Wheel} &	\textbf{Total Time Elapsed ($s$)} & \textbf{Calculated Speed ($mm.s^{-1}$)} \\ \toprule
 Left & 44.6		&	20.8 \\ \midrule
 Right & 49.6	&	18.7 \\ \bottomrule
 \end{tabular}
@@ -332,7 +332,7 @@ Figure \ref{fig:Hierarchical} shows a basic hierarchy of the robot. Each pin on 
 %\begin{tabular}{|p{1.2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}\cline{2-5}
 \begin{tabular}{ccccc}\toprule%\cline{2-5}
 %\multicolumn{1}{c|}{ } & \multicolumn{4}{|c|}{Port} \\ \hline
-Pin & Port A & Port B & Port C & Port D \\ \toprule
+\textbf{Pin} & \textbf{Port A} & \textbf{Port B} & \textbf{Port C} & \textbf{Port D} \\ \toprule
 0&TCK&CAMERA\_ 0&&EBI-DATA13\\ \midrule
 1&TDI&CAMERA\_ 1&&EBI-DATA14\\\midrule
 2&TDO&CAMERA\_2&SDA&EBI-DATA15\\\midrule
@@ -500,7 +500,7 @@ Upon investigation of this problem, the 14th, 15th, 30th and 31st (top two bits 
 \caption{Examples of the incorrect data returned from the SDRAM}
 \label{table:SDRAM_Err}
 \begin{tabular}{cc}\toprule
-Data Written							&	Data Read \\ \toprule
+\textbf{Data Written}							&	\textbf{Data Read} \\ \toprule
 00000000 00000000 00000000 00000000		&	\textcolor{red}{11}000000 00000000 \textcolor{red}{11}000000 00000000 \\\midrule
 00001111 00001111 00001111 00001111		&	\textcolor{red}{11}001111 00001111 \textcolor{red}{11}001111 00001111 \\ \bottomrule
 \end{tabular}

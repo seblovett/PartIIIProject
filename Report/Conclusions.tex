@@ -59,7 +59,7 @@ The final robot can be seen in figure \ref{fig:Robot:Complete}.
 \caption{Table showing the Auto Run commands implemented}
 \label{table:AutoRun}
 \begin{tabular}{ccc}\toprule
-Command & 	Argument 			& 	Operation \\\toprule
+\textbf{Command} & 	\textbf{Argument} 			& 	\textbf{Operation} \\\toprule
 B		&	int					&	Move backward by the argument value (millimetres) \\\midrule
 F		&	int 				&	Move forward by the argument value (millimetres)\\\midrule
 J		&	int					&	Jumps to the command specified (0 indexed)\\\midrule
@@ -74,7 +74,7 @@ R		& 	int 			 	&	Rotates by argument (degrees)\\ \bottomrule
 \caption{Table showing the available debug commands}
 \label{table:Debug}
 \begin{tabular}{llp{10cm}}\toprule
-Command & Argument & Operation \\\toprule
+\textbf{Command} & \textbf{Argument} & \textbf{Operation} \\\toprule
 ? && Shows the help prompt\\ \midrule
 A && Runs the Auto Run procedure in debug mode\\ \midrule
 B && Reads a Bitmap file and prints information \\ \midrule
@@ -110,8 +110,8 @@ v && Prints the status variables \\ \midrule
 \caption{Table show the meaning of the LED lights. F - Flashing, X - Don't Care}
 \label{table:LEDs}
 \begin{tabular}{ccccccc}\toprule
-\multicolumn{6}{c}{LED} 						& Meaning\\ \cmidrule{1-6}
-MOTOR 	& 2		& 3 	& 4 	& 5 	& 6 	& \\ \toprule
+\multicolumn{6}{c}{\textbf{LED}} 						& \textbf{Meaning}\\ \cmidrule{1-6}
+\textbf{MOTOR} 	& \textbf{2}		& \textbf{3} 	& \textbf{4} 	& \textbf{5} 	& \textbf{6} 	& \\ \toprule
 Off		& Off	& Off	& Off	& Off	& Off	& System Initialising \\ \midrule
 On		& X		& X		& X		& X		& X		& Robot moving\\\midrule
 Off		& X		& X		& X		& X		& X		& Robot not moving\\\midrule

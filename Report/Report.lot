@@ -2,7 +2,7 @@
 \contentsline {table}{\numberline {1.1}{\ignorespaces Hardware and Software aspects of the design\relax }}{3}{table.caption.14}
 \contentsline {table}{\numberline {1.2}{\ignorespaces A list of risks and the prevention steps taken to reduce their impact\relax }}{3}{table.caption.15}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison table of some common microcontrollers. Data of microcontrollers taken from \cite {Atmel:UC3C}, \cite {Atmel:644P}, \cite {Atmel:A3BU} and \cite {ARM:Stellaris}. Costings from \cite {Farnell}\relax }}{7}{table.caption.23}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison table of some common microcontrollers. Data of microcontrollers taken from \cite {Atmel:UC3C}, \cite {Atmel:644P}, \cite {Atmel:A3BU} and \cite {ARM:Stellaris}. Costings from \cite {Farnell}. UC3C is the AT32UC3C0512C, XMega is the ATXMega256A3BU and the ATMega is the ATmega644P\relax }}{7}{table.caption.23}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Comparison of different image formats available \citep {ImageComparison}\relax }}{14}{table.caption.39}
 \contentsline {table}{\numberline {3.2}{\ignorespaces Pin connections of the ATMega644P for dual camera operation.\relax }}{17}{table.caption.42}
@@ -23,9 +23,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{91}{table.caption.453}
-\contentsline {table}{\numberline {D.2}{\ignorespaces All components and their values (if applicable)\relax }}{92}{table.caption.454}
+\contentsline {table}{\numberline {D.1}{\ignorespaces A table of all components used and their costs.\relax }}{93}{table.caption.458}
+\contentsline {table}{\numberline {D.2}{\ignorespaces All components and their values (if applicable)\relax }}{94}{table.caption.459}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD card}}{95}{table.458}
+\contentsline {table}{\numberline {F.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD card}}{97}{table.463}
 \addvspace {10\p@ }
