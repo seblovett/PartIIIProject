@@ -38,4 +38,3 @@
 \nomenclatureentry{aWRST@[{WRST}]\begingroup Write Reset\nomeqref {0}|nompageref}{xxi}
 \nomenclatureentry{aACK@[{ACK}]\begingroup Acknowledge\nomeqref {0}|nompageref}{xxi}
 \nomenclatureentry{aNACK@[{NACK}]\begingroup Negative Acknowledge\nomeqref {0}|nompageref}{xxi}
-\nomenclatureentry{aRISC@[{RISC}]\begingroup Reduced Instruction Set Computer\nomeqref {2.0}|nompageref}{6}

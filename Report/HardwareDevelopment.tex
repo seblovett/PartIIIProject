@@ -15,7 +15,7 @@ For initial development, the \textit{`Il Matto'} board, designed by Steve Gunn, 
 
 \section{Camera} \label{Section:Camera}
 
-The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components and a 24MHz clock mounted. The schematic for the device can be seen in appendix \ref{sch:OV7670}. The camera has a small hardware modification, due to a PCB fault. Pin 8 of the buffer is lifted and connected to pin 6 of the header, which is disconnected from the PCB (see figure \ref{fig:OV7670:Mod}).
+The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components and a 24MHz clock mounted. The schematic for the device can be seen in Appendix \ref{sch:OV7670}. The camera has a small hardware modification, due to a PCB fault. Pin 8 of the buffer is lifted and connected to pin 6 of the header, which is disconnected from the PCB (see Figure \ref{fig:OV7670:Mod}).
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth /4]{Figures/OV7670_Back.jpg}
@@ -28,7 +28,7 @@ Original code for the camera operation was given by Steve Gunn which streamed co
 
 The camera uses a SCCB Interface \citep{SCCB_Interface} created by OmniVision. This is almost identical to the $I^{2}C$ Interface by \cite{Philips:I2C} and the two protocols are compatible. The original code for the camera used a software driven SCCB interface which was very slow and used up processing time. This was changed to make use of the built-in interrupt-driven $I^{2}C$ interface (named TWI in Atmel AVRs)\footnote{$I^{2}C$ , SCCB and TWI are all the same but are named differently due to Phillips owning the right to the name ``$I^{2}C$"}. This communication bus is used to write to the control registers of the camera to set up the signals, image format and image size. The set-up procedure is used from the code given and sets the camera to function as explained below.
 
-RGB565 is a 16 bit pixel representation where bits 0-4, 5-10 and 11-15, represent the blue, green and red intensity respectively (see figure \ref{fig:RGB565}). This is a compact way of storing data but only allows 65536 colours. Greys can also appear to be slightly green due to the inconsistent colour ratio of the green field. This representation was used as it is a compact format and easily converted to grey scale.
+RGB565 is a 16 bit pixel representation where bits 0-4, 5-10 and 11-15, represent the blue, green and red intensity respectively (see Figure \ref{fig:RGB565}). This is a compact way of storing data but only allows 65536 colours. Greys can also appear to be slightly green due to the inconsistent colour ratio of the green field. This representation was used as it is a compact format and easily converted to grey scale.
 \begin{figure}
 \includegraphics[width = \textwidth]{./Figures/RGB565.pdf}
 \caption{RGB565 pixel format}
@@ -37,15 +37,15 @@ RGB565 is a 16 bit pixel representation where bits 0-4, 5-10 and 11-15, represen
 
 The camera must use a high speed clock in order to ensure the pixels obtained are from the same time. This makes it difficult for an ATMega (typically clocked at 8-12MHz) to be able to respond to the camera quickly enough. This highlights the necessity for a FIFO Buffer. 
 
-The OV7670 is set up so that the VSYNC pin goes low at the beginning of every frame of data, and HREF is high when the output data is valid. The pixel data is then clocked out on every rising edge of PCLK. To control the buffer, WEN (write enable) is logically NAND with the HREF signal. When both are high, the WEN to the buffer will be active and the data will be clocked in by the camera into the buffer. 
+The OV7670 is set up so that the VSYNC pin goes low at the beginning of every frame of data, and HREF is high when the output data is valid. The pixel data is then clocked out on every rising edge of PCLK. To control the buffer, WEN is logically NAND with the HREF signal. When both are high, the WEN to the buffer will be active and the data will be clocked in by the camera into the buffer. 
 
 In order to store a full image into the buffer, WEN must be high between two consecutive VSYNC pulses. VSYNC is set up to interrupt the AVR, and a small state machine is implemented to count VSYNC pulses and control WEN correctly. After the WEN signal is pulsed, the FIFO buffer will contain all the valid pixel data.
 
 To obtain the image data from the FIFO buffer, the AVR sets output enable low and pulses the read clock. Valid data is available on the data port while RCLK is high. All the data is then read 8 bits at a time.
 
-After the data has been read, the buffer is reset by asserting the read reset (RRST) and write reset (WRST) signals for at least one clock cycle of RCLK or PCLK respectively. The entire operation can be seen in figure \ref{fig:ov_Capture} and a hierarchical diagram of this is seen in figure \ref{fig:cam:heir}.
+After the data has been read, the buffer is reset by asserting the read reset (RRST) and write reset (WRST) signals for at least one clock cycle of RCLK or PCLK respectively. The entire operation can be seen in Figure \ref{fig:ov_Capture} and a hierarchical diagram of this is seen in Figure \ref{fig:cam:heir}.
 \begin{figure}
-\includegraphics[width = \textwidth]{./Figures/ov7670_im_capture.eps}
+\includegraphics[width = \textwidth]{./Figures/ov7670_im_capture.png}
 \caption{Signals generated to control the OV7670 capture and read}
 \label{fig:ov_Capture}
 \end{figure}
@@ -59,7 +59,7 @@ Difficulties arose at this point with the storage of the data. The ATMega644P ha
 
 Firstly, data was sent to a desktop computer by USART. A simple program was written in C\# to receive and store all the data as a Bitmap image. This method was slow, taking around 30 seconds to transmit one uncompressed image. 
 
-The second option was to use extra memory connected to the microcontroller. An SD card was used as FAT file system so the memory card is usable on a computer. Text log files were also written to aid debugging. This is discussed in section \ref{sect:SDCard}. 
+The second option was to use extra memory connected to the microcontroller. An SD card was used as FAT file system so the memory card was usable on a computer. Text log files were also written to aid debugging. This is discussed in Section \ref{sect:SDCard}. 
 
 \subsection{Dual Camera Operation}
 In order for stereovision to be successful, two cameras separated by a horizontal distance ($B$) will need to be driven at the same time to obtain photos within a small time frame of one another.
@@ -100,10 +100,10 @@ Bits per Pixel		&	8, 16, 24 or 32	&	24				&	24, 32 or 48 			& 	24, but only 256 
 \end{tabular}
 \end{table}
 
-It is clear that the best choice for images would be either PNG or JPEG. However, these require more computational time to compress the image into the correct format. To avoid compression, and thereby save processing time, bitmap was chosen at the expense of using more memory. The data in a bitmap image is also stored in RGB format so can be read back easily when processing the image. Appendix \ref{Chapter:AppendixB:BMPFile} shows the make up of a Bitmap file that was used.
+It is clear that the best choice for images would be either PNG or JPEG. However, these require more computational time to compress the image into the correct format. To avoid compression, and thereby save processing time, bitmap was chosen at the expense of using more memory. The data in a bitmap image is also stored in RGB format so can be read back easily when processing the image. Appendix \ref{Chapter:AppendixB:BMPFile} shows the make up of a bitmap file that was used.
 
 %By writing the image in this format, they are then able to be opened on any operating system. 
-Storing the image as a Bitmap enables the file to be opened on a range of operating systems. This aids debugging and allows the prototyping of image algorithms in a more powerful environment. Figure \ref{ExampleImage} shows a photo taken by the OV7670 and stored on a SD card. The quality is not professional, but all features can be seen. The colour is accurate and large text can be read at a small distance. Though the images were able to be opened in most programs, MATLAB gave errors when reading the bitmaps. This could be avoided by opening and resaving the images as a Bitmap in MS Paint.
+Storing the image as a bitmap enables the file to be opened on a range of operating systems. This aids debugging and allows the prototyping of image algorithms in a more powerful environment. Figure \ref{ExampleImage} shows a photo taken by the OV7670 and stored on a SD card. The quality is not professional, but all features can be seen. The colour is accurate and large text can be read at a small distance. Though the images were able to be opened in most programs, MATLAB gave errors when reading the bitmaps. This could be avoided by opening and resaving the images as a bitmap in MS Paint.
 
 \begin{figure}
 \begin{center}
@@ -115,9 +115,9 @@ Storing the image as a Bitmap enables the file to be opened on a range of operat
 
 \section{The Prototypes}
 
-The first prototype made can be seen in figure \ref{fig:Prototype}. This obtained two images from both cameras, and stored them to the SD Card. The cameras shared the data bus and a \itc multiplexer was used. An ATMega168 microcontroller was added to the system as no pins remained for debugging on the \textit{Il Matto} board. The pinout for the 644 can be seen in table \ref{table:644Pin}. The ATMega168 used the already existing \itc bus and acted as a port extender - button inputs were read and status LEDs were written to. This enabled a debug output for the system. The prototype worked well and proved the circuit worked. 
+The first prototype made can be seen in Figure \ref{fig:Prototype}. This obtained two images from both cameras, and stored them to the SD Card. The cameras shared the data bus and a \itc multiplexer was used. An ATMega168 microcontroller was added to the system as no pins remained for debugging on the \textit{Il Matto} board. The pinout for the ATMega644P can be seen in Table \ref{table:644Pin}. The ATMega168 used the already existing \itc bus and acted as a port extender - button inputs were read and status LEDs were written to. This enabled a debug output for the system. The prototype worked well and proved the camera circuit worked. 
 
-A second prototype was made to stream the images to a TFT screen. This can be seen in figure \ref{fig:Prototype:TFT}. This provided the ability to check the cameras worked, and gave a live stream so the lens could be focused to give a clear image. The refresh rate of a full image was slow ($\approx 0.6fps$), but the system was successful.
+A second prototype was made to stream the images to a TFT screen. This can be seen in Figure \ref{fig:Prototype:TFT}. This provided the ability to check the cameras worked, and gave a live stream so the lens could be focused to give a clear image. The refresh rate of a full image was slow ($\approx 0.6fps$), but the system was successful.
 
 \begin{table}
 \centering
@@ -155,9 +155,9 @@ A second prototype was made to stream the images to a TFT screen. This can be se
 \subsection{Hardware}
 Tachometers are devices used to measure rotational speed of a wheel. They are commonly found in bicycles where a small magnet is attached to the wheel and a sensor is attached to the frame. The elapsed time between every rotation is measured and speed can be calculated given the wheel size. 
 
-Here an optosensor, the TCRT1010 made by \cite{Vishay:TCRT1010:Datasheet}, is used to measure rotations of the wheel and therefore be able to move a distance determined by the microcontroller. The TCRT1010 package contains an IR LED and a phototransistor. The schematic of the transistor amplifier used can be seen in figure \ref{Circuit:TCRT1010}, which was reproduced from \cite{c9Lab:SRG}. 
+Here an optosensor, the TCRT1010 made by \cite{Vishay:TCRT1010:Datasheet}, is used to measure rotations of the wheel and therefore be able to move a distance determined by the microcontroller. The TCRT1010 package contains an IR LED and a phototransistor. The schematic of the transistor amplifier used can be seen in Figure \ref{Circuit:TCRT1010}, which was reproduced from \cite{c9Lab:SRG}. 
 
-A similar method to the way a bike measures speed was used. The wheel's rubber absorbed the IR from the LED, so a high voltage was always seen at the collector of the phototransistor when near the wheel. White Tipp-Ex marks, ``tabs'', were applied to the wheels at regular intervals. These tabs reflected IR, resulting in a lower collector voltage when aligned and thereby giving a way to detect wheel rotation. Figure \ref{Graph:WheelVoltage} shows the voltage at the collector (read by the ADC on the AVR) against the angle of the wheel. Ten tabs were marked on the wheel, and ten dips in the voltage can be seen in figure \ref{Graph:WheelVoltage}. A lot of noise exists due to imperfect white tabs. However, the dips are prominent and can be detected with the correct threshold voltage.
+A similar method to the way a bike measures speed was used. The wheel's rubber absorbed the IR from the LED, so a high voltage was always seen at the collector of the phototransistor when near the wheel. White Tipp-Ex marks, ``tabs'', were applied to the wheels at regular intervals. These tabs reflected IR, resulting in a lower collector voltage when aligned and thereby giving a way to detect wheel rotation. Figure \ref{Graph:WheelVoltage} shows the voltage at the collector (read by the ADC on the AVR) against the angle of the wheel. Ten tabs were marked on the wheel, and ten dips in the voltage can be seen in Figure \ref{Graph:WheelVoltage}. A lot of noise exists due to imperfect white tabs. However, the dips are prominent and can be detected with the correct threshold voltage.
 
 \begin{figure}
 \centering
@@ -179,7 +179,7 @@ A similar method to the way a bike measures speed was used. The wheel's rubber a
 To enable the robot to move a set distance, the number of wheel rotations must be counted. This is achieved by incrementing a count every time a tab is detected. The firmware sets up a PWM output, and has `Set-Up' and `Execute' functions. A low duty cycle PWM signal was used to drive the motors slowly. This removed the need for a speed controller and meant any overshoot of the motors during breaking would be low. Straight line movement and spot rotations were implemented. More complex movements, for example arcs, would require more accurate tachometers and are left for further work. %not discussed here. 
 
 \subsubsection{Set Up}
-The set up function calculates the number of counts needed, and sets the direction of the wheels. Each motor driver has two inputs to control direction and table \ref{table:MotorDirection} shows the inputs needed to generate the two movements - straight line and rotational. 
+The set up function calculates the number of counts needed, and sets the direction of the wheels. Each motor driver has two inputs to control direction and Table \ref{table:MotorDirection} shows the inputs needed to generate the two movements - straight line and rotational. 
 
 \begin{table}
 \centering
@@ -197,26 +197,26 @@ Anti-clockwise 			&	1		&	0	&	1	&	1	&	1	&	0	\\\bottomrule
 
 \end{table}
 
-To move in a straight line, the number of counts can be calculated by equation \eqref{eq:NumberCounts}. 
+To move in a straight line, the number of counts can be calculated by Equation \eqref{eq:NumberCounts}. 
 
 \begin{equation}
 \label{eq:NumberCounts}
 \text{Counts} = \delta \times \frac{\gamma}{C_w}
 \end{equation}
 
-For rotation, the radius from the centre of the robot to the wheels needs to be known, see figure \ref{fg:RobotBase:Top}. The circumference through the wheels is then easily calculated and the distance to move is calculated by equation \eqref{eq:RotationalDistance}. The total number of interrupts can be calculated using equation \eqref{eq:NumberCounts}. 
+For rotation, the radius from the centre of the robot to the wheels needs to be known, see Figure \ref{fg:RobotBase:Top}. The circumference through the wheels is then easily calculated and the distance to move is calculated by Equation \eqref{eq:RotationalDistance}. The total number of interrupts can be calculated using Equation \eqref{eq:NumberCounts}. 
 
 \begin{equation}
 \label{eq:RotationalDistance}
 \delta_{R} = \Theta \times \frac{C_b}{360}
 \end{equation}
 
-Combining equations \eqref{eq:NumberCounts} and \eqref{eq:RotationalDistance} gives:
+Combining Equations \eqref{eq:NumberCounts} and \eqref{eq:RotationalDistance} gives:
 \begin{equation}
 \label{eq:RotationalInterrupts}
 Counts = \gamma \times \frac{C_b}{C_w} \times \frac{\Theta}{360}
 \end{equation}
-Figure \ref{fig:RobotBase_Annotated} shows the dimensions of interest of the robot base. In the set up method, equations \eqref{eq:NumberCounts} and \eqref{eq:RotationalInterrupts} are used to calculate the counts needed. The results are placed in the global struct and the execute method is then run.
+Figure \ref{fig:RobotBase_Annotated} shows the dimensions of interest of the robot base. In the set up method, Equations \eqref{eq:NumberCounts} and \eqref{eq:RotationalInterrupts} are used to calculate the counts needed. The results are placed in the global struct and the execute method is then run.
 
 \subsubsection{Execute}
 
@@ -230,7 +230,7 @@ An alternative was to use an analogue comparator. The UC3C has two on-chip compa
 
 The first method implemented was to use the analogue comparators to interrupt when the collector voltage crossed the threshold. Both wheels used the same comparator interface and therefore ran the same ISR when triggered. The ISR then had to read the output of the comparators and decrement the relevant counter for the correct wheel. This method had many downfalls. First, it was not possible to know which comparator caused the interrupt. If the left wheel triggered the interrupt while the right was below the threshold, both left and right counters would be decremented. This caused a large error each time it occurred. Another problem was noise; occasionally, the lowering voltage would cause multiple interrupts each time. This problem was reduced by setting the hysteresis on the comparators but did not solve the problem completely. 
 
-A second approach utilised a simple state machine and software based hysteresis to solve the problems. The state machine has two states `On a Tab' and `Not on a Tab'. When the method enters, the initial state is read from the comparators so that if the wheel is already on a tab, it won't be counted. The code then runs in a loop until the motors stop. A graphic representation of the code can be seen in figure \ref{fig:StateMachine}. Starting in `Not on a Tab' state, a tab must be detected for Hyst\_Max amount of cycles in succession for the state to change. This is the same for going from `On a Tab' to `Not on a Tab'. This is to reduce noise in the form of false readings and increase the certainty that a tab is in detect. The Global\_Count is only reduced on the transition to `On a Tab' so it is difficult for this to decrement multiple times in normal operation. To increase the certainty, Hyst\_Max can be increased at the expense of response time. 
+A second approach utilised a simple state machine and software based hysteresis to solve the problems. The state machine has two states `On a Tab' and `Not on a Tab'. When the method enters, the initial state is read from the comparators so that if the wheel is already on a tab, it won't be counted. The code then runs in a loop until the motors stop. A graphic representation of the code can be seen in Figure \ref{fig:StateMachine}. Starting in `Not on a Tab' state, a tab must be detected for Hyst\_Max amount of cycles in succession for the state to change. This is the same for going from `On a Tab' to `Not on a Tab'. This is to reduce noise in the form of false readings and increase the certainty that a tab is, or is not, in detect. The Global\_Count is only reduced on the transition to `On a Tab' so it is difficult for this to decrement multiple times in normal operation. To increase the certainty, Hyst\_Max can be increased at the expense of response time. 
 
 
 \begin{figure}
@@ -252,7 +252,7 @@ A second approach utilised a simple state machine and software based hysteresis 
 
 %The final code can be seen in appendix \ref{Chapter:AppendixC:Code}. 
 %\textit{Motor\_Init} method must be called before operation can occur. 
-The \textit{Motor\_Init} method must be called before \textit{Motor\_Execute} can be performed. This sets up the PWM and analogue comparators. Methods \textit{Motors\_Move} and \textit{Motors\_Rotate} are the methods that can be called to move in a straight line or rotate on the spot. They both take an input which is a signed integer of either the distance to move (in millimetres) or the angle to rotate (in degrees, positive is a clockwise movement). They both return the actual movement distances, due to the low resolution of the system.
+In code, the \textit{Motor\_Init} method must be called before \textit{Motor\_Execute} can be performed. This sets up the PWM and analogue comparators. Methods \textit{Motors\_Move} and \textit{Motors\_Rotate} are the methods that can be called to move in a straight line or rotate on the spot. They both take an input which is a signed integer of either the distance to move (in millimetres) or the angle to rotate (in degrees, positive is a clockwise movement). They both return the actual movement distances, due to the low resolution of the system.
 
 
 \subsection{Testing}\label{Section:MotorTest}
@@ -284,7 +284,7 @@ To test the motor system, different distances were given to the movement method.
 %\label{fig:results:motor:distance}
 %\end{figure}
 
-However, the robot did not move in a straight line, but with a slight arc. Speed tests were performed by measuring the total time taken to complete eight full revolutions, the equivalent of moving 928mm. The results and the calculated wheel speeds can be seen in table \ref{table:results:motor:speed}. It shows that the left motor runs slightly faster than the right, even though the PWM duty cycle is the same. A controller could be implemented to correct this error during operation. However, over the distances covered, the error introduced by this is small enough to neglect. 
+However, the robot did not move in a straight line, but with a slight arc. Speed tests were performed by measuring the total time taken to complete eight full revolutions, the equivalent of moving 928mm. The results and the calculated wheel speeds can be seen in Table \ref{table:results:motor:speed}. It shows that the left motor runs slightly faster than the right, even though the PWM duty cycle is the same. A controller could be implemented to correct this error during operation. However, over the distances covered, the error introduced by this is small enough to neglect. 
 
 \begin{table}
 \caption{Results of motor speed test}
@@ -298,7 +298,7 @@ Right & 49.6	&	18.7 \\ \bottomrule
 \end{table}
 
 \subsection{Conclusion}
-Due to the low resolution of the sensor (10 counts per revolution), there is a minimum distance that can be moved and a minimum angle of rotation, shown in equations \eqref{eq:Resolution:Distance} and \eqref{eq:Resolution:Angle} respectively. These show that a greater distance resolution could be obtained by decreasing the wheel size or increasing $\gamma$, and a greater rotational resolution could be obtained by using the above or by increasing the distance the wheels are from the centre of the robot. In general, the ratio $C_w:\gamma$ should be as large as possible to obtain the best resolution for movement.
+Due to the low resolution of the sensor (10 counts per revolution), there is a minimum distance that can be moved and a minimum angle of rotation, shown in Equations \eqref{eq:Resolution:Distance} and \eqref{eq:Resolution:Angle} respectively. These show that a greater distance resolution could be obtained by decreasing the wheel size or increasing $\gamma$, and a greater rotational resolution could be obtained by using the above, or by increasing the distance the wheels are from the centre of the robot. In general, the ratio $C_w:\gamma$ should be as large as possible to obtain the best resolution for movement.
 
 
 \begin{equation}\label{eq:Resolution:Distance}
@@ -369,7 +369,7 @@ Figure \ref{fig:Hierarchical} shows a basic hierarchy of the robot. Each pin on 
 \end{tabular}
 \end{table}
 
-The circuit diagram for Revision A can be seen in section \ref{sch:Columbus:CircuitDiagram}. The schematic for the SDRAM and values and locations of decoupling capacitors were used from the schematic of the UC3C-EK development board \citep{Atmel:UC3CEK}. 
+The circuit diagram for Revision A can be seen in Section \ref{sch:Columbus:CircuitDiagram}. The schematic for the SDRAM and values and locations of decoupling capacitors were used from the schematic of the UC3C-EK development board \citep{Atmel:UC3CEK}. 
 \subsection{PCB Design}
 The PCB was designed using EAGLE CAD Software. A four layer board was decided upon to reduce the number of tracks, and more easily supply power and ground to the devices. Layer two is a $3.3V$ plane and layer three is a ground plane. A ground plane is also on the top and bottom layers to help eliminate any ground bounce that could occur. 
 
@@ -379,9 +379,9 @@ Tracks were routed in order of priority, starting with the UC3C, SDRAM and camer
 
 Passives used were all surface mount of either 0603 or 1206 size to save space on the board. All headers used were 0.1'' spaced for easy connections and a mini B USB socket was added. USB could be used to power the robot or to program the AVR via the bootloader. Future work could make the robot act as a USB device. 
 
-The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and headers were added to connect to the motors. The optosensors were positioned such that they could be mounted directly on to the PCB and be in the correct position to sense the wheels. Mounting holes were also added on to the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in appendix \ref{Appendix:Costings}.
+The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and headers were added to connect to the motors. The optosensors were positioned such that they could be mounted directly on to the PCB and be in the correct position to sense the wheels. Mounting holes were also added on to the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in Appendix \ref{Appendix:Costings}.
 
-The Eagle CAD Diagram of the PCB can be seen in Appendix \ref{Appendix:PCB}. The PCB was manufactured by \cite{PCBCart}. Five PCBs cost \pounds 205 to manufacture and ship. A photo of the PCB can be seen in figure \ref{fig:PCB:Bare}. 
+The Eagle CAD Diagram of the PCB can be seen in Appendix \ref{Appendix:PCB}. The PCB was manufactured by \cite{PCBCart}. Five PCBs cost \pounds 205 to manufacture and ship. A photo of the PCB can be seen in Figure \ref{fig:PCB:Bare}. 
 
 Finally, the name \textit{``The Columbus''} was decided on as the original application for the project was a mapping robot that would search out an unknown area. The robot was named after Christopher Columbus who explored and navigated parts of the American continents which were unknown at the time. 
 
@@ -395,7 +395,7 @@ Finally, the name \textit{``The Columbus''} was decided on as the original appli
 \inote{Considerations - Power consumption of devices not exceeding VReg}
 
 \subsection{PCB Testing}
-A program was written to test all the devices on the PCB. The following tests were done and are explained in the subsequent sections.%:
+A program was written to test all the devices on the PCB. Tests were done to exercise all features and are explained in the subsequent sections. All code can be seen in Appendix \ref{Appendix:TestCode}
 %\begin{enumerate}
 %\item[\ref{USART:Test}] USART Send and Receive
 %\item[\ref{SD:Test}] SD Card 
@@ -410,14 +410,11 @@ A program was written to test all the devices on the PCB. The following tests we
 \subsubsection{USART Test}\label{USART:Test}
 When the test program begins, the microcontroller waits for a character input. All characters are echoed back. This enables the user to check the communications work. Once a carriage return key is received ($D_{16}$), the test program continues. Listing \ref{lst:USARTTestCode} shows the test code for the USART protocol.
 
-\lstinputlisting[style=C,caption=USART Test Code,label={lst:USARTTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=110,lastline=121]{../Code/ColumbusTest/ColumbusTest/src/main.c}
-
 
 \subsubsection{SD Card Test}\label{SD:Test}
 The Atmel Software Framework \citep{Atmel:ASF} provided drivers and code for SPI communications and use of a FAT32 file system. The code was configured to use the correct chip select pin for the SD Card and the correct SPI Bus. The test consists of initialising the memory, reading the capacity of the card and printing it to the user. 
 
 The AVR then proceeds to delete any previous log file, create a new log file and writes \textit{``Columbus Tester''} to it. The first 8 characters, which should be \textit{``Columbus''}, are read back and checked.
-\lstinputlisting[style=C,caption=SD Test Code,label={lst:SDTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=124,lastline=196]{../Code/ColumbusTest/ColumbusTest/src/main.c}
 
 This exercises all basic file I/O functions (creating, reading and writing) and checks that they work.
 
@@ -427,19 +424,17 @@ All LEDs are turned on for 1 second, and then turned off. The user should check 
 \subsubsection{SDRAM Test}\label{SDRAM:Test}
 The SDRAM test consists of initialising the SDRAM, calculating the SDRAM size, writing a unique test pattern to the whole memory, and then reading it back and checking it. The total number of errors are reported. 
 
-The test was adapted from an example application in the ASF \citep{Atmel:ASF}. The code can be seen in listing \ref{lst:SDRAMTestCode}. It consists of two \textit{for} loops. In the first, the iteration number is assigned to the memory location. The second loop reads back the data and checks it is correct. An int, \textit{noErrors}, is used to count errors. 
-
-\lstinputlisting[style=C,caption=SDRAM Test Code,label={lst:SDRAMTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=217,lastline=258]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+The test was adapted from an example application in the ASF \citep{Atmel:ASF}. The code can be seen in Listing \ref{lst:SDRAMTestCode}. It consists of two \textit{for} loops. In the first, the iteration number is assigned to the memory location. The second loop reads back the data and checks it is correct. An int, \textit{noErrors}, is used to count errors. 
 
 \subsubsection{\itc Test}\label{I2C:Test}
-The \itc test checks the bus for devices. It prints out a table showing the address of any devices that acknowledge a probe. A probe is set up to write to the address. If a device exists on the line, it should acknowledge (ACK) its own address \citep{Philips:I2C}. The probe consists of a set-up to write to the address. Figure \ref{fig:I2C} shows the \itc traffic generated for a probe, with both cases of the device responding with an ACK, or negative acknowledging (NACK). The test is done three times: with no channel selected on the \itc multiplexer, with channel 0 selected and with channel 1 selected. The addresses expected are $21_{16}$ for the OV7670 Camera and $74_{16}$ for the \itc multiplexer. The camera should only acknowledge when the \itc multiplexer has the relevant channel selected. Listing \ref{lst:TWITestCode} shows the test code for the \itc bus and listing \ref{lst:I2CTest} shows the result from the full bus scan with channel 0 selected. The existence of both cameras is checked. %The cameras are both checked to exist.
+The \itc test checks the bus for devices. It prints out a table showing the address of any devices that acknowledge a probe. A probe is set up to write to the address. If a device exists on the line, it should acknowledge (ACK) its own address \citep{Philips:I2C}. The probe consists of a set-up to write to the address. Figure \ref{fig:I2C} shows the \itc traffic generated for a probe, with both cases of the device responding with an ACK, or negative acknowledging (NACK). The test is done three times: with no channel selected on the \itc multiplexer, with channel 0 selected and with channel 1 selected. The addresses expected are $21_{16}$ for the OV7670 Camera and $74_{16}$ for the \itc multiplexer. The camera should only acknowledge when the \itc multiplexer has the relevant channel selected. Listing \ref{lst:TWITestCode} shows the test code for the \itc bus and Listing \ref{lst:I2CTest} shows the result from the full bus scan with channel 0 selected. The existence of both cameras is checked. %The cameras are both checked to exist.
 \begin{figure}
-\subfigure[ACK]{\includegraphics[width=\textwidth]{./Figures/I2C_Probe_ACK.jpg} }
-\subfigure[NACK]{\includegraphics[width=\textwidth]{./Figures/I2C_Probe_NACK.jpg} }
-\caption{The \itc traffic of a probe. An ACK shows a device exists. Green circle indicates a start. Red square indicates a stop.}
+\subfigure[ACK]{\includegraphics[width=\textwidth]{./Figures/I2C_Probe_ACK.png} }
+\subfigure[NACK]{\includegraphics[width=\textwidth]{./Figures/I2C_Probe_NACK.png} }
+\caption{The \itc traffic of a probe. An ACK shows a device exists. \textit{`!'} indicates a NACK was returned, lack of \textit{`!'} means ACK. Green bracket shows a Start and red bracket indicates a Stop.}
 \label{fig:I2C}
 \end{figure}
-\lstinputlisting[style=C,caption=\itc Test Code,label={lst:TWITestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=268,lastline=315]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+
 
 \begin{lstlisting}[caption={Result of \itc bus scan with Channel 0 of the \itc multiplexer selected},label={lst:I2CTest}]
 Scanning Channel 0
@@ -457,12 +452,9 @@ h 0 1 2 3 4 5 6 7 8 9 A B C D E F
 \subsubsection{Camera Test}\label{Camera:Test}
 
 This test consists of initialising both cameras and checking it succeeds. Two photos are then taken and stored to the SD card. Success or failure of the initialisation and capture is sent to the debug terminal. An image from each camera should exist on the SD card. Listing \ref{lst:CameraTestCode} shows the code to conduct this test.
-\lstinputlisting[style=C,caption=Camera Test Code,label={lst:CameraTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=316,lastline=338]{../Code/ColumbusTest/ColumbusTest/src/main.c}
 
 \subsubsection{Motor Driver Test}\label{Motor:Test}
-An extensive test of the motor driver is discussed in section \ref{Section:MotorTest}. The test code in this application resets the motors so that they are aligned to a white tab on the wheel. This code can be seen in listing \ref{lst:MotorTestCode}. The robot should move no further than 1cm to reach a white tab and the motors should drive forward. This test is useful as it ensures the motors are connected the correctly and that the threshold is set to an appropriate level.
-
-\lstinputlisting[style=C,caption=Motor Test Code,label={lst:MotorTestCode},frame=single,numbers=left,tabsize=2,breaklines=true, firstline=339,lastline=346]{../Code/ColumbusTest/ColumbusTest/src/main.c}
+An extensive test of the motor driver is discussed in Section \ref{Section:MotorTest}. The test code in this application resets the motors so that they are aligned to a white tab on the wheel. This code can be seen in Listing \ref{lst:MotorTestCode}. The robot should move no further than 1cm to reach a white tab and the motors should drive forward. This test is useful as it ensures the motors are connected the correctly and that the threshold is set to an appropriate level.
 
 \subsection{PCB Faults}
 During the build and test of the PCB, a number of faults were found. Each is explained and the solution for the problem given. 
@@ -470,7 +462,7 @@ During the build and test of the PCB, a number of faults were found. Each is exp
 The holes in the footprint for the optosensor were not large enough. This was a minor problem as the sensor was soldered in a surface mount style. This didn't affect the location of the sensor so had no implications other than the connection being weaker than it should be. 
 
 \subsubsection{SDRAM Footprint}
-The SDRAM footprint was made exactly to the specification of the pad size and locations with no consideration for soldering. This meant the chip fitted exactly on to the footprint and made soldering difficult.% as pads had to be preloaded with solder and the device's pins were heated and bound to the solder. 
+The SDRAM footprint was made exactly to the specification of the pad size and locations with no consideration for soldering. This meant the chip fitted exactly on to the footprint and made soldering difficult. % as pads had to be preloaded with solder and the device's pins were heated and bound to the solder. 
 It put the device at risk as more heat had to be used that usually necessary. Figure \ref{fig:SDRAM_Err} shows the SDRAM chip slightly offset against the footprint. 
 %It can be seen that there is no extra space on the pad to be able to easily solder the device. 
 Though this made building difficult and increased soldering errors, it had no impact on the operation of the device. To avoid reproducing the problem, future PCB designs should use existing footprints where available, and consider the design from a practical assembly point of view.
@@ -488,7 +480,7 @@ Though this made building difficult and increased soldering errors, it had no im
 \subsubsection{SDRAM Chip Select}
 The code was prototyped on the Atmel UC3C-EK development board prior to the PCB arriving. This used chip select 1 for the SDRAM but the PCB was designed using chip select 0. When the PCB was built, the code did not work. To diagnose this problem, the control lines of the SDRAM were probed with a logic analyser. On the UC3C-EK, the bus was busy with refresh cycles outside of SDRAM access. On the Columbus, no activity was seen. 
 
-The reason the correct control wasn't being seen was due to the UC3C device having a dedicated SDRAM controller, attached only to chip select line 1. Chip select 1 was available on an external pin, and the vias on the CS0 and CS1 lines were close to each other. Therefore, to overcome the problem, a small enamelled wire was soldered to join the two vias together. This solved the problem and the correct signals were then seen on the control lines. The patch can be seen in figure \ref{fig:PCB:Bottom}. 
+The reason the correct control wasn't being seen was due to the UC3C device having a dedicated SDRAM controller, attached only to chip select line 1. Chip select 1 was available on an external pin, and the vias on the CS0 and CS1 lines were close to each other. Therefore, to overcome the problem, a small enamelled wire was soldered to join the two vias together. This solved the problem and the correct signals were then seen on the control lines. The patch can be seen in Figure \ref{fig:PCB:Bottom}. 
 
 This fault was caused by not reading the datasheet carefully and ignoring a proven circuit diagram. Operation of the device was not hindered and the fix was simple.
 
@@ -510,13 +502,13 @@ The problem was traced to resistors \textbf{R31} and \textbf{R32}. They were sol
 
 \subsubsection{Camera Interrupt Line}
 
-As discussed in section \ref{Section:Camera}, the OV7670 needs an interrupt line to synchronise quickly to the start of the frame. The UC3C has 9 external interrupt lines. On the PCB, interrupt lines 0 and 1 were used for this control.
+As discussed in Section \ref{Section:Camera}, the OV7670 needs an interrupt line to synchronise quickly to the start of the frame. The UC3C has 9 external interrupt lines. On the PCB, interrupt lines 0 and 1 were used for this control.
 
 Interrupt line 1 was easily configured and worked as expected. However, interrupt 0 did not seem to trigger the interrupt service routine. It was found that interrupt 0 was a ``Non Maskable Interrupt'' which has specific uses and cannot be used in to trigger a method. 
 
 The external interrupt 4 pin was wired to Junction 8 on the PCB. A wire was attached to the camera's VSYNC line and attached to the relevant pin on the header. The operation was then easily obtained and the VSYNC line triggered correctly.
 
-This issue would have been avoided with more understanding of the device beforehand and by checking the datasheet. The patch can also be seen in figure \ref{fig:PCB:Bottom}.
+This issue would have been avoided with more understanding of the device beforehand and by checking the datasheet. The patch can also be seen in Figure \ref{fig:PCB:Bottom}.
 
 
 \subsubsection{Motor Driver Footprint}

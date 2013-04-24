@@ -6,7 +6,7 @@
 \section{Matching Algorithms}\label{Section:Comparison}
 %\inote{find some references to back these claims up}
 %\inote{Talk about how to compare images and TEST them all. Make a final comparison to decide on which will be used}
-In computer vision, there are many different ways of comparing two similar images. These include the sum of absolute differences (SAD) \citep{Hamzah:DistanceDetection}, the sum of squared differences (SSD)\citep{Mrovlje:Distance_Stereoscopic} and  normalised cross correlation (NCC)\citep{zhao2006image}. Each of these methods will be explained and tested in order to compare them. All testing will use images seen in figure \ref{fig:StereoTest}. Each test uses the same size template ($50px\times50px$) to compare the two images. 
+In computer vision, there are many different ways of comparing two similar images. These include the sum of absolute differences (SAD) \citep{Hamzah:DistanceDetection}, the sum of squared differences (SSD)\citep{Mrovlje:Distance_Stereoscopic} and  normalised cross correlation (NCC)\citep{zhao2006image}. Each of these methods will be explained and tested in order to compare them. All testing will use images seen in Figure \ref{fig:StereoTest}. Each test uses the same size template ($50px\times50px$) to compare the two images. 
 
 \begin{figure}
 \centering
@@ -75,15 +75,15 @@ To compare these equations, a $50px \times 50px$ template taken from the right p
 \label{fg:CompResults}
 \end{figure}
 
-Each graph shows the correct area being identified as a match, but this also highlights the downfalls of the SAD and SSD methods. The graphs in figure \ref{fg:CompResults} are rotated to match the orientation of the images in figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the desk phone from the right image to the entirety of the left image. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem \citep{haller2012design}.
+Each graph shows the correct area being identified as a match, but this also highlights the downfalls of the SAD and SSD methods. The graphs in Figure \ref{fg:CompResults} are rotated to match the orientation of the images in Figure \ref{fig:StereoTest}. Each of the images is tested by attempting to match the desk phone from the right image to the entirety of the left image. The actual match should be around $(170, 176)$. An exact result cannot be estimated as the images are not matched perfectly - there isn't an exact integer of pixel difference between the images. This is the sub pixel problem \citep{haller2012design}.
 
-SAD results in figure \ref{fg:Results:SAD} show large areas of matching. A minimum occurs around the location expected($170,175$) of a value of $5.66\times 10^4$. 
+SAD results in Figure \ref{fg:Results:SAD} show large areas of matching. A minimum occurs around the location expected($170,175$) of a value of $5.66\times 10^4$. 
 However, the dark area beneath the desk is a false detection. The SAD algorithm detects a greater comparison with a low value of $3370$ at $(227, 275)$ which causes a false match.
 %However, along the bottom of the image, where a dark area occurs below the desk in the lower part of figures \ref{fig:StereoTest}, the SAD algorithm detects a greater comparison, with the lowest value in this area being $3370$ at $(227, 275)$. This creates a false detection here. 
 
-SSD, figure \ref{fg:Results:SSD}, shows matches in the same two areas: where a match should occur and the dark area beneath the desk. The minimum value where the match should occur is $4.355 \times 10^5$ at location $(170,176)$. However, there is a large match correlation between the dark area under the desk where the actual lowest value of $2.768\times10^4$ occurs at $(225,274)$. This, again, is a false match and is a downfall of this algorithm.
+SSD, Figure \ref{fg:Results:SSD}, shows matches in the same two areas: where a match should occur and the dark area beneath the desk. The minimum value where the match should occur is $4.355 \times 10^5$ at location $(170,176)$. However, there is a large match correlation between the dark area under the desk where the actual lowest value of $2.768\times10^4$ occurs at $(225,274)$. This, again, is a false match and is a downfall of this algorithm.
 
-The NCC results are visible in figure \ref{fg:Results:NCC}. A match can be seen at coordinate $(195,201)$ with a peak value of $0.9654$. The coordinate is different to the previous results because the cross correlation works over the boundary of the image creating more results. The dimensions of the image are $300px \times 400px$, but the NCC returns a dataset of dimensions $350px \times 450px$ when using a template size of $50px\times 50px$. To get the actual match, half of the box size must be subtracted from the returned coordinate. This means the match occurs at $(170,176)$. With this algorithm, there is no area of the image which is close to a false detection. 
+The NCC results are visible in Figure \ref{fg:Results:NCC}. A match can be seen at coordinate $(195,201)$ with a peak value of $0.9654$. The coordinate is different to the previous results because the cross correlation works over the boundary of the image creating more results. The dimensions of the image are $300px \times 400px$, but the NCC returns a dataset of dimensions $350px \times 450px$ when using a template size of $50px\times 50px$. To get the actual match, half of the box size must be subtracted from the returned coordinate. This means the match occurs at $(170,176)$. With this algorithm, there is no area of the image which is close to a false detection. 
 
 \subsection{Conclusion}
 It is apparent that there is a direct correlation between the complexity of the matching algorithm to the reliability of the match returned. In brightly lit, colourful environments absent of dark colours, SAD and SSD should provide a reliable result, but this cannot be guaranteed to always be the case. Therefore further development of the matching algorithm will start with using the normalised cross correlation. A comprise between complexity and reliability needs to be reached, where reliability is the more desirable of the two. Cross correlation is also widely used in digital signal processing, so optimised algorithms suitable for microcontrollers do exist.
@@ -117,7 +117,7 @@ Object is directly in front of a camera:
 D = B \tan\left(\frac{\pi}{2} - \varphi_{2}\right)
 \end{equation}
 
-Where $\varphi_1$ is defined in equation \eqref{eq:p2:phi1} and $\varphi_2$ is defined in equation \eqref{eq:p2:phi2}.
+Where $\varphi_1$ is defined in Equation \eqref{eq:p2:phi1} and $\varphi_2$ is defined in Equation \eqref{eq:p2:phi2}.
 \begin{equation} \label{eq:p2:phi1}
 \varphi_1 = \arctan\left(\frac{2x_1}{x_0}\tan\left(\frac{\varphi_0}{2}\right)\right)
 \end{equation}
@@ -129,7 +129,7 @@ When the images have been matched, these equations can be used to calculate the 
 
 \subsection{Field of View}
 %The field of view is an important characteristic to calculate distances and must be measured for the camera. 
-The field of view of the camera is an important variable that must be measured. Field of view was measured by placing a ruler at a distance in front of the camera and measuring the total distance seen across the image. Equation \eqref{eq:FoV}, derived from the set-up in figure \ref{fig:FoV}, was then used to calculate the field of view. This was done multiple times for accuracy. Results can be seen in table \ref{table:fieldofview}. The field of view used is the average of the data set and was found to be $\varphi_0 = 0.6249^c$. 
+The field of view of the camera is an important variable that must be measured. Field of view was measured by placing a ruler at a distance in front of the camera and measuring the total distance seen across the image. Equation \eqref{eq:FoV}, derived from the set-up in Figure \ref{fig:FoV}, was then used to calculate the field of view. This was done multiple times for accuracy. Results can be seen in Table \ref{table:fieldofview}. The field of view used is the average of the data set and was found to be $\varphi_0 = 0.6249^c$. 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/FoV.pdf}
 \caption{Diagram of the set-up to measure the field of view of the camera}
@@ -158,7 +158,7 @@ The field of view of the camera is an important variable that must be measured. 
 \subsection{Testing}
 MATLAB was used to test the range finding. It is unable to automatically detect an object so the user must select the template when prompted. 
 
-A stereo pair of images of a rubber duck at different ranges were captured using the completed robot. To calculate the distance, a template from the right image of the duck's head was cross correlated with the left image. The maximum peak in the result was found and used as the match point. The distance was then calculated using equation \eqref{eq:summary:1}, with $B=42mm$, $\varphi_0=0.6249$ and $x_0=320$. Example images can be seen in figure \ref{fig:duck:stereo} and an example NCC result can be seen in figure \ref{fig:duck:ncc}. 
+A stereo pair of images of a rubber duck at different ranges were captured using the completed robot. To calculate the distance, a template from the right image of the duck's head was cross correlated with the left image. The maximum peak in the result was found and used as the match point. The distance was then calculated using Equation \eqref{eq:summary:1}, with $B=42mm$, $\varphi_0=0.6249$ and $x_0=320$. Example images can be seen in Figure \ref{fig:duck:stereo} and an example NCC result can be seen in Figure \ref{fig:duck:ncc}. 
 
 Table \ref{table:range} shows the distances tested with the distance calculated using the above method. The ranges calculated were inaccurate. Matching can only be achieved to the accuracy of a few pixels without a more complex design, and therefore can introduce a small error when matching and cause a large distance error in the calculation. 
 
@@ -198,23 +198,23 @@ Table \ref{table:range} shows the distances tested with the distance calculated 
 
 \subsection{The Effect of Resolution and Field of View}
 
-By simplifying equation \eqref{eq:summary:1} to \eqref{eq:range:simp} shows that the function is at a maximum when $\Delta_x = 1$ and is the maximum distance able to be calculated. The maximum error is found using equation \eqref{eq:range:maxerr} and shows that the error increases with resolution. 
+By simplifying Equation \eqref{eq:summary:1} to \eqref{eq:range:simp} shows that the function is at a maximum when $\Delta_x = 1$ and is the maximum distance able to be calculated. The maximum error is found using Equation \eqref{eq:range:maxerr} and shows that the error increases with resolution. 
 
 \begin{equation}\label{eq:range:simp}
 D(\Delta_x) = \frac{B.x_0}{2\tan \left(\frac{\varphi_0}{2}\right).\Delta_x}
 \end{equation}
 
 \begin{equation}\label{eq:range:maxerr}
-Err_{max} = D(1) - D(2) = \frac{B.x_0}{2\tan \left(\frac{\varphi_0}{2}\right)} - \frac{B.x_0}{2\tan \left(\frac{\varphi_0}{2}\right).2} = \frac{B.x_0}{\tan \left(4\frac{\varphi_0}{2}\right)}
+Err_{max} = D(1) - D(2) = \frac{B.x_0}{2\tan \left(\frac{\varphi_0}{2}\right)} - \frac{B.x_0}{2\tan \left(\frac{\varphi_0}{2}\right).2} = \frac{B.x_0}{4\tan \left(\frac{\varphi_0}{2}\right)}
 \end{equation}
 
-This is because as $x_0$ increases, the range of $(x_1 - x_2)$ also increases. The minimum detectable distance, equation \eqref{eq:range:min}, is not related to resolution, but depends on $B$ and $\varphi_0$. 
+This is because as $x_0$ increases, the range of $(x_1 - x_2)$ also increases. The minimum detectable distance, Equation \eqref{eq:range:min}, is not related to resolution, but depends on $B$ and $\varphi_0$. 
 
 \begin{equation}\label{eq:range:min}
 D(x_0) = \frac{B}{2\tan \left(\frac{\varphi_0}{2}\right)}
 \end{equation}
 
-Figure \ref{fig:MaxR} shows the relationship between maximum distance, $x_0$ and $\varphi_0$. By increasing the horizontal resolution, the maximum distance increases, but also increases the error. Increasing $\varphi_0$ will lower the distance, but the error will decrease and can be seen in figure \ref{fig:DeltaxPhi0}. A compromise must be made between maximum distance and resolution.
+Figure \ref{fig:MaxR} shows the relationship between maximum distance, $x_0$ and $\varphi_0$. By increasing the horizontal resolution, the maximum distance increases, but also increases the error. Increasing $\varphi_0$ will lower the maximum distance, but the error will decrease and can be seen in Figure \ref{fig:DeltaxPhi0}. A compromise must be made between maximum distance and resolution. 
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/Distance_Phi0_X0.eps}
@@ -229,11 +229,11 @@ Figure \ref{fig:MaxR} shows the relationship between maximum distance, $x_0$ and
 
 \subsection{Conclusion}
 
-Extensive testing of the effect of separation has been done before \citep{Mrovlje:Distance_Stereoscopic}. Figures \ref{fig:B:Plot} shows that increasing B will give you a larger range of detectable distances, but with a larger maximum error. Resolution also increases the error and maximum detectable distance. In reality, cameras have not increased only by resolution, but the lens have become wider angled as well. 
+Extensive testing of the effect of separation has been done before \citep{Mrovlje:Distance_Stereoscopic}. Figure \ref{fig:B:Plot} shows that increasing B will give you a larger range of detectable distances, but with a larger maximum error. Resolution also increases the error and maximum detectable distance. In reality, cameras have not increased only by resolution, but the lens have become wider angled as well. 
 
 In order to improve the ability of these cameras for range finding, adding a wide angle lens will reduce the error at the expense of reducing the maximum range. Alternatively, the robot could use an algorithm to view the object at different perspectives to estimate the distance to it. 
 
-The robot was designed to be small, and the cameras were chosen as a cheap alternative to more expensive products on the market. The test results show that by using cameras as described, ranges cannot accurately be measured. The separation of objects in the images is a reciprocal function and the data gathered in the test matches this characteristic, see figure \ref{fig:Distance:DeltaX}. This means the system can perceive depth from the separation of the objects, but not accurately calculate the distance.
+The robot was designed to be small, and the cameras were chosen as a cheap alternative to more expensive products on the market. The test results show that by using cameras as described, ranges cannot accurately be measured. The separation of objects in the images is a reciprocal function and the data gathered in the test matches this characteristic, see Figure \ref{fig:Distance:DeltaX}. This means the system can perceive depth from the separation of the objects, but not accurately calculate the distance. 
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/BPlot.eps}
@@ -247,7 +247,7 @@ The robot was designed to be small, and the cameras were chosen as a cheap alter
 \end{figure}
 \section{Fourier Transform}
 \subsection{Background Research and the FFT}
-The Fourier transform is a common tool in signal processing used for filer design, system analysis and image processing, as well as other applications. It transforms a time-based signal to the frequency domain, showing the frequency components contained in the signal as a complex number. This is often displayed as magnitude and phase. The Fourier transform is defined in equation \eqref{eq:fourier} and two examples of signals and their Fourier transforms are shown in figures \ref{fig:DiracFunctionFT} and \ref{fig:SquareWaveFT}. 
+The Fourier transform is a common tool in signal processing used for filer design, system analysis and image processing, as well as other applications. It transforms a time-based signal to the frequency domain, showing the frequency components contained in the signal as a complex number. This is often displayed as magnitude and phase. The Fourier transform is defined in Equation \eqref{eq:fourier} and two examples of signals and their Fourier transforms are shown in Figures \ref{fig:DiracFunctionFT} and \ref{fig:SquareWaveFT}. 
  
 \begin{equation}\label{eq:fourier}
 X(f) = \int\limits_{-\infty}^{\infty}x(t)e^{-\jmath 2 \pi ft}dt
@@ -271,7 +271,7 @@ X(f) = \int\limits_{-\infty}^{\infty}x(t)e^{-\jmath 2 \pi ft}dt
 \label{fig:SquareWaveFT}
 \end{figure}
 
-The equation for the Fourier transform in equation \eqref{eq:fourier} is for continuous time. A discrete Fourier transform (DFT) exists for finite, equally spaced samples. This is commonly used in digital systems and is defined in equation \eqref{eq:DFT}. There exists a Fast Fourier transform (FFT) which gives exactly the same results as the DFT, but is optimised in terms of number of multiplications. The FFT is most suitable for use on microcontrollers due to the speed of calculation and the availability of code extracts. %The FFT will be used in implementation due to availability of code and speed of use. 
+The equation for the Fourier transform in Equation \eqref{eq:fourier} is for continuous time. A discrete Fourier transform (DFT) exists for finite, equally spaced samples. This is commonly used in digital systems and is defined in Equation \eqref{eq:DFT}. There exists a Fast Fourier transform (FFT) which gives exactly the same results as the DFT, but is optimised in terms of number of multiplications. The FFT is most suitable for use on microcontrollers due to the speed of calculation and the availability of code extracts. %The FFT will be used in implementation due to availability of code and speed of use. 
 
 \begin{equation}\label{eq:DFT}
 X[k] = \sum\limits_{0}^{N-1}x[n]e^{-\jmath \Omega_0 kn}
@@ -280,7 +280,7 @@ X[k] = \sum\limits_{0}^{N-1}x[n]e^{-\jmath \Omega_0 kn}
 Where $\Omega_0$ is the sample frequency
 \end{center}
 
-A property of the Fourier transform which is of interest is the convolution theorem which states that convolution in time is multiplication in frequency and is defined mathematically in equation \eqref{eq:ConvolutionMultiplication}. Cross correlation is defined in equation \eqref{eq:CrossCorrelation} and related to convolution by equation \eqref{eq:CrossCorrelation}. With images, $f(t)$ is a real signal, its conjugate is exactly the same, $f(t) \equiv f^*(t)$, given that $f(t) \in \Re$. Fourier transforms can be used to calculate cross correlation more efficiently, by multiplying the Fourier transform of an image by the reversed template.% This means that to compute a cross correlation, the Fourier transform of the image and the reversed template can be used and multiplied together. 
+A property of the Fourier transform which is of interest is the convolution theorem which states that convolution in time is multiplication in frequency and is defined mathematically in Equation \eqref{eq:ConvolutionMultiplication}. Cross correlation is defined in Equation \eqref{eq:CrossCorrelation} and related to convolution by Equation \eqref{eq:CrossCorrelation}. With images, $f(t)$ is a real signal, its conjugate is exactly the same, $f(t) \equiv f^*(t)$, given that $f(t) \in \Re$. Fourier transforms can be used to calculate cross correlation more efficiently, by multiplying the Fourier transform of an image by the reversed template.% This means that to compute a cross correlation, the Fourier transform of the image and the reversed template can be used and multiplied together. 
 
 
 \begin{equation}\label{eq:ConvolutionMultiplication}
@@ -296,7 +296,7 @@ A property of the Fourier transform which is of interest is the convolution theo
 
 %\inote{example of convolution used as correlation. Include some pretty graphs}
 \subsection{Two Dimensional Fast Fourier Transform}
-A two dimensional (2D) Fourier transform exists for analysing 2D signals, such as an image. The Fourier Transform is shown in equation \eqref{eq:2dFT} and the discrete version is shown in \eqref{eq:2dDFT}
+A two dimensional (2D) Fourier transform exists for analysing 2D signals, such as an image. The Fourier Transform is shown in Equation \eqref{eq:2dFT} and the discrete version is shown in Equation \eqref{eq:2dDFT}
 
 \begin{equation}\label{eq:2dFT}
 F(u,v) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}f(x,y)e^{-2\pi\jmath (xu+yv)}dxdy
@@ -305,7 +305,7 @@ F(u,v) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\inf
 F(u,v) = \frac{1}{N} \sum\limits_{x=0}^{N-1}\sum\limits_{y=0}^{N-1}f(x,y)e^{-\frac{2\pi\jmath (xu+yv)}{N}} \; \; \; \; \; x,y,u,v \in \left\lbrace 0\dots N-1\right\rbrace
 \end{equation}
 
-Figures \ref{fig:2DDiracFunctionFT} and \ref{fig:2DSquareWaveFT} show the 2D equivalent test signals of figures \ref{fg:Dirac:Signal} and \ref{fg:Square:Signal}, and the phase and magnitudes of their Fourier Transforms. There is a direct similarity between the 1D and 2D spectra; the magnitudes of the Dirac (figures \ref{fg:Dirac:Mag} and \ref{fg:Dirac2D:Mag}) are both constant values and the rectangular pulses both have a modulus sinc function magnitude (figures \ref{fg:Square:Signal} and \ref{fg:Square2D:Signal}). 
+Figures \ref{fig:2DDiracFunctionFT} and \ref{fig:2DSquareWaveFT} show the 2D equivalent test signals of Figures \ref{fg:Dirac:Signal} and \ref{fg:Square:Signal}, and the phase and magnitudes of their Fourier Transforms. There is a direct similarity between the 1D and 2D spectra; the magnitudes of the Dirac (Figures \ref{fg:Dirac:Mag} and \ref{fg:Dirac2D:Mag}) are both constant values and the rectangular pulses both have a modulus sinc function magnitude (Figures \ref{fg:Square:Signal} and \ref{fg:Square2D:Signal}). 
 
 \begin{figure}
 \centering
@@ -325,7 +325,7 @@ Figures \ref{fig:2DDiracFunctionFT} and \ref{fig:2DSquareWaveFT} show the 2D equ
 \label{fig:2DSquareWaveFT}
 \end{figure}
 
-The 2D Fourier transform can also be optimised to a FFT algorithm in a similar way to the 1D case. This algorithm, sometimes referred to as the Butterfly transform, can only be applied to images with equal dimensions that are a power of 2, without extra effort \citep{nixon2012feature}. The algorithm utilises the separability property of the Fourier transform. 
+The 2D Fourier transform can also be optimised to a FFT algorithm in a similar way to the 1D case. However, this algorithm, sometimes referred to as the Butterfly transform, can only be applied to images with equal dimensions that are a power of 2, without extra effort \citep{nixon2012feature}. The algorithm utilises the separability property of the Fourier transform. 
 
 The 2D FFT can be implemented using a 1D FFT as follows:
 \begin{enumerate}
@@ -345,9 +345,9 @@ A function was made, called \textit{FFT2DCOMPLEX}, to realise the 2D FFT on the 
 \subsubsection{1D FFT Test}
 A Dirac function and a rectangular pulse were used as test signals. 
 
-Figure \ref{fig:AVR:FFT:Dirac:Input} shows the input signal given to the AVR. It is a 256 long array of a Dirac function. This was then converted to the internally defined fixed point notation and passed through the Fourier transform method. The resulting complex array was then saved to a CSV file and read into MATLAB. Figure \ref{fig:AVR:FFT:Dirac:Output} shows the calculated phase and magnitude plots of the output complex array. The magnitude is relatively flat and around the value of 1. In comparison with figure \ref{fg:Dirac:Mag}, they are relatively similar. The phase, however, seems to be very different. Figure \ref{fg:Dirac:Phase} shows what was expected, but the two phase results appear to be quite different. This could be due to MATLAB having more accurate algorithms and a more accurate representation than the 16 bit fixed point used on the AVR. However, using a function in the DSP library to calculate the magnitude, the spectrum in figure \ref{fig:AVR:FFT:Dirac:Mag} is obtained. This, though is not a magnitude of exactly $1.0$ as expected, is completely flat and it is computed from the same transformed data. This suggests that there is some internal compensation in the algorithms. The actual value in figure \ref{fig:AVR:FFT:Dirac:Mag} is $0.9897$ to 4 decimal places giving an overall error of $1.03\%$. 
+Figure \ref{fig:AVR:FFT:Dirac:Input} shows the input signal given to the AVR. It is a 256 long array of a Dirac function. This was then converted to the internally defined fixed point notation and passed through the Fourier transform method. The resulting complex array was then saved to a CSV file and read into MATLAB. Figure \ref{fig:AVR:FFT:Dirac:Output} shows the calculated phase and magnitude plots of the output complex array. The magnitude is relatively flat and around the value of 1. In comparison with Figure \ref{fg:Dirac:Mag}, they are relatively similar. The phase, however, seems to be very different. Figure \ref{fg:Dirac:Phase} shows what was expected, but the two phase results appear to be quite different. This could be due to MATLAB having more accurate algorithms and a more accurate representation than the 16 bit fixed point used on the AVR. However, using a function in the DSP library to calculate the magnitude, the spectrum in Figure \ref{fig:AVR:FFT:Dirac:Mag} is obtained. This, though is not a magnitude of exactly $1.0$ as expected, is completely flat and it is computed from the same transformed data. This suggests that there is some internal compensation in the algorithms. The actual value in Figure \ref{fig:AVR:FFT:Dirac:Mag} is $0.9897$ to 4 decimal places giving an overall error of $1.03\%$. 
 
-Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref{fig:AVR:FFT:Square:Mag} show the similar outputs from the AVR when transforming the rectangular pulse. The result was renormalised from fixed point notation and the data was shifted so that the centre of the plot is frequency 0.  Again, it can be seen that the magnitude calculated from the complex output (figure \ref{fig:AVR:FFT:Square:Output}) is different to the result when the magnitude is calculated on the AVR (figure \ref{fig:AVR:FFT:Square:Mag}). There are also differences in the result from the AVR and the result from MATLAB in figure \ref{fig:SquareWaveFT}, which can, again, be attributed to the algorithms. 
+Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref{fig:AVR:FFT:Square:Mag} show the similar outputs from the AVR when transforming the rectangular pulse. The result was renormalised from fixed point notation and the data was shifted so that the centre of the plot is frequency 0.  Again, it can be seen that the magnitude calculated from the complex output (Figure \ref{fig:AVR:FFT:Square:Output}) is different to the result when the magnitude is calculated on the AVR (Figure \ref{fig:AVR:FFT:Square:Mag}). There are also differences in the result from the AVR and the result from MATLAB in Figure \ref{fig:SquareWaveFT}, which can, again, be attributed to the algorithms. 
 
 \begin{figure}
 \includegraphics[width=\textwidth]{./Figures/AVR_FFT_Dirac_Input.eps}
@@ -386,10 +386,10 @@ Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref
 
 \subsubsection{2D FFT Test}
 
-Two test signals were used to test the 2D FFT on the AVR, a Dirac signal and a square wave, seen in figures \ref{fg:Dirac2D:Signal} and \ref{fg:Square2D:Signal}. The internal method on the AVR was not able to compute the magnitude due to the method scaling all the values down causing truncation errors. The complex Fourier transform was obtained, saved to the SD card in CSV format and viewed in MATLAB. All data were normalised to omit the effects of the fixed point notation and the data shifted so that frequency 0 was in the centre. These tests were done with a $64\times64$ 2D data as with a $256 \times 256$ array the AVR runs out of internal RAM to calculate the transform. 
+Two test signals were used to test the 2D FFT on the AVR, a Dirac signal and a square wave, seen in Figures \ref{fg:Dirac2D:Signal} and \ref{fg:Square2D:Signal}. The internal method on the AVR was not able to compute the magnitude due to the method scaling all the values down causing truncation errors. The complex Fourier transform was obtained, saved to the SD card in CSV format and viewed in MATLAB. All data were normalised to omit the effects of the fixed point notation and the data shifted so that frequency 0 was in the centre. These tests were done with a $64\times64$ 2D data as with a $256 \times 256$ array the AVR runs out of internal RAM to calculate the transform. 
 \inote{I would like to get this to work by the end but not vital.}
 
-The result of the Dirac test is shown in figure \ref{fig:AVR:FFT2:Dirac}. A similar error is found in the magnitude, but the spectrum is generally flat with a small amount of ripple as seen with the 1D FFT in figure \ref{fig:AVR:FFT:Dirac:Mag}. The phase has similar issues as the 1D FFT. However, there appears to be the correct pattern with the 2D phase, but rotated about $45^{\circ}$. This is also the case with the square wave test. The magnitude in figure \ref{fig:AVR:FFT2:Square:Mag} is very similar, with a distinct peak in the centre (frequency 0) and a sinc function extending vertically and horizontally from this. Again, however, the phase (figure \ref{fig:AVR:FFT2:Square:Phase}) seems to differ a lot from the expected result in figure \ref{fg:Square2D:Phase}. 
+The result of the Dirac test is shown in Figure \ref{fig:AVR:FFT2:Dirac}. A similar error is found in the magnitude, but the spectrum is generally flat with a small amount of ripple as seen with the 1D FFT in Figure \ref{fig:AVR:FFT:Dirac:Mag}. The phase has similar issues as the 1D FFT. However, there appears to be the correct pattern with the 2D phase, but rotated about $45^{\circ}$. This is also the case with the square wave test. The magnitude in Figure \ref{fig:AVR:FFT2:Square:Mag} is very similar, with a distinct peak in the centre (frequency 0) and a sinc function extending vertically and horizontally from this. Again, the phase (Figure \ref{fig:AVR:FFT2:Square:Phase}) seems to differ a lot from the expected result in Figure \ref{fg:Square2D:Phase}. 
 \begin{figure}
 \subfigure[Normalised magnitude\label{fig:AVR:FFT2:Dirac:Mag}]{\includegraphics[width=\textwidth / 2]{Figures/AVR_FFT2_Dirac_Mag.jpg}}
 \subfigure[Phase \label{fig:AVR:FFT2:Dirac:Phase}]{\includegraphics[width=\textwidth /2]{Figures/AVR_FFT2_Dirac_Phase.jpg}}

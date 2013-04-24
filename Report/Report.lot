@@ -10,23 +10,24 @@
 \contentsline {table}{\numberline {3.4}{\ignorespaces Results of motor distance test\relax }}{23}{table.caption.61}
 \contentsline {table}{\numberline {3.5}{\ignorespaces Results of motor speed test\relax }}{24}{table.caption.62}
 \contentsline {table}{\numberline {3.6}{\ignorespaces The pinout of the AVR for the circuit. `-' means unavailable and blank means unused\relax }}{26}{table.caption.69}
-\contentsline {table}{\numberline {3.7}{\ignorespaces Examples of the incorrect data returned from the SDRAM\relax }}{37}{table.caption.314}
+\contentsline {table}{\numberline {3.7}{\ignorespaces Examples of the incorrect data returned from the SDRAM\relax }}{33}{table.caption.102}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Table of results to calculate the field of view of the camera\relax }}{47}{table.caption.354}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Results of range finding test\relax }}{48}{table.caption.356}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Number of clock cycles taken to calculate the transform of 64 or 256 long data set\relax }}{63}{table.caption.418}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Table of results to calculate the field of view of the camera\relax }}{45}{table.caption.142}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Results of range finding test\relax }}{46}{table.caption.144}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Number of clock cycles taken to calculate the transform of 64 or 256 long data set\relax }}{61}{table.caption.206}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Table showing the Auto Run commands implemented\relax }}{68}{table.caption.427}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Table showing the available debug commands\relax }}{69}{table.caption.428}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Table show the meaning of the LED lights. F - Flashing, X - Don't Care\relax }}{70}{table.caption.429}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Table showing the Auto Run commands implemented\relax }}{66}{table.caption.215}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Table showing the available debug commands\relax }}{67}{table.caption.216}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Table show the meaning of the LED lights. F - Flashing, X - Don't Care\relax }}{68}{table.caption.217}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {E.1}{\ignorespaces A table of all components used and their costs.\relax }}{95}{table.caption.460}
-\contentsline {table}{\numberline {E.2}{\ignorespaces All components and their values (if applicable)\relax }}{96}{table.caption.461}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {G.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD card}}{99}{table.465}
+\contentsline {table}{\numberline {E.1}{\ignorespaces A table of all components used and their costs.\relax }}{93}{table.caption.247}
+\contentsline {table}{\numberline {E.2}{\ignorespaces All components and their values (if applicable)\relax }}{94}{table.caption.248}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {H.1}{\ignorespaces Format of a Bitmap file with values used, to write an image from the camera to an SD card}}{103}{table.492}
 \addvspace {10\p@ }
