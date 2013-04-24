@@ -69,21 +69,23 @@
 \contentsline {chapter}{\numberline {5}Conclusions and Further Work}{65}{chapter.419}
 \contentsline {section}{\numberline {5.1}System Operation}{66}{section.425}
 \contentsline {chapter}{References}{71}{dummy.430}
-\contentsline {chapter}{\numberline {A}Gantt Charts}{73}{appendix.432}
-\contentsline {chapter}{\numberline {B}Circuit Diagrams}{77}{appendix.436}
-\contentsline {section}{\numberline {B.1}OV7670 Breakout Board Schematic}{77}{section.437}
-\contentsline {section}{\numberline {B.2}Il Matto and Dual Camera Schematic}{79}{section.439}
-\contentsline {section}{\numberline {B.3}The Columbus Circuit Diagram}{80}{section.441}
-\contentsline {chapter}{\numberline {C}PCB Design}{87}{appendix.448}
-\contentsline {section}{\numberline {C.1}PCB Top Side}{87}{section.449}
-\contentsline {section}{\numberline {C.2}PCB Layer 2}{89}{section.451}
-\contentsline {section}{\numberline {C.3}PCB Layer 3}{90}{section.453}
-\contentsline {section}{\numberline {C.4}PCB Bottom Side}{91}{section.455}
-\contentsline {chapter}{\numberline {D}Costings and Components}{93}{appendix.457}
-\contentsline {chapter}{\numberline {E}Contents of Files}{95}{appendix.460}
-\contentsline {chapter}{\numberline {F}Bitmap File Format}{97}{appendix.461}
-\contentsline {section}{\numberline {F.1}Bitmap File Format}{97}{section.462}
-\contentsline {chapter}{\numberline {G}Range Finding Derivations}{101}{appendix.465}
-\contentsline {section}{\numberline {G.1}Object is between the Cameras}{101}{section.467}
-\contentsline {section}{\numberline {G.2}Object is to the same side in each Camera}{103}{section.476}
-\contentsline {section}{\numberline {G.3}Object is in front of a Camera}{104}{section.488}
+\contentsline {chapter}{\numberline {A}Project Brief}{73}{appendix.432}
+\contentsline {section}{\numberline {A.1}Project Brief}{74}{section.433}
+\contentsline {chapter}{\numberline {B}Gantt Charts}{75}{appendix.434}
+\contentsline {chapter}{\numberline {C}Circuit Diagrams}{79}{appendix.438}
+\contentsline {section}{\numberline {C.1}OV7670 Breakout Board Schematic}{79}{section.439}
+\contentsline {section}{\numberline {C.2}Il Matto and Dual Camera Schematic}{81}{section.441}
+\contentsline {section}{\numberline {C.3}The Columbus Circuit Diagram}{82}{section.443}
+\contentsline {chapter}{\numberline {D}PCB Design}{89}{appendix.450}
+\contentsline {section}{\numberline {D.1}PCB Top Side}{89}{section.451}
+\contentsline {section}{\numberline {D.2}PCB Layer 2}{91}{section.453}
+\contentsline {section}{\numberline {D.3}PCB Layer 3}{92}{section.455}
+\contentsline {section}{\numberline {D.4}PCB Bottom Side}{93}{section.457}
+\contentsline {chapter}{\numberline {E}Costings and Components}{95}{appendix.459}
+\contentsline {chapter}{\numberline {F}Contents of Files}{97}{appendix.462}
+\contentsline {chapter}{\numberline {G}Bitmap File Format}{99}{appendix.463}
+\contentsline {section}{\numberline {G.1}Bitmap File Format}{99}{section.464}
+\contentsline {chapter}{\numberline {H}Range Finding Derivations}{103}{appendix.467}
+\contentsline {section}{\numberline {H.1}Object is between the Cameras}{103}{section.469}
+\contentsline {section}{\numberline {H.2}Object is to the same side in each Camera}{105}{section.478}
+\contentsline {section}{\numberline {H.3}Object is in front of a Camera}{106}{section.490}

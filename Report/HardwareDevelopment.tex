@@ -30,7 +30,7 @@ The camera uses a SCCB Interface \citep{SCCB_Interface} created by OmniVision. T
 
 RGB565 is a 16 bit pixel representation where bits 0-4, 5-10 and 11-15, represent the blue, green and red intensity respectively (see figure \ref{fig:RGB565}). This is a compact way of storing data but only allows 65536 colours. Greys can also appear to be slightly green due to the inconsistent colour ratio of the green field. This representation was used as it is a compact format and easily converted to grey scale.
 \begin{figure}
-\includegraphics[width = \textwidth]{./Figures/RGB565.png}
+\includegraphics[width = \textwidth]{./Figures/RGB565.pdf}
 \caption{RGB565 pixel format}
 \label{fig:RGB565}
 \end{figure}
@@ -50,7 +50,7 @@ After the data has been read, the buffer is reset by asserting the read reset (R
 \label{fig:ov_Capture}
 \end{figure}
 \begin{figure}
-\includegraphics[width=\textwidth]{./Figures/Camera_Hierarchy.jpg}
+\includegraphics[width=\textwidth]{./Figures/Camera_Hierarchy.pdf}
 \caption{Hierarchical diagram of the single camera operation showing signals between the camera, FIFO buffer and the microcontroller}
 \label{fig:cam:heir}
 \end{figure}
@@ -234,7 +234,7 @@ A second approach utilised a simple state machine and software based hysteresis 
 
 
 \begin{figure}
-\includegraphics[width=\textwidth]{Figures/ASM.jpg}
+\includegraphics[width=\textwidth]{Figures/ASM.pdf}
 \caption{A state machine showing the operation of the \textit{Motor\_Execute} method}
 \label{fig:StateMachine}
 \end{figure}
@@ -320,7 +320,7 @@ Given that the robot does not need to move any more accurately that to 1cm, this
 
 Figure \ref{fig:Hierarchical} shows a basic hierarchy of the robot. Each pin on the UC3C can have one of up to six special functions, as well as being a GPIO pin.  Table \ref{table:UC3C:Pinout} shows the pinout for the microcontroller used. 
 \begin{figure}
-\includegraphics[width=\textwidth]{Figures/hierarchy.jpg}
+\includegraphics[width=\textwidth]{Figures/hierarchy.pdf}
 \caption{A hierarchical diagram of the robot}
 \label{fig:Hierarchical}
 \end{figure}
