@@ -99,12 +99,12 @@ table.stat .sum {font-weight:bold; font-style:italic;}
 <span class='document'>\usepackage</span><span class='option'>[disable]</span><span class='document'>{todonotes}</span><br>
 <span class='document'>\usepackage</span><span class='option'>[intoc]</span><span class='document'>{nomencl}</span><br>
 <span class='document'>\usepackage</span><span class='document'>{pdfpages}</span><br>
+<span class='document'>\usepackage</span><span class='document'>{rotating}</span><br>
 <span class='exclcommand'>\removecolourlinks</span><br>
 <span class='exclcommand'>\makenomenclature</span><br>
 <span class='command'>\renewcommand</span><span class='ignore'>{</span><span class='ignore'>\nomname</span><span class='ignore'>}</span><span class='ignore'>{</span><span class='ignore'>List</span> <span class='ignore'>of</span> <span class='ignore'>Abbreviations</span><span class='ignore'>}</span><br>
 <span class='comment'>%\hypersetup{colorlinks=false}&nbsp;  % Set to false for black/white printing</span><br>
 <span class='exclcommand'>\input</span><span class='ignore'>{Definitions}</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class='comment'>% Include your abbreviations</span><br>
-<br>
 <br>
 <span class='comment'>%% ----------------------------------------------------------------</span><br>
 <span class='grouping'>\begin</span><span class='grouping'>{document}</span><br>
@@ -339,7 +339,7 @@ table.stat .sum {font-weight:bold; font-style:italic;}
 <span class='exclgroup'>\end</span><span class='exclgroup'>{tabular}</span><br>
 <span class='grouping'>\end</span><span class='grouping'>{table}</span><br>
 <br>
-</p></div>
+<span class='comment'>%\section{Contributions}</span></p></div>
 <div class='count'>
 <ul class='count'>
 <li class='header'>Included file: Introduction.tex</li>
@@ -1074,8 +1074,8 @@ table.stat .sum {font-weight:bold; font-style:italic;}
 <br>
 <span class='grouping'>\begin</span><span class='grouping'>{figure}</span><br>
 <span class='exclcommand'>\centering</span><br>
-<span class='exclcommand'>\subfigure</span><span class='option'>[Left Image]</span><span class='ignore'>{</span><span class='exclcommand'>\includegraphics</span><span class='option'>[scale=0.4]</span><span class='ignore'>{</span><span class='ignore'>.</span><span class='ignore'>/</span><span class='ignore'>Figures</span><span class='ignore'>/</span><span class='ignore'>deskLeft.png</span><span class='ignore'>}</span> <span class='ignore'>}</span><br>
-<span class='exclcommand'>\subfigure</span><span class='option'>[Right Image]</span><span class='ignore'>{</span><span class='exclcommand'>\includegraphics</span><span class='option'>[scale=0.4]</span><span class='ignore'>{</span><span class='ignore'>.</span><span class='ignore'>/</span><span class='ignore'>Figures</span><span class='ignore'>/</span><span class='ignore'>deskRight.png</span><span class='ignore'>}</span> <span class='ignore'>}</span><br>
+<span class='exclcommand'>\subfigure</span><span class='option'>[Left Image]</span><span class='ignore'>{</span><span class='exclcommand'>\includegraphics</span><span class='ignore'>[</span><span class='ignore'>width</span><span class='ignore'>=</span><span class='exclcommand'>\textwidth</span><span class='ignore'>/</span><span class='ignore'>2-1cm</span><span class='ignore'>,</span><span class='ignore'>keepaspectratio</span><span class='ignore'>]</span><span class='ignore'>{</span><span class='ignore'>.</span><span class='ignore'>/</span><span class='ignore'>Figures</span><span class='ignore'>/</span><span class='ignore'>deskLeft.png</span><span class='ignore'>}</span> <span class='ignore'>}</span><br>
+<span class='exclcommand'>\subfigure</span><span class='option'>[Right Image]</span><span class='ignore'>{</span><span class='exclcommand'>\includegraphics</span><span class='ignore'>[</span><span class='ignore'>width</span><span class='ignore'>=</span><span class='exclcommand'>\textwidth</span><span class='ignore'>/</span><span class='ignore'>2-1cm</span><span class='ignore'>,</span><span class='ignore'>keepaspectratio</span><span class='ignore'>]</span><span class='ignore'>{</span><span class='ignore'>.</span><span class='ignore'>/</span><span class='ignore'>Figures</span><span class='ignore'>/</span><span class='ignore'>deskRight.png</span><span class='ignore'>}</span> <span class='ignore'>}</span><br>
 <span class='command'>\caption</span><span class='ignore'>{</span><span class='word3'>Stereoscopic</span> <span class='word3'>test</span> <span class='word3'>images</span> <span class='word3'>from</span> <span class='word3'>MATLAB</span> <span class='word3'>examples</span><span class='ignore'>}</span><br>
 <span class='exclcommand'>\label</span><span class='ignore'>{</span><span class='ignore'>fig</span><span class='ignore'>:</span><span class='ignore'>StereoTest</span><span class='ignore'>}</span><br>
 <span class='grouping'>\end</span><span class='grouping'>{figure}</span><br>
@@ -1576,7 +1576,7 @@ table.stat .sum {font-weight:bold; font-style:italic;}
 <span class='comment'>%\inote{What could be changed to make it better}</span><br>
 <span class='comment'>%\inote{Suggestions for further work}</span><br>
 <br>
-<span class='command'>\section</span><span class='ignore'>{</span><span class='word2'>System</span> <span class='word2'>Operation</span><span class='ignore'>}</span><br>
+<span class='command'>\section</span><span class='ignore'>{</span><span class='word2'>System</span> <span class='word2'>Operation</span> <span class='word2'>and</span> <span class='word2'>Performance</span><span class='ignore'>}</span><br>
 <br>
 <span class='word1'>The</span> <span class='word1'>system</span> <span class='word1'>uses</span> <span class='word1'>a</span> <span class='word1'>debug</span> <span class='word1'>USART</span> <span class='word1'>available</span> <span class='word1'>on</span> <span class='word1'>J7</span> <span class='ignore'>(</span><span class='word1'>57600bps</span><span class='ignore'>,</span> <span class='word1'>8</span> <span class='word1'>data</span><span class='ignore'>,</span> <span class='word1'>0</span> <span class='word1'>parity</span> <span class='word1'>and</span> <span class='word1'>1</span> <span class='word1'>stop</span> <span class='word1'>bit</span><span class='ignore'>)</span><span class='ignore'>.</span><br>
 <br>
@@ -1585,6 +1585,8 @@ table.stat .sum {font-weight:bold; font-style:italic;}
 <span class='word1'>Auto</span> <span class='word1'>Run</span> <span class='word1'>mode</span> <span class='word1'>runs</span> <span class='word1'>a</span> <span class='word1'>set</span> <span class='word1'>of</span> <span class='word1'>commands</span> <span class='word1'>located</span> <span class='word1'>in</span> <span class='command'>\textit</span><span class='ignore'>{</span><span class='ignore'>`</span><span class='ignore'>`</span><span class='word1'>AutoRun.txt</span><span class='ignore'>'</span><span class='ignore'>'</span><span class='ignore'>}</span> <span class='word1'>on</span> <span class='word1'>the</span> <span class='word1'>SD</span> <span class='word1'>Card</span><span class='ignore'>.</span> <span class='word1'>If</span> <span class='word1'>this</span> <span class='word1'>file</span> <span class='word1'>is</span> <span class='word1'>not</span> <span class='word1'>present</span><span class='ignore'>,</span> <span class='word1'>the</span> <span class='word1'>system</span> <span class='word1'>will</span> <span class='word1'>run</span> <span class='word1'>a</span> <span class='word1'>default</span> <span class='word1'>procedure</span> <span class='word1'>defined</span> <span class='word1'>in</span> <span class='word1'>the</span> <span class='word1'>code</span><span class='ignore'>.</span> <span class='word1'>A</span> <span class='word1'>list</span> <span class='word1'>of</span> <span class='word1'>commands</span> <span class='word1'>that</span> <span class='word1'>can</span> <span class='word1'>be</span> <span class='word1'>run</span> <span class='word1'>from</span> <span class='word1'>this</span> <span class='word1'>mode</span> <span class='word1'>can</span> <span class='word1'>be</span> <span class='word1'>seen</span> <span class='word1'>in</span> <span class='word1'>Table</span> <span class='command'>\ref</span><span class='ignore'>{</span><span class='ignore'>table</span><span class='ignore'>:</span><span class='ignore'>AutoRun</span><span class='ignore'>}</span><span class='ignore'>.</span> <span class='word1'>The</span> <span class='word1'>commands</span> <span class='word1'>are</span> <span class='word1'>specified</span> <span class='word1'>by</span> <span class='word1'>line</span><span class='ignore'>.</span> <span class='word1'>If</span> <span class='word1'>an</span> <span class='word1'>invalid</span> <span class='word1'>command</span> <span class='word1'>is</span> <span class='word1'>found</span><span class='ignore'>,</span> <span class='word1'>the</span> <span class='word1'>system</span> <span class='word1'>will</span> <span class='word1'>exit</span> <span class='word1'>and</span> <span class='word1'>run</span> <span class='word1'>the</span> <span class='command'>\textit</span><span class='ignore'>{</span><span class='word1'>System</span><span class='command'>\_Error</span><span class='ignore'>}</span> <span class='word1'>loop</span><span class='ignore'>.</span> <span class='word1'>The</span>&nbsp; <span class='command'>\textit</span><span class='ignore'>{</span><span class='word1'>System</span><span class='command'>\_Error</span><span class='ignore'>}</span> <span class='word1'>loop</span> <span class='word1'>prints</span> <span class='word1'>the</span> <span class='word1'>status</span> <span class='word1'>of</span> <span class='word1'>all</span> <span class='word1'>devices</span> <span class='word1'>out</span> <span class='word1'>once</span> <span class='word1'>a</span> <span class='word1'>second</span><span class='ignore'>.</span> <span class='word1'>By</span> <span class='word1'>attaching</span> <span class='word1'>a</span> <span class='word1'>USART</span> <span class='word1'>terminal</span><span class='ignore'>,</span> <span class='word1'>the</span> <span class='word1'>error</span> <span class='word1'>can</span> <span class='word1'>be</span> <span class='word1'>found</span><span class='ignore'>.</span><br>
 <br>
 <span class='word1'>Debug</span> <span class='word1'>mode</span> <span class='word1'>is</span> <span class='word1'>a</span> <span class='word1'>DOS-shell</span> <span class='word1'>style</span> <span class='word1'>terminal</span> <span class='word1'>allowing</span> <span class='word1'>the</span> <span class='word1'>user</span> <span class='word1'>to</span> <span class='word1'>access</span> <span class='word1'>methods</span> <span class='word1'>and</span> <span class='word1'>variables</span><span class='ignore'>.</span> <span class='word1'>This</span> <span class='word1'>was</span> <span class='word1'>used</span> <span class='word1'>for</span> <span class='word1'>development</span> <span class='word1'>and</span> <span class='word1'>debugging</span><span class='ignore'>.</span> <span class='word1'>A</span> <span class='word1'>full</span> <span class='word1'>list</span> <span class='word1'>of</span> <span class='word1'>commands</span> <span class='word1'>can</span> <span class='word1'>be</span> <span class='word1'>seen</span> <span class='word1'>in</span> <span class='word1'>Table</span> <span class='command'>\ref</span><span class='ignore'>{</span><span class='ignore'>table</span><span class='ignore'>:</span><span class='ignore'>Debug</span><span class='ignore'>}</span><span class='ignore'>.</span> <br>
+<br>
+<span class='word1'>The</span> <span class='word1'>system</span> <span class='word1'>is</span> <span class='word1'>able</span> <span class='word1'>to</span> <span class='word1'>move</span> <span class='word1'>reasonably</span> <span class='word1'>accurately</span> <span class='word1'>over</span> <span class='word1'>a</span> <span class='mathgroup'>$</span><span class='ignore'>30cm</span><span class='mathgroup'>$</span> <span class='word1'>distance</span><span class='ignore'>.</span> <span class='word1'>The</span> <span class='word1'>robot</span> <span class='word1'>can</span> <span class='word1'>move</span> <span class='word1'>in</span> <span class='word1'>a</span> <span class='word1'>straight</span> <span class='word1'>line</span> <span class='word1'>or</span> <span class='word1'>rotate</span> <span class='word1'>on</span> <span class='word1'>the</span> <span class='word1'>spot</span><span class='ignore'>.</span> <span class='word1'>Photos</span> <span class='word1'>are</span> <span class='word1'>captured</span> <span class='word1'>in</span> <span class='word1'>colour</span> <span class='word1'>with</span> <span class='word1'>a</span> <span class='word1'>resolution</span> <span class='word1'>of</span> <span class='mathgroup'>$</span><span class='ignore'>320px</span> <span class='exclcommand'>\times</span> <span class='ignore'>240px</span><span class='mathgroup'>$</span> <span class='word1'>and</span> <span class='word1'>store</span> <span class='word1'>to</span> <span class='word1'>a</span> <span class='word1'>SD</span> <span class='word1'>card</span><span class='ignore'>.</span> <br>
 <br>
 <span class='word1'>The</span> <span class='word1'>final</span> <span class='word1'>robot</span> <span class='word1'>can</span> <span class='word1'>be</span> <span class='word1'>seen</span> <span class='word1'>in</span> <span class='word1'>Figure</span> <span class='command'>\ref</span><span class='ignore'>{</span><span class='ignore'>fig</span><span class='ignore'>:</span><span class='ignore'>Robot</span><span class='ignore'>:</span><span class='ignore'>Complete</span><span class='ignore'>}</span><span class='ignore'>.</span><br>
 <br>
@@ -1673,18 +1675,18 @@ table.stat .sum {font-weight:bold; font-style:italic;}
 <ul class='count'>
 <li class='header'>Included file: Conclusions.tex</li>
 <li>Encoding: ascii</li>
-<li>Words in text: 698</li>
-<li>Words in headers: 6</li>
+<li>Words in text: 737</li>
+<li>Words in headers: 8</li>
 <li>Words in float captions: 29</li>
 <li>Number of headers: 2</li>
 <li>Number of floats: 4</li>
-<li>Number of math inlines: 5</li>
+<li>Number of math inlines: 7</li>
 <li>Number of math displayed: 0</li>
 <li>Subcounts:</li>
 <span class='subcount'>
 <li class='fielddesc'>&nbsp; text+headers+captions (#headers/#floats/#inlines/#displayed)</li>
   <li>480+4+0 (1/0/5/0) Chapter: Conclusions and Further Work} \label{Chapter: Conclusions</li>
-  <li>218+2+29 (1/4/0/0) Section: System Operation</li>
+  <li>257+4+29 (1/4/2/0) Section: System Operation and Performance</li>
 </span>
 </ul>
 </div>
@@ -1692,12 +1694,12 @@ table.stat .sum {font-weight:bold; font-style:italic;}
 <div class='sumcount'>
 <ul class='count'>
 <li class='header'>File(s) total: Report.tex</li>
-<li>Words in text: 9843</li>
-<li>Words in headers: 153</li>
+<li>Words in text: 9882</li>
+<li>Words in headers: 155</li>
 <li>Words in float captions: 646</li>
 <li>Number of headers: 66</li>
 <li>Number of floats: 56</li>
-<li>Number of math inlines: 87</li>
+<li>Number of math inlines: 89</li>
 <li>Number of math displayed: 23</li>
 <li>Files: 6</li>
 <li>Subcounts:</li>
@@ -1708,7 +1710,7 @@ table.stat .sum {font-weight:bold; font-style:italic;}
   <li>539+9+28 (6/1/0/0) Included file: Research.tex</li>
   <li>5440+73+236 (34/24/18/5) Included file: HardwareDevelopment.tex</li>
   <li>2667+62+328 (22/24/64/18) Included file: InvestigationVision.tex</li>
-  <li>698+6+29 (2/4/5/0) Included file: Conclusions.tex</li>
+  <li>737+8+29 (2/4/7/0) Included file: Conclusions.tex</li>
 </span>
 </ul>
 </div>

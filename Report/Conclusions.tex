@@ -36,7 +36,7 @@ The system could be used in future projects to develop more functionality. Wirel
 %\inote{What could be changed to make it better}
 %\inote{Suggestions for further work}
 
-\section{System Operation}
+\section{System Operation and Performance}
 
 The system uses a debug USART available on J7 (57600bps, 8 data, 0 parity and 1 stop bit).
 
@@ -45,6 +45,8 @@ The system has two modes of operation, `Auto Run' and debug. By default, the Aut
 Auto Run mode runs a set of commands located in \textit{``AutoRun.txt''} on the SD Card. If this file is not present, the system will run a default procedure defined in the code. A list of commands that can be run from this mode can be seen in Table \ref{table:AutoRun}. The commands are specified by line. If an invalid command is found, the system will exit and run the \textit{System\_Error} loop. The  \textit{System\_Error} loop prints the status of all devices out once a second. By attaching a USART terminal, the error can be found.
 
 Debug mode is a DOS-shell style terminal allowing the user to access methods and variables. This was used for development and debugging. A full list of commands can be seen in Table \ref{table:Debug}. 
+
+The system is able to move reasonably accurately over a $30cm$ distance. The robot can move in a straight line or rotate on the spot. Photos are captured in colour with a resolution of $320px \times 240px$ and store to a SD card. 
 
 The final robot can be seen in Figure \ref{fig:Robot:Complete}.
 
