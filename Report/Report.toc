@@ -72,23 +72,20 @@
 \contentsline {chapter}{\numberline {A}Project Brief}{71}{appendix.220}
 \contentsline {chapter}{\numberline {B}Gantt Charts}{73}{appendix.221}
 \contentsline {chapter}{\numberline {C}Circuit Diagrams}{77}{appendix.225}
-\contentsline {section}{\numberline {C.1}OV7670 Breakout Board Schematic}{77}{section.226}
-\contentsline {section}{\numberline {C.2}Il Matto and Dual Camera Schematic}{79}{section.228}
-\contentsline {section}{\numberline {C.3}The Columbus Circuit Diagram}{81}{section.230}
-\contentsline {chapter}{\numberline {D}PCB Design}{89}{appendix.237}
-\contentsline {chapter}{\numberline {E}Costings and Components}{95}{appendix.242}
-\contentsline {chapter}{\numberline {F}PCB Test Code}{97}{appendix.245}
-\contentsline {section}{\numberline {F.1}USART Test Code}{97}{section.246}
-\contentsline {section}{\numberline {F.2}SD Card Test Code}{97}{section.260}
-\contentsline {section}{\numberline {F.3}LED Test Code}{99}{section.335}
-\contentsline {section}{\numberline {F.4}SDRAM Test Code}{99}{section.356}
-\contentsline {section}{\numberline {F.5}$I^{2}C$ Test Code}{100}{section.400}
-\contentsline {section}{\numberline {F.6}Camera Test Code}{101}{section.450}
-\contentsline {section}{\numberline {F.7}Motor Test Code}{102}{section.475}
-\contentsline {chapter}{\numberline {G}Contents of Files}{103}{appendix.485}
-\contentsline {chapter}{\numberline {H}Bitmap File Format}{105}{appendix.486}
-\contentsline {section}{\numberline {H.1}Bitmap File Format}{105}{section.487}
-\contentsline {chapter}{\numberline {I}Range Finding Derivations}{109}{appendix.490}
-\contentsline {section}{\numberline {I.1}Object is between the Cameras}{109}{section.492}
-\contentsline {section}{\numberline {I.2}Object is to the same side in each Camera}{111}{section.501}
-\contentsline {section}{\numberline {I.3}Object is in front of a Camera}{112}{section.513}
+\contentsline {chapter}{\numberline {D}PCB Design}{87}{appendix.234}
+\contentsline {chapter}{\numberline {E}Costings and Components}{93}{appendix.239}
+\contentsline {chapter}{\numberline {F}PCB Test Code}{95}{appendix.242}
+\contentsline {section}{\numberline {F.1}USART Test Code}{95}{section.243}
+\contentsline {section}{\numberline {F.2}SD Card Test Code}{95}{section.257}
+\contentsline {section}{\numberline {F.3}LED Test Code}{97}{section.332}
+\contentsline {section}{\numberline {F.4}SDRAM Test Code}{97}{section.353}
+\contentsline {section}{\numberline {F.5}$I^{2}C$ Test Code}{98}{section.397}
+\contentsline {section}{\numberline {F.6}Camera Test Code}{99}{section.447}
+\contentsline {section}{\numberline {F.7}Motor Test Code}{100}{section.472}
+\contentsline {chapter}{\numberline {G}Contents of Files}{101}{appendix.482}
+\contentsline {chapter}{\numberline {H}Bitmap File Format}{103}{appendix.483}
+\contentsline {section}{\numberline {H.1}Bitmap File Format}{103}{section.484}
+\contentsline {chapter}{\numberline {I}Range Finding Derivations}{107}{appendix.487}
+\contentsline {section}{\numberline {I.1}Object is between the Cameras}{107}{section.489}
+\contentsline {section}{\numberline {I.2}Object is to the same side in each Camera}{109}{section.498}
+\contentsline {section}{\numberline {I.3}Object is in front of a Camera}{110}{section.510}
