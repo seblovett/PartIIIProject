@@ -30,21 +30,21 @@
 \contentsline {subsection}{\numberline {3.5.2}PCB Design}{25}{subsection.71}
 \contentsline {subsection}{\numberline {3.5.3}PCB Testing}{28}{subsection.75}
 \contentsline {subsubsection}{\numberline {3.5.3.1}USART Test}{28}{subsubsection.76}
-\contentsline {subsubsection}{\numberline {3.5.3.2}SD Card Test}{28}{subsubsection.77}
+\contentsline {subsubsection}{\numberline {3.5.3.2}SD Card Test}{29}{subsubsection.77}
 \contentsline {subsubsection}{\numberline {3.5.3.3}LED Test}{29}{subsubsection.78}
 \contentsline {subsubsection}{\numberline {3.5.3.4}SDRAM Test}{29}{subsubsection.79}
 \contentsline {subsubsection}{\numberline {3.5.3.5}$I^{2}C$ Test}{29}{subsubsection.80}
-\contentsline {subsubsection}{\numberline {3.5.3.6}Camera Test}{31}{subsubsection.95}
-\contentsline {subsubsection}{\numberline {3.5.3.7}Motor Driver Test}{31}{subsubsection.96}
+\contentsline {subsubsection}{\numberline {3.5.3.6}Camera Test}{30}{subsubsection.95}
+\contentsline {subsubsection}{\numberline {3.5.3.7}Motor Driver Test}{30}{subsubsection.96}
 \contentsline {subsection}{\numberline {3.5.4}PCB Faults}{31}{subsection.97}
-\contentsline {subsubsection}{\numberline {3.5.4.1}TCRT1010 Footprint}{31}{subsubsection.98}
+\contentsline {subsubsection}{\numberline {3.5.4.1}TCRT1010 Footprint}{32}{subsubsection.98}
 \contentsline {subsubsection}{\numberline {3.5.4.2}SDRAM Footprint}{32}{subsubsection.99}
 \contentsline {subsubsection}{\numberline {3.5.4.3}SDRAM Chip Select}{32}{subsubsection.101}
 \contentsline {subsubsection}{\numberline {3.5.4.4}SDRAM Data Line Resistors}{33}{subsubsection.102}
-\contentsline {subsubsection}{\numberline {3.5.4.5}Camera Interrupt Line}{33}{subsubsection.104}
+\contentsline {subsubsection}{\numberline {3.5.4.5}Camera Interrupt Line}{34}{subsubsection.104}
 \contentsline {subsubsection}{\numberline {3.5.4.6}Motor Driver Footprint}{34}{subsubsection.105}
-\contentsline {subsection}{\numberline {3.5.5}PCB Conclusions}{35}{subsection.107}
-\contentsline {section}{\numberline {3.6}Conclusions}{35}{section.111}
+\contentsline {subsection}{\numberline {3.5.5}PCB Conclusions}{34}{subsection.107}
+\contentsline {section}{\numberline {3.6}Conclusions}{36}{section.111}
 \contentsline {chapter}{\numberline {4}Vision Algorithms}{39}{chapter.112}
 \contentsline {section}{\numberline {4.1}Matching Algorithms}{39}{section.113}
 \contentsline {subsection}{\numberline {4.1.1}Sum of Absolute Differences}{40}{subsection.117}

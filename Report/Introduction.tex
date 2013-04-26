@@ -20,14 +20,14 @@
 %\inote{The uses of my robot.} 
 
 
-The original idea for the project was a stereoscopic mapping robot, similar to \cite{Pirobot}. This would autonomously search an area and return an occupancy map \citep{thrun2003learning}. The original project brief can be seen in Appendix \ref{Chapter:Appendix:Brief}. However, due to time constraints, the image processing aspects remain prototyped in MATLAB, but not implemented in C. The end robot is able to capture stereo image pairs, move with reasonable accuracy and compute Fourier Transforms. The robot can run a predefined set of commands automatically or act as a shell terminal.
+The original idea for the project was a stereoscopic mapping robot, similar to \cite{Pirobot}. This would autonomously search an area and return an occupancy map \citep{thrun2003learning}. The original project brief can be seen in Appendix \ref{Chapter:Appendix:Brief}. However, due to time constraints, the image processing aspects remain prototyped in \textsc{Matlab}, but not implemented in C. The end robot is able to capture stereo image pairs, move with reasonable accuracy and compute Fourier Transforms. The robot can run a predefined set of commands automatically or act as a shell terminal.
 
 Stereoscopy in computer vision is the ability to calculate the locations and depths using images from two or more cameras, which are used to triangulate and estimate distances \citep{Saxena:DepthEstimation}. By using two cameras on the same plane, separated by a set horizontal distance, the depth of the observed scene can be perceived by the system.
 
 Stereo vision is a small section of computer vision which is widely used in many applications. Microsoft's Xbox Kinect \citep{Microsoft:Kinect} uses stereo vision to locate a game player in order to use their movements to control the game. \cite{Mrovlje:Distance_Stereoscopic} used stereo vision to be able to locate the distance to a marker. 
 \inote{Leap Motion?}
 
-The stereo vision robot discussed in this report is a low cost alternative to other robots which use laser range finders or high quality cameras \citep{Se:MappingRobot}. The robot was mounted on the base seen in Figure \ref{fig:RobotBase} and used two OmniVision OV7670 cameras delivering QVGA format images.
+The stereo vision robot discussed in this report is a low cost alternative to other robots which use laser range finders or high quality cameras \citep{Se:MappingRobot}. The robot was mounted on the base seen in Figure \ref{fig:RobotBase} and used two OmniVision OV7670 cameras delivering colour QVGA format images.
 
 The final robot could be used for a variety of applications. The robot can perceive depth of the captured area so can avoid obstacles and navigate. The robot could also be adapted to stream the camera data to a remote computer, and be controlled by a user to explore unknown and potentially hostile areas safely. 
 
@@ -82,4 +82,4 @@ Damage to the robot through physical force or electrical connection & Medium & E
 \end{table}
 
 \section{Contributions}
-The main part of this project was the hardware design and the embedded firmware development. \textsc{Matlab} skills had to be learnt for the prototyping of high level algorithms for image processing. The skills learnt in \textsc{Matlab} also progressed into making graphs and 3D plots as well as general use of the software. This project also supplied a practical use for theory learnt in lectures of the Fourier transform and cross correlation. 
+The main part of this project was the hardware design and the embedded firmware development. \textsc{Matlab} skills had to be learnt for the prototyping of high level algorithms for image processing. The skills learnt in \textsc{Matlab} also progressed into making graphs and 3D plots as well as general use of the software. Programming for a 32 bit Atmel microcontroller also had to be learnt during the project. This project also supplied a practical use for theory learnt in lectures of the Fourier transform and cross correlation. 

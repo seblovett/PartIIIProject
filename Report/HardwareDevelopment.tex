@@ -15,7 +15,7 @@ For initial development, the \textit{`Il Matto'} board, designed by Steve Gunn, 
 
 \section{Camera} \label{Section:Camera}
 
-The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components and a 24MHz clock mounted. The schematic for the device can be seen in Appendix \ref{sch:OV7670}. The camera has a small hardware modification, due to a PCB fault. Pin 8 of the buffer is lifted and connected to pin 6 of the header, which is disconnected from the PCB (see Figure \ref{fig:OV7670:Mod}).
+The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components and a 24MHz clock mounted. The schematic for the device can be seen in Figure \ref{OV7670_Schematic}. The camera has a small hardware modification, due to a PCB fault. Pin 8 of the buffer is lifted and connected to pin 6 of the header, which is disconnected from the PCB (see Figure \ref{fig:OV7670:Mod}).
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth /4]{Figures/OV7670_Back.jpg}
@@ -28,7 +28,7 @@ Original code for the camera operation was given by Steve Gunn which streamed co
 
 The camera uses a SCCB Interface \citep{SCCB_Interface} created by OmniVision. This is almost identical to the $I^{2}C$ Interface by \cite{Philips:I2C} and the two protocols are compatible. The original code for the camera used a software driven SCCB interface which was very slow and used up processing time. This was changed to make use of the built-in interrupt-driven $I^{2}C$ interface (named TWI in Atmel AVRs)\footnote{$I^{2}C$ , SCCB and TWI are all the same but are named differently due to Phillips owning the right to the name ``$I^{2}C$"}. This communication bus is used to write to the control registers of the camera to set up the signals, image format and image size. The set-up procedure is used from the code given and sets the camera to function as explained below.
 
-RGB565 is a 16 bit pixel representation where bits 0-4, 5-10 and 11-15, represent the blue, green and red intensity respectively (see Figure \ref{fig:RGB565}). This is a compact way of storing data but only allows 65536 colours. Greys can also appear to be slightly green due to the inconsistent colour ratio of the green field. This representation was used as it is a compact format and easily converted to grey scale.
+RGB565 is a 16 bit pixel representation where bits 0-4, 5-10 and 11-15, represent the blue, green and red intensity respectively (see Figure \ref{fig:RGB565}). This is a compact way of storing data but only allows $65,536$ colours. Greys can also appear to be slightly green due to the inconsistent colour ratio of the green field. This representation was used as it is a compact format and easily converted to grey scale.
 \begin{figure}
 \includegraphics[width = \textwidth]{./Figures/RGB565.pdf}
 \caption{RGB565 pixel format}
@@ -267,7 +267,7 @@ To test the motor system, different distances were given to the movement method.
 \caption{Results of motor distance test}
 \label{table:results:motor:distance}
 \begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}} \toprule
-\textbf{Distance Specified (mm)} &	\textbf{Number of Counts Calculated}	& \textbf{Counts $\times$ Resolution (mm)}	& 	\textbf{Average Measured Distance Moved (mm)}	&	\textbf{Error (\%)} \\ \toprule
+\textbf{Distance Specified (mm)} &	\textbf{Number of Counts Calculated}	& \textbf{Predicted Distance (mm)}	& 	\textbf{Average Measured Distance Moved (mm)}	&	\textbf{Error (\%)} \\ \toprule
 50						&	4							&	46.4							&	47.25									&	1.83		\\ \midrule
 75						&	6							&	69.6							&	70.75									&	1.65		\\ \midrule
 100						&	8							&	92.8							&	97.0									&	4.52		\\ \midrule
@@ -315,7 +315,7 @@ A better controller could be implemented to help move at different speeds. This 
 
 Rotary encoders could be used to detect the direction of wheels. A good, but more costly, alternative would be the HUB-ee wheel by \cite{Creative_Robotics}, which includes a 120 point quadrature encoder and sensor, motor driver and a geared motor all within the wheel. These wheels have 12 times the accuracy as the method described here and a similar interface. 
  
-Given that the robot does not need to move any more accurately that to 1cm, this method has proved to be cheap and successful. The robot is able to move a distance with reasonable accuracy, but to a fairly low resolution.
+Given that the robot does not need to move any more accurately than to 1cm, this method has proved to be cheap and successful. The robot is able to move a distance with reasonable accuracy, but to a fairly low resolution.
 
 \section{PCB Development}\label{Section:PCB_Dev}
 \subsection{Circuit Design}
@@ -379,7 +379,7 @@ The SDRAM uses the EBI protocol. In high speed systems, care is often taken to e
 
 Tracks were routed in order of priority, starting with the UC3C, SDRAM and cameras. All other devices were then routed (\itc multiplexer, SD card, motor drivers etc). As a precaution, spare pins from the UC3C were routed to headers (J8 and J9), so that additions could be done if a pinout or connection was found to be incorrect. USART, \itc and SPI connections were routed to headers J7, J4 and J5 respectively so that logic analysers and a COM Port could be attached easily for debugging, or so that extra devices could be added onto the respective protocols for future developments. 
 
-Passives used were all surface mount of either 0603 or 1206 size to save space on the board. All headers used were 0.1'' spaced for easy connections and a mini B USB socket was added. USB could be used to power the robot or to program the AVR via the bootloader. Future work could make the robot act as a USB device. 
+Passives used were all surface mount of either $0603$ or $1206$ size to save space on the board. All headers used were $0.1$ inch spaced for easy connections and a mini B USB socket was added. USB could be used to power the robot or to program the AVR via the bootloader. Future work could make the robot act as a USB device. 
 
 The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and headers were added to connect to the motors. The optosensors were positioned such that they could be mounted directly on to the PCB and be in the correct position to sense the wheels. Mounting holes were also added on to the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in Appendix \ref{Appendix:Costings}.
 
@@ -426,7 +426,7 @@ All LEDs are turned on for 1 second, and then turned off. The user should check 
 \subsubsection{SDRAM Test}\label{SDRAM:Test}
 The SDRAM test consists of initialising the SDRAM, calculating the SDRAM size, writing a unique test pattern to the whole memory, and then reading it back and checking it. The total number of errors are reported. 
 
-The test was adapted from an example application in the ASF \citep{Atmel:ASF}. The code can be seen in Listing \ref{lst:SDRAMTestCode}. It consists of two \textit{for} loops. In the first, the iteration number is assigned to the memory location. The second loop reads back the data and checks it is correct. An int, \textit{noErrors}, is used to count errors. 
+The test was adapted from an example application in the ASF \citep{Atmel:ASF}. The code can be seen in Listing \ref{lst:SDRAMTestCode}. It consists of two \textit{for} loops. In the first, the iteration number is assigned to the memory location. The second loop reads back the data and checks it is correct. An integer, \textit{`noErrors'}, is used to count errors. 
 
 \subsubsection{\itc Test}\label{I2C:Test}
 The \itc test checks the bus for devices. It prints out a table showing the address of any devices that acknowledge a probe. A probe is set up to write to the address. If a device exists on the line, it should acknowledge (ACK) its own address \citep{Philips:I2C}. The probe consists of a set-up to write to the address. Figure \ref{fig:I2C} shows the \itc traffic generated for a probe, with both cases of the device responding with an ACK, or negative acknowledging (NACK). The test is done three times: with no channel selected on the \itc multiplexer, with channel 0 selected and with channel 1 selected. The addresses expected are $21_{16}$ for the OV7670 Camera and $74_{16}$ for the \itc multiplexer. The camera should only acknowledge when the \itc multiplexer has the relevant channel selected. Listing \ref{lst:TWITestCode} shows the test code for the \itc bus and Listing \ref{lst:I2CTest} shows the result from the full bus scan with channel 0 selected. The existence of both cameras is checked. %The cameras are both checked to exist.
@@ -437,7 +437,7 @@ The \itc test checks the bus for devices. It prints out a table showing the addr
 \label{fig:I2C}
 \end{figure}
 
-
+\noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[caption={Result of \itc bus scan with Channel 0 of the \itc multiplexer selected},label={lst:I2CTest}]
 Scanning Channel 0
 h 0 1 2 3 4 5 6 7 8 9 A B C D E F
@@ -450,7 +450,7 @@ h 0 1 2 3 4 5 6 7 8 9 A B C D E F
 6 - - - - - - - - - - - - - - - -
 7 - - - - A - - - - - - - - - - -
 \end{lstlisting}
-
+\end{minipage}
 \subsubsection{Camera Test}\label{Camera:Test}
 
 This test consists of initialising both cameras and checking it succeeds. Two photos are then taken and stored to the SD card. Success or failure of the initialisation and capture is sent to the debug terminal. An image from each camera should exist on the SD card. Listing \ref{lst:CameraTestCode} shows the code to conduct this test.
