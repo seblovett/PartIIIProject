@@ -70,7 +70,7 @@
 		\nompageref{xxi}
   \item [{USB}]\begingroup Universal Serial Bus\nomeqref {0}
 		\nompageref{xxi}
-  \item [{VSYNC}]\begingroup Vertical Syncronise\nomeqref {0}
+  \item [{VSYNC}]\begingroup Vertical Synchronise\nomeqref {0}
 		\nompageref{xxi}
   \item [{WEN}]\begingroup Write Enable\nomeqref {0}\nompageref{xxi}
   \item [{WRST}]\begingroup Write Reset\nomeqref {0}\nompageref{xxi}

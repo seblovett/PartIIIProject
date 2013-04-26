@@ -28,7 +28,7 @@
 \nomenclatureentry{aDMIPS@[{DMIPS}]\begingroup Dhrystone Million Instructions Per Second\nomeqref {0}|nompageref}{xxi}
 \nomenclatureentry{aUSART@[{USART}]\begingroup Universal Synchronous/Asynchronous Receiver/Transmitter\nomeqref {0}|nompageref}{xxi}
 \nomenclatureentry{aFAT@[{FAT}]\begingroup File Allocation Table\nomeqref {0}|nompageref}{xxi}
-\nomenclatureentry{aVSYNC@[{VSYNC}]\begingroup Vertical Syncronise\nomeqref {0}|nompageref}{xxi}
+\nomenclatureentry{aVSYNC@[{VSYNC}]\begingroup Vertical Synchronise\nomeqref {0}|nompageref}{xxi}
 \nomenclatureentry{aWEN@[{WEN}]\begingroup Write Enable\nomeqref {0}|nompageref}{xxi}
 \nomenclatureentry{aOE@[{OE}]\begingroup Output Enable\nomeqref {0}|nompageref}{xxi}
 \nomenclatureentry{aRCLK@[{RCLK}]\begingroup Read Clock\nomeqref {0}|nompageref}{xxi}
