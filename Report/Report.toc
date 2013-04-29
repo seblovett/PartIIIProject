@@ -8,85 +8,85 @@
 \contentsline {chapter}{\numberline {2}Research}{5}{chapter.17}
 \contentsline {section}{\numberline {2.1}Hardware Research}{5}{section.22}
 \contentsline {subsection}{\numberline {2.1.1}Microcontrollers}{5}{subsection.23}
-\contentsline {section}{\numberline {2.2}Firmware}{6}{section.26}
-\contentsline {subsection}{\numberline {2.2.1}Camera}{6}{subsection.27}
-\contentsline {subsection}{\numberline {2.2.2}Atmel Software Framework}{8}{subsection.28}
-\contentsline {chapter}{\numberline {3}Hardware and Firmware Development}{9}{chapter.29}
-\contentsline {section}{\numberline {3.1}Camera}{9}{section.30}
-\contentsline {subsection}{\numberline {3.1.1}Single Camera Operation}{10}{subsection.32}
-\contentsline {subsection}{\numberline {3.1.2}Dual Camera Operation}{12}{subsection.37}
-\contentsline {section}{\numberline {3.2}SD Card}{13}{section.38}
-\contentsline {subsection}{\numberline {3.2.1}Storing Images}{14}{subsection.39}
-\contentsline {section}{\numberline {3.3}The Prototypes}{15}{section.42}
-\contentsline {section}{\numberline {3.4}Motor Driver Development}{17}{section.46}
-\contentsline {subsection}{\numberline {3.4.1}Hardware}{17}{subsection.47}
-\contentsline {subsection}{\numberline {3.4.2}Firmware Development}{18}{subsection.50}
-\contentsline {subsubsection}{\numberline {3.4.2.1}Set Up}{19}{subsubsection.51}
-\contentsline {subsubsection}{\numberline {3.4.2.2}Execute}{20}{subsubsection.56}
-\contentsline {subsection}{\numberline {3.4.3}Testing}{23}{subsection.61}
-\contentsline {subsection}{\numberline {3.4.4}Conclusion}{24}{subsection.64}
-\contentsline {section}{\numberline {3.5}PCB Development}{25}{section.67}
-\contentsline {subsection}{\numberline {3.5.1}Circuit Design}{25}{subsection.68}
-\contentsline {subsection}{\numberline {3.5.2}PCB Design}{25}{subsection.71}
-\contentsline {subsection}{\numberline {3.5.3}PCB Testing}{28}{subsection.75}
-\contentsline {subsubsection}{\numberline {3.5.3.1}USART Test}{28}{subsubsection.76}
-\contentsline {subsubsection}{\numberline {3.5.3.2}SD Card Test}{29}{subsubsection.77}
-\contentsline {subsubsection}{\numberline {3.5.3.3}LED Test}{29}{subsubsection.78}
-\contentsline {subsubsection}{\numberline {3.5.3.4}SDRAM Test}{29}{subsubsection.79}
-\contentsline {subsubsection}{\numberline {3.5.3.5}$I^{2}C$ Test}{29}{subsubsection.80}
-\contentsline {subsubsection}{\numberline {3.5.3.6}Camera Test}{30}{subsubsection.95}
-\contentsline {subsubsection}{\numberline {3.5.3.7}Motor Driver Test}{30}{subsubsection.96}
-\contentsline {subsection}{\numberline {3.5.4}PCB Faults}{31}{subsection.97}
-\contentsline {subsubsection}{\numberline {3.5.4.1}TCRT1010 Footprint}{32}{subsubsection.98}
-\contentsline {subsubsection}{\numberline {3.5.4.2}SDRAM Footprint}{32}{subsubsection.99}
-\contentsline {subsubsection}{\numberline {3.5.4.3}SDRAM Chip Select}{32}{subsubsection.101}
-\contentsline {subsubsection}{\numberline {3.5.4.4}SDRAM Data Line Resistors}{33}{subsubsection.102}
-\contentsline {subsubsection}{\numberline {3.5.4.5}Camera Interrupt Line}{34}{subsubsection.104}
-\contentsline {subsubsection}{\numberline {3.5.4.6}Motor Driver Footprint}{34}{subsubsection.105}
-\contentsline {subsection}{\numberline {3.5.5}PCB Conclusions}{34}{subsection.107}
-\contentsline {section}{\numberline {3.6}Conclusions}{36}{section.111}
-\contentsline {chapter}{\numberline {4}Vision Algorithms}{39}{chapter.112}
-\contentsline {section}{\numberline {4.1}Matching Algorithms}{39}{section.113}
-\contentsline {subsection}{\numberline {4.1.1}Sum of Absolute Differences}{40}{subsection.117}
-\contentsline {subsection}{\numberline {4.1.2}Sum of Squared Differences}{40}{subsection.119}
-\contentsline {subsection}{\numberline {4.1.3}Normalised Cross Correlation}{40}{subsection.121}
-\contentsline {subsection}{\numberline {4.1.4}Comparison}{41}{subsection.123}
-\contentsline {subsection}{\numberline {4.1.5}Conclusion}{43}{subsection.128}
-\contentsline {section}{\numberline {4.2}Range Finding}{43}{section.129}
-\contentsline {subsection}{\numberline {4.2.1}Derivations}{43}{subsection.130}
-\contentsline {subsection}{\numberline {4.2.2}Summary}{43}{subsection.134}
-\contentsline {subsection}{\numberline {4.2.3}Field of View}{44}{subsection.140}
-\contentsline {subsection}{\numberline {4.2.4}Testing}{44}{subsection.144}
-\contentsline {subsection}{\numberline {4.2.5}The Effect of Resolution and Field of View}{46}{subsection.150}
-\contentsline {subsection}{\numberline {4.2.6}Conclusion}{47}{subsection.156}
-\contentsline {section}{\numberline {4.3}Fourier Transform}{49}{section.159}
-\contentsline {subsection}{\numberline {4.3.1}Background Research and the FFT}{49}{subsection.160}
-\contentsline {subsection}{\numberline {4.3.2}Two Dimensional Fast Fourier Transform}{52}{subsection.173}
-\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT}{55}{subsection.186}
-\contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{55}{subsection.187}
-\contentsline {subsubsection}{\numberline {4.3.4.1}1D FFT Test}{55}{subsubsection.188}
-\contentsline {subsubsection}{\numberline {4.3.4.2}2D FFT Test}{59}{subsubsection.199}
-\contentsline {subsection}{\numberline {4.3.5}Conclusion}{59}{subsection.206}
-\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{63}{chapter.208}
-\contentsline {section}{\numberline {5.1}System Operation and Performance}{64}{section.214}
-\contentsline {chapter}{References}{69}{dummy.219}
-\contentsline {chapter}{\numberline {A}Project Brief}{71}{appendix.221}
-\contentsline {chapter}{\numberline {B}Gantt Charts}{73}{appendix.222}
-\contentsline {chapter}{\numberline {C}Circuit Diagrams}{77}{appendix.226}
-\contentsline {chapter}{\numberline {D}PCB Design}{87}{appendix.235}
-\contentsline {chapter}{\numberline {E}Costings and Components}{93}{appendix.240}
-\contentsline {chapter}{\numberline {F}PCB Test Code}{97}{appendix.243}
-\contentsline {section}{\numberline {F.1}USART Test Code}{97}{section.244}
-\contentsline {section}{\numberline {F.2}SD Card Test Code}{97}{section.258}
-\contentsline {section}{\numberline {F.3}LED Test Code}{99}{section.333}
-\contentsline {section}{\numberline {F.4}SDRAM Test Code}{99}{section.354}
-\contentsline {section}{\numberline {F.5}$I^{2}C$ Test Code}{100}{section.398}
-\contentsline {section}{\numberline {F.6}Camera Test Code}{101}{section.448}
-\contentsline {section}{\numberline {F.7}Motor Test Code}{102}{section.473}
-\contentsline {chapter}{\numberline {G}Contents of Files}{103}{appendix.483}
-\contentsline {chapter}{\numberline {H}Bitmap File Format}{105}{appendix.484}
-\contentsline {section}{\numberline {H.1}Bitmap File Format}{105}{section.485}
-\contentsline {chapter}{\numberline {I}Range Finding Derivations}{109}{appendix.488}
-\contentsline {section}{\numberline {I.1}Object is between the Cameras}{109}{section.490}
-\contentsline {section}{\numberline {I.2}Object is to the same side in each Camera}{111}{section.499}
-\contentsline {section}{\numberline {I.3}Object is in front of a Camera}{112}{section.511}
+\contentsline {section}{\numberline {2.2}Firmware}{6}{section.25}
+\contentsline {subsection}{\numberline {2.2.1}Camera}{6}{subsection.26}
+\contentsline {subsection}{\numberline {2.2.2}Atmel Software Framework}{8}{subsection.27}
+\contentsline {chapter}{\numberline {3}Hardware and Firmware Development}{9}{chapter.28}
+\contentsline {section}{\numberline {3.1}Camera}{9}{section.29}
+\contentsline {subsection}{\numberline {3.1.1}Single Camera Operation}{10}{subsection.31}
+\contentsline {subsection}{\numberline {3.1.2}Dual Camera Operation}{12}{subsection.36}
+\contentsline {section}{\numberline {3.2}SD Card}{13}{section.37}
+\contentsline {subsection}{\numberline {3.2.1}Storing Images}{14}{subsection.38}
+\contentsline {section}{\numberline {3.3}The Prototypes}{15}{section.41}
+\contentsline {section}{\numberline {3.4}Motor Driver Development}{17}{section.45}
+\contentsline {subsection}{\numberline {3.4.1}Hardware}{17}{subsection.46}
+\contentsline {subsection}{\numberline {3.4.2}Firmware Development}{18}{subsection.49}
+\contentsline {subsubsection}{\numberline {3.4.2.1}Set Up}{19}{subsubsection.50}
+\contentsline {subsubsection}{\numberline {3.4.2.2}Execute}{20}{subsubsection.55}
+\contentsline {subsection}{\numberline {3.4.3}Testing}{23}{subsection.60}
+\contentsline {subsection}{\numberline {3.4.4}Conclusion}{24}{subsection.63}
+\contentsline {section}{\numberline {3.5}PCB Development}{25}{section.66}
+\contentsline {subsection}{\numberline {3.5.1}Circuit Design}{25}{subsection.67}
+\contentsline {subsection}{\numberline {3.5.2}PCB Design}{25}{subsection.70}
+\contentsline {subsection}{\numberline {3.5.3}PCB Testing}{28}{subsection.74}
+\contentsline {subsubsection}{\numberline {3.5.3.1}USART Test}{28}{subsubsection.75}
+\contentsline {subsubsection}{\numberline {3.5.3.2}SD Card Test}{29}{subsubsection.76}
+\contentsline {subsubsection}{\numberline {3.5.3.3}LED Test}{29}{subsubsection.77}
+\contentsline {subsubsection}{\numberline {3.5.3.4}SDRAM Test}{29}{subsubsection.78}
+\contentsline {subsubsection}{\numberline {3.5.3.5}$I^{2}C$ Test}{29}{subsubsection.79}
+\contentsline {subsubsection}{\numberline {3.5.3.6}Camera Test}{30}{subsubsection.94}
+\contentsline {subsubsection}{\numberline {3.5.3.7}Motor Driver Test}{30}{subsubsection.95}
+\contentsline {subsection}{\numberline {3.5.4}PCB Faults}{31}{subsection.96}
+\contentsline {subsubsection}{\numberline {3.5.4.1}TCRT1010 Footprint}{32}{subsubsection.97}
+\contentsline {subsubsection}{\numberline {3.5.4.2}SDRAM Footprint}{32}{subsubsection.98}
+\contentsline {subsubsection}{\numberline {3.5.4.3}SDRAM Chip Select}{32}{subsubsection.100}
+\contentsline {subsubsection}{\numberline {3.5.4.4}SDRAM Data Line Resistors}{33}{subsubsection.101}
+\contentsline {subsubsection}{\numberline {3.5.4.5}Camera Interrupt Line}{34}{subsubsection.103}
+\contentsline {subsubsection}{\numberline {3.5.4.6}Motor Driver Footprint}{34}{subsubsection.104}
+\contentsline {subsection}{\numberline {3.5.5}PCB Conclusions}{34}{subsection.106}
+\contentsline {section}{\numberline {3.6}Conclusions}{36}{section.110}
+\contentsline {chapter}{\numberline {4}Vision Algorithms}{39}{chapter.111}
+\contentsline {section}{\numberline {4.1}Matching Algorithms}{39}{section.112}
+\contentsline {subsection}{\numberline {4.1.1}Sum of Absolute Differences}{40}{subsection.116}
+\contentsline {subsection}{\numberline {4.1.2}Sum of Squared Differences}{40}{subsection.118}
+\contentsline {subsection}{\numberline {4.1.3}Normalised Cross Correlation}{40}{subsection.120}
+\contentsline {subsection}{\numberline {4.1.4}Comparison}{41}{subsection.122}
+\contentsline {subsection}{\numberline {4.1.5}Conclusion}{43}{subsection.127}
+\contentsline {section}{\numberline {4.2}Range Finding}{43}{section.128}
+\contentsline {subsection}{\numberline {4.2.1}Derivations}{43}{subsection.129}
+\contentsline {subsection}{\numberline {4.2.2}Summary}{43}{subsection.133}
+\contentsline {subsection}{\numberline {4.2.3}Field of View}{44}{subsection.139}
+\contentsline {subsection}{\numberline {4.2.4}Testing}{44}{subsection.143}
+\contentsline {subsection}{\numberline {4.2.5}The Effect of Resolution and Field of View}{46}{subsection.149}
+\contentsline {subsection}{\numberline {4.2.6}Conclusion}{47}{subsection.155}
+\contentsline {section}{\numberline {4.3}Fourier Transform}{49}{section.158}
+\contentsline {subsection}{\numberline {4.3.1}Background Research and the FFT}{49}{subsection.159}
+\contentsline {subsection}{\numberline {4.3.2}Two Dimensional Fast Fourier Transform}{52}{subsection.172}
+\contentsline {subsection}{\numberline {4.3.3}Implementing the FFT}{55}{subsection.185}
+\contentsline {subsection}{\numberline {4.3.4}Testing of the FFT on AVR}{55}{subsection.186}
+\contentsline {subsubsection}{\numberline {4.3.4.1}1D FFT Test}{55}{subsubsection.187}
+\contentsline {subsubsection}{\numberline {4.3.4.2}2D FFT Test}{59}{subsubsection.198}
+\contentsline {subsection}{\numberline {4.3.5}Conclusion}{59}{subsection.205}
+\contentsline {chapter}{\numberline {5}Conclusions and Further Work}{63}{chapter.207}
+\contentsline {section}{\numberline {5.1}System Operation and Performance}{64}{section.213}
+\contentsline {chapter}{References}{69}{dummy.218}
+\contentsline {chapter}{\numberline {A}Project Brief}{71}{appendix.220}
+\contentsline {chapter}{\numberline {B}Gantt Charts}{73}{appendix.221}
+\contentsline {chapter}{\numberline {C}Circuit Diagrams}{77}{appendix.225}
+\contentsline {chapter}{\numberline {D}PCB Design}{87}{appendix.234}
+\contentsline {chapter}{\numberline {E}Costings and Components}{93}{appendix.239}
+\contentsline {chapter}{\numberline {F}PCB Test Code}{97}{appendix.242}
+\contentsline {section}{\numberline {F.1}USART Test Code}{97}{section.243}
+\contentsline {section}{\numberline {F.2}SD Card Test Code}{97}{section.257}
+\contentsline {section}{\numberline {F.3}LED Test Code}{99}{section.332}
+\contentsline {section}{\numberline {F.4}SDRAM Test Code}{99}{section.353}
+\contentsline {section}{\numberline {F.5}$I^{2}C$ Test Code}{100}{section.397}
+\contentsline {section}{\numberline {F.6}Camera Test Code}{101}{section.447}
+\contentsline {section}{\numberline {F.7}Motor Test Code}{102}{section.472}
+\contentsline {chapter}{\numberline {G}Contents of Files}{103}{appendix.482}
+\contentsline {chapter}{\numberline {H}Bitmap File Format}{105}{appendix.483}
+\contentsline {section}{\numberline {H.1}Bitmap File Format}{105}{section.484}
+\contentsline {chapter}{\numberline {I}Range Finding Derivations}{109}{appendix.487}
+\contentsline {section}{\numberline {I.1}Object is between the Cameras}{109}{section.489}
+\contentsline {section}{\numberline {I.2}Object is to the same side in each Camera}{111}{section.498}
+\contentsline {section}{\numberline {I.3}Object is in front of a Camera}{112}{section.510}

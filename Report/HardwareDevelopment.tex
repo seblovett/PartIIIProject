@@ -119,7 +119,7 @@ Storing the image as a bitmap enables the file to be opened on a range of operat
 
 The first prototype made can be seen in Figure \ref{fig:Prototype}. This obtained two images from both cameras, and stored them to the SD Card. The cameras shared the data bus and a \itc multiplexer was used. An ATMega168 microcontroller was added to the system as no pins remained for debugging on the \textit{Il Matto} board. The pinout for the ATMega644P can be seen in Table \ref{table:644Pin}. The ATMega168 used the already existing \itc bus and acted as a port extender - button inputs were read and status LEDs were written to. This enabled a debug output for the system. The prototype worked well and proved the camera circuit worked. 
 
-A second prototype was made to stream the images to a TFT screen. This can be seen in Figure \ref{fig:Prototype:TFT}. This provided the ability to check the cameras worked, and gave a live stream so the lens could be focused to give a clear image. The refresh rate of a full image was slow ($\approx 0.6fps$), but the system was successful.
+A second prototype was made to stream the images to the TFT screen designed for the \textit{Il Matto}. This can be seen in Figure \ref{fig:Prototype:TFT}. This provided the ability to check the cameras worked, and gave a live stream so the lens could be focused to give a clear image. The refresh rate of a full image was slow ($\approx 0.6fps$), but the system was successful.
 
 \begin{table}
 \centering

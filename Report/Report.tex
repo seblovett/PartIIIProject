@@ -17,12 +17,17 @@
 \usepackage{pdfpages}
 \usepackage{rotating}
 \usepackage{float}
+\usepackage{tabularx}
 \removecolourlinks
 \makenomenclature
 \renewcommand{\nomname}{List of Abbreviations}
+\usepackage[roman]{parnotes}
 %\hypersetup{colorlinks=false}   % Set to false for black/white printing
 \input{Definitions}            % Include your abbreviations
-
+\def\parnoteclear{%
+    \gdef\PN@text{}%
+    \parnotereset
+}
 %% ----------------------------------------------------------------
 \begin{document}
 %TC:ignore
