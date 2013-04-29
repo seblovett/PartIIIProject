@@ -1,5 +1,5 @@
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces Hardware and Software aspects of the design\relax }}{3}{table.caption.14}
+\contentsline {table}{\numberline {1.1}{\ignorespaces Hardware and software aspects of the design\relax }}{3}{table.caption.14}
 \contentsline {table}{\numberline {1.2}{\ignorespaces A list of risks and the prevention steps taken to reduce their impact\relax }}{3}{table.caption.15}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {2.1}{\ignorespaces Comparison table of some common microcontrollers. Data of microcontrollers taken from \cite {Atmel:UC3C}, \cite {Atmel:644P}, \cite {Atmel:A3BU} and \cite {ARM:Stellaris}. Costings from \cite {Farnell}. UC3C is the AT32UC3C0512C, XMega is the ATXMega256A3BU and the ATMega is the ATmega644P\relax }}{7}{table.caption.24}
