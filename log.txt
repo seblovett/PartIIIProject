@@ -1,0 +1,1710 @@
+commit 7e820817d8d41f78936f2baac8abc1bf6c6d9bbc
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Apr 29 18:14:40 2013 +0100
+
+    Added some changes suggested by Toby.
+
+commit 4d69cf93c1d5caf7c618c3fe40edcc321bddb412
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Apr 29 14:18:15 2013 +0100
+
+    Removed uneeded zip files and updated atsuo file
+
+commit adb0ec040f433bdaba07932d58ba5613accc8d3e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Apr 29 13:38:47 2013 +0100
+
+    Small change and recompile
+
+commit 60f70558082d7479f30344568f941092c2808e06
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Apr 29 13:34:26 2013 +0100
+
+    Small modifications. Almost there...
+
+commit f4d748780302b2dfbda529231f095a0f79873a99
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Apr 28 16:43:55 2013 +0100
+
+    Minor Changes done.
+
+commit 6cf01a6b6805125f0c1ff4141af4c77957f18a2e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Apr 26 18:21:00 2013 +0100
+
+    Added some MATLAB data files for results
+
+commit 9a9ac8cc0b361beb3bfd64c6bdc382f80e8f3cea
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Apr 26 17:03:59 2013 +0100
+
+    Changed a picture. Small modifications done
+
+commit ae0e6b6c8ee8561e01c92a07e69703a1744703f8
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Apr 26 12:30:06 2013 +0100
+
+    Compiled
+
+commit dd1c2d82c9c3f1ed3a9be5134c3e93f108c82e57
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Apr 26 12:29:22 2013 +0100
+
+    Spell Checked report
+
+commit a60e29f24faf9a176f9512637b54586b930c235e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Apr 26 12:14:03 2013 +0100
+
+    Sorted some tables in the appendix out.
+
+commit ac907f293102de8618480e93db292f3defce40f0
+Merge: a3cd371 cc6b247
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Apr 25 22:26:11 2013 +0100
+
+    Solved Merge errors
+
+commit a3cd371f31210cd7fe8abcf1a24e2e646e4e5059
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Apr 25 22:15:56 2013 +0100
+
+    Removed Section headings from the Circuit diagrams to stop awful white space appearing
+
+commit 9c397ef2968a99dba8497d6ca6a3dff72dba8488
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Apr 25 21:04:57 2013 +0100
+
+    Updated Appendix_Contents.tex
+
+commit 9c72ec8cc0b6143f3bd9dbd4e978125f82b6a1ca
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Apr 25 20:59:16 2013 +0100
+
+    Added EAGLE files for Il Matto Dual Camera sschematic
+
+commit faeaa1df1a1d994f4ebcd42be0afb3708cd269c8
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Apr 25 20:58:23 2013 +0100
+
+    Ammended some small things. Used sideways table and improved Il Matto Circuit Diagram
+
+commit 1a873e1b319d60e71799d005c325ff893a3745aa
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Apr 24 23:27:32 2013 +0100
+
+    Changed EAGLE figures to PDF format to look nicer. Ammended a few minor mistakes
+
+commit 93714a46965457ed2371bfc6a5b4f16931644e0a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Apr 24 10:05:43 2013 +0100
+
+    Converted all Visio files to Pdfs to look better
+
+commit f4ab194fd36e643a05b500a5efaaf358d8409522
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Apr 23 22:19:44 2013 +0100
+
+    Changed tables so that they have bold headings.
+
+commit cc6b2478ab73b1e61d542008b1d24f826c1c4233
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Apr 18 12:46:50 2013 +0100
+
+    Changed font style of word MATLAB in report
+
+commit 93e0bcf1675f0e256e9db3adc3c09f53eb6b61b0
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Apr 17 20:09:50 2013 +0100
+
+    Added my findings from range equation
+
+commit cef56931ea57d23b2e044a504d838233f0c0bd31
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Apr 15 20:20:56 2013 +0100
+
+    Added some more for list of abbreviations
+
+commit 1b0a4cf5486b37d65dd18e8051a096cd611a6f63
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Apr 15 15:48:02 2013 +0100
+
+    Added nomenclature
+
+commit 257b7a85b4c3e89304e2fd79ef4ad6497db65a06
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Apr 15 09:44:18 2013 +0100
+
+    Added to ceontents
+
+commit abfddb2dc921fc74d9945bb192bb14472a84b630
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Apr 14 23:31:34 2013 +0100
+
+    Added Statement of Originality
+
+commit 632600964fe708310351faff69b257d49cb42e7a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Apr 14 22:16:57 2013 +0100
+
+    Added code for Il Matto and TFT Screen
+
+commit 57f9a80da7700259c39e442881a75fad5e19dcf6
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Apr 14 21:50:43 2013 +0100
+
+    Added figures to show I2C Traffic for a probe.
+
+commit 719e4d25ebada8f6dc60adea51328b532646bd79
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Apr 14 18:13:54 2013 +0100
+
+    Added first half of Alice's corrections. Second half yet to arrive.
+
+commit 73f5af2176c22dda6a384901fc904a665ddd9750
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Apr 14 15:11:59 2013 +0100
+
+    Improved Project management section. Added some more Gantt Charts and corrected some table captions
+
+commit 2677394e164edc3ff017b7bf50e9603051a788cb
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Apr 14 10:40:46 2013 +0100
+
+    Changed AVR 2D FFT Figures for grey scale images
+
+commit 60be9372946c67c123ac8fafea8ab72a7ac2a095
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 13 23:10:03 2013 +0100
+
+    Redone some FFT from AVR graphs.
+
+commit 9cd2f86e7bc08b6c2ca204e1a2de4d136addb4e9
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 13 22:10:58 2013 +0100
+
+    Redone the tables to make them look better
+
+commit 53400b9bff1c6204e3a82c0ae224c92cdc2738ee
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 13 21:05:32 2013 +0100
+
+    Ammeded label issue
+
+commit 7b57af60a1db3748343fa94879f273afc28b2191
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 13 16:57:51 2013 +0100
+
+    Changed a figure
+
+commit 090513c02efd58920ba5905a3b927b0f431a0e72
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 13 15:29:26 2013 +0100
+
+    Set up TeXCount properly...
+
+commit 17f3aa3f09f6c3efe68bde28ca9222ca41445a0a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 13 15:03:18 2013 +0100
+
+    Added a camera hierarchical diagram
+
+commit 9a0186a4bb6b1fa2cbe750a75191c0354bb45f7c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 13 14:43:18 2013 +0100
+
+    Added FoV.jpg to the commit. Added a start to the ASM
+
+commit ad1b62e8c9f2756dbf0907e102316d97771f022d
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 13 14:34:55 2013 +0100
+
+    Added a Field of View figure
+
+commit b83b10628552346c1d7bcd938cb26badd844a675
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 13 14:17:12 2013 +0100
+
+    Added some changes Tom suggested
+
+commit 2016a5512a0e514a8d2504007e9154870797d4b9
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Apr 12 23:41:03 2013 +0100
+
+    Changed another figure. Tidied up the Matlab folder. Added the SDCard contents
+
+commit 61c589f605f833bc907e577d091b78d1cd3637d6
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Apr 12 22:30:25 2013 +0100
+
+    Doing contents. Removing a lot of unused items that have no relevance
+
+commit b0f43021f9ab4534a986546fd8e9bc443405b995
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Apr 12 21:33:50 2013 +0100
+
+    Small changes to report text. Redone a lot of figures to eps and improved
+
+commit 26c6bcb4de2b25a12536c8544e21d348f575478f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Apr 11 23:05:38 2013 +0100
+
+    Recompd. Attempted to 2Up Appendix.
+
+commit 4228fd9b5430ca4f3b10664de1e2fbeefe8a9245
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Apr 11 11:17:20 2013 +0100
+
+    Changed a figure
+
+commit 207fc15fd514810dfe83da26a2c4e56ac2fcb176
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Apr 10 15:16:32 2013 +0100
+
+    Read through and spell checked
+
+commit 37454fa919778fe8f49a93b9e5e934665a63c9db
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Apr 10 11:27:40 2013 +0100
+
+    Added a figure of the back of the camera
+
+commit 33df508d2fda186fe0d344acc72bea23f9e2a650
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Apr 9 22:44:16 2013 +0100
+
+    Minor changes to Intro, Research and hardware
+
+commit 70117873e10942e9ce082eef66f460122a7cec4f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Apr 9 14:44:42 2013 +0100
+
+    Added a global image number counter stored on the SD card as Flash was not playing ball
+
+commit 09c7576bcf4dc624acae9b89fd544719687b2cd7
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Apr 8 22:40:34 2013 +0100
+
+    Small clean ups in code. Spell Checked report.
+
+commit d139d00f0e9b2e53a8c30c0c2de4061606f6bb85
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Apr 8 14:36:09 2013 +0100
+
+    Neated up. Added Debug mode for AutoRun. Updated help prompt. Added PrintStatus method which runs on system error every second
+
+commit 823822a304a51c0701fc378f50c399526ea464d9
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Apr 7 18:25:42 2013 +0100
+
+    Got AutoRun working. Added indication LEDs.
+
+commit 7038283ba8572d43fef30622bce16763c82d563e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Apr 7 14:25:20 2013 +0100
+
+    Added methods to run autorun commands. Need to test
+
+commit d9abad63c37b9453b231bb7418d78d635146529e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Apr 7 14:22:04 2013 +0100
+
+    Increased read buffer size so that it doesn't encounter issues at break point
+
+commit eae5f3dde79137b71ecae900c53d131690048361
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Apr 7 13:58:35 2013 +0100
+
+    Got AutoRun loading from text file
+
+commit f99aa63cf1d5b0cec5359c223193e181a1e5450b
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 6 23:53:24 2013 +0100
+
+    Done some more for autorun
+
+commit 9e789135d2cf1665778fe7897a35c2c58b8bd213
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 6 17:16:10 2013 +0100
+
+    Started AutoRun methods.
+
+commit 2ec20177dbecc7560eec51081c455c052f8bba17
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 6 14:58:08 2013 +0100
+
+    Complete Range testing. Added to conclusion.
+
+commit 11d0c4be3e548cdc7c86d9ce79397c02deee431e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Apr 6 00:36:08 2013 +0100
+
+    Done Distance test. Results in Distance_Data.m
+
+commit 0644fc0eeeb21b007f07470da7d39f92dc916dca
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Apr 5 23:59:44 2013 +0100
+
+    Added range testing images, some figures, and Match.m which does image matching
+
+commit e13087abaf2dfc50cf866783b468c0f5a1f2cd3a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Apr 5 14:39:36 2013 +0100
+
+    First draft. At 10032 words. Included some simple range finding testing
+
+commit 84c3a1e9529cf66caf82aaeb7c03ab17bca1b8bd
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Apr 4 22:30:57 2013 +0100
+
+    Done some on range finding. Want to do more ranges and assess the accuracy.
+
+commit ee809a5505f279fac58268f2e3c13aaf3ce2ff0f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Apr 4 09:26:52 2013 +0100
+
+    Some minor changes
+
+commit d3048ce008d41f101b2e587d6006058e9b55c27c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Apr 3 13:21:14 2013 +0100
+
+    Recomplied.
+
+commit e46ac7c494a936b96d020b9a8f88610fc68d4ec4
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Apr 3 13:19:52 2013 +0100
+
+    Move range finding derivations to appendix.
+
+commit 9efd8855acfa72b7cbd9ec12c2321fdebd9f07b0
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Apr 3 13:00:55 2013 +0100
+
+    Lots of minor changes done
+
+commit 4b7b9c73eb10a5a0cb8c3e0e6ac3b331ed3cda03
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Apr 2 22:33:35 2013 +0100
+
+    Added to Conclusion. Modified make.bat to do a WordCount and update the dropbox
+
+commit 4f2d982534bffeb6327a52e8c7c5778247b0104a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Apr 2 18:24:18 2013 +0100
+
+    Removed Results.tex from WordCount.bat. Added to introduction
+
+commit 5ef232976cd20fa5759a9cb258be10a91e4eb565
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Apr 2 17:55:59 2013 +0100
+
+    Done the barebones of abstract and conclusion
+
+commit 42b77e0442921792bb4e160a70ac300bbcd542ab
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Apr 2 15:44:47 2013 +0100
+
+    Changed motor move methods to return the distances moved
+
+commit 84607b23c2ed0d87312fef5f4e28919c819d9cf5
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Apr 2 15:44:00 2013 +0100
+
+    Done some more on conclusion and other small edits
+
+commit 4f1751573653f124975f1cb43c9e73f520958c1c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Apr 2 11:59:53 2013 +0100
+
+    Ammended some small mistakes and started on conclusion
+
+commit e6e2e3846f27bbaa2df063765aa353d219a48639
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Mar 27 20:44:35 2013 +0000
+
+    Done Motor testing and completed Hardware Development section. Need to ammend some figures and maybe test rotating of the motors.
+
+commit c8e9d4753690a1ebc796735d93d9b881eba27abc
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 26 22:29:51 2013 +0000
+
+    Redone Motor section. Need to finish explaining the code and test it
+
+commit 50fdf653664d3c872a4a6830086a8b73cffb949c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 26 21:19:08 2013 +0000
+
+    Edited some small things
+
+commit 9571961aa9cdd602edb1481d282d6993485fefc7
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 26 18:40:18 2013 +0000
+
+    Added a hysteresis based state machine and sample continuously. Things Work!!
+
+commit b8be5db1ff5e6ffd15c438577a978c3f103b841d
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 26 18:39:40 2013 +0000
+
+    Some small tweaks of the report. Moving on to motor
+
+commit 2fdfa90c1575f8fae9817c2c1b16194aca2c5ed1
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 26 13:47:21 2013 +0000
+
+    Finished Fourier side of things. Just need to conclude. Started on Motor again
+
+commit 386f24ce10d02533f74f1c4147a0bf3956c84af2
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 26 13:46:46 2013 +0000
+
+    Changed some motor constants
+
+commit a4939197f6e2dc02faede5f489e1e9c46c495ad0
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Mar 25 18:14:12 2013 +0000
+
+    Done lots of FT stuff and added code for time testing
+
+commit 4abfcb2f7e022c3052d304a30e310a219f4389de
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Mar 25 15:14:40 2013 +0000
+
+    Obtained data and generated figures for 2D FFT Test. Need to do comparison
+
+commit 673e4500537b3cbb816eb30f165618f6dc8a361b
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Mar 25 12:26:50 2013 +0000
+
+    Changed some printing functions and sizes of buffers
+
+commit cf1ca9e1060fd6b0c0a6db5b88b34ebbd9ad8ed1
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Mar 24 16:59:23 2013 +0000
+
+    Done rectangular pulse test. Reduced the position of the decimal point in fixed point
+
+commit 3c05f33097f18de452ac6915574baa9012858144
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Mar 23 18:51:29 2013 +0000
+
+    Started looking at rectangular pulse test, but doesn't look too nice at the moment.
+
+commit b88ce3900e77143654f871e43bdb9b3a4eac73dd
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Mar 23 18:50:03 2013 +0000
+
+    Looked at the Dirac test
+
+commit 576be657afb6308ac34de82d462c44947ca63488
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Mar 23 17:52:21 2013 +0000
+
+    Added saving of complex array to CSV
+
+commit 266928995e8f085889313123b2e346d9863cc3cb
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Mar 23 15:49:48 2013 +0000
+
+    Small modifications to CSV read/write. Also to 1D FFT to denormalise the results.
+
+commit f216427c0be89f7cd5fb5456837c1334118d50df
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Mar 23 14:40:15 2013 +0000
+
+    Added a CSV Read and write to aid extracting data
+
+commit 77e33ab4c3e78a46adb24ff1f04682eba15beac6
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Mar 23 13:22:29 2013 +0000
+
+    Renamed appendicies and changed their order. Also removed log files that were created by mistake
+
+commit 5ef9e95f26f0aeb1cf09378bb68c540a0d150105
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 22 22:29:53 2013 +0000
+
+    Added costings appendix. Done some minor restructures
+
+commit 7d431bbf9d1052c305524781a8c4a2c49f305476
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 22 19:59:54 2013 +0000
+
+    Removed unused Eagle files
+
+commit 49b8037406542b83bcf66ce9d6c960880c0a1208
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 22 19:58:19 2013 +0000
+
+    Added Results.tex to word counter
+
+commit d51d9fad38776de45b1b97ffca13c2fe46100c3d
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 22 19:51:43 2013 +0000
+
+    Altered some figures slightly.
+
+commit 15c9b36d81c4356cdea0c262fdb0c76b7c1bff8a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 22 17:49:42 2013 +0000
+
+    Started on the Low level algorithms section
+
+commit 7044ed917095e9267f6298aa666a03545398e5c3
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 22 16:25:52 2013 +0000
+
+    Added contents file (needs completing) and relevant appendix that reads from Contents.txt. Done some on 2D FFT
+
+commit 302428a0e7633b9d7dd7365d27866d220814999b
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 22 14:28:12 2013 +0000
+
+    Done some more on the Fourier transform. Added some figures too
+
+commit c46e0a85c3e53f67a65c71204269b77db926f498
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Mar 21 18:01:00 2013 +0000
+
+    Done Fourier Transform section. Need to move on to 2D FFT now
+
+commit 2a668777210f7524a53087f7013b14480cd8cfd4
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Mar 21 13:24:02 2013 +0000
+
+    Planned out Vision Section
+
+commit 1e7a9bcf5f69df4647e659596face8cad0e53742
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Mar 21 12:10:33 2013 +0000
+
+    Some minor tweaks in Hardware Development
+
+commit 2741e9f2410d0d2ae3281617c5b08a15df39d1aa
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Mar 20 22:13:45 2013 +0000
+
+    Updated hierarchy diagram
+
+commit 75b2fe9424b910cd8866638b18c12c2efbaf62c6
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Mar 20 22:07:59 2013 +0000
+
+    Almost completed Hardware Development. Need to do motor test and overall conclusion
+
+commit 4e848957926063a6c8c11e724b733805bc392140
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Mar 20 22:07:07 2013 +0000
+
+    Made a hierarchial diagram of the system
+
+commit c1ca5097a0e7e89edfd8ee38e5637424b1ce22c5
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Mar 20 17:59:43 2013 +0000
+
+    Removed files for USB COM Port in Columbus \Tester
+
+commit e99613ca5ee95b68eded8a4e9b59fdf541472bc6
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Mar 20 17:59:09 2013 +0000
+
+    Few changes. Lots done on PCB Design and test
+
+commit 6cc5ff5c5ed888ee2000aeeae2d233e0bb8169a0
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Mar 20 17:57:30 2013 +0000
+
+    Test program changed to not use the USB COM Port and more in depth testing done
+
+commit 052e077980b99b0b7d9bcf07f5ec99ec8bba4fc8
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 19 22:51:22 2013 +0000
+
+    Done some writing on PCB development and added figures of circuit and PCB.
+
+commit 9b942004f957d547b3a7a77d02b37d22b3ef7e58
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 19 18:28:36 2013 +0000
+
+    Added a decorative box
+
+commit aa2a95c1c46e31bc149e68dd839e1972b27bcd22
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 19 18:19:39 2013 +0000
+
+    Changed some of the Motor Driver code. Still got noise issues
+
+commit f23a2825689544131f956185594418927a1b9b1c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 19 17:38:04 2013 +0000
+
+    Added some figures and an explanation of Motor Driving. Moving on to testing
+
+commit 5bb4bdd39943efd934bbaa57384c3dbe27eeaa50
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Mar 18 21:57:56 2013 +0000
+
+    Done some on Motor Driver. Need to finish and fully test
+
+commit 0e5a30277a770731d38f6e5689cbc15968815bc7
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Mar 18 17:22:53 2013 +0000
+
+    Added Results Section to report. Removed some outdated parts from report which were for Interim only and also added sections and notes to complete
+
+commit c0dabb040c46bc783f255b8fe5bcaff1c1772606
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Mar 18 15:30:55 2013 +0000
+
+    Renamed the Interim Report Files
+
+commit 37af748e306e500c8de1243cb8f9a2aa0fc8114c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Mar 18 15:30:14 2013 +0000
+
+    Corrected the roation equation
+
+commit a07f22701e4bcba22d5b05c21b22a6ae2a5d5929
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Mar 18 15:19:23 2013 +0000
+
+    Added rotating code. Not tested
+
+commit c08d16718fa47fca9532cffed0a07fe8133d03e8
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 15 22:06:20 2013 +0000
+
+    Got motors driving to some sort of ratio of input. Lots of noise on lines causing multiple triggers which annoys things
+
+commit de5e0da0f9b8cacba5a12deb868480990e5e24f2
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 15 15:36:23 2013 +0000
+
+    Attempted to implement a prepare image method. Doesn't seem to work... Moving on the movement things!
+
+commit fd2e3897a116576b53de0f2398a04872aa9a1796
+Merge: 4aacb5e 7e1d70a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 15 13:01:35 2013 +0000
+
+    Merged Zepler work into master. includes IFFT method
+
+commit 4aacb5ecade6d4c5d99e9c4caeeb03d38e8d2408
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 15 12:41:57 2013 +0000
+
+    Changed so that the save method takes a uin16 array. A better standard for throwing information around. Will no doubt have to change something when it comes to storing grey scale
+
+commit 85bd62cc63a7f5a1f9c14be20260a68546db3f80
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 15 12:09:11 2013 +0000
+
+    Got saving method working. Inconsistency between the reading format and what Save method expects.
+
+commit 7e1d70aa469a7f56217f949f2c1c369380de5c26
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Mar 14 13:24:16 2013 +0000
+
+    Added ComplexMultiply method to dot multiply two arrays of complex numbers together. Will be used to NCC
+
+commit b17bf368678da74972ba6689541cc377a795496d
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Mar 14 13:01:31 2013 +0000
+
+    Protyped a 2d IFFT. Need to test it
+
+commit 14565bae193d375e5a22b5b70bb6f9785ecce3de
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Mar 13 11:17:55 2013 +0000
+
+    Added reading Bitmap method. So far works. Need to correct passing file name from prompt to method
+
+commit b5361d973513ef3dc8f4ea5da7d5d244ebf1de44
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Mar 13 09:14:17 2013 +0000
+
+    Re-added the code to disable and enable interrupts of the VSYNC signal from the cameras.
+
+commit 53ff1a93b07bac407c26b6089f379d7ca39edff0
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 12 18:43:50 2013 +0000
+
+    Converted to a dedicated BMP writing method.
+
+commit dad8a8c80f451bfbd207e4e9daddd725ef8fcbd3
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 12 18:06:50 2013 +0000
+
+    Found a bug in camera as the state machine wasn't resetting
+
+commit f97ed7724bb64aa36a758df6269eb6cc221c2329
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Mar 11 14:10:38 2013 +0000
+
+    Write BMP method written. Need to work out what is wrong with the write pointer before I can test properly, but it seems to work.
+
+commit d03df4936351c09a7e5c77566bbe79ee1553a76d
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Mar 10 10:41:57 2013 +0000
+
+    Started image preparation, but noticed the taking of photos is not working properly now. Going to look into this..
+
+commit bcb7cc17ce1e500f5f5ea8f5ba2c5ada39a536cc
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Mar 7 23:04:57 2013 +0000
+
+    Neatend up code. Added SizeOfWorking_Buffer variable to store the size of the working buffer. Next step is to move up to 256x256 and Fourier Transform Images
+
+commit 5b0b6b20062abebb1067575473c5bca9f4f59f2e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Mar 7 20:52:18 2013 +0000
+
+    Got 2D FFT working! Problem occured as methods scale. Multiplied up afterwards and all is good!
+
+commit ecbf5761af8038d5a86feb00c3f304c9bcdb6b77
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Mar 7 20:21:21 2013 +0000
+
+    Changed 1D FFT to 16bit Fixed Point
+
+commit b5b43dbf254937e30e6d876bb23c4575739df0da
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Mar 7 20:18:39 2013 +0000
+
+    Implemented a 2DFFT, however only have the real to complex method with 32 bit fixed point. Going to swap to 16bit fixed point
+
+commit 47ba969313ecba98d741bdb45a904e0341288f67
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Mar 7 16:46:06 2013 +0000
+
+    Moved 1D FFT Function to ImageProcessor.c. Uses predefined size but works. Moving on to 2D now
+
+commit 7c5442474d20a7c7049666c879ae1940d778ed80
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Mar 7 13:42:57 2013 +0000
+
+    Added image processing library to move functions to. Log2 function doesn't work yet. Need to complete this
+
+commit c0997aabeda04ba1f4e3a0e373132bc87183463e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 5 11:02:55 2013 +0000
+
+    Added a help prompt. Got reading in integers, big endian. Want to create a file format so this can be done dynamically. i.e. endian, uint8/int32 etc.
+
+commit a454769aa33c529c0ba44d5c0a36f953b245c89d
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 5 09:55:10 2013 +0000
+
+    Cameras are working again. Don't know what was wrong and haven't changed anything (apart from uncommenting the system test to stop the system from stopping on error)
+
+commit 502f17fd39cd9b90f9ad74538bb34cb056a3a2aa
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Mar 5 09:35:41 2013 +0000
+
+    FFT Working on a 64 Byte long signal. Want to do some improvements to displaying. Cameras have stopped working. Now going to look into that...
+
+commit fa6fadf646cad8a1319b32fca097a0589f505bc7
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Mar 4 15:20:21 2013 +0000
+
+    Got 1D FFT working
+
+commit a2550742605799d8f5af1513106f6bd9abb3cb2a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 1 17:18:06 2013 +0000
+
+    Got some sort of Fourier Transform working. Need to check and expand
+
+commit 19a05bc171ce1dff62356c18c9af97859f3e4276
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Mar 1 15:00:24 2013 +0000
+
+    Got Dynamic Memory allocation working. Need to be careful where I allocate memory so pointers remain correct
+
+commit ed85088c237ea71788f4f40bfaa7aca0f50dc7dd
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Feb 28 23:05:22 2013 +0000
+
+    Made so SDRAM is DMA. Can create variables in it. Also impletmented a System Test
+
+commit c13ce7e652b7e730b7cfdc2ed258350c0aa00ca9
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Feb 28 13:40:21 2013 +0000
+
+    Added a link to a document about using SDRAM on AT32
+
+commit 8b84e8a42d77965420e65f8ad04b21f8515ba9f4
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Feb 27 17:34:06 2013 +0000
+
+    Set up everything in code. Added a global struct to contain all status structs
+
+commit 015488f9c79ef51e818b5bade114d20e67b1c28a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Feb 27 10:42:15 2013 +0000
+
+    Removed the testing side of everything.
+
+commit 83d4eb04e3dec87c38e35f54917edff52afee82b
+Merge: 5cb82c8 f65a68c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Feb 27 09:13:45 2013 +0000
+
+    Merge branch 'NoUSBCom'
+
+commit f65a68c2f4537f02e081318c5b4113a8c16d8b6c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Feb 26 23:11:22 2013 +0000
+
+    Duplicated Tester to base final code on
+
+commit 5cb82c817da7c0c8bbb57600b957508e90e812db
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Feb 26 22:43:59 2013 +0000
+
+    Cameras weren't working, changed enable interrupt lines around to solve
+
+commit 9585a9ec907ecc6a8953076e1581d347daf6e8fa
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Feb 26 21:36:54 2013 +0000
+
+    Added USB Virtual COM Port support, so no need for extra uart cable
+
+commit 418ed25a5a8fabda4686593b241016f8aa991ad2
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Feb 26 20:04:21 2013 +0000
+
+    Found problem with putting resistors on incorrectly. SDRAM now works... Test software done. Moving on to better things
+
+commit 739b24281f66bc64e87ade7194516897839e0ee4
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Feb 25 13:26:47 2013 +0000
+
+    Got RAM sort of working...
+
+commit 856a1d7116dd68729074587e6ca7ae94bf962a8b
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Feb 21 21:57:38 2013 +0000
+
+    Done Matlab code to show phase and magnatude of an image. Starting development in C
+
+commit 6adccc44ada236d84e43090605be870083a52ae8
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Feb 18 21:57:59 2013 +0000
+
+    Included SRAM Test that doesn't work...
+
+commit 25c0496f6503079d7a9511cc166ae56f37b17c0c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Feb 18 21:48:56 2013 +0000
+
+    Solved numbering issue.
+
+commit 9911eecb7d01b8ec311a1fabf660cb4aca78737f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Feb 18 21:43:54 2013 +0000
+
+    All parts activated. Motors had some problems, so diabled VSYNC interrupts when not in use and re tipexed the wheels
+
+commit c211a72664c6ecb5f725801eae715df772d88e9f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Feb 17 12:13:33 2013 +0000
+
+    Got image numbers incrementing although right Images don't start at 0, but at 127..?
+
+commit 4ecec0b84ff77e200bb2c010a80a632b95ac8e8f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Feb 17 11:17:31 2013 +0000
+
+    Got both images taking and storing properly!! Needed to reset individual FIFO buffers before progressing
+
+commit bc27e4806ff3c13264e504dac86954b4790863da
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Feb 17 10:58:51 2013 +0000
+
+    Got images storing to SD card, but the second image taken, colours don't appear correctly. Something to do with Bus contention?
+
+commit 2c0e0733aca696e370b60c2475c62bc602e45e5a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Feb 16 23:19:53 2013 +0000
+
+    Added Bitmap headers and can write them. Need to read data back and write to the file
+
+commit 53a455dfe899c0a855a0bd023c288937ea4ce0a8
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Feb 16 23:06:36 2013 +0000
+
+    Added a method to write numbers to the log file
+
+commit 2f7bbb1b50ce50476a0728095c1ed727f7314dac
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Feb 16 22:24:41 2013 +0000
+
+    Now creates a log file
+
+commit 1b8219981e77c7b7fcd66c84fa399e848629dde0
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Feb 16 21:38:25 2013 +0000
+
+    Got interrupts working so that a frame of data can be obtained
+
+commit 51860eb7495166eae66dce4d82b696fe5422f771
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Feb 16 17:41:31 2013 +0000
+
+    Connected VSYNC0 to PA10 - EXTINT4, to get it to work to to special aspects of EXTINT0
+
+commit 73694ab8eb5259924da015273e056af6308dad90
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Feb 16 15:10:34 2013 +0000
+
+    Set up both cameras and can detect VSYNC1. Next step is to detect VSYNC0
+
+commit f938490d74a593782a2668b25be4c5bb6c28a738
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Feb 15 13:05:26 2013 +0000
+
+    Got I2C Mux working and selecting channels. Camera can be found on channel 1 (right) but not got a socket for camera 0 (left)
+
+commit e5939ddce3e23c7cda1b358f210783732d2f2dc5
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Feb 15 11:25:58 2013 +0000
+
+    Got motors to reset to interrupt tabs!
+
+commit 286b2a60fd5615e3f47af0ff7e14027fd56e7868
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Feb 14 22:05:14 2013 +0000
+
+    Got Analogue comparators working in interrupt. Need to make a motor state machine to enable accurate movement
+
+commit a78f28008f76b437f054b3a46d785f10fa547059
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Feb 14 17:35:08 2013 +0000
+
+    Analogue comparators work by poling. Moving to make this interrupt based
+
+commit 850deae47bd56e8186f690e8aec95dd805d0d1a7
+Merge: 33d9647 7f8d423
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Feb 14 16:48:00 2013 +0000
+
+    Merge branch 'master' of devtrack.ecs.soton.ac.uk:projects/part3_project
+
+commit 33d9647742b618ea6670f48a1df3b2a4c57758e9
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Feb 14 16:47:12 2013 +0000
+
+    Added analogue comparator
+
+commit 7f8d423cfcc73220edb8f0c79341fcd041e61f2a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Feb 14 13:50:06 2013 +0000
+
+    Done a example analogue comparator program
+
+commit 07692640b01cf673d39dc77e84f9b8c978d0d2fd
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Feb 12 22:31:46 2013 +0000
+
+    Got bootloader working and added a bat to program it using it
+
+commit 5c773c9129c4770ad747b0c3022e145d3eee7680
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Feb 12 20:22:12 2013 +0000
+
+    Got basic forward and backward motor movement working
+
+commit 29ae4969dabc7efd5a612749a70b59711bdb25bd
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Feb 12 20:12:38 2013 +0000
+
+    Got PWM working on both lines.
+
+commit 17efebcf0d0a670cdbb3e0ea4a1162e803be486e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Feb 12 10:00:18 2013 +0000
+
+    Added all new files in...
+
+commit a8df22820f31913c3f6b1da26e196eda941e8059
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Feb 12 09:59:52 2013 +0000
+
+    Still not got PWM to work. Motors now drive, however
+
+commit 962daa07b3410aa5ee9fa3ae628e922e1282b5a5
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Feb 10 18:33:22 2013 +0000
+
+    TWI Test Done
+
+commit b48e70f271fc5f9f0baade9328a28e5fe0fbe65f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Feb 10 17:30:09 2013 +0000
+
+    Moved SD Card methods to own files to neaten up
+
+commit 66a459bf4789bfea4d122532a2c0a2b6bb8fb86e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Feb 10 14:00:00 2013 +0000
+
+    Moved some declarations into a header
+
+commit 3829af1002f60db49f362cc3e25a090382e3f208
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Feb 10 13:51:31 2013 +0000
+
+    SD Card Test working
+
+commit 32d190049ba557dd25a0eb9ddf0308b404229c2c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Feb 10 13:28:58 2013 +0000
+
+    Done SDRAM Test, but still not working. Carrying on with other parts and will come back to this
+
+commit 76587cdcb8640156482310b382f083013a73c02e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Feb 9 18:07:18 2013 +0000
+
+    Started a test program. Tests LEDs. SRAM fails test, but need to properly initialise the chip select pin.
+
+commit c14bdeb1d41e97398bdb7c20fff22937da707406
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Feb 9 11:16:23 2013 +0000
+
+    Report.pdf changed
+
+commit 62409baa8153e11a921933c1e3c86861d0cc8e31
+Merge: ea2c54f 25896e8
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Feb 9 11:15:57 2013 +0000
+
+    Merge branch 'master' of devtrack.ecs.soton.ac.uk:projects/part3_project
+
+commit ea2c54f9d9bde664608274453643fa2c73314e96
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Feb 9 11:15:09 2013 +0000
+
+    Done some report stuff.
+
+commit 25896e85490cf2de3246631de8c26df2afb9d8e4
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Feb 7 12:06:20 2013 +0000
+
+    Played around with some MATLAB things
+
+commit 01eb4d25c242352f8ba62b137caadabb9ac0b001
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Jan 28 14:25:51 2013 +0000
+
+    Changed some via holes and put things on the correct layer for the silkscreen
+
+commit 9fe192a20d8531a4b4c6273933f3d3c1226d6bd8
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Jan 22 10:26:58 2013 +0000
+
+    The Columbus is now complete and sent of. This is the ACTUAL final version
+
+commit 728cc93cf9808d74795a9e215b3ad02c9dd048ce
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Jan 21 23:02:11 2013 +0000
+
+    Final PCB Layout. Accurate costings
+
+commit bfcb765825a1b3ba0c0c193d0eb699bf9854ee9c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Jan 14 21:04:25 2013 +0000
+
+    Missed an Airwire on PCB
+
+commit 795210d8795a7257e92d7d3e2c95b7225d6d8311
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Jan 14 17:21:07 2013 +0000
+
+    Changed some minor things on the PCB
+
+commit 89d75eff2aaec8a337c41dedfb9500113c990a6c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Jan 9 11:19:42 2013 +0000
+
+    Corrected all keepout errors!
+
+commit ade0dde38af05947dd83786ea8f3a0ce3ba94424
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Jan 9 09:25:34 2013 +0000
+
+    Sorting Keepout Errors. 96 to go!
+
+commit d4f025d4470fe7a6f350b114fb4b16de34929a48
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 31 15:09:49 2012 +0000
+
+    Revision A of the PCB is done
+
+commit 7203eff5facb8b0a96e6c47dc8123029d220c439
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 31 11:47:40 2012 +0000
+
+    Routed LEDs
+
+commit fa69aef0487cb0d78f6a5b61065a5ccec260b5a9
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 31 11:29:44 2012 +0000
+
+    Routed Motor LED and other motor driver
+
+commit 95e230e780d2847dfb7e82f4178cf7c72f9bd60c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 31 10:57:43 2012 +0000
+
+    Routed one motor driver and both sensors.
+
+commit 92a0fd1888e359f9be61c8ebf24f9aa1754854e2
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 31 10:10:06 2012 +0000
+
+    Routed SPI and UART. Added GND to SPI Header
+
+commit 153177265484d6401f8e5f12b9d59946f2b00b81
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 31 09:42:05 2012 +0000
+
+    Routed Camera Control Lines
+
+commit c9f50cef5717f358c3422eaa8619a83575044a40
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Dec 30 22:44:14 2012 +0000
+
+    Updated Eagle Project File
+
+commit cb208f3d1706890f1902257821a1868cd73e0e35
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 26 23:15:23 2012 +0000
+
+    Routed Camera Data Bus
+
+commit 26567d737c193599d0c6d8b7204b4fefa800e93d
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 26 22:23:41 2012 +0000
+
+    Routed the SDRAM
+
+commit c2bf2b1b684e14df72d7290c8c493d7be877e07f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 26 12:18:43 2012 +0000
+
+    Moved the SRAM to a different place
+
+commit de7d21cb2f9aacd563f2a7e6060099bbff23b21f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Dec 25 23:57:36 2012 +0000
+
+    Ripped up SDRAM lines due to poor routing. Working on it again
+
+commit 38ca537e9c64e409d9e7bb6d2a09c403e1f72e16
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Dec 25 20:39:54 2012 +0000
+
+    Routed DQ Lines on the SDRAM.
+
+commit 6a2e059746a126604be5258507d14af10cd43c74
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Dec 25 12:39:53 2012 +0000
+
+    Finished Wiring GND. Done USB Data and oscillator
+
+commit 5411c8e06505b50299e03dffd15666b1488180b5
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 24 19:04:05 2012 +0000
+
+    Half way through routing the GND Connections
+
+commit 4ed8c45127c1884753f823e7a07c32d824abe459
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 24 15:00:37 2012 +0000
+
+    Routed all +3V3 signals. Made into a four layer board.
+
+commit d200a394f77670ccabff72370e7a4bef64557e42
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 24 08:20:25 2012 +0000
+
+    Changed the JTAG Package. Added Headers for all unused pins.
+
+commit 0d37b870dfc94520788b4e53e5b168cca8ecbac0
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Dec 23 22:48:40 2012 +0000
+
+    Completed First Draft of Schematic
+
+commit 7351b24c95fbb75fd28a1a226aa1e9e946e93c72
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Dec 23 17:21:41 2012 +0000
+
+    Added LEDs to the deisgn and a USART Port.
+
+commit 27ce53dd5ad55c68936640b9cab26facc031fecd
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Dec 22 19:15:16 2012 +0000
+
+    Changed JTAG Connection to include the Reset Pin.
+
+commit 5672746b03ee5afd64478d7f8823bdd23e2fec8f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Dec 22 14:28:00 2012 +0000
+
+    Wired up GPIOs to Devices. Need to add a UI.
+
+commit 71fb2c39ad9495268bb54c1116f32418075e389b
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Dec 22 09:26:52 2012 +0000
+
+    Placed all components. Need to confirm the circuit diagram and complete that before routing
+
+commit b28eed6f40040e6d7c92f403b97c47956bf9bd66
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Dec 20 22:39:28 2012 +0000
+
+    Added UC3C Datasheet
+
+commit eedfef0348a108da169b2515421acbfbf1c82e60
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Dec 20 22:38:03 2012 +0000
+
+    Done some more on PCB, mainly adding decoupling capacitors (lots of)
+
+commit d22cb777f6fb19abc4eafdd4e8dacd4aac6340c1
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 19 23:11:52 2012 +0000
+
+    Added more to the ciruit diagram and PCB. Checked that made components are correct
+
+commit 87bec6c74375fe0075fbc642c1957f66fbfc533d
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Dec 18 23:48:37 2012 +0000
+
+    Done some more to the PCB. Worked out how to use the cam2print script
+
+commit 5c746b3376b6c75153e0060d9d63fab73559a5e6
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Dec 18 19:19:55 2012 +0000
+
+    Minor changes
+
+commit bb7cf76f76a5c333ae9fc4d3f2a703269fa9a537
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Dec 18 19:12:32 2012 +0000
+
+    Added some comments to motor code
+
+commit bb4d537506f2ee43850cd603b677912cddf5c4b5
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Dec 18 18:46:27 2012 +0000
+
+    Proportional controller implemented
+
+commit 7f866ef6a389a6655adfeaa19cbdb2483099303e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Dec 18 17:46:37 2012 +0000
+
+    Motor now counts white tabs from a rotating wheel. Proportional controller needs implementing
+
+commit 7d6a675374831dd1e2c22c35107064d6bba541da
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Dec 15 15:42:39 2012 +0000
+
+    Done some work on Motor Driver code.
+
+commit 53ee89f6e947dd0fd5777190759e792e84b97af7
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 12 17:38:57 2012 +0000
+
+    Started motor driver prototype
+
+commit cb8965a7c5faea51f7eceafe879ffde94c11bf2a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 12 12:52:41 2012 +0000
+
+    Added more to schematic
+
+commit adef530cb479ad348459c621d531aeb13dc40726
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Dec 11 12:59:25 2012 +0000
+
+    Started Circuit schematic
+
+commit 93f480df62bb60639d851a7cff2b76ba995e8090
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 10 11:40:50 2012 +0000
+
+    Report Final. Short Report also added
+
+commit 3ef2b14f89e17c99e75677b1a0502b78aa6f443a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 10 11:14:15 2012 +0000
+
+    Full Report Done
+
+commit 050ce553e0bef50b66ed7c921f78972c219b1881
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Dec 8 21:44:58 2012 +0000
+
+    Tenth Draft
+
+commit 0918c3a1110c53964a9fe561adb0ea788ef70cd5
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Dec 8 13:33:15 2012 +0000
+
+    Ninth Draft. Read through all and made many minor changes. Added key to NCCResults.jpg
+
+commit 037781dac5d86954363953c69f884d3b43c698b5
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Dec 8 11:53:41 2012 +0000
+
+    Eigth Draft: Added project risk and Gannt chart. Fixed appendicies labels too
+
+commit a8e3996b394abbcf6ac99b74d0703a9340bcb012
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Dec 7 22:39:41 2012 +0000
+
+    Seventh Draft. Formatted equations, particularly parenthesis. Tidied up figures.
+
+commit 33aa0f1f05c2c844409579d6474b731ea32e66ee
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Dec 7 22:20:52 2012 +0000
+
+    Sixth Draft
+
+commit 710902e919e6974e695744bff85aa2a24a5f10c3
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Dec 7 22:07:09 2012 +0000
+
+    Draft 5. Changed some figures to make them look better.
+
+commit 88f1f75c6b98511aed044831a7df43bb68f9740f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Dec 7 21:05:20 2012 +0000
+
+    Fourth Draft: Changed format, added some figures
+
+commit 63687b19e849a7367233d34eb74d1c18cf779922
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Dec 7 14:53:30 2012 +0000
+
+    Third Draft
+
+commit f12868f541e2fbcdc5c7e4c467e413decbbee586
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Dec 7 12:01:59 2012 +0000
+
+    Corrected some mistakes and rewrote abstract
+
+commit e529d5e156a1d564295319df467ff4d54f6a66b0
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Dec 6 22:59:22 2012 +0000
+
+    Second Draft
+
+commit 40101849216e09483836791e530d16ab0de89583
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Dec 6 21:57:12 2012 +0000
+
+    Fixed some minor errors
+
+commit d5a1e7271531e0298f0c5e65912528ec58ab3762
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Dec 6 20:38:29 2012 +0000
+
+    Completed First Draft!!
+
+commit e03e35e6f6773b1576407757c410451c3453a587
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 5 22:35:04 2012 +0000
+
+    Completed HardwareDevelopment and InvestigationVision. Need to do research and conclusion
+
+commit e909f539e5b6765042b2cc2a2c2d69cd74c57b66
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 5 17:31:40 2012 +0000
+
+    Completed Vision Investigation and Hardware Development. Need to do research and conclusion
+
+commit 20cf725abe47b87b2b095bfa237e6e62979cce4d
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 5 13:18:42 2012 +0000
+
+    Done some introduction and changed some formatting. Plus more references.
+
+commit 1b43632dcff52f2fed4b3d4f7d8f34eaf25a2eb2
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 5 10:07:56 2012 +0000
+
+    Added dual camera circuit diagram and explain UI.
+
+commit f761ccb8de125caf1961379d2719fd02580b2312
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 5 09:27:48 2012 +0000
+
+    Finished Circuit Diagram of Il Matto Camera Platform
+
+commit fbf068bc2351b5c9f97f3e678d98f8a6359beeb8
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Dec 5 00:53:55 2012 +0000
+
+    Did a lot of report. All that remains is intro, research, circuit diagram for current set up, range derivations and testing and conclusion. Word count bat file added. Added appendix C of code. Started on circuit diagram of current set up. Needs completing. Saved the results of the 3 chosen comparisons. Time for bed...
+
+commit 3a26d8a295046b17ceb7449e9e89c87eee1caf96
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Dec 4 13:29:05 2012 +0000
+
+    Done more report and got some comparison results
+
+commit af680316c2b87888c3498c1198c2a95046b22148
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 3 22:33:44 2012 +0000
+
+    Added figures and some text
+
+commit 911e6cfbea978532b520ea5f5ffb878ef7df5da2
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 3 14:47:28 2012 +0000
+
+    Started comparison of image detection stuff. Far from completion
+
+commit 893177efb46e05de66c7514a5f67631b227113a8
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 3 13:41:40 2012 +0000
+
+    Done one part of the range finding equation into InvestigationImage.tex
+
+commit 58c8ed8a2b897efd91b6a3dd05b65aa8a7d81172
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 3 12:42:40 2012 +0000
+
+    Almost finished HardwareDevelopment, just a few things left to tweak
+
+commit e71e44267c9216b6a8454cfc7f06a48b505aa57e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Dec 3 08:42:04 2012 +0000
+
+    Update atsuo file
+
+commit c1d896b0aae7deb68a47c178978715f4999a964b
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Nov 30 23:50:48 2012 +0000
+
+    PCB and Range finding added
+
+commit ca6bd9ec0f9f1a2fac3e4a14b341f1629cffe626
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Nov 29 23:39:22 2012 +0000
+
+    Did some more work on the hardware development section
+
+commit 9b5b80ea01eee38f425c74791645f4007813172b
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Nov 29 22:54:00 2012 +0000
+
+    Added a confidence test into the FindMatch script
+
+commit 34d20057bb49d12405d9a1066cca176519620e88
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Nov 29 22:28:24 2012 +0000
+
+    Got a basic matching algorithm working! Usings Normalised cross correlation
+
+commit a19b6aae29ab772c34b28808b2adf6e152090a1b
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Nov 28 23:10:10 2012 +0000
+
+    Done some more work on corner matching using SSD and cross correlation. Added more research articles
+
+commit c25dc537d341e44fabffdcfd096048f9d04f96b1
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Nov 27 22:28:38 2012 +0000
+
+    Added some more photos and research articles. Archived off old MATLAB
+    scripts.
+
+commit 007fdeba3ba3d160b5acd833335bdc4a28224bf7
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Nov 26 14:20:36 2012 +0000
+
+    Added EffectiveCornerMatching article, and added a new test image from the cameras
+
+commit 194e557e3226a76a9d2ed884574faec882007ab0
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Nov 25 21:42:44 2012 +0000
+
+    Done a section in HardwareDevelopment and added some references
+
+commit ea679a9c64a4aa2a4146f73f35ceff7b0c008ad8
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sun Nov 25 18:50:49 2012 +0000
+
+    Added Harris Corner Dettection
+
+commit d8f8d281bfd5fecb2690e08528100a2ea79229f3
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Nov 23 19:55:09 2012 +0000
+
+    Updated LaTeX Template
+
+commit 0fc103b0f516f4edf9f7ad3cf3233522527aeb4e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Nov 22 11:24:43 2012 +0000
+
+    added more research and a registration document
+
+commit ca950e923f582ab6fa5299561d08c2bf2df847bb
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Nov 21 22:31:29 2012 +0000
+
+    Stated on some of the Report
+
+commit 43c3aa8d9598baecc4273e9d92116db8ced7ed92
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Nov 21 21:52:39 2012 +0000
+
+    Got SSD matching working. Started on NCC. Need to improve rectification.
+
+commit de7c1f7279015ceac03cdcf3edcc66163eb6d70a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Nov 21 15:21:58 2012 +0000
+
+    Got a basic algorithm working!
+
+commit 3c8251b97cfe2706c06f4ae24cd3c8c734b05dd7
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Nov 21 14:12:29 2012 +0000
+
+    Broken Image rectification script into smaller scripts serving a function each
+
+commit 81e8de58763d079f5096cdd941848769bd45a61c
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Nov 20 23:32:46 2012 +0000
+
+    Started some edge detection and image rectification algorithms
+
+commit 24cde9260c9feb54a469c99f238dfa8d95692139
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Nov 20 10:20:37 2012 +0000
+
+    Starting Image rectification using built in MATLAB Commands
+
+commit a874199503d63a490d0e2f4f918fe2ae422ba0dd
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Nov 17 18:27:36 2012 +0000
+
+    Found some more research articles to look at about range finding
+
+commit b8d8e74587ebe13c97c907ae736476edfcb7889f
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Nov 17 17:43:33 2012 +0000
+
+    Implemented a very poor non functional correlating function. Needs vastly improving.
+
+commit 442476662d3bbba3022c3eb3c4a6789a27288dcb
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Nov 17 14:25:46 2012 +0000
+
+    Added Matlab Directory for protoyping stereovision algorithms. Code now writes images labelled with Left and right
+
+commit 905982b97e812ce8a6ded2269995d177aea268c6
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Nov 14 13:45:21 2012 +0000
+
+    I2C MUX Working
+
+commit 25168549c01739f62707e402f59549c91ee9b112
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Nov 13 16:43:53 2012 +0000
+
+    Updated to stereovision branch
+
+commit 574d0c8a06eb074cd1ab58e21d3f3a5db81d03f3
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Nov 13 16:40:44 2012 +0000
+
+    Forced Stereovision branch over to rid of any conflicts
+
+commit 504e16e07715fe88042b0b15204ab625b7aae5df
+Merge: 5f24911 0d2e62e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Nov 13 16:25:52 2012 +0000
+
+    Merging Stereovision
+
+commit 5f249119066d8546bfdff0e96dbe5ad6a1cb22b1
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Nov 13 16:13:26 2012 +0000
+
+    Added some pictures obtained from the device
+
+commit 0d2e62e18dc5bc3fb36115cfb7a083e4bd8a7262
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Tue Nov 13 14:36:05 2012 +0000
+
+    Stereovision working. Colours in bitmap solved
+
+commit f35880b1ac08e3c5c01bda4a5f9105075e1075d2
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Nov 12 22:56:11 2012 +0000
+
+    Got UI Working. Need to implement acting on this in main 644P code
+
+commit 36dfae1c4214dcd01f603b553cec89b7732bbb70
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Nov 12 13:49:58 2012 +0000
+
+    Update all files.
+
+commit a4ada04ade48498e0c0c835c39dc13d5563daf3a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Nov 12 10:24:22 2012 +0000
+
+    started UI
+
+commit a334bdf94ae9519245e78b5ed3715192868bfd31
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Mon Nov 12 10:21:21 2012 +0000
+
+    Started UI for dual cameras
+
+commit 99ff4104a4ff6c74bb7ca419ecffa30308beecc1
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Sat Nov 10 12:24:13 2012 +0000
+
+    Solved bug where the AVR resets itself after taking a photo
+
+commit 7fef628ab94d99fdcf7edd8c35d6ab1c83f083a6
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Fri Nov 9 23:54:53 2012 +0000
+
+    Started Dual camera code, firstly with one camera but pins swapped around. Image is taking, but AVR resets itself after image has been written to SD Card. Not yet found out why...
+
+commit 0d45834bd6ba6996f10b68d01818f14179f71a30
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Nov 8 10:24:15 2012 +0000
+
+    Added all current documents
+
+commit 1a2dacca9e6f448ccfae38130ee736c80af6f24e
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Nov 8 10:04:06 2012 +0000
+
+    Added Datasheets
+
+commit 10036df4b5259d6e5facd2765027e9b3e6401b2a
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Thu Nov 8 09:59:04 2012 +0000
+
+    Added Research list
+
+commit 5be4b1a8b577936144ecc0dfa27366b9304e6c50
+Author: Henry Lovett <hl13g10@soton.ac.uk>
+Date:   Wed Nov 7 22:03:32 2012 +0000
+
+    First Commit
