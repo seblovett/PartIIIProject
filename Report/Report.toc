@@ -83,7 +83,7 @@
 \contentsline {section}{\numberline {F.5}$I^{2}C$ Test Code}{100}{section.397}
 \contentsline {section}{\numberline {F.6}Camera Test Code}{101}{section.447}
 \contentsline {section}{\numberline {F.7}Motor Test Code}{102}{section.472}
-\contentsline {chapter}{\numberline {G}Contents of Files}{103}{appendix.482}
+\contentsline {chapter}{\numberline {G}Contents of Design Archive}{103}{appendix.482}
 \contentsline {chapter}{\numberline {H}Bitmap File Format}{105}{appendix.483}
 \contentsline {section}{\numberline {H.1}Bitmap File Format}{105}{section.484}
 \contentsline {chapter}{\numberline {I}Range Finding Derivations}{109}{appendix.487}
