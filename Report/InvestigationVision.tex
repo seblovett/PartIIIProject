@@ -233,7 +233,7 @@ Extensive testing of the effect of separation has been done before \citep{Mrovlj
 
 In order to improve the ability of these cameras for range finding, adding a wide angle lens will reduce the error at the expense of reducing the maximum range. Alternatively, the robot could use an algorithm to view the object at different perspectives to estimate the distance to it. 
 
-The robot was designed to be small, and the cameras were chosen as a cheap alternative to more expensive products on the market. The test results show that by using cameras as described, ranges cannot accurately be measured. The separation of objects in the images is a reciprocal function and the data gathered in the test matches this characteristic, see Figure \ref{fig:Distance:DeltaX}. This means the system can perceive depth from the separation of the objects, but not accurately calculate the distance. 
+The robot was designed to be small, and the cameras were chosen as a cheap alternative to more expensive products on the market. The test results show that by using cameras as described, ranges cannot be accurately measured. The separation of objects in the images is a reciprocal function and the data gathered in the test matches this characteristic, see Figure \ref{fig:Distance:DeltaX}. This means the system can perceive depth from the separation of the objects, but not accurately calculate the distance. 
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/BPlot.eps}
@@ -271,7 +271,7 @@ X(f) = \int\limits_{-\infty}^{\infty}x(t)e^{-\jmath 2 \pi ft}dt
 \label{fig:SquareWaveFT}
 \end{figure}
 
-The equation for the Fourier transform in Equation \eqref{eq:fourier} is for continuous time. A discrete Fourier transform (DFT) exists for finite, equally spaced samples. This is commonly used in digital systems and is defined in Equation \eqref{eq:DFT}. There exists a Fast Fourier transform (FFT) which gives exactly the same results as the DFT, but is optimised in terms of number of multiplications. The FFT is most suitable for use on microcontrollers due to the speed of calculation and the availability of code extracts. %The FFT will be used in implementation due to availability of code and speed of use. 
+The equation for the Fourier transform in Equation \eqref{eq:fourier} is for continuous time. A discrete Fourier transform (DFT) exists for finite, equally spaced samples. This is commonly used in digital systems and is defined in Equation \eqref{eq:DFT}. There exists a Fast Fourier transform (FFT) which gives exactly the same results as the DFT, but is optimised in terms of number of multiplications. The FFT is most suitable for use on microcontrollers due its speed of calculation and the availability of code. %The FFT will be used in implementation due to availability of code and speed of use. 
 
 \begin{equation}\label{eq:DFT}
 X[k] = \sum\limits_{0}^{N-1}x[n]e^{-\jmath \Omega_0 kn}
@@ -280,7 +280,7 @@ X[k] = \sum\limits_{0}^{N-1}x[n]e^{-\jmath \Omega_0 kn}
 Where $\Omega_0$ is the sample frequency
 \end{center}
 
-A property of the Fourier transform which is of interest is the convolution theorem which states that convolution in time is multiplication in frequency and is defined mathematically in Equation \eqref{eq:ConvolutionMultiplication}. Cross correlation is defined in Equation \eqref{eq:CrossCorrelation} and related to convolution by Equation \eqref{eq:CrossCorrelation}. With images, $f(t)$ is a real signal, its conjugate is exactly the same, $f(t) \equiv f^*(t)$, given that $f(t) \in \Re$. Fourier transforms can be used to calculate cross correlation more efficiently, by multiplying the Fourier transform of an image by the reversed template.% This means that to compute a cross correlation, the Fourier transform of the image and the reversed template can be used and multiplied together. 
+A property of the Fourier transform, which is of interest, is the convolution theorem which states that convolution in time is multiplication in frequency and is defined mathematically in Equation \eqref{eq:ConvolutionMultiplication}. Cross correlation is defined in Equation \eqref{eq:CrossCorrelation} and related to convolution by Equation \eqref{eq:CrossCorrelation}. With images, $f(t)$ is a real signal, its conjugate is exactly the same, $f(t) \equiv f^*(t)$, given that $f(t) \in \Re$. Fourier transforms can be used to calculate cross correlation more efficiently, by multiplying the Fourier transform of an image by the reversed template.% This means that to compute a cross correlation, the Fourier transform of the image and the reversed template can be used and multiplied together. 
 
 
 \begin{equation}\label{eq:ConvolutionMultiplication}
@@ -387,7 +387,7 @@ Figures \ref{fig:AVR:FFT:Square:Input}, \ref{fig:AVR:FFT:Square:Output} and \ref
 \subsubsection{2D FFT Test}
 
 
-Two test signals were used to test the 2D FFT on the AVR, a Dirac signal and a square wave, seen in Figures \ref{fg:Dirac2D:Signal} and \ref{fg:Square2D:Signal}. The internal method on the AVR was not able to compute the magnitude due to the method scaling all the values down causing truncation errors. The complex Fourier transform was obtained, saved to the SD card in CSV format and viewed in \textsc{Matlab}. All data were normalised to omit the effects of the fixed point notation and the data shifted so that frequency 0 was in the centre. These tests were done with a $64\times64$ 2D data as with a $256 \times 256$ array the AVR runs out of internal RAM to calculate the transform. 
+Two test signals were used to test the 2D FFT on the AVR; a Dirac signal and a square wave, seen in Figures \ref{fg:Dirac2D:Signal} and \ref{fg:Square2D:Signal}. The internal method on the AVR was not able to compute the magnitude due to the method scaling all the values down causing truncation errors. The complex Fourier transform was obtained, saved to the SD card in CSV format and viewed in \textsc{Matlab}. All data were normalised to omit the effects of the fixed point notation and the data shifted so that frequency 0 was in the centre. These tests were done with a $64\times64$ 2D data as with a $256 \times 256$ array the AVR runs out of internal RAM to calculate the transform. 
 
 \inote{I would like to get this to work by the end but not vital.}
 

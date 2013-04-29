@@ -15,7 +15,7 @@ For initial development, the \textit{`Il Matto'} board, designed by Steve Gunn, 
 
 \section{Camera} \label{Section:Camera}
 
-The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components and a 24MHz clock mounted. The schematic for the device can be seen in Figure \ref{OV7670_Schematic}. The camera has a small hardware modification, due to a PCB fault. Pin 8 of the buffer is lifted and connected to pin 6 of the header, which is disconnected from the PCB (see Figure \ref{fig:OV7670:Mod}).
+The camera used is an OV7670 by OmniVision. It is mounted onto a break out board and connected to a AL422B FIFO Buffer. The breakout board has all passive components and a 24MHz clock mounted. The schematic for the device can be seen in Figure \ref{OV7670_Schematic}. The camera has a small hardware modification, due to a PCB fault. Pin 8 of the buffer was lifted and connected to pin 6 of the header, which was disconnected from the PCB (see Figure \ref{fig:OV7670:Mod}).
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth /4]{Figures/OV7670_Back.jpg}
@@ -35,9 +35,9 @@ RGB565 is a 16 bit pixel representation where bits 0-4, 5-10 and 11-15, represen
 \label{fig:RGB565}
 \end{figure}
 
-The camera must use a high speed clock in order to ensure the pixels obtained are from the same time. This makes it difficult for an ATMega (typically clocked at 8-12MHz) to be able to respond to the camera quickly enough. This highlights the necessity for a FIFO Buffer. 
+The camera must use a high speed clock in order to ensure the pixels obtained are from the same time frame. This makes it difficult for an ATMega (typically clocked at 8-12MHz) to be able to respond to the camera quickly enough. This highlights the necessity for a FIFO Buffer. 
 
-The OV7670 is set up so that the VSYNC pin goes low at the beginning of every frame of data, and HREF is high when the output data is valid. The pixel data is then clocked out on every rising edge of PCLK. To control the buffer, WEN is logically NAND with the HREF signal. When both are high, the WEN to the buffer will be active and the data will be clocked in by the camera into the buffer. 
+The OV7670 is set up so that the VSYNC pin goes low at the beginning of every frame of data, and HREF is high when the output data is valid. The pixel data is then clocked out on every rising edge of PCLK. To control the buffer, WEN is logically NAND with the HREF signal. When both are high, the WEN to the buffer is active and the data will be clocked into the buffer by the camera. 
 
 In order to store a full image into the buffer, WEN must be high between two consecutive VSYNC pulses. VSYNC is set up to interrupt the AVR, and a small state machine is implemented to count VSYNC pulses and control WEN correctly. After the WEN signal is pulsed, the FIFO buffer will contain all the valid pixel data.
 
@@ -117,7 +117,7 @@ Storing the image as a bitmap enables the file to be opened on a range of operat
 
 \section{The Prototypes}
 
-The first prototype made can be seen in Figure \ref{fig:Prototype}. This obtained two images from both cameras, and stored them to the SD Card. The cameras shared the data bus and a \itc multiplexer was used. An ATMega168 microcontroller was added to the system as no pins remained for debugging on the \textit{Il Matto} board. The pinout for the ATMega644P can be seen in Table \ref{table:644Pin}. The ATMega168 used the already existing \itc bus and acted as a port extender - button inputs were read and status LEDs were written to. This enabled a debug output for the system. The prototype worked well and proved the camera circuit worked. 
+The first prototype made can be seen in Figure \ref{fig:Prototype}. This obtained two images from both cameras, and stored them to the SD Card. The cameras shared the data bus and an \itc multiplexer was used. An ATMega168 microcontroller was added to the system as no pins remained for debugging on the \textit{Il Matto} board. The pinout for the ATMega644P can be seen in Table \ref{table:644Pin}. The ATMega168 used the already existing \itc bus and acted as a port extender - button inputs were read and status LEDs were written to. This enabled a debug output for the system. The prototype worked well and proved the camera circuit worked. 
 
 A second prototype was made to stream the images to the TFT screen designed for the \textit{Il Matto}. This can be seen in Figure \ref{fig:Prototype:TFT}. This provided the ability to check the cameras worked, and gave a live stream so the lens could be focused to give a clear image. The refresh rate of a full image was slow ($\approx 0.6fps$), but the system was successful.
 
@@ -232,7 +232,7 @@ An alternative was to use an analogue comparator. The UC3C has two on-chip compa
 
 The first method implemented was to use the analogue comparators to interrupt when the collector voltage crossed the threshold. Both wheels used the same comparator interface and therefore ran the same ISR when triggered. The ISR then had to read the output of the comparators and decrement the relevant counter for the correct wheel. This method had many downfalls. First, it was not possible to know which comparator caused the interrupt. If the left wheel triggered the interrupt while the right was below the threshold, both left and right counters would be decremented. This caused a large error each time it occurred. Another problem was noise; occasionally, the lowering voltage would cause multiple interrupts each time. This problem was reduced by setting the hysteresis on the comparators but did not solve the problem completely. 
 
-A second approach utilised a simple state machine and software based hysteresis to solve the problems. The state machine has two states `On a Tab' and `Not on a Tab'. When the method enters, the initial state is read from the comparators so that if the wheel is already on a tab, it won't be counted. The code then runs in a loop until the motors stop. A graphic representation of the code can be seen in Figure \ref{fig:StateMachine}. Starting in `Not on a Tab' state, a tab must be detected for Hyst\_Max amount of cycles in succession for the state to change. This is the same for going from `On a Tab' to `Not on a Tab'. This is to reduce noise in the form of false readings and increase the certainty that a tab is, or is not, in detect. The Global\_Count is only reduced on the transition to `On a Tab' so it is difficult for this to decrement multiple times in normal operation. To increase the certainty, Hyst\_Max can be increased at the expense of response time. 
+A second approach utilised a simple state machine and software based hysteresis to solve the problems. The state machine has two states `On a Tab' and `Not on a Tab'. When the method enters, the initial state is read from the comparators so that if the wheel is already on a tab, it won't be counted. The code then runs in a loop until the motors stop. A graphic representation of the code can be seen in Figure \ref{fig:StateMachine}. Starting in the `Not on a Tab' state, a tab must be detected for Hyst\_Max amount of cycles in succession for the state to change. This is the same for going from `On a Tab' to `Not on a Tab'. This is to reduce noise in the form of false readings and increase the certainty that a tab is, or is not, in detect. The Global\_Count is only reduced on the transition to `On a Tab' so it is difficult for this to decrement multiple times in normal operation. To increase the certainty, Hyst\_Max can be increased at the expense of response time. 
 
 
 \begin{figure}
@@ -286,7 +286,7 @@ To test the motor system, different distances were given to the movement method.
 %\label{fig:results:motor:distance}
 %\end{figure}
 
-However, the robot did not move in a straight line, but with a slight arc. Speed tests were performed by measuring the total time taken to complete eight full revolutions, the equivalent of moving 928mm. The results and the calculated wheel speeds can be seen in Table \ref{table:results:motor:speed}. It shows that the left motor runs slightly faster than the right, even though the PWM duty cycle is the same. A controller could be implemented to correct this error during operation. However, over the distances covered, the error introduced by this is small enough to neglect. 
+However, the robot did not move in a straight line, but with a slight arc. Speed tests were performed by measuring the total time taken to complete eight full revolutions, the equivalent of moving 928mm. The results and the calculated wheel speeds can be seen in Table \ref{table:results:motor:speed}. It shows that the left motor runs slightly faster than the right, even though the PWM duty cycle is the same. A controller could be implemented to correct this error during operation. However, over the distances covered, the error caused by this is small enough to neglect. 
 
 \begin{table}
 \caption{Results of motor speed test}
@@ -310,12 +310,12 @@ Due to the low resolution of the sensor (10 counts per revolution), there is a m
 \Delta_{\theta} = \frac{360 \times C_w}{\gamma \times C_b} \approx 15^\circ 
 \end{equation}
 
-This method lacks on two points - speed control and accuracy.
+This method lacks on two counts, namely speed control and accuracy.
 A better controller could be implemented to help move at different speeds. This could use the remaining number of counts to gradually slow the speed of the motors down as well as correct the speed mismatch between the wheels. A PID controller could be implemented if greater accuracy is needed quicker, at the expense of computation time and potential overshoot. 
 
 Rotary encoders could be used to detect the direction of wheels. A good, but more costly, alternative would be the HUB-ee wheel by \cite{Creative_Robotics}, which includes a 120 point quadrature encoder and sensor, motor driver and a geared motor all within the wheel. These wheels have 12 times the accuracy as the method described here and a similar interface. 
  
-Given that the robot does not need to move any more accurately than to 1cm, this method has proved to be cheap and successful. The robot is able to move a distance with reasonable accuracy, but to a fairly low resolution.
+Given that the robot does not need to move any more accurately than to 1cm, this method has proved to be cheap and successful. The robot is able to move a distance with reasonable accuracy, albeit to a fairly low resolution.
 
 \section{PCB Development}\label{Section:PCB_Dev}
 \subsection{Circuit Design}
@@ -381,7 +381,7 @@ Tracks were routed in order of priority, starting with the UC3C, SDRAM and camer
 
 Passives used were all surface mount of either $0603$ or $1206$ size to save space on the board. All headers used were $0.1$ inch spaced for easy connections and a mini B USB socket was added. USB could be used to power the robot or to program the AVR via the bootloader. Future work could make the robot act as a USB device. 
 
-The layout of components was important. The cameras needed to be as far apart as possible and at the front of the PCB. The motor drivers were situated toward the back of the PCB and headers were added to connect to the motors. The optosensors were positioned such that they could be mounted directly on to the PCB and be in the correct position to sense the wheels. Mounting holes were also added on to the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in Appendix \ref{Appendix:Costings}.
+The layout of components was important. The cameras needed to be as far apart as possible and be positioned at the front of the PCB. The motor drivers were situated toward the back of the PCB and headers were added to connect to the motors. The optosensors were positioned as such so they could be mounted directly on to the PCB and be in the correct position to sense the wheels. Mounting holes were also added on to the board so the PCB could be mounted on to the robot base easily. The overall dimensions of the PCB were $100mm \times 70mm$. A full list of components and cost of each is documented in Appendix \ref{Appendix:Costings}.
 
 The Eagle CAD Diagram of the PCB can be seen in Appendix \ref{Appendix:PCB}. The PCB was manufactured by \cite{PCBCart}. Five PCBs cost \pounds 205 to manufacture and ship. A photo of the PCB can be seen in Figure \ref{fig:PCB:Bare}. 
 
@@ -421,7 +421,7 @@ The AVR then proceeds to delete any previous log file, create a new log file and
 This exercises all basic file I/O functions (creating, reading and writing) and checks that they work.
 
 \subsubsection{LED Test}\label{LED:Test}
-All LEDs are turned on for 1 second, and then turned off. The user should check this occurs. It verifies that all the LEDs are functional and correctly mounted. The power LED should be on when power is supplied to the PCB. 
+All LEDs are turned on for 1 second, and then turned off. The user should check that this occurs. It verifies that all the LEDs are functional and correctly mounted. The power LED should be on when power is supplied to the PCB. 
 
 \subsubsection{SDRAM Test}\label{SDRAM:Test}
 The SDRAM test consists of initialising the SDRAM, calculating the SDRAM size, writing a unique test pattern to the whole memory, and then reading it back and checking it. The total number of errors are reported. 
@@ -459,15 +459,15 @@ This test consists of initialising both cameras and checking it succeeds. Two ph
 An extensive test of the motor driver is discussed in Section \ref{Section:MotorTest}. The test code in this application resets the motors so that they are aligned to a white tab on the wheel. This code can be seen in Listing \ref{lst:MotorTestCode}. The robot should move no further than 1cm to reach a white tab and the motors should drive forward. This test is useful as it ensures the motors are connected the correctly and that the threshold is set to an appropriate level.
 
 \subsection{PCB Faults}
-During the build and test of the PCB, a number of faults were found. Each is explained and the solution for the problem given. 
+During the build and test of the PCB, a number of faults were found. All the faults are documented below of the problem and a solution to avoid these from occurring. 
 \subsubsection{TCRT1010 Footprint}
 The holes in the footprint for the optosensor were not large enough. This was a minor problem as the sensor was soldered in a surface mount style. This didn't affect the location of the sensor so had no implications other than the connection being weaker than it should be. 
 
 \subsubsection{SDRAM Footprint}
 The SDRAM footprint was made exactly to the specification of the pad size and locations with no consideration for soldering. This meant the chip fitted exactly on to the footprint and made soldering difficult. % as pads had to be preloaded with solder and the device's pins were heated and bound to the solder. 
-It put the device at risk as more heat had to be used that usually necessary. Figure \ref{fig:SDRAM_Err} shows the SDRAM chip slightly offset against the footprint. 
+It put the device at risk as more heat had to be used than would usually be necessary. Figure \ref{fig:SDRAM_Err} shows the SDRAM chip slightly offset against the footprint. 
 %It can be seen that there is no extra space on the pad to be able to easily solder the device. 
-Though this made building difficult and increased soldering errors, it had no impact on the operation of the device. To avoid reproducing the problem, future PCB designs should use existing footprints where available, and consider the design from a practical assembly point of view.
+Though this made building difficult and resulted in more soldering errors, it had no impact on the operation of the device. To avoid reproducing the problem, future PCB designs should use existing footprints where available, and consider the design from a practical assembly point of view.
 
 \begin{figure}
 \centering
@@ -488,7 +488,7 @@ This fault was caused by not reading the datasheet carefully and ignoring a prov
 
 \subsubsection{SDRAM Data Line Resistors}
 Once the chip select problem was solved, data returned was unreliable. The SDRAM is word (32 bit) addressed, but accessed in 16 bits. Each SDRAM access, therefore, consisted of two access cycles. 
-Upon investigation of this problem, the 14th, 15th, 30th and 31st (top two bits of each 16 bit access) seemed to read as a 1 the majority of the time. This result wasn't repeatable and sometimes returned correct data. The other bits of the data were always correct. Table \ref{table:SDRAM_Err} shows some examples of the problematic data bits. The data written should match the data read back. 
+Upon investigation of this problem, the 14th, 15th, 30th and 31st (top two bits of each 16 bit access) seemed to read as a 1 the majority of the time. This result wasn't consistently repeatable and sometimes returned correct data. The other bits of the data were always correct. Table \ref{table:SDRAM_Err} shows some examples of the problematic data bits. The data written should match the data read back. 
 \inote{Maybe a picture or a diagram would explain the problem more clearly.}
 \begin{table}[!ht]
 \caption{Examples of the incorrect data returned from the SDRAM}
@@ -500,7 +500,7 @@ Upon investigation of this problem, the 14th, 15th, 30th and 31st (top two bits 
 \end{tabular}
 \end{table}
 
-The problem was traced to resistors \textbf{R31} and \textbf{R32}. They were soldered on incorrectly so that the two data lines of the SDRAM were connected together and the two AVR GPIO pins were connected together. Data was then read back from, effectively, a high impedance line and therefore varied. Once the resistors were soldered correctly, the issue no longer persisted and the whole SDRAM test passed. By utilising the soldermask more, device orientations could be added to ensure correct placement. This can be extended to other devices, such as diodes and capacitors, especially in densely populated areas of the PCB. 
+The problem was traced to resistors \textbf{R31} and \textbf{R32}. They were soldered incorrectly so that the two data lines of the SDRAM were connected together and the two AVR GPIO pins were connected together. Data was then read back from, effectively, a high impedance line and therefore varied. Once the resistors were soldered correctly, the issue no longer persisted and the whole SDRAM test passed. By utilising the soldermask more, device orientations could be added to ensure correct placement. This can be extended to other devices, such as diodes and capacitors, especially in densely populated areas of the PCB. 
 
 \subsubsection{Camera Interrupt Line}
 
